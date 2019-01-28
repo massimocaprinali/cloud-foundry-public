@@ -10,101 +10,85 @@ lastupdated: "2018-01-16"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Gemeinsames Funktionieren von Cloud Foundry mit {{site.data.keyword.cloud_notm}}
+# How Cloud Foundry works with {{site.data.keyword.cloud_notm}}
 {: #howwork}
 
-Wenn Sie auf Cloud Foundry eine App bereitstellen, muss {{site.data.keyword.cloud_notm}} mit genügend Informationen konfiguriert sein, um die App unterstützen zu können.
+When you deploy an app to Cloud Foundry, you must configure {{site.data.keyword.cloud_notm}} with enough information to support the app.
 
-* Für mobile Apps enthält {{site.data.keyword.cloud_notm}} ein Artefakt, das das Back-End für die mobile App darstellt, z. B. die Services, die von der mobilen App verwendet werden, um mit einem Server zu kommunizieren.
-* Für Web-Apps muss sichergestellt werden, dass {{site.data.keyword.cloud_notm}} Informationen zur Laufzeit und zum Framework erhält, sodass {{site.data.keyword.cloud_notm}} die richtige Ausführungsumgebung einrichten kann, in der die App ausgeführt wird.
+* For a mobile app, {{site.data.keyword.cloud_notm}} contains an artifact that represents the mobile app's back end, such as the services that the mobile app uses to communicate with a server.
+* For a web app, you must ensure that information about the runtime and framework is communicated to {{site.data.keyword.cloud_notm}}, so that {{site.data.keyword.cloud_notm}} can set up the appropriate execution environment to run the app.
 
-Beide Ausführungsumgebungen, die für die mobile App
-wie auch die für die Web-App, sind von den Ausführungsumgebungen anderer Apps isoliert. Die Ausführungsumgebungen werden isoliert, obwohl sich diese Apps auf derselben physischen Maschine befinden. Die folgende Abbildung stellt die grundlegenden Abläufe für die Verwaltung der App-Bereitstellung in {{site.data.keyword.cloud_notm}} durch Cloud Foundry dar:
+Each execution environment, including both mobile and web, is isolated from the execution environment of other apps. The execution environments are isolated even though these apps are on the same physical machine. The following figure shows the basic flow of how Cloud Foundry manages the deployment of apps in {{site.data.keyword.cloud_notm}}:
 
-![App bereitstellen](images/deploy.png)
+![Deploying an app](images/deploy.png)
 
-Abbildung 1. App bereitstellen
+Figure 1. Deploying an app
 
-Wenn Sie eine App erstellen und auf Cloud Foundry bereitstellen, bestimmt die {{site.data.keyword.cloud_notm}}-Umgebung einen geeigneten virtuellen Server, an den die App bzw. die Artefakte gesendet werden, die die App darstellt. Für mobile Apps wird auf {{site.data.keyword.cloud_notm}} eine mobile Back-End-Projektion erstellt. Jeder Code für die in der Cloud ausgeführte mobile App wird letztendlich in der {{site.data.keyword.cloud_notm}}-Umgebung ausgeführt. Für Web-Apps ist der Code, der in der Cloud ausgeführt wird, die App selbst, die der Entwickler auf {{site.data.keyword.cloud_notm}} bereitstellt. Welcher virtuelle Server dafür ausgesucht wird, basiert auf mehreren Faktoren, wie zum Beispiel:
+When you create an app and deploy it to Cloud Foundry, the {{site.data.keyword.cloud_notm}} environment determines an appropriate virtual server to send the app, or the artifacts that the app represents, to. For a mobile app, a mobile back-end projection is created on {{site.data.keyword.cloud_notm}}. Any code for the mobile app running in the cloud eventually runs in the {{site.data.keyword.cloud_notm}} environment. For a web app, the code running in the cloud is the app itself that the developer deploys to {{site.data.keyword.cloud_notm}}. The determination of the virtual server is based on several factors, including:
 
-* Die bestehende Auslastung der Maschine
-* Von diesem virtuellen Server unterstützte Laufzeiten oder Frameworks
+* The load already on the machine
+* Runtimes or frameworks supported by that virtual server.
 
-Nachdem ein virtueller Server ausgewählt wurde, installiert ein Anwendungsmanager auf jedem virtuellen Server das passende Framework und die passende Laufzeit für die App. Anschließend kann die App in diesem Framework bereitgestellt werden. Sobald die Bereitstellung erfolgt ist, werden die Anwendungsartefakte gestartet.
+After a virtual server is chosen, an application manager on each virtual server installs the appropriate framework and runtime for the app. Then, the app can be deployed into that framework. When the deployment completes, the application artifacts are started.
 
-Die folgende Abbildung zeigt die Struktur eines virtuellen Servers, auch als Droplet Execution Agent (DEA) bezeichnet, auf dem mehrere Apps bereitgestellt wurden:
+The following figure shows the structure of a virtual server, also known as Droplet execution agent (DEA), that has multiple apps deployed to it:
 
-![Struktur eines virtuellen Servers](images/container-diego.png)
+![Design of a virtual server](images/container-diego.png)
 
-Abbildung 2. Struktur eines virtuellen Servers
+Figure 2. Design of a virtual server
 
-In jedem virtuellen Server kommuniziert ein Anwendungsmanager mit der übrigen {{site.data.keyword.cloud_notm}}-Infrastruktur und verwaltet die Apps, die auf diesem virtuellen Server bereitgestellt sind. Jeder virtuelle Server verfügt über Container zum Trennen und Schützen der Apps. In jedem dieser Container installiert {{site.data.keyword.cloud_notm}} das geeignete Framework und die geeignete Laufzeit, die für die einzelnen Apps erforderlich sind.
+In each virtual server, an application manager communicates with the rest of the {{site.data.keyword.cloud_notm}} infrastructure, and manages the apps that are deployed to this virtual server. Each virtual server has containers to separate and protect apps. In each container, {{site.data.keyword.cloud_notm}} installs the appropriate framework and runtime that are required for each app.
 
-Wenn die
-App bereitgestellt wurde und über eine Webschnittstelle (wie für eine Java-Web-App)
-oder andere REST-basierte Services (z. B. mobile Services, die für die mobile App öffentlich zugänglich sind)
-verfügt, können Benutzer der App durch normale HTTP-Anforderungen mit ihr kommunizieren.
+When the app is deployed, if it has a web interface (as for a Java web app), or other REST-based services (such as mobile services exposed publicly to the mobile app), users of the app can communicate with it by using normal HTTP requests.
 
-![{{site.data.keyword.cloud_notm}}-App aufrufen](images/execute.png)
+![Invoking an {{site.data.keyword.cloud_notm}} app](images/execute.png)
 
-Abbildung 3. {{site.data.keyword.cloud_notm}}-App aufrufen
+Figure 3. Invoking an {{site.data.keyword.cloud_notm}} app
 
-Jeder App kann mindestens eine URL zugeordnet sein, aber jede dieser URLs muss auf den {{site.data.keyword.cloud_notm}}-Endpunkt verweisen. Wenn eine Anforderung eintrifft, prüft {{site.data.keyword.cloud_notm}} diese Anforderung, stellt fest, an welche App sie gerichtet ist, und wählt eine der Instanzen der App für den Empfang der Anforderung aus.
+Each app can have one or more URLs associated with it, but they must all point to the {{site.data.keyword.cloud_notm}} endpoint. When a request comes in, {{site.data.keyword.cloud_notm}} examines the request, determines which app it is intended for, then selects an instance of the app to receive the request.
 
 
-## Cloud Foundry-Architektur in {{site.data.keyword.cloud_notm}}
+## Cloud Foundry architecture in {{site.data.keyword.cloud_notm}}
 {: #architecture}
 
-Im Allgemeinen müssen Sie sich bei der Ausführung von Apps auf {{site.data.keyword.cloud_notm}} in Cloud Foundry keine Gedanken über die Betriebssystem- und Infrastrukturebenen machen. Die Ebenen wie Stammdateisysteme und
-Middlewarekomponenten sind so abstrahiert, dass Sie sich auf Ihren Anwendungscode
-konzentrieren können. Es gibt jedoch noch weitere Informationen zu diesen Ebenen, wenn Sie
-spezielle Angaben dazu benötigen, wo Ihre App ausgeführt wird.
+In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.cloud_notm}} in Cloud Foundry. Layers such as root filesystems and middleware components are abstracted so that you can focus on your application code. However, you can learn more about these layers if you need specifics on where your app is running.
 
-Details finden Sie im Abschnitt zum [Anzeigen von {{site.data.keyword.cloud_notm}}-Infrastrukturebenen](cf.html#infralayers).
+See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](cf.html#infralayers) for details.
 
-Als Entwickler haben Sie die Möglichkeit, über eine browserbasierte Benutzerschnittstelle mit der
-{{site.data.keyword.cloud_notm}}-Infrastruktur zu interagieren. Zum
-Bereitstellen von Web-Apps können Sie außerdem die Cloud
-Foundry-Befehlszeilenschnittstelle 'cf' verwenden.
+As a developer, you can interact with the {{site.data.keyword.cloud_notm}} infrastructure by using a browser-based user interface. You can also use a Cloud Foundry command line interface, called cf, to deploy web apps.
 
-Clients - mobile Apps, extern ausgeführte Apps, auf {{site.data.keyword.cloud_notm}} aufbauende Apps oder auch Entwickler, die gerade einen Browser verwenden - können mit den von {{site.data.keyword.cloud_notm}} gehosteten Apps interagieren. Mithilfe von REST- oder HTTP-APIs leiten Clients Anforderungen über
-{{site.data.keyword.cloud_notm}} an eine der
-App-Instanzen oder an die zusammengesetzten Services weiter.
+Clients--which can be mobile apps, apps that run externally, apps that are built on {{site.data.keyword.cloud_notm}}, or developers that are using browsers--interact with the {{site.data.keyword.cloud_notm}}-hosted apps. Clients use REST or HTTP APIs to route requests through {{site.data.keyword.cloud_notm}} to one of the app instances or the composite services.
 
-In der folgenden Abbildung ist die allgemeine Cloud Foundry-Architektur unter {{site.data.keyword.cloud_notm}} dargestellt.
+The following figure shows the high-level Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}.
 
-![{{site.data.keyword.cloud_notm}}-Architektur](images/arch.png)
+![{{site.data.keyword.cloud_notm}} architecture](images/arch.png)
 
-Abbildung 4. Cloud Foundry-Architektur unter {{site.data.keyword.cloud_notm}}
+Figure 4. Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}
 
-Sie können Ihre Apps im Hinblick auf Latenz- und Sicherheitsaspekte für unterschiedliche
-{{site.data.keyword.cloud_notm}}-Regionen
-bereitstellen. Eine Bereitstellung
-kann entweder in einer Region oder in mehreren Regionen stattfinden.
+You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, for latency or security considerations. You can choose to deploy either to one region or across multiple regions.
 
 
-![Anwendungsentwicklung in mehreren Regionen](images/multi-region.png)
+![Multi-region application development](images/multi-region.png)
 
-Abbildung 5. Anwendungsbereitstellung in mehreren Regionen
+Figure 5. Multi-region application deployment
 
-{{site.data.keyword.Bluemix_notm}}-Infrastrukturebenen
+{{site.data.keyword.Bluemix_notm}} infrastructure layers
 {: #infralayers}
 
 
-{{site.data.keyword.Bluemix_notm}} abstrahiert und verdeckt Betriebssystem- und Infrastrukturebenen, damit diese von Ihnen nicht verwaltet werden müssen. Manchmal kann es jedoch wünschenswert sein, mehr über das Betriebssystem und die Middleware für Ihre App zu wissen.
+{{site.data.keyword.Bluemix_notm}} abstracts and hides operating system and infrastructure layers, so that you don't need to manage them. However, sometimes you might want to know more about the operating system and middleware for your app.
 {:shortdesc}
 
-### {{site.data.keyword.Bluemix_notm}}-Infrastrukturebenen anzeigen
+### Viewing {{site.data.keyword.Bluemix_notm}} infrastructure layers
 {: #viewinfra}
 
-Sie können den Befehl **bluemix app stacks** ausführen, um die verfügbaren Stacks bzw. Rootdateisysteme anzuzeigen, auf denen Ihre Apps bereitgestellt werden sollen. Sie können bei der Verwendung des Befehls **bluemix app push** mit der Option *-s* und dem Stacknamen in *stack_name* auch den Stack angeben; dabei ist der 'stack_name' das Stammdateisystem, zum Beispiel `lucid64` oder `cflinuxfs2`:
+You can run the **bluemix app stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **bluemix app push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem, such as `lucid64` or `cflinuxfs2`:
 
 ```
 bluemix app push appName -s stack_name
 ```
 
-Mithilfe des Befehls `cf buildpacks` können Sie die Middlewarekomponenten anzeigen, z. B. WebSphere Liberty Profile und SDK for Node.js; diese sind als Laufzeiten für die Ausführung Ihrer App verfügbar. Des Weiteren können Sie mithilfe des folgenden Befehls
-die Laufzeitumgebung für Ihre App angeben:
+You can use the `cf buildpacks` command to show the middleware components, such as WebSphere Liberty profile and SDK for Node.js, that are available as runtimes for your app to run in. And you can specify the runtime environment for your app by using the following command:
 
 ```
 bluemix app push appName -b buildpackname

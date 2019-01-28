@@ -14,19 +14,19 @@ lastupdated: "2018-01-18"
 {:screen: .screen}
 {:pre: .pre}
 
-# Community-Buildpacks verwenden
+# Using community buildpacks
 {: #using_buildpacks}
 
-Wenn Sie im {{site.data.keyword.Bluemix}}-Katalog keinen Starter finden, der die gewünschte Laufzeitumgebung bereitstellt, können Sie ein externes Buildpack in {{site.data.keyword.Bluemix_notm}} integrieren. Sie können ein angepasstes, mit Cloud Foundry kompatibles Buildpack angeben, wenn Sie Ihre App mithilfe des Befehls 'cf push' bereitstellen.
+If you can't find a starter in the {{site.data.keyword.Bluemix}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.Bluemix_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your app by using the cf push command.
 {:shortdesc}
 
-Externe Buildpacks werden Ihnen von der Cloud Foundry-Community für die Verwendung als eigene Buildpacks zur Verfügung gestellt. Bevor Sie Ihre App für {{site.data.keyword.Bluemix_notm}} bereitstellen, müssen Sie die Befehlszeilenschnittstelle 'cf' installieren.
+External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your app to {{site.data.keyword.Bluemix_notm}}, make sure that you install the cf command line interface.
 
-**Hinweis:** Externe Buildpacks werden von IBM nicht bereitgestellt. Wenden Sie sich an die Cloud Foundry-Community, wenn Sie Unterstützung benötigen.
+**Note:** External buildpacks are not provided by IBM. Contact the Cloud Foundry community for support.
 
-## Integrierte Community-Buildpacks
+## Built-in community buildpacks
 
-{{site.data.keyword.Bluemix_notm}} ermöglicht die Verwendung integrierter Buildpacks, die von der Cloud Foundry-Community bereitgestellt werden. Die integrierten Community-Buildpacks können Sie mit dem Befehl `cf buildpacks` anzeigen:
+In {{site.data.keyword.Bluemix_notm}}, you can use built-in buildpacks that are provided by the Cloud Foundry community. To see built-in community buildpacks, run the `cf buildpacks` command:
 
 ```
 cf buildpacks
@@ -41,52 +41,52 @@ nodejs_buildpack   9      true      false    buildpack_nodejs_v8-177-g2b0a5cf.zi
 {:screen}
 
 
-Bei derselben Laufzeit bzw. demselben Framework haben die von IBM erstellten Buildpacks Vorrang vor den Community-Buildpacks. Wenn Sie das Community-Buildpack verwenden wollen, um das von IBM erstellte Buildpack zu überschreiben, müssen Sie das Buildpack mithilfe der Option '-b' im Befehl 'cf push' angeben.
-Sie können beispielsweise das Community-Buildpack für Java™-Web-Apps verwenden:
+For the same runtime or framework, IBM-created buildpacks take precedence over the community ones. If you want to use the community buildpack to overwrite the IBM-created buildpack, you must specify the buildpack by using the -b option with the cf push command.
+For example, you can use the community buildpack for Java™ web apps:
 
 ```
 cf push app_name -b java_buildpack -p app_path
 ```
 {:pre}
 
-Sie können auch das Community-Buildpack für Node.js-Apps verwenden:
+You can also use the community buildpack for Node.js app:
 
 ```
 cf push app_name -b nodejs_buildpack -p app_path
 ```
 {:pre}
 
-Bei Laufzeitumgebungen bzw. Frameworks, die zwar nicht von den von IBM erstellten Buildpacks, jedoch von integrierten Community-Buildpacks unterstützt werden, ist eine Verwendung der Option '-b' mit dem Befehl 'cf push' nicht erforderlich. Für Ruby-Apps beispielsweise gibt es keine von IBM erstellten Buildpacks. Sie können das integrierte Community-Buildpack verwenden, indem Sie den folgenden Befehl eingeben:
+For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the -b option with the cf push command. For example, for Ruby apps, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command:
 
 ```
 cf push app_name -p app_path
 ```
 {:pre}
 
-## Externe Buildpacks
+## External buildpacks
 
-In {{site.data.keyword.Bluemix_notm}} können Sie mit externen oder mit angepassten Buildpacks arbeiten. Sie müssen die URL des Buildpacks mit der Option '-b' sowie den Stack mit der Option `-s` im Befehl **cf push** angeben. Wenn Sie zum Beispiel ein externes Community-Buildpack für statische Dateien verwenden möchten, führen Sie den folgenden Befehl aus:
+You can use external or custom buildpacks in {{site.data.keyword.Bluemix_notm}}. You must specify the URL of the buildpack with the -b option, and specify the stack with the `-s` option on the **cf push** command. For example, to use an external community buildpack for static files, run the following command
 
 ```
 cf push app_name -p app_path -b https://github.com/cloudfoundry/staticfile-buildpack.git
 ```
 {:pre}
 
-Wenn Sie nicht das integrierte Community-Buildpack für Ruby-Apps verwenden möchten, können Sie auch ein externes Buildpack verwenden. Geben Sie dazu den folgenden Befehl ein:
+If you don't want to use the built-in community buildpack for Ruby apps, you can use an external buildpack by entering the following command:
 
 ```
 cf push app_name -p app_path -b https://github.com/cloudfoundry/ruby-buildpack.git
 ```
 {:pre}
 
-Sie können für Ihre Anwendung auch ein angepasstes Buildpack verwenden. Geben Sie z. B. zum Verwenden eines Open-Source-PHP-Buildpacks, das von der Cloud Foundry-Community bereitgestellt wird, beim Bereitstellen Ihrer PHP-App in Bluemix den folgenden Befehl ein, um die Git-Repository-URL des Buildpacks anzugeben:
+You can also use a custom buildpack for your application. For example, to use an open source PHP buildpack that is provided by the Cloud Foundry community, when you deploy your PHP app to Bluemix, enter the following command to specify the Git repository URL of the buildpack:
 
 ```
 cf push app_name -p app_path -b https://github.com/cloudfoundry/php-buildpack.git
 ```
 {:pre}
 
-Es ist auch möglich, die Datei `manifest.yml` des Projekts zu bearbeiten, um eine `Buildpack`-Zeile hinzuzufügen:
+It is also possbile to edit your project's `manifest.yml` file to add a `buildpack` line:
 
 ```
 buildpack: https://github.com/cloudfoundry/python-buildpack.git
@@ -94,19 +94,19 @@ buildpack: https://github.com/cloudfoundry/python-buildpack.git
 {:pre}
 
 
-## Version des Java-Buildpacks angeben
+## Specifying the Java buildpack version
 
-Verwenden Sie den Befehl `cf set-env`. Geben Sie beispielsweise den folgenden Befehl ein, um die Java-Version auf 1.7.0 festzulegen:
+Use the `cf set-env` command. For example, enter the following command to set the Java version to 1.7.0:
 ```
 cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
 ```
 {:pre}
 
-Anschließend können Sie für Ihre App ein erneutes Staging durchführen, damit die Änderung wirksam wird:
+Then, restage your app to make the change effective:
 
 ```
 cf restage app_name
 ```
 {:pre}
 
-Mithilfe der Datei `manifest.yml`. Sie können die gewünschte Umgebungsvariable und den gewünschten Wert direkt zur Datei hinzufügen. Ausführliche Informationen finden Sie unter [Umgebungsvariablen](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block).
+Use the `manifest.yml` file. You can add the environment variable and the value that you want to specify directly to the file. For detailed information, see [Environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block)
