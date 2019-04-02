@@ -33,6 +33,8 @@ Cloud Foundry
         starter_app_usage.md
         depapps.md
         connecting_apps.md
+        updating_domains.md
+        custom_domains.md
         monitoring_logging_cloud_foundry_apps.md
   
     cfee.md
