@@ -13,7 +13,7 @@ lastupdated: "2018-11-30"
 # IBM Cloud Foundry offerings
 {: #ibmcf-offerings}
 
-IBM offers the Cloud Foundry PaaS in several hosting models, allowiung you to customize your PaaS experience and balance a
+IBM offers the Cloud Foundry PaaS in several hosting models, allowing you to customize your PaaS experience and balance a
 range of considerations, including price, deployment speed, and security.
 
 ## Public
