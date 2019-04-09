@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017, 2018
 
-lastupdated: "2017-12-15"
+lastupdated: "2019-04-09"
 
 ---
 
@@ -39,6 +39,9 @@ There are three ways to develop your app:
 
 <a href="/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app">Add a toolchain</a> that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, <a href="/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using">use the toolchain</a> to develop and deploy your app.
 
+Try the [Using toolchains with a simple Cloud Foundry app](https://www.ibm.com/cloud/garage/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app. 
+{:tip}
+
 ## Creating your web app with the {{site.data.keyword.Bluemix_notm}} user interface
 {: #ee_appui}
 
@@ -53,7 +56,7 @@ For this scenario, you want to develop a web app using Node.js. Assume that you 
   3. Select **SDK for Node.js**.
   4. Type a unique name for your app, and click **Create**. The app name must be unique in the whole {{site.data.keyword.Bluemix_notm}} environment.
 
-Now, you can see the **Getting started tutorial**. Follow the instructions to download the starter code of your app, modify, and deploy it.
+Once created, you will see a **Getting started tutorial** page in the left navigation pane. Follow the instructions in that page to download the starter code of your app, modify, and deploy it.
 
 The app is assigned with 1 instance and 512 MB memory quota by default. You can increase the memory, or add more instances to get high availability of your app, for example, 3 instances with 1 GB memory per instance. Click **View app overview** to specify your app instances and memory quota. For example, type 3 for instances and 1 GB for memory quota, and click **Save**. You can also see the files, logs, and environment variables to troubleshoot your problems.
 
