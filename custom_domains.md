@@ -86,11 +86,11 @@ After you configure the custom domain in {{site.data.keyword.cloud_notm}}, map t
 2. Map the custom domain name to the secure endpoint for the {{site.data.keyword.cloud_notm}} region where your application is running. Use the following region endpoints to provide the URL route that is allocated to your organization in {{site.data.keyword.cloud_notm}}. For example, point your CNAME to `<custom-domain>.us-east.cf.cloud.ibm.com.`
 
   **Cloud Foundry endpoints:**
-  * US-SOUTH - `<custom-domain>.us-south.cf.cloud.ibm.com`
-  * US-EAST - `<custom-domain>.us-east.cf.cloud.ibm.com`
-  * EU-DE - `<custom-domain>.eu-de.cf.cloud.ibm.com`
-  * EU-GB - `<custom-domain>.eu-gb.cf.cloud.ibm.com`
-  * AU-SYD - `<custom-domain>.au-syd.cf.cloud.ibm.com`
+  * US-SOUTH - `custom-domain.us-south.cf.cloud.ibm.com`
+  * US-EAST - `custom-domain.us-east.cf.cloud.ibm.com`
+  * EU-DE - `custom-domain.eu-de.cf.cloud.ibm.com`
+  * EU-GB - `custom-domain.eu-gb.cf.cloud.ibm.com`
+  * AU-SYD - `custom-domain.au-syd.cf.cloud.ibm.com`
 
 ## Accessing your application
 {: #access-app}
