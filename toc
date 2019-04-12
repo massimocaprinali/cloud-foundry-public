@@ -36,6 +36,7 @@ Cloud Foundry
         updating_domains.md
         custom_domains.md
         monitoring_logging_cloud_foundry_apps.md
+        autoscaling.md
   
     cfee.md
     private.md
