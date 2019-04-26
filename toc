@@ -41,3 +41,8 @@ Cloud Foundry
     cfee.md
     private.md
     {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    ts_cf.md
+    {: .navgroup-end}
+    
