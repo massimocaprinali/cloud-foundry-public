@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-01"
+lastupdated: "2019-05-07"
 
 keywords: apps, custom, domain, cloud foundry, add, subdomain, custom route, dns, domainname, domain name, endpoint
 
@@ -83,7 +83,7 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
 After you configure the custom domain in {{site.data.keyword.cloud_notm}}, map the custom domain to the {{site.data.keyword.cloud_notm}} system domain on your registered DNS server:
 
 1. Set up a 'CNAME' record for the custom domain name on your DNS server. Steps for setting up the CNAME record vary depending on your DNS provider. For example, if you use GoDaddy, you follow the [Domains Help](https://www.godaddy.com/help/add-a-cname-record-19236){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") guidance from GoDaddy.
-2. Map the custom domain name to the secure endpoint for the {{site.data.keyword.cloud_notm}} region where your application is running. Use the following region endpoints to provide the URL route that is allocated to your organization in {{site.data.keyword.cloud_notm}}. For example, point your CNAME to `<custom-domain>.us-east.cf.cloud.ibm.com.`
+2. Map the custom domain name to the secure endpoint for the {{site.data.keyword.cloud_notm}} region where your application is running. Use the following region endpoints to provide the URL route that is allocated to your organization in {{site.data.keyword.cloud_notm}}. For example, point your CNAME to `custom-domain.us-east.cf.cloud.ibm.com.`
 
   **Cloud Foundry endpoints:**
   * US-SOUTH - `custom-domain.us-south.cf.cloud.ibm.com`
