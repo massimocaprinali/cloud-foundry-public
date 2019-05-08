@@ -15,6 +15,12 @@ Cloud Foundry
         [Working with a proxy](https://console.bluemix.net/docs/runtimes/common/workingWithProxy.html)
         [Troubleshooting for creating runtimes](https://console.bluemix.net/docs/troubleshoot/ts_runtimes.html)
         [Buildpack support statement](https://console.bluemix.net/docs/runtimes/common/buildpackSupport.html)
+        
+    {: .topicgroup}
+    Cloud Foundry Autoscaling
+        autoscaling.md
+        autoscaling_migration.md
+        autoscaling_cli.md
 
     {: .topicgroup}
     Best practices  
@@ -36,7 +42,6 @@ Cloud Foundry
         updating_domains.md
         custom_domains.md
         monitoring_logging_cloud_foundry_apps.md
-        autoscaling.md
   
     cfee.md
     private.md
