@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry-public" audience="compute" href="/docs/cfapps/index.html" path="cloud-foundry-public"}
+{: .toc subcollection="cloud-foundry-public" category="compute" audience="compute" href="/docs/cfapps/index.html" path="cloud-foundry-public"}
 Cloud Foundry
 
     {: .navgroup id="learn"}
