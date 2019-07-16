@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017, 2018
-lastupdated: "2018-02-26"
+  years: 2015, 2019
+lastupdated: "2018-07-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -30,16 +30,16 @@ Cloud Foundry is the premier industry standard Platform-as-a-Service (PaaS), tha
 
 **Extend apps with services** - Runtimes link IBM Cloud services to applications as endpoints, giving any instance of an application embedded knowledge of how to manage relevant calls and data. In fact, runtimes manage all linked resources this way: SDKs, APIs (whether made available as cloud services or exposed from within a traditional enterprise as custom services), and also applications themselves when used as resources by other applications.
 
-**Access Control** - Fine grain assignment/dispensing of compute capacity to development teams.
+**Access control** - Fine grain assignment/dispensing of compute capacity to development teams.
 
-**Automatic Placement** - Applications are automatically placed across multiple data-center PODs fpr maximum reliability.
+**Automatic placement** - Applications are automatically placed across multiple data-center PODs fpr maximum reliability.
 
-**Automatic Health Management** - Crashing applications will restart automatically.
+**Automatic health management** - Crashing applications will restart automatically.
 
-**Automatic Routing** - Internet reachable routes are automatically created for your applications.
+**Automatic routing** - Internet reachable routes are automatically created for your applications.
 
-**High Availaibility** - Supports full high avaialbility for extremely high application avaialbility
+**High availability** - Supports full high availability for extremely high application availability.
 
-**Automatic Deployment scaling** - The Auto-Scaling for IBM Cloud service enables you to automatically increase or decrease the compute capacity of your application, to rapidly adjust to dynamic loading needs.
+**Automatic deployment scaling** - The Auto-Scaling for IBM Cloud service enables you to automatically increase or decrease the compute capacity of your application, to rapidly adjust to dynamic loading needs.
 
 
