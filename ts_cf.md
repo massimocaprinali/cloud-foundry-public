@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-09-03"
 
 keywords: apps, application, troubleshooting, debug apps, known issues, debug, help, configuration, app, troubleshoot, error, errors, failure, failed, fail, issues, applications, cloud foundry
 
@@ -157,7 +157,7 @@ When you run out of disk space, you might see a message that states that the dis
 The default disk quota that is allocated for an app is 1 GB. If you need more disk space, you must manually specify the disk quota.
 {: tsCauses}
 
-Use one of the following methods to specify your disk quota. The maximum disk quota that you can specify is 2 GB. If 2 GB is still not enough, try an external service such as [Object Store](/docs/services/cloud-object-storage?topic=cloud-object-storage-for-developers#for-developers).
+Use one of the following methods to specify your disk quota. The maximum disk quota that you can specify is 2 GB. If 2 GB is still not enough, try an external service such as [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started).
 {: tsResolve}
 
   * In the `manifest.yml` file, add the following item:

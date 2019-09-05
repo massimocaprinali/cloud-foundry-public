@@ -1,54 +1,73 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry-public" category="compute" audience="compute" href="/docs/cfapps/index.html" path="cloud-foundry-public"}
-Cloud Foundry
+{: .toc subcollection="cloud-foundry-public" category="compute" audience="compute" href="/docs/cloud-foundry-public/getting-started.html" path="cloud-foundry-public"}
+Cloud Foundry Public
 
     {: .navgroup id="learn"}
-    about-cf.md
-    cf.md
-      
-    {: .topicgroup}
-    Cloud Foundry Buildpacks
-        [Available buildpacks](https://cloud.ibm.com/docs/runtimes-common/index.html)
-        [Managing Liberty apps](https://cloud.ibm.com/docs/runtimes/liberty/index.html)
-        [Managing Node.js apps](https://cloud.ibm.com/docs/runtimes/nodejs/index.html)
-        [Working with a proxy](https://cloud.ibm.com/docs/runtimes-common?topic=runtimes-common-working_with_proxy)
-        [https://cloud.ibm.com/docs/runtimes-common?topic=runtimes-common-runtimes)
-        [Buildpack support statement](https://cloud.ibm.com/docs/runtimes-common?topic=runtimes-common-buildpack_support_statement)
-        
-    {: .topicgroup}
-    Cloud Foundry Autoscaling
-        autoscaling.md
-        autoscaling_migration.md
-        autoscaling_cli.md
+    getting-started.md
+    /cloud-foundry/cloud-foundry-what-is-cloud-foundry
+    /cloud-foundry/cloud-foundry-howwork
 
     {: .topicgroup}
-    Best practices  
-        goodapp.md
-        production_considerations.md
-    
-    ibmcf-offerings.md
-    
+    Best practices
+        /cloud-foundry/cloud-foundry-goodapp
+        /cloud-foundry/cloud-foundry-production
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
     {: .topicgroup}
-    IBM Cloud Foundry Public
-        ee.md
-        patterns.md
-        byob.md
-        index.md 
-        hostingapps.md
-        starter_app_usage.md
+    Setting up your IBM Cloud environment
+        /cloud-foundry/cloud-foundry-bpimplementation
+        /cloud-foundry/cloud-foundry-orgstructure
+        /cloud-foundry/cloud-foundry-determinespaces
+        /iam/iam-cfaccess
+
+    {: .topicgroup}
+    Creating and deploying apps
+        create-app.md
         depapps.md
+        hostingapps.md
         connecting_apps.md
-        updating_domains.md
+        /cloud-foundry/cloud-foundry-starter-eclipse
+        /cloud-foundry/cloud-foundry-starter-vs
+        /cloud-foundry/cloud-foundry-cf-deploy-cli
+        /cloud-foundry/Node-RED/cloud-foundry-gettingstarted-nodered
+        /cloud-foundry/Node-RED/cloud-foundry-startNodeRed
+
+    {: .topicgroup}
+    Developing with buildpacks
+        /cloud-foundry/cloud-foundry-available_buildpacks
+        /cloud-foundry/cloud-foundry-using_buildpacks
+        /cloud-foundry/cloud-foundry-getting-started-liberty
+        /cloud-foundry/cloud-foundry-getting-started-node
+        /cloud-foundry/cloud-foundry-getting-started-dotnet
+        /cloud-foundry/cloud-foundry-getting-started-swift
+        /cloud-foundry/cloud-foundry-getting-started-go
+        /cloud-foundry/cloud-foundry-getting-started-php
+        /cloud-foundry/cloud-foundry-getting-started-python
+        /cloud-foundry/cloud-foundry-getting-started-ruby
+        /cloud-foundry/cloud-foundry-getting-started-tomcat
+        /cloud-foundry/cloud-foundry-working_with_proxy
+
+    {: .topicgroup}
+    Managing your apps
         custom_domains.md
+        updating_domains.md
         monitoring_logging_cloud_foundry_apps.md
-  
-    cfee.md
-    private.md
+        autoscaling.md
+        autoscaling_migration.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    /cloud-foundry/cloud-foundry-app_management
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    ts_cf.md
+    {: .topicgroup}
+    Troubleshooting
+        ts_cf.md
+        /cloud-foundry/cloud-foundry-runtimes
+
+    /cloud-foundry/cloud-foundry-buildpack_support_statement
     {: .navgroup-end}
-    

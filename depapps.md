@@ -1,14 +1,15 @@
 ---
 
 copyright:
-  years: 2015, 2017, 2018
-lastupdated: "2018-02-26"
+  years: 2015, 2019
+lastupdated: "2019-08-28"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:screen: .screen}
+{:note: .note}
 
 # Deploying apps
 {: #deployingapps}
@@ -29,27 +30,27 @@ During the staging phase, {{site.data.keyword.Bluemix_notm}} takes care of the a
 #### Staging a new app
 {: #stageapp}
 
-All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the `bx push` command:
+All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the `**ibmcloud app push**` command:
 
   1. Deploy the application:
 
   ```
-  $ bx app push APPLICATION_NAME
+  $ ibmcloud app push APPLICATION_NAME
   ```
 
-For more details on the `bx app push` command, see [bx app push](/docs/cli/reference/bluemix_cli/bx_cli.html#cf_target).
+For more details,, see [`**ibmcloud push**`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 ### Migrating an existing app to {{site.data.keyword.Bluemix_notm}}
 {: #migrateapp}
 
 Diego is the default Cloud Foundry architecture for {{site.data.keyword.Bluemix_notm}}, and support for DEAs will be removed, so you must migrate all of your existing applications by updating each app. Start migrating your apps to Diego by updating the application with the Diego flag. The application immediately attempts to start running on Diego and stops running on the DEAs.
 
-As your application is updated from DEA architecture to Diego, you might experience a short downtime, or a prolonged downtime, if the application is not compatible with Diego. To limit downtime, perform a [blue-green deploy](../apps/updapps.html#blue_green) by deploying a copy of your application to Diego, and then swapping routes and scaling down the DEA application.
+As your application is updated from DEA architecture to Diego, you might experience a short downtime, or a prolonged downtime, if the application is not compatible with Diego. To limit downtime, perform a blue-green deploy by deploying a copy of your application to Diego, and then swapping routes and scaling down the DEA application.
 
 Complete the following steps to migrate your app to Diego:
 
  1.  Install both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window}.
- 2. Review the [known issues list](depapps.html#knownissues).
+ 2. Review the known issues list in the following section.
  3. Set the Diego flag to change your app to running on Diego:
   ```
   $ cf enable-diego APPLICATION_NAME
@@ -77,7 +78,8 @@ For the comprehensive list of known issues, see the Cloud Foundry documentation 
 
 Until support for the older DEA architecture is removed, you can run the following command to transition back to DEAs: `cf disable-diego APPLICATION_NAME`. You can also still deploy apps to the DEA architecture until support is removed.
 
-**Note**: You must have both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window} installed to use the `disable-diego` command.
+You must have both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window} installed to use the `disable-diego` command.
+{: note}
 
 1. Deploy the application without starting it:
 ```
@@ -95,24 +97,24 @@ $ cf start APPLICATION_NAME
 ### Starting an application
 {: #startapp}
 
-When an application is started, the instance or instances of the application container are created. For applications running on Diego, you can use the **cf ssh** or **cf scp** command to access the file system of the application container which includes the logs. The **cf files** command does not work for apps running on the Diego architecture.
+When an application is started, the instance or instances of the application container are created. For applications running on Diego, you can use the `**cf ssh**` or `**cf scp**` command to access the file system of the application container which includes the logs. The `**cf files**` command does not work for apps running on the Diego architecture.
 
-**Note**: If you still have applications running on DEAs, you can use the **cf files** command to view the files within the application container until support for DEAs is removed.
+If you still have applications running on DEAs, you can use the `**cf files**` command to view the files within the application container until support for DEAs is removed.
 
 If the application fails to start, the application is stopped and the entire contents of your application container are removed. Therefore, if an application stops or if the staging process of an application fails, log files will not be available for you to use.
+{: note}
 
-If the logs for your application are no longer available so that the **cf ssh**, **cf scp**, or **cf files** command can no longer be used to see the cause of the staging errors inside the application container, you can use the **cf logs** command instead. The **cf logs** command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){:new_window}.
+If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){:new_window}.
 
-**Note:** The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `cf app logs appname` command in a separate command line from the cf command line interface to track the logs when you deploy the application.
-
-If you experience problems when you stage your applications on {{site.data.keyword.Bluemix_notm}}, you can follow the steps in [Debugging staging errors](/docs/debug/index.html#debugging-staging-errors) to resolve the problem.
+The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `cf app logs appname` command in a separate command line from the cf command line interface to track the logs when you deploy the application.
+{: note}
 
 ## Deploying applications by using the cf command
 {: #dep_apps}
 
 When you deploy your applications to {{site.data.keyword.Bluemix_notm}} from the command line interface, a buildpack must be provided as the runtime environment according to your application language and framework. You can also use the Delivery Pipeline service to deploy applications to {{site.data.keyword.Bluemix_notm}}.
 
-{{site.data.keyword.Bluemix_notm}} [provides buildpacks](/docs/runtimes/common/index.html#available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.Bluemix_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
+{{site.data.keyword.Bluemix_notm}} [provides buildpacks](/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.Bluemix_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
 
 If you use an external buildpack, you must specify the URL of the buildpack by using the **-b** option when you deploy your application to {{site.data.keyword.Bluemix_notm}} from the command prompt.
 
@@ -122,7 +124,7 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   cf push
   ```
 
-  For more information about Liberty Buildpack, see [Liberty for Java](/docs/runtimes/liberty/index.html).
+  For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-getting-started-liberty).
 
   * To deploy Java Tomcat applications to {{site.data.keyword.Bluemix_notm}}, use the following command:
 
@@ -180,13 +182,13 @@ A `package.json` file must be in your Node.js application for the application to
 
 An app is specific to the space where it is deployed. You can't move or copy an app from one space to another in {{site.data.keyword.Bluemix_notm}}. To deploy an app in multiple spaces, you must deploy your app in each space where you want to use the app by the following steps:
 
-  1. Switch to the space where you want to deploy your app by using the **cf target** command with the **-s** option:
+  1. Switch to the space where you want to deploy your app by using the `**cf target**` command with the **-s** option:
 
   ```
   cf target -s <space_name>
   ```
 
-  2. Go to your app directory and deploy your app by using the **cf app push** command, where appname must be unique within your domain.
+  2. Go to your app directory and deploy your app by using the `**cf app push**` command, where appname must be unique within your domain.
 
   ```
   cf app push appname
@@ -195,13 +197,13 @@ An app is specific to the space where it is deployed. You can't move or copy an 
 ## Application manifest
 {: #appmanifest}
 
-Application manifests contain options that are applied to the **cf push** command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.Bluemix_notm}}.
+Application manifests contain options that are applied to the `**cf push**` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.Bluemix_notm}}.
 
 In application manifests, you can specify options such as the number of application instances to create, the amount of memory and disk quota to allocate to applications, and other environment variables for the application. You can also use application manifests to automate application deployments. The default name of a manifest file is `manifest.yml`.
 
 ### Supported options in the manifest file
 
-The following table shows the supported options that you can use in an application manifest file. If you choose to use a different file name other than `manifest.yml`, you must use the **-f** option with the **cf push** command. In the following example, `appManifest.yml` is the file name:
+The following table shows the supported options that you can use in an application manifest file. If you choose to use a different file name other than `manifest.yml`, you must use the **-f** option with the `**cf push**` command. In the following example, `appManifest.yml` is the file name:
 
 ```
 cf push -f appManifest.yml
@@ -256,7 +258,7 @@ Environment variables contain the environment information of a deployed applicat
 
 You can view the following environment variables of a running {{site.data.keyword.Bluemix_notm}} application by using the **bluemix app env** command or from the {{site.data.keyword.Bluemix_notm}} user interface:
 
-  * User-defined variables that are specific for an application. For information about how to add a user-defined variable to an app, see [Adding user-defined environment variables](#ud_env).
+  * User-defined variables that are specific for an application. For more information, see [Adding user-defined environment variables](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#ud_env).
 
   * The VCAP_SERVICES variable, which contains connection information to access a service instance. If your application is bound to multiple services, the VCAP_SERVICES variable includes the connection information for each service instance. For example:
 
@@ -442,15 +444,16 @@ You can customize deployment tasks for your applications. For example, you can s
 
 To specify start commands for your application, you can use one of the following ways. The start commands that you specify will overwrite the default start commands that the buildpack provides.
 
-**Note:** If you want the buildpack start commands to take precedence, specify **null** as the start command.
+If you want the buildpack start commands to take precedence, specify **null** as the start command.
+{: note}
 
-  * Use the **cf push** command and specify the -c parameter. For example, when you deploy a Node.js application, you can specify the **node app.js** start command on the -c parameter:
+  * Use the `**cf push**` command and specify the -c parameter. For example, when you deploy a Node.js application, you can specify the `**node app.js**` start command on the -c parameter:
 
   ```
   cf push appname -p app_path -c "node app.js"
   ```
 
-  * Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js application, you can specify the **node app.js** start command in the manifest file:
+  * Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js application, you can specify the `**node app.js**` start command in the manifest file:
 
   ```
   command: node app.js
@@ -498,7 +501,8 @@ export NODE_ENV=production;
 
 When you use the cf command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.Bluemix_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.Bluemix_notm}}, you can create a `.cfignore` file at the root directory of your application.
 
-**Note:** The `.cfignore` file must be in UTF-8 format.
+The `.cfignore` file must be in UTF-8 format.
+{: note}
 
 The `.cfignore` file contains the names of files and directories that you want to ignore, one name per line. You can use an asterisk (*) as a wildcard character. When you specify a directory, all files and subdirectories under that directory are ignored also. For example, the following content in the `.cfignore` file indicates that all the `.swp` files and all files and subdirectories under the `tmp/` directory won't be uploaded to {{site.data.keyword.Bluemix_notm}}.
 

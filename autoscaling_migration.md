@@ -13,10 +13,10 @@ lastupdated: "2019-04-18"
 {:screen: .screen}
 {:tip: .tip}
 
-# Migration from legacy Auto-Scaling service
+# Migrating from the legacy Auto-Scaling service
 {: #autoscale_migration}
 
-This new App Autoscaler offering is a replacement of the legacy [Auto-Scaling service](legacy-autoscaling-catalog). By migrating to the new autoscaler, you will have the following benefits:
+This new App Autoscaler offering is a replacement of the legacy. By migrating to the new autoscaler, you will have the following benefits:
 
 * Simplified experience: No service creation and binding are needed to use the auto-scaling feature. You can directly configure the policy through the UI or CLI.
 

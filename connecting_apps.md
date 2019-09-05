@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2019-05-21"
+  years: 2017, 2019
+lastupdated: "2019-09-03"
 
 ---
 
@@ -26,7 +26,7 @@ Aliases are like symlinks that hold references to remote resources and enable in
 The following rules apply to aliases:
 
 * There is no extra charge for an alias, but each alias counts against your quota in your Cloud Foundry organization.
-* You can create only one alias per Cloud Foundry space in the {{site.data.keyword.Bluemix_notm}} console. However, more than one alias per space can be created using the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Commands for managing resource groups and resources](/docs/cli/reference/bluemix_cli/bx_cli.html#commands-for-managing-resource-groups-and-resources).
+* You can create only one alias per Cloud Foundry space in the {{site.data.keyword.Bluemix_notm}} console. However, more than one alias per space can be created using the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Working with resource groups and resources](/docs/cli?topic=cloud-cli-ibmcloud_commands_resource).
 * You can create multiple connections between your IAM-managed service and any Cloud Foundry application in any space, organization, and region in the same account if you have permission.
 * Multiple connections made in the same space to different Cloud Foundry apps from an IAM-managed service instance will use the same alias.
 * Un-binding an IAM-managed service instance *will not* delete the Cloud Foundry service instance that represents the alias.
@@ -46,7 +46,7 @@ To connect your IAM-managed service instance to a Cloud Foundry application:
 
 4. Specify the **Access Role for Connection**. This value sets the IAM service access role. For more information, see [IAM access](/docs/iam/users_roles.html#userroles).
 
-5. Optionally, you can provide a **Service ID for Connection** by either allowing IAM to generate a unique value for you, or by providing an existing service ID. For more information, see [Creating and managing service IDs](https://console.stage1.bluemix.net/docs/iam/serviceid.html#serviceids).
+5. Optionally, you can provide a **Service ID for Connection** by either allowing IAM to generate a unique value for you, or by providing an existing service ID. For more information, see [Creating and managing service IDs](/docs/iam?topic=iam-serviceids).
 
 6. Click **Create**.
 
@@ -68,4 +68,4 @@ The easisest way to delete the alias is to delete the IAM-managed service instan
 ## Creating a connection between multiple Cloud Foundry services
 {: #cf}
 
-For more details about binding a Cloud Foundry service to another Cloud Foundry service, see [Using services in another service](/docs/apps?topic=creating-apps-add-resource).
+For more details about binding a Cloud Foundry service to another Cloud Foundry service, see [Using services in another region](/docs/resources?topic=resources-cross_region_service).

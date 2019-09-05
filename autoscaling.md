@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-18"
+lastupdated: "2019-09-03"
 
 ---
 
@@ -16,11 +16,13 @@ lastupdated: "2019-04-18"
 # Autoscaling applications
 {: #autoscale_cloud_foundry_apps}
 
-Auto-scaling support for Cloud Foundry applications is available on {{site.data.keyword.Bluemix}}.  This capability is built on the open-source [App-Autoscaler project][autoscaler_project], and allows you to adjust the number of application instances automatically through operational metrics and/or time period.
+{{site.data.keyword.Bluemix}} has a built-in autoscaling support for Cloud Foundry applications to adjust application instance number automatically through 
+  * Dynamic scaling based on application performance metrics.
+  * Scheduled scaling based on time.
 
-## Getting started with autoscaling on Cloud Foudry Public
+This capability is offered based on Cloud Foundry open source project [App-Autoscaler][autoscaler_project]. Refer to [user guide][autoscaler_user_guide] to get started. 
 
-The easiest way to explore the auto-scaling functionality is through the {{site.data.keyword.Bluemix}} user interface.
+## Managing autoscaling from the console
 
 If you already have an application deployed on Cloud Foundry,  access the autoscaling page with the following steps:
 
@@ -30,12 +32,99 @@ If you already have an application deployed on Cloud Foundry,  access the autosc
 4. Select the **Autoscaling** in the left navigation pane.
 5. In the **Policy** tab configure your scaling policy for the application.
 
-If you don't have an Cloud Foundry application running on {{site.data.keyword.Bluemix}}, [deploy a Cloud Foundry application][deploy_app] to {{site.data.keyword.Bluemix}} first. 
+If you don't have an Cloud Foundry application running on {{site.data.keyword.Bluemix}}, [deploy a Cloud Foundry application](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) to {{site.data.keyword.Bluemix}} first. 
 
-## Getting started with autoscaling on Cloud Foundry Enterprise Environment (CFEE)
+## Managing autoscaling from the CLI
 
-Refer to [application auto-scaling documentation for CFEE][autoscaling_cfee_doc].
+You can use  App Autoscaler command-line interface plug-in (aka AutoScaler CLI) to manage policy, query metrics and scaling history. 
 
+### Installing AutoScaler CLI
+Use the following command to install `AutoScaler CLI` which is a plugin of Cloud Foundry CLI.  
+
+``` 
+cf install-plugin -r CF-Community app-autoscaler-plugin
+```
+{:codeblock} 
+
+The same command can be used to update `AutoScaler CLI` plugin to the latest version if you have a prior installation. 
+
+### Using the AutoScaler CLI
+
+If you already logged in to a Cloud Foundry environment on {{site.data.keyword.Bluemix}} and have applications running in your space as described in [deploying apps guide][deploy_app], follow steps below to create a scaling policy for your application, and query metrics and scaling history. 
+
+ *  (optional) Confirm the App-Autoscaler API endpoint is set correctly by default.  
+
+    If Cloud Foundry API endpoint is presented as `api.<DOMAIN>`, the App-Autoscaler API endpoint should be `autoscaler.<DOMAIN>`.  
+    Use the command below to check the App-Autoscaler API endpoint setting.
+
+    ```
+    cf asa
+    ```
+    {:codeblock} 
+
+    If the App-Autoscaler API endpoint is incorrect, you need to reset it with command:
+
+    ```
+    cf asa autoscaler.<DOMAIN>
+    ```
+    {:codeblock} 
+
+
+*  Create a policy JSON file on your local machine. 
+
+    ```
+    cat > <YOUR_POLICY_FILE> << EOF
+    {
+            "instance_min_count": 1,
+            "instance_max_count": 5,
+            "scaling_rules": [
+                    {
+                            "metric_type": "memoryutil",
+                            "breach_duration_secs": 120,
+                            "threshold": 80,
+                            "operator": ">=",
+                            "cool_down_secs": 120,
+                            "adjustment": "+1"
+                    },
+                    {
+                            "metric_type": "memoryutil",
+                            "breach_duration_secs": 120,
+                            "threshold": 10,
+                            "operator": "<",
+                            "cool_down_secs": 120,
+                            "adjustment": "-1"
+                    }
+            ]
+    }
+    EOF
+    ```
+    {:codeblock} 
+
+    The policy above is used to trigger  scaling based on memory utilization  when the defined threshold is breached for at least `120    seconds`.  Refer to [Cloud Foundry App-Autoscaler user guide][autoscaler_user_guide] for how to create your own autoscaling policy.
+
+*  Attach the policy to your application
+
+    ```
+    cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
+    ```
+    {:codeblock} 
+
+*  (optional) Furthermore, you can query the most recent aggregated metrics of your application. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
+
+    ```
+    cf asm <YOUR_APP> <METRIC_TYPE> --desc
+    ```
+    {:codeblock} 
+
+*  (optional) Use the command below to query scaling history:
+
+    ```
+    cf ash <YOUR_APP> --desc
+    ```
+    {:codeblock} 
+
+    Refer to [Cloud Foundry App Autoscaler CLI plugin guide][autoscaler_cli] for more options to use the command line. 
+    
 ## Policy configuration
 
 Autoscaling determines when and how to scale your application's capacity according to the autoscaling policy that you defined.  You can create the autoscaling policy from scratch or import it from an existing JSON file.  
@@ -73,7 +162,7 @@ To create a policy from scratch, follow steps below:
    * Select a **Time Zone** in which a schedule will take place.
    * Define either **Recurring schedules**  which execute periodically, or **Specific schedules** that take effect only once during specific time periods. 
 
-   _Note_: during these scheduled time periods, all dynamic scaling rules are still effective. 
+   _Note_: During these scheduled time periods, all dynamic scaling rules are still effective. 
 
 You can also import a policy file in JSON through **Import From JSON**.  Refer to [policy specification][autoscaler_user_guide] for the details of JSON format of autosacling policy. This function is particularly helpful when you [migrate from the legacy Auto-scaling service][migrate_guide].
 
@@ -87,25 +176,4 @@ _Note_: the metric value is not the raw data from each application instance but 
 
 The **Scaling history** tab allows you to query the scaling events within the past 30 days. It also shows the error messages if the scaling attempt failed. 
 
-## Further reading
 
-- Use [command line interface][autoscaler_cli] to manage auto-scaling policies, query metrics and events.
-- [Migrate] from legacy Auto-Scaling service to this new autoscaler[migrate_guide]
-
-
-## Contact us
-
-Any questions and feature request, please contact us through slack channel[autoscaler@cloudfoundry](https://cloudfoundry.slack.com/messages/autoscaler)
-
-
-[autoscaler_project]: https://github.com/cloudfoundry/app-autoscaler
-[autoscaler_user_guide]: https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md
-[autoscaling_policy]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/policy.md
-[autoscaler_cli]: https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-
-[autoscaling_cfee_doc]: https://{DomainName}/docs/cloud-foundry?topic=cloud-foundry-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
-[metric_type]: https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types
-[deploy_app]: https://{DomainName}/docs/cloud-foundry/deploy-apps.html#dep_apps
-[legacy-autoscaling-catalog]: https://{DomainName}/catalog/services/auto-scaling
-[legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
-[migrate_guide]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_migration
-[autoscaler_cli]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cli

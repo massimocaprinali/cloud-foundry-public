@@ -4,9 +4,9 @@
 
 copyright:
 
-  years: 2015, 2017, 2018
+  years: 2015, 2019
 
-lastupdated: "2018-01-18"
+lastupdated: "2019-08-28"
 
 ---
 
@@ -23,7 +23,7 @@ With {{site.data.keyword.Bluemix}}, you can create apps, and host your existing 
 ## Making your apps cloud-ready
 {: #cloud-readyapps}
 
-If all of the following principles are observed in your app, the app is cloud-ready and can be migrated to {{site.data.keyword.Bluemix_notm}}. If a principle is violated in your app, you can usually [modify your app](../apps/cloud-ready.html) to adhere to the principles.
+If all of the following principles are observed in your app, the app is cloud-ready and can be migrated to {{site.data.keyword.Bluemix_notm}}. If a principle is violated in your app, you can usually modify your app to adhere to the principles.
 
 ## Migrating your apps
 {: #ht_hostapp}
@@ -32,13 +32,13 @@ You can migrate your apps to {{site.data.keyword.Bluemix_notm}} incrementally, i
 
 In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.Bluemix_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.Bluemix_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.Bluemix_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.Bluemix_notm}} Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
 
-To deploy your app to {{site.data.keyword.Bluemix_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.Bluemix_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.Bluemix_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](byob.html).
+To deploy your app to {{site.data.keyword.Bluemix_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.Bluemix_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.Bluemix_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](/docs/cloud-foundry?topic=cloud-foundry-using_buildpacks).
 
 You can use the following tools and services that {{site.data.keyword.Bluemix_notm}} provides:
 
 | Tool | Method |
 |:------|:--------|
-| Cloud Foundry command line interface (cf cli) | Manage your code on local client and use Cloud Foundry command line interface to push your app to {{site.data.keyword.Bluemix_notm}} manually. For more information, see [Uploading your apps](../starters/upload_app.html). |
+| Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.Bluemix_notm}} manually. For more information, see the [`**cf push**` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push). |
 | Eclipse | Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.Bluemix_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.Bluemix_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.Bluemix_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
 | {{site.data.keyword.Bluemix_notm}} DevOps Delivery Pipeline | Manage your code on DevOps GitHub repository and deploy your app to {{site.data.keyword.Bluemix_notm}} by using the DevOps Delivery Pipeline. |
@@ -49,7 +49,7 @@ If the Cloud Foundry platform does not support your app requirements, you can us
 ## Developing and deploying your apps using toolchains in Continuous Delivery
 {:ht_cd}
 
-Add a [toolchain to your app](/docs/services/ContinuousDelivery/toolchains_working.html#creating_a_toolchain_from_an_app) and then use the [Continuous Delivery toolchain UI](/docs/services/ContinuousDelivery/toolchains_using.html#toolchains-using) to develop and deploy your app.
+Add a [toolchain to your app](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) and then use the [Continuous Delivery toolchain UI](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
 ## Uploading your apps by using cf cli
 {: #ht_cfcli}
@@ -79,7 +79,7 @@ Optional: If you want to specify and save the deployment details before you push
   memory: 512M
   ```
 
-For more information about the supported options that you can use in this file, see [App manifest](depapps.html#appmanifest).
+For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
 ### Push your app
 
@@ -102,7 +102,7 @@ You can upload your app by using the `cf push` command.
   cf push appname -b buildpack_URL
   ```
 
-  See [Using community buildpacks](byob.html) for details.
+  See [Using community buildpacks](/docs/cloud-foundry?topic=cloud-foundry-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
@@ -110,7 +110,7 @@ Optional: If you change your app, you must upload those changes by entering the 
 
 * When you use the cf push command, the cf command line interface copies all of the files and directories from your current directory to {{site.data.keyword.Bluemix_notm}}. Ensure that you have only the required files in your app directory.
 * Ensure that your organization has enough memory for all instances of your app. To view the memory quota for your org, use cf org org_name.
-* For more information about cf push, see [cf commands](../cli/reference/cfcommands/index.html).
+* For more information about cf push, see [cf commands](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin).
 
 ## Migrating your data and using services
 {: #ht_service}
