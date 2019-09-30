@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2019
 
-lastupdated: "2019-09-03"
+lastupdated: "2019-09-30"
 
 ---
 
@@ -24,7 +24,8 @@ lastupdated: "2019-09-03"
 ## Signing up
 {: #ee_start}
 
-To get started, go to [the IBM Cloud console ![External link icon](../icons/launch-glyph.svg)](https://cloud.ibm.com){: new_window}. Sign up for an IBMid and log in to {{site.data.keyword.Bluemix_notm}} to start your 30-day free trial. {{site.data.keyword.Bluemix_notm}} provides an allowance of 2 GB runtime memory and 10 service instances for your free trial.
+Go to the [{{site.data.keyword.Bluemix_notm}} console](https://{DomainName}) and create a Lite account. It's free and never expires. Use the [Liberty for Java](/catalog/starters/cloud-foundry?runtime=liberty-for-java) runtime to build a Cloud Foundry App with upto 256 MB memory. 
+
 
 ## Developing your app
 {: #develop}
@@ -53,13 +54,13 @@ In {{site.data.keyword.Bluemix_notm}}, apps are associated with organizations an
 For this scenario, you want to develop a web app using Node.js. Assume that you are in the US and most of your app users are also in the US. You decide to build and run your app close to your user base, so that you can benefit from lower network latency. After logging in to {{site.data.keyword.Bluemix_notm}}, click the user account preferences link, then select the **US South** region. Then, you can take the following steps to create an app:
 
   1. Click to **Catalog** in the {{site.data.keyword.Bluemix_notm}} toolbar.
-  2. Select **Cloud Foundry Apps**.
-  3. Select **SDK for Node.js**.
+  2. Click **Cloud Foundry Apps** and choose the **Cloud Foundry** tile. 
+  3. Click **Public Applications** to select Region and Runtime. 
   4. Type a unique name for your app, and click **Create**. The app name must be unique in the whole {{site.data.keyword.Bluemix_notm}} environment.
 
-Once created, you will see a **Getting started tutorial** page in the left navigation pane. Follow the instructions in that page to download the starter code of your app, modify, and deploy it.
+Once created, you will see a **Getting started** page in the left navigation pane. Follow the instructions in that page to download the starter code of your app, modify, and deploy it.
 
-The app is assigned with 1 instance and 512 MB memory quota by default. You can increase the memory, or add more instances to get high availability of your app, for example, 3 instances with 1 GB memory per instance. Click **View app overview** to specify your app instances and memory quota. For example, type 3 for instances and 1 GB for memory quota, and click **Save**. You can also see the files, logs, and environment variables to troubleshoot your problems.
+The app is created with 1 instance and 512 MB memory quota by default. You can increase the memory, or add more instances to get high availability of your app, for example, 3 instances with 1 GB memory per instance. Click **Overview** to specify your app instances and memory quota. For example, type 3 for instances and 1 GB for memory quota, and click **Save**. You can also see the files, logs, and environment variables to troubleshoot your problems.
 
 ### Binding a service by using {{site.data.keyword.Bluemix_notm}} user interface
 {: #ee_bindui}
@@ -124,7 +125,7 @@ You can see the whole list of VCAP_SERVICES associated with your app in the dash
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```
-  http://your_app.stage1.mybluemix.net
+  http://your_app.mybluemix.net
   ```
 
 You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Getting started page of your app in the {{site.data.keyword.Bluemix_notm}} dashboard.
@@ -243,4 +244,4 @@ You can also calculate your app cost manually by adding up the prices of your ru
 
 As you build more apps, the quota might approach the limit. However, some apps that you might no longer use still occupy the quota. It’s easy to delete apps to free up some spaces in {{site.data.keyword.Bluemix_notm}} at any time.
 
-In {{site.data.keyword.Bluemix_notm}} user interface, go to the app Overview page, click the **Menu** icon, and delete the app that you no longer use. You can also use the **cf delete** command to delete apps.
+In {{site.data.keyword.Bluemix_notm}} user interface, go to the app **Overview** page, click the **Menu** icon, and delete the app that you no longer use. You can also use the **cf delete** command to delete apps.
