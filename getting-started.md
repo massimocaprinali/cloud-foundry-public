@@ -88,7 +88,7 @@ You can see the whole list of VCAP_SERVICES associated with your app in the dash
   1. First, download and develop the code of your app.
 
     1. Click Getting started in your app dashboard. Click the **Download the sample code** link to download your app code.
-    2. Extract the downloaded file to a directory, for example `C:\test`.
+    2. Extract the downloaded file to a directory.
     3. Develop the code with your local integrated development environment.
 
   2. Install the **cf** command line interface (CLI).
@@ -99,13 +99,13 @@ You can see the whole list of VCAP_SERVICES associated with your app in the dash
 
     **Requirement:** Make sure that you always use the latest version of the cf command line tool.
 
-  3. After you install the **cf** command line interface, you must specify which {{site.data.keyword.Bluemix_notm}} region you want to work with by using the **cf api** command. The **cf** command line interface uses *https://api.[Bluemix_URL]*, where *Bluemix_URL* is the region's URL. The API endpoint for the US South region is `ng.bluemix.net`. Enter the following command to connect to {{site.data.keyword.Bluemix_notm}}:
+  3. After you install the **cf** command line interface, you must specify which {{site.data.keyword.Bluemix_notm}} region you want to work with by using the **cf api** command. The API endpoint for the US South region is `api.us-south.cf.cloud.ibm.com`. Additonal API endpoints for other regions can be found [here](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). Enter the following command to connect to {{site.data.keyword.Bluemix_notm}}:
 
   ```
-  cf api https://api.ng.bluemix.net
+  cf api api.us-south.cf.cloud.ibm.com
   ```
 
-  To find other API endpoints, see [Service and infrastructure availability](/docs/resources?topic=resources-services_region). After you specify the {{site.data.keyword.Bluemix_notm}} region, the location information that you specified is saved.
+  To find other API endpoints, see [Regions and Endpoints](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). After you specify the {{site.data.keyword.Bluemix_notm}} region, the location information that you specified is saved.
 
   4. Next, log in to {{site.data.keyword.Bluemix_notm}} by using the `cf login` command.
 
@@ -115,7 +115,7 @@ You can see the whole list of VCAP_SERVICES associated with your app in the dash
 
   If your organization uses single sign on, use `cf login -sso`.
 
-  5. After you are logged in to {{site.data.keyword.Bluemix_notm}}, you are ready to deploy your app back to {{site.data.keyword.Bluemix_notm}}. From your app directory `C:\test`, enter the following command:
+  5. After you are logged in to {{site.data.keyword.Bluemix_notm}}, you are ready to deploy your app back to {{site.data.keyword.Bluemix_notm}}. From your app directory , enter the following command:
 
   ```
   cf push [your_appname]
@@ -125,7 +125,7 @@ You can see the whole list of VCAP_SERVICES associated with your app in the dash
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```
-  http://your_app.mybluemix.net
+  http://your_app.us-south.cf.appdomain.cloud
   ```
 
 You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Getting started page of your app in the {{site.data.keyword.Bluemix_notm}} dashboard.
