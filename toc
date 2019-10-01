@@ -8,6 +8,7 @@ Cloud Foundry Public
     getting-started.md
     /cloud-foundry/cloud-foundry-what-is-cloud-foundry
     /cloud-foundry/cloud-foundry-howwork
+    regions.md
 
     {: .topicgroup}
     Best practices
@@ -54,6 +55,7 @@ Cloud Foundry Public
     Managing your apps
         custom_domains.md
         updating_domains.md
+        network-address.md
         monitoring_logging_cloud_foundry_apps.md
         [Zero Downtime Deployment](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
         autoscaling.md
@@ -61,6 +63,7 @@ Cloud Foundry Public
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    [Sample App](https://github.com/IBM-Cloud/cf-nodejs-c2c-demo)
     /cloud-foundry/cloud-foundry-app_management
     {: .navgroup-end}
 
