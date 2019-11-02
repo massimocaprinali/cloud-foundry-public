@@ -71,6 +71,7 @@ Cloud Foundry Public
     {: .navgroup id="reference"}
     [Sample App](https://github.com/IBM-Cloud/cf-nodejs-c2c-demo)
     /cloud-foundry/cloud-foundry-app_management
+    [Cloud Foundry Explained - Video](https://www.youtube.com/watch?v=oUpqXxmr6oU)
     [Cloud Foundry Community](https://www.cloudfoundry.org/)
     [Cloud Foundry Docs](https://docs.cloudfoundry.org/)
     {: .navgroup-end}
