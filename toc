@@ -42,7 +42,7 @@ Cloud Foundry Public
         /cloud-foundry/cloud-foundry-using_buildpacks
         /cloud-foundry/cloud-foundry-getting-started-liberty
         /cloud-foundry/cloud-foundry-getting-started-node
-        /cloud-foundry/cloud-foundry-getting-started-dotnet
+        /cloud-foundry/cloud-foundry-getting_started-dotnet
         /cloud-foundry/cloud-foundry-getting-started-swift
         /cloud-foundry/cloud-foundry-getting-started-go
         /cloud-foundry/cloud-foundry-getting-started-php
@@ -60,7 +60,7 @@ Cloud Foundry Public
         [Zero Downtime Deployment](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
         autoscaling.md
         autoscaling_migration.md
-        
+
     {: .topicgroup}
     Networking
         network-address.md
