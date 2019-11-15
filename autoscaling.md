@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-03"
+lastupdated: "2019-11-15"
 
 ---
 
@@ -13,14 +13,14 @@ lastupdated: "2019-09-03"
 {:screen: .screen}
 {:tip: .tip}
 
-# Autoscaling applications
+# Autoscaling
 {: #autoscale_cloud_foundry_apps}
 
 {{site.data.keyword.Bluemix}} has a built-in autoscaling support for Cloud Foundry applications to adjust application instance number automatically through 
   * Dynamic scaling based on application performance metrics.
   * Scheduled scaling based on time.
 
-This capability is offered based on Cloud Foundry open source project [App-Autoscaler][autoscaler_project]. Refer to [user guide][autoscaler_user_guide] to get started. 
+This capability is offered based on Cloud Foundry open source project [App-Autoscaler](https://github.com/cloudfoundry/app-autoscaler). Refer to [user guide](https://github.com/cloudfoundry/app-autoscaler/blob/develop/docs/Readme.md) to get started. 
 
 ## Managing autoscaling from the console
 
@@ -142,6 +142,8 @@ To create a policy from scratch, follow steps below:
       _Note_: `cpu utilization` may be affected by the total workload of the hosting hardware and other factors.
    * **Response time** represents the average amount of time the application takes to respond to a request in a given time period.  The unit of _Response time_ is "ms" (milliseconds).
    * **Throughput** is the total number of the processed requests  in a given time period. The unit of _throughput_ is "rps" (requests per second).
+   * **Custom metric** 
+     You can define your own metric name using a combination of alphabets and numbers, and then emit the coresponding metrics to App Autoscaler in order to trigger dynamic scaling. See details in [Custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics)
 
    **Operator**, **Threshold**, **Breach Duration** , **Adjustment** and **Cooldown**: 
 
