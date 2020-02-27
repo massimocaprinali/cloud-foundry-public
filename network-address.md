@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-10"
+lastupdated: "2020-02-27"
 
 keywords: network addresses, ip address, cloud foundry apps
 
@@ -56,12 +56,15 @@ In the Dallas (us-south) region, the following network addresses are in use:
 
 In the Washington DC (us-east) region, the following network addresses are in use:
 ```
+169.60.80.160/27
 169.60.82.128/26
 169.60.84.128/25
+169.61.82.224/27
 169.61.87.128/25
 169.61.87.64/26
 169.63.78.192/26
 169.63.80.128/25
+169.63.83.0/24
 ```
 
 In the London (eu-gb) region, the following network addresses are in use:
@@ -109,3 +112,4 @@ In the Sydney (au-syd) region, the following network addresses are in use:
 168.1.45.96/27
 168.1.8.32/27
 ```
+
