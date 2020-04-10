@@ -23,3 +23,5 @@ For stable operations of your deployments on {{site.data.keyword.Bluemix_notm}} 
 
 To retain logs for a longer period and advanced analysis, services like [{{site.data.keyword.cos_short}}](docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-archiving) can be used. 
 
+For more information about how to monitor CF applications, see [Monitoring for apps running on Cloud Foundry](/docs/Monitoring-with-Sysdig?topic=Sysdig-monitor-cf-sysdig).
+
