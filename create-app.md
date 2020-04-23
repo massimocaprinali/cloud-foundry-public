@@ -41,6 +41,8 @@ After your app is created, you have a few options for continuing to add services
 <dd>Use the {{site.data.keyword.Bluemix_notm}} <a href="https://cloud.ibm.com/resources">user interface</a> to build your application, including picking which services and runtimes to combine to solve your business problem.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
 <dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="https://cloud.ibm.com/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started#cd_getting_started">Getting started with Continuous Delivery</a>.</dd>
+<dt>Adding metrics for monitoring using SysDig</dt>
+<dd>CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Getting started with Continuous Delivery](/docs/observability-monitoring?topic=observability-monitoring-cloud-foundry-app-metrics).</dd>
 </dl>
 
 ## Tips
