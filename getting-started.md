@@ -229,7 +229,7 @@ var create_message = function(req, res) {
 ## Calculating your app cost
 {: #ee_billing}
 
-Your 30-day free trial has expired, but you want to continue to use {{site.data.keyword.Bluemix_notm}}. You must add your credit card information for a Pay As You Go account or a Subscription account to continue using {{site.data.keyword.Bluemix_notm}}. However, {{site.data.keyword.Bluemix_notm}} still provides free allowances for most of the runtime frameworks and services even if you convert to a pay account. You are not charged by {{site.data.keyword.Bluemix_notm}} unless the usage is beyond the free allowances.
+Your 30-day free trial has expired, but you want to continue to use {{site.data.keyword.Bluemix_notm}}. You must add your credit card information for a Pay As You Go account or a Subscription account to continue using {{site.data.keyword.Bluemix_notm}}. However, {{site.data.keyword.Bluemix_notm}} still provides free allowances for the community runtime frameworks (Python, PHP, Go, Ruby, Tomcat) and services even if you convert to a pay account.  You are not charged by {{site.data.keyword.Bluemix_notm}} unless the usage is beyond the free allowances.
 
 {{site.data.keyword.Bluemix_notm}} provides an estimator and calculator for you to see your app cost. You can see the cost of your app in the following ways:
 
