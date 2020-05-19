@@ -30,11 +30,10 @@ Cloud Foundry Public
         depapps.md
         hostingapps.md
         connecting_apps.md
-        /cloud-foundry/cloud-foundry-starter-eclipse
         /cloud-foundry/cloud-foundry-starter-vs
         /cloud-foundry/cloud-foundry-cf-deploy-cli
-        /cloud-foundry/Node-RED/cloud-foundry-gettingstarted-nodered
-        /cloud-foundry/Node-RED/cloud-foundry-startNodeRed
+        /cloud-foundry/cloud-foundry-gettingstarted-nodered
+        /cloud-foundry/cloud-foundry-startNodeRed
 
     {: .topicgroup}
     Developing with buildpacks
@@ -64,7 +63,7 @@ Cloud Foundry Public
     {: .topicgroup}
     Networking
         network-address.md
-        [Hybrid Connectivity using Secure Gateway](https://cloud.ibm.com/docs/services/SecureGateway?topic=securegateway-iptables-rules#iptables-dynamic-ips)
+        [Hybrid Connectivity using Secure Gateway](https://cloud.ibm.com/docs/SecureGateway?topic=securegateway-iptables-rules#iptables-dynamic-ips)
         [Load Balancing using Cloud Internet Services](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-multi-region-webapp#add-global-load-balancing-to-the-application)
     {: .navgroup-end}
 
