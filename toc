@@ -93,4 +93,10 @@ Cloud Foundry Public
         /cloud-foundry/cloud-foundry-runtimes
 
     /cloud-foundry/cloud-foundry-buildpack_support_statement
+
+    {: .topicgroup}
+    Buildpack release notes
+        /cloud-foundry/cloud-foundry-liberty-latest_updates
+        /cloud-foundry/cloud-foundry-nodejs-latest_updates
+        /cloud-foundry/cloud-foundry-dotnet-latest_updates
     {: .navgroup-end}
