@@ -43,15 +43,50 @@ Cloud Foundry Public
         {: .topicgroup}
         Liberty for Java
             /cloud-foundry/cloud-foundry-getting-started-liberty
+            /cloud-foundry/cloud-foundry-liberty_runtime
+            /cloud-foundry/cloud-foundry-secure_java_web_app
+            /cloud-foundry/cloud-foundry-security-considerations
+            /cloud-foundry/cloud-foundry-logging_tracing
+            /cloud-foundry/cloud-foundry-auto_config
+            /cloud-foundry/cloud-foundry-customizing_jre
+            /cloud-foundry/cloud-foundry-using_own_jre
+            /cloud-foundry/cloud-foundry-install-features
+            /cloud-foundry/cloud-foundry-using_monthly_runtime
+            /cloud-foundry/cloud-foundry-using_beta_features
+            /cloud-foundry/cloud-foundry-jconsole
+            /cloud-foundry/cloud-foundry-using_dynatrace
+            /cloud-foundry/cloud-foundry-new_relic
+            /cloud-foundry/cloud-foundry-offline_mode
+            /cloud-foundry/cloud-foundry-options_for_pushing
+            /cloud-foundry/cloud-foundry-memory_limits
+            /cloud-foundry/cloud-foundry-liberty_features
+            /cloud-foundry/cloud-foundry-environment_variables
+            /cloud-foundry/cloud-foundry-buildpack_defauts
+
 
         {: .topicgroup}
         SDK for Node.js
             /cloud-foundry/cloud-foundry-getting-started-node
+            /cloud-foundry/cloud-foundry-nodejs_runtime
+            /cloud-foundry/cloud-foundry-startup_commmand
+            /cloud-foundry/cloud-foundry-hints
+            /cloud-foundry/cloud-foundry-nodejs-enforce_https
+            /cloud-foundry/cloud-foundry-hooks
+            /cloud-foundry/cloud-foundry-node-js-buildpacks
+            /cloud-foundry/cloud-foundry-configuration_options
+            /cloud-foundry/cloud-foundry-available_versions
                 
         {: .topicgroup}
         ASP.NET
             /cloud-foundry/cloud-foundry-getting_started-dotnet
-
+            /cloud-foundry/cloud-foundry-dotnet_core
+            /cloud-foundry/cloud-foundry-disabling_the_nuget_package_cache
+            /cloud-foundry/cloud-foundry-customizing_nuget
+            /cloud-foundry/cloud-foundry-publish_configure_deploy
+            /cloud-foundry/cloud-foundry-dotnet-enforce_https
+            /cloud-foundry/cloud-foundry-copy_files_build_output
+            /cloud-foundry/cloud-foundry-use_customlib
+            /cloud-foundry/cloud-foundry-runtime_versions
         
         /cloud-foundry/cloud-foundry-getting-started-swift
         /cloud-foundry/cloud-foundry-getting-started-go
