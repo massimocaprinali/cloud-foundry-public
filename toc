@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-foundry-public" category="compute" audience="compute" href="/docs/cloud-foundry-public/getting-started.html" path="cloud-foundry-public"}
+{: .toc subcollection="cloud-foundry-public" category="runtime" audience="compute" href="/docs/cloud-foundry-public/getting-started.html" path="cloud-foundry-public"}
 Cloud Foundry Public
 
     {: .navgroup id="learn"}
