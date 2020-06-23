@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-06-22"
+lastupdated: "2020-06-23"
 
 keywords: network addresses, ip address, cloud foundry apps
 
@@ -84,14 +84,8 @@ In the Frankfurt (eu-de) region, the following network addresses are in use:
 ```
 149.81.126.96/27
 149.81.69.192/26
-159.122.84.160/27
 161.156.69.0/27
 161.156.72.64/26
-169.50.23.96/27
-169.50.24.160/27
-169.50.39.128/27
-169.50.40.128/27
-169.50.44.128/26
 ```
 
 In the Sydney (au-syd) region, the following network addresses are in use:
