@@ -63,15 +63,15 @@ The app is created with one instance and 512 MB memory quota by default. You can
 
 After creating your app, connect to a database with your app. You can store and retrieve the app data by using a database query language. In this scenario, you decide to use the {{site.data.keyword.cloudant}} service that is provided by {{site.data.keyword.cloud_notm}}.
 
-To use services within the application, create a service instance and bind your application to the service instance by doing the following steps:
+To use {{site.data.keyword.cloud_notm}} with your Cloud Foundry app, create a service instance and bind your app to the service instance:
 
   1. In the {{site.data.keyword.cloud_notm}} catalog, select the {{site.data.keyword.cloudant}} service. Add a unique name for your {{site.data.keyword.cloudant}} service and click **Create**. In the Cloudant Manage panel, launch the service by clicking **Launch**.
   2. Click **Connections**. Then, click **Create connection**.
   3. Click **Connect** next to your app.
   4. The Restage App window is displayed. Click **Restage**.
 
-Now your app is bound to the {{site.data.keyword.cloudant}} service. The <VCAP_SERVICES> environment variable contains the data that is required for the application to communicate with the service instance.
-Because {{site.data.keyword.cloud_notm}} hosts several applications on the same virtual machine, multiple applications cannot use the same HTTP port number to receive incoming requests. To avoid conflicts, each application is given a unique port number. This port number is available in the <VCAP_APP_PORT> variable.
+Now your app is bound to the {{site.data.keyword.cloudant}} service. The <VCAP_SERVICES> environment variable contains the data that is required for the app to communicate with the service instance.
+Because {{site.data.keyword.cloud_notm}} hosts several apps on the same virtual machine, multiple apps cannot use the same HTTP port number to receive incoming requests. To avoid conflicts, each app is given a unique port number. This port number is available in the <VCAP_APP_PORT> variable.
 
 Follow these steps to see the list of <VCAP_SERVICES> values associated with your app in the console.
 
@@ -125,7 +125,7 @@ This environment variable is the serialization of a JSON object with one entry f
   cf push <your_appname>
   ```
 
-  For more information, see [`cf push`](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
+  For more information, see the [`cf push` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```
@@ -155,24 +155,24 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   cf services
   ```
 
-  After a service instance is created, it is available for any of your applications to bind and use.
+  After a service instance is created, it is available for any of your apps to bind and use.
 
   2. Bind the service instance to your app.
 
-  To use a service instance, you must bind it to your application. Use the `cf bind-service` command to bind a service instance to an application by specifying the application name and the service instance that you created.
+  To use a service instance, you must bind it to your app. Use the `cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
 
   ```
   cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
   ```
 
-  Binding a service instance to an application enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new application will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the application and the service instance differently during the binding. For example, some services might create a new tenant for each application that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the application allowing communication between the application and the service.
+  Binding a service instance to an app enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new app will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the app and the service instance differently during the binding. For example, some services might create a new tenant for each app that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the app allowing communication between the app and the service.
 
-  If the application is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the application is restarted. To restart your application, use the `cf restart` command.
+  If the app is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the app is restarted. To restart your app, use the `cf restart` command.
   {: note}
 
   3. Use the service instance.
 
-  In this scenario, the <VCAP_SERVICES> environment variable includes information, such as the following items, that an application can use to connect to this instance of {{site.data.keyword.cloudant}}:
+  In this scenario, the <VCAP_SERVICES> environment variable includes information, such as the following items, that an app can use to connect to this instance of {{site.data.keyword.cloudant}}:
 
   <dl><dt>username</dt>
   <dd>d72837bb-b341-4038-9c8e-7f7232916197-bluemix</dd>
@@ -195,7 +195,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
         };
   ```
 
-  As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the application can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
+  As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
   {: note}
 
   4. Interact with the service instance.
@@ -228,9 +228,9 @@ var create_message = function(req, res) {
 
   You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the `cf unbind-service command`.  To delete a service instance, use the `cf delete-service` command.
 
-  For more information about services, see Services. For more information about the `cf` options that you can use to manage your applications in the {{site.data.keyword.cloud_notm}} environment, run `cf --help` in the `cf` command line interface.
+  For more information about services, see Services. For more information about the `cf` options that you can use to manage your apps in the {{site.data.keyword.cloud_notm}} environment, run `cf --help` in the `cf` command line interface.
 
-  Make sure you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any application that is bound to a deleted service cannot have its <VCAP_SERVICES> environment variable updated until the application is restarted.
+  Make sure you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any app that is bound to a deleted service cannot have its <VCAP_SERVICES> environment variable updated until the app is restarted.
   {: important}
 
 ## Calculating your app cost
