@@ -14,18 +14,18 @@ lastupdated: "2019-08-28"
 # Deploying apps
 {: #deployingapps}
 
-You can deploy applications to {{site.data.keyword.Bluemix}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
+You can deploy applications to {{site.data.keyword.Bluemix}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 ## Application deployment
 {: #appdeploy}
 
-Deploying an application to {{site.data.keyword.Bluemix_notm}} includes two phases, staging the application and starting the application.
+Deploying an application to {{site.data.keyword.cloud_notm}} includes two phases, staging the application and starting the application.
 
 ### Staging an application
 {: #diego}
 
-During the staging phase, {{site.data.keyword.Bluemix_notm}} takes care of the application container orchestration. When you push an app, the Cloud Controller sends a staging request to {{site.data.keyword.Bluemix_notm}}, which takes over the task of allocating the app instances. The {{site.data.keyword.Bluemix_notm}} backend orchestrates application containers in a way to ensure fault-tolerance and long-term consistency
+During the staging phase, {{site.data.keyword.cloud_notm}} takes care of the application container orchestration. When you push an app, the Cloud Controller sends a staging request to {{site.data.keyword.cloud_notm}}, which takes over the task of allocating the app instances. The {{site.data.keyword.cloud_notm}} backend orchestrates application containers in a way to ensure fault-tolerance and long-term consistency
 
 #### Staging a new app
 {: #stageapp}
@@ -40,10 +40,10 @@ All new apps are deployed to the Diego architecture. To stage a new application,
 
 For more details,, see [`**ibmcloud push**`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
-### Migrating an existing app to {{site.data.keyword.Bluemix_notm}}
+### Migrating an existing app to {{site.data.keyword.cloud_notm}}
 {: #migrateapp}
 
-Diego is the default Cloud Foundry architecture for {{site.data.keyword.Bluemix_notm}}, and support for DEAs will be removed, so you must migrate all of your existing applications by updating each app. Start migrating your apps to Diego by updating the application with the Diego flag. The application immediately attempts to start running on Diego and stops running on the DEAs.
+Diego is the default Cloud Foundry architecture for {{site.data.keyword.cloud_notm}}, and support for DEAs will be removed, so you must migrate all of your existing applications by updating each app. Start migrating your apps to Diego by updating the application with the Diego flag. The application immediately attempts to start running on Diego and stops running on the DEAs.
 
 As your application is updated from DEA architecture to Diego, you might experience a short downtime, or a prolonged downtime, if the application is not compatible with Diego. To limit downtime, perform a blue-green deploy by deploying a copy of your application to Diego, and then swapping routes and scaling down the DEA application.
 
@@ -112,13 +112,13 @@ The buffer size is limited. If an application runs for a long time and is not re
 ## Deploying applications by using the cf command
 {: #dep_apps}
 
-When you deploy your applications to {{site.data.keyword.Bluemix_notm}} from the command line interface, a buildpack must be provided as the runtime environment according to your application language and framework. You can also use the Delivery Pipeline service to deploy applications to {{site.data.keyword.Bluemix_notm}}.
+When you deploy your applications to {{site.data.keyword.cloud_notm}} from the command line interface, a buildpack must be provided as the runtime environment according to your application language and framework. You can also use the Delivery Pipeline service to deploy applications to {{site.data.keyword.cloud_notm}}.
 
-{{site.data.keyword.Bluemix_notm}} [provides buildpacks](/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.Bluemix_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
+{{site.data.keyword.cloud_notm}} [provides buildpacks](/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.cloud_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
 
-If you use an external buildpack, you must specify the URL of the buildpack by using the **-b** option when you deploy your application to {{site.data.keyword.Bluemix_notm}} from the command prompt.
+If you use an external buildpack, you must specify the URL of the buildpack by using the **-b** option when you deploy your application to {{site.data.keyword.cloud_notm}} from the command prompt.
 
-  * To deploy Liberty server packages to {{site.data.keyword.Bluemix_notm}}, use the following command from your source directory:
+  * To deploy Liberty server packages to {{site.data.keyword.cloud_notm}}, use the following command from your source directory:
 
   ```
   cf push
@@ -126,13 +126,13 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
 
   For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-getting-started-liberty).
 
-  * To deploy Java Tomcat applications to {{site.data.keyword.Bluemix_notm}}, use the following command:
+  * To deploy Java Tomcat applications to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
   cf push appname -b https://github.com/cloudfoundry/java-buildpack.git -p app_path
   ```
 
-  * To deploy WAR packages to {{site.data.keyword.Bluemix_notm}}, use the following command:
+  * To deploy WAR packages to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
   cf push appname -p app.war
@@ -143,7 +143,7 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   cf push appname -p "./app"
   ```
 
-  * To deploy Node.js applications to {{site.data.keyword.Bluemix_notm}}, use the following command:
+  * To deploy Node.js applications to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
   cf push appname -p app_path
@@ -172,7 +172,7 @@ A `package.json` file must be in your Node.js application for the application to
 
   For more information about the `package.json` file, see [package.json](https://www.npmjs.org/doc/files/package.json.html){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-  * To deploy PHP, Ruby, or Python applications to {{site.data.keyword.Bluemix_notm}}, use the following command from the directory that contains your application source:
+  * To deploy PHP, Ruby, or Python applications to {{site.data.keyword.cloud_notm}}, use the following command from the directory that contains your application source:
 
   ```
   cf push appname
@@ -180,7 +180,7 @@ A `package.json` file must be in your Node.js application for the application to
 
 ### Deploying an app in multiple spaces
 
-An app is specific to the space where it is deployed. You can't move or copy an app from one space to another in {{site.data.keyword.Bluemix_notm}}. To deploy an app in multiple spaces, you must deploy your app in each space where you want to use the app by the following steps:
+An app is specific to the space where it is deployed. You can't move or copy an app from one space to another in {{site.data.keyword.cloud_notm}}. To deploy an app in multiple spaces, you must deploy your app in each space where you want to use the app by the following steps:
 
   1. Switch to the space where you want to deploy your app by using the `**cf target**` command with the **-s** option:
 
@@ -197,7 +197,7 @@ An app is specific to the space where it is deployed. You can't move or copy an 
 ## Application manifest
 {: #appmanifest}
 
-Application manifests contain options that are applied to the `**cf push**` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.Bluemix_notm}}.
+Application manifests contain options that are applied to the `**cf push**` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.cloud_notm}}.
 
 In application manifests, you can specify options such as the number of application instances to create, the amount of memory and disk quota to allocate to applications, and other environment variables for the application. You can also use application manifests to automate application deployments. The default name of a manifest file is `manifest.yml`.
 
@@ -213,9 +213,9 @@ cf push -f appManifest.yml
 |:----------|:--------------|:---------------|
 |**buildpack**	|The URL or name of the custom buildpack.	|`buildpack:` *buildpack_URL*|
 |**disk_quota**	|The disk quota that is allocated for an application. The default value is 1 G.	|`disk_quota: 500M`|
-|**domain**	|The domain name of the application in {{site.data.keyword.Bluemix_notm}}.	|`domain:` ng.bluemix.net|
-|**host**	|The host name of the application in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment.	|`host:` *host_name*|
-|**name**	|The application name in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment.	|`name:` *appname*|
+|**domain**	|The domain name of the application in {{site.data.keyword.cloud_notm}}.	|`domain:` ng.bluemix.net|
+|**host**	|The host name of the application in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`host:` *host_name*|
+|**name**	|The application name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`name:` *appname*|
 |**path**	|The location of your application. This value can be a relative path or absolute path.	|`path:` *path_to_application*|
 |**command**	|The custom start command for your application, or the command to run script files.	|`command:` *custom_command* `command:` *bash ./run.sh*|
 |**memory**	|The amount of memory to allocate for the application. The default value is 1G.	|`memory: 512M`|
@@ -229,7 +229,7 @@ cf push -f appManifest.yml
 
 ### A sample manifest.yml file
 
-The following example shows a manifest file for a Node.js application that uses the built-in community Node.js buildpack in {{site.data.keyword.Bluemix_notm}}.
+The following example shows a manifest file for a Node.js application that uses the built-in community Node.js buildpack in {{site.data.keyword.cloud_notm}}.
 
 ```
 ---
@@ -254,9 +254,9 @@ The following example shows a manifest file for a Node.js application that uses 
 
 <!-- Need to get review of this section as some env variables are no longer supported for Diego -->
 
-Environment variables contain the environment information of a deployed application on {{site.data.keyword.Bluemix_notm}}. Besides environment variables set by *Diego* and buildpacks, you can also set application-specific environment variables for applications on {{site.data.keyword.Bluemix_notm}}.
+Environment variables contain the environment information of a deployed application on {{site.data.keyword.cloud_notm}}. Besides environment variables set by *Diego* and buildpacks, you can also set application-specific environment variables for applications on {{site.data.keyword.cloud_notm}}.
 
-You can view the following environment variables of a running {{site.data.keyword.Bluemix_notm}} application by using the **bluemix app env** command or from the {{site.data.keyword.Bluemix_notm}} user interface:
+You can view the following environment variables of a running {{site.data.keyword.cloud_notm}} application by using the **bluemix app env** command or from the {{site.data.keyword.cloud_notm}} user interface:
 
   * User-defined variables that are specific for an application. For more information, see [Adding user-defined environment variables](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#ud_env).
 
@@ -465,8 +465,8 @@ If you want the buildpack start commands to take precedence, specify **null** as
 
 User-defined environment variables are specific for an application. You have the following options to add a user-defined environment variable to a running app:
 
-  * Use the {{site.data.keyword.Bluemix_notm}} user interface. Complete the following steps:
-    1. On the {{site.data.keyword.Bluemix_notm}} Dashboard, click your app tile. The App details page is displayed.
+  * Use the {{site.data.keyword.cloud_notm}} user interface. Complete the following steps:
+    1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The App details page is displayed.
 	2. Click **Runtime** > **Environment Variables**.
 	3. Click **USER-DEFINED**, then click **ADD**.
 	4. Fill in the required fields, then click **SAVE**.
@@ -491,7 +491,7 @@ console.log("My user defined = " + myEnv);
 
 ### Configuring the startup environment
 
-To configure the startup environment for your application, you can add shell scripts into the `/.profile.d` directory. The `/.profile.d` directory is under the build directory of your application. Scripts in the `/.profile.d` directory are run by {{site.data.keyword.Bluemix_notm}} before the application is run. For example, you can set the NODE_ENV environment variable to **production** by putting a `node_env.sh` file that contains the following content under the `/.profile.d` directory:
+To configure the startup environment for your application, you can add shell scripts into the `/.profile.d` directory. The `/.profile.d` directory is under the build directory of your application. Scripts in the `/.profile.d` directory are run by {{site.data.keyword.cloud_notm}} before the application is run. For example, you can set the NODE_ENV environment variable to **production** by putting a `node_env.sh` file that contains the following content under the `/.profile.d` directory:
 
 ```
 export NODE_ENV=production;
@@ -499,12 +499,12 @@ export NODE_ENV=production;
 
 ###Preventing files and directories from being uploaded
 
-When you use the cf command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.Bluemix_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.Bluemix_notm}}, you can create a `.cfignore` file at the root directory of your application.
+When you use the cf command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your application.
 
 The `.cfignore` file must be in UTF-8 format.
 {: note}
 
-The `.cfignore` file contains the names of files and directories that you want to ignore, one name per line. You can use an asterisk (*) as a wildcard character. When you specify a directory, all files and subdirectories under that directory are ignored also. For example, the following content in the `.cfignore` file indicates that all the `.swp` files and all files and subdirectories under the `tmp/` directory won't be uploaded to {{site.data.keyword.Bluemix_notm}}.
+The `.cfignore` file contains the names of files and directories that you want to ignore, one name per line. You can use an asterisk (*) as a wildcard character. When you specify a directory, all files and subdirectories under that directory are ignored also. For example, the following content in the `.cfignore` file indicates that all the `.swp` files and all files and subdirectories under the `tmp/` directory won't be uploaded to {{site.data.keyword.cloud_notm}}.
 
 ```
 *.swp
