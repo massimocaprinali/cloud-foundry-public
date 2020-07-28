@@ -19,9 +19,11 @@ Monitoring your app enables you to see and control your app deployment. With mon
 * Gain insight on application operations, for example, detect the potential bottlenecks or when upgrades are required.
 * Estimate resource usage and charges.
 
-For stable operations of your deployments on {{site.data.keyword.Bluemix_notm}} platform, you want to detect problems promptly and determine causes efficiently. To accomplish this objective, keep troubleshooting in mind when you design your apps, and use services or tools for monitoring and logging when your app is deployed to {{site.data.keyword.Bluemix_notm}}.
+For stable operations of your deployments on {{site.data.keyword.cloud_notm}} platform, you want to detect problems promptly and determine causes efficiently. To accomplish this objective, keep troubleshooting in mind when you design your apps, and use services or tools for monitoring and logging when your app is deployed to {{site.data.keyword.cloud_notm}}.
 
 To retain logs for a longer period and advanced analysis, services like [{{site.data.keyword.cos_short}}](docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-archiving) can be used. 
 
 For more information about how to monitor CF applications, see [Monitoring for apps running on Cloud Foundry](/docs/Monitoring-with-Sysdig?topic=Sysdig-monitor-cf-sysdig).
+
+CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Cloud Foundry Applications Metrics](/docs/observability-monitoring?topic=observability-monitoring-cloud-foundry-app-metrics).
 
