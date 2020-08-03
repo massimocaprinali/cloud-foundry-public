@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-08-02"
+lastupdated: "2020-08-03"
 
 keywords: network addresses, ip address, cloud foundry apps
 
