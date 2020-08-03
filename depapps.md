@@ -89,7 +89,7 @@ copyright:
 {: #deployingapps}
 
 You can deploy applications to {{site.data.keyword.cloud}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Application deployment
 {: #appdeploy}
@@ -512,7 +512,7 @@ For more information about each environment variable, see [Cloud Foundry Environ
 {: #customize_dep}
 
 You can customize deployment tasks for your applications. For example, you can specify the start commands for your applications, and you can configure your application startup environment.
-{:shortdesc}
+{: shortdesc}
 
 ### Specifying start commands
 

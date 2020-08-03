@@ -154,7 +154,7 @@ Figure 5. Multi-region application deployment
 
 
 {{site.data.keyword.Bluemix_notm}} abstracts and hides operating system and infrastructure layers, so that you don't need to manage them. However, sometimes you might want to know more about the operating system and middleware for your app.
-{:shortdesc}
+{: shortdesc}
 
 ### Viewing {{site.data.keyword.Bluemix_notm}} infrastructure layers
 {: #viewinfra}

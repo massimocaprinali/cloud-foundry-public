@@ -16,7 +16,7 @@ lastupdated: "2019-09-03"
 # Uploading your application
 
 After you are logged in to {{site.data.keyword.cloud}}, you can upload your application with the `ibmcloud app push` command.
-{:shortdesc}
+{: shortdesc}
 
 ## Before you begin
 

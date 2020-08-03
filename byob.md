@@ -89,7 +89,7 @@ copyright:
 {: #using_buildpacks}
 
 If you can't find a starter in the {{site.data.keyword.cloud}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.Bluemix_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your application by using the `ibmcloud cf push` command.
-{:shortdesc}
+{: shortdesc}
 
 External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your application to {{site.data.keyword.Bluemix_notm}}, make sure that you install the {{site.data.keyword.Bluemix_notm}} command line interface.
 

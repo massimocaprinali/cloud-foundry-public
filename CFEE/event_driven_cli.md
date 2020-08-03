@@ -33,7 +33,7 @@ Last updated: 2 February 2016
 {: .last-updated}
 
 You can use the command line interface to set up your namespace and authorization key.
-{:shortdesc}
+{: shortdesc}
 
 To use the event-driven apps command line interface:
 

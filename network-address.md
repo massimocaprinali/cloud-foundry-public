@@ -89,7 +89,7 @@ copyright:
 {: #network-address}
 
 When you deploy Cloud Foundry apps, there are a known list of possible network addresses that the app will be deployed on depending on the region.
-{:shortdesc}
+{: shortdesc}
 
 Network addresses are subject to change from time to time. You can monitor for updates to these addresses by subscribing to the repo notifications. Click **Edit Topic** and then select **Watching** in the Notifications dialog of the repo.
 {: tip}

@@ -93,7 +93,7 @@ copyright:
 You can connect a service to an existing or new {{site.data.keyword.cloud}} application from the **Connections** tab on your service dashboard. Connecting a Cloud Foundry service to a Cloud Foundry application creates a binding between them, and you can unbind, add additional connections, or delete connections from the **Connections** tab.
 
 However, when you connect a service instance that is managed by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to a Cloud Foundry application, an alias of the service managed by IAM is automatically created in the corresponding Cloud Foundry space with the binding information that you specified. This alias is represented as a Cloud Foundry service instance of your IAM-managed service.
-{:shortdesc}
+{: shortdesc}
 
 ## What is an alias?
 {: #what_is_alias}

@@ -92,7 +92,7 @@ copyright:
 <!-- This file is reused in the CF Public subcollection. -->
 
 Node-RED provides a browser-based flow editor that makes it easy to connect devices, APIs, and online services by using the wide range of nodes in the palette. You can deploy the flows to the Node.js runtime environment with a single click. This starter application provides a version of Node-RED that is customized to run in {{site.data.keyword.cloud}}.   
-{:shortdesc}
+{: shortdesc}
 
 Use the editor to create flows right away. You can also customize Node-RED itself. For more information, see the [Node-RED site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://nodered.org/){: new_window}{: new_window}.
 

@@ -90,7 +90,7 @@ copyright:
 {: #runtimes}
 
 You might experience problems when you use {{site.data.keyword.cloud}} runtimes. In many cases, you can recover from these problems by following a few easy steps.
-{:shortdesc}
+{: shortdesc}
 
 ## General troubleshooting
 {: #ts_all}

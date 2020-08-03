@@ -136,7 +136,7 @@ cf ssh myApp
 
 
 App Management is a set of development and debugging utilities that can be enabled for your Liberty applications on {{site.data.keyword.cloud}}.
-{:shortdesc}
+{: shortdesc}
 
 
 ## App Management utilities

@@ -89,7 +89,7 @@ copyright:
 {: #creating_cloud_foundry_apps}
 
 With {{site.data.keyword.cloud}}, you can create your app in the {{site.data.keyword.cloud_notm}} console. Then, you can decide to continue to use the console, use the cf command line interface, or use {{site.data.keyword.jazzhub_title}} to develop, track, plan, and deploy your app.
-{:shortdesc}
+{: shortdesc}
 
 When you create an app in {{site.data.keyword.cloud_notm}}, you can begin with a starter. A *starter* is a template that includes predefined services and application code that is configured with a particular buildpack.
 

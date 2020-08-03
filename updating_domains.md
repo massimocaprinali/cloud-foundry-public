@@ -89,7 +89,7 @@ copyright:
 {: #update-domain}
 
 Domains provide the URL route that is allocated to your organization in {{site.data.keyword.cloud}}. For Cloud Foundry apps, you can migrate your domain from `mybluemix.net` to `appdomain.cloud` by using either the {{site.data.keyword.cloud_notm}} console or the command-line interface.
-{:shortdesc}
+{: shortdesc}
 
 The default shared domain is `mybluemix.net`, but `appdomain.cloud` is another domain option that you can use.
 {: tip}

@@ -91,7 +91,7 @@ copyright:
 
 <!-- Revamp the getting started to guide the user from the CF overview page in the console, starting with selecting Public. One of the prereqs should be setting up the IBM Cloud environment and point to the Determining your organization architecture topic. -->
 
-{:shortdesc}
+{: shortdesc}
 
 ## Developing your app
 {: #develop}

@@ -91,7 +91,7 @@ copyright:
 <!-- This file is reused in the CF Public subcollection. -->
 
 Cloud Foundry is an excellent platform for running cloud-ready applications in production. These best practices can help with running production Cloud Foundry apps with {{site.data.keyword.cloud}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Multiple instances
 {: #multiple_instances}

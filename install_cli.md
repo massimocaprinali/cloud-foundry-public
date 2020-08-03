@@ -93,7 +93,7 @@ copyright:
 <!-- This file is reused in the CF Public subcollection. -->
 
 Use the {{site.data.keyword.cloud}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, [download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
 

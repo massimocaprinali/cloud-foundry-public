@@ -97,7 +97,7 @@ copyright:
 <!-- This file is reused in the CF Public subcollection. -->
 
 Before you can start coding with Node-RED, you must first configure the editor.
-{:shortdesc}
+{: shortdesc}
 
 ## Open the Node-RED flow editor
 {: #openEditor}

@@ -17,7 +17,7 @@ lastupdated: "2020-07-09"
 {: #deploy_apps}
 
 You can deploy applications to {{site.data.keyword.cfee_short}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Deploying applications with the Cloud Foundry command
 {: #dep_apps}

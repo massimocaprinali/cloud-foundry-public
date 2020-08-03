@@ -89,7 +89,7 @@ copyright:
 {: #endpoints}
 
 A list of supported regions and API endpoints for the IBM Cloud Foundry Public service:
-{:shortdesc}
+{: shortdesc}
 
 ## Regions
 {: #endpoints_regions}

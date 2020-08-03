@@ -89,7 +89,7 @@ copyright:
 {: #ts-cf-apps}
 
 General problems with creating Cloud Foundry apps might include apps that can't be updated, or double-byte characters that aren't displayed. In many cases, you can recover from these problems by following a few easy steps.
-{:shortdesc}
+{: shortdesc}
 
 ## Cloud Foundry API endpoints
 {: #ts_endpoints}

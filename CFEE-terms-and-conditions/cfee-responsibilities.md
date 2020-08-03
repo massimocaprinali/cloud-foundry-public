@@ -27,7 +27,7 @@ subcollection: cloud-foundry
 {: #responsibilities-cfee}
 
 Learn about management responsibilities and terms and conditions that you have when you use {{site.data.keyword.cfee_full}}.
-{:shortdesc}
+{: shortdesc}
 
 ## Management responsibilities
 {: #responsibilities}
