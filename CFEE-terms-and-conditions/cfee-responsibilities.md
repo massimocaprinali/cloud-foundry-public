@@ -4,7 +4,9 @@ copyright:
   years: 2019
 lastupdated: "2019-06-24"
 
-keywords: Cloud Foundry Enterprise Environment, responsibilities, ha, high availability, disaster recovery
+keywords: cloud foundry
+
+subcollection: cloud-foundry-public Enterprise Environment, responsibilities, ha, high availability, disaster recovery
 
 subcollection: cloud-foundry
 
