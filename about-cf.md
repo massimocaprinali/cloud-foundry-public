@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-05"
 
 keywords: cloud foundry
 
@@ -113,7 +113,7 @@ Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: n
 
 **Access control** - Fine grain assignment/dispensing of compute capacity to development teams.
 
-**Automatic placement** - Applications are automatically placed across multiple data-center PODs fpr maximum reliability.
+**Automatic placement** - Applications are automatically placed across multiple data-center PODs for maximum reliability.
 
 **Automatic health management** - Crashing applications will restart automatically.
 
