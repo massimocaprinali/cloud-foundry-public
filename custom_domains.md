@@ -1,26 +1,103 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-05-07"
+  years: 2015, 2020
+lastupdated: "2020-08-03"
 
-keywords: apps, custom, domain, cloud foundry, add, subdomain, custom route, dns, domainname, domain name, endpoint
+keywords: cloud foundry
 
 subcollection: cloud-foundry-public
 
+
+
 ---
 
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:new_window: target="_blank"}
+
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Adding and using a custom domain
 {: #custom-domains}
 
 Domains provide the URL route that is allocated to your organization in {{site.data.keyword.cloud}}. Custom domains direct requests for your applications to a URL that you own. A custom domain can be a shared domain, a shared subdomain, or a shared domain and host. Unless a custom domain is specified, {{site.data.keyword.cloud_notm}} uses a default shared domain in the route to your application. You can create and use a custom domain by using either the {{site.data.keyword.cloud_notm}} console or the command-line interface.
-{:shortdesc}
+{: shortdesc}
 
 The default shared domain is `mybluemix.net`, but `appdomain.cloud` is another domain option that you can use. For more information about migrating to `appdomain.cloud`, see [Updating your domain](/docs/cloud-foundry-public?topic=cloud-foundry-public-update-domain).
 {: tip}
@@ -57,14 +134,14 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
    ```
    ibmcloud target --cf-api <CF_ENDPOINT>
    ```
-   
+
    **Cloud Foundry API endpoints:**
    * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
    * US-EAST - `api.us-east.cf.cloud.ibm.com`
    * EU-DE - `api.eu-de.cf.cloud.ibm.com`
    * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
    * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
-   
+
 2. Create a custom domain for your organization by typing the following command:
    ```
    ibmcloud app domain-create <MY_ORGNAME> <MY_DOMAIN>
@@ -76,7 +153,7 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
    ```
    ibmcloud app route-map <MY_APPNAME> <MY_DOMAIN> -n <MY_HOSTNAME>
    ```
-   
+
 ## Mapping the custom domain to the system domain
 {: #mapcustomdomain}
 
@@ -110,3 +187,5 @@ ibmcloud app route-delete <MY_DOMAIN> -n <MY_HOSTNAME> -f
 {: tip}
 
 In that example, `MY_DOMAIN` is the name of your domain, and `MY_HOSTNAME` is the host name of the route for your application. For more information about the `ibmcloud app route-delete` command, enter the command `ibmcloud app route-delete -h`.
+
+

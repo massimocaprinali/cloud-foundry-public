@@ -1,24 +1,97 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-10-16"
+  years: 2015, 2020
+lastupdated: "2020-08-03"
 
-keywords: IBM, activity tracker, LogDNA, event, security, Cloud Foundry events, Cloud Foundry
+keywords: cloud foundry
 
 subcollection: cloud-foundry-public
 
+
+
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
+
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 <!-- Include your AT events file in the Reference nav group in your toc file. -->
 
@@ -30,9 +103,9 @@ subcollection: cloud-foundry-public
 As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and applications interact with Cloud Foundry Public.
 {: shortdesc}
 
-Activity Tracker records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. 
+Activity Tracker records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 
-The following Activity Tracker service is available in the {{site.data.keyword.cloud_notm}} catalog. Cloud Foundry Public sends events to this service that can be used to monitor Cloud Foundry Public activity in {{site.data.keyword.cloud_notm}}. 
+The following Activity Tracker service is available in the {{site.data.keyword.cloud_notm}} catalog. Cloud Foundry Public sends events to this service that can be used to monitor Cloud Foundry Public activity in {{site.data.keyword.cloud_notm}}.
 
 For more information, see:
 * [{{site.data.keyword.at_full}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started)
@@ -46,7 +119,7 @@ The events that are generated by Cloud Foundry applications to {{site.data.keywo
 ## Viewing events
 {: #at-ui}
 
-You can view the Activity Tracker events that are associated with your Cloud Foundry app by using [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started). 
+You can view the Activity Tracker events that are associated with your Cloud Foundry app by using [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
 
 
 ### Using {{site.data.keyword.at_full_notm}}
@@ -59,4 +132,5 @@ Events that are generated by a Cloud Foundry app are automatically forwarded to 
 
 Audit logs for Cloud Foundry Apps in `Washington DC` are sent to a LogDNA instance in `Dallas`.
 {:note}
+
 

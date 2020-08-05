@@ -6,23 +6,23 @@ Cloud Foundry Public
 
     {: .navgroup id="learn"}
     getting-started.md
-    /cloud-foundry/cloud-foundry-what-is-cloud-foundry
-    /cloud-foundry/cloud-foundry-howwork
+    about-cf.md
+    cf.md
     regions.md
 
     {: .topicgroup}
     Best practices
-        /cloud-foundry/cloud-foundry-goodapp
-        /cloud-foundry/cloud-foundry-production
+        goodapp.md
+        production_considerations.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: .topicgroup}
     Setting up your IBM Cloud environment
-        /cloud-foundry/cloud-foundry-bpimplementation
-        /cloud-foundry/cloud-foundry-orgstructure
-        /cloud-foundry/cloud-foundry-determinespaces
-        /iam/iam-cfaccess
+        how-to/setting-up-your-ibm-cloud-environment/design-structure.md
+        how-to/setting-up-your-ibm-cloud-environment/org-structure.md
+        how-to/setting-up-your-ibm-cloud-environment/spaces.md
+        /account/iam-cfaccess
 
     {: .topicgroup}
     Creating and deploying apps
@@ -30,71 +30,71 @@ Cloud Foundry Public
         depapps.md
         hostingapps.md
         connecting_apps.md
-        /cloud-foundry/cloud-foundry-starter-vs
-        /cloud-foundry/cloud-foundry-cf-deploy-cli
-        /cloud-foundry/cloud-foundry-gettingstarted-nodered
-        /cloud-foundry/cloud-foundry-startNodeRed
+        deploy_vs.md
+        install_cli.md
+        Node-RED/nodered.md
+        Node-RED/start_nodered.md
 
     {: .topicgroup}
     Developing with buildpacks
-        /cloud-foundry/cloud-foundry-available_buildpacks
-        /cloud-foundry/cloud-foundry-using_buildpacks
+        buildpacks.md
+        byob.md
 
         {: .topicgroup}
         Liberty for Java
-            /cloud-foundry/cloud-foundry-getting-started-liberty
-            /cloud-foundry/cloud-foundry-liberty_runtime
-            /cloud-foundry/cloud-foundry-secure_java_web_app
-            /cloud-foundry/cloud-foundry-security-considerations
-            /cloud-foundry/cloud-foundry-logging_tracing
-            /cloud-foundry/cloud-foundry-auto_config
-            /cloud-foundry/cloud-foundry-customizing_jre
-            /cloud-foundry/cloud-foundry-using_own_jre
-            /cloud-foundry/cloud-foundry-install-features
-            /cloud-foundry/cloud-foundry-using_monthly_runtime
-            /cloud-foundry/cloud-foundry-using_beta_features
-            /cloud-foundry/cloud-foundry-jconsole
-            /cloud-foundry/cloud-foundry-using_dynatrace
-            /cloud-foundry/cloud-foundry-new_relic
-            /cloud-foundry/cloud-foundry-offline_mode
-            /cloud-foundry/cloud-foundry-options_for_pushing
-            /cloud-foundry/cloud-foundry-memory_limits
-            /cloud-foundry/cloud-foundry-liberty_features
-            /cloud-foundry/cloud-foundry-environment_variables
-            /cloud-foundry/cloud-foundry-buildpack_defauts
+            getting-started-liberty.md
+            liberty-index.md
+            liberty-secureWebApp.md
+            liberty-configureSSLCerts.md
+            liberty-loggingAndTracing.md
+            liberty-autoConfig.md
+            liberty-customizingJRE.md
+            liberty-using_own_jre.md
+            liberty-installFeatures.md
+            liberty-usingMonthlyRuntime.md
+            liberty-usingBetaFeatures.md
+            liberty-jconsole.md
+            liberty-dynatrace.md
+            liberty-newRelic.md
+            liberty-offlineMode.md
+            liberty-optionsForPushing.md
+            liberty-memoryLimits.md
+            liberty-libertyFeatures.md
+            liberty-environmentVariables.md
+            liberty-buildpackDefaults.md
 
 
         {: .topicgroup}
         SDK for Node.js
-            /cloud-foundry/cloud-foundry-getting-started-node
-            /cloud-foundry/cloud-foundry-nodejs_runtime
-            /cloud-foundry/cloud-foundry-startup_commmand
-            /cloud-foundry/cloud-foundry-hints
-            /cloud-foundry/cloud-foundry-nodejs-enforce_https
-            /cloud-foundry/cloud-foundry-hooks
-            /cloud-foundry/cloud-foundry-node-js-buildpacks
-            /cloud-foundry/cloud-foundry-configuration_options
-            /cloud-foundry/cloud-foundry-available_versions
-                
+            getting-started-node.md
+            nodejs-index.md
+            nodejs-startup.md
+            nodejs-runningLocally.md
+            nodejs-enforceHTTPS.md
+            nodejs-hooks.md
+            nodejs-nodejsBuildpacks.md
+            nodejs-configurationOptions.md
+            nodejs-availableVersions.md
+
         {: .topicgroup}
         ASP.NET
-            /cloud-foundry/cloud-foundry-getting_started-dotnet
-            /cloud-foundry/cloud-foundry-dotnet_core
-            /cloud-foundry/cloud-foundry-disabling_the_nuget_package_cache
-            /cloud-foundry/cloud-foundry-customizing_nuget
-            /cloud-foundry/cloud-foundry-publish_configure_deploy
-            /cloud-foundry/cloud-foundry-dotnet-enforce_https
-            /cloud-foundry/cloud-foundry-copy_files_build_output
-            /cloud-foundry/cloud-foundry-use_customlib
-            /cloud-foundry/cloud-foundry-runtime_versions
-        
-        /cloud-foundry/cloud-foundry-getting-started-swift
-        /cloud-foundry/cloud-foundry-getting-started-go
-        /cloud-foundry/cloud-foundry-getting-started-php
-        /cloud-foundry/cloud-foundry-getting-started-python
-        /cloud-foundry/cloud-foundry-getting-started-ruby
-        /cloud-foundry/cloud-foundry-getting-started-tomcat
-        /cloud-foundry/cloud-foundry-working_with_proxy
+            getting-started-dotnet.md
+            dotnet-index.md
+            dotnet-disablingNuGet.md
+            dotnet-usingNuGet.md
+            dotnet-compile_pub_deploy.md
+            dotnet-enforceHTTPS.md
+            dotnet-buildOutputfiles.md
+            dotnet-usingCustomLib.md
+            dotnet-runtimeVersions.md
+
+        getting-started-swift.md
+        getting-started-go.md
+        getting-started-php.md
+        getting-started-python.md
+        getting-started-ruby.md
+        getting-started-tomcat.md
+        workingWithProxy.md
 
     {: .topicgroup}
     Managing your apps
@@ -105,7 +105,7 @@ Cloud Foundry Public
         [Zero Downtime Deployment](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
         autoscaling.md
         autoscaling_migration.md
-        
+
     {: .topicgroup}
     Networking
         network-address.md
@@ -115,7 +115,7 @@ Cloud Foundry Public
 
     {: .navgroup id="reference"}
     [Sample App](https://github.com/IBM-Cloud/cf-nodejs-c2c-demo)
-    /cloud-foundry/cloud-foundry-app_management
+    app_mng.md
     [Cloud Foundry Explained - Video](https://www.youtube.com/watch?v=oUpqXxmr6oU)
     [Cloud Foundry Community](https://www.cloudfoundry.org/)
     [Cloud Foundry Docs](https://docs.cloudfoundry.org/)
@@ -125,13 +125,15 @@ Cloud Foundry Public
     {: .topicgroup}
     Troubleshooting
         ts_cf.md
-        /cloud-foundry/cloud-foundry-runtimes
+        ts_runtimes.md
 
-    /cloud-foundry/cloud-foundry-buildpack_support_statement
+    buildpackSupport.md
 
     {: .topicgroup}
     Buildpack release notes
-        /cloud-foundry/cloud-foundry-liberty-latest_updates
-        /cloud-foundry/cloud-foundry-nodejs-latest_updates
-        /cloud-foundry/cloud-foundry-dotnet-latest_updates
+        liberty-updates.md
+        nodejs-updates.md
+        dotnet-updates.md
     {: .navgroup-end}
+    
+

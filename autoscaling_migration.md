@@ -1,17 +1,97 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-04-18"
+  years: 2015, 2020
+lastupdated: "2020-08-03"
+
+keywords: cloud foundry
+
+subcollection: cloud-foundry-public
+
+
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Migrating from the legacy Auto-Scaling service
 {: #autoscale_migration}
@@ -28,9 +108,9 @@ This new App Autoscaler offering is a replacement of the legacy. By migrating to
 
 * Matching pace with the CF community: Future features of the app-autoscaler open-source project, will be available without delay in IBM Cloud.
 
-We provide similar user experience between the legacy offering and the new one, including the policy definition, metric statistics and scaling history retrieving. 
+We provide similar user experience between the legacy offering and the new one, including the policy definition, metric statistics and scaling history retrieving.
 
-Running with both offering simultaneously may lead to unexpected scaling behavior, so we recommend you to migrate from the legacy Auto-Scaling service to the new App Autoscaler.  You can achieve this from the {{site.data.keyword.Bluemix}} user interface with below steps: 
+Running with both offering simultaneously may lead to unexpected scaling behavior, so we recommend you to migrate from the legacy Auto-Scaling service to the new App Autoscaler.  You can achieve this from the {{site.data.keyword.cloud}} user interface with below steps:
 
 ## Migrate through web UI
 
@@ -43,11 +123,11 @@ Running with both offering simultaneously may lead to unexpected scaling behavio
   - Click the application to view its **Overview** page.
   - Select **Connections** in the left navigation pane, and hover the legacy **Auto-Scaling** service instance entry
   - Click on **Auto-Scaling** service instance link to view its service dashboard,  then select **Policy** tab.
-  - Click the button **Policy Migration**, copy the new `App Autoscaler` policy on the right side to your clipboard and save it as a local file. 
-  
+  - Click the button **Policy Migration**, copy the new `App Autoscaler` policy on the right side to your clipboard and save it as a local file.
+
   **Note**: The new Autoscaler doesn't support **HeapUsage** metric particularly for Liberty and Node.js runtime. As a result, the _Heap Usage_ related rules will be discarded during the conversion.  You need to use other metrics, such as "cpu", "memoryused", "memoryutil", "response" or "throughput" in the new  `App Autocaler`.
 
-  Refer to [legacy Auto-Scaling policy JSON specification][legacy_autoscaling_policy] and [App Autoscaler policy JSON specification][autoscaling_policy] to get the detailed policy definitions. 
+  Refer to [legacy Auto-Scaling policy JSON specification][legacy_autoscaling_policy] and [App Autoscaler policy JSON specification][autoscaling_policy] to get the detailed policy definitions.
 
 2. Unbind legacy **Auto-scaling** service
 
@@ -66,16 +146,16 @@ Alternatively, you can use command lines to migrate over.
 
 1. Create a App-Autoscaler policy
 
-   - If you already exported the converted new policy as described in above steps, just save it to a local file. 
+   - If you already exported the converted new policy as described in above steps, just save it to a local file.
    - If you would like to convert the policy by yourself, take the below steps:
-      - Retrieve the existing policy using [Auto-scaling service CLI plugin][legacy-autoscaling-cli]: 
+      - Retrieve the existing policy using [Auto-scaling service CLI plugin][legacy-autoscaling-cli]:
         ```
         ibmcloud as policy-show <APP_NAME> [--json]
         ```
-        {:codeblock} 
+        {:codeblock}
         ```
-      - Covert the policy manually to new format. 
-    
+      - Covert the policy manually to new format.
+
     Refer to [legacy Auto-Scaling policy JSON specification][legacy_autoscaling_policy] and [App Autoscaler policy JSON specification][autoscaling_policy] for the detailed policy format.
 
 2. Unbind the legacy service instance from your application with Cloud Foundry Command Line tool:
@@ -83,7 +163,7 @@ Alternatively, you can use command lines to migrate over.
    ```
    cf unbind-service <YOUR_APP> <YOUR_SERVICE_INSTANCE>
    ```
-   {:codeblock} 
+   {:codeblock}
 
 3. Attach policy to enable new autoscaling experience.
 
@@ -92,7 +172,7 @@ Alternatively, you can use command lines to migrate over.
    ```
    cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
    ```
-   {:codeblock} 
+   {:codeblock}
 
 
 [autoscaler_project]: https://github.com/cloudfoundry/app-autoscaler
@@ -105,3 +185,5 @@ Alternatively, you can use command lines to migrate over.
 [legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
 [legacy_autoscaling_policy]: https://{DomainName}/docs/services/Auto-Scaling?topic=Auto-Scaling%20-policy_fields#policy-definition-through-rest-api-and-cli-
 [autoscaler-get-started]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
+
+
