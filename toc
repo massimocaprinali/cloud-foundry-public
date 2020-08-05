@@ -22,7 +22,7 @@ Cloud Foundry Public
         how-to/setting-up-your-ibm-cloud-environment/design-structure.md
         how-to/setting-up-your-ibm-cloud-environment/org-structure.md
         how-to/setting-up-your-ibm-cloud-environment/spaces.md
-        /iam/iam-cfaccess
+        /account/account-cfaccess
 
     {: .topicgroup}
     Creating and deploying apps
