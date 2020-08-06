@@ -19,7 +19,7 @@ lastupdated: "2019-06-28"
 
 The {{site.data.keyword.cfee_full}} (CFEE) is a platform-as-a-service. As such, the client is free to use the service instance for anything it is capable of supporting. The CFEE and dependent services have access to the least amount of personal data as possible.
 
-It should be made clear, however, that even though the CFEE control plane (via UI/API/CLI) will not be processing sensitive data (e.g., HIPAA data), it is the responsibility of the client to ensure that that they use their CFEE responsibly, since all dependencies are managed and owned by the customers in their {{site.data.keyword.Bluemix_notm}} account. 
+It should be made clear, however, that even though the CFEE control plane (via UI/API/CLI) will not be processing sensitive data (e.g., HIPAA data), it is the responsibility of the client to ensure that that they use their CFEE responsibly, since all dependencies are managed and owned by the customers in their {{site.data.keyword.cloud_notm}} account. 
 
 We recommend the following best practices:
 *  Not to modify the dependent services created with a CFEE (Kubernetes, Cloud Object Storage, and Compose for PostgreSQL).

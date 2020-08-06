@@ -16,7 +16,7 @@ lastupdated: "2020-07-09"
 # Deploying and viewing apps
 {: #deploy_apps}
 
-You can deploy applications to {{site.data.keyword.cfee_short}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.Bluemix_notm}}.
+You can deploy applications to {{site.data.keyword.cfee_short}} with the command line interface or the integrated development environments (IDEs). You can also use application manifests to deploy applications. When you use an application manifest, you reduce the number of deployment details that you must specify every time that you deploy an application to {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Deploying applications with the Cloud Foundry command
@@ -51,7 +51,7 @@ After you install the command line interface, follow these steps:
 
   **Note**: You must add single or double quotation marks around `username`, `org_name`, and  `space_name` if the value includes a space, for example, `-o "my org"`.
 
-5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.Bluemix_notm}} by using the `ibmcloud app push` command. For more information, see [`cf push`](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
+5.  From `<your_new_directory>`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud app push` command. For more information, see [`cf push`](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
 
   ```
   cf push <app_name>
@@ -69,7 +69,7 @@ You can view CFEE deployed applications either in the context of a specific spac
 {: #view_specific}
 
 To view applications deployed in a specific space of a specific CFEE instance:
-1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want to create organizations.
+1. Go to the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want to create organizations.
 2. In the {{site.data.keyword.cfee_full_notm}} user interface, go to the **Organizations** entry in the navigation pane to open the _organizations_ page.
 3. Go to the **Spaces** tab at the top of the page.
 4. In the __Spaces__ tab, click on a space in the table to open the space's page.
@@ -116,7 +116,7 @@ You can perform the following actions in this view:
 ## Application manifest
 {: #appmanifest}
 
-Application manifests include options that are applied to the `cf push` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.Bluemix_notm}}.
+Application manifests include options that are applied to the `cf push` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.cloud_notm}}.
 
 In application manifests, you can specify options such as the number of application instances to create, the amount of memory and disk quota to allocate, and other environment variables. You can also use application manifests to automate application deployments. The default name of a manifest file is `manifest.yml`.
 
@@ -132,9 +132,9 @@ cf push -f appManifest.yml
 |:----------|:--------------|:---------------|
 | **buildpack** | The URL or name of the custom buildpack. | `buildpack:` *buildpack_URL* |
 | **disk_quota** | The disk quota that is allocated for an application. The default value is 1 G. | `disk_quota: 500M` |
-| **domain** | The domain name of the application in {{site.data.keyword.Bluemix_notm}}. | `domain:` ng.cloud.ibm.com |
-| **host** | The host name of the application in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment. | `host:` *host_name* |
-| **name** | The application name in {{site.data.keyword.Bluemix_notm}}. This value must be unique in the {{site.data.keyword.Bluemix_notm}} environment. | `name:` *appname* |
+| **domain** | The domain name of the application in {{site.data.keyword.cloud_notm}}. | `domain:` ng.cloud.ibm.com |
+| **host** | The host name of the application in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment. | `host:` *host_name* |
+| **name** | The application name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment. | `name:` *appname* |
 | **path** | The location of your application. This value can be a relative path or absolute path. | `path:` *path_to_application* |
 | **command** | The custom start command for your application, or the command to run script files. | `command:` *custom_command* `command:` *bash ./run.sh* |
 | **memory** | The amount of memory to allocate for the application. The default value is 1G. | `memory: 512M` |
@@ -149,7 +149,7 @@ cf push -f appManifest.yml
 ### A sample manifest.yml file
 {: #sample}
 
-The following example shows a manifest file for a Node.js application that uses the built-in community Node.js buildpack in {{site.data.keyword.Bluemix_notm}}.
+The following example shows a manifest file for a Node.js application that uses the built-in community Node.js buildpack in {{site.data.keyword.cloud_notm}}.
 
 ```
 ---

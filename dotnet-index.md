@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -111,6 +111,6 @@ The {{site.data.keyword.cloud}} ASP.NET Core buildpack is used if there are one 
 ## Starter application
 {: #dotnet-starter_application}
 
-{{site.data.keyword.Bluemix_notm}} provides an ASP.NET Core starter application.  The ASP.NET Core starter application is a simple app that provides a template that you can use. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.Bluemix_notm}} environment.
+{{site.data.keyword.cloud_notm}} provides an ASP.NET Core starter application.  The ASP.NET Core starter application is a simple app that provides a template that you can use. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
 
 

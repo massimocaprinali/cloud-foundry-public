@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -98,7 +98,7 @@ subcollection: cloud-foundry-public
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-To design an environment that uses {{site.data.keyword.Bluemix_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} or any combination, you can use the following organization architectures:
+To design an environment that uses {{site.data.keyword.cloud_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} or any combination, you can use the following organization architectures:
 
 * Single-organization: Consider this architecture if you require the same set of users to access resources that are available anywhere in the organization.
 * Multi-organization: Consider this architecture if you require isolation between different environments.
@@ -122,7 +122,7 @@ To implement a multi-organization architecture you can define organizations that
 ## Organization considerations
 {: #orgconsiderations}
 
-When you implement a single-organization architecture, the organization includes all of the cloud resources, services, and apps that you use to develop, manage, and deploy cloud apps. In {{site.data.keyword.Bluemix_notm}} Public, the organization provides segregation between accounts and is available across all regions.
+When you implement a single-organization architecture, the organization includes all of the cloud resources, services, and apps that you use to develop, manage, and deploy cloud apps. In {{site.data.keyword.cloud_notm}} Public, the organization provides segregation between accounts and is available across all regions.
 
 When you implement a multi-organization architecture, organizations provide the first level of boundary enforcement and abstraction that you can use to control and define what can be done and by whom. Design each organization around the different LOBs, the delivery phases, the roles of the users, specific projects, or a combination of these components.  
 
@@ -134,7 +134,7 @@ The number of organizations that you require depends on multiple factors:
 
 When you are defining the different organizations for your cloud structure, consider the following guidance:
 
-* Define and then enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the process phase (development, testing, or production). For organizations that are located in {{site.data.keyword.Bluemix_notm}} Public, you might want to add information about the region too.
+* Define and then enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the process phase (development, testing, or production). For organizations that are located in {{site.data.keyword.cloud_notm}} Public, you might want to add information about the region too.
 * Define the restrictions that apply to the organization. For example, define the role of the team members that are going to work in that organization.
 * Identify the manager of the organization.
 * Identify the area of the business that is allocated to this organization.
@@ -143,7 +143,7 @@ The following scenarios show different approaches that you can adopt when you de
 
 ### Scenario 1: Segregation of user groups by business application delivery
 
- Description: Corporate rules require that the apps of each LOB must be developed, managed, and deployed by users from each LOB. Security must be enforced so that users can access only the apps that are relevant to their part of the business. So, the users work in different business areas, the apps they are working on require access to different {{site.data.keyword.Bluemix_notm}} resources, and there is no activity overlap.
+ Description: Corporate rules require that the apps of each LOB must be developed, managed, and deployed by users from each LOB. Security must be enforced so that users can access only the apps that are relevant to their part of the business. So, the users work in different business areas, the apps they are working on require access to different {{site.data.keyword.cloud_notm}} resources, and there is no activity overlap.
 
   Solution: You can create an organization for each business application delivery process. For example, one organization for retail banking, and one for investment banking.
 
@@ -180,7 +180,7 @@ The following scenarios show different approaches that you can adopt when you de
 
 Consider the following organization guidance:
 
-* Define and enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the IT role (development, testing, or production). For organizations that are located in {{site.data.keyword.Bluemix_notm}} Public, you might want to add information about the region too. You can change the name of an organization after it is created. If an organization name is altered, notify all of the organization team members about the change.
+* Define and enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the IT role (development, testing, or production). For organizations that are located in {{site.data.keyword.cloud_notm}} Public, you might want to add information about the region too. You can change the name of an organization after it is created. If an organization name is altered, notify all of the organization team members about the change.
 * Define the restrictions that apply to the organization. For example, define the role of each of the team members and the permissions they need to work in that organization.
 * Identify the manager of the organization. You might want to delegate the organization administration to more that one person.
 * Identify the area of the business that is allocated to this organization. The application usage that is generated in each of the spaces, within the organization, is accumulated and reported at the organization level.

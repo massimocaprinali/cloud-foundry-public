@@ -73,7 +73,7 @@ Users need the following permissions to be able to add or remove Cloud Foundry c
 * _Operator_ role or higher to the Kubernetes cluster into which the CFEE is provisioned.
 
 To add application cells in your CFEE instance:
-1. Go to the [{{site.data.keyword.Bluemix_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
+1. Go to the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/dashboard/apps/) and open the {{site.data.keyword.cfee_full_notm}} where you want add cells.
 2. Click **Change Cloud Foundry cell count** near the _Cells_ table, which opens the _Add Cloud Foundry Cells_ page.
 3. In the _Change Cloud Foundry cell count page_, select the total number of cells in the Target cell count field. For a non-VPC {{site.data.keyword.cfee_short}}, the page also shows the Geography and Location of the {{site.data.keyword.cfee_short}} instance where the cells will be added. It also shows the current number of cells in the _Current Cell count_ field and the capacity of the cells to be added (which is the same as the capacity of the current cells) in the Node size filed. The page's right pane shows the estimated cost of the added cells along with the new total estimated cost of the environment. For a VPC {{site.data.keyword.cfee_short}}, there must be enough unallocated IPs in each of the VPC subnets in the {{site.data.keyword.cfee_short}}.
 4. Click **Add cells**.  In the _Add Cells_ dialog, click **Add**

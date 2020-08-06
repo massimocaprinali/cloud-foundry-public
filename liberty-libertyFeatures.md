@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -102,7 +102,7 @@ The Liberty for Java runtime includes a subset of Liberty features. To use a fea
 ## Cloud-specific features
 {:#cloud-features}
 
-The following features are included and are specific to {{site.data.keyword.Bluemix_notm}}:
+The following features are included and are specific to {{site.data.keyword.cloud_notm}}:
 * appstate-1.0
 * appstate-2.0
 * cloudAutowiring-1.0
@@ -120,8 +120,8 @@ Some features that Liberty provides are not available in the Liberty for Java ru
 Keep in mind that a server cannot load incompatible features, so be sure it is configured to enable only features that are compatible. See [Supported Java EE 6 and 7 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos.html)
 and [Supported Java EE 7 and 8 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos_7_8.html).
 
-Applications that use remote EJBs can be deployed to {{site.data.keyword.Bluemix_notm}}, but the remote EJBs are not remotely accessible with the CORBA/IIOP
-protocol because of port restrictions in the {{site.data.keyword.Bluemix_notm}} environment.
+Applications that use remote EJBs can be deployed to {{site.data.keyword.cloud_notm}}, but the remote EJBs are not remotely accessible with the CORBA/IIOP
+protocol because of port restrictions in the {{site.data.keyword.cloud_notm}} environment.
 
 ## Liberty features index
 {: #libertyfeat_index}

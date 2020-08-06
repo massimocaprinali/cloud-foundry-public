@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -196,7 +196,7 @@ ibmcloud cf restage myApp
 #### jmx
 {: #jmx}
 
-The *jmx* utility enables the JMX REST Connector to allow a remote JMX client to manage the application by using {{site.data.keyword.Bluemix_notm}} user credentials.
+The *jmx* utility enables the JMX REST Connector to allow a remote JMX client to manage the application by using {{site.data.keyword.cloud_notm}} user credentials.
 
 You can monitor multiple instances of an application by using JMX, but it requires a separate JMX connection for each instance. The default is to monitor instance 0. To monitor instance 1, you can use the following code snip:
 
@@ -229,7 +229,7 @@ Next, to connect with JConsole, choose **Remote Process**, specify `127.0.0.1:50
 #### proxy
 {: #proxy}
 
-The *proxy* utility provides minimal application management between your application and {{site.data.keyword.Bluemix_notm}}.
+The *proxy* utility provides minimal application management between your application and {{site.data.keyword.cloud_notm}}.
 
 When enabled, the buildpack starts a proxy agent that is located between your application's runtime and container.  The *proxy* utility handles all requests that the application receives. Based on the type of request, it either takes an App Management action or forwards the request to your application. By using *proxy*, your application container continues to live even if the application crashes. The proxy agent also allows for incremental file updates, which enables the *Live Edit* mode.
 
@@ -247,7 +247,7 @@ The *noproxy* utility only applies to applications that run in a Diego cell.
 
 The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry?topic=cloud-foundry-latest_updates) for the current set of runtimes.
 
-When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.Bluemix_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){:new_window}.
+When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){:new_window}.
 
 **Important:** The *hc* utility starts *proxy*.
 

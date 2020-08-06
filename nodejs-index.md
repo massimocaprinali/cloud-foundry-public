@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -112,13 +112,13 @@ var port = (process.env.PORT || 3000);
 ## Starter application
 {: #nodejs-starter_application}
 
-{{site.data.keyword.Bluemix_notm}} provides a Node.js starter applications.  The Node.js starter application is a simple Node.js app that provides a template that you can use for your app. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.Bluemix_notm}} environment.
+{{site.data.keyword.cloud_notm}} provides a Node.js starter applications.  The Node.js starter application is a simple Node.js app that provides a template that you can use for your app. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
 
 ## App Management (deprecated)
 {: #nodejs-app_management}
 
 **Deprecation Note**:  As of version 4.0, the SDK for Node.js buildpack no longer supports App Management.    
 
-{{site.data.keyword.Bluemix_notm}} provides a number of utilities for managing and debugging your Node.js app.  See [App Management](/docs/cloud-foundry?topic=cloud-foundry-app_management) for complete details.  
+{{site.data.keyword.cloud_notm}} provides a number of utilities for managing and debugging your Node.js app.  See [App Management](/docs/cloud-foundry?topic=cloud-foundry-app_management) for complete details.  
 
 

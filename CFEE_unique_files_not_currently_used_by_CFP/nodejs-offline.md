@@ -18,11 +18,11 @@ subcollection: cloud-foundry
 When a Node.js application is pushed to {{site.data.keyword.cloud}}, the SDK for Node.js buildpack
 typically downloads artifacts from external resources such as Node modules from NPM.  In some
 situations, such as with  [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
-[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local),  you can customize access to sites external to {{site.data.keyword.Bluemix_notm}}.  
+[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local),  you can customize access to sites external to {{site.data.keyword.cloud_notm}}.  
 {: shortdesc}
 
 The Node.js buildpack can access the following external sites. You might need to *whitelist* these sites in [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
-[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local) {{site.data.keyword.Bluemix_notm}} environments.
+[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local) {{site.data.keyword.cloud_notm}} environments.
 
 * http://nodejs.org/ may be used to ascertain available node engine versions.
 * https://s3pository.heroku.com is used to retrieve Node engine versions not included in the buildpack.

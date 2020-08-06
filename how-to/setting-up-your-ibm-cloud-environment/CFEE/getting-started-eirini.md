@@ -27,7 +27,7 @@ See [Eirini project](https://www.cloudfoundry.org/project-eirini/) for informati
 
 You need the correct access policies before creating instances of the {{site.data.keyword.cfee_full_notm}}. For more information, see [Permissions](https://cloud.ibm.com/docs/cloud-foundry/permissions.html).
 
-## Step 1: Ensure that the {{site.data.keyword.Bluemix_notm}} account can create infrastructure resources
+## Step 1: Ensure that the {{site.data.keyword.cloud_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
 CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance.
@@ -35,9 +35,9 @@ CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Ser
 ## Step 2: Create your instance
 {: #create-environment}
 
-Before you create your CFEE, make sure that you are in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment, and that you have the required access policies (step 1 above).
+Before you create your CFEE, make sure that you are in the {{site.data.keyword.cloud_notm}} account where you want to create the environment, and that you have the required access policies (step 1 above).
 
-1.  Open the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
+1.  Open the {{site.data.keyword.cloud_notm}} [catalog](https://cloud.ibm.com/catalog).
 
 2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click it to open the overview page for the service.  That first page provides an overview of the main features of the service. Click **Continue**.
 
@@ -56,7 +56,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
     * Select the **Zone** where the Kubernetes worker nodes will be deployed. Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
     Starting in CFEE v2.2.0, CFEE instances can operate behind an **isolated network**. You can provision a CFEE instance into an isolated network by selecting private VLANs in the isolated network. Once the CFEE is created, the IP addresses for the CFEE's Compose for PostgreSQL and Cloudant Object Storage instances, as well as for the Application Load Balancers ([ALBs](https://cloud.ibm.com/docs/containers/cs_ingress.html#private_ingress)) of the Kubernetes cluster must be routed in the isolated network by the network administrator for the CFEE to become operational.
     
-    Once the CFEE is crated, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://cloud.ibm.com/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/docs/containers/cs_why.html#cs_ov).
+    Once the CFEE is crated, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.cloud_notm}} [dashboard](https://cloud.ibm.com/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/docs/containers/cs_why.html#cs_ov).
 
 5.  Configure the capacity of the CFEE:
     * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
@@ -74,7 +74,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.B
 
 8.  Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
 
-**Note:** Once the creation process has started, a table row for the CFEE is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, in the _Resource List_, and in the [Cloud Foundry Environments dashboard](https://cloud.ibm.com/resources?filter=cf_environments).  The status in the table row indicates when creation is completed.
+**Note:** Once the creation process has started, a table row for the CFEE is shown in the {{site.data.keyword.cloud_notm}} dashboard, in the _Resource List_, and in the [Cloud Foundry Environments dashboard](https://cloud.ibm.com/resources?filter=cf_environments).  The status in the table row indicates when creation is completed.
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 
@@ -103,7 +103,7 @@ When you create an organization you assign a quota to it.  The quota sets limits
 ## Step 5: Deploy and view applications
 {: #deploy-apps}
 
-When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.Bluemix_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html) with the {{site.data.keyword.cloud_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
 ## Step 6: Create or add IBM Cloud service instances to spaces
 {: #service-instances}
@@ -139,7 +139,7 @@ To start the Stratos console:
 1. Open the CFEE instance where the Stratos console was installed.
 2. Click **Stratos Console** on the overview page.
 3. The Stratos console is opened in a separate browser tab. When you open the console for the first time, you're prompted to accept two consecutive warnings because of self-signed certificates.
-4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.Bluemix_notm}} credentials.
+4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.cloud_notm}} credentials.
 
 
 ## Additional resources

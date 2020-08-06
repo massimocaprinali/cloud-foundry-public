@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -98,7 +98,7 @@ subcollection: cloud-foundry-public
 
 In some situations, it might be necessary to clear the NuGet package cache for your application.  Doing so clears any existing cached NuGet packages and prevent the buildpack from caching any new packages.
 
-You can clear the cache by setting the `CACHE_NUGET_PACKAGES` environment variable to `false` using the {{site.data.keyword.Bluemix_notm}} CLI:
+You can clear the cache by setting the `CACHE_NUGET_PACKAGES` environment variable to `false` using the {{site.data.keyword.cloud_notm}} CLI:
 
 ```shell
   ibmcloud cf set-env <app_name> CACHE_NUGET_PACKAGES false

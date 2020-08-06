@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -96,10 +96,10 @@ subcollection: cloud-foundry-public
 # Options for pushing Liberty apps
 {: #options_for_pushing}
 
-The behavior of the Liberty server in {{site.data.keyword.cloud}} is controlled by the Liberty buildpack. Buildpacks can provide a complete runtime environment for a specific class of applications. They are key to providing portability across clouds and contributing to an open cloud architecture. The Liberty buildpack provides WebSphere Liberty container capable of running Jakarta EE, Eclipse MicroProfile, Java EE, and OSGi applications. It supports popular frameworks such as Spring and includes the IBM JRE. WebSphere Liberty enables rapid application development that is suited to the cloud. The Liberty buildpack supports multiple applications that are deployed into a single Liberty server. As part of the Liberty buildpack integration into {{site.data.keyword.Bluemix_notm}}, the buildpack ensures that environment variables for binding services are shown as configuration variables in the Liberty server.
+The behavior of the Liberty server in {{site.data.keyword.cloud}} is controlled by the Liberty buildpack. Buildpacks can provide a complete runtime environment for a specific class of applications. They are key to providing portability across clouds and contributing to an open cloud architecture. The Liberty buildpack provides WebSphere Liberty container capable of running Jakarta EE, Eclipse MicroProfile, Java EE, and OSGi applications. It supports popular frameworks such as Spring and includes the IBM JRE. WebSphere Liberty enables rapid application development that is suited to the cloud. The Liberty buildpack supports multiple applications that are deployed into a single Liberty server. As part of the Liberty buildpack integration into {{site.data.keyword.cloud_notm}}, the buildpack ensures that environment variables for binding services are shown as configuration variables in the Liberty server.
 
 
-You can use the following methods to deploy your Liberty applications to {{site.data.keyword.Bluemix_notm}}.
+You can use the following methods to deploy your Liberty applications to {{site.data.keyword.cloud_notm}}.
 
 * Pushing a stand-alone application
 * Pushing a server directory
@@ -110,7 +110,7 @@ Important: When you deploy an application with the Liberty buildpack, specify a 
 ## Stand-alone apps
 {: #stand_alone_apps}
 
-Stand-alone applications such as WAR or EAR files can be deployed to Liberty in {{site.data.keyword.Bluemix_notm}}.
+Stand-alone applications such as WAR or EAR files can be deployed to Liberty in {{site.data.keyword.cloud_notm}}.
 
 To deploy a stand-alone application, run the `ibmcloud cf push` command with the -p parameter that points to your WAR or EAR file.
 For example:
@@ -234,7 +234,7 @@ Important: In order for your environment variable changes to take effect you mus
 
 In some cases, it might be necessary to provide a custom Liberty server configuration with your application. This custom configuration might be needed when you deploy a WAR or EAR file and the default server.xml file does not have the certain settings that your application needs.
 
-If you installed the Liberty profile on your workstation and you already created a Liberty server with your application, you can push the contents of that directory to {{site.data.keyword.Bluemix_notm}}.
+If you installed the Liberty profile on your workstation and you already created a Liberty server with your application, you can push the contents of that directory to {{site.data.keyword.cloud_notm}}.
 For example, if your Liberty server is named defaultServer, run the command:
 
 ```
@@ -264,7 +264,7 @@ If a Liberty profile is not installed on your workstation, you can use the follo
 ```
 {: codeblock}
 
-After the server directory is ready, you can deploy it to {{site.data.keyword.Bluemix_notm}}.
+After the server directory is ready, you can deploy it to {{site.data.keyword.cloud_notm}}.
 
 ```
     ibmcloud cf push <yourappname> -p defaultServer
@@ -281,7 +281,7 @@ Note: The web applications that are deployed as part of the server directory are
 ## Packaged server
 {: #packaged_server}
 
-You can also push a packaged server file to {{site.data.keyword.Bluemix_notm}}. The packaged server file is created by using Liberty's server package command. In addition to the application and configuration files, the packaged server file can contain shared resources and Liberty user features needed by the application.
+You can also push a packaged server file to {{site.data.keyword.cloud_notm}}. The packaged server file is created by using Liberty's server package command. In addition to the application and configuration files, the packaged server file can contain shared resources and Liberty user features needed by the application.
 
 To package a Liberty server, use the `./bin/server package` command from your Liberty installation directory. Specify your server name and include the `--include=usr` option.
 For example, if your Liberty server is `defaultServer`, run the command:
@@ -293,7 +293,7 @@ For example, if your Liberty server is `defaultServer`, run the command:
 
 This command generates a serverName.zip file in the server's directory. If you used the `--archive` option to specify a different archive file, make sure it has the `.zip` extension instead of `.jar`. **The buildpack does not support packaged server files created with the `.jar` extension**.
 
-You can then push the generated `.zip` file to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud cf push` command.
+You can then push the generated `.zip` file to {{site.data.keyword.cloud_notm}} with the `ibmcloud cf push` command.
 For example:
 
 ```

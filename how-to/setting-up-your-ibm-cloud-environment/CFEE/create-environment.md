@@ -17,13 +17,13 @@ lastupdated: "2019-09-03"
 {: #create-environment}
 
 ## Prerequisites
-* Ensure that you are in the {{site.data.keyword.Bluemix_notm}} account where you want to create the environment.
+* Ensure that you are in the {{site.data.keyword.cloud_notm}} account where you want to create the environment.
 * Ensure that you have the correct [permissions](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions
 ) before creating instances of the {{site.data.keyword.cfee_full_notm}}. 
 * [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance (CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service).  
 
 ## Creating an instance
-1.  Go to the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
+1.  Go to the {{site.data.keyword.cloud_notm}} [catalog](https://cloud.ibm.com/catalog).
 
 2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click on it to open the overview page for the service.  That first page provides an overview of the main features. Click **Continue**.
 
@@ -35,13 +35,13 @@ lastupdated: "2019-09-03"
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
-    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.Bluemix_notm}} account is [VRF enabled](https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
+    * Select the **Zones** where the Kubernetes worker nodes will be deployed. You have the option of provision the worker nodes in the same zone (**Single Zone**) or in multiple zones (**Multizone**).  **Note** that creating a multizone CFEE requires [VLAN spanning](https://cloud.ibm.com/docs/containers?topic=containers-subnets#vlan-spanning), which is also supported when the {{site.data.keyword.cloud_notm}} account is [VRF enabled](https://cloud.ibm.com/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
     
     Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
     
     **Note: Provisioning on an isolated network:** You can target VLANs in an isolated network. When the CFEE instance is created in an isolated network, the policies in the isolated network (e.g., calico policies or VRA rules) must allow ALL outbound access from the CFEE instance for the CFEE to be provisioned successfully. Once the CFEE is created, the outbound access restrictions can be reinstated, except for outbound access to certain services and micro-services in the IBM Cloud.  See the [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more information.
     
-    Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.Bluemix_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](/docs/containers?topic=containers-getting-started#getting-started).
+    Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.cloud_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](/docs/containers?topic=containers-getting-started#getting-started).
 
 5. Configure the security of the CFEE:
     * Select the **hardware isolation** for the Kubernetes cluster:   
@@ -65,7 +65,7 @@ lastupdated: "2019-09-03"
 
 8.  Click **Create**, which opens the environment dashboard and indicates the creation progress and status.
 
-**Note:** Once the creation process has started, a table row for the CFEE is shown in the {{site.data.keyword.Bluemix_notm}} dashboard, in the _Resource List_, and in the [Cloud Foundry Environments dashboard](https://cloud.ibm.com/resources?filter=cf_environments).  The status in the table row indicates when creation is completed.
+**Note:** Once the creation process has started, a table row for the CFEE is shown in the {{site.data.keyword.cloud_notm}} dashboard, in the _Resource List_, and in the [Cloud Foundry Environments dashboard](https://cloud.ibm.com/resources?filter=cf_environments).  The status in the table row indicates when creation is completed.
 
 The automated process that creates the environment deploys the infrastructure into a Kubernetes cluster and configures it to make it ready for use. The process takes 90 - 120 minutes.
 

@@ -23,7 +23,7 @@ To add users as members of an organization in an {{site.data.keyword.cfee_full_n
 1. Go to the **Organizations** entry in the navigation pane. Locate the organization where you want to add a member. Go to the _Actions_ menu in the table row, and select **Add member**. Alternatively, you can click the organization to open the organization's page, go to the **Members** tab, and click **Add member**.
 2. In the _Add member_ window, find the user, select an **Organization role**, and click **Add**.
 
-**Note:** If you intend to add a user who was recently invited to your {{site.data.keyword.Bluemix_notm}} account, it can take several minutes for that user to be recognized in the window where you add users to an organization or space. If the user is not recognized when you enter the user name, enter the user's email address and press the plus (+) icon to add the user.
+**Note:** If you intend to add a user who was recently invited to your {{site.data.keyword.cloud_notm}} account, it can take several minutes for that user to be recognized in the window where you add users to an organization or space. If the user is not recognized when you enter the user name, enter the user's email address and press the plus (+) icon to add the user.
 
 Only space managers (or managers of the parent organization) can add members to a space. To add users as members of a space in an organization in an {{site.data.keyword.cfee_full_notm}} instance:
 

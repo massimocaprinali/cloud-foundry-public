@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -101,16 +101,16 @@ subcollection: cloud-foundry-public
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-swift) and explore on your own.
 {: hide-in-docs}
 
-By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.Bluemix_notm}} database service in your app.
+By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
 
-Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.Bluemix_notm}} CLI! The {{site.data.keyword.Bluemix_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.Bluemix_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.Bluemix_notm}} CLI in this tutorial.
+Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
 
 ## Before you begin
 {: #prereqs-swift}
 
 * [Git](https://git-scm.com/downloads){: external}
-* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
 * [Swift compiler](https://swift.org/download/){: external} for your platform.
 
 ## Step 1: Clone the sample app
@@ -190,14 +190,14 @@ In this manifest.yml file, **random-route: true** generates a random route for y
 
 You can use the {{site.data.keyword.Bluemix_short}} CLI to deploy apps.
 
-1. Log in to your {{site.data.keyword.Bluemix_notm}} account, and select an API endpoint.
+1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
   ```
 ibmcloud login
   ```
   {: codeblock}
 
-  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/iam?topic=iam-federated_id) for more information.
+  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
   ```
 ibmcloud login --sso
@@ -213,7 +213,7 @@ ibmcloud target --cf
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
 
-1. From within the *get-started-swift* directory, push your app to {{site.data.keyword.Bluemix_notm}}
+1. From within the *get-started-swift* directory, push your app to {{site.data.keyword.cloud_notm}}
 
   ```
 ibmcloud cf push
@@ -229,20 +229,20 @@ ibmcloud cf apps
   ```
   {: codeblock}
 
-You can also go to the {{site.data.keyword.Bluemix_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
+You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
 ## Step 5: Add a database
 {: #add_database-swift}
 
-Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this application and set up the application so that it can run locally and on {{site.data.keyword.Bluemix_notm}}.
+Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this application and set up the application so that it can run locally and on {{site.data.keyword.cloud_notm}}.
 
-1. In your browser, log in to {{site.data.keyword.Bluemix_notm}} and go to the Dashboard. Select **Create resource**.
+1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
 1. In the navigation, go to **Connections**, then click **Create connection**. Select your application, and click **Connect**.
 1. Using the default values, click **Connect & restage app** to connect the database to your application. Click **Restage** when prompted.
 
-   {{site.data.keyword.Bluemix_notm}} will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is available to the application only when it is running on {{site.data.keyword.Bluemix_notm}}.
+   {{site.data.keyword.cloud_notm}} will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is available to the application only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -250,7 +250,7 @@ Environment variables enable you to separate deployment settings from your sourc
 ## Step 6: Use the database
 {: #use_database-swift}
 
-We're now going to update your local code to point to this database. Create a JSON file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.Bluemix_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
+We're now going to update your local code to point to this database. Create a JSON file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
 
 Create a file called `my-cloudant-credentials.json` in the `config` directory with the following content (as reference, see `config/my-cloudant-credentials.json.example`):
 
@@ -278,12 +278,12 @@ Update the `mappings.json` file in the `config` directory by replacing the `clou
   ```
   {: codeblock}
 
-This sample application uses the `CloudEnvironment` package to interact with {{site.data.keyword.Bluemix_notm}} to parse environment variables. [Learn more...](https://github.com/IBM-Swift/CloudEnvironment)
+This sample application uses the `CloudEnvironment` package to interact with {{site.data.keyword.cloud_notm}} to parse environment variables. [Learn more...](https://github.com/IBM-Swift/CloudEnvironment)
 
 The `cloudant` placeholder in the `cloudfoundry:cloudant` configuration makes it easier to bind a user-provided Cloudant service to your application. With the `cloudfoundry:cloudant` configuration, you can create a Cloudant service that includes the string, `cloudant` somewhere in the service name and bind it to your application, without editing the `config.json` file. If you modify this configuration and later want to use a user-provided Cloudant service, you either need to edit the configuration to `cloudfoundry:cloudant` or define `cloudfoundry:` with the name of your user-provided service.
 {: tip}
 
-Find your app in the {{site.data.keyword.Bluemix_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+Find your app in the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 Copy and paste just the credentials to the corresponding fields in your local config.json file.
 
@@ -302,7 +302,7 @@ swift build
 
  This sample application uses the `Kitura-CouchDB` package to interact with Cloudant. [Learn more...](https://github.com/IBM-Swift/Kitura-CouchDB)
 
- Make any changes you want and re-deploy to {{site.data.keyword.Bluemix_notm}}!
+ Make any changes you want and re-deploy to {{site.data.keyword.cloud_notm}}!
 
   ```
 ibmcloud cf app push

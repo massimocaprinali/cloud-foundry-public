@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -122,7 +122,7 @@ When you implement a multi-organization architecture, you can segregate each org
 
 * Define a space to host a service that requires provisioning and configuring only once in the organization.
 * Define a space per application, per group of related apps, or for a specific project.
-* If you need to enforce boundaries for different users, define a space for each set of users. When a user is granted a developer role in a space, that user has full access to any resources and {{site.data.keyword.Bluemix_notm}} services) that are provisioned and running in that space. When you need to enforce tighter security to prevent users controlling every resource, consider defining different spaces. Within any of these spaces, you can provision {{site.data.keyword.Bluemix_notm}} services that are used by the apps running in that space.
+* If you need to enforce boundaries for different users, define a space for each set of users. When a user is granted a developer role in a space, that user has full access to any resources and {{site.data.keyword.cloud_notm}} services) that are provisioned and running in that space. When you need to enforce tighter security to prevent users controlling every resource, consider defining different spaces. Within any of these spaces, you can provision {{site.data.keyword.cloud_notm}} services that are used by the apps running in that space.
 
 ## Space naming, restrictions, and management
 {: #spaceadmin}

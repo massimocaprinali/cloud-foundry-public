@@ -47,7 +47,7 @@ IBM provides you with an enterprise cloud platform to deploy your workload. You 
 
 **Your responsibilities**  
 - Use the provided API, CLI, or console tools to [scale the environment](/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to meet the needs of your workload.
-  
+
 ## Managing {{site.data.keyword.cfee_full_notm}}
 
 **IBM responsibilities**  
@@ -76,14 +76,14 @@ with IBM Cloud Identity and Access Management (IAM).
 
 **Your responsibilities**
 - Use the API, CLI, or console tools [to apply the provided security patch updates to your Cloud Foundry environment](/docs/cloud-foundry?topic=cloud-foundry-update-scale#update).
-- [Manage access and users](https://cloud.ibm.com/iam#/users) for {{site.data.keyword.cfee_short}}.
+- [Manage access and users](https://cloud.ibm.com/iam/overview) for {{site.data.keyword.cfee_short}}.
 - [Create an isolated network and deploy your Cloud Foundry environment in isolation](/docs/cloud-foundry?topic=cloud-foundry-isolated-network).
 - [Provide information to allow for account audits and alerts in the services and {{site.data.keyword.cfee_short}} platform](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing).
 - [Protect external services](/docs/account?topic=account-find-access#find-access) (for example, databases) with access controls.
 
 ## App orchestration
 
-**IBM responsibilities** 
+**IBM responsibilities**
 
 - Provision the Cloud Foundry environment so that you can access the {{site.data.keyword.cfee_short}} API.
 - Provide Cloud Foundry integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.

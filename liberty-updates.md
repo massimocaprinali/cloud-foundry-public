@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -413,10 +413,10 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also contains security fixes for the [Apache Standard Taglibs vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21985531).
 
 ### May 25, 2016: Updated Liberty buildpack v2.9-20160519-1249
-* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/). The updated version of Liberty makes the *bluemixLogCollector-1.1* and *logstashCollector-1.1* beta features available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/). The updated version of Liberty makes the *bluemixLogCollector-1.1* and *logstashCollector-1.1* beta features available in {{site.data.keyword.cloud_notm}}.
 
 ### May 5, 2016: Updated Liberty buildpack v2.8-20160430-1011
-* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/). The updated version of Liberty makes the *logstashCollector-1.0* GA feature and the *logmetCollector-1.0* beta feature available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/). The updated version of Liberty makes the *logstashCollector-1.0* GA feature and the *logmetCollector-1.0* beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains updated versions of IBM JRE: 8 SR3 and 7.1 SR3 FP40.
 * The buildpack adds initial support for the [AppDynamics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.appdynamics.com/) application monitoring agent.
 * The [Dynatrace](dynatrace.html) support was improved to simplify the installation of the agent.
@@ -424,7 +424,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The Node.js runtime that is used by the [devconsole and shell App Management utilities](../common/app_mng.html#app_management) was updated to the latest 0.12.13 version.
 
 ### March 25, 2016: Updated Liberty buildpack v2.7-20160321-1358
-* The buildpack contains an updated version of WebSphere Liberty based on the [March beta](https://developer.ibm.com/wasdev/blog/2016/03/18/new-websphere-liberty-features-march-2016/). The updated version of Liberty makes the cloudant-1.0 beta feature available in {{site.data.keyword.Bluemix_notm}}
+* The buildpack contains an updated version of WebSphere Liberty based on the [March beta](https://developer.ibm.com/wasdev/blog/2016/03/18/new-websphere-liberty-features-march-2016/). The updated version of Liberty makes the cloudant-1.0 beta feature available in {{site.data.keyword.cloud_notm}}
 * The buildpack also contains updated versions of IBM JRE: 8 SR2 FP12 and 7.1 SR3 FP32.
 * The buildpack provides an updated version of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started).
 * The buildpack now comes with a new data collector for the Monitoring and Analytics service. The new collector enables configuration of monitoring thresholds and contains a number of bug fixes.
@@ -436,15 +436,15 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack adds support for [DynamicPULSE](www.fujitsu.com/jp/group/fsweb/products/dynamic-pulse/).
 
 ### February 10, 2016: Updated Liberty buildpack v2.5-20160209-1336
-* The buildpack contains an updated version of WebSphere Liberty based on the [February beta](https://developer.ibm.com/wasdev/blog/2016/02/12/beta-websphere-liberty-and-tools-february/). The updated version of the Liberty profile makes the apiDiscovery-1.0 GA feature available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [February beta](https://developer.ibm.com/wasdev/blog/2016/02/12/beta-websphere-liberty-and-tools-february/). The updated version of the Liberty profile makes the apiDiscovery-1.0 GA feature available in {{site.data.keyword.cloud_notm}}.
 
 ### February 4, 2016: Updated Liberty buildpack v2.4-20160127-1437
-* The buildpack contains an updated version of WebSphere Liberty based on the January beta. With this update, the scim-1.0 Liberty feature, previously available as beta a feature, is now available as a production-ready feature. The updated version of Liberty also makes the passwordUtilities-1.0 beta feature available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the January beta. With this update, the scim-1.0 Liberty feature, previously available as beta a feature, is now available as a production-ready feature. The updated version of Liberty also makes the passwordUtilities-1.0 beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains an updated IBM JRE 7.1 SF3 FP20 and IBM JRE 8 SR2 FP10.
 * The buildpack was updated to download the latest 1.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](autoConfig.html).
 
 ### December 16, 2015: Updated Liberty buildpack v2.3-20151208-1311
-* The buildpack contains an updated version of the Liberty profile based on the [December beta](https://developer.ibm.com/wasdev/blog/2015/11/20/beta-was-liberty-beta-with-tools-december-2015/). The updated version of the Liberty profile makes the spnego-1.0 and wsSecuritySaml-1.1 GA features and the scim-1.0 beta feature available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of the Liberty profile based on the [December beta](https://developer.ibm.com/wasdev/blog/2015/11/20/beta-was-liberty-beta-with-tools-december-2015/). The updated version of the Liberty profile makes the spnego-1.0 and wsSecuritySaml-1.1 GA features and the scim-1.0 beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains an updated IBM JRE 8 SR2.
 * The buildpack was also updated to download the latest [9.4.x PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://jdbc.postgresql.org/) and 1.2.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration](autoConfig.html) for PostgreSQL or MySQL type of services.
 
@@ -459,7 +459,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also provides a number of performance improvements and optimizations:
   * The [CDI 1.2](optionsForPushing.html) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.
   * To reduce the droplet size, the [App Management utilities](../common/app_mng.html) devconsole and shell, require a restage operation instead of a restart.
-  * The IBM JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.Bluemix_notm}} environment.
+  * The IBM JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.cloud_notm}} environment.
 
 ### September 18, 2015: Updated Liberty buildpack v2.0-20150914-1535
 * The buildpack introduces two major changes:
@@ -472,7 +472,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack supports the [HTTP_PROXY and HTTPS_PROXY environment variables](environmentVariables.html). If set, the buildpack uses the proxy server specified by these environment variables when it downloads various buildpack components.
 
 ### August 19, 2015: Updated Liberty buildpack v1.21-20150811-1342
-* The buildpack contains an updated version of the Liberty profile based on the [August beta](https://developer.ibm.com/wasdev/blog/2015/07/30/beta-was-liberty-beta-with-tools-august-2015/). The updated version of the Liberty profile makes the following new [beta features](usingBetaFeatures.html) available in {{site.data.keyword.Bluemix_notm}}: bells-1.0, rtcommGateway-1.0, samlWebSso-2.0.
+* The buildpack contains an updated version of the Liberty profile based on the [August beta](https://developer.ibm.com/wasdev/blog/2015/07/30/beta-was-liberty-beta-with-tools-august-2015/). The updated version of the Liberty profile makes the following new [beta features](usingBetaFeatures.html) available in {{site.data.keyword.cloud_notm}}: bells-1.0, rtcommGateway-1.0, samlWebSso-2.0.
 
 ### July 31, 2015: Updated Liberty buildpack v1.20.1-20150729-1255
 * The buildpack contains updated versions of IBM JREs: 7.1 SR1 FP10 and 8 SR1 FP10.
@@ -480,7 +480,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * The service plug-in that provides [auto-configuration support](autoConfig.html) for the [Cloudant NoSQL Database](/docs/Cloudant/index.html#Cloudant) service was updated to ensure that the connections to the service are established over a secure channel.
 
 ### July 21, 2015: Updated Liberty buildpack v1.20-20150713-1450
-* The buildpack contains an updated version of the Liberty profile based on the [8.5.5.6 release](https://developer.ibm.com/wasdev/blog/2015/06/25/java-ee-7-has-landed-in-was-liberty/). With this release all the Java EE 7 Liberty features previous available as beta features, are now available as production-ready features. Due to port and other restrictions in the {{site.data.keyword.Bluemix_notm}}, some features such as for example remote EJBs are not be fully supported in the platform.
+* The buildpack contains an updated version of the Liberty profile based on the [8.5.5.6 release](https://developer.ibm.com/wasdev/blog/2015/06/25/java-ee-7-has-landed-in-was-liberty/). With this release all the Java EE 7 Liberty features previous available as beta features, are now available as production-ready features. Due to port and other restrictions in the {{site.data.keyword.cloud_notm}}, some features such as for example remote EJBs are not be fully supported in the platform.
 * The buildpack recognizes and runs applications packaged in the [distZip-style ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.gradle.org/current/userguide/application_plugin.html).
 * The buildpack contains an updated data collector for the Monitoring and Analytics service and WebSphere eXtreme Scale Client that support the new Liberty runtime version.
 
@@ -507,7 +507,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * When stand-alone WAR files are deployed, if provided, the buildpack now uses the context-root that is specified in the embedded **ibm-web-ext.xml** file as the application's context root. With this change, applications that were previously deployed under the root context might be deployed under a different context based on the settings in the **ibm-web-ext.xml** file.
 
 ### April 3, 2015: Updated Liberty buildpack v1.15-20150402-1422
-* The buildpack contains an updated version of the Liberty profile based on the [March beta](https://developer.ibm.com/wasdev/blog/2015/03/13/announcing-liberty-beta-tools-march-2015/). The updated version of the Liberty profiles makes the jsf-2.2 beta feature available in {{site.data.keyword.Bluemix_notm}}.
+* The buildpack contains an updated version of the Liberty profile based on the [March beta](https://developer.ibm.com/wasdev/blog/2015/03/13/announcing-liberty-beta-tools-march-2015/). The updated version of the Liberty profiles makes the jsf-2.2 beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains an updated version of the data collector for the Monitoring and Analytics service.
 
 ### March 20, 2015: Updated Liberty buildpack v1.14-20150319-1159
@@ -518,9 +518,9 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 
 ### February 10, 2015: Updated Liberty buildpack v1.13-20150209-1122
 * The buildpack contains security fixes for the [Apache HttpComponents and Java overlay feature vulnerabilities](https://www-304.ibm.com/connections/blogs/PSIRT/entry/ibm_security_bulletin_multiple_vulnerabilities_fixed_in_liberty_for_java_for_ibm_bluemix_cve_2012_6153_cve_2014_3577_cve_2015_0178?lang=en_us).
-* The buildpack contains an updated version of the Liberty profile based on the [February beta](https://developer.ibm.com/wasdev/blog/2015/02/13/announcing-liberty-beta-tools-february-2015/). The updated version of the Liberty profile provides an updated version of the WebSocket GA feature websocket-1.1. It also makes the following Java EE 7 beta features available in {{site.data.keyword.Bluemix_notm}}:
+* The buildpack contains an updated version of the Liberty profile based on the [February beta](https://developer.ibm.com/wasdev/blog/2015/02/13/announcing-liberty-beta-tools-february-2015/). The updated version of the Liberty profile provides an updated version of the WebSocket GA feature websocket-1.1. It also makes the following Java EE 7 beta features available in {{site.data.keyword.cloud_notm}}:
   * cdi-1.2, el-3.0, jsp-2.3, jca-1.7, jacc-1.5, and jaspic-1.1
-* The buildpack provides integration with the [ZeroTrunaround's JRebel tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://zeroturnaround.com/software/jrebel/). The integration makes it easy to use JRebel with {{site.data.keyword.Bluemix_notm}} applications and perform instant application updates without redeploying or restaging the application. Only stand-alone web applications are supported.
+* The buildpack provides integration with the [ZeroTrunaround's JRebel tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://zeroturnaround.com/software/jrebel/). The integration makes it easy to use JRebel with {{site.data.keyword.cloud_notm}} applications and perform instant application updates without redeploying or restaging the application. Only stand-alone web applications are supported.
 
 ### February 6, 2015: Updated Liberty buildpack v1.12-20150130-1016
 * The buildpack contains an updated version of the Liberty profile based on the [January beta](https://developer.ibm.com/wasdev/blog/2015/01/16/announcing-liberty-beta-tools-january-2015/).
@@ -533,7 +533,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * The buildpack was improved to report detailed versions of the Liberty profile and IBM JRE.
 
 ### December 19, 2014: Updated Liberty buildpack v1.10-20141218-0103
-* The buildpack provides a development mode for applications. The development mode is a special mode that allows developers to conduct many activities for an application instance that were not possible before. By using this feature, this version of the {{site.data.keyword.eclipsetoolsfull}} can now support remote debugging with incremental file updates against a Liberty application that is running in {{site.data.keyword.Bluemix_notm}}. This makes it convenient for a developer that uses Eclipse to debug an application in the cloud and apply changes to that application instantly.
+* The buildpack provides a development mode for applications. The development mode is a special mode that allows developers to conduct many activities for an application instance that were not possible before. By using this feature, this version of the {{site.data.keyword.eclipsetoolsfull}} can now support remote debugging with incremental file updates against a Liberty application that is running in {{site.data.keyword.cloud_notm}}. This makes it convenient for a developer that uses Eclipse to debug an application in the cloud and apply changes to that application instantly.
 * The buildpack also contains an updated version of the Liberty profile based on the [December beta](https://developer.ibm.com/wasdev/blog/2014/12/10/announcing-liberty-beta-december/).
 * In addition, the following four Liberty features that were previously available as beta features, are now production-ready:
   * concurrent-1.0
@@ -568,7 +568,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * With the updated buildpack, the applications can now use the Liberty beta features, including WebSocket 1.0, Servlet 3.1, or JAX-RS 2.0. For more information, see [Using the beta features](usingBetaFeatures.html).
 
 ### September 30, 2014: Updated Liberty Buildpack v1.4-20140908-1803
-* The buildpack now provides support for ElephantSQL and ClearDB MySQL Database third-party services. The auto-configuration support also works with posgresql and mysql experimental services. With the new total of 13 services, the auto-configuration support in the Liberty buildpack makes it quicker and easier to consume {{site.data.keyword.Bluemix_notm}} services in Liberty applications.
+* The buildpack now provides support for ElephantSQL and ClearDB MySQL Database third-party services. The auto-configuration support also works with posgresql and mysql experimental services. With the new total of 13 services, the auto-configuration support in the Liberty buildpack makes it quicker and easier to consume {{site.data.keyword.cloud_notm}} services in Liberty applications.
 * During application staging the buildpack displays improved log messages about auto-configuration and other actions it takes.
 * The buildpack contains an updated version of Liberty profile with fixes and improvements.
 * It also contains an updated version of IBM JRE version 7.1 that has performance improvements. See the [What's new](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.71.doc/diag/preface/changes_71/changes.html) page for detailed set of changes.
@@ -577,11 +577,11 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * The buildpack contains an updated version of the [Liberty Profile](https://developer.ibm.com/wasdev/) with the latest fixes and improvements.
 * This version of the buildpack fixes support for the JAVA_OPTS environment variable for passing additional JVM options to the application runtime.
 * It also fixes a problem that prevented deployment of standalone Spring-based Jar applications.
-* It is now possible to generate and download IBM JVM snap traces using the {{site.data.keyword.Bluemix_notm}} UI. See the [Troubleshooting topic](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/troubleshooting.html) in the IBM JVM documentation to learn more about the snap traces or other diagnostic information that is generated by the JVM.
+* It is now possible to generate and download IBM JVM snap traces using the {{site.data.keyword.cloud_notm}} UI. See the [Troubleshooting topic](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/troubleshooting.html) in the IBM JVM documentation to learn more about the snap traces or other diagnostic information that is generated by the JVM.
 
 ### July 29, 2014: Updated Liberty Buildpack v1.1-20140725-1341
-* The new version of Liberty’s {{site.data.keyword.Bluemix_notm}} Edition is here!
-  * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.Bluemix_notm}} services more effectively!
+* The new version of Liberty’s {{site.data.keyword.cloud_notm}} Edition is here!
+  * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
   * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through VCAP_SERVICES and providing the ektorp client jars is no longer necessary.
 * The new version of IBM SDK for Java is here!
   * When your applications are pushed again, they use IBM SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your application shows better throughput and reduced memory usage. See more about the IBM Java SDK [here](http://www-01.ibm.com/support/docview.wss?uid=swg21671466).

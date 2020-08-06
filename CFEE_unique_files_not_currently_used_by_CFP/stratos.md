@@ -46,7 +46,7 @@ To start the Stratos console:
 1. Open the CFEE instance where the Stratos console was installed.
 2. Click **Stratos Console** on the overview page.
 3. The Stratos console is opened in a separate browser tab. When you open the console for the first time, you're prompted to accept two consecutive warnings because of self-signed certificates.
-4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.Bluemix_notm}} credentials.
+4. Click **Login** to open the console. No credentials are required since the application uses your {{site.data.keyword.cloud_notm}} credentials.
 
 ## Uninstalling the Stratos Console
 

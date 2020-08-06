@@ -150,7 +150,7 @@ The error means that some of autoscaler pods are down.
   ```
   {: screen}
 4. Wait at least 1 minute and verify the alert disappears from Prometheus.
-5. Go to the [{{site.data.keyword.Bluemix_notm}} Cloud Foundry dashboard](https://cloud.ibm.com/resources?filter=cf_environments) and open the {{site.data.keyword.cfee_full_notm}} where you want to check the actual status of Autoscaler.
+5. Go to the [{{site.data.keyword.cloud_notm}} Cloud Foundry dashboard](https://cloud.ibm.com/resources?filter=cf_environments) and open the {{site.data.keyword.cfee_full_notm}} where you want to check the actual status of Autoscaler.
 6. In the {{site.data.keyword.cfee_full_notm}} user interface, go to the **Operations** entry in the left navigation pane and click on **Health check** entry to open the _Health check_ page. The status of Autoscaler should be **No known issues**.
 7. Autoscaler service should be ready.
 
@@ -697,7 +697,7 @@ Still having issues with your {{site.data.keyword.cfee_full}}?
 {: shortdesc}
 
 -  In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all the available commands and flags.
--   To see whether {{site.data.keyword.Bluemix_notm}} is available, [check the {{site.data.keyword.Bluemix_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
+-   To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page ![External link icon](../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status).
 -   From the console, check if you have any relevant **Notifications**. <!-- ![Notifications icon](../icons/Notification_PUP.svg "Notifications icon"). -->
 -   Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 When you report an issue, include your cluster ID and CFEE instance ID. To get your cluster ID, run `ibmcloud ks clusters`. To get your CFEE instance ID, run `ibmcloud cfee environments`.

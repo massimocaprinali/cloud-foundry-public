@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -216,7 +216,7 @@ To get the appropriate authority level, use one of the following methods.
 {: tsResolve}
 
 * Select another organization and space for which you have the Developer role.
-* Ask the org manager to change your role to Developer or to create a space and then assign you a Developer role. See [Managing organizations and spaces](/docs/iam?topic=iam-cfaccess#cfaccess) for details.
+* Ask the org manager to change your role to Developer or to create a space and then assign you a Developer role. See [Managing organizations and spaces](/docs/account?topic=account-mngcf) for details.
 
 ## Disk quota is exceeded
 {: #ts_disk_quota}

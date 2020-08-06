@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -103,7 +103,7 @@ subcollection: cloud-foundry-public
 MSBuild based projects are now published using the `dotnet publish` command during staging.  By default, the buildpack will publish your application in `Debug` configuration.
 To publish your application in `Release` configuration, set the `PUBLISH_RELEASE_CONFIG` environment variable to `true`.
 
-You can do this with the {{site.data.keyword.Bluemix_notm}} CLI with the following command:
+You can do this with the {{site.data.keyword.cloud_notm}} CLI with the following command:
 
 ```shell
   ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
