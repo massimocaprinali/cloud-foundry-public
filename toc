@@ -23,8 +23,7 @@ Cloud Foundry Public
         how-to/setting-up-your-ibm-cloud-environment/design-structure.md
         how-to/setting-up-your-ibm-cloud-environment/org-structure.md
         how-to/setting-up-your-ibm-cloud-environment/spaces.md
-        /account/cfaccess
-
+        /account/account-mngcf
 
     {: .topicgroup}
     Creating and deploying apps
