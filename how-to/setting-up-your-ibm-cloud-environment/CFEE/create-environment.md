@@ -18,9 +18,9 @@ lastupdated: "2019-09-03"
 
 ## Prerequisites
 * Ensure that you are in the {{site.data.keyword.cloud_notm}} account where you want to create the environment.
-* Ensure that you have the correct [permissions](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions
+* Ensure that you have the correct [permissions](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-permissions
 ) before creating instances of the {{site.data.keyword.cfee_full_notm}}. 
-* [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance (CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service).  
+* [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry-public/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance (CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service).  
 
 ## Creating an instance
 1.  Go to the {{site.data.keyword.cloud_notm}} [catalog](https://cloud.ibm.com/catalog).
@@ -28,10 +28,10 @@ lastupdated: "2019-09-03"
 2.  Locate the {{site.data.keyword.cfee_full_notm}} service in the catalog and click on it to open the overview page for the service.  That first page provides an overview of the main features. Click **Continue**.
 
 3.  Configure the CFEE instance to be created:
-    * Select a plan. See the [Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-create-environment#create-environment#eirini) section for a description of the limitations of this plan.
+    * Select a plan. See the [Eirini technical preview](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-create-environment#create-environment#eirini) section for a description of the limitations of this plan.
     * Enter a **Name** for the CFEE instance.
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
-    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
+    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/catalog/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
@@ -39,7 +39,7 @@ lastupdated: "2019-09-03"
     
     Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
     
-    **Note: Provisioning on an isolated network:** You can target VLANs in an isolated network. When the CFEE instance is created in an isolated network, the policies in the isolated network (e.g., calico policies or VRA rules) must allow ALL outbound access from the CFEE instance for the CFEE to be provisioned successfully. Once the CFEE is created, the outbound access restrictions can be reinstated, except for outbound access to certain services and micro-services in the IBM Cloud.  See the [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#isolated-network) documentation for more information.
+    **Note: Provisioning on an isolated network:** You can target VLANs in an isolated network. When the CFEE instance is created in an isolated network, the policies in the isolated network (e.g., calico policies or VRA rules) must allow ALL outbound access from the CFEE instance for the CFEE to be provisioned successfully. Once the CFEE is created, the outbound access restrictions can be reinstated, except for outbound access to certain services and micro-services in the IBM Cloud.  See the [Operating in an isolated network](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-isolated-network#isolated-network) documentation for more information.
     
     Once the CFEE is created, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.cloud_notm}} [dashboard](https://cloud.ibm.com/catalog/dashboard/apps/). For more information, see [Kubernetes Service documentation](/docs/containers?topic=containers-getting-started#getting-started).
 
@@ -48,7 +48,7 @@ lastupdated: "2019-09-03"
       * _Virtual-shared_: Infrastructure resources in the cluster, such as the hypervisor and physical hardware, are distributed between you and other IBM customers, but each worker node is single-tenant to you.
       * _Virtual-dedicated_: The worker nodes in the cluster are hosted on infrastructure that is devoted to your account.
     * Data in the cluster is **encrypted** by default. You have the option of turning off _Encrypt local disk_.
-    * **Service access endpoints used for management:** If the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/service-endpoint?topic=service-endpoint-getting-started#getting-started), management access by the CFEE control plane to the new CFEE and its supporting services (Kubernetes cluster, Databases for PostgreSQL and Cloud Object Storage) will take place through the IBM private network.  One the CFEE instance is created, administrators can see information about the endpoints used for management access in the **Management access** page (located in the upper right corner of the _Overview_ page in the CFEE user interface). [Learn more](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-isolated-network#private-access)
+    * **Service access endpoints used for management:** If the IBM Cloud account is enabled for Virtual Routing & Fowarding ([VRF](https://cloud.ibm.com/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)) and IBM [Cloud Service Endpoint](https://cloud.ibm.com/docs/service-endpoint?topic=service-endpoint-getting-started#getting-started), management access by the CFEE control plane to the new CFEE and its supporting services (Kubernetes cluster, Databases for PostgreSQL and Cloud Object Storage) will take place through the IBM private network.  One the CFEE instance is created, administrators can see information about the endpoints used for management access in the **Management access** page (located in the upper right corner of the _Overview_ page in the CFEE user interface). [Learn more](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-isolated-network#private-access)
 
 6.  Configure the capacity of the CFEE:
     * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  

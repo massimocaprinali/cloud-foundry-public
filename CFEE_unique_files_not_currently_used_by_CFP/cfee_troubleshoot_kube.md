@@ -168,7 +168,7 @@ If the Kubernetes cluster certificate expires on the Kubernetes master, then the
 ### How to Fix
 {: #certexpires_fix}
 
-Kubernetes master is IBM-managed. You need to contact IBM Support by opening a case - see [Getting Help and Support](/docs/cloud-foundry?topic=cloud-foundry-debug_cluster#ts_getting_help).
+Kubernetes master is IBM-managed. You need to contact IBM Support by opening a case - see [Getting Help and Support](/docs/cloud-foundry-public?topic=cloud-foundry-public-debug_cluster#ts_getting_help).
 
 
 ## Issue with frequently restarted pods

@@ -22,7 +22,7 @@ Follow the instructions [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=v
 ## Prerequisites
 {: #prereq}
 Before provisioning CFEE into your VPC, ensure that you have the following:
-1. You must have the same permissions as are required to [provision on classic infrastructure](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-permissions) (excluding permissions for VLANS or datacenters).
+1. You must have the same permissions as are required to [provision on classic infrastructure](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-permissions) (excluding permissions for VLANS or datacenters).
 1. The targeted account must be configured so that, for IBM Kubernetes Service (IKS) provisioning, actions are performed as a user with Kubernetes Administrator and VPC viewer access. The access can be reset using the command `ibmcloud ks api-key reset`. [See documentation here.](https://cloud.ibm.com/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#api_key-commands)
 1. To provision a CFEE in an isolated environment (whether VPC or on classic infrastructure) you must enable your account for [Cloud Service Endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps) (CSE).
 
@@ -45,7 +45,7 @@ All {{site.data.keyword.cfee_full_notm}} instances must allow specific inbound a
 ### Outbound Connectivity
 All {{site.data.keyword.cfee_full_notm}} instances must be able to reach specific services (IBM's Identity and Access Management service, for example) to function.  The simplest way to enable this is to ensure that every public subnet in the VPC has a public gateway.  Users can find the list of options for enabling outbound Internet connectivity from within a VPC [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about#internet-access).
 
-**Note:** It is the user's responsibility, prior to beginning the {{site.data.keyword.cfee_full_notm}} provisioning process, to ensure that the required Internet connectivity is in place.  You can find more information on network isolation [here](cloud-foundry?topic=cloud-foundry-isolated-network).
+**Note:** It is the user's responsibility, prior to beginning the {{site.data.keyword.cfee_full_notm}} provisioning process, to ensure that the required Internet connectivity is in place.  You can find more information on network isolation [here](cloud-foundry?topic=cloud-foundry-public-isolated-network).
 
 ### Inbound Connectivity
 By default, all {{site.data.keyword.cfee_full_notm}} instances are reachable over the Internet via a public load balancer.  This load balancer allows traffic to reach both the Cloud Foundry administrative APIs and applications hosted within the {{site.data.keyword.cfee_full_notm}} instance.  To disallow
@@ -58,17 +58,17 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 1. Select VPC environment.
 1. Choose your recently created VPC from the dropdown.
 1. Choose the Worker Zones and Subnets you plan to use.
-1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-create-environment).
+1. Continue to follow the instructions for creating a regular CFEE [here](cloud-foundry?topic=cloud-foundry-public-create-environment).
 
 ## Enabling Monitoring
 {: #enable-monitoring}
 
 With the CFEE 5.2 release, enabling monitoring on a VPC infrastructure is supported.
-Monitoring on VPC has some limitations compared to monitoring on classic infrastructure as detailed in [Monitoring](cloud-foundry?topic=cloud-foundry-monitoring#MonitoringVPC).
+Monitoring on VPC has some limitations compared to monitoring on classic infrastructure as detailed in [Monitoring](cloud-foundry?topic=cloud-foundry-public-monitoring#MonitoringVPC).
 
 ## Limitations
 {: #limitations}
-There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
+There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
 
 ## Network Isolation for CFEE on VPC
 {: #network-isolation}

@@ -152,7 +152,7 @@ If enabled, the OpenJ9 JRE is used by default. Use the JBP_CONFIG_OPENJ9 environ
 ## Oracle JRE
 {: #oracle_jre}
 
-See [Using your own JRE](/docs/cloud-foundry?topic=cloud-foundry-using_own_jre) for information on using the Oracle JRE.
+See [Using your own JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_own_jre) for information on using the Oracle JRE.
 
 ## Configuring the JRE options
 {: #configuring_jre}
@@ -163,10 +163,10 @@ See [Using your own JRE](/docs/cloud-foundry?topic=cloud-foundry-using_own_jre) 
 The Liberty buildpack configures the default JVM options by taking into account:
 
 * An application's memory limit.  The applied JVM heap settings are calculated based on:
-  * an application's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry?topic=cloud-foundry-memory_limits)
+  * an application's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
   * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
 
-* The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry?topic=cloud-foundry-liberty_features).
+* The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features).
   * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting -Dcom.ibm.tx.jta.disable2PC=true.
 
 * The {{site.data.keyword.cloud_notm}} environment.
@@ -343,7 +343,7 @@ Deploying an application with customized JVM options to enable {{site.data.keywo
 ```
 {: codeblock}
 
- See the [Logging and tracing](/docs/cloud-foundry?topic=cloud-foundry-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
+ See the [Logging and tracing](/docs/cloud-foundry-public?topic=cloud-foundry-public-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
 
 ### Overlaying the JRE
 {: #overlaying_jre}

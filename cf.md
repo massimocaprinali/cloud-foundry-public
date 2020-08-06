@@ -138,7 +138,7 @@ Each app can have one or more URLs associated with it, but they must all point t
 
 In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.cloud_notm}} in Cloud Foundry. Layers such as root filesystems and middleware components are abstracted so that you can focus on your application code. However, you can learn more about these layers if you need specifics on where your app is running.
 
-See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](/docs/cloud-foundry?topic=cloud-foundry-howwork#viewinfra) for details.
+See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](/docs/cloud-foundry-public?topic=cloud-foundry-public-howwork#viewinfra) for details.
 
 As a developer, you can interact with the {{site.data.keyword.cloud_notm}} infrastructure by using a browser-based user interface. You can also use a Cloud Foundry command line interface, called cf, to deploy web apps.
 

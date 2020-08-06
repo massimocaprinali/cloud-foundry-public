@@ -20,7 +20,7 @@ This tutorial shows how to debug monitoring components on your {{site.data.keywo
 
 Monitoring an {{site.data.keyword.cfee_full}} instance and its infrastructure is supported by an open-source toolset consisting of Prometheus and Grafana.  The solution enables you to analyze, visualize and manage alerts for metrics in the Cloud Foundry environment.  There are three web consoles from which monitoring takes place: A Grafana console, a Prometheus console, and a Prometheus Alert Manager console.
 
-More details about monitoring components are available: [CFEE Monitoring](/docs/cloud-foundry?topic=cloud-foundry-monitoring)
+More details about monitoring components are available: [CFEE Monitoring](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring)
 
 ## Alertmanager reload failed
 {: #alertmanager_debug}
@@ -147,7 +147,7 @@ The defined rules to process alerts from Prometheus server can not be executed o
 ### How to Fix
 {: #prometheus_alertm_error_debug_fix}
 
-1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry?topic=cloud-foundry-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of Prometheus server and Alertmanager (after port forwarding activated - `curl localhost:9090` and `curl localhost:9093`).
+1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of Prometheus server and Alertmanager (after port forwarding activated - `curl localhost:9090` and `curl localhost:9093`).
 2. Make sure that the appropriated pods are up and running:
   ```
   kubectl -n monitoring get pods
@@ -186,7 +186,7 @@ If the Prometheus notification queue is full, the alerts could be dropped and no
 ### How to Fix
 {: #promqueue_full_fix}
 
-1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry?topic=cloud-foundry-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of your Prometheus server
+1. Using the document [Accessing the Kubernetes cluster: Port forwarding](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#accessing-the-kubernetes-cluster-port-forwarding) check the status of your Prometheus server
 2. As next step of debugging you can check how the metrics listed below developed over time on the problematic Prometheus instance (Go to `Alerts` tab on Prometheus console, copy the metric below into the metrics field and click on `Execute`button):
   - prometheus_notifications_queue_length
   - rate(prometheus_notifications_sent_total[1m])

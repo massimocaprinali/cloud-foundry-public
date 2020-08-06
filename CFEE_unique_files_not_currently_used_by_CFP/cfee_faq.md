@@ -42,7 +42,7 @@ You can find and instantiate the {{site.data.keyword.cfee_full}} service in the 
 ## Can I have more than one CFEE environment within a regional data center?
 {: #multiple-cfees}
 
-Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Will I need to start at some minimum capacity?
 {: #minimum-capacity}

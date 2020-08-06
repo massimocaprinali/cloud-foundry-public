@@ -62,7 +62,7 @@ _Monitoring_ page of the CFEE user interface will result in a
 solution is to create a Kubernetes Service and an Ingress object.
 
 In order to do so, you need to have access to your Kubernetes cluster (see steps 1 through 7 in
-[Accessing the Kubernetes Cluster](/docs/cloud-foundry?topic=cloud-foundry-monitoring#access-the-kubernetes-cluster)).
+[Accessing the Kubernetes Cluster](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#access-the-kubernetes-cluster)).
 On your workstation, create configuration files for the Service and Ingress
 objects. Consider the following as a basic example.
 
@@ -140,7 +140,7 @@ Data from individual panels can be exported from Grafana in CSV format. See the 
 ## Accessing the Kubernetes cluster: Port forwarding
 {: #access-the-kubernetes-cluster}
 
-Accessing the Kubernetes cluster is **not required** for instances of CFEE **v3.2.0 or later**. If your CFEE instance is v3.2.0 or later, skip to [Launching the monitoring consoles](/docs/cloud-foundry?topic=cloud-foundry-monitoring#launching-consoles)
+Accessing the Kubernetes cluster is **not required** for instances of CFEE **v3.2.0 or later**. If your CFEE instance is v3.2.0 or later, skip to [Launching the monitoring consoles](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#launching-consoles)
 {:important}
 
 Accessing the monitoring tools in instances prior to CFEE v3.2.0 requires to **forward the ports** of the Prometheus, Prometheus AlertManager, and Grafana servers. This is done through the Kubernetes CLI.

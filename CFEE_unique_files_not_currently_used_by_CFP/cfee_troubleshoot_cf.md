@@ -19,8 +19,8 @@ lastupdated: "2019-09-12"
 This tutorial shows how to troubleshoot Cloud Foundry components in your {{site.data.keyword.cfee_full}} (CFEE).
 
 You can take these general steps to ensure that your CFEE instances are up-to-date:
-- Check on regular basis for available updates - [What's New in IBM Cloud Foundry Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment).
-- [Update your CFEE instance](/docs/cloud-foundry?topic=cloud-foundry-update-scale)
+- Check on regular basis for available updates - [What's New in IBM Cloud Foundry Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-what-s-new-in-ibm-cloud-foundry-enterprise-environment).
+- [Update your CFEE instance](/docs/cloud-foundry-public?topic=cloud-foundry-public-update-scale)
 
 ## Debugging unavailable stager
 {: #stager_debug}
@@ -365,7 +365,7 @@ This issue will not be auto-recovered, and need manual intervention to recover.
   ```
   {:screen}
 5. Before you try to recreate the unhealthy cell please make sure other cells have enough resources to accept the instances from the rebooting cell.
-  Otherwise instances in this cell will be not available for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE environment.
+  Otherwise instances in this cell will be not available for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry-public?topic=cloud-foundry-public-update-scale#scale) to scale up your CFEE environment.
 6. Recreate the pod:
   ```
   # kubectl --namespace cf delete pod <diego-cell-x>
@@ -538,11 +538,11 @@ The resource usage on the cell is high. You need to take action to reduce the re
 ### How to fix it
 {: #cellusage_debug_fix}
 
-1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](/docs/cloud-foundry?topic=cloud-foundry-reviewing-resource-usage)
+1. Check the usage of resources for your CFEE instance using existing documentation: [Resource usage](/docs/cloud-foundry-public?topic=cloud-foundry-public-reviewing-resource-usage)
 2. You can also check the resource usage by commands `cf apps` and `cf app <APP_NAME>`.
 3. When there are applications that are no longer in use, you can clean them up by deleting them `cf delete <APP_NAME>` command.
 4. You can also use `cf scale` command to scale down apps, and therefore, reduce the occupied memory by your apps.
-5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](/docs/cloud-foundry?topic=cloud-foundry-update-scale)
+5. Try if scaling of your CFEE instance can resolve the issue: [Scaling the CFEE infrastructure](/docs/cloud-foundry-public?topic=cloud-foundry-public-update-scale)
 
 ## High number of bad gateways
 {: #badgw_debug}
@@ -579,7 +579,7 @@ You need to investigate the log of the gorouter to find out the error record and
 6. In the log above, you can see return code `502` after `"GET / HTTP/1.1"`. This indicate a 502 bad gate error in this router. `rubytest.appmonitor-cluster.us-south.containers.appdomain.cloud` indicate the app URL that have the problem. So this message means a routing record for app `rubytest` is not correct in the routing table.
 7. You can restart app `rubytest` and continue check `/var/vcap/sys/log/gorouter/access.log` to see whether the error message still shown. If the error message disappears, wait about 5 minutes and you will see the alert disappears too.
 8. If the error still occurs after you restarted the app, this means there's something wrong with your cell, you need restart your cell to make it work properly again. The second IP from the log above "172.30.190.202:61003" indicates the IP of the cell. You can use `kubectl get pod  --namespace cf -o wide | grep 172.30.190.203` to get the pod name and restart the pod.
-*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry?topic=cloud-foundry-update-scale#scale) to scale up your CFEE.*
+*Note: before your restart the cell, please make sure other cells have enough resources to accept the instances from the rebooting cell. Otherwise  instances in this cell will be impacted for several minutes. To avoid this, you can refer to [Updating and scaling](/docs/cloud-foundry-public?topic=cloud-foundry-public-update-scale#scale) to scale up your CFEE.*
 Here is the full example:
   ```
   #kubectl get pod  --namespace cf -o wide | grep 172.30.190.203
@@ -646,7 +646,7 @@ One of the active monitoring components for your {{site.data.keyword.cfee_full}}
 ### How to fix it
 {: #cmlt_push_fail_fix}
 
-1. In the Grafana instance for your {{site.data.keyword.cfee_full}} you can find dashboards which you can use to troubleshoot app failures and latency issues. See [Grafana documentation](/docs/cloud-foundry?topic=cloud-foundry-monitoring#grafana) and [Grafana dashboards](/docs/cloud-foundry?topic=cloud-foundry-monitoring#grafana-dashboards) for more information.
+1. In the Grafana instance for your {{site.data.keyword.cfee_full}} you can find dashboards which you can use to troubleshoot app failures and latency issues. See [Grafana documentation](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#grafana) and [Grafana dashboards](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#grafana-dashboards) for more information.
 2. Check the status of Cloud Foundry components for your CFEE instance using follow command:
   ```
   kubectl get pods --namespace cf
@@ -686,7 +686,7 @@ One of the active monitoring components for your {{site.data.keyword.cfee_full}}
   cf logs <APP-NAME> --recent
   ```
   {: screen}
-5. See the document [Viewing applications deployed in a specific space](/docs/cloud-foundry?topic=cloud-foundry-deploy_apps#view_specific) for more information.
+5. See the document [Viewing applications deployed in a specific space](/docs/cloud-foundry-public?topic=cloud-foundry-public-deploy_apps#view_specific) for more information.
 6. For more tips about troubleshooting of app deployment, see [Tips for CF apps troubleshooting](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html){: new_window}
 
 
