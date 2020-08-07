@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-07"
 
 keywords: cloud foundry
 
@@ -201,7 +201,7 @@ ibmcloud target --cf
 1. From within the *get-started-php* directory push your app to {{site.data.keyword.cloud_notm}}
 
    ```
-ibmcloud cf push
+   ibmcloud cf push
    ```
    {: codeblock}
 
@@ -260,7 +260,7 @@ CLOUDANT_PASSWORD=445d...d1a
 4. Run your application locally.
 
   ```
-php -S localhost:8000
+  php -S localhost:8000
   ```
   {: codeblock}
 
