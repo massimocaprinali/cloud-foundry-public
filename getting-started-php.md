@@ -137,7 +137,7 @@ ibmcloud login --sso
 1. Target a Cloud Foundry org and space:
 
   ```	  
-ibmcloud target --cf
+  ibmcloud target --cf
   ```
   {: codeblock}
 
