@@ -18,11 +18,11 @@ subcollection: cloud-foundry
 When a Node.js application is pushed to {{site.data.keyword.cloud}}, the SDK for Node.js buildpack
 typically downloads artifacts from external resources such as Node modules from NPM.  In some
 situations, such as with  [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
-[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local),  you can customize access to sites external to {{site.data.keyword.Bluemix_notm}}.  
+[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local),  you can customize access to sites external to {{site.data.keyword.cloud_notm}}.  
 {: shortdesc}
 
 The Node.js buildpack can access the following external sites. You might need to *whitelist* these sites in [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
-[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local) {{site.data.keyword.Bluemix_notm}} environments.
+[{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local) {{site.data.keyword.cloud_notm}} environments.
 
 * http://nodejs.org/ may be used to ascertain available node engine versions.
 * https://s3pository.heroku.com is used to retrieve Node engine versions not included in the buildpack.
@@ -30,7 +30,7 @@ The Node.js buildpack can access the following external sites. You might need to
 * https://iojs.org is used to retrieve older version of node which are either not contained in the buildpack or not available at  https://semver.herokuapp.com.
 * https://registry.npmjs.org is used to retrieve node modules such as express.
 
-To minimize the set of whitelisted sites, configure your applications to use a Node engine version which is included in the SDK for Node.js buildpack.  See [latest updates](/docs/cloud-foundry?topic=cloud-foundry-nodejs-latest_updates) for the set of Node engine versions included in the buildpack.  If you configure your application to use these Node engine versions, then only the https://registry.npmjs.org site is required to download modules.
+To minimize the set of whitelisted sites, configure your applications to use a Node engine version which is included in the SDK for Node.js buildpack.  See [latest updates](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the set of Node engine versions included in the buildpack.  If you configure your application to use these Node engine versions, then only the https://registry.npmjs.org site is required to download modules.
 
 Be aware that when new versions of the SDK for Node.js buildpack are installed, the set of available engine versions often changes to more recent versions.  You might be required to reconfigure your app to specify a more recent Node engine version included in the buildpack.
 
@@ -66,4 +66,4 @@ Whenever you make a change to dependencies in the `package.json` file , rerun th
 
 In some environments such as [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
 [{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local), a proxy can be configured. See
-[Working with a proxy](/docs/cloud-foundry?topic=cloud-foundry-working_with_proxy) for more details.
+[Working with a proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-working_with_proxy) for more details.

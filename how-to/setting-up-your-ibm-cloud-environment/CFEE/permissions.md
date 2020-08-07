@@ -67,7 +67,7 @@ The following Identity & Access Management (IAM) access policies are required fo
 
 * An instance of the Databases for PostgreSQL service is a required dependency of the CFEE service.  Databases for PostgreSQL is used to store Cloud Foundry data on your CFEE instance (e.g., auditing application deployment, start and stop events; keeping records of CFEE user membership, organizations, spaces, applications and service connections).
 
-The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.Bluemix_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
+The following screen illustrates access policies as they would appear in the Identity & Access page of the {{site.data.keyword.cloud_notm}} that allow a user to create an {{site.data.keyword.cfee_full_notm}} instance.
 
 ![Access policies](img/AccessPolicies_Creator.png)
 
@@ -75,10 +75,10 @@ You can grant user permissions using the {{site.data.keyword.cloud}} command lin
 {:tip}
 
 To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
-1. Go to the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to open the **Identity & Access** page.
+1. Go to the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.cloud_notm}} header to open the **Identity & Access** page.
 2. In the Access policies tab, click the user who is creating the environment to assign and view the access policies for that user.
 
-For more information about managing users and access in the {{site.data.keyword.cloud}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Managing users and access](https://cloud.ibm.com/docs/iam/iamusermanage.html#iamusermanage).
+For more information about managing users and access in the {{site.data.keyword.cloud}}, including how to organize a set of users and service IDs to facilitate access assignment to multiple users at a time, see [Setting up user access](/docs/account?topic=account-access-getstarted).
 
 ### Expediting the setting of permissions to create an environment using the CLI
 {: #permcli-creating}
@@ -116,8 +116,8 @@ ibmcloud cfee provision-permission-get USER_NAME [-ag, --access-group GROUP_NAME
 {: #perm-working}
 
 To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must be:
-1. Members of the {{site.data.keyword.Bluemix_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
-2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.Bluemix_notm}} header to check your current account access policies):
+1. Members of the {{site.data.keyword.cloud_notm}} account where the {{site.data.keyword.cfee_full_notm}} instance was created.
+2. Granted the following IAM _Access Policies_ by the account administrator (see the _Identity & Access_ page under the [**Manage > Access(IAM) > Users**](https://cloud.ibm.com/iam/#/users) menu in the {{site.data.keyword.cloud_notm}} header to check your current account access policies):
 
     Any user working in a CFEE instance needs a _viewer_ platform role (or higher) to:
   - The resource group under which the CFEE instance was created.
@@ -125,7 +125,7 @@ To work with a instance of the {{site.data.keyword.cfee_full_notm}}, users must 
 
    The level of access and control that users have in a CFEE instance depends on the role that is granted in their access policies:
 
-  - Users with _viewer_ role to a CFEE instance can see it listed in the main {{site.data.keyword.Bluemix_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](/docs/cloud-foundry?topic=cloud-foundry-adding_users).
+  - Users with _viewer_ role to a CFEE instance can see it listed in the main {{site.data.keyword.cloud_notm}} dashboard and open its user interface. Users access to specific organizations and spaces within the environment is governed by the specific organization and spaces roles that are assigned by the managers of those organizations and spaces. For more information, see [Adding users to organizations](/docs/cloud-foundry-public?topic=cloud-foundry-public-adding_users).
 
   - Users assigned _administrator_ or _editor_ roles to a CFEE instance can create organizations, assign managers to organizations and spaces, have full permissions to all organizations and spaces within the environment, and perform operational actions through the Cloud Controller API. These users are automatically granted _cloud_controller.admin scope_ in the Cloud Foundry _User Account and Authentication scope_.
 
@@ -171,4 +171,4 @@ Alternatively, you can use the `ibmcloud` cli:
   {: pre}
 
 <br>
-For more information, see [Setting up access groups](https://cloud.ibm.com/docs/iam/groups.html#groups).
+For more information, see [Setting up user access](https://cloud.ibm.com/docs/account?topic=account-access-getstarted).

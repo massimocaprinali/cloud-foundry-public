@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -141,7 +141,7 @@ When you specify the heap memory using environment variables, you override the d
 ### Specifying Heap Memory
 {: #specifying_heap_memory}
 
-You can set the heap memory size by using environment variables or by changing the `jvm.options` file. When you use either the `JVM_ARGS` or `JBP_CONFIG_IBMJDK` environment variables, any changes will take effect when pushing your application to {{site.data.keyword.Bluemix_notm}}. By changing the `jvm.options` file, the effect to the heap size configuration can also be tested locally.
+You can set the heap memory size by using environment variables or by changing the `jvm.options` file. When you use either the `JVM_ARGS` or `JBP_CONFIG_IBMJDK` environment variables, any changes will take effect when pushing your application to {{site.data.keyword.cloud_notm}}. By changing the `jvm.options` file, the effect to the heap size configuration can also be tested locally.
 
 * Use the `JVM_ARGS` environment variable and the -Xmx argument. For example to set the maximum heap size to 512M use the command that follows, then restage your app.
 
@@ -157,6 +157,6 @@ You can set the heap memory size by using environment variables or by changing t
 ```
 {: codeblock}
 
-* Specify the -Xmx argument in the jvm.options file if your application is a [server directory](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#packaged_server). For more inofrmation on usig the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](http://www-01.ibm.com/support/docview.wss?uid=swg21596474).  
+* Specify the -Xmx argument in the jvm.options file if your application is a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). For more inofrmation on usig the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](http://www-01.ibm.com/support/docview.wss?uid=swg21596474).  
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -108,7 +108,7 @@ web: node app.js
 
 1. Save the **Procfile** in the root directory of your application.
 
-If a **Procfile** is not present, the {{site.data.keyword.Bluemix_notm}} Node.js buildpack checks for a scripts.start entry in the **package.json** file. Again in the example below, app.js is the startup js script for your application.
+If a **Procfile** is not present, the {{site.data.keyword.cloud_notm}} Node.js buildpack checks for a scripts.start entry in the **package.json** file. Again in the example below, app.js is the startup js script for your application.
 ```
 {
     ...   

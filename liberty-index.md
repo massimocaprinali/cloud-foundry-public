@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -102,15 +102,15 @@ Liberty for Java applications on {{site.data.keyword.cloud}} are powered by the 
 ## Detection
 {: #liberty-detection}
 The Liberty buildpack is used when the following kinds of applications are deployed:
-* [WAR files](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#stand_alone_apps)
-* [EAR files](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#stand_alone_apps)
-* [Liberty server directory](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#server_directory)
-* [Liberty packaged server](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#packaged_server)
-* [Java main](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing#java_main)
+* [WAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
+* [EAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
+* [Liberty server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory)
+* [Liberty packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server)
+* [Java main](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#java_main)
 * [Distzip](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/container-distZip.md)
 
 ## Starter application
 {: #liberty-starter_application}
-{{site.data.keyword.Bluemix_notm}} provides several Liberty starter applications.  The Liberty starter applications are simple Liberty apps that provide a template that you can use. You can experiment with the starter apps, and make and push changes to the {{site.data.keyword.Bluemix_notm}} environment.
+{{site.data.keyword.cloud_notm}} provides several Liberty starter applications.  The Liberty starter applications are simple Liberty apps that provide a template that you can use. You can experiment with the starter apps, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
 
 

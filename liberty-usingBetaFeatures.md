@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -107,11 +107,11 @@ The Liberty beta features provide early access to new functionality and programm
 | `jdbc-4.3` |
 | `logstashCollector-1.1` |
 | `validator-1.0` |
-{: caption="Table 1. Liberty Beta features available in Liberty for Java in {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
+{: caption="Table 1. Liberty Beta features available in Liberty for Java in {{site.data.keyword.cloud_notm}}" caption-side="top"}
 
-To use the Liberty beta features in {{site.data.keyword.Bluemix_notm}}, you will need to do the following:
+To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will need to do the following:
 
-1. [Deploy a server directory or a packaged server](/docs/cloud-foundry?topic=cloud-foundry-options_for_pushing) with one or more beta features enabled in the server.xml file as in the example that follows:
+1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the server.xml file as in the example that follows:
 
   ```
 <server>
@@ -123,7 +123,7 @@ To use the Liberty beta features in {{site.data.keyword.Bluemix_notm}}, you will
   {: .codeblock}
 
 2.  Set the `IBM_LIBERTY_BETA` environment variable to `true`. This variable directs the Liberty buildpack to install and enable the beta features for your application.  For example:
-  * Using the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli):
+  * Using the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli):
     ```
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_BETA true
     ```
@@ -136,8 +136,8 @@ To use the Liberty beta features in {{site.data.keyword.Bluemix_notm}}, you will
     ```
     {: .codeblock}
 
-3. Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"`. This variable enables the [Liberty monthly runtime](/docs/cloud-foundry?topic=cloud-foundry-buildpack_defauts#liberty_versions), which supports beta features. For example:
-  * Using the {{site.data.keyword.Bluemix_notm}} CLI tool:
+3. Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"`. This variable enables the [Liberty monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_defauts#liberty_versions), which supports beta features. For example:
+  * Using the {{site.data.keyword.cloud_notm}} CLI tool:
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ```

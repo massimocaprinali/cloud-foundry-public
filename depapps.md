@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -196,7 +196,7 @@ The buffer size is limited. If an application runs for a long time and is not re
 
 When you deploy your applications to {{site.data.keyword.cloud_notm}} from the command line interface, a buildpack must be provided as the runtime environment according to your application language and framework. You can also use the Delivery Pipeline service to deploy applications to {{site.data.keyword.cloud_notm}}.
 
-{{site.data.keyword.cloud_notm}} [provides buildpacks](/docs/cloud-foundry?topic=cloud-foundry-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.cloud_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
+{{site.data.keyword.cloud_notm}} [provides buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.cloud_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
 
 If you use an external buildpack, you must specify the URL of the buildpack by using the **-b** option when you deploy your application to {{site.data.keyword.cloud_notm}} from the command prompt.
 
@@ -206,7 +206,7 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   cf push
   ```
 
-  For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-getting-started-liberty).
+  For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty).
 
   * To deploy Java Tomcat applications to {{site.data.keyword.cloud_notm}}, use the following command:
 

@@ -22,7 +22,7 @@ lastupdated: "2019-11-22"
 
 This document describes the update policy and supported versions for the {{site.data.keyword.cfee_full}} service.
 
-We recommend that users keep their {{site.data.keyword.cfee_full_notm}} service instances updated to the latest version to receive the latest capabilities and fixes.  For detailed instructions on how to update your instance, please see the instructions [here](cloud-foundry?topic=cloud-foundry-update-scale).
+We recommend that users keep their {{site.data.keyword.cfee_full_notm}} service instances updated to the latest version to receive the latest capabilities and fixes.  For detailed instructions on how to update your instance, please see the instructions [here](cloud-foundry?topic=cloud-foundry-public-update-scale).
 
 During an update, some metrics normally shown in the _Overview_, _Resource Usage_, and _Update and Scaling_ pages may not be available.
 {: note}
@@ -36,15 +36,15 @@ This document refers to certain terms with specific meanings.  We define those t
 
 A **release** refers to a specific build of the {{site.data.keyword.cfee_short}} service as delivered to customers.  Releases are made available as content changes dictate.  Every release has a specific _version_ as defined in the next paragraph.
 
-A **version** can mean two things.  It most commonly refers to the [semver](https://semver.org) tag specific to each release.  The format of these tags is described in the [section on Versioning](cloud-foundry?topic=cloud-foundry-update-policy-supported-versions#versioning).  No two releases share the same version tag.
+A **version** can mean two things.  It most commonly refers to the [semver](https://semver.org) tag specific to each release.  The format of these tags is described in the [section on Versioning](cloud-foundry?topic=cloud-foundry-public-update-policy-supported-versions#versioning).  No two releases share the same version tag.
 
-A **version** can also refer to a specific element of the overall version tag, be it the major, minor, or patch version level.  These terms are also defined in the [section on Versioning](cloud-foundry?topic=cloud-foundry-update-policy-supported-versions#versioning).
+A **version** can also refer to a specific element of the overall version tag, be it the major, minor, or patch version level.  These terms are also defined in the [section on Versioning](cloud-foundry?topic=cloud-foundry-public-update-policy-supported-versions#versioning).
 
 ### {{site.data.keyword.cfee_short}} Versioning
 {: #versioning}
 New releases of the {{site.data.keyword.cfee_full_notm}} service are delivered on an ongoing basis.  The service follows [standard semantic versioning](https://semver.org) with the format _**Major.Minor.Patch**_.
 
-The _major_ version is incremented only when CFEE adopts a new release of Cloud Foundry itself.  The [release notes](cloud-foundry?topic=cloud-foundry-what-s-new-in-ibm-cloud-foundry-enterprise-environment) for each new major version list the packaged Cloud Foundry release and contain a link to the Cloud Foundry-specific release notes.  While these updates do not follow a fixed or regular schedule (the service adopts new versions of Cloud Foundry as appopriate or required to pick up important new capabilities or fixes), the service releases a new major version approximately quarterly.
+The _major_ version is incremented only when CFEE adopts a new release of Cloud Foundry itself.  The [release notes](cloud-foundry?topic=cloud-foundry-public-what-s-new-in-ibm-cloud-foundry-enterprise-environment) for each new major version list the packaged Cloud Foundry release and contain a link to the Cloud Foundry-specific release notes.  While these updates do not follow a fixed or regular schedule (the service adopts new versions of Cloud Foundry as appopriate or required to pick up important new capabilities or fixes), the service releases a new major version approximately quarterly.
 
 Within a given major version, all subsequent minor and patch versions can be assumed to have the same level of packaged Cloud Foundry and can also be assumed to be compatible with the same level of the Cloud Foundry CLI.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -110,7 +110,7 @@ You can migrate your apps to {{site.data.keyword.cloud_notm}} incrementally, ins
 
 In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
 
-To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.cloud_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.cloud_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](/docs/cloud-foundry?topic=cloud-foundry-using_buildpacks).
+To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.cloud_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.cloud_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks).
 
 You can use the following tools and services that {{site.data.keyword.cloud_notm}} provides:
 
@@ -180,7 +180,7 @@ You can upload your app by using the `cf push` command.
   cf push appname -b buildpack_URL
   ```
 
-  See [Using community buildpacks](/docs/cloud-foundry?topic=cloud-foundry-using_buildpacks) for details.
+  See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The cf command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 

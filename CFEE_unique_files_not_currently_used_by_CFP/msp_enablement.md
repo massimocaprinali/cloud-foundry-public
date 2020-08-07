@@ -65,7 +65,7 @@ The customer decides {{site.data.keyword.cfee_short}} management based on the fo
 
 During the life-cycle of a {{site.data.keyword.cfee_full_notm}} ({{site.data.keyword.cfee_short}}) instance there is a shared responsibility between the customer and IBM to apply changes.
 
-The customer will notice available updates in the IBM Cloud console. The customer can implement the changes as described [here](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-update-scale#update-scale).
+The customer will notice available updates in the IBM Cloud console. The customer can implement the changes as described [here](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-update-scale#update-scale).
 
 Various considerations need to be taken into account based on the customers procedures for change management. For instance:
 
@@ -150,7 +150,7 @@ ibmcloud iam access-group-create prdAccGrpDepl -d "access group that allows CFEE
 
 {: pre}
 
-Assign the following permissions to the access group in order to allow members of the access group to deploy CFEE instances. More about [CFEE permissions](/docs/cloud-foundry?topic=cloud-foundry-permissions#permissions) :
+Assign the following permissions to the access group in order to allow members of the access group to deploy CFEE instances. More about [CFEE permissions](/docs/cloud-foundry-public?topic=cloud-foundry-public-permissions#permissions) :
 
 ```
 ibmcloud iam access-group-policy-create prdAccGrpDepl --roles Viewer --resource-group-name myProdResGroup  
@@ -175,7 +175,7 @@ ibmcloud iam access-group-user-add prdAccGrpDepl email@domain.com
 
 {: #provisioning-cfee-cli}
 
-To learn how to create a {{site.data.keyword.cfee_short}} instance via the UI and to understand the available provisioning options, please go to [Creating a CFEE instance page](/docs/cloud-foundry?topic=cloud-foundry-create-environment). The following JSON file is an example configuration to illustrate the automated provisioning of {{site.data.keyword.cfee_short}} instances using the [ibmcloud cli](/docs/cli?topic=cloud-cli-ibmcloud_commands_cfee) .
+To learn how to create a {{site.data.keyword.cfee_short}} instance via the UI and to understand the available provisioning options, please go to [Creating a CFEE instance page](/docs/cloud-foundry-public?topic=cloud-foundry-public-create-environment). The following JSON file is an example configuration to illustrate the automated provisioning of {{site.data.keyword.cfee_short}} instances using the [ibmcloud cli](/docs/cli?topic=cloud-cli-ibmcloud_commands_cfee) .
 
 ```
 ibmcloud cfee create -c example.json
@@ -226,7 +226,7 @@ ibmcloud cfee create-status my-new-cfee
 
 {: #enable-monitoring-cli}
 
-We recommend to enable the {{site.data.keyword.cfee_short}} monitoring to benefit from pre-configured monitors and alerting. Please got to [monitoring](/docs/cloud-foundry?topic=cloud-foundry-monitoring#grafana-dashboards) to learn more about {{site.data.keyword.cfee_short}} monitoring and how to enable it via the UI. In order to enable it via the ibmcloud cli you need to target a specific {{site.data.keyword.cfee_short}} instance and run the `ibmcloud cfee monitoring-enable` command:
+We recommend to enable the {{site.data.keyword.cfee_short}} monitoring to benefit from pre-configured monitors and alerting. Please got to [monitoring](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring#grafana-dashboards) to learn more about {{site.data.keyword.cfee_short}} monitoring and how to enable it via the UI. In order to enable it via the ibmcloud cli you need to target a specific {{site.data.keyword.cfee_short}} instance and run the `ibmcloud cfee monitoring-enable` command:
 
 ```
 ibmcloud cfee environments
@@ -318,5 +318,5 @@ To do so, follow these steps:
 
 There are two locations that you can visit to understand the resource usage of your {{site.data.keyword.cfee_short}} instances.
 
-1. The first one offers a point in time information about CPU and memory consumption. It gives you an immediate indication about the current resource usage and allows you to identify applications that are causing excessive CPU or Memory consumption. Please find more information in the [reviewing resource usage](/docs/cloud-foundry?topic=cloud-foundry-reviewing-resource-usage) section.
-2. The second one is via the [Monitoring](/docs/cloud-foundry?topic=cloud-foundry-monitoring) tools that you can enable for each {{site.data.keyword.cfee_short}} instance. The Grafana UI that is available to you after enabling the monitoring tools, offers the historical data. Amongst other dashboards you can use the "CF: Diego Cell Dashboard" and the "CF: Cells Capacity" to inform yourself about memory and disk consumption or the amount of app containers running on your CF cells.
+1. The first one offers a point in time information about CPU and memory consumption. It gives you an immediate indication about the current resource usage and allows you to identify applications that are causing excessive CPU or Memory consumption. Please find more information in the [reviewing resource usage](/docs/cloud-foundry-public?topic=cloud-foundry-public-reviewing-resource-usage) section.
+2. The second one is via the [Monitoring](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring) tools that you can enable for each {{site.data.keyword.cfee_short}} instance. The Grafana UI that is available to you after enabling the monitoring tools, offers the historical data. Amongst other dashboards you can use the "CF: Diego Cell Dashboard" and the "CF: Cells Capacity" to inform yourself about memory and disk consumption or the amount of app containers running on your CF cells.

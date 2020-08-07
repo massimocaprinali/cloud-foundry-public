@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -96,17 +96,17 @@ subcollection: cloud-foundry-public
 # Using community buildpacks
 {: #using_buildpacks}
 
-If you can't find a starter in the {{site.data.keyword.cloud}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.Bluemix_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your application by using the `ibmcloud cf push` command.
+If you can't find a starter in the {{site.data.keyword.cloud}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.cloud_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your application by using the `ibmcloud cf push` command.
 {: shortdesc}
 
-External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your application to {{site.data.keyword.Bluemix_notm}}, make sure that you install the {{site.data.keyword.Bluemix_notm}} command line interface.
+External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your application to {{site.data.keyword.cloud_notm}}, make sure that you install the {{site.data.keyword.cloud_notm}} command line interface.
 
 External buildpacks are not provided by IBM. Contact the Cloud Foundry community for support.
 {: note}
 
 ## Built-in community buildpacks
 
-In {{site.data.keyword.Bluemix_notm}}, you can use built-in buildpacks that are provided by the Cloud Foundry community. To see built-in community buildpacks, run the `ibmcloud cf buildpacks` command:
+In {{site.data.keyword.cloud_notm}}, you can use built-in buildpacks that are provided by the Cloud Foundry community. To see built-in community buildpacks, run the `ibmcloud cf buildpacks` command:
 
 ```
 ibmcloud cf buildpacks
@@ -146,7 +146,7 @@ ibmcloud cf push app_name -p app_path
 
 ## External buildpacks
 
-You can use external or custom buildpacks in {{site.data.keyword.Bluemix_notm}}. You must specify the URL of the buildpack with the `-b` option, and specify the stack with the `-s` option on the `ibmcloud cf push` command. For example, to use an external community buildpack for static files, run the following command.
+You can use external or custom buildpacks in {{site.data.keyword.cloud_notm}}. You must specify the URL of the buildpack with the `-b` option, and specify the stack with the `-s` option on the `ibmcloud cf push` command. For example, to use an external community buildpack for static files, run the following command.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/staticfile-buildpack.git
@@ -160,7 +160,7 @@ ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/ruby-bu
 ```
 {: codeblock}
 
-You can also use a custom buildpack for your application. For example, you can use an open source PHP buildpack that is provided by the Cloud Foundry community. When you deploy your PHP application to {{site.data.keyword.Bluemix_notm}}, enter the following command to specify the Git repository URL of the buildpack.
+You can also use a custom buildpack for your application. For example, you can use an open source PHP buildpack that is provided by the Cloud Foundry community. When you deploy your PHP application to {{site.data.keyword.cloud_notm}}, enter the following command to specify the Git repository URL of the buildpack.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/php-buildpack.git

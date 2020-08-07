@@ -37,11 +37,11 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Cloud Foundry Application
 
-   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.Bluemix_notm}}.
+   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.cloud_notm}}.
 
 *  Buildpack
 
-   A buildpack is a typically language specific package of software provided by {{site.data.keyword.Bluemix_notm}}. When an application is deployed to {{site.data.keyword.Bluemix_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.Bluemix_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
+   A buildpack is a typically language specific package of software provided by {{site.data.keyword.cloud_notm}}. When an application is deployed to {{site.data.keyword.cloud_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.cloud_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
 
 *  Runtime
 
@@ -49,11 +49,11 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Boilerplate
 
-   A boilerplate is a simple application designed for a particular runtime.  The boilerplates provide templates or samples of the language and runtime specific application types.  You can use a boilerplate as starter code to begin development of more sophisticated applications.  {{site.data.keyword.Bluemix_notm}} provides:
+   A boilerplate is a simple application designed for a particular runtime.  The boilerplates provide templates or samples of the language and runtime specific application types.  You can use a boilerplate as starter code to begin development of more sophisticated applications.  {{site.data.keyword.cloud_notm}} provides:
    * *Hello world boilerplates*: simple applications typically providing a language and runtime specific 'hello world' application.
    * *Boilerplates with services*: demonstrate how to use a runtime with a service.
    * *Boilerplates with frameworks*: simple language and runtime specific applications that take advantage of a particulary language framework such as Python Flask or Ruby Sinatra.
 
 *  Service
 
-   A service is a {{site.data.keyword.Bluemix_notm}} provided facility which can be coupled with an application.
+   A service is a {{site.data.keyword.cloud_notm}} provided facility which can be coupled with an application.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -118,7 +118,7 @@ You can use buildpacks that have built-in mechanisms to avoid loading obsolete c
 {: tsResolve}
 
   * [Cloud Foundry Java&reg buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/java-buildpack){: new_window}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/java-buildpack/blob/master/docs/extending-caches.md){: new_window}.
-  * [Cloud Foundry Node.js buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/nodejs-buildpack){: new_window}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.Bluemix_notm}} command-line interface: 	
+  * [Cloud Foundry Node.js buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/nodejs-buildpack){: new_window}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
 
   ```
   set NODE_MODULES_CACHE=false
@@ -164,7 +164,7 @@ Identify which step of the application container lifecycle is causing errors in 
    * The app isn't deployed with the embedded Liberty buildpack.
    * The app was deployed with an early version of Liberty buildpack.
 
-  If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.Bluemix_notm}}. Otherwise, you can provide the following client application log files to the support team:
+  If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client application log files to the support team:
   {: tsResolve}
 
     * logs/messages.log
@@ -268,7 +268,7 @@ A Liberty application fails to start with a "_Failed to start accepting connecti
 ```
 {: codeblock}
 
-{{site.data.keyword.Bluemix_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
+{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
 {: tsCauses}
 
 First, examine the logs for any obvious errors that might cause the Liberty application to fail. If no obvious errors are found, then try the following solutions:
@@ -292,7 +292,7 @@ First, examine the logs for any obvious errors that might cause the Liberty appl
 
 #### Disable the appstate feature
 
-The appstate feature integrates with the {{site.data.keyword.Bluemix_notm}} health check process to ensure that the Liberty application is fully initialized before the application can receive HTTP requests. After the application is fully initialized the appstate feature has no more effect.  The side effect of this feature is that some applications might take longer to start up. To disable the appstate feature, set the following environment property on your application and restage the application:
+The appstate feature integrates with the {{site.data.keyword.cloud_notm}} health check process to ensure that the Liberty application is fully initialized before the application can receive HTTP requests. After the application is fully initialized the appstate feature has no more effect.  The side effect of this feature is that some applications might take longer to start up. To disable the appstate feature, set the following environment property on your application and restage the application:
 
 ```
 ibmcloud cf set-env myApp JBP_CONFIG_LIBERTY "app_state: false"
@@ -460,7 +460,7 @@ Projects pushed from source code that contains a large number of NuGet package d
 
 You might see messages that contain NOTICE from the logs. You can stop the logging of these messages by changing the logging level.
 
-When you push an app to {{site.data.keyword.Bluemix_notm}} by using a PHP buildpack, you might see messages that contain `NOTICE`:
+When you push an app to {{site.data.keyword.cloud_notm}} by using a PHP buildpack, you might see messages that contain `NOTICE`:
 {: tsSymptoms}
 
 ```
@@ -492,10 +492,10 @@ For more information about how to change the default logging configuration, see 
 ## Python
 {: #ts_python}
 
-### Can't import a third-party Python library into {{site.data.keyword.Bluemix_notm}}
+### Can't import a third-party Python library into {{site.data.keyword.cloud_notm}}
 {: #ts_importpylib}
 
-You might not be able to import a third-party Python library into {{site.data.keyword.Bluemix_notm}}. To resolve the problem, add configuration files to the root directory of your python app.
+You might not be able to import a third-party Python library into {{site.data.keyword.cloud_notm}}. To resolve the problem, add configuration files to the root directory of your python app.
 
 When you try to import a third-party Python library, such as the `web.py` library, the `ibmcloud cf push` command fails.
 {: tsSymptoms}
@@ -521,6 +521,6 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	web: python <yourappname>.py $PORT
 	```
 
-You can now import the third-party Python library into {{site.data.keyword.Bluemix_notm}}.
+You can now import the third-party Python library into {{site.data.keyword.cloud_notm}}.
 
 

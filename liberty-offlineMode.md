@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ subcollection: cloud-foundry-public
 # Use the offline mode for Liberty
 {: #offline_mode}
 
-When a Liberty application is pushed to {{site.data.keyword.cloud}}, the Liberty buildpack can access sites external to {{site.data.keyword.Bluemix_notm}}
+When a Liberty application is pushed to {{site.data.keyword.cloud}}, the Liberty buildpack can access sites external to {{site.data.keyword.cloud_notm}}
 to acquire artifacts required by the application.  The following are the external sites that the Liberty buildpack can access.  In [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
 [{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local) environments, these sites might need to be *whitelisted*.
 
@@ -105,7 +105,7 @@ to acquire artifacts required by the application.  The following are the externa
   * [AppDynamics agent ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.appdynamics.com/)
   * [MariaDB JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/)
   * [New Relic agent](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic)
-  * [OpenJDK](/docs/cloud-foundry?topic=cloud-foundry-customizing_jre#OpenJDK)
+  * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#OpenJDK)
   * [PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.postgresql.org)
 * https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zeroturnaround.com/software/jrebel/).
 * https://download.ruxit.com/agent/paas/cloudfoundry/java is used to access components for [Dynatrace Ruxit agent](dynatrace.html).
@@ -116,6 +116,6 @@ to acquire artifacts required by the application.  The following are the externa
 
 In some environments, such as [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) and
 [{{site.data.keyword.Bluemix_local_notm}}](/docs/local/index.html#local), a proxy can be configured. See
-[Working with a proxy](/docs/cloud-foundry?topic=cloud-foundry-working_with_proxy) for more details.
+[Working with a proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-working_with_proxy) for more details.
 
 

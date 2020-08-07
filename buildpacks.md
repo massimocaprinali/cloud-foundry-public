@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -105,11 +105,11 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Cloud Foundry Application
 
-   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.Bluemix_notm}}.
+   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.cloud_notm}}.
 
 *  Buildpack
 
-   A buildpack is a typically language specific package of software provided by {{site.data.keyword.Bluemix_notm}}. When an application is deployed to {{site.data.keyword.Bluemix_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.Bluemix_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
+   A buildpack is a typically language specific package of software provided by {{site.data.keyword.cloud_notm}}. When an application is deployed to {{site.data.keyword.cloud_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.cloud_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
 
 *  Runtime
 
@@ -121,6 +121,6 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Service
 
-   A service is a {{site.data.keyword.Bluemix_notm}} provided facility which can be coupled with an application.
+   A service is a {{site.data.keyword.cloud_notm}} provided facility which can be coupled with an application.
 
 

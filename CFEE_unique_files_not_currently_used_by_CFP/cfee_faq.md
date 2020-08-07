@@ -37,12 +37,12 @@ With respect to the public multi-tenant the most noteworthy difference is certai
 ## Where can I find the CFEE service?
 {: #where}
 
-You can find and instantiate the {{site.data.keyword.cfee_full}} service in the {{site.data.keyword.Bluemix_notm}} [catalog](https://cloud.ibm.com/catalog).
+You can find and instantiate the {{site.data.keyword.cfee_full}} service in the {{site.data.keyword.cloud_notm}} [catalog](https://cloud.ibm.com/catalog).
 
 ## Can I have more than one CFEE environment within a regional data center?
 {: #multiple-cfees}
 
-Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Will I need to start at some minimum capacity?
 {: #minimum-capacity}
@@ -71,22 +71,22 @@ Yes. The CFEE user interface notifies you when there is a new CFEE versions.  Yo
 ## What does it take to create a CFEE instance?
 {: #create}
 
-You can find the CFEE service listed in the {{site.data.keyword.Bluemix_notm}} catalog.  You need to have an upgraded {{site.data.keyword.Bluemix_notm}} account and permissions to the CFEE service and its supported services (Kubernetes, Cloud Object Storage and Compose for PostgreSQL).  Once you have those permissions, just provide a name for the environment and click _Create_.  Creation takes approximately 90 minutes.
+You can find the CFEE service listed in the {{site.data.keyword.cloud_notm}} catalog.  You need to have an upgraded {{site.data.keyword.cloud_notm}} account and permissions to the CFEE service and its supported services (Kubernetes, Cloud Object Storage and Compose for PostgreSQL).  Once you have those permissions, just provide a name for the environment and click _Create_.  Creation takes approximately 90 minutes.
 
-## Can I use {{site.data.keyword.Bluemix_notm}} services in my CFEE?
+## Can I use {{site.data.keyword.cloud_notm}} services in my CFEE?
 {: #Services-ibmcloud}
 
-Definitely!  By being integrated in the {{site.data.keyword.Bluemix_notm}}, developers in a CFEE can create {{site.data.keyword.Bluemix_notm}} service instances (or use existing instances) and bind them to applications deployed in CFEE spaces.
+Definitely!  By being integrated in the {{site.data.keyword.cloud_notm}}, developers in a CFEE can create {{site.data.keyword.cloud_notm}} service instances (or use existing instances) and bind them to applications deployed in CFEE spaces.
 
 ## Can I have my own services services in my CFEE?
 {: #Services-ibmcloud}
 
-Yes.  An administrator can register a services broker in the CFEE and make custom service plans available to users in that CFEE.  The local MCFEE marketplace includes the services from the {{site.data.keyword.Bluemix_notm}} catalog plus any customer services managed by the CFEE's local service broker.
+Yes.  An administrator can register a services broker in the CFEE and make custom service plans available to users in that CFEE.  The local MCFEE marketplace includes the services from the {{site.data.keyword.cloud_notm}} catalog plus any customer services managed by the CFEE's local service broker.
 
 ## How do I control user access to a CFEE?
 {: #Services}
 
-Like any other {{site.data.keyword.Bluemix_notm}} service, access to a CFEE is controlled through _Identity & Access Management_ (IAM). Assigning user access policies (either individually or through access groups) with specific roles gives them specific levels of access to a CFEE.  Beyond access to the CFEE service, access to Cloud Foundry organizations and spaces in the CFEE is controlled through Cloud Foundry membership and roles assigned to users in specific organizations and spaces.
+Like any other {{site.data.keyword.cloud_notm}} service, access to a CFEE is controlled through _Identity & Access Management_ (IAM). Assigning user access policies (either individually or through access groups) with specific roles gives them specific levels of access to a CFEE.  Beyond access to the CFEE service, access to Cloud Foundry organizations and spaces in the CFEE is controlled through Cloud Foundry membership and roles assigned to users in specific organizations and spaces.
 
 ## What standards does the service comply to?
 {: #standards}

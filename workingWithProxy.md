@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ subcollection: cloud-foundry-public
 # Working with a proxy
 {: #working_with_proxy}
 
-In some environments such as [{{site.data.keyword.Bluemix_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) and
+In some environments such as [{{site.data.keyword.cloud_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) and
 [Bluemix Local](/docs/local?topic=local-local) a proxy may be configured which affects the
 behavior of your application during staging and runtime.
 
@@ -114,7 +114,7 @@ You might want your application to use the proxy during runtime, after staging. 
 ## Java applications
 {: #java_apps}
 
-For [Liberty for Java](/docs/cloud-foundry?topic=cloud-foundry-liberty_runtime) and the [java_buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-foundry-test?topic=cloud-foundry-test-getting-started-tomcat){: new_window} applications, the proxy settings can be passd to the runtime via the **JAVA_OPTS** environment variable.  For example you can issue the command and then restage your application:
+For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_runtime) and the [java_buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-foundry-public-test?topic=cloud-foundry-public-test-getting-started-tomcat){: new_window} applications, the proxy settings can be passd to the runtime via the **JAVA_OPTS** environment variable.  For example you can issue the command and then restage your application:
 ```
    ibmcloud app env-set myApp JAVA_OPTS "-Dhttp.proxyHost=yourProxyURL -Dhttp.proxyPort=yourProxyPort"
 ```

@@ -17,8 +17,8 @@ lastupdated: "2019-09-03"
 # Assign roles
 {: #roles}
 
-You can grant multiple roles to team members in an {{site.data.keyword.Bluemix_notm}} account. These roles define the permissions of the user to manage account and organization resources:
-You can grant [user roles](/docs/iam?topic=iam-userroles) to members of an organization. These roles define the level of access within the organization, and restrict who can access a space and its resources. For example, you can grant users different permissions to different spaces.
+You can grant multiple roles to team members in an {{site.data.keyword.cloud_notm}} account. These roles define the permissions of the user to manage account and organization resources:
+You can grant [user roles](/docs/account?topic=account-cfaccess) to members of an organization. These roles define the level of access within the organization, and restrict who can access a space and its resources. For example, you can grant users different permissions to different spaces.
 
 ## Account owner
 {: #accountowner}
@@ -92,11 +92,10 @@ The space **Manager** is responsible for any work that is done within the space 
 A space developer can do the following tasks:
 
 * Manage Cloud Foundry apps.
-* Provision and configure {{site.data.keyword.Bluemix_notm}} services.
+* Provision and configure {{site.data.keyword.cloud_notm}} services.
 * Associate domains to apps.
 
 ### Space auditor
 {: #bpspaceauditor}
 
 For every space, you might want to grant the space **Auditor** role to the same team members with the organization **Auditor** role. In your enterprise, this role might have to be granted to a specific set of users.
-

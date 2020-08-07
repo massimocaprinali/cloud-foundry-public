@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-06"
 
 keywords: cloud foundry
 
@@ -131,9 +131,9 @@ To connect your IAM-managed service instance to a Cloud Foundry application:
 
 3. Click **Connect existing** and choose from your existing Cloud Foundry app. Or click **Create Connection** to create a Cloud Foundry app to connect to.
 
-4. Specify the **Access Role for Connection**. This value sets the IAM service access role. For more information, see [IAM access](/docs/iam/users_roles.html#userroles).
+4. Specify the **Access Role for Connection**. This value sets the IAM service access role. For more information, see [IAM access](/docs/account/users_roles.html#userroles).
 
-5. Optionally, you can provide a **Service ID for Connection** by either allowing IAM to generate a unique value for you, or by providing an existing service ID. For more information, see [Creating and managing service IDs](/docs/iam?topic=iam-serviceids).
+5. Optionally, you can provide a **Service ID for Connection** by either allowing IAM to generate a unique value for you, or by providing an existing service ID. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 
 6. Click **Create**.
 
