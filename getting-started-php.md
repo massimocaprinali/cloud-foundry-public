@@ -123,7 +123,7 @@ You'll need the following:
 First, clone the repo and change the directory to where the sample app is located.
 
   ```
-git clone https://github.com/IBM-Cloud/get-started-php
+  git clone https://github.com/IBM-Cloud/get-started-php
   ```
   {: codeblock}
 
