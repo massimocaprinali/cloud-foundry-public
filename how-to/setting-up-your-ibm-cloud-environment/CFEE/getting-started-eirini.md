@@ -25,12 +25,12 @@ See [Eirini project](https://www.cloudfoundry.org/project-eirini/) for informati
 ## Understanding permissions
 {: #permissions}
 
-You need the correct access policies before creating instances of the {{site.data.keyword.cfee_full_notm}}. For more information, see [Permissions](https://cloud.ibm.com/docs/cloud-foundry-public/permissions.html).
+You need the correct access policies before creating instances of the {{site.data.keyword.cfee_full_notm}}. For more information, see [Permissions](/docs/cloud-foundry-public/permissions.html).
 
 ## Step 1: Ensure that the {{site.data.keyword.cloud_notm}} account can create infrastructure resources
 {: #accountprep-environment}
 
-CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](https://cloud.ibm.com/docs/cloud-foundry-public/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance.
+CFEE instances are deployed into Kubernetes worker nodes from the Kubernetes Service.  [Prepare your IBM Cloud account](/docs/cloud-foundry-public/prepare-account.html) to ensure that it can create the infrastructure resources necessary for a CFEE instance.
 
 ## Step 2: Create your instance
 {: #create-environment}
@@ -45,7 +45,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.c
     * Select the _Eirini Technical preview_ plan.
     * Enter a **Name** for the CFEE instance.
     * Select a **Resource group** under which the environment is grouped. Only those resource groups to which you have access in the current IBM Cloud account will be listed in the _Resourouce groups_ dropdown, which means that you need to have permission to access at least one resource group in the account to be able to create an CFEE.
-    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](https://cloud.ibm.com/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
+    * Select the **Geography** and **Location** where the service instance is to be provisioned. See the list of [available provisioning locations and data centers](/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by geography for CFEE and supporting services. 
 
 4. CFEE instances are provisioned on a Kubernetes cluster. Cloud Foundry cells are provisoned within worker zones in the Kuberentes cluster. You can configure the location, hardware and encryption of the cluster:
     * Select the hardware isolation for the Kubernetes cluster:   
@@ -54,9 +54,9 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.c
     * Data in the cluster are encrypted by default. You have the option of turning off _Encrypt local disk_.
     * Select the **Geography** and **Region** where the Kubernetes cluster willl be provisioned.
     * Select the **Zone** where the Kubernetes worker nodes will be deployed. Available VLANs are automatically retrieved for the selected zones. If no available VLANs are available, they will be created automatically.
-    Starting in CFEE v2.2.0, CFEE instances can operate behind an **isolated network**. You can provision a CFEE instance into an isolated network by selecting private VLANs in the isolated network. Once the CFEE is created, the IP addresses for the CFEE's Compose for PostgreSQL and Cloudant Object Storage instances, as well as for the Application Load Balancers ([ALBs](https://cloud.ibm.com/docs/containers/cs_ingress.html#private_ingress)) of the Kubernetes cluster must be routed in the isolated network by the network administrator for the CFEE to become operational.
+    Starting in CFEE v2.2.0, CFEE instances can operate behind an **isolated network**. You can provision a CFEE instance into an isolated network by selecting private VLANs in the isolated network. Once the CFEE is created, the IP addresses for the CFEE's Compose for PostgreSQL and Cloudant Object Storage instances, as well as for the Application Load Balancers ([ALBs](/docs/containers/cs_ingress.html#private_ingress)) of the Kubernetes cluster must be routed in the isolated network by the network administrator for the CFEE to become operational.
     
-    Once the CFEE is crated, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.cloud_notm}} [dashboard](https://cloud.ibm.com/dashboard/apps/). For more information, see [Kubernetes Service documentation](https://cloud.ibm.com/docs/containers/cs_why.html#cs_ov).
+    Once the CFEE is crated, the Kubernetes cluster into which the environment is provisioned will appear (like any other resource in your IBM Cloud account) in the {{site.data.keyword.cloud_notm}} [dashboard](https://cloud.ibm.com/dashboard/apps/). For more information, see [Kubernetes Service documentation](/docs/containers/cs_why.html#cs_ov).
 
 5.  Configure the capacity of the CFEE:
     * Select the **Number of cells** for the CFEE. These are the application cells that will host the applications deployed into the CFEE.  
@@ -64,7 +64,7 @@ Before you create your CFEE, make sure that you are in the {{site.data.keyword.c
     
     In addition to the application cells that you specify above, additional _Control Plane cells_ are created and reserved for the operation and control of the Cloud Foundry platform in your CFEE. 
 
-    **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](https://cloud.ibm.com/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
+    **Note:** We recommend that VLAN spanning be enabled if the worker nodes in the Kubernetes cluster are provisioned on different subnets.  Worker nodes on different subnets may prevent connectivity among them if VLAN spanning is disabled.  See [VLAN spanning](/docs/containers/cs_subnets.html#vlan-spanning) documentation for more information.
     
 6.  In the **Compose for PostgreSQL** fields, select one of the public organizations, then select one of the spaces available in that organization. The instance of the Compose for PostgreSQL instance will be provisioned in the selected space. The Compose for PostgreSQL service is a required dependency of the CFEE service.
 
@@ -89,7 +89,7 @@ When you create a CFEE instance, there are three additional supporting service i
 ## Step 3: Create organizations and spaces
 {: #create-orgsandspaces}
 
-After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](https://cloud.ibm.com/docs/cloud-foundry-public/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
+After you create the {{site.data.keyword.cfee_full_notm}}, see [Creating organizations and spaces](/docs/cloud-foundry-public/orgs-spaces.html) for information on how to structure the environment by creating organizations and spaces. Apps in an {{site.data.keyword.cfee_full_notm}} are scoped within specific spaces. In turn, a space exists within a specific organization. Members of an organization share a quota plan, apps, services instances, and custom domains.
 
 When you create an organization you assign a quota to it.  The quota sets limits on the resources (memory, cpu, etc.) available for that organization. You can assign a different quota at a later time. There is a set of pre-configured quotas available in every CFEE, but you can also create your own custom quotas in the **Quotas** page of the CFEE user interface.  You can make a custom quota the _Default_ quota by invoking the _Copy to default_ action from the quota's menu, which copies the values of the custom quota into the default quota.
 
@@ -98,22 +98,22 @@ When you create an organization you assign a quota to it.  The quota sets limits
 ## Step 4: Add users to organizations and spaces
 {: #add-users}
 
-[Add users](https://cloud.ibm.com/docs/cloud-foundry-public/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](https://cloud.ibm.com/docs/cloud-foundry-public/permissions.html).
+[Add users](/docs/cloud-foundry-public/add-users.html) to those organizations and spaces under specific role assignments controlling their level of access.  Before users can be added as members of organizations and spaces in an CFEE, those users must have prior access to the CFEE instance. See [Permissions](/docs/cloud-foundry-public/permissions.html).
 
 ## Step 5: Deploy and view applications
 {: #deploy-apps}
 
-When you're ready, you can [deploy the app](https://cloud.ibm.com/docs/cloud-foundry-public/deploy-apps.html) with the {{site.data.keyword.cloud_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
+When you're ready, you can [deploy the app](/docs/cloud-foundry-public/deploy-apps.html) with the {{site.data.keyword.cloud_notm}} command line interface.  View the list of deployed applications in the user interface, either in the context of a specific CFEE space, or globally across all CFEE instances.  You can also start, stop, or delete applications from those views.
 
 ## Step 6: Create or add IBM Cloud service instances to spaces
 {: #service-instances}
 
-[Create services](https://cloud.ibm.com/docs/cloud-foundry-public/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](https://cloud.ibm.com/docs/cloud-foundry-public/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
+[Create services](/docs/cloud-foundry-public/add-serv-inst.html#workingwith-services#creating-services-inspace) or [Add existing services](/docs/cloud-foundry-public/add-serv-inst.html#workingwith-services#adding-services-inspace) available in the IBM Cloud account.  Once a service instance is available in a CFEE space, you can bind it to CFEE applications deployed in that space.
 
 ## Step 7: Bind applications to service instances
 {: #bind-apps}
 
-[Bind your app](https://cloud.ibm.com/docs/cloud-foundry-public/binding.html) to a service instance alias in order to use the service's functions.
+[Bind your app](/docs/cloud-foundry-public/binding.html) to a service instance alias in order to use the service's functions.
 
 In the [Cloud Foundry dashboard](https://cloud.ibm.com/dashboard/cloudfoundry/overview){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") you can see a consolidated view of all the applications and services, both *public* and *enterprise*.  Once in the Cloud Foundry dashboard, click *Public* in the left navigation pane to see the public applications and services available in the IBM Cloud account.  Click on *Enterprise* to see all the CFEE environments, applications deployed into CFEE spaces, and services available to CFEE spaces.
 {:tip}
@@ -145,7 +145,7 @@ To start the Stratos console:
 ## Additional resources
 {: #additional-resources}
 
-You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+You can perform some administrations tasks in a CFEE usig `ibmcloud CFEE` CLI commands. The commands allow you to get information about a CFEE instance, as well as to manage its organizations and spaces. See [IBM Cloud CLI CFEE command reference](/docs/cli/reference/ibmcloud/cli_cfee.html#ibmcloud_commands_cfee){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 You can find videos with in-depth discussions and demonstrations on various CFEE topics in the [CFEE video playlist](https://ibm.biz/CFEE-Playlist){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 

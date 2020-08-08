@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -104,6 +104,7 @@ Add the following `using` statements in the `Startup` class:
   using Microsoft.AspNetCore.Mvc;
   using Microsoft.AspNetCore.Rewrite;
 ```
+{: codeblock}
 
 Add the following to the `ConfigureServices` method in the `Startup` class:
 
@@ -117,6 +118,7 @@ Add the following to the `ConfigureServices` method in the `Startup` class:
     });
   }
 ```
+{: codeblock}
 
 Add the following to your `Configure` method in the `Startup` class:
 
@@ -139,5 +141,6 @@ Add the following to your `Configure` method in the `Startup` class:
     app.UseRewriter(options);
   }
 ```
+{: codeblock}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -141,14 +141,14 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
     ```
     cf asa
     ```
-    {:codeblock}
+    {: pre}
 
     If the App-Autoscaler API endpoint is incorrect, you need to reset it with command:
 
     ```
     cf asa autoscaler.<DOMAIN>
     ```
-    {:codeblock}
+    {: pre}
 
 
 *  Create a policy JSON file on your local machine.
@@ -179,7 +179,7 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
     }
     EOF
     ```
-    {:codeblock}
+    {: codeblock}
 
     The policy above is used to trigger  scaling based on memory utilization  when the defined threshold is breached for at least `120    seconds`.  Refer to [Cloud Foundry App-Autoscaler user guide][autoscaler_user_guide] for how to create your own autoscaling policy.
 
@@ -188,21 +188,21 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
     ```
     cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
     ```
-    {:codeblock}
+    {: pre}
 
 *  (optional) Furthermore, you can query the most recent aggregated metrics of your application. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
 
     ```
     cf asm <YOUR_APP> <METRIC_TYPE> --desc
     ```
-    {:codeblock}
+    {: pre}
 
 *  (optional) Use the command below to query scaling history:
 
     ```
     cf ash <YOUR_APP> --desc
     ```
-    {:codeblock}
+    {: pre}
 
     Refer to [Cloud Foundry App Autoscaler CLI plugin guide][autoscaler_cli] for more options to use the command line.
 
@@ -216,7 +216,7 @@ To create a policy from scratch, follow steps below:
 2. Set **Default Instance Limits** of your application with **Minimum Instance Count** and **Maximum Instance Count** to restrict the scope of resource consumption
 3. Create a series of **Dynamic Scaling Rules** with selected metric types, thresholds and adjustment strategies.  The following describes related fields in the dynamic scaling rule.
 
-   **Metric types:** The following metric types are supported in dyanmic scaling rule:
+   **Metric types:** The following metric types are supported in dynamic scaling rule:
    * **Memory used** represents the absolute value of the used memory of your application. The unit of _memory utilization_ unit is "MB".
    * **Memory utilization**, a short name of `memory utilization`, is the used memory of the total memory allocated to the application in percentage. For example, if the memory usage of the application is 100MB  and memory quota is 200MB, the value of _memory utilization_ is 50%.   
    * **CPU** , a short name of `cpu utilization`, is the cpu percentage used by the application. The unit of **cpu** is "%".  
@@ -224,7 +224,7 @@ To create a policy from scratch, follow steps below:
    * **Response time** represents the average amount of time the application takes to respond to a request in a given time period.  The unit of _Response time_ is "ms" (milliseconds).
    * **Throughput** is the total number of the processed requests  in a given time period. The unit of _throughput_ is "rps" (requests per second).
    * **Custom metric**
-     You can define your own metric name using a combination of alphabets and numbers, and then emit the coresponding metrics to App Autoscaler in order to trigger dynamic scaling. See details in [Custom metric usage guide][custom_metric_usage_guide].
+     You can define your own metric name using a combination of alphabets and numbers, and then emit the corresponding metrics to App Autoscaler in order to trigger dynamic scaling. See details in [Custom metric usage guide][custom_metric_usage_guide].
 
    **Operator**, **Threshold**, **Breach Duration** , **Adjustment** and **Cooldown**:
 
@@ -233,7 +233,7 @@ To create a policy from scratch, follow steps below:
    * **Operator** could be defined as `>=`, `>`, `<=` or `<`.
    * **Threshold** must be defined as a numeric value.  
    * **Breach duration** is defined in `seconds`.  Optional, default value is 120 seconds.
-   * **Adjustment** defines how to change the number of application instances in each scaling action.  You can specify an absolute number or a percentage of insatnces to add or remove.
+   * **Adjustment** defines how to change the number of application instances in each scaling action.  You can specify an absolute number or a percentage of instances to add or remove.
    * **Cooldown** defines the time duration to wait before the next scaling action takes place. A cooldown period helps to ensure that your application does not launch new instances or terminate old instances before your application becomes stable. **Cooldown** is defined in `seconds`. **Cooldown**  is an optional setting as well, and the default value is 300 seconds.
 
 4. (Optional) Define **Schedules** to scale your application during a set of time periods.
@@ -247,7 +247,7 @@ To create a policy from scratch, follow steps below:
 
    _Note_: During these scheduled time periods, all dynamic scaling rules are still effective.
 
-You can also import a policy file in JSON through **Import From JSON**.  Refer to [policy specification][autoscaler_user_guide] for the details of JSON format of autosacling policy. This function is particularly helpful when you [migrate from the legacy Auto-scaling service][migrate_guide].
+You can also import a policy file in JSON through **Import From JSON**.  Refer to [policy specification][autoscaler_user_guide] for the details of JSON format of autoscaling policy. This function is particularly helpful when you [migrate from the legacy Auto-scaling service][migrate_guide].
 
 ## Metric statistics
 

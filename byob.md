@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -110,6 +110,10 @@ In {{site.data.keyword.cloud_notm}}, you can use built-in buildpacks that are pr
 
 ```
 ibmcloud cf buildpacks
+```
+{: pre}
+
+```
 Getting buildpacks...
 
 buildpack      position   enabled   locked   filename
@@ -128,21 +132,21 @@ For example, you can use the community buildpack for Java™ web applications by
 ```
 ibmcloud cf push app_name -b java_buildpack -p app_path
 ```
-{:pre}
+{: pre}
 
 You can also use the community buildpack for Node.js application with the following command.
 
 ```
 ibmcloud cf push app_name -b nodejs_buildpack -p app_path
 ```
-{: codeblock}
+{: pre}
 
 For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the `-b` option with the `ibmcloud cf push` command. For example, for Ruby applications, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command.
 
 ```
 ibmcloud cf push app_name -p app_path
 ```
-{: codeblock}
+{: pre}
 
 ## External buildpacks
 
@@ -151,21 +155,21 @@ You can use external or custom buildpacks in {{site.data.keyword.cloud_notm}}. Y
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/staticfile-buildpack.git
 ```
-{: codeblock}
+{: pre}
 
 If you don't want to use the built-in community buildpack for Ruby applications, you can use an external buildpack by entering the following command.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/ruby-buildpack.git
 ```
-{: codeblock}
+{: pre}
 
 You can also use a custom buildpack for your application. For example, you can use an open source PHP buildpack that is provided by the Cloud Foundry community. When you deploy your PHP application to {{site.data.keyword.cloud_notm}}, enter the following command to specify the Git repository URL of the buildpack.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/php-buildpack.git
 ```
-{:pre}
+{: pre}
 
 You can also edit the `manifest.yml` file in your project to add a `buildpack` line.
 
@@ -182,14 +186,14 @@ To specify a Java buildpack version, use the `ibmcloud cf set-env` command. For 
 ```
 ibmcloud cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.0_+ }}&apos;
 ```
-{: codeblock}
+{: pre}
 
-Then, restage your applicationto make the change effective.
+Then, restage your application to make the change effective.
 
 ```
 ibmcloud cf restage app_name
 ```
-{: codeblock}
+{: pre}
 
 ## Use the `manifest.yml` file.
 

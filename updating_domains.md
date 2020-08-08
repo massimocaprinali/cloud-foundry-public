@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -123,6 +123,7 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
    ```
    ibmcloud target --cf-api <CF_ENDPOINT>
    ```
+   {: pre}
 
    **Cloud Foundry API endpoints:**
    * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
@@ -135,5 +136,6 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
    ```
    ibmcloud app route-map <APPNAME> <DOMAIN> -n <HOSTNAME>
    ```
+   {: pre}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -113,7 +113,7 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Runtime
 
-   A runtime is the set of software components which provide the exectuion environment for an application.  The terms *runtime* and *buildpack* are sometimes used interchangeably.  When a buildpack has completed deploying an application the runtime environment is established.
+   A runtime is the set of software components which provide the execution environment for an application.  The terms *runtime* and *buildpack* are sometimes used interchangeably.  When a buildpack has completed deploying an application the runtime environment is established.
 
 *  Starter
 

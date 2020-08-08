@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -124,12 +124,12 @@ First, clone the repo and change to the directory where the sample app is locate
   ```
 git clone https://github.com/IBM-Cloud/get-started-python
   ```
-  {: codeblock}
+  {: pre}
 
   ```
 cd get-started-python
   ```
-  {: codeblock}
+  {: pre}
 
 Peruse the files in the *get-started-python* directory to familiarize yourself with the contents.
 
@@ -146,20 +146,20 @@ You can optionally use a [virtual environment ![External link icon](../../icons/
   ```
 pip install -r requirements.txt
   ```
-  {: codeblock}
+  {: pre}
 
 Alternatively with Python3 you can issue
 
   ```
 python3 -m pip install -r requirements.txt
   ```
-  {: codeblock}
+  {: pre}
 
 Run the app.
   ```
 python hello.py
   ```
-  {: codeblock}
+  {: pre}
 
  View your app at: http://localhost:8000
 
@@ -193,21 +193,21 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
 
   ```	  
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -217,7 +217,7 @@ ibmcloud target --cf
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -226,7 +226,7 @@ When deployment completes you should see a message indicating that your app is r
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
@@ -280,7 +280,7 @@ We're now going to update your local code to point to this database. We'll creat
   ```
 python hello.py
   ```
-  {: codeblock}
+  {: pre}
 
 View your app at: http://localhost:8000. Any names you enter into the app will now get added to the database.
 

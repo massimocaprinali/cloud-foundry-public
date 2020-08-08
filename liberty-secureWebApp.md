@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -117,9 +117,16 @@ First, download this secure starter application, then build and deploy it on {{s
 
 ```
 git clone https://github.com/IBM-Cloud/java-secure-app
+```
+{: pre}
+```
 cd java-secure-app
+```
+{: pre}
+```
 mvn install liberty:run-server
 ```
+{: pre}
 View the app at http://localhost:9080/GetStartedSecureJava/
 
 ## Enforce HTTPS on all pages in your application
@@ -134,6 +141,7 @@ Modify your server.xml to enable the `appSecurity-2.0` feature:
     <feature>appSecurity-2.0</feature>
   </featureManager>
 ```
+{: codeblock}
 
 Modify your web.xml file to include the following security constraint:
 
@@ -148,6 +156,7 @@ Modify your web.xml file to include the following security constraint:
     </user-data-constraint>
   </security-constraint>
 ```
+{: codeblock}
 
 This makes your application force all connections to use HTTPS automatically and will not allow any HTTP connections.
 

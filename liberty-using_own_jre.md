@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -142,7 +142,7 @@ Issue the `ibmcloud cf se myAPP` command to set the **JBP_CONFIG_OPENJDK** varia
 ```
 ibmcloud cf se myApp JBP_CONFIG_OPENJDK '{repository_root: "https://myHostingApp.ng.bluemix.net", version: 1.8.+}'
 ```
-{: codeblock}
+{: pre}
 
 The *repository_root* URL does not include `index.yml` in the URL. The *repository_root* URL points to the directory level that contains the `index.yml` file, not the file itself.
 
@@ -150,7 +150,7 @@ To set the JVM environment variable, issue the following command:
 ```
 ibmcloud cf se myApp JVM 'openjdk'
 ```
-{: codeblock}
+{: pre}
 
 **Note**: Restage your application after setting the environment variables for the changes to take effect.
 
@@ -162,6 +162,6 @@ To confirm that Liberty is using the expected JRE, check the staging log. Look f
  -----> Downloading OpenJdk 1.8.0_91 from
   https://myHostingApp.ng.bluemix.net/jre-8u91-fcs-bin-b14-linux-x64-01_apr_2016.tar.gz (6.2s)
 ```
-{: codeblock}
+{: screen}
 
 

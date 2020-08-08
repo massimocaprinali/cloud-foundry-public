@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -146,7 +146,7 @@ After you create a connection between an IAM-managed service and a Cloud Foundry
 
 ## Deleting an alias
 
-The easisest way to delete the alias is to delete the IAM-managed service instance. However, you can maintain your IAM-managed service instance and instead delete the alias directly.
+The easiest way to delete the alias is to delete the IAM-managed service instance. However, you can maintain your IAM-managed service instance and instead delete the alias directly.
 
 1. Go to your dashboard.
 2. From the  **Cloud Foundry Services** table, click the name of the service instance to open the service details view. If it only has a **Connections** tab, it is an alias.

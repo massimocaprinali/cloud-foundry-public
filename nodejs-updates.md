@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -341,7 +341,7 @@ To push your application with v3.0beta:
 ```
         ibmcloud cf push -b sdk-for-nodejs-v3beta
 ```
-{: codeblock}
+{: pre}
 
 * Or use the "buildpack" option in your manifest.yml file:
 

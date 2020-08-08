@@ -15,23 +15,23 @@ You can provision an IBM Cloud Foundry Enterprise Environment into an existing I
 
 VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. IBM Cloud Foundry Enterprise Environment fully utilizes this capability and allows you to host your applications with the highest level of network security and isolation possible.
 
-If you are not familiar with IBM's Virtual Private Cloud offerings, you can learn more about them [here](https://www.ibm.com/cloud/vpc) and [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about).
+If you are not familiar with IBM's Virtual Private Cloud offerings, you can learn more about them [here](https://www.ibm.com/cloud/vpc) and [here](/docs/vpc-on-classic?topic=vpc-on-classic-about).
 
-Follow the instructions [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started) to create your VPC.
+Follow the instructions [here](/docs/vpc-on-classic?topic=vpc-on-classic-getting-started) to create your VPC.
 
 ## Prerequisites
 {: #prereq}
 Before provisioning CFEE into your VPC, ensure that you have the following:
-1. You must have the same permissions as are required to [provision on classic infrastructure](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-permissions) (excluding permissions for VLANS or datacenters).
-1. The targeted account must be configured so that, for IBM Kubernetes Service (IKS) provisioning, actions are performed as a user with Kubernetes Administrator and VPC viewer access. The access can be reset using the command `ibmcloud ks api-key reset`. [See documentation here.](https://cloud.ibm.com/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#api_key-commands)
-1. To provision a CFEE in an isolated environment (whether VPC or on classic infrastructure) you must enable your account for [Cloud Service Endpoints](https://cloud.ibm.com/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps) (CSE).
+1. You must have the same permissions as are required to [provision on classic infrastructure](/docs/cloud-foundry-public?topic=cloud-foundry-public-permissions) (excluding permissions for VLANS or datacenters).
+1. The targeted account must be configured so that, for IBM Kubernetes Service (IKS) provisioning, actions are performed as a user with Kubernetes Administrator and VPC viewer access. The access can be reset using the command `ibmcloud ks api-key reset`. [See documentation here.](/docs/containers-cli-plugin?topic=containers-cli-plugin-kubernetes-service-cli#api_key-commands)
+1. To provision a CFEE in an isolated environment (whether VPC or on classic infrastructure) you must enable your account for [Cloud Service Endpoints](/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps) (CSE).
 
 ## VPC-specific Prerequisites and Capacity Requirements
 {: #vpc-specific-prerequisites}
 Before provisioning a CFEE into your VPC, please keep in mind:
-1. There are some known limitations specific to VPCs.  These are listed [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
-1. You need to be aware of the [VPC-specific quotas](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas) and ensure that you have sufficient capacity remaining.
-1. Pay particular attention to [VPC-specific load balancer quotas](https://cloud.ibm.com/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
+1. There are some known limitations specific to VPCs.  These are listed [here](/docs/vpc-on-classic?topic=vpc-on-classic-known-limitations).
+1. You need to be aware of the [VPC-specific quotas](/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas) and ensure that you have sufficient capacity remaining.
+1. Pay particular attention to [VPC-specific load balancer quotas](/docs/infrastructure/vpc-on-classic?topic=vpc-on-classic-quotas#load-balancer-quotas).
 1. You must have enough unallocated IPs in a VPC subnet before you provision a CFEE. The minimum number required is the number of cells per zone plus control plane nodes plus 10. E.g., **2 cells per zone + 2 control plane nodes + 10 = 14 IPs**.
 
    **Note:** A VPC subnet will typically have a small number of IPs allocated prior to any use. Check the available number of IPs in the subnet to be sure there are more than the number of IPs required for a VPC CFEE.
@@ -43,7 +43,7 @@ Before provisioning a CFEE into your VPC, please keep in mind:
 All {{site.data.keyword.cfee_full_notm}} instances must allow specific inbound and outbound flows which are required for the service to function.  Because of the isolation capabilities provided by Virtual Private Clouds, {{site.data.keyword.cfee_full_notm}} wishing to provision into a VPC must pay particular attention to the network connectivity and configure it so that the {{site.data.keyword.cfee_full_notm}} instance can be provisioned correctly.
 
 ### Outbound Connectivity
-All {{site.data.keyword.cfee_full_notm}} instances must be able to reach specific services (IBM's Identity and Access Management service, for example) to function.  The simplest way to enable this is to ensure that every public subnet in the VPC has a public gateway.  Users can find the list of options for enabling outbound Internet connectivity from within a VPC [here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-about#internet-access).
+All {{site.data.keyword.cfee_full_notm}} instances must be able to reach specific services (IBM's Identity and Access Management service, for example) to function.  The simplest way to enable this is to ensure that every public subnet in the VPC has a public gateway.  Users can find the list of options for enabling outbound Internet connectivity from within a VPC [here](/docs/vpc-on-classic?topic=vpc-on-classic-about#internet-access).
 
 **Note:** It is the user's responsibility, prior to beginning the {{site.data.keyword.cfee_full_notm}} provisioning process, to ensure that the required Internet connectivity is in place.  You can find more information on network isolation [here](cloud-foundry?topic=cloud-foundry-public-isolated-network).
 
@@ -53,7 +53,7 @@ inbound traffic from the Internet and operate the {{site.data.keyword.cfee_full_
 
 ## Creating a VPC CFEE
 {: #creating-vpc-cfee}
-1. Create your VPC as [detailed here](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
+1. Create your VPC as [detailed here](/docs/vpc-on-classic?topic=vpc-on-classic-getting-started).
 1. Go to the CFEE [creation page](https://cloud.ibm.com/cfadmin/create).
 1. Select VPC environment.
 1. Choose your recently created VPC from the dropdown.
@@ -68,7 +68,7 @@ Monitoring on VPC has some limitations compared to monitoring on classic infrast
 
 ## Limitations
 {: #limitations}
-There are several limitations detailed in the [release notes for v5.0.0](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
+There are several limitations detailed in the [release notes for v5.0.0](/docs/cloud-foundry-public?topic=cloud-foundry-public-what-s-new-in-ibm-cloud-foundry-enterprise-environment#v500)
 
 ## Network Isolation for CFEE on VPC
 {: #network-isolation}
@@ -105,7 +105,7 @@ To fully isolate a {{site.data.keyword.cfee_full_notm}} from Internet traffic, u
 
 ## Disabling the public CSE for PostgreSQL:
 {: #disable-icd-postgres-public-cse}
-To disable the public CSE for the IBM Cloud Databases (ICD) for PostgreSQL instance associated with your {{site.data.keyword.cfee_full_notm}} instance, first identify which is the correct ICD instance in your account and then follow the directions [here](https://cloud.ibm.com/docs/databases-for-postgresql?topic=cloud-databases-service-endpoints#changing-service-endpoints).
+To disable the public CSE for the IBM Cloud Databases (ICD) for PostgreSQL instance associated with your {{site.data.keyword.cfee_full_notm}} instance, first identify which is the correct ICD instance in your account and then follow the directions [here](/docs/databases-for-postgresql?topic=cloud-databases-service-endpoints#changing-service-endpoints).
 
 ## Disabling Cloud Foundry and Application via the public ALB
 {: #disable-public-alb}
@@ -134,7 +134,7 @@ The above DNS update takes the form of a CNAME from your `<cluster subdomain>` t
 
 ## Managing VPC CFEE Worker Nodes
 {: #worker-nodes}
-In the VPC Kubernetes cluster hosting your CFEE, managing the worker nodes is done differently from classic CFEE. [See VPC cluster limitations](https://cloud.ibm.com/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#vpc_ks_limits). In the event that one of the worker nodes goes down, you must replace the worker node:
+In the VPC Kubernetes cluster hosting your CFEE, managing the worker nodes is done differently from classic CFEE. [See VPC cluster limitations](/docs/containers?topic=containers-ibm-cloud-kubernetes-service-technology#vpc_ks_limits). In the event that one of the worker nodes goes down, you must replace the worker node:
 1. Log into the IBM Cloud CLI.
 2. Find the cluster associated with your CFEE. The name of the cluster is `<CFEE name>-cluster`.
 

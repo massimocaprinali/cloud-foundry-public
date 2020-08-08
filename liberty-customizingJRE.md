@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -107,7 +107,7 @@ By default, applications are configured to run with a lightweight version of the
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
 ```
-{: codeblock}
+{: pre}
 
 The version property can be set to a version range. There are two supported version ranges: 1.8.+ and 11.+. For best results, use Java 8.
 
@@ -118,13 +118,13 @@ Optionally, applications can be configured to run with OpenJDK as the JRE. To en
 ```
     ibmcloud cf set-env myapp JVM 'openjdk'
 ```
-{: codeblock}
+{: pre}
 
 If enabled, OpenJDK version 8 is used by default. Use the JBP_CONFIG_OPENJDK environment variable to specify an alternative version of OpenJDK. For example, to use the latest OpenJDK 7, set the following environment variable:
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_OPENJDK "version: 1.7.+"
 ```
-{: codeblock}
+{: pre}
 
 The version property can be set to a version range such as 1.7.+, 1.8.+ or any specific version listed on the [list of available OpenJDK versions](https://download.run.pivotal.io/openjdk/lucid/x86_64/index.yml). For best results, use Java 8.
 
@@ -135,19 +135,19 @@ Optionally, applications can be configured to run with OpenJ9 as the JRE or JDK.
 ```
     ibmcloud cf set-env myapp JVM 'openj9'
 ```
-{: codeblock}
+{: pre}
 
 If enabled, OpenJ9 version 11 is used by default. Use the JBP_CONFIG_OPENJ9 environment variable to specify an alternative version of OpenJ9. For example, to use the latest OpenJ9 8, set the following environment variable:
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "version: 8.+"
 ```
-{: codeblock}
+{: pre}
 
 If enabled, the OpenJ9 JRE is used by default. Use the JBP_CONFIG_OPENJ9 environment variable to use the JDK version of OpenJ9. For example, to use the OpenJ9 JDK, set the following environment variable:
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "type: jdk"
 ```
-{: codeblock}
+{: pre}
 
 ## Oracle JRE
 {: #oracle_jre}
@@ -283,14 +283,14 @@ To view the `staging_info.yml` file on an application running in a DEA node, run
 ```
     ibmcloud cf files myapp staging_info.yml
 ```
-{: codeblock}
+{: pre}
 
 To view the `staging_info.yml` file on an application running in a Diego cell, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat staging_info.yml"
 ```
-{: codeblock}
+{: pre}
 
 The JVM options for WAR, EAR, server directory and packaged server deployment are persisted in a `jvm.options` file. The `jvm.options` file can be found in the `app/wlp/usr/servers/<serverName>/` directory. In the most cases the `<serverName>` is set to `defaultServer` unless a packaged server was deployed with a different server name. For example:
 
@@ -299,14 +299,14 @@ To view the `jvm.options` file on an application running in a DEA node, run:
 ```
     ibmcloud cf files myapp app/wlp/usr/servers/defaultServer/jvm.options
 ```
-{: codeblock}
+{: pre}
 
 To view the `jvm.options` file on an application running in a Diego cell, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/jvm.options"
 ```
-{: codeblock}
+{: pre}
 
 
 #### Example usage
@@ -326,22 +326,25 @@ Deploying an application with customized JVM options to enable {{site.data.keywo
 ```
     ibmcloud cf files myapp app/wlp/usr/servers/defaultServer/verbosegc.log.001
 ```
-{: codeblock}
+{: pre}
 
 * To view the JVM generated verbose garbage collection log file on an application running in a Diego cell, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/verbosegc.log.001"
 ```
-{: codeblock}
+{: pre}
 
 * To update a deployed application's {{site.data.keyword.IBM_notm}} JRE option to trigger a heap, snap, and javacore on an OutOfMemory condition, set the application's environment variable with the JVM option and restart the application:
 
 ```
     ibmcloud cf set-env myapp JVM_ARGS '-Xdump:heap+java+snap:events=systhrow,filter=java/lang/OutOfMemoryError'
+```
+{: pre}
+```
     ibmcloud cf restart myapp
 ```
-{: codeblock}
+{: pre}
 
  See the [Logging and tracing](/docs/cloud-foundry-public?topic=cloud-foundry-public-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
 

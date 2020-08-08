@@ -42,7 +42,7 @@ You can find and instantiate the {{site.data.keyword.cfee_full}} service in the 
 ## Can I have more than one CFEE environment within a regional data center?
 {: #multiple-cfees}
 
-Yes, you can create CFEE instances on-demand, as many as you want in [these regions](https://cloud.ibm.com/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Yes, you can create CFEE instances on-demand, as many as you want in [these regions](/docs/cloud-foundry-public/index.html#provisioning-targets){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Will I need to start at some minimum capacity?
 {: #minimum-capacity}
@@ -103,4 +103,4 @@ More information is available on the [IBM Cloud Compliance](https://www.ibm.com/
 
 ## What options do I have to secure my CFEE instance?
 {: #secure}
-As part of managing your CFEE instance, it is necessary to take precausions to monitor and secure the Kubernetes cluster that the CFEE is deployed on.  More information about how to secure your Kubernetes cluster is available in the IBM Cloud Kubernetes Service [FAQ](https://cloud.ibm.com/docs/containers?topic=containers-faqs&locale=en-us#secure_cluster) and [documentation](https://cloud.ibm.com/docs/containers?topic=containers-security&locale=en-us#security).
+As part of managing your CFEE instance, it is necessary to take precausions to monitor and secure the Kubernetes cluster that the CFEE is deployed on.  More information about how to secure your Kubernetes cluster is available in the IBM Cloud Kubernetes Service [FAQ](/docs/containers?topic=containers-faqs&locale=en-us#secure_cluster) and [documentation](/docs/containers?topic=containers-security&locale=en-us#security).

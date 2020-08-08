@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -156,6 +156,7 @@ Optional: If you want to specify and save the deployment details before you push
   instances: 1
   memory: 512M
   ```
+  {: codeblock}
 
 For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
@@ -166,6 +167,8 @@ You can upload your app by using the `cf push` command.
   ```
   cf login -a https://api.ng.bluemix.net
   ```
+  {: pre}
+
   Add the `-sso` flag if your organization uses Single Sign On.
 
   2. From your app directory, enter the cf push command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
@@ -173,12 +176,14 @@ You can upload your app by using the `cf push` command.
   ```
   cf push appname
   ```
+  {: pre}
 
   3. Optional: If you use an external buildpack, you must use the -b option with the cf push command. For example:
 
   ```
   cf push appname -b buildpack_URL
   ```
+  {: pre}
 
   See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 

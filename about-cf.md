@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -122,25 +122,5 @@ Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: n
 **High availability** - Supports full high availability for extremely high application availability.
 
 **Automatic deployment scaling** - The Auto-Scaling for {{site.data.keyword.cloud_notm}} service enables you to automatically increase or decrease the compute capacity of your application, to rapidly adjust to dynamic loading needs.
-
-## {{site.data.keyword.cloud_notm}} Foundry offerings
-{: #ibmcf-offerings}
-
-IBM offers the Cloud Foundry PaaS in several hosting models, allowing you to customize your PaaS experience and balance a range of considerations, including price, deployment speed, and security.
-
-### Public
-{: #ibmcf-public}
-
-Run your cloud-native app using Cloud Foundry for simple stand-up and powerful scaling and traffic management. Consumption is by hour and changes dynamically based on usage.  For more information see the {{site.data.keyword.cloud_notm}} Public documentation [here](https://cloud.ibm.com/docs/cloud-foundry-public){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").  
-
-### Enterprise Environment
-{: #ibmcf-ee}
-
-Allows you to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise. It provides self-service deployment and elastic consumption,  rapid provisioning, complete access to Cloud Foundry admin operations, and is fully integrated with the vast catalog of {{site.data.keyword.cloud}} services, enabling you to building complex applications with a wide range of services.
-
-### Private
-{: #ibmcf-private}
-
-An on-premises Cloud Foundry platform that runs in your data-center on your infrastructure, giving the highest level of isolation security for your application hosting.
 
 

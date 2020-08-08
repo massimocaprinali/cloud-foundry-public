@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -115,6 +115,6 @@ Typically the current **sdk-for-nodejs** buildpack and a back-level version are 
    nodejs_buildpack                          5          true      false    nodejs_buildpack-cached-v1.5.0.zip   
    sdk-for-nodejs_v2_7-20151118-1003         17         true      false    buildpack_sdk-for-nodejs_v2.7-20151118-1003.zip
 ```
-{: codeblock}
+{: screen}
 
 

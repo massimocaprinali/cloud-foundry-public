@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -119,16 +119,14 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   ```
   ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring"}'
   ```
-  {: codeblock}
+  {: pre}
 
     In this example, my-dynatrace-collector is the name given to the service, DynatraceCollectorIPaddress is the IP address of the Dynatrace collector you     have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is Monitoring. You can specify optional parameters as in the example that follows.
 
     ```
-    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring",
-                      "options" : {"dynatrace-parameter-1": "value",
-                                   "dynatrace-parameter-2": "value"}}'
+    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring",              "options" : {"dynatrace-parameter-1": "value", "dynatrace-parameter-2": "value"}}'
     ```
-    {: codeblock}
+    {: pre}
 
     See the [_Agent Settings_ section of Agent Configuration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents) at the Dynatrace community website for more information about available options. For example, using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace-agent.md) for more details about configuring the user-provided service.
 
@@ -136,7 +134,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   ```
   ibmcloud cf bs myApp my-dynatrace-collector
   ```
-  {: codeblock}
+  {: pre}
 
     **Note:** You must restage your application after binding the service.
 
@@ -155,9 +153,10 @@ The Dynatrace agent must be hosted on a web server, and the Liberty buildpack mu
   2. Host the agent `.jar` file in a location from which the Liberty buildpack can download it. You can host it on {{site.data.keyword.cloud_notm}} itself using any of the available server facilities, or you can host it on some publicly available location.
      * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
 
-            ---
-               6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
-            {: codeblock}
+     ```
+     6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
+     ```
+     {: codeblock}
 
      * The **dynatrace-agent-6.3.0-unix.jar** file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
 
@@ -168,8 +167,10 @@ The Liberty app you want to monitor must be configured to locate the server host
 
 1. Set the variable **JBP_CONFIG_DYNATRACEAPPMONAGENT** so it has the value *"repository_root: URL_of_server_hosting_index.yml"*. For example, after pushing your application issue the following command:
 
-        ibmcloud cf se myApp JBP_CONFIG_DYNATRACEAPPMONAGENT 'repository_root: https://my-dynatrace-agent-host.mybluemix.net'
-        {: codeblock}
+    ```
+    ibmcloud cf se myApp JBP_CONFIG_DYNATRACEAPPMONAGENT 'repository_root: https://my-dynatrace-agent-host.mybluemix.net'
+    ```
+    {: pre}
 
     In this example, *my-dynatrace-agent-host.mybluemix.net* is the URL of the `index.yml` file hosted by the server that you previously configured.
 
@@ -177,6 +178,6 @@ The Liberty app you want to monitor must be configured to locate the server host
 ```
     Downloading dynatrace-agent-6.3.0-unix.jar 6.3.0 from https://my-dynatrace-agent-host.mybluemix.net/dynatrace-agent-6.3.0-unix.jar (17.8s)
 ```
-{: codeblock}
+{: screen}
 
 

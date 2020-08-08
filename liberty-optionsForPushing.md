@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -118,7 +118,7 @@ For example:
 ```
     ibmcloud cf push <yourappname> -p myapp.war
 ```
-{: codeblock}
+{: pre}
 
 When a stand-alone application is deployed, a default Liberty configuration is provided for the application. The default configuration enables the following Liberty features:
 
@@ -144,7 +144,7 @@ These features correspond to the Java EE 7 Web Profile features. You can specify
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: {features: [jsp-2.3, websocket-1.1]}"
 ```
-{: codeblock}
+{: pre}
 
 Note: For best results, set the Liberty features with the JBP_CONFIG_LIBERTY environment variable or deploy your application as a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) with a custom server.xml file. Setting this environment variable ensures that your application uses only the feature that it needs and it is not affected by the buildpack's default Liberty feature set changes. If you need to provide extra Liberty configuration beyond the feature set, use the [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or the [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) option to deploy your application.
 
@@ -220,14 +220,14 @@ For example:
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: { implicit_cdi: true }"
 ```    
-{: codeblock}
+{: pre}
 
 Important: In order for your environment variable changes to take effect you must restage your application:
 
 ```
     ibmcloud cf restage myapp
 ```
-{: codeblock}
+{: pre}
 
 ## Server directory
 {: #server_directory}
@@ -240,7 +240,7 @@ For example, if your Liberty server is named defaultServer, run the command:
 ```
     ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer
 ```
-{: codeblock}
+{: pre}
 
 If a Liberty profile is not installed on your workstation, you can use the following steps to create a server directory with your application:
 
@@ -269,7 +269,7 @@ After the server directory is ready, you can deploy it to {{site.data.keyword.cl
 ```
     ibmcloud cf push <yourappname> -p defaultServer
 ```
-{: codeblock}
+{: pre}
 
 Note: The web applications that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5%2F1-3-11-0-5-6). For example:
 
@@ -289,7 +289,7 @@ For example, if your Liberty server is `defaultServer`, run the command:
 ```
     wlp/bin/server package defaultServer --include=usr
 ```
-{: codeblock}
+{: pre}
 
 This command generates a serverName.zip file in the server's directory. If you used the `--archive` option to specify a different archive file, make sure it has the `.zip` extension instead of `.jar`. **The buildpack does not support packaged server files created with the `.jar` extension**.
 
@@ -299,7 +299,7 @@ For example:
 ```
     ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer/defaultServer.zip
 ```
-{: codeblock}
+{: pre}
 
 Note: The web applications that are deployed as part of the packaged server are accessible under the context root, as determined by the Liberty profile.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -142,12 +142,12 @@ cd $GOPATH/src
   ```
 go get github.com/IBM-Cloud/get-started-go
   ```
-  {: codeblock}
+  {: pre}
 
   ```
 cd github.com/IBM-Cloud/get-started-go
   ```
-  {: codeblock}
+  {: pre}
 
 1. Peruse the files in the **`get-started-go`** directory to familiarize yourself with the contents.
 
@@ -159,7 +159,7 @@ cd github.com/IBM-Cloud/get-started-go
   ```
 make
   ```
-  {: codeblock}
+  {: pre}
 
   ```
 go run main.go
@@ -201,21 +201,21 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
 
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
 
   ```	  
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -225,7 +225,7 @@ ibmcloud target --cf
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -234,7 +234,7 @@ When deployment completes you should see a message indicating that your app is r
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") to view your app.
 
@@ -280,7 +280,7 @@ CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
   ```
 go run main.go
   ```
-  {: codeblock}
+  {: pre}
 
   View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
 

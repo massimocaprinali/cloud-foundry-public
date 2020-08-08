@@ -20,16 +20,16 @@ lastupdated: "2020-07-09"
 
 Before users begin creating and working with an {{site.data.keyword.cfee_full}} (CFEE) service, their permissions must be set correctly by an administrator of the account where the CFEE instance is to be created.
 
-If provisioning in a VPC cluster, users will also need [VPC permissions](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
+If provisioning in a VPC cluster, users will also need [VPC permissions](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
 ## Permissions overview
 {: #perm-summary}
 
-Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam#/users) and [Cloud Foundry role assignments](https://cloud.ibm.com/account/cloud-foundry) required for performing various tasks in an CFEE instance. The remaining section describes these permissions in more detail.
+Following is a summary of the minimum [IAM](https://cloud.ibm.com/iam/overview) and [Cloud Foundry role assignments](https://cloud.ibm.com/account/cloud-foundry) required for performing various tasks in an CFEE instance. The remaining section describes these permissions in more detail.
 
 |  **Task** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|  **IAM Access Roles** &nbsp; &nbsp; &nbsp; |**Cloud Foundry Roles** &nbsp; &nbsp; &nbsp; |
 |----------------------------------------|-------------------|-------------------|
-|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Administrator role in Databases for PostgreSQL service.</li> <li>[Infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a cluster.</li> <li>Editor platform role, and manager service access role in the IBM Cloud Object Storage service.</li> </ul> | |
+|Create a CFEE |  <ul><li>Viewer role in Resource Group where CFEE is to be created.</li> <li>Editor role in the CFEE service.</li> <li>Administrator role in Kubernetes service.</li> <li>Administrator role in Databases for PostgreSQL service.</li> <li>[Infrastructure permissions](/docs/containers?topic=containers-access_reference#infra) required to create a cluster.</li> <li>Editor platform role, and manager service access role in the IBM Cloud Object Storage service.</li> </ul> | |
 |Update CFEE version |  <ul><li>Viewer role in CFEE Resource Group.</li> <li>Editor platform role in the CFEE service.</li></li> <li>Operator role in Kubernetes service.</li> <li>Editor role in Cloud Object Storage service.</li> </ul> | |
 |Scale CFEE capacity (add/remove cells)|  <ul><li>Viewer role in the CFEE instance Resource Group.</li> <li>Administrator role in the CFEE instance.</li> <li>Operator role in Kubernetes service.</li></ul> |
 |Monitor CFEE |  <ul><li>Viewer role in the CFEE instance Resource Group</li> <li>Editor role in the CFEE instance.</li> <li>Operator role in the CFEE's Kubernetes cluster.</li></ul> |  |
@@ -61,7 +61,7 @@ The following Identity & Access Management (IAM) access policies are required fo
 
 * _Administrator_ or _editor_ role to **{{site.data.keyword.cfee_full_notm}} service** resources. In the resource group to which the environment is assigned. Users with either administrator or editor roles in the {{site.data.keyword.cfee_full_notm}} service can create and delete environments. But only users with an administration role can assign users to an {{site.data.keyword.cfee_full_notm}} instance or change the roles that are assigned to users in that instance.
 
-* _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions. Additionally, make sure that you have the right [infrastructure permissions](https://cloud.ibm.com/docs/containers?topic=containers-access_reference#infra) required to create a Kubernetes cluster.
+* _Administrator_ role to the **Kubernetes Service** resources.  Instances of the {{site.data.keyword.cfee_full_notm}} are deployed on container cluster infrastructure, which is provided by the Kubernetes service. When you create an instance of the {{site.data.keyword.cfee_full_notm}} service, the service automatically creates a Kubernetes cluster. Access to the Kubernetes Service is required for creating that cluster infrastructure. You can scope access to the Kubernetes Service policy to the specific region where you intend to provision the CFEE instance, or scope the access to all regions. Additionally, make sure that you have the right [infrastructure permissions](/docs/containers?topic=containers-access_reference#infra) required to create a Kubernetes cluster.
 
 * _Administrator_ or _editor_ platform role, and manager service access role to the **IBM Cloud Object Storage service**, which is a required dependency of the CFEE service.  An instance of IBM Cloud Object Storage service is used to store data generated during the creation of your ICFEE application containers (e.g. uploaded application packages, buildpacks, and compiled executables).
 
@@ -71,7 +71,7 @@ The following screen illustrates access policies as they would appear in the Ide
 
 ![Access policies](img/AccessPolicies_Creator.png)
 
-You can grant user permissions using the {{site.data.keyword.cloud}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](https://cloud.ibm.com/docs/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli#install_use).
+You can grant user permissions using the {{site.data.keyword.cloud}} command line.  You can also define an access policy for a user by specifying the parameters of the policy (i.e., services, roles, regions, etc) in a JSON formatted file that is invoked by the command that creates the policy.  See  [Assigning an IAM policy by using the command line](/docs/cloud-monitoring/security/assign_policy.html#assign_policy_commandline) for more information, or issue `ibmcloud iam -help` in the command line. Note that this requires installing the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli#install_use).
 {:tip}
 
 To confirm that you have the required access policies to create an {{site.data.keyword.cfee_full_notm}} instance:
@@ -171,4 +171,4 @@ Alternatively, you can use the `ibmcloud` cli:
   {: pre}
 
 <br>
-For more information, see [Setting up user access](https://cloud.ibm.com/docs/account?topic=account-access-getstarted).
+For more information, see [Setting up user access](/docs/account?topic=account-access-getstarted).

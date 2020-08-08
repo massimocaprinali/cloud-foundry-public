@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -93,11 +93,7 @@ subcollection: cloud-foundry-public
 {:vb.net: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen:.screen}
-{:codeblock:.codeblock}
-{:hide-in-docs: .hide-in-docs}
+
 
 # Start coding with Node-RED
 {: #startNodeRed}
@@ -121,27 +117,32 @@ Before you can start coding with Node-RED, you must first configure the editor.
 
 Before you begin, install the [Cloud Foundry command-line interface](https://github.com/cloudfoundry/cli/releases).
 
-1. {: hide-in-docs}[Download and extract your starter code](http://bluemix.net) to set up your development environment.
+1. {: hide-in-docs}[Download and extract your starter code](https://cloud.ibm.com/) to set up your development environment.
 
 2. Change to your new directory.
 ```
-$ cd <varname>directory_name</varname></codeblock>
+cd <varname>directory_name</varname></codeblock>
 ```
+{: pre}
 3. Connect to {{site.data.keyword.cloud}}.
 ```
-$ cf api https://api.{DomainName}/
+cf api https://api.{DomainName}/
 ```
+{: pre}
 4. Log in to {{site.data.keyword.cloud_notm}}.
 ```
-$ cf login -u <varname props="keyref(user_ID)">user_name</varname>
-$ cf target -o <varname props="keyref(org_name)">org_name</varname> -s <varname props="keyref(space_name)">space_name</varname>
+cf login -u <varname props="keyref(user_ID)">user_name</varname>
+cf target -o <varname props="keyref(org_name)">org_name</varname> -s <varname props="keyref(space_name)">space_name</varname>
 ```
+{: codeblock}
 5. Deploy your app to {{site.data.keyword.cloud_notm}}.
 ```
-<codeblock>$ cf push <varname props="keyref(app_name)">app_name</varname></codeblock>
+cf push <varname props="keyref(app_name)">app_name</varname>
 ```
+{: pre}
 6. Access your app to see your changes.
 ```
 <varname props="keyref(host)">host</varname>.<keyword conref="cloudoeconrefs.dita#cloudoeconrefs/Appdomainname"/>
 ```
+{: pre}
 

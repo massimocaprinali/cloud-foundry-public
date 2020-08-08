@@ -149,7 +149,7 @@ The following guides you through the steps for installing the required CLI's, fo
 **Note:** The following instructions are also available in the {{site.data.keyword.cfee_full}} user interface. Open the CFEE instance user interface, click **Monitoring** in the left navigation pane, and go to the **Access** tab to see the instructions.
 
 1. Check your [Access Policies](https://cloud.ibm.com/iam/#/users) to ensure that you have at least a Viewer role on the Kubernetes cluster supporting the environment.
-2. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud/download_cli.html#install_use).
+2. Install the [IBM Cloud CLI](/docs/cli/reference/ibmcloud/download_cli.html#install_use).
 3. Install the [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/). If you have an existing Kubernetes CLI, we recommend that you install the latest version.
 4. Install the container service plug-in:
 ```

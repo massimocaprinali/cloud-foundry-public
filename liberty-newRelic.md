@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -128,12 +128,13 @@ If you have an existing New Relic account and license key, you may bind the exis
     ibmcloud cf create-user-provided-service mynewrelic -p "licenseKey"
     licenseKey> 1234567
   ```
-  {: codeblock}
+  {: pre}
 
 2. Deploy your application to {{site.data.keyword.cloud_notm}} with the user-provided New Relic service instance.  The following
 is a sample application manifest that uses a user-provided
 New Relic service instance:
-  <pre>
+
+```
         &dash;&dash;&dash;
         applications:
         - name: myapp
@@ -144,8 +145,8 @@ New Relic service instance:
          path: myapp.war
          services:
          - mynewrelic
-  </pre>
-  {: codeblock}
+````
+{: codeblock}
 
 3. Access the New Relic dashboard to view the application metrics.
 

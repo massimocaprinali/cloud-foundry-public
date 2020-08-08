@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -199,16 +199,20 @@ Here are examples of how to set the `services_autoconfig_excludes` environment v
 
 ```
     ibmcloud cf set-env myapp services_autoconfig_excludes cloudant=config
+``
+{: pre}
+
+```
     ibmcloud cf set-env myapp services_autoconfig_excludes "cloudant=config dashDB=all"
 ```
-{: codeblock}
+{: pre}
 
 To find the *label* for a service in VCAP_SERVICES issue a command like the following example:
 
 ```
     ibmcloud cf env myapp
 ```
-{: codeblock}
+{: pre}
 
 The output includes text similar to the following, where you can see the `label` field with value **elephantsql**:
 
@@ -233,7 +237,7 @@ You can use the **LBP_SERVICE_CONFIG_xxxx** environment variable to override a s
 ```
     ibmcloud cf set-env myapp LBP_SERVICE_CONFIG_POSTGRESQL "{driver: { version: 8.3.4.+ }}"
 ```
-{: codeblock}
+{: pre}
 
 This table shows the mapping of **service_type** to **LBP_SERVICE_CONFIG_xxxx** environment variable names.
 
