@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -346,7 +346,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The monthly Liberty runtime version was updated to the [2017.2.0.0](https://developer.ibm.com/wasdev/blog/2017/02/17/beta-websphere-liberty-tools-february-2017/) release.
 * The IBM JRE versions 8 and 7.1 were updated to SR4 FP1.
 * The auto-configuration support was also extended to work with [ibm-websphere-extreme-scale IBM Container](/docs/images/docker_image_extreme_scale/ibm-websphere-extreme-scale_starter.html).
-* The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant/index.html) was updated to provide the option of using the Cloudant Java Library instead of org.ektorp. To enable the use of the Cloudant Java Library you must set the following environment variable:    
+* The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of org.ektorp. To enable the use of the Cloudant Java Library you must set the following environment variable:    
 ```
 ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
 ```
@@ -477,7 +477,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 ### July 31, 2015: Updated Liberty buildpack v1.20.1-20150729-1255
 * The buildpack contains updated versions of IBM JREs: 7.1 SR1 FP10 and 8 SR1 FP10.
 The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/docview.wss?uid=swg21964161) and other improvements.
-* The service plug-in that provides [auto-configuration support](autoConfig.html) for the [Cloudant NoSQL Database](/docs/Cloudant/index.html#Cloudant) service was updated to ensure that the connections to the service are established over a secure channel.
+* The service plug-in that provides [auto-configuration support](autoConfig.html) for the [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) service was updated to ensure that the connections to the service are established over a secure channel.
 
 ### July 21, 2015: Updated Liberty buildpack v1.20-20150713-1450
 * The buildpack contains an updated version of the Liberty profile based on the [8.5.5.6 release](https://developer.ibm.com/wasdev/blog/2015/06/25/java-ee-7-has-landed-in-was-liberty/). With this release all the Java EE 7 Liberty features previous available as beta features, are now available as production-ready features. Due to port and other restrictions in the {{site.data.keyword.cloud_notm}}, some features such as for example remote EJBs are not be fully supported in the platform.
