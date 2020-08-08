@@ -274,7 +274,7 @@ Delete any services instances that aren't needed, or remove the limit on the num
 	  4. Delete the service instance. Enter `cf delete-service <service_instance_name>`.
 	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `cf restage <appname>`.
 
-  * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-accounts#upgrade-to-paygo).
+  * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
 ## Executable files can't be run on {{site.data.keyword.cloud_notm}}
 {: #ts_executable}
@@ -319,7 +319,7 @@ This error occurs when the amount of memory that is remaining for your organizat
 You can either increase the memory quota of your account, or reduce the memory that your apps use.
 {: tsResolve}
 
-  * To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-accounts#upgrade-to-paygo).
+  * To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
   * To reduce the memory that your apps use, use either the {{site.data.keyword.cloud_notm}} console or the Cloud Foundry command line interface.
 
     If you use the {{site.data.keyword.cloud_notm}} console, complete the following steps:
