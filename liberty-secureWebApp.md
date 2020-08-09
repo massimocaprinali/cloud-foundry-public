@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -113,7 +113,7 @@ Instead of learning the theory of XSS attacks and remedial techniques before you
 
 You can use the [secure starter application](https://github.com/IBM-Cloud/java-secure-app) as a starting point for new Liberty application development. Start by learning the XSS countermeasure code in the app and then apply it to the operations of the application API. The countermeasures in the secure starter application help prevent malicious user input from damaging your application both on the server and browser by mitigating or preventing XSS attacks.
 
-First, download this secure starter application, then build and deploy it on {{site.data.keyword.cloud_notm}} or locally the same way as you do with the [getting-started-java](https://github.com/IBM-Cloud/get-started-java) sample application.  Go to [Getting started with Liberty on {{site.data.keyword.cloud_notm}}](getting-started.html) to learn more about building and deploying applications on {{site.data.keyword.cloud_notm}}.  To get started, you can use these steps to clone, build, and run the app.
+First, download this secure starter application, then build and deploy it on {{site.data.keyword.cloud_notm}} or locally the same way as you do with the [getting-started-java](https://github.com/IBM-Cloud/get-started-java) sample application.  Go to [Getting started with Liberty on {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty) to learn more about building and deploying applications on {{site.data.keyword.cloud_notm}}.  To get started, you can use these steps to clone, build, and run the app.
 
 ```
 git clone https://github.com/IBM-Cloud/java-secure-app

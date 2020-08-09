@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -329,7 +329,7 @@ The following variables are defined in the `runtime-vars.xml` file, and referenc
 ### Accessing information of bound services
 {: #accessing_info_of_bound_services}
 
-When you want to bind a service to your application, information about the service, such as connection credentials, is included in the [VCAP_SERVICES environment variable ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES) that Cloud Foundry sets for the application. For [automatically configured services](autoConfig.html), the Liberty buildpack generates or updates service binding entries in the server.xml file. The contents of the service binding entries can be in one of the following forms:
+When you want to bind a service to your application, information about the service, such as connection credentials, is included in the [VCAP_SERVICES environment variable ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES) that Cloud Foundry sets for the application. For [automatically configured services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config), the Liberty buildpack generates or updates service binding entries in the server.xml file. The contents of the service binding entries can be in one of the following forms:
 
 * cloud.services.&lt;service-name&gt;.&lt;property&gt;, which describes the information such as the name, type, and plan of the service.
 * cloud.services.&lt;service-name&gt;.connection.&lt;property&gt;, which describes the connection information for the service.

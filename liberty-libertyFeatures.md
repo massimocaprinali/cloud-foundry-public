@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -199,12 +199,12 @@ Skip to the section of the feature list by using the following index, or you can
 * eventLogging-1.0
 
 ### F
-{: #libertyfeat_f}
+{: #libertyfeat_F}
 
 * federatedRegistry-1.0
 
 ### H
-{: #libertyfeat_h}
+{: #libertyfeat_H}
 
 * httpWhiteboard-1.0
 

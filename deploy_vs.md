@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -101,7 +101,7 @@ subcollection: cloud-foundry-public
 
   1. If you don't already have Visual Studio, install Visual Studio 2015 or Visual Studio Code by following the [documentation](https://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx){: new_window}.
 
-  1. {: hide-in-docs}[Download your starter code](https://bluemix.net) and extract it into a folder on your hard drive.
+  1. {: hide-in-docs}[Download your starter code](https://cloud.ibm.com/) and extract it into a folder on your hard drive.
 
   1. Open the project in Visual Studio
 
