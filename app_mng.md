@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -157,7 +157,6 @@ App Management is a set of development and debugging utilities that can be enabl
 * [proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#proxy)
 * [noproxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#noproxy)
 * [hc](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#hc)
-* [debug](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#debug)
 * [jmx](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#jmx)
 * [localjmx](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#localjmx)
 
@@ -249,7 +248,7 @@ The *noproxy* utility only applies to applications that run in a Diego cell.
 #### hc
 {: #hc}
 
-The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-latest_updates) for the current set of runtimes.
+The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
 When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){:new_window}.
 
