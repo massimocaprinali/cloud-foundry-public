@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -112,13 +112,12 @@ This process is referred to as automatic configuration.
 
 The Liberty buildpack provides automatic configuration for the following service types:
 
-* [{{site.data.keyword.autoscaling}}](/docs/Auto-Scaling?topic=Auto-Scaling-get-started#autoscaling)
 * [ClearDB MySQL Database ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.cleardb.com/developers)
 * [{{site.data.keyword.cloudant}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [{{site.data.keyword.composeForMongoDB}}](/docs/ComposeForMongoDB?topic=ComposeForMongoDB-about)
 * [{{site.data.keyword.composeForMySQL}}](/docs/ComposeForMySQL?topic=ComposeForMySQL-about)
 * [{{site.data.keyword.composeForPostgreSQL}}](/docs/ComposeForPostgreSQL?topic=ComposeForPostgreSQL-about)
-* [{{site.data.keyword.dashdbshort}}](/docs/dashDB/index.html#dashDB)
+* [{{site.data.keyword.dashdbshort}}](/docs/Db2whc?topic=Db2whc-getting-started)
 * [ElephantSQL](/docs/ElephantSQL?topic=ElephantSQL-gettingstarted)
 * [{{site.data.keyword.ssoshort}}](/docs/SingleSignOn/index.html#sso_gettingstarted)
 

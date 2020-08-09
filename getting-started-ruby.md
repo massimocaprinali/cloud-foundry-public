@@ -286,8 +286,7 @@ If you don't need your app live, stop it so you don't incur any unexpected charg
 ## Next steps
 {: #nextsteps-ruby}
 
-* [Tutorials](/docs?tab=tutorials)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
 
 

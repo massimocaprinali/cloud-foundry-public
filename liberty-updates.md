@@ -326,7 +326,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The default heap size ratio is now 50% when your application has less than 512mb of memory, if it has more than 512mb it will still be 75%.
 * A new staging task log is now generated, which allows for easier debugging of staging errors.
 * The Node.js runtime that is used by the [App Management utility](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the 6.13.0 version.
-* The buildpack also provides an updated agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started).
+* The buildpack also provides an updated agent for the Auto-Scaling service.
 
 ### June 12, 2017: Updated Liberty buildpack v3.10-20170525-1107
 * The default Liberty runtime version was updated to the 17.0.0.2 release.
@@ -335,10 +335,10 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The buildpack also provides an updated version of the Extreme Scale Client.
 
 ### April 27, 2017: Updated Liberty buildpack v3.9-20170419-1403
-* The default Liberty runtime version `17.0.0.1` was updated to include [PI77770](http://www-01.ibm.com/support/docview.wss?uid=swg24043596), [PI77605](http://www-01.ibm.com/support/docview.wss?uid=swg1PI77605), [PI79275](http://www-01.ibm.com/support/docview.wss?uid=swg1PI79275), and PI77438 iFixes.
+* The default Liberty runtime version `17.0.0.1` was updated to include [PI77770](http://www-01.ibm.com/support/docview.wss?uid=swg24043596), [PI77605](https://www.ibm.com/support/pages/apar/PI77605), [PI79275](https://www.ibm.com/support/pages/apar/PI79275), and PI77438 iFixes.
 * The monthly Liberty runtime version was updated to the [2017.3.0.0](https://developer.ibm.com/wasdev/blog/2017/03/14/beta-websphere-liberty-tools-march-2017/) release.
 * Memory Calculation was moved from staging to the start process, allowing for easier heap memory changes with the restart of an application.
-* The buildpack also provides updated versions of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started), and Extreme Scale Client.
+* The buildpack also provides updated versions of the agent for the Auto-Scaling service, and the Extreme Scale Client.
 
 ### March 14, 2017: Updated Liberty buildpack v3.8-20170308-1507
 * The default Liberty runtime version was updated to the 17.0.0.1 release.
@@ -350,7 +350,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 ```
 ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
 ```
-* The buildpack also provides an updated version of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started) and a number of application management enhancements.
+* The buildpack also provides an updated version of the agent for the Auto-Scaling service and a number of application management enhancements.
 * This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Applications using the Free plan will no longer have the log capability added to their applications; it is being replaced by logmet.  
 
 
@@ -363,7 +363,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The default Liberty runtime version was updated to the [16.0.0.4](http://www-01.ibm.com/support/docview.wss?uid=swg27009661) release.
 * The IBM JRE version 8 was updated to SR3 FP21 version.
 * The [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) support was also extended to work with the [Compose for PostgreSQL service](/docs/ComposeForPostgreSQL?topic=ComposeForPostgreSQL-about).
-* The buildpack also provides an updated version of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started).
+* The buildpack also provides an updated version of the agent for the Auto-Scaling service.
 * The buildpack was updated to support environment variables as part of the include locations in the `server.xml` files.
 
 ### November 29, 2016: Updated Liberty buildpack v3.5-20161114-1152
@@ -381,7 +381,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack contains a fix for a problem starting certain types of applications. Specifically, applications deployed as a server directory or a packaged server with the application files in the `dropins` directory.
 
 ### October 21, 2016: Updated Liberty buildpack v3.4-20161018-2004
-* The default Liberty runtime version `16.0.0.3` was updated to include [PI68805](http://www-01.ibm.com/support/docview.wss?uid=swg1PI68805) and [PI69141](http://www-01.ibm.com/support/docview.wss?uid=swg1PI69141) iFixes.
+* The default Liberty runtime version `16.0.0.3` was updated to include [PI68805](https://www.ibm.com/support/pages/apar/PI68805) and [PI69141](https://www.ibm.com/support/pages/apar/PI69141) iFixes.
 * The monthly Liberty runtime version was updated to the [2016.9.0.1](https://developer.ibm.com/wasdev/blog/2016/09/23/beta-websphere-liberty-and-tools-october-2016/) release.
 * The buildpack also contains an updated version of IBM JRE 8.0: SR3 FP12.
 * The IBM JRE 8.0 and 7.1 are now configured to enable [all TLS protocols when `SSLContext.getContext("TLS")` is called](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/matchsslcontext_tls.html) to match Oracle's JRE behavior. IBM JRE 7.1 is also configured to enable [all TLS protocols when `SSLContext.getDefault()` is called](https://www.ibm.com/support/knowledgecenter/SSYKE2_7.1.0/com.ibm.java.security.component.71.doc/security-component/jsse2Docs/overrideSSLprotocol.html) to match IBM's JRE 8.0 behavior.
@@ -405,7 +405,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The [App Management](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) functionality was updated to support federated authentication. Also, the Node.js runtime that is used by the `devconsole` and `shell` utilities was updated to the latest `0.12.15` version.
 * The buildpack adds support for the [Dynatrace Ruxit ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.dynatrace.com/solutions/cloud-native-application-monitoring/) application monitoring agent.
 * The buildpack provides an updated data collector for the Monitoring and Analytics service.
-* The buildpack also provides an updated version of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started).
+* The buildpack also provides an updated version of the agent for the Auto-Scaling service.
 * The monthly Liberty runtime version was updated to the [2016.7.0.0](https://developer.ibm.com/wasdev/blog/2016/06/30/beta-websphere-liberty-and-tools-july-2016/) release.
 
 ### June 17, 2016: Updated Liberty buildpack v3.0-20160608-1450
@@ -426,7 +426,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 ### March 25, 2016: Updated Liberty buildpack v2.7-20160321-1358
 * The buildpack contains an updated version of WebSphere Liberty based on the [March beta](https://developer.ibm.com/wasdev/blog/2016/03/18/new-websphere-liberty-features-march-2016/). The updated version of Liberty makes the cloudant-1.0 beta feature available in {{site.data.keyword.cloud_notm}}
 * The buildpack also contains updated versions of IBM JRE: 8 SR2 FP12 and 7.1 SR3 FP32.
-* The buildpack provides an updated version of the agent for the [Auto-Scaling service](/docs/Auto-Scaling?topic=Auto-Scaling-get-started).
+* The buildpack provides an updated version of the agent for the Auto-Scaling service.
 * The buildpack now comes with a new data collector for the Monitoring and Analytics service. The new collector enables configuration of monitoring thresholds and contains a number of bug fixes.
 * The buildpack provides an updated DB2® JDBC driver version 4.19.49.
 * The Node.js runtime that is used by the [devconsole and shell App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest 0.12.12 version.
@@ -497,7 +497,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 
 ### May 5, 2015: Updated Liberty buildpack v1.17-20150501-1729
 * The buildpack contains an updated version of the Liberty profile based on the [April beta](https://developer.ibm.com/wasdev/blog/2015/04/10/announcing-liberty-beta-with-tools-aprilmay-2015/). With this update, the jsp-2.3, el-3.0, and jdbc-4.1 Liberty features, previously available as beta features, are now available as production-ready features. Also, additional Java EE 7 features such as jsf-2.2, javaMail-1.5, webProfile-7.0, and javaee-7.0 are now available as beta features.
-* The buildpack also provides initial support for Java 8. IBM JRE 7.1 remains the default JRE but IBM JRE 8 can be enabled for an application by setting the JBP_CONFIG_IBMJDK environment variable. Configuring version of OpenJDK is also supported. See [Customizing the JRE](/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre) for all the details.
+* The buildpack also provides initial support for Java 8. IBM JRE 7.1 remains the default JRE but IBM JRE 8 can be enabled for an application by setting the JBP_CONFIG_IBMJDK environment variable. Configuring version of OpenJDK is also supported. See [Customizing the JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre) for all the details.
 * The buildpack provides a new JBP_CONFIG_LIBERTY environment variable that can be used to override the default set of Liberty features enabled for an application when it deploys a WAR or EAR file. See [Stand-alone Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) for more information.
 * The service plug-in for the Monitoring and Analytics service was updated to reduce the size of logs that are generated for the service.
 * With this version of the buildpack, the way the application files are laid out in the droplet changed. The change in the file structure eliminated complexity that is related to maintaining symbolic links and should have no impact on the applications.

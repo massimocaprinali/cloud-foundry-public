@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -97,8 +97,7 @@ subcollection: cloud-foundry-public
 # Working with a proxy
 {: #working_with_proxy}
 
-In some environments such as [{{site.data.keyword.cloud_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) and
-[Bluemix Local](/docs/local?topic=local-local) a proxy may be configured which affects the
+In some environments such as [{{site.data.keyword.cloud_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) a proxy may be configured which affects the
 behavior of your application during staging and runtime.
 
 You can configure your application to work with the proxy by using the following environment variables:

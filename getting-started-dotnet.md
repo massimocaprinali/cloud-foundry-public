@@ -266,8 +266,7 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 
 ## Next Steps
 
-* [Tutorials](/docs?tab=tutorials)
 * [Samples](https://ibm-cloud.github.io){: external}
-* [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 
