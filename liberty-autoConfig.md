@@ -118,7 +118,7 @@ The Liberty buildpack provides automatic configuration for the following service
 * [{{site.data.keyword.composeForMySQL}}](/docs/ComposeForMySQL?topic=ComposeForMySQL-about)
 * [{{site.data.keyword.composeForPostgreSQL}}](/docs/ComposeForPostgreSQL?topic=ComposeForPostgreSQL-about)
 * [{{site.data.keyword.dashdbshort}}](/docs/Db2whc?topic=Db2whc-getting-started)
-* [ElephantSQL](/docs/ElephantSQL?topic=ElephantSQL-gettingstarted)
+* [ElephantSQL](/docs/ElephantSQL)
 * [{{site.data.keyword.ssoshort}}](/docs/SingleSignOn/index.html#sso_gettingstarted)
 
 The Compose services can be either container managed or application managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the application to manage the service, you can opt-out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).

@@ -112,7 +112,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 You'll need the following:
 
 * [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Maven](https://maven.apache.org/download.cgi){: external}
 * [Apache Tomcat version 8.0.41](https://tomcat.apache.org/download-80.cgi#8.0.41 ){: external}

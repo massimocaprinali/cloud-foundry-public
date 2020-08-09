@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -109,7 +109,7 @@ To get started creating your application, take the following steps:
   2. Click **Cloud Foundry Apps** and choose the **Cloud Foundry** tile. Follow **Public Applications** to select a Region, Runtime, Name, etc. Click **Create**.
   3. When you are finished with the **Getting Started** guide, click **Overview**.
   5. You can add a service to your app by clicking **Create connection** on the app Overview in the dashboard. Or, you can use the cf command line interface. See Options for working with apps.
-  6. On the Overview page, scroll to the "Continuous delivery" card and click **View toolchain**. Your app's source will be saved in a repo that is hosted on IBM Cloud. An open toolchain that uses that repo and a delivery pipeline to develop and deploy your app is also created. For more information about the Continuous Delivery service, see <a href="/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started#cd_getting_started">Getting started with Continuous Delivery</a>.
+  6. On the Overview page, scroll to the "Continuous delivery" card and click **View toolchain**. Your app's source will be saved in a repo that is hosted on IBM Cloud. An open toolchain that uses that repo and a delivery pipeline to develop and deploy your app is also created. For more information about the Continuous Delivery service, see <a href="/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started#cd_getting_started">Getting started with Continuous Delivery</a>.
 
 **Note:** If a service that you bind to an app crashes, the app might stop running or have errors. {{site.data.keyword.cloud_notm}} does not automatically restart the app to recover from these problems. Consider coding your app to identify and recover from outages, exceptions, and connection failures. See the Apps are not automatically restarted troubleshooting topic for more information.
 
@@ -123,7 +123,7 @@ After your app is created, you have a few options for continuing to add services
 <dt>{{site.data.keyword.cloud_notm}} user interface</dt>
 <dd>Use the {{site.data.keyword.cloud_notm}} <a href="https://cloud.ibm.com/resources">user interface</a> to build your application, including picking which services and runtimes to combine to solve your business problem.</dd>
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
-<dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started#cd_getting_started">Getting started with Continuous Delivery</a>.</dd>
+<dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started#cd_getting_started">Getting started with Continuous Delivery</a>.</dd>
 <dt>Adding metrics for monitoring using SysDig</dt>
 <dd>CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Getting started with Continuous Delivery](/docs/observability-monitoring?topic=observability-monitoring-cloud-foundry-app-metrics).</dd>
 </dl>

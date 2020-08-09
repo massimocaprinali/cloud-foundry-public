@@ -103,7 +103,7 @@ to acquire artifacts required by the application.  The following are the externa
 * https://download.run.pivotal.io, and https://java-buildpack.cloudfoundry.org are used to access components for:
   * [AppDynamics agent ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.appdynamics.com/)
   * [MariaDB JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/)
-  * [New Relic agent](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic)
+  * [New Relic agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic)
   * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
   * [PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.postgresql.org)
 * https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zeroturnaround.com/software/jrebel/).

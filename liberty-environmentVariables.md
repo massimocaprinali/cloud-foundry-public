@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -127,7 +127,7 @@ Environment variables supported by Liberty for Java.
 
 <tr>
 <td>JBP_CONFIG_DYNATRACEAPPMONAGENT</td>
-<td>Configure the [Dynatrace agent location information](/docs/runtimes/liberty/monitoring?topic=liberty-using_dynatrace#configuring_liberty_app)</td>
+<td>Configure the [Dynatrace agent location information](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace)</td>
 </tr>
 
 <tr>

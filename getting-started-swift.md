@@ -110,7 +110,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 {: #prereqs-swift}
 
 * [Git](https://git-scm.com/downloads){: external}
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Swift compiler](https://swift.org/download/){: external} for your platform.
 
 ## Step 1: Clone the sample app

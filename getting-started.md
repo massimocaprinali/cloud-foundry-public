@@ -113,7 +113,7 @@ There are three ways to develop your app:
 ## Developing and deploying your apps by using toolchains and the {{site.data.keyword.contdelivery_short}} service
 {: #ee_cd}
 
-[Add a toolchain](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using#toolchains-using) to develop and deploy your app.
+[Add a toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
 Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
 {: tip}

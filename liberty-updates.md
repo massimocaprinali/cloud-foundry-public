@@ -161,19 +161,19 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 
 ### November 6, 2019: Updated Liberty buildpack v3.38-20191031-1433
 
-* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messsaging-19009.html) release.
+* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html) release.
 * The alternate Liberty runtime GA version `19.0.0.11` was added.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.5+10_openj9-0.17.0.
 
 ### October 11, 2019: Updated Liberty buildpack v3.37-20191002-1726
 
-* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messsaging-19009.html) release.
+* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html) release.
 * The alternate Liberty runtime GA version [19.0.0.10](https://openliberty.io/blog/2019/10/11/configure-logs-JSON-format-190010.html) was added.
 * The IBM JRE version was updated to [8 SR5 FP41](https://developer.ibm.com/javasdk/2019/09/26/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-41/)
 
 ### September 13, 2019: Updated Liberty buildpack v3.36-20190905-1704
 
-* The default Liberty runtime GA version was changed to the [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messsaging-19009.html) release.
+* The default Liberty runtime GA version was changed to the [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html) release.
 * The alternate Liberty runtime GA version is also the `19.0.0.9` release.
 * The IBM JRE version was updated to [8 SR5 FP40](https://developer.ibm.com/javasdk/2019/08/21/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-40/).
 
@@ -386,7 +386,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also contains an updated version of IBM JRE 8.0: SR3 FP12.
 * The IBM JRE 8.0 and 7.1 are now configured to enable [all TLS protocols when `SSLContext.getContext("TLS")` is called](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/matchsslcontext_tls.html) to match Oracle's JRE behavior. IBM JRE 7.1 is also configured to enable [all TLS protocols when `SSLContext.getDefault()` is called](https://www.ibm.com/support/knowledgecenter/SSYKE2_7.1.0/com.ibm.java.security.component.71.doc/security-component/jsse2Docs/overrideSSLprotocol.html) to match IBM's JRE 8.0 behavior.
 * The buildpack provides an updated data collector for the Monitoring and Analytics service.
-* The buildpack was changed back to download the latest 1.5.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config).
+* The buildpack was changed back to download the latest 1.5.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config).
 * The buildpack introduces support for customizing service auto-configuration behavior via the `LBP_SERVICE_CONFIG_<serviceType>` environment variable. For example, it can be used to change the location or version of a JDBC driver to download for the MySQL service. See the documentation of [services that support auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) for more information.
 * The buildpack also contains a number of [Diego ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) improvements related to application health check and the [App Management](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) functionality.
 
@@ -394,7 +394,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The default Liberty runtime version was updated to the [16.0.0.3](http://www-01.ibm.com/support/docview.wss?uid=swg27009661) release. The monthly Liberty runtime version was updated to the [2016.9.0.0](https://developer.ibm.com/wasdev/blog/2016/08/26/beta-websphere-liberty-and-tools-september-2016/) release. With these updates, the `cloudant-1.0` and `passwordUtilities-1.0` Liberty features, previously available as beta features, are now available as production-ready features.
 * [Security fixes](http://www-01.ibm.com/support/docview.wss?uid=swg21990527) for the Liberty runtime are included.
 * The buildpack also contains an updated version of IBM JRE 8.0: SR3 FP11.
-* The buildpack was adjusted to download the latest 1.4.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) due to a problem with the latest 1.5.x driver.
+* The buildpack was adjusted to download the latest 1.4.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) due to a problem with the latest 1.5.x driver.
 
 ### August 26, 2016: Updated Liberty buildpack v3.2-20160822-2200
 * The buildpack contains updated versions of IBM JRE: 8 SR3 FP10 and 7.1 SR3 FP50.
@@ -433,7 +433,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 
 ### March 7, 2016: Updated Liberty buildpack v2.6-20160225-1649
 * The buildpack adds support for Dynatrace application monitoring. See [Using Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) for details.
-* The buildpack adds support for [DynamicPULSE](www.fujitsu.com/jp/group/fsweb/products/dynamic-pulse/).
+* The buildpack adds support for [DynamicPULSE ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.fujitsu.com/jp/group/fsweb/products/dynamic-pulse/).
 
 ### February 10, 2016: Updated Liberty buildpack v2.5-20160209-1336
 * The buildpack contains an updated version of WebSphere Liberty based on the [February beta](https://developer.ibm.com/wasdev/blog/2016/02/12/beta-websphere-liberty-and-tools-february/). The updated version of the Liberty profile makes the apiDiscovery-1.0 GA feature available in {{site.data.keyword.cloud_notm}}.
@@ -441,12 +441,12 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 ### February 4, 2016: Updated Liberty buildpack v2.4-20160127-1437
 * The buildpack contains an updated version of WebSphere Liberty based on the January beta. With this update, the scim-1.0 Liberty feature, previously available as beta a feature, is now available as a production-ready feature. The updated version of Liberty also makes the passwordUtilities-1.0 beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains an updated IBM JRE 7.1 SF3 FP20 and IBM JRE 8 SR2 FP10.
-* The buildpack was updated to download the latest 1.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config).
+* The buildpack was updated to download the latest 1.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/about-mariadb-connector-j/) when performing [auto-configuration for MySQL type of services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config).
 
 ### December 16, 2015: Updated Liberty buildpack v2.3-20151208-1311
 * The buildpack contains an updated version of the Liberty profile based on the [December beta](https://developer.ibm.com/wasdev/blog/2015/11/20/beta-was-liberty-beta-with-tools-december-2015/). The updated version of the Liberty profile makes the spnego-1.0 and wsSecuritySaml-1.1 GA features and the scim-1.0 beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains an updated IBM JRE 8 SR2.
-* The buildpack was also updated to download the latest [9.4.x PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://jdbc.postgresql.org/) and 1.2.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/mariadb/about-mariadb-connector-j/) when performing [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) for PostgreSQL or MySQL type of services.
+* The buildpack was also updated to download the latest [9.4.x PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://jdbc.postgresql.org/) and 1.2.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/about-mariadb-connector-j/) when performing [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) for PostgreSQL or MySQL type of services.
 
 ### November 23, 2015: Updated Liberty buildpack v2.2-20151119-1720
 * The buildpack contains an updated version of the Liberty profile runtime and WebSphere eXtreme Scale Client with security fixes for the [Apache Commons Collection vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21971426).

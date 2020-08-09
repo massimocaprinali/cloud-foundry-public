@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -121,7 +121,7 @@ All new apps are deployed to the Diego architecture. To stage a new application,
   ```
   {: pre}
 
-For more details,, see [`**ibmcloud push**`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
+For more details,, see [`**ibmcloud push**`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 ### Migrating an existing app to {{site.data.keyword.cloud_notm}}
 {: #migrateapp}

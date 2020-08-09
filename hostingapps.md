@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -127,7 +127,7 @@ If the Cloud Foundry platform does not support your app requirements, you can us
 ## Developing and deploying your apps using toolchains in Continuous Delivery
 {:ht_cd}
 
-Add a [toolchain to your app](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) and then use the [Continuous Delivery toolchain UI](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
+Add a [toolchain to your app](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) and then use the [Continuous Delivery toolchain UI](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
 ## Uploading your apps by using cf cli
 {: #ht_cfcli}

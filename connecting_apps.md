@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -113,7 +113,7 @@ Aliases are like symlinks that hold references to remote resources and enable in
 The following rules apply to aliases:
 
 * There is no extra charge for an alias, but each alias counts against your quota in your Cloud Foundry organization.
-* You can create only one alias per Cloud Foundry space in the {{site.data.keyword.cloud_notm}} console. However, more than one alias per space can be created using the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Working with resource groups and resources](/docs/cli?topic=cloud-cli-ibmcloud_commands_resource).
+* You can create only one alias per Cloud Foundry space in the {{site.data.keyword.cloud_notm}} console. However, more than one alias per space can be created using the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Working with resource groups and resources](/docs/cli?topic=cli-ibmcloud_commands_resource).
 * You can create multiple connections between your IAM-managed service and any Cloud Foundry application in any space, organization, and region in the same account if you have permission.
 * Multiple connections made in the same space to different Cloud Foundry apps from an IAM-managed service instance will use the same alias.
 * Un-binding an IAM-managed service instance *will not* delete the Cloud Foundry service instance that represents the alias.

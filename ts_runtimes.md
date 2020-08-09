@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -272,7 +272,7 @@ A Liberty application fails to start with a "_Failed to start accepting connecti
 ```
 {: codeblock}
 
-{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
+{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
 {: tsCauses}
 
 First, examine the logs for any obvious errors that might cause the Liberty application to fail. If no obvious errors are found, then try the following solutions:
