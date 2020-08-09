@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -304,7 +304,7 @@ This release is fully synchronized with the [Cloud Foundry community Node.js](ht
 
 * Buildpack updates:
 
-  * Node.js v4.2.4 (IBM SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your application to behave differently if a particular version is not specified for your application. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} application, see [Node.js runtime](index.html) documentation.
+  * Node.js v4.2.4 (IBM SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your application to behave differently if a particular version is not specified for your application. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} application, see [Node.js runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs_runtime) documentation.
 
   * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stacktraces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the npm install phase only. This function allows users to set NODE_ENV to another value like *development* for application runtime. For clarity, npm scripts will see the message **NODE_ENV=production**.
 
@@ -352,7 +352,7 @@ To push your application with v3.0beta:
 
 This change to the default runtime will not affect your application if you configured a specific version of Node.js in your application's package.json.
 
-You can always specify the version of Node.js to run your application by using the engines.node entry in your package.json as explained in [Available versions](index.html#available_versions).
+You can always specify the version of Node.js to run your application by using the engines.node entry in your package.json as explained in [Available versions](/docs/cloud-foundry-public?topic=cloud-foundry-public-available_versions).
 {: note}
 
 ## November 23, 2015: Updated Node.js buildpack v2.7-20151118-1003

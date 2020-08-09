@@ -249,7 +249,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The IBM JRE version was updated to 8 SR5 FP22.
 
 ### September 21, 2018: Updated Liberty buildpack v3.25-20180918-1034
-* The buildpack now supports Java Platform, Enterprise Edition 8.0. To use Java EE 8, install the `javaee-8.0` Liberty feature when you push your app. Learn more in [Install Liberty features](installFeatures.html).
+* The buildpack now supports Java Platform, Enterprise Edition 8.0. To use Java EE 8, install the `javaee-8.0` Liberty feature when you push your app. Learn more in [Install Liberty features](/docs/cloud-foundry-public?topic=cloud-foundry-public-install-features).
 * The default Liberty runtime version was updated to the 18.0.0.3 release.
 * The monthly Liberty runtime version was updated to [2018.8.0.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/wasdev/blog/2018/08/31/reactive-rest-client-liberty-beta/) release.
 * The IBM JRE version was updated to 8 SR5 FP20.
@@ -486,7 +486,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 
 ### June 30, 2015: Updated Liberty buildpack v1.19.1-20150622-1509
 * This version of the buildpack contains an updated IBM JRE with a security fix for the [LogJam vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21961390).
-* The [New Relic](newRelic.html) agent was updated to version 3.17. The new version provides improved integration with the Liberty profile runtime.
+* The New Relic agent was updated to version 3.17. The new version provides improved integration with the Liberty profile runtime.
 
 ### June 14, 2015: Updated Liberty buildpack v1.19-20150608-1717
 * The buildpack contains a number of application management enhancements that include support for the development console and web-based shell access. See the [app management documentation](../common/app_mng.html) for details.
@@ -529,7 +529,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 ### January 23, 2015: Updated Liberty buildpack v1.11-20150119-1511
 * The buildpack contains an updated IBM JRE version 7.1 SR2 FP1.
 * It also contains an updated WebSphere eXterme Scale Client version 8.6.0.6 and updated agent for the Auto-Scaling service.
-* The [New Relic](newRelic.html) service support was enhanced to support user-defined services.
+* The New Relic service support was enhanced to support user-defined services.
 * The buildpack was improved to report detailed versions of the Liberty profile and IBM JRE.
 
 ### December 19, 2014: Updated Liberty buildpack v1.10-20141218-0103

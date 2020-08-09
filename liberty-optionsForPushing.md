@@ -123,7 +123,7 @@ For example:
 When a stand-alone application is deployed, a default Liberty configuration is provided for the application. The default configuration enables the following Liberty features:
 
 * beanValidation-1.1
-* [cdi-1.2](optionsForPushing.html#cdi12)
+* [cdi-1.2](#cdi12)
 * ejbLite-3.2
 * el-3.0
 * jaxrs-2.0
