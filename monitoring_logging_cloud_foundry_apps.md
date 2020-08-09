@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -108,7 +108,7 @@ For stable operations of your deployments on {{site.data.keyword.cloud_notm}} pl
 
 To retain logs for a longer period and advanced analysis, services like [{{site.data.keyword.cos_short}}](docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-archiving) can be used.
 
-For more information about how to monitor CF applications, see [Monitoring for apps running on Cloud Foundry](/docs/Monitoring-with-Sysdig?topic=Sysdig-monitor-cf-sysdig).
+For more information about how to monitor CF applications, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
 
 CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Cloud Foundry Applications Metrics](/docs/observability-monitoring?topic=observability-monitoring-cloud-foundry-app-metrics).
 

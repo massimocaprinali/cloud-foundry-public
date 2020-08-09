@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -286,7 +286,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 Check out the following resources:
 
 
-* [Tutorials](/docs/tutorials?topic=solution-tutorials-tutorials)
+* [Tutorials](/docs?tab=tutorials)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
 * [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
 
