@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -125,7 +125,7 @@ Complete the following steps to use the Node-RED starter application from the {{
 You can customize your Node-RED instance for your needs. For example, you can replace the landing page with your own page, add http authentication to the flow editor, or add new nodes to the palette.
 
 1. Download the application code by clicking **Start Coding > Download Starter Code** on the application's overview page.
-2. Ensure that the Cloud Foundry command-line interface (CLI) is installed. See [the instructions for installing the command line interface](/docs/starters/?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface) for more information.
+2. Ensure that the Cloud Foundry command-line interface (CLI) is installed. See [the instructions for installing the command line interface](/docs/cloud-foundry-public?topic=cloud-foundry-public-cf-deploy-cli) for more information.
 3. Log in to the {{site.data.keyword.cloud_notm}} environment.
   ```
   cf login -a https://api.<ph conref="cloudoeconrefs.dita#cloudoeconrefs/domainname"></ph> -u <varname props="keyref(user_ID)">&lt;your user ID></varname> -p <varname>*****</varname> -o <varname props="keyref(org_name)">&lt;your org name></varname> -s <varname

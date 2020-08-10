@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -181,9 +181,6 @@ Alternatively, you can use command lines to migrate over.
 [autoscaler_cli]: https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-
 [metric_type]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types
 [deploy_app]: https://{DomainName}/docs/cloud-foundry-public/deploy-apps.html#dep_apps
-[legacy-autoscaling-catalog]: https://{DomainName}/catalog/services/auto-scaling
-[legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
-[legacy_autoscaling_policy]: https://{DomainName}/docs/services/Auto-Scaling?topic=Auto-Scaling%20-policy_fields#policy-definition-through-rest-api-and-cli-
 [autoscaler-get-started]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
 
 

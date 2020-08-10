@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -116,6 +116,6 @@ Cloud-ready apps are horizontally scalable, and are therefore able to dynamicall
 
 {{site.data.keyword.cloud_notm}} paid pricing plan offers a number of different account types with optional paid support.  No matter the type of your account, if you plan to bring an application to production on {{site.data.keyword.cloud_notm}}, consider enrolling in this option.
 
-With or without paid support, you can get help as described at [Getting support](/docs/get-support?topic=get-support-getting-customer-support), but paying for support will help  ensure that your support tickets will be given the level attention that they deserve.
+With or without paid support, you can get help as described at [Getting support](/docs/get-support?topic=get-support-using-avatar), but paying for support will help  ensure that your support tickets will be given the level attention that they deserve.
 
 

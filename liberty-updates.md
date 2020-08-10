@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -345,7 +345,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The default Liberty runtime also includes the PI75512 WebSockets iFix.
 * The monthly Liberty runtime version was updated to the [2017.2.0.0](https://developer.ibm.com/wasdev/blog/2017/02/17/beta-websphere-liberty-tools-february-2017/) release.
 * The IBM JRE versions 8 and 7.1 were updated to SR4 FP1.
-* The auto-configuration support was also extended to work with [ibm-websphere-extreme-scale IBM Container](/docs/images/docker_image_extreme_scale/ibm-websphere-extreme-scale_starter.html).
+* The auto-configuration support was also extended to work with `ibm-websphere-extreme-scale` container.
 * The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of org.ektorp. To enable the use of the Cloudant Java Library you must set the following environment variable:    
 ```
 ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
@@ -433,7 +433,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 
 ### March 7, 2016: Updated Liberty buildpack v2.6-20160225-1649
 * The buildpack adds support for Dynatrace application monitoring. See [Using Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) for details.
-* The buildpack adds support for [DynamicPULSE ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.fujitsu.com/jp/group/fsweb/products/dynamic-pulse/).
+* The buildpack adds support for DynamicPULSE.
 
 ### February 10, 2016: Updated Liberty buildpack v2.5-20160209-1336
 * The buildpack contains an updated version of WebSphere Liberty based on the [February beta](https://developer.ibm.com/wasdev/blog/2016/02/12/beta-websphere-liberty-and-tools-february/). The updated version of the Liberty profile makes the apiDiscovery-1.0 GA feature available in {{site.data.keyword.cloud_notm}}.

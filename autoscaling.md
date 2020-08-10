@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -278,7 +278,6 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 [legacy-autoscaling-catalog]: https://{DomainName}/catalog/services/auto-scaling
 [legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
 [migrate_guide]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_migration
-[autoscaler_cli]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cli
 [custom_metric_usage_guide]: https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics
 
 
