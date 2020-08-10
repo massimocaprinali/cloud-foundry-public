@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -104,9 +104,12 @@ Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIB
   * Using the {{site.data.keyword.cloud_notm}} CLI tool:
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+    ```
+    {: .pre}
+    ```
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
     ```
-    {: .codeblock}
+    {: .pre}
 
   * Or, using the `manifest.yml` file:
     ```
@@ -114,6 +117,7 @@ Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIB
           JBP_CONFIG_LIBERTY: "version: +"
           IBM_LIBERTY_MONTHLY: true
     ```
+    {: codeblock}
 
     ```
       env:

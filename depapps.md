@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -117,10 +117,11 @@ All new apps are deployed to the Diego architecture. To stage a new application,
   1. Deploy the application:
 
   ```
-  $ ibmcloud app push APPLICATION_NAME
+  ibmcloud app push APPLICATION_NAME
   ```
+  {: pre}
 
-For more details,, see [`**ibmcloud push**`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
+For more details,, see [`**ibmcloud push**`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 ### Migrating an existing app to {{site.data.keyword.cloud_notm}}
 {: #migrateapp}
@@ -135,8 +136,9 @@ Complete the following steps to migrate your app to Diego:
  2. Review the known issues list in the following section.
  3. Set the Diego flag to change your app to running on Diego:
   ```
-  $ cf enable-diego APPLICATION_NAME
+  cf enable-diego APPLICATION_NAME
   ```
+  {: pre}
 
 After you update your app, verify that your app started and is working as expected. If you cannot access your app immediately, try again later. If your migrated app fails to start, it will remain offline until you identify and resolve the issue, and then restart the app.
 
@@ -145,8 +147,9 @@ IBM will alert you of the upcoming mandatory migration period when DEA architect
 To validate which backend the application is running on, use the following command:
 
   ```
-  $ cf has-diego-enabled APPLICATION_NAME
+  cf has-diego-enabled APPLICATION_NAME
   ```
+  {: pre}
 
 #### Diego migration known issues
 {: #knownissues}
@@ -165,16 +168,19 @@ You must have both the [cf CLI ![External link icon](../icons/launch-glyph.svg "
 
 1. Deploy the application without starting it:
 ```
-$ cf push APPLICATION_NAME --no-start
+cf push APPLICATION_NAME --no-start
 ```
+{: pre}
 2. Run the disable-diego command:
 ```
-$ cf disable-diego APPLICATION_NAME
+cf disable-diego APPLICATION_NAME
 ```
+{: pre}
 3. Start the application:
 ```
-$ cf start APPLICATION_NAME
+cf start APPLICATION_NAME
 ```
+{: pre}
 
 ### Starting an application
 {: #startapp}
@@ -186,7 +192,7 @@ If you still have applications running on DEAs, you can use the `**cf files**` c
 If the application fails to start, the application is stopped and the entire contents of your application container are removed. Therefore, if an application stops or if the staging process of an application fails, log files will not be available for you to use.
 {: note}
 
-If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){:new_window}.
+If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){: new_window}.
 
 The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `cf app logs appname` command in a separate command line from the cf command line interface to track the logs when you deploy the application.
 {: note}
@@ -205,6 +211,7 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   ```
   cf push
   ```
+  {: pre}
 
   For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty).
 
@@ -213,23 +220,28 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   ```
   cf push appname -b https://github.com/cloudfoundry/java-buildpack.git -p app_path
   ```
+  {: pre}
 
   * To deploy WAR packages to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
   cf push appname -p app.war
   ```
+  {: pre}
+
   Or, you can specify a directory that contains your application files by using the following command:
 
   ```
   cf push appname -p "./app"
   ```
+  {: pre}
 
   * To deploy Node.js applications to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
   cf push appname -p app_path
   ```
+  {: pre}
 
 A `package.json` file must be in your Node.js application for the application to be recognized by the Node.js buildpack. The `app.js` file is the entry script for the application, and can be specified in the `package.json` file. The following example shows a simple `package.json` file:
 
@@ -251,6 +263,7 @@ A `package.json` file must be in your Node.js application for the application to
         "repository": {}
   }
   ```
+  {: codeblock}
 
   For more information about the `package.json` file, see [package.json](https://www.npmjs.org/doc/files/package.json.html){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
@@ -259,6 +272,7 @@ A `package.json` file must be in your Node.js application for the application to
   ```
   cf push appname
   ```
+  {: pre}
 
 ### Deploying an app in multiple spaces
 
@@ -269,12 +283,14 @@ An app is specific to the space where it is deployed. You can't move or copy an 
   ```
   cf target -s <space_name>
   ```
+  {: pre}
 
   2. Go to your app directory and deploy your app by using the `**cf app push**` command, where appname must be unique within your domain.
 
   ```
   cf app push appname
   ```
+  {: pre}
 
 ## Application manifest
 {: #appmanifest}
@@ -290,6 +306,7 @@ The following table shows the supported options that you can use in an applicati
 ```
 cf push -f appManifest.yml
 ```
+{: pre}
 
 |Options	|Description	|Usage or example|
 |:----------|:--------------|:---------------|
@@ -329,7 +346,7 @@ The following example shows a manifest file for a Node.js application that uses 
   env:
     env_type: production
 ```
-{:codeblock}
+{: codeblock}
 
 ## Environment variables
 {: #app_env}
@@ -389,6 +406,7 @@ You can view the following environment variables of a running {{site.data.keywor
    }
   }
   ```
+  {: codeblock}
 
 You also have access to the environment variables that are set by Diego and the buildpacks.
 
@@ -513,8 +531,9 @@ if (process.env.VCAP_SERVICES) {
     myvar = env.foo[bar].foo;
 }
 ```
+{: codeblock}
 
-For more information about each environment variable, see [Cloud Foundry Environment Variables ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){:new_window}.
+For more information about each environment variable, see [Cloud Foundry Environment Variables ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){: new_window}.
 
 ## Customizing application deployments
 {: #customize_dep}
@@ -534,12 +553,14 @@ If you want the buildpack start commands to take precedence, specify **null** as
   ```
   cf push appname -p app_path -c "node app.js"
   ```
+  {: pre}
 
   * Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js application, you can specify the `**node app.js**` start command in the manifest file:
 
   ```
   command: node app.js
   ```
+  {: codeblock}
 
 
 ### Adding user-defined environment variables
@@ -549,20 +570,22 @@ User-defined environment variables are specific for an application. You have the
 
   * Use the {{site.data.keyword.cloud_notm}} user interface. Complete the following steps:
     1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The App details page is displayed.
-	2. Click **Runtime** > **Environment Variables**.
-	3. Click **USER-DEFINED**, then click **ADD**.
-	4. Fill in the required fields, then click **SAVE**.
+  	2. Click **Runtime** > **Environment Variables**.
+  	3. Click **USER-DEFINED**, then click **ADD**.
+  	4. Fill in the required fields, then click **SAVE**.
   * Use the cf command line interface. Add a user-defined variable by using the `cf env-set` command. For example:
     ```
     cf env-set appname env_var_name env_var_value
     ```
+    {: pre}
 
   * Use the `manifest.yml` file. Add value pairs in the file. For example:
     ```
-	env:
-      VAR1:value1
-      VAR2:value2
+  	env:
+        VAR1:value1
+        VAR2:value2
     ```
+    {: codeblock}
 
 After you have added a user-defined environment variable, you can use the following sample Node.js code to get the value of the variable that you defined:
 
@@ -570,6 +593,7 @@ After you have added a user-defined environment variable, you can use the follow
 var myEnv = process.env.env_var_name;
 console.log("My user defined = " + myEnv);
 ```
+{: codeblock}
 
 ### Configuring the startup environment
 
@@ -578,6 +602,7 @@ To configure the startup environment for your application, you can add shell scr
 ```
 export NODE_ENV=production;
 ```
+{: pre}
 
 ###Preventing files and directories from being uploaded
 
@@ -592,5 +617,6 @@ The `.cfignore` file contains the names of files and directories that you want t
 *.swp
 tmp/
 ```
+{: screen}
 
 

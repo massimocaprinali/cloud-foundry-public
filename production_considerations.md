@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -109,13 +109,13 @@ Cloud-ready apps are horizontally scalable, and are therefore able to dynamicall
 ## Monitoring options
 {: #monitoring-bps}
 
-{{site.data.keyword.cloud_notm}} makes it easy to monitor your application with services like [Monitoring and Analytics](/docs/cloud-monitoring?topic=cloud-monitoring-getting-started) and [New Relic ![External link icon](../icons/launch-glyph.svg)](http://newrelic.com/){: new_window}. Check out [Integrated logging capabilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring_logging_cloud_foundry_apps) for more information.
+{{site.data.keyword.cloud_notm}} makes it easy to monitor your application with services like [Sysdig](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) and [New Relic ![External link icon](../icons/launch-glyph.svg)](http://newrelic.com/){: new_window}. Check out [Integrated logging capabilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring_logging_cloud_foundry_apps) for more information.
 
 ## Support options
 {: #support}
 
 {{site.data.keyword.cloud_notm}} paid pricing plan offers a number of different account types with optional paid support.  No matter the type of your account, if you plan to bring an application to production on {{site.data.keyword.cloud_notm}}, consider enrolling in this option.
 
-With or without paid support, you can get help as described at [Getting support](/docs/get-support?topic=get-support-getting-customer-support), but paying for support will help  ensure that your support tickets will be given the level attention that they deserve.
+With or without paid support, you can get help as described at [Getting support](/docs/get-support?topic=get-support-using-avatar), but paying for support will help  ensure that your support tickets will be given the level attention that they deserve.
 
 

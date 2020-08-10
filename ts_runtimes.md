@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -123,6 +123,7 @@ You can use buildpacks that have built-in mechanisms to avoid loading obsolete c
   ```
   set NODE_MODULES_CACHE=false
   ```
+  {: codeblock}
 
 If the buildpack that you are using doesn't provide a mechanism to load the latest components automatically, you can manually delete the contents in the cache directory and push your app again. Use the following steps:
 
@@ -131,14 +132,17 @@ If the buildpack that you are using doesn't provide a mechanism to load the late
   ```
   rm -rfv $2/*
   ```
+  {: pre}
  3. Push your app with the null buildpack that was modified to delete the cache by using the following command. After you complete this step, all contents in the cache directory of your app are deleted.
   ```
   ibmcloud cf push appname -p app_path -b <modified_null_buildpack>
   ```
+  {: pre}
  4. Push your app with the latest buildpack that you want to use by using the following command:
   ```
   ibmcloud cf push appname -p app_path -b <latest_buildpack>
   ```
+  {: pre}
 
 ### The application continues to restart
 {: #ts_apprestart}
@@ -268,7 +272,7 @@ A Liberty application fails to start with a "_Failed to start accepting connecti
 ```
 {: codeblock}
 
-{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/runtimes/liberty/monitoring?topic=liberty-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
+{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
 {: tsCauses}
 
 First, examine the logs for any obvious errors that might cause the Liberty application to fail. If no obvious errors are found, then try the following solutions:
@@ -278,17 +282,19 @@ First, examine the logs for any obvious errors that might cause the Liberty appl
 
 * When you deploy the application by using the `ibmcloud cf push` command, specify a longer application start timeout by using the `-t` option. For example:
 
-        ```
-	ibmcloud cf push myApp -t 180
-        ```
-	{: codeblock}
+  ```
+  	ibmcloud cf push myApp -t 180
+  ```
+  {: pre}
 
 * The health check timeout can also be specified in the manifest.yml file. For example:
 
-        ---
+```
+       ---
            ...
            timeout: 180
-        {: codeblock}
+```
+{: codeblock}
 
 #### Disable the appstate feature
 
@@ -297,7 +303,7 @@ The appstate feature integrates with the {{site.data.keyword.cloud_notm}} health
 ```
 ibmcloud cf set-env myApp JBP_CONFIG_LIBERTY "app_state: false"
 ```
-{: codeblock}
+{: pre}
 
 #### Consider re-factoring the application
 
@@ -307,15 +313,17 @@ If your application takes a long time to initialize, you might have to re-factor
 
 1. Deploy your application with "--no-route" option. This will disable the port health check. For example:
 
-        ```
-	ibmcloud cf push myApp –no-route
-        ```
-	{: codeblock}
+  ```
+  	ibmcloud cf push myApp –no-route
+  ```
+	{: pre}
 
 2. Once the application is initialized, map a route to the application. For example:
 
-        ibmcloud cf map-route myApp mybluemix.net
-        {: codeblock}
+```
+  ibmcloud cf map-route myApp mybluemix.net
+```
+{: pre}
 
 ### SSL errors with IBM's gateway
 {: #ssl_handshake_failure}
@@ -330,7 +338,7 @@ The following errors are visible in the logs and the application may fail to sta
     2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: The certificate issued by CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US is not trusted; internal cause is:
     2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: Certificate chaining error
 ```
-{: codeblock}
+{: screen}
 
 The errors can be generated when a secure service is bound to a Liberty application and the Liberty application was deployed as a server directory or packaged server that contains server.xml that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty application causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty's server.xml, the configured trust store may not trust the certificate used by the secure service.
 {: tsCauses}
@@ -342,9 +350,11 @@ Modify configuration to use the JVM's trust store with one of the options that f
 
 Update the server.xml to use JVM's cacerts file as the trust store. Add the following to your server.xml:
 
+```
         <ssl id="defaultSSLConfig" trustStoreRef="defaultTrustStore"/>
         <keyStore id="defaultTrustStoretore" location="${java.home}/lib/security/cacerts"/>
-        {: codeblock}
+```
+{: codeblock}
 
 #### Update the configured trust store
 
@@ -352,8 +362,10 @@ Modify the configured trust store to trust the DigitCert ROOT CA.
   1. Download the DigiCert Root CA from https://www.digicert.com/CACerts/DigiCertGlobalRootCA.crt.
   2. Assuming the resources/security/key.jks is used as the trust store, import the CA into the key using the Java's keytool utility:
 
-            keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resources/security/key.jks -file DigiCertGlobalRootCA.crt
-            {: codeblock}
+```
+keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resources/security/key.jks -file DigiCertGlobalRootCA.crt
+```
+{: pre}
 
 
 ## SDK for Node.js
@@ -365,15 +377,16 @@ For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try 
 
 1. From your application root directory, install dependencies by running the following command.
 
-   ```bash
+   ```
    npm install
    ```
-   {: codeblock}
+   {: pre}
 1. Ensure that your `.cfignore` file does not include the following line:
 
    ```
    node_modules/
    ```
+   {: codeblock}
 
 Now when you deploy your application with the  `ibmcloud cf push` command, instead of downloading your dependencies to a separate location, the dependencies are copied into the same directory as the rest of the application.
 
@@ -388,7 +401,7 @@ A Node.js application fails to start with a "No space left on device" error. For
    2017-01-16T14:25:14.61-0500 [CELL/0]     ERR tar: ./app/node_modules/pm2/node_modules/cron/node_modules/moment-timezone/LICENSE: Cannot write: No space left on device
 
 ```
-{: codeblock}
+{: screen}
 
 Node.js applications using NPM versions prior to version 3 consume more space downloading dependencies.
 {: tsCauses}
@@ -422,7 +435,7 @@ Node.js does not know how much memory is available to the application, so the ga
 2017-09-01T11:00:42.36-0400 [API/0]      OUT App instance exited with guid eecfba3b-430c-4a6b-b71f-ac72816fe152 payload: {"instance"=>"77dbb981-16d0-3a05-3235-9a4b", "index"=>0, "reason"=>"CRASHED", "exit_description"=>"2 error(s) occurred:\n\n* 2 error(s) occurred:\n\n* Exited with status 137 (out of memory)\n* cancelled\n* cancelled", "crash_count"=>1, "crash_timestamp"=>1504278042244633291, "version"=>"6497b5b5-67d4-4c5a-b1af-362e522a029d"}
 2017-09-01T11:00:43.35-0400 [CELL/0]     OUT Successfully destroyed container
 ```
-{: codeblock}
+{: screen}
 
 A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/nodejs/node/issues/3370){: new_window} for a more in-depth discussion of this topic.
 
@@ -469,6 +482,8 @@ When you push an app to {{site.data.keyword.cloud_notm}} by using a PHP buildpac
 • 2015-01-26T15:01:00.63+0100 [App/0] ERR [26-Jan-2015 14:00:59] NOTICE: fpm is running, pid 93
 • 2015-01-26T15:01:00.63+0100 [App/0] ERR [26-Jan-2015 14:00:59] NOTICE: ready to handle connections
 ```
+{: screen}
+
 In the PHP buildpack, the error_log parameter defines the logging level. By default, the value of the `error_log` parameter is **stderr notice**. The following example shows the default logging level configuration in the `nginx-defaults.conf` file of the PHP buildpack that Cloud Foundry provides. For more information, see [cloudfoundry/php-buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/php-buildpack/blob/ff71ea41d00c1226d339e83cf2c7d6dda6c590ef/defaults/config/nginx/1.5.x/nginx-defaults.conf){: new_window}.
 {: tsCauses}
 
@@ -477,6 +492,7 @@ daemon off;
 error_log stderr notice;
 pid @{HOME}/nginx/logs/nginx.pid;
 ```
+{: codeblock}
 
 The `NOTICE` messages are for information and might not indicate a problem. You can stop the logging of these messages by changing the logging level from `stderr notice` to `stderr error` in the nginx-defaults.conf file of your buildpack. For example: 	
 {: tsResolve}
@@ -486,6 +502,8 @@ daemon off;
 error_log stderr error;
 pid @{HOME}/nginx/logs/nginx.pid;
 ```
+{: codeblock}
+
 For more information about how to change the default logging configuration, see [error_log ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://nginx.org/en/docs/ngx_core_module.html#error_log){: new_window}.
 
 
@@ -513,6 +531,8 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	 web.py==0.37
      wsgiref==0.1.2
 	 ```
+   {: codeblock}
+
 	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.readthedocs.org/en/1.1/requirements.html).
 
  2. Add a `Procfile` file to the root directory of your Python app.
@@ -520,6 +540,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	```
 	web: python <yourappname>.py $PORT
 	```
+  {: codeblock}
 
 You can now import the third-party Python library into {{site.data.keyword.cloud_notm}}.
 

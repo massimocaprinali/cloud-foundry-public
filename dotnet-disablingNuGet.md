@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -100,14 +100,14 @@ In some situations, it might be necessary to clear the NuGet package cache for y
 
 You can clear the cache by setting the `CACHE_NUGET_PACKAGES` environment variable to `false` using the {{site.data.keyword.cloud_notm}} CLI:
 
-```shell
-  ibmcloud cf set-env <app_name> CACHE_NUGET_PACKAGES false
 ```
-{: codeblock}
+ibmcloud cf set-env <app_name> CACHE_NUGET_PACKAGES false
+```
+{: pre}
 
 Alternatively, you can set the `CACHE_NUGET_PACKAGES` environment variable to `false` in your application's `manifest.yml` file:
 
-```yml
+```
 ---
 applications:
 - name: sample-aspnetcore-app

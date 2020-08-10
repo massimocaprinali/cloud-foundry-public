@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -112,15 +112,14 @@ This process is referred to as automatic configuration.
 
 The Liberty buildpack provides automatic configuration for the following service types:
 
-* [{{site.data.keyword.autoscaling}}](/docs/Auto-Scaling?topic=Auto-Scaling-get-started#autoscaling)
 * [ClearDB MySQL Database ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.cleardb.com/developers)
 * [{{site.data.keyword.cloudant}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [{{site.data.keyword.composeForMongoDB}}](/docs/ComposeForMongoDB?topic=ComposeForMongoDB-about)
 * [{{site.data.keyword.composeForMySQL}}](/docs/ComposeForMySQL?topic=ComposeForMySQL-about)
 * [{{site.data.keyword.composeForPostgreSQL}}](/docs/ComposeForPostgreSQL?topic=ComposeForPostgreSQL-about)
-* [{{site.data.keyword.dashdbshort}}](/docs/dashDB/index.html#dashDB)
-* [ElephantSQL](/docs/ElephantSQL?topic=ElephantSQL-gettingstarted)
-* [{{site.data.keyword.ssoshort}}](/docs/SingleSignOn/index.html#sso_gettingstarted)
+* [{{site.data.keyword.dashdbshort}}](/docs/Db2whc?topic=Db2whc-getting-started)
+* [ElephantSQL](/docs/ElephantSQL)
+* [{{site.data.keyword.ssoshort}}](/docs/appid?topic=appid-cd-sso)
 
 The Compose services can be either container managed or application managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the application to manage the service, you can opt-out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).
 
@@ -199,16 +198,20 @@ Here are examples of how to set the `services_autoconfig_excludes` environment v
 
 ```
     ibmcloud cf set-env myapp services_autoconfig_excludes cloudant=config
+``
+{: pre}
+
+```
     ibmcloud cf set-env myapp services_autoconfig_excludes "cloudant=config dashDB=all"
 ```
-{: codeblock}
+{: pre}
 
 To find the *label* for a service in VCAP_SERVICES issue a command like the following example:
 
 ```
     ibmcloud cf env myapp
 ```
-{: codeblock}
+{: pre}
 
 The output includes text similar to the following, where you can see the `label` field with value **elephantsql**:
 
@@ -233,7 +236,7 @@ You can use the **LBP_SERVICE_CONFIG_xxxx** environment variable to override a s
 ```
     ibmcloud cf set-env myapp LBP_SERVICE_CONFIG_POSTGRESQL "{driver: { version: 8.3.4.+ }}"
 ```
-{: codeblock}
+{: pre}
 
 This table shows the mapping of **service_type** to **LBP_SERVICE_CONFIG_xxxx** environment variable names.
 

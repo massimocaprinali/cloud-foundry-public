@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -110,7 +110,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 {: #prereqs-swift}
 
 * [Git](https://git-scm.com/downloads){: external}
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Swift compiler](https://swift.org/download/){: external} for your platform.
 
 ## Step 1: Clone the sample app
@@ -120,12 +120,12 @@ First, clone the repository and change to the directory to where the sample app 
   ```
 git clone https://github.com/IBM-Cloud/get-started-swift
   ```
-  {: codeblock}
+  {: pre}
 
   ```
 cd get-started-swift
   ```
-  {: codeblock}
+  {: pre}
 
   Peruse the files in the *get-started-swift* directory to familiarize yourself with the contents.
 
@@ -139,7 +139,7 @@ Once you have installed the Swift compiler and cloned this Git repository, you c
   ```
 swift build
   ```
-  {: codeblock}
+  {: pre}
 
   This command might take a few minutes to run.
 
@@ -147,20 +147,20 @@ swift build
 ```
 swift run
 ```
-  {: codeblock}
+  {: pre}
 
   or
   ```
 .build/debug/get-started-swift
   ```
-  {: codeblock}
+  {: pre}
 
   You should see an output similar to the following:
 
   ```
 Server is listening on port: 8080
   ```
-  {: pre}
+  {: screen}
 
 1. View your app at the following URL: http://localhost:8080
 
@@ -188,27 +188,27 @@ In this manifest.yml file, **random-route: true** generates a random route for y
 ## Step 4: Deploy the app
 {: #deploy-swift}
 
-You can use the {{site.data.keyword.Bluemix_short}} CLI to deploy apps.
+You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
   ```	  
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -218,7 +218,7 @@ ibmcloud target --cf
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -227,7 +227,7 @@ When deployment completes you should see a message indicating that your app is r
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
@@ -291,12 +291,12 @@ Build and run your application locally.
  ```
 swift build  
  ```
- {: codeblock}
+ {: pre}
 
   ```
 .build/debug/kitura-helloworld
   ```
- {: codeblock}
+ {: pre}
 
  View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
 
@@ -307,6 +307,7 @@ swift build
   ```
 ibmcloud cf app push
   ```
+  {: pre}
 
 View your app at the URL listed in the output of the push command, for example, *myUrl.mybluemix.net*.
 
@@ -318,6 +319,6 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 
 * [Kitura & Server-side Swift Tutorials ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.kitura.io/learn){: new_window}
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
 
 

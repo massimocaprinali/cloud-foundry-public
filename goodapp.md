@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -119,7 +119,7 @@ So a "cloud native" application isn't just an "application". It's a set of proce
 So let's overview the important points about cloud-native apps:
 
 * Applications are highly connected with a variety of technologies and architectures, such as containers, container orchestration, microservices, and declarative APIs.
-* Applications are built to run on modern infrastructures, typicaly "clouds". Those can be an external cloud vendor, or your own internal cloud environment.
+* Applications are built to run on modern infrastructures, typically "clouds". Those can be an external cloud vendor, or your own internal cloud environment.
 * Building cloud-native apps is critically a practice and philosophy, not just a technology choice - it's about changing the way software is delivered in a DevOps and automation culture.
 * They represent the dynamic and distributed nature of computing today, and needs for increased deployment speed, flexibility, agility, scalability, reliability, and security.
 
@@ -131,7 +131,7 @@ As explained by the original concept creator,
 
 > "Twelve Factor apps are built for agility and rapid deployment, enabling continuous delivery and reducing the time and cost for new developers to join a project. At the same time, they are architected to exploit the principles of modern cloud platforms while permitting maximum portability between them. Finally, they can scale up without significant changes to tooling, architecture or development practices"
 
-So that means that the the 12 factor apps check-list is really just a set of guidelines that dictate how an application should be built to properly support the concept of independently managed and iterated services.
+So that means that the 12 factor apps check-list is really just a set of guidelines that dictate how an application should be built to properly support the concept of independently managed and iterated services.
 
 The [12 factors web site](https://12factor.net) describes the 12 factors as:
 
@@ -148,6 +148,6 @@ The [12 factors web site](https://12factor.net) describes the 12 factors as:
 11. Treat logs as event streams
 12. Run admin/management asks as one-off processes
 
-These steps allow a maturing development organization to start adopting the range of cloud-native capabilties and create highly capable and flexible cloud applications.
+These steps allow a maturing development organization to start adopting the range of cloud-native capabilities and create highly capable and flexible cloud applications.
 
 

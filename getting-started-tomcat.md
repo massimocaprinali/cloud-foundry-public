@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -112,7 +112,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 You'll need the following:
 
 * [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Maven](https://maven.apache.org/download.cgi){: external}
 * [Apache Tomcat version 8.0.41](https://tomcat.apache.org/download-80.cgi#8.0.41 ){: external}
@@ -125,12 +125,12 @@ Clone the repository and change to the directory to where the sample app is loca
   ```
 git clone https://github.com/IBM-Cloud/get-started-tomcat
   ```
-{: codeblock}
+{: pre}
 
   ```
 cd get-started-tomcat
   ```
-{: codeblock}
+{: pre}
 
 Peruse the files in the *get-started-tomcat* directory to familiarize yourself with the contents.
 
@@ -143,7 +143,7 @@ You must install the dependencies and build a .war file as defined in the pom.xm
   ```
 mvn clean install  
   ```
-  {: codeblock}
+  {: pre}
 
 1. Copy GetStartedTomcat.war from the `target` directory into your `tomcat-install-dir` `webapps` directory.
 
@@ -151,7 +151,7 @@ mvn clean install
   ```
 <tomcat-install-dir>/bin/startup.bat|.sh
   ```
-  {: codeblock}
+  {: pre}
 
 1. View your app the following URL: http://localhost:8080/GetStartedTomcat/
 
@@ -182,27 +182,27 @@ In this manifest.yml file, **`random-route: true`** generates a random route for
 ## Step 4: Deploy the app
 {: #deploy-tomcat}
 
-You can use the {{site.data.keyword.Bluemix_short}} CLI to deploy apps.
+You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
-1. Log in to your {{site.data.keyword.Bluemix_short}} account, and select an API endpoint.
+1. Log in to your {{site.data.keyword.cloud}} account, and select an API endpoint.
 
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Next, target a Cloud Foundry org and space:
   ```	  
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -212,7 +212,7 @@ ibmcloud target --cf
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
   This can take around two minutes. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -221,7 +221,7 @@ When deployment completes you should see a message indicating that your app is r
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
@@ -267,8 +267,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 ## Next steps
 {: #nextsteps-tomcat}
 
-* [Tutorials](/docs/tutorials?topic=solution-tutorials-tutorials)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
 
 

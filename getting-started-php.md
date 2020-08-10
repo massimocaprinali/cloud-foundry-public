@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-07"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -14,30 +14,84 @@ subcollection: cloud-foundry-public
 
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Getting started with PHP
 {: #getting-started-php}
@@ -58,7 +112,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 You'll need the following:
 
 * [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [PHP](http://php.net/downloads.php){: external}
 * [Composer](https://getcomposer.org/download/){: external}
@@ -71,12 +125,12 @@ First, clone the repo and change the directory to where the sample app is locate
   ```
   git clone https://github.com/IBM-Cloud/get-started-php
   ```
-  {: codeblock}
+  {: pre}
 
   ```
   cd get-started-php
   ```
-  {: codeblock}
+  {: pre}
 
 ## Step 2: Run the app locally
 {: #runlocal-php}
@@ -86,14 +140,14 @@ First, clone the repo and change the directory to where the sample app is locate
   ```
 php composer.phar install
   ```
-{: codeblock}
+{: pre}
 
 1. Run the app locally.
 
   ```
 php -S localhost:8000
   ```
-  {: codeblock}
+  {: pre}
 
 1. View your app at the following URL: http://localhost:8000
 
@@ -126,20 +180,20 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
    ```
 ibmcloud login
    ```
-   {: codeblock}
+   {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
 
   ```	  
   ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -149,7 +203,7 @@ ibmcloud login --sso
    ```
    ibmcloud cf push
    ```
-   {: codeblock}
+   {: pre}
 
   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -158,7 +212,7 @@ When deployment completes you should a message indicating that your app is runni
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
@@ -208,7 +262,7 @@ CLOUDANT_PASSWORD=445d...d1a
   ```
   php -S localhost:8000
   ```
-  {: codeblock}
+  {: pre}
 
 View your app at: http://localhost:8000. Any names you enter into the app will now get added to the database.
 
@@ -220,8 +274,7 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 ## Next steps
 {: #nextsteps-php}
 
-* [Tutorials](/docs/tutorials?topic=solution-tutorials-tutorials)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -113,9 +113,9 @@ There are three ways to develop your app:
 ## Developing and deploying your apps by using toolchains and the {{site.data.keyword.contdelivery_short}} service
 {: #ee_cd}
 
-[Add a toolchain](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using#toolchains-using) to develop and deploy your app.
+[Add a toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
-Try the [Using toolchains with a simple Cloud Foundry app](https://www.ibm.com/cloud/garage/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
+Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
 {: tip}
 
 ## Creating your web app with the {{site.data.keyword.cloud_notm}} console
@@ -194,6 +194,7 @@ This environment variable is the serialization of a JSON object with one entry f
   ```
   cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
   ```
+  {: pre}
 
   If your organization uses single sign on, use `cf login -sso`.
 
@@ -202,6 +203,7 @@ This environment variable is the serialization of a JSON object with one entry f
   ```
   cf push <your_appname>
   ```
+  {: pre}
 
   For more information, see the [`cf push` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
 
@@ -209,6 +211,7 @@ This environment variable is the serialization of a JSON object with one entry f
   ```
   http://<your_app>.us-south.cf.appdomain.cloud
   ```
+  {: codeblock}
 
 You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Getting started page of your app in the {{site.data.keyword.cloud_notm}} console.
 
@@ -226,12 +229,14 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   ```
   cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
   ```
+  {: pre}
 
   You can also use the `cf services` command to see the list of service instances that you created.
 
   ```
   cf services
   ```
+  {: pre}
 
   After a service instance is created, it is available for any of your apps to bind and use.
 
@@ -242,6 +247,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   ```
   cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
   ```
+  {: pre}
 
   Binding a service instance to an app enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new app will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the app and the service instance differently during the binding. For example, some services might create a new tenant for each app that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the app allowing communication between the app and the service.
 
@@ -272,6 +278,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
                 }
         };
   ```
+  {: codeblock}
 
   As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
   {: note}
@@ -301,6 +308,7 @@ var create_message = function(req, res) {
   });
 }
   ```
+  {: codeblock}
 
   5. **Optional:** Unbind or delete a service instance.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -113,7 +113,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 You'll need the following accounts and tools:
 
 * [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Node](https://nodejs.org/en/){: external}
 
@@ -125,7 +125,7 @@ First, clone the Node.js *hello world* sample app GitHub repo.
   ```
 git clone https://github.com/IBM-Cloud/get-started-node
   ```
-  {: codeblock}
+  {: pre}
 
 ## Step 2: Run the app locally
 {: #run_locally-node}
@@ -136,19 +136,19 @@ Use the npm package manager to install dependencies and run your app.
   ```
 cd get-started-node
   ```
-  {: codeblock}
+  {: pre}
 
 1. Install the dependencies listed in the [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json){: new_window} file to run the app locally.  
   ```
 npm install
   ```
-  {: codeblock}
+  {: pre}
 
 1. Run the app.
   ```
 npm start  
   ```
-  {: codeblock}
+  {: pre}
 
 1. View your app at the following URL: http://localhost:3000
 
@@ -183,37 +183,37 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps to {{site.da
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
   ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
 
   ```	  
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-    {: tip}
+  {: tip}
 
 1. From within the *get-started-node* directory, push your app to {{site.data.keyword.cloud_notm}}.
 
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
 Deploying your application can take a few minutes. When deployment completes, you'll see a message that your app is running. View your app at the URL listed in the output of the push command, or view both the app deployment status and the URL by running the following command:
 
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
 
@@ -266,7 +266,7 @@ We're now going to update your local code to point to this database. We'll creat
   ```
 npm start  
   ```
-  {: codeblock}
+  {: pre}
 
   View your local app at http://localhost:3000. Any names you enter into the app will now get added to the database.
 
@@ -285,9 +285,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 
 Check out the following resources:
 
-
-* [Tutorials](/docs/tutorials?topic=solution-tutorials-tutorials)
 * [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/category/architectures){: new_window}
+* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -93,6 +93,7 @@ subcollection: cloud-foundry-public
 {:vb.net: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Adding and using a custom domain
 {: #custom-domains}
 
@@ -134,6 +135,7 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
    ```
    ibmcloud target --cf-api <CF_ENDPOINT>
    ```
+   {: pre}
 
    **Cloud Foundry API endpoints:**
    * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
@@ -146,13 +148,15 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
    ```
    ibmcloud app domain-create <MY_ORGNAME> <MY_DOMAIN>
    ```
+   {: pre}
 
 3. Add the route with the custom domain to an application.
 
-   For Cloud Foundry apps, type the following command:
+   For Cloud Foundry apps, run the following command:
    ```
    ibmcloud app route-map <MY_APPNAME> <MY_DOMAIN> -n <MY_HOSTNAME>
    ```
+   {: pre}
 
 ## Mapping the custom domain to the system domain
 {: #mapcustomdomain}
@@ -176,6 +180,7 @@ In a browser, enter the following URL to access your application, where `hostnam
 ```
 http://hostname.mydomain
 ```
+{: codeblock}
 
 ## Removing an orphaned route
 {: #remove-orphaned-route}
@@ -184,7 +189,7 @@ To remove an orphaned route, run the following command:
 ```
 ibmcloud app route-delete <MY_DOMAIN> -n <MY_HOSTNAME> -f
 ```
-{: tip}
+{: pre}
 
 In that example, `MY_DOMAIN` is the name of your domain, and `MY_HOSTNAME` is the host name of the route for your application. For more information about the `ibmcloud app route-delete` command, enter the command `ibmcloud app route-delete -h`.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -131,9 +131,9 @@ Running with both offering simultaneously may lead to unexpected scaling behavio
 
 2. Unbind legacy **Auto-scaling** service
 
-   - Back to the **Connections** view, and hover on the legacy **Auto-Scaling** service instance entry again.
+   - Go back to the **Connections** view, and hover over the legacy **Auto-Scaling** service instance entry.
    - Click on the **menu** button in the right of the legacy **Auto-Scaling** service instance entry.
-   - From the drop-down list, select **Unbind service** or **Delete service** if applicationable.
+   - From the drop-down list, select **Unbind service** or **Delete service** as applicable.
 
 3. Create a scaling policy in the new App Autoscaler offering.
 
@@ -152,7 +152,7 @@ Alternatively, you can use command lines to migrate over.
         ```
         ibmcloud as policy-show <APP_NAME> [--json]
         ```
-        {:codeblock}
+        {: pre}
         ```
       - Covert the policy manually to new format.
 
@@ -163,7 +163,7 @@ Alternatively, you can use command lines to migrate over.
    ```
    cf unbind-service <YOUR_APP> <YOUR_SERVICE_INSTANCE>
    ```
-   {:codeblock}
+   {: pre}
 
 3. Attach policy to enable new autoscaling experience.
 
@@ -172,7 +172,7 @@ Alternatively, you can use command lines to migrate over.
    ```
    cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
    ```
-   {:codeblock}
+   {: pre}
 
 
 [autoscaler_project]: https://github.com/cloudfoundry/app-autoscaler
@@ -181,9 +181,6 @@ Alternatively, you can use command lines to migrate over.
 [autoscaler_cli]: https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-
 [metric_type]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types
 [deploy_app]: https://{DomainName}/docs/cloud-foundry-public/deploy-apps.html#dep_apps
-[legacy-autoscaling-catalog]: https://{DomainName}/catalog/services/auto-scaling
-[legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
-[legacy_autoscaling_policy]: https://{DomainName}/docs/services/Auto-Scaling?topic=Auto-Scaling%20-policy_fields#policy-definition-through-rest-api-and-cli-
 [autoscaler-get-started]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
 
 

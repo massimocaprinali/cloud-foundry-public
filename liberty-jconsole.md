@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -101,13 +101,13 @@ subcollection: cloud-foundry-public
 
 1. Push your app within a server package containing an appropriate server.xml.
 2. Start the JConsole app with the appropriate system properties on the command line.
-3. Provide the proper Remote Process url, Username, and Password to JConsole.
+3. Provide the proper Remote Process URL, Username, and Password to JConsole.
 
 ### Push the server package
 {: #push_server_package}
 
 Push the server package containing your application limiting it to a single instance. Your server.xml file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
-```xml
+```
        <featureManager>
            <feature>jsp-2.2</feature>
            <feature>monitor-1.0</feature>
@@ -133,7 +133,7 @@ JConsole is included with your Java installation.  To start the JConsole app go 
 ```
     jconsole -J-Djava.class.path=<java-home>/lib/jconsole.jar;<liberty-home>/wlp/clients/restConnector.jar
 ```
-{: codeblock}
+{: pre}
 
 You may have to pass additional parameters to configure Java trustStore. The following parameters should work in most cases:
 ```

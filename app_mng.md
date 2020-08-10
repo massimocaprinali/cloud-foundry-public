@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -112,26 +112,29 @@ It can also be accomplished from command line.
   ```
   cf start myApp
   ```
+  {: pre}
 
   To stop an application:
 
   ```
   cf stop myApp
   ```
+  {: pre}
 
   To restart an application:
 
   ```
   cf restart myApp
   ```
+  {: pre}
 
 ## Application management through SSH shell session
 
-Application can be managed and debugged through ssh-ing into them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and cf CLI.
+Application can be managed and debugged using the `ssh` command to access them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and cf CLI.
 
 ### {{site.data.keyword.cloud_notm}} console
 
-User can ssh into the application through their application through {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your application and then click on SSH to manage.
+User can `ssh` into the application using the {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your application and then click `SSH` to manage.
 
 ### Command Line CLI
 
@@ -140,6 +143,7 @@ To ssh into your application from the command line use:
 ```
 cf ssh myApp
 ```
+{: pre}
 
 
 App Management is a set of development and debugging utilities that can be enabled for your Liberty applications on {{site.data.keyword.cloud}}.
@@ -153,7 +157,6 @@ App Management is a set of development and debugging utilities that can be enabl
 * [proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#proxy)
 * [noproxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#noproxy)
 * [hc](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#hc)
-* [debug](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#debug)
 * [jmx](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#jmx)
 * [localjmx](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#localjmx)
 
@@ -167,14 +170,14 @@ For example, to enable *hc*, *debug* and *trace* utilities, run the following co
 ```
 ibmcloud cf set-env myApp BLUEMIX_APP_MGMT_ENABLE hc+debug+trace
 ```
-{: codeblock}
+{: pre}
 
 Restage your application after you set the environment variable:
 
 ```
 ibmcloud cf restage myApp
 ```
-{: codeblock}
+{: pre}
 
 If you do not want the App Management utilities to be installed with your application, set the *BLUEMIX_APP_MGMT_INSTALL* environment variable to 'false' and restage your application.
 
@@ -203,7 +206,7 @@ You can monitor multiple instances of an application by using JMX, but it requir
 ```
 ibmcloud cf ssh -i 1 -N -T -L 5000:127.0.0.1:5001
 ```
-{: codeblock}
+{: pre}
 
 For more information on configuring a JMX connector, see [Configuring secure JMX connection to the Liberty profile ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_admin_restconnector.html){:new_window}.
 
@@ -222,7 +225,7 @@ The *localjmx* utility is only applicable to applications running on a Diego cel
 ```
 ibmcloud cf ssh -N -T -L 5000:127.0.0.1:5000 <appName>
 ```
-{: codeblock}
+{: pre}
 
 Next, to connect with JConsole, choose **Remote Process**, specify `127.0.0.1:5000`, and use an insecure connection.
 
@@ -245,7 +248,7 @@ The *noproxy* utility only applies to applications that run in a Diego cell.
 #### hc
 {: #hc}
 
-The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-latest_updates) for the current set of runtimes.
+The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
 When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){:new_window}.
 
@@ -258,7 +261,7 @@ The *hc* utility can be used in conjunction with *noproxy*. To use Health Center
 ```
 ibmcloud cf ssh -N -T -L 1883:127.0.0.1:1883 <appName>
 ```
-{: codeblock}
+{: pre}
 
 Next, to connect with the Health Center client, use an [MQTT connection ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/support/knowledgecenter/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/connectingtojvm.html){: new_window} and specify the host as `127.0.0.1` and port as `1883`.
 
@@ -271,22 +274,21 @@ Enable access to the URL with local port forwarding with the following command:
 ```
 ibmcloud cf ssh -N -T -L 9229:127.0.0.1:9229 <appName>
 ```
-{: codeblock}
+{: pre}
 
 Get the startup log for the application by using the following command.
 ```
 ibmcloud cf logs <appName> --recent
 ```
-{: codeblock}
+{: pre}
 
 If the *inspector* utility is active, the log contains messages similar to the following:
 ```
  ... You will need a SSH tunnel for port 9229 to be able to use the Chrome DevTools to remotely debug your app
  ... Starting app with 'node --inspect=9229  app.js '
 ```
-{: codeblock}
 
 Use an up-to-date version of the Google Chrome web browser to browse to `chrome://inspect`.
-From this URL, you see your app listed along with a link to your applictation files such as `file://home/vcap/app/app.js`., then select **inspect** to access the inspect interface.
+From this URL, you see your app listed along with a link to your application files, such as `file://home/vcap/app/app.js`, then select **inspect** to access the inspect interface.
 
 

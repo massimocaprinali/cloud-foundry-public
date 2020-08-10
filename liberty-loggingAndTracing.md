@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -106,7 +106,7 @@ The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are a
   ```
   ibmcloud cf logs --recent <appname>
   ```
-  {: codeblock}
+  {: pre}
 
 
 * To see the `messages.log` file of an app, run the following command:
@@ -114,7 +114,7 @@ The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are a
   ```
   ibmcloud cf ssh <appname> -c "cat logs/messages.log"
   ```
-  {: codeblock}
+  {: pre}
 
 The log level and other trace options can be set through the Liberty configuration file. For more information, see [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html).
 
@@ -140,14 +140,14 @@ Follow these steps to change tracing configuration:
   ```
  ibmcloud cf ssh <appname> [-i instance_index]
   ```
-  {: codeblock}
+  {: pre}
 
 2. Edit `<logging traceSpecification="xxxx"/>` in the server.xml to set your desired trace specification,  for example using *vi*:
 
   ```
 vi /app/wlp/usr/servers/defaultServer/server.xml
   ```
-  {: codeblock}
+  {: pre}
 
 Note: The server.xml change will be lost on a restage or restart and is only valid for the instance you ssh into.
 
@@ -160,7 +160,7 @@ Use the command below to trigger a thread and heap dump via {{site.data.keyword.
   ```
  ibmcloud cf ssh <appname> -c "pkill -3 java"
   ```
-  {: codeblock}
+  {: pre}
 
 See the documentation below for details on downloading the generated dump files.
 
@@ -174,14 +174,14 @@ By default, the various dump files are placed in the `dumps` directory of the ap
   ```
   ibmcloud cf ssh <appname> -c "ls -l dumps"
   ```
-  {: codeblock}
+  {: pre}
 
 * To download a dump file, run the following command:
 
   ```
   ibmcloud cf ssh <appname> -i <instance_id> -c "cat dumps/<dump_file_name>" > <local_dump_file_name>
   ```
-  {: codeblock}
+  {: pre}
 
 It is also possible to use `scp` and other similar tools to view and download the dump files. Refer to [Accessing Apps with SSH  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html) for more information.
 

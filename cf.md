@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -172,11 +172,13 @@ You can run the **ibmcloud cf stacks** command to show the available stacks, or 
 ```
 ibmcloud cf push <APP_NAME> -s STACK
 ```
+{: pre}
 
 You can use the `ibmcloud cf buildpacks` command to show the available buildpacks, such as Liberty for Java and SDK for Node.js, that are available as runtimes for your app to run in. And you can specify the runtime environment for your app by using the following command:
 
 ```
 ibmcloud cf push <APP_NAME> -b BUILDPACK_NAME
 ```
+{: pre}
 
 

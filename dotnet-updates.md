@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -446,7 +446,7 @@ This version of the buildpack includes the following changes:
 ```
    dnx src/dotnetstarter kestrel --server.urls http://${VCAP_APP_HOST}:${PORT}
 ```
-{: codeblock}
+{: pre}
 
 * Usage of the Nowin web server was removed from this buildpack and the [Kestrel](https://github.com/aspnet/KestrelHttpServer) web server is used instead.
 

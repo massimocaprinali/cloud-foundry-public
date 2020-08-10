@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -131,7 +131,7 @@ When you configure your DNS settings, you must specify the public IP addresses o
 ```
 nslookup cloud.ibm.com
 ```
-{: codeblock}
+{: pre}
 
 ## Can't reuse names of deleted apps
 {: #ts_reuse_appname}
@@ -154,25 +154,25 @@ Complete the following steps to delete the unused route:
     ```
     ibmcloud cf routes
     ```
-    {: codeblock}
+    {: pre}
 
   2. If the route doesn't belong to the current space, switch to the space or org that it belongs to by entering the following command:
     ```
     ibmcloud cf target -o org_name -s space_name
     ```
-    {: codeblock}
+    {: pre}
 
   3. Delete the app route by entering the following command:
     ```
     ibmcloud cf delete-route domain_name -n host_name
     ```
-    {: codeblock}
+    {: pre}
 
   For example:
   ```
   ibmcloud cf delete-route cf.cloud.ibm.com -n app001
   ```
-  {: codeblock}
+  {: pre}
 
 ## Can't retrieve spaces in the org
 {: #ts_retrieve_space}
@@ -216,7 +216,7 @@ To get the appropriate authority level, use one of the following methods.
 {: tsResolve}
 
 * Select another organization and space for which you have the Developer role.
-* Ask the org manager to change your role to Developer or to create a space and then assign you a Developer role. See [Managing organizations and spaces](/docs/account?topic=account-mngcf) for details.
+* Ask the org manager to change your role to Developer or to create a space and then assign you a Developer role. See [Cloud Foundry access](/docs/account?topic=account-mngcf) for details.
 
 ## Disk quota is exceeded
 {: #ts_disk_quota}
@@ -230,19 +230,21 @@ When you run out of disk space, you might see a message that states that the dis
 The default disk quota that is allocated for an app is 1 GB. If you need more disk space, you must manually specify the disk quota.
 {: tsCauses}
 
-Use one of the following methods to specify your disk quota. The maximum disk quota that you can specify is 2 GB. If 2 GB is still not enough, try an external service such as [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started).
+Use one of the following methods to specify your disk quota. The maximum disk quota that you can specify is 2 GB. If 2 GB is still not enough, try an external service such as [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 {: tsResolve}
 
   * In the `manifest.yml` file, add the following item:
-  ```yaml
+  ```
 	disk_quota: <disk_quota>
 	```
+  {: codeblock}
+
   * Use the **-k** option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
 
   ```
 	ibmcloud cf push appname -p app_path -k <disk_quota>
 	```
-  {: codeblock}
+  {: pre}
 
 ## Org's services limit is exceeded
 {: #ts_servicelimit}
@@ -272,7 +274,7 @@ Delete any services instances that aren't needed, or remove the limit on the num
 	  4. Delete the service instance. Enter `cf delete-service <service_instance_name>`.
 	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `cf restage <appname>`.
 
-  * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-accounts#upgrade-to-paygo).
+  * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
 ## Executable files can't be run on {{site.data.keyword.cloud_notm}}
 {: #ts_executable}
@@ -292,13 +294,13 @@ When you push the executable to {{site.data.keyword.cloud_notm}}, you must speci
 ```
 ibmcloud cf push appname -p app_path -c <start_command> -b <null-buildpack>
 ```
-{: codeblock}
+{: pre}
 
 For example:
 ```
 ibmcloud cf push appname -p app_path -c ./RunMeNow -b https://github.com/ryandotsmith/null-buildpack
 ```
-{: codeblock}
+{: pre}
 
 ## Org's memory limit is exceeded
 {: #ts_outofmemory}
@@ -317,7 +319,7 @@ This error occurs when the amount of memory that is remaining for your organizat
 You can either increase the memory quota of your account, or reduce the memory that your apps use.
 {: tsResolve}
 
-  * To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-accounts#upgrade-to-paygo).
+  * To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
   * To reduce the memory that your apps use, use either the {{site.data.keyword.cloud_notm}} console or the Cloud Foundry command line interface.
 
     If you use the {{site.data.keyword.cloud_notm}} console, complete the following steps:
@@ -331,7 +333,7 @@ You can either increase the memory quota of your account, or reduce the memory t
   	  ```
 	    ibmcloud cf list
 	    ```
-      {: codeblock}
+      {: pre}
 
 	    The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
 
@@ -339,7 +341,7 @@ You can either increase the memory quota of your account, or reduce the memory t
 	    ```
 	    ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
       ```
-      {: codeblock}
+      {: pre}
 
     3. Restart your app for the changes to take effect.
 
@@ -361,7 +363,7 @@ You can manually restart an app that is already deployed by typing the following
 ```
 ibmcloud cf restart <APPNAME>
 ```
-{: codeblock}
+{: pre}
 
 In addition, you can code the app to identify and recover from problems such as outages, exceptions, and connection failures.
 
@@ -389,7 +391,7 @@ If you are pushing your application to {{site.data.keyword.cloud_notm}} by using
 ```
 cf api https://api.eu-gb.cf.cloud.ibm.com
 ```
-{: codeblock}
+{: pre}
 
 ## App routes can't be created
 {: #ts_hostistaken}
@@ -409,15 +411,16 @@ The host name that you specify must be unique within the domain that you are usi
 {: tsResolve}
 
   * If you deploy your application by using the `manifest.yml` file, specify the host name in the host option.
-    ```yaml
+    ```
     host: host_name
 	  ```
+    {: codeblock}
 
   * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the **-n** option.
     ```
     ibmcloud cf push appname -p app_path -n host_name
     ```
-    {: codeblock}
+    {: pre}
 
 ## WAR apps can't be pushed by using the ibmcloud cf push command
 {: #ts_cf_war}
@@ -438,12 +441,12 @@ Use the **-p** option to specify a WAR file or add the path to the WAR file. For
 ```
 ibmcloud cf push MyUniqueAppName01 -p app.war
 ```
-{: codeblock}
+{: pre}
 
 ```
 ibmcloud cf push MyUniqueAppName02 -p "./app.war"
 ```
-{: codeblock}
+{: pre}
 
 For more information about the `ibmcloud cf push` command, enter `ibmcloud cf push -h`.
 
@@ -476,10 +479,10 @@ Use one of the following methods, depending on the cause of the problem:
       ```
 		  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
 		  ```
-      {: codeblock}
+      {: pre}
 
     * Use the [package.json](https://www.npmjs.com/package/jsonfile){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") file. For example:
-	    ```json
+	    ```
 		  {
         ...
   	    "scripts": {
@@ -487,6 +490,7 @@ Use one of the following methods, depending on the cause of the problem:
  	    }
 	    }
 	    ```
+      {: codeblock}
 
     * Use the `manifest.yml` file. For example:
 	    ```
@@ -496,10 +500,11 @@ Use one of the following methods, depending on the cause of the problem:
       command: node app.js
       ...
       ```
+      {: codeblock}
 
   * Ensure that a `package.json` file exists in your Node.js app so that the Node.js buildpack can recognize the app. Ensure that this file is in the root directory of your app.
     The following example shows a simple `package.json` file:
-	```json
+	```
 	{
         "name": "MyUniqueNodejs01",
         "version": "0.0.1",
@@ -516,6 +521,7 @@ Use one of the following methods, depending on the cause of the problem:
         }
  }
     ```
+    {: codeblock}
 
 For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 

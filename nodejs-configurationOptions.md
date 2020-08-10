@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -112,7 +112,7 @@ Use the NODE_MODULES_CACHE variable to determine whether or not the Node buildpa
 ```
     ibmcloud cf set-env myapp NODE_MODULES_CACHE false
 ```
-{: codeblock}
+{: pre}
 
 Note that node_modules that are included in your application are not cached.
 

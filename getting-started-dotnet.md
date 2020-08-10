@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -117,7 +117,7 @@ First, clone the sample app GitHub repo.
   ```
 git clone https://github.com/IBM-Cloud/get-started-aspnet-core
   ```
-  {: codeblock}
+  {: pre}
 
 
 ## Step 2: Run the app locally
@@ -128,19 +128,19 @@ git clone https://github.com/IBM-Cloud/get-started-aspnet-core
   ```
   cd get-started-aspnet-core/src/GetStartedDotnet
   ```
-  {: codeblock}
+  {: pre}
 
 1. Run the app locally by running the following commands.
 
   ```
 dotnet restore
   ```
-  {: codeblock}
+  {: pre}
 
   ```
 dotnet run
   ```
-  {: codeblock}
+  {: pre}
 
 1. View your app at: http://localhost:5000/.
 
@@ -172,19 +172,19 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
   ```
 ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
  ```
 ibmcloud login --sso
   ```
-  {: codeblock}
+  {: pre}
 
 1. Target a Cloud Foundry org and space:
   ```
 ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
@@ -193,7 +193,7 @@ ibmcloud target --cf
   ```
 ibmcloud cf push
   ```
-  {: codeblock}
+  {: pre}
 
   This can take a minute. If there is an error in the deployment process, you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
@@ -201,7 +201,7 @@ When deployment completes, you should see a message indicating that your app is 
   ```
 ibmcloud cf apps
   ```
-  {: codeblock}
+  {: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [Resource List](https://cloud.ibm.com/resources) to view your app.
 
@@ -230,7 +230,7 @@ We're now going to update your local code to point to this database. We'll store
 
 1. Copy and paste the following JSON object into the `vcap-local.json` file, and save your changes.
 
-   ```json
+   ```
    {
      "services": {
        "cloudantNoSQLDB": [
@@ -255,7 +255,7 @@ We're now going to update your local code to point to this database. We'll store
    ```
    dotnet run
    ```
-   {: codeblock}
+   {: pre}
 
 1. Refresh your browser view at http://localhost:5000/. Any names you enter into the app will now get added to the database.
 
@@ -266,8 +266,7 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 
 ## Next Steps
 
-* [Tutorials](/docs/tutorials/index.html)
 * [Samples](https://ibm-cloud.github.io){: external}
-* [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 

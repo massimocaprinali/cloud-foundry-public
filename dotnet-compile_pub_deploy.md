@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-08"
 
 keywords: cloud foundry
 
@@ -105,13 +105,14 @@ To publish your application in `Release` configuration, set the `PUBLISH_RELEASE
 
 You can do this with the {{site.data.keyword.cloud_notm}} CLI with the following command:
 
-```shell
-  ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
 ```
+ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
+```
+{: pre}
 
 Alternatively, you can set the variable in your application's manifest.yml file:
 
-```yml
+```
 ---
 applications:
 - name: sample-aspnetcore-app
@@ -119,6 +120,7 @@ applications:
   env:
     PUBLISH_RELEASE_CONFIG: true
 ```
+{: codeblock}
 
 ## Pushing a Published Application
 {: #pushing_published_app}
@@ -129,9 +131,9 @@ for more information on self-contained applications.
 
 To publish an application issue a command such as:
 ```
-  dotnet publish -r ubuntu.14.04-x64
+dotnet publish -r ubuntu.14.04-x64
 ```
-{: codeblock}
+{: pre}
 
 For self-contained applications, the app can then be pushed from the
 ```

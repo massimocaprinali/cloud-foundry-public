@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-09"
 
 keywords: cloud foundry
 
@@ -102,7 +102,7 @@ subcollection: cloud-foundry-public
 Use the {{site.data.keyword.cloud}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
 {: shortdesc}
 
-Before you begin, [download and install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
+Before you begin, [download and install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
 
 After you install the CLI, you can get started:
@@ -123,7 +123,7 @@ After you install the CLI, you can get started:
   ```
   ibmcloud login
   ```
-  {: codeblock}
+  {: pre}
 
   If your credentials are rejected, you might be using a federated ID. To log in with a federated ID, use the `--sso` flag. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more details.
   {: tip}
@@ -132,15 +132,15 @@ After you install the CLI, you can get started:
   ```
   ibmcloud target --cf
   ```
-  {: codeblock}
+  {: pre}
 
   Or, if you know which org and space that the service belongs to, you can use the following command:
   ```
   ibmcloud target -o <value> -s <value>
   ```
-  {: codeblock}
+  {: pre}
 
-   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the **`ibmcloud cf push`** command. For more information, see [**`ibmcloud cf push`**](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_apps#ibmcloud_app_push).
+   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the **`ibmcloud cf push`** command. For more information, see [**`ibmcloud cf push`**](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
   6. Access your app by browsing to the app URL.
 
