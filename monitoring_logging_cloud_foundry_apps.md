@@ -110,7 +110,7 @@ To retain logs for a longer period and advanced analysis, services like [{{site.
 
 For more information about how to monitor CF applications, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
 
-CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Cloud Foundry Applications Metrics](/docs/observability-monitoring?topic=observability-monitoring-overview).
+CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
 
 
 

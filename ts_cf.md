@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -235,15 +235,15 @@ Use one of the following methods to specify your disk quota. The maximum disk qu
 
   * In the `manifest.yml` file, add the following item:
   ```
-	disk_quota: <disk_quota>
-	```
+  disk_quota: <disk_quota>
+  ```
   {: codeblock}
 
   * Use the **-k** option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
 
   ```
-	ibmcloud cf push appname -p app_path -k <disk_quota>
-	```
+  ibmcloud cf push appname -p app_path -k <disk_quota>
+  ```
   {: pre}
 
 ## Org's services limit is exceeded
@@ -331,15 +331,15 @@ You can either increase the memory quota of your account, or reduce the memory t
 
     1. Check how much memory is being used for your apps:
   	  ```
-	    ibmcloud cf list
-	    ```
+	  ibmcloud cf list
+	  ```
       {: pre}
 
-	    The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
+	  The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
 
     2. To reduce the amount of memory that is used by your app, reduce the number of app instances or the maximum memory limit, or both:
-	    ```
-	    ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
+	  ```
+	  ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
       ```
       {: pre}
 
@@ -371,7 +371,7 @@ In addition, you can code the app to identify and recover from problems such as 
 {: #ts_orgs}
 {: troubleshoot}
 
-You might not be able to locate your organization on {{site.data.keyword.cloud_notm}} when working on a {{site.data.keyword.cloud_notm}} region.
+You might not be able to locate your organization on {{site.data.keyword.cloud_notm}} when working on an {{site.data.keyword.cloud_notm}} region.
 
 You can log in to the {{site.data.keyword.cloud_notm}} console successfully, but you can't push apps by using the Cloud Foundry command line interface.
 {: tsSymptoms}
@@ -413,7 +413,7 @@ The host name that you specify must be unique within the domain that you are usi
   * If you deploy your application by using the `manifest.yml` file, specify the host name in the host option.
     ```
     host: host_name
-	  ```
+	```
     {: codeblock}
 
   * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the **-n** option.
@@ -477,8 +477,8 @@ Use one of the following methods, depending on the cause of the problem:
   * Specify the start command by one of the following methods:
      * Use the Cloud Foundry command line interface. For example:
       ```
-		  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
-		  ```
+	  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
+	  ```
       {: pre}
 
     * Use the [package.json](https://www.npmjs.com/package/jsonfile){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") file. For example:
@@ -490,10 +490,10 @@ Use one of the following methods, depending on the cause of the problem:
  	    }
 	    }
 	    ```
-      {: codeblock}
+        {: codeblock}
 
     * Use the `manifest.yml` file. For example:
-	    ```
+	  ```
 		  applications:
       name: MyUniqueNodejs01
       ...

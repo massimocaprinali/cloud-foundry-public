@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -272,7 +272,7 @@ Included are fixes for the following security vulnerabilities:
 * [CVE-2015-8855](http://www-01.ibm.com/support/docview.wss?uid=swg21982852)
 * [CVE-2016-2108 CVE-2016-2107 CVE-2016-2105 CVE-2016-2106 CVE-2016-2109 CVE-2016-2176 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.openssl.org/news/secadv/20160503.txt)
 
-Note that there is a known issue with npm v3 and the App Management inspector utility. npm 3.8.6 is the default with the 6.0.0 and 6.1.0 runtimes. If you want to use either of the 6.x runtimes and the inspector utility, you should specify a 2.x npm version in your package.json as a temporary workaround.
+Note that there is a known issue with NPM v3 and the App Management inspector utility. NPM 3.8.6 is the default with the 6.0.0 and 6.1.0 runtimes. If you want to use either of the 6.x runtimes and the inspector utility, you should specify a 2.x NPM version in your package.json as a temporary workaround.
 
 ## April 29, 2016: Updated Node.js buildpack v3.3-20160428-1409
 
@@ -306,7 +306,7 @@ This release is fully synchronized with the [Cloud Foundry community Node.js](ht
 
   * Node.js v4.2.4 (IBM SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your application to behave differently if a particular version is not specified for your application. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} application, see [Node.js runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs_runtime) documentation.
 
-  * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stacktraces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the npm install phase only. This function allows users to set NODE_ENV to another value like *development* for application runtime. For clarity, npm scripts will see the message **NODE_ENV=production**.
+  * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stacktraces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the NPM install phase only. This function allows users to set NODE_ENV to another value like *development* for application runtime. For clarity, NPM scripts will see the message **NODE_ENV=production**.
 
   * A Bug-fix to the Monitoring and Analytics service is included.
 
@@ -389,8 +389,8 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
    * The mqlight module that is used for the MQ Light service is not supported on v0.12.x
 
 * Various security vulnerabilities were resolved:
-  * Fixed vulnerabilities in OpenSSL affecting IBM SDK for Node.js. More details are available in the [security bulletin](http://www-01.ibm.com/support/docview.wss?uid=swg21701494).
-  * Fixed vulnerability in RC4 Stream Cipher affecting IBM SDK for Node.js. More details are available in the [security bulletin](http://www-01.ibm.com/support/docview.wss?uid=swg21882778).
+  * Fixed vulnerabilities in OpenSSL affecting IBM SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerabilities-in-openssl-affect-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-0286-cve-2015-0287-cve-2015-0288-cve-2015-0289-cve-2015-0292-cve-2015-0293-cv/).
+  * Fixed vulnerability in RC4 Stream Cipher affecting IBM SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-rc4-stream-cipher-affects-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-2808/).
 
 ##  April 2, 2015: Updated Node.js buildpack v1.15-20150331-2231
 
@@ -408,7 +408,7 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## October 23, 2014: Updated Node.js buildpack v1.6-20141013-1736
 
-* The Node.js buildpack now comes with [IBM SDK for Node.js v1.1.0.8](https://developer.ibm.com/node/sdk/). This update means you get a fully supported IBM Node.js runtime when you specify the latest stable Node.js runtime for your application, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the npm module and other improvements in the http and url modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog).
+* The Node.js buildpack now comes with [IBM SDK for Node.js v1.1.0.8](https://developer.ibm.com/node/sdk/). This update means you get a fully supported IBM Node.js runtime when you specify the latest stable Node.js runtime for your application, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the NPM module and other improvements in the http and url modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog).
 * The buildpack also contains a fix for a bug that was adding an incorrect index.html file in the customer’s application during deployment.
 
 ## September 30, 2014: Updated Node.js buildpack v1.4-20140908-1746

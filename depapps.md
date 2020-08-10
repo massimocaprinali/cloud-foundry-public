@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -265,7 +265,7 @@ A `package.json` file must be in your Node.js application for the application to
   ```
   {: codeblock}
 
-  For more information about the `package.json` file, see [package.json](https://www.npmjs.org/doc/files/package.json.html){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+  For more information about the `package.json` file, see [Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
   * To deploy PHP, Ruby, or Python applications to {{site.data.keyword.cloud_notm}}, use the following command from the directory that contains your application source:
 

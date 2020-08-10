@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -110,7 +110,7 @@ Cloud Foundry organizations can be created to match how you want to work rather 
 
 Iterative development and deployment can result in apps that expand quickly. Your delivery process design must be able to scale up quickly and easily. You want continuous development with a fast deployment rate. Having your development and production spaces in the same organization provides access to the same resources. Managing different spaces within a single organization reduces the administration workload. The development, test, and operations personnel can collaborate easily if they are working within the same organization.
 
-Implement a naming standard to clearly identify the organization and space usage. For example, you might include the type of cloud, the geographical region, the usage type (such as dev, test, prod), the application name, and the version or revision number. The organizations and spaces can then be easily identified for administration and access purposes.  
+Implement a naming standard to clearly identify the organization and space usage. For example, you might include the type of cloud, the geographical region, the usage type (such as development, test, production), the application name, and the version or revision number. The organizations and spaces can then be easily identified for administration and access purposes.  
 
 The number of spaces can multiply rapidly because of iterative development. You can define as many spaces as you need within an organization. If you plan to define many spaces, you might want to create an application to help manage the spaces. When the number of spaces exceeds sixty, you might want to consider defining another organization.
 

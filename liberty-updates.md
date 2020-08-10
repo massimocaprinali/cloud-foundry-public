@@ -161,7 +161,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 
 ### November 6, 2019: Updated Liberty buildpack v3.38-20191031-1433
 
-* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html) release.
+* The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/12/06/microprofile-32-health-metrics-190012.html) release.
 * The alternate Liberty runtime GA version `19.0.0.11` was added.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.5+10_openj9-0.17.0.
 
@@ -449,7 +449,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack was also updated to download the latest [9.4.x PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://jdbc.postgresql.org/) and 1.2.x [MariaDB Connector/J JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/kb/en/about-mariadb-connector-j/) when performing [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) for PostgreSQL or MySQL type of services.
 
 ### November 23, 2015: Updated Liberty buildpack v2.2-20151119-1720
-* The buildpack contains an updated version of the Liberty profile runtime and WebSphere eXtreme Scale Client with security fixes for the [Apache Commons Collection vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21971426).
+* The buildpack contains an updated version of the Liberty profile runtime and WebSphere eXtreme Scale Client with security fixes for the [Apache Commons Collection vulnerability](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-apache-commons-affects-liberty-for-java-for-ibm-bluemix-cve-2015-7450/).
 * The buildpack also contains an updated version of the [Java MongoDB Driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.mongodb.org/ecosystem/drivers/java/), v2.13.3. The new driver is compatible with MongoDB version 2.4, 2.6 and 3.0.
 * The buildpack also provides an updated version of the data collector for the Monitoring and Analytics service. The updated data collector has improved method tracing capabilities.
 
@@ -503,7 +503,7 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * With this version of the buildpack, the way the application files are laid out in the droplet changed. The change in the file structure eliminated complexity that is related to maintaining symbolic links and should have no impact on the applications.
 
 ### April 15, 2015: Updated Liberty buildpack v1.16-20150407-1737
-* This version of the buildpack contains an updated IBM JRE 7.1-2.11 with a [security fix for the Bar Mitzvah vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21882777).
+* This version of the buildpack contains an updated IBM JRE 7.1-2.11 with a [security fix for the Bar Mitzvah vulnerability](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-rc4-stream-cipher-affects-liberty-for-java-for-ibm-bluemix-cve-2015-2808/).
 * When stand-alone WAR files are deployed, if provided, the buildpack now uses the context-root that is specified in the embedded **ibm-web-ext.xml** file as the application's context root. With this change, applications that were previously deployed under the root context might be deployed under a different context based on the settings in the **ibm-web-ext.xml** file.
 
 ### April 3, 2015: Updated Liberty buildpack v1.15-20150402-1422
@@ -511,8 +511,8 @@ The updated JREs contain [latest security fixes](http://www-01.ibm.com/support/d
 * The buildpack also contains an updated version of the data collector for the Monitoring and Analytics service.
 
 ### March 20, 2015: Updated Liberty buildpack v1.14-20150319-1159
-* This version of the buildpack contains an updated IBM JRE 7.1.2.11 with a security fix for the [FREAK vulnerability](http://www-01.ibm.com/support/docview.wss?uid=swg21699864).
-* The [SQL Database](/docs/sql-query?topic=sql-query-overview) service offers paid plans that provide an option for connecting with the database server over the SSL protocol. The buildpack's auto-configuration support for SQL Database service was updated to configure the runtime to connect with the database over SSL if the SSL connection information is available.
+* This version of the buildpack contains an updated IBM JRE 7.1.2.11 with a security fix for the [FREAK vulnerability](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-freak-vulnerability-fixed-in-liberty-for-java-for-ibm-bluemix-cve-2015-0138/).
+* The [SQL Database](/docs/sql-query?topic=sql-query-gettingstarted) service offers paid plans that provide an option for connecting with the database server over the SSL protocol. The buildpack's auto-configuration support for SQL Database service was updated to configure the runtime to connect with the database over SSL if the SSL connection information is available.
 * The buildpack was updated to report an error when a stand-alone WAR or EAR file that contains a **server.xml** configuration file in root of the application archive is deployed.
 * The buildpack contains a fix for MongoDB's auto-configuration service plug-in that in certain cases generated an invalid **server.xml** configuration.
 

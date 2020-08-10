@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -205,7 +205,7 @@ This environment variable is the serialization of a JSON object with one entry f
   ```
   {: pre}
 
-  For more information, see the [`cf push` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
+  For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html).
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```
@@ -220,9 +220,9 @@ You can also choose other tools to build your app, such as Eclipse tools. For mo
 
 You can also bind a service by using the `cf` command line interface. This example assumes that you want to add the {{site.data.keyword.cloudant}} service to your app with the `cf` command line interface.
 
-To use the {{site.data.keyword.cloudant}} service within your app, create a {{site.data.keyword.cloudant}} service instance, bind your app to the service instance, and then use the service instance. The same procedure applies to all the other services.
+To use the {{site.data.keyword.cloudant}} service within your app, create an {{site.data.keyword.cloudant}} service instance, bind your app to the service instance, and then use the service instance. The same procedure applies to all the other services.
 
-  1. Create a {{site.data.keyword.cloudant}} NoSQL DB service instance.
+  1. Create an {{site.data.keyword.cloudant}} NoSQL DB service instance.
 
   Use the `cf create-service` command to create a new instance of a service. In this example, <Lite> is the name of the plan. For example:
 
@@ -280,7 +280,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   ```
   {: codeblock}
 
-  As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
+  As the sample code shows, to connect to an {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
   {: note}
 
   4. Interact with the service instance.

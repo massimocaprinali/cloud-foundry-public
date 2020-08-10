@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -316,7 +316,7 @@ If your application takes a long time to initialize, you might have to re-factor
   ```
   	ibmcloud cf push myApp –no-route
   ```
-	{: pre}
+  {: pre}
 
 2. Once the application is initialized, map a route to the application. For example:
 
@@ -531,7 +531,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	 web.py==0.37
      wsgiref==0.1.2
 	 ```
-   {: codeblock}
+     {: codeblock}
 
 	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.readthedocs.org/en/1.1/requirements.html).
 
@@ -540,7 +540,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	```
 	web: python <yourappname>.py $PORT
 	```
-  {: codeblock}
+    {: codeblock}
 
 You can now import the third-party Python library into {{site.data.keyword.cloud_notm}}.
 

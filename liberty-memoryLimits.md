@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -108,8 +108,8 @@ To determine what Memory Limit to specify, it is important to understand that yo
 
 * by the warden container.
 * to map kernel extensions and system libraries into the process.
-* for the jvm executables, jvm working heap, jit space, and compressed references.
-* for classes (application server and application), thread stacks, and direct io buffers.
+* for the JVM executables, JVM working heap, JIT space, and compressed references.
+* for classes (application server and application), thread stacks, and direct I/O buffers.
 * by the Java application heap.
 
 More information on JVM memory usage can be found at the developerWorks article [Thanks for the memory](http://www.ibm.com/developerworks/library/j-nativememory-linux/)

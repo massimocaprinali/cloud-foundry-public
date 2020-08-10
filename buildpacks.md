@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -121,6 +121,6 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Service
 
-   A service is a {{site.data.keyword.cloud_notm}} provided facility which can be coupled with an application.
+   A service is an {{site.data.keyword.cloud_notm}} provided facility which can be coupled with an application.
 
 

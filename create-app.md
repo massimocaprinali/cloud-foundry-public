@@ -125,7 +125,7 @@ After your app is created, you have a few options for continuing to add services
 <dt>{{site.data.keyword.contdelivery_full}}</dt>
 <dd>Use {{site.data.keyword.contdelivery_short}} to automate builds, unit tests, deployments, and more. Edit and push code through the rich web based IDE. Create toolchains to enable tool integrations that support your development, deployment, and operation tasks. The Continuous Delivery service includes Delivery Pipeline, Eclipse Orion Web IDE, and Git Repos and Issue Tracking. For more information, see <a href="/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started">Getting started with Continuous Delivery</a>.</dd>
 <dt>Adding metrics for monitoring using SysDig</dt>
-<dd>CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [IBM Cloud Monitoring with Sysdig](/docs/observability-monitoring?topic=observability-monitoring-overview).</dd>
+<dd>CF applications can configure and expose metrics that can be monitored using SysDig. For more information, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).</dd>
 </dl>
 
 ## Tips

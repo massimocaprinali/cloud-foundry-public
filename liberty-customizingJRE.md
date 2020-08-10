@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -171,7 +171,7 @@ The Liberty buildpack configures the default JVM options by taking into account:
 
 * The {{site.data.keyword.cloud_notm}} environment.
 
-    The JVM options are configured to provide optimization in a {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
+    The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
   * fast failure and recovery of an application is configured by disabling JVM dumps options and killing of the processes when an application's memory is exhausted.
   * virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
   * routing of information on the application's available memory resources at the time of failure to the Loggregator.

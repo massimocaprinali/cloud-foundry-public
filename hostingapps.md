@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -116,7 +116,7 @@ You can use the following tools and services that {{site.data.keyword.cloud_notm
 
 | Tool | Method |
 |:------|:--------|
-| Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`**cf push**` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push). |
+| Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`**cf push**` command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html). |
 | Eclipse | Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.cloud_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.cloud_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.cloud_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
 | {{site.data.keyword.cloud_notm}} DevOps Delivery Pipeline | Manage your code on DevOps GitHub repository and deploy your app to {{site.data.keyword.cloud_notm}} by using the DevOps Delivery Pipeline. |
@@ -193,7 +193,7 @@ Optional: If you change your app, you must upload those changes by entering the 
 
 * When you use the cf push command, the cf command line interface copies all of the files and directories from your current directory to {{site.data.keyword.cloud_notm}}. Ensure that you have only the required files in your app directory.
 * Ensure that your organization has enough memory for all instances of your app. To view the memory quota for your org, use cf org org_name.
-* For more information about cf push, see [cf commands](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin).
+* For more information about cf push, see [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html).
 
 ## Migrating your data and using services
 {: #ht_service}

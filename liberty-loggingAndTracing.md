@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -145,7 +145,7 @@ Follow these steps to change tracing configuration:
 2. Edit `<logging traceSpecification="xxxx"/>` in the server.xml to set your desired trace specification,  for example using *vi*:
 
   ```
-vi /app/wlp/usr/servers/defaultServer/server.xml
+  vi /app/wlp/usr/servers/defaultServer/server.xml
   ```
   {: pre}
 
@@ -158,7 +158,7 @@ See [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/know
 Use the command below to trigger a thread and heap dump via {{site.data.keyword.cloud_notm}} CLI using the SSH feature:
 
   ```
- ibmcloud cf ssh <appname> -c "pkill -3 java"
+  ibmcloud cf ssh <appname> -c "pkill -3 java"
   ```
   {: pre}
 

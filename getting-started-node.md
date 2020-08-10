@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -130,7 +130,7 @@ git clone https://github.com/IBM-Cloud/get-started-node
 ## Step 2: Run the app locally
 {: #run_locally-node}
 
-Use the npm package manager to install dependencies and run your app.
+Use the NPM package manager to install dependencies and run your app.
 
 1. On the command line, change the directory to where the sample app is located.
   ```
