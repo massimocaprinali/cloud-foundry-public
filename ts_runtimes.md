@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -533,7 +533,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	 ```
      {: codeblock}
 
-	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.readthedocs.org/en/1.1/requirements.html).
+	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files).
 
  2. Add a `Procfile` file to the root directory of your Python app.
  The `Procfile` file must contain the start command for your Python app. In the following command, *yourappname* is the name of your Python app, and *PORT* is the port number that your Python app must use to receive requests from users of the app. *$PORT* is optional. If you don't specify PORT in the start command, the port number under the `VCAP_APP_PORT` environment variable that is inside the app is used.

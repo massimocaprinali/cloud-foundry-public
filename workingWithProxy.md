@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -97,8 +97,8 @@ subcollection: cloud-foundry-public
 # Working with a proxy
 {: #working_with_proxy}
 
-In some environments such as [{{site.data.keyword.cloud_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) a proxy may be configured which affects the
-behavior of your application during staging and runtime.
+In some environments a proxy might be configured that affects the
+behavior of your application during staging and run time.
 
 You can configure your application to work with the proxy by using the following environment variables:
   * [http_proxy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: new_window}

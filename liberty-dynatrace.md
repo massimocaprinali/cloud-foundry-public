@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -128,7 +128,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
     ```
     {: pre}
 
-    See the [_Agent Settings_ section of Agent Configuration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents) at the Dynatrace community website for more information about available options. For example, using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace-agent.md) for more details about configuring the user-provided service.
+    See the [_Agent Settings_ section of Agent Configuration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents) at the Dynatrace community website for more information about available options. For example, by using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace_one_agent.md) for more details about configuring the user-provided service.
 
 3. After you push your app to {{site.data.keyword.cloud_notm}}, bind the user-provided service that you created to the app. For example, use the following command:
   ```
