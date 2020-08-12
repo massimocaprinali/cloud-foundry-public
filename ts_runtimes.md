@@ -117,8 +117,8 @@ Some buildpacks aren't configured to automatically download all updated componen
 You can use buildpacks that have built-in mechanisms to avoid loading obsolete components, for example, the following buildpacks:
 {: tsResolve}
 
-  * [Cloud Foundry Java&reg buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/java-buildpack){: new_window}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/java-buildpack/blob/master/docs/extending-caches.md){: new_window}.
-  * [Cloud Foundry Node.js buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/nodejs-buildpack){: new_window}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
+  * [Cloud Foundry Java&reg buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/master/docs/extending-caches.md){: external}.
+  * [Cloud Foundry Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
 
   ```
   set NODE_MODULES_CACHE=false
@@ -127,8 +127,8 @@ You can use buildpacks that have built-in mechanisms to avoid loading obsolete c
 
 If the buildpack that you are using doesn't provide a mechanism to load the latest components automatically, you can manually delete the contents in the cache directory and push your app again. Use the following steps:
 
- 1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: new_window}.  
- 2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: new_window}.
+ 1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: external}.  
+ 2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: external}.
   ```
   rm -rfv $2/*
   ```
@@ -153,7 +153,7 @@ The application continues to crash and restart.
 The application container lifecycle, such as evacuation and shut down, can impact your application functions.  
 {: tsCauses}
 
-Identify which step of the application container lifecycle is causing errors in application deployment. Learn more about the [Cloud Foundry application lifecycle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#evacuation){: new_window}.
+Identify which step of the application container lifecycle is causing errors in application deployment. Learn more about the [Cloud Foundry application lifecycle](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#evacuation){: external}.
 {: tsResolve}
 
 ### The Actions button on the Instance Details page is disabled (Deprecated)
@@ -437,7 +437,7 @@ Node.js does not know how much memory is available to the application, so the ga
 ```
 {: screen}
 
-A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/nodejs/node/issues/3370){: new_window} for a more in-depth discussion of this topic.
+A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku](https://github.com/nodejs/node/issues/3370){: external} for a more in-depth discussion of this topic.
 
 ```
   "scripts": {
@@ -462,8 +462,8 @@ Projects pushed from source code that contains a large number of NuGet package d
 {: tsCauses}
 
 ### Helpful links
-* [NuGet](https://docs.nuget.org/Consume/Overview){: new_window}
-* [ASP.NET Core Overview](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html){: new_window}
+* [NuGet](https://docs.nuget.org/Consume/Overview){: external}
+* [ASP.NET Core Overview](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html){: external}
 
 ## PHP
 {: #ts_PHP}
@@ -484,7 +484,7 @@ When you push an app to {{site.data.keyword.cloud_notm}} by using a PHP buildpac
 ```
 {: screen}
 
-In the PHP buildpack, the error_log parameter defines the logging level. By default, the value of the `error_log` parameter is **stderr notice**. The following example shows the default logging level configuration in the `nginx-defaults.conf` file of the PHP buildpack that Cloud Foundry provides. For more information, see [cloudfoundry/php-buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/php-buildpack/blob/ff71ea41d00c1226d339e83cf2c7d6dda6c590ef/defaults/config/nginx/1.5.x/nginx-defaults.conf){: new_window}.
+In the PHP buildpack, the error_log parameter defines the logging level. By default, the value of the `error_log` parameter is **stderr notice**. The following example shows the default logging level configuration in the `nginx-defaults.conf` file of the PHP buildpack that Cloud Foundry provides. For more information, see [cloudfoundry/php-buildpack](https://github.com/cloudfoundry/php-buildpack/blob/ff71ea41d00c1226d339e83cf2c7d6dda6c590ef/defaults/config/nginx/1.5.x/nginx-defaults.conf){: external}.
 {: tsCauses}
 
 ```
@@ -504,7 +504,7 @@ pid @{HOME}/nginx/logs/nginx.pid;
 ```
 {: codeblock}
 
-For more information about how to change the default logging configuration, see [error_log ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://nginx.org/en/docs/ngx_core_module.html#error_log){: new_window}.
+For more information about how to change the default logging configuration, see [error_log](http://nginx.org/en/docs/ngx_core_module.html#error_log){: external}.
 
 
 ## Python
@@ -533,7 +533,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	 ```
      {: codeblock}
 
-	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files).
+	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files){: external}.
 
  2. Add a `Procfile` file to the root directory of your Python app.
  The `Procfile` file must contain the start command for your Python app. In the following command, *yourappname* is the name of your Python app, and *PORT* is the port number that your Python app must use to receive requests from users of the app. *$PORT* is optional. If you don't specify PORT in the start command, the port number under the `VCAP_APP_PORT` environment variable that is inside the app is used.

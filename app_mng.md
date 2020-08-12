@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -208,14 +208,14 @@ ibmcloud cf ssh -i 1 -N -T -L 5000:127.0.0.1:5001
 ```
 {: pre}
 
-For more information on configuring a JMX connector, see [Configuring secure JMX connection to the Liberty profile ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_admin_restconnector.html){:new_window}.
+For more information on configuring a JMX connector, see [Configuring secure JMX connection to the Liberty profile](https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_admin_restconnector.html){: external}.
 
 **Important**: The *jmx* utility does not start *proxy*.
 
 #### localjmx
 {: #localjmx}
 
-The *localjmx* utility enables the [localConnector-1.0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feature_localConnector-1.0.html){:new_window} Liberty feature. Combined with local port forwarding, *localjmx* acts an alternate way of allowing a remote JMX client to manage the application.
+The *localjmx* utility enables the [localConnector-1.0](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feature_localConnector-1.0.html){: external} Liberty feature. Combined with local port forwarding, *localjmx* acts an alternate way of allowing a remote JMX client to manage the application.
 
 
 **Before you begin**: *localjmx* requires you to install JConsole.
@@ -250,7 +250,7 @@ The *noproxy* utility only applies to applications that run in a Diego cell.
 
 The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
-When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){:new_window}.
+When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){: external}.
 
 **Important:** The *hc* utility starts *proxy*.
 
@@ -263,7 +263,7 @@ ibmcloud cf ssh -N -T -L 1883:127.0.0.1:1883 <appName>
 ```
 {: pre}
 
-Next, to connect with the Health Center client, use an [MQTT connection ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/support/knowledgecenter/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/connectingtojvm.html){: new_window} and specify the host as `127.0.0.1` and port as `1883`.
+Next, to connect with the Health Center client, use an [MQTT connection](http://www.ibm.com/support/knowledgecenter/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/connectingtojvm.html){: external} and specify the host as `127.0.0.1` and port as `1883`.
 
 ##### For Node.js versions after 6.3.0
 When you start debugging mode, *proxy* is automatically enabled, even if you use a version of Node.js that does not include *proxy*. Versions of Node.js after 6.3.0 do not include *proxy.* If you use the *inspector* utility with versions of Node.js after 6.3.0, you can turn off *proxy* again by using *noproxy.*

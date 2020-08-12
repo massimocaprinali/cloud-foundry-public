@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -107,7 +107,7 @@ This capability is offered based on Cloud Foundry open source project [App-Autos
 
 If you already have an application deployed on Cloud Foundry,  access the autoscaling page with the following steps:
 
-1. From the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry Apps**.
 3. Click the application to view its **Overview** page.
 4. Select the **Autoscaling** in the left navigation pane.
@@ -262,8 +262,8 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 
 ## Related readings
 
-* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud)
-* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Applications](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications)
+* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
+* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Applications](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
 
 
 

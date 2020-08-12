@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -99,7 +99,7 @@ subcollection: cloud-foundry-public
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-node) and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-node){: external} and explore on your own.
 {: hide-in-docs}
 
 By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
@@ -112,7 +112,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 
 You'll need the following accounts and tools:
 
-* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
+* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}
 * [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Node](https://nodejs.org/en/){: external}
@@ -138,7 +138,7 @@ cd get-started-node
   ```
   {: pre}
 
-1. Install the dependencies listed in the [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json){: new_window} file to run the app locally.  
+1. Install the dependencies listed in the [package.json](https://docs.npmjs.com/files/package.json){: external} file to run the app locally.  
   ```
 npm install
   ```
@@ -152,7 +152,7 @@ npm start
 
 1. View your app at the following URL: http://localhost:3000
 
-Use [nodemon ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodemon.io/){: new_window} for automatic restarting of application on file changes.
+Use [nodemon](https://nodemon.io/){: external} for automatic restarting of application on file changes.
 {: tip}
 
 ## Step 3: Prepare the app for deployment
@@ -215,7 +215,7 @@ ibmcloud cf apps
   ```
   {: pre}
 
-You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
+You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external} to view your app.
 
 You can troubleshoot errors in the deployment process by using the `ibmcloud cf logs <Your-App-Name> --recent` command.
 {: tip}
@@ -258,7 +258,7 @@ We're now going to update your local code to point to this database. We'll creat
   ```
   {: codeblock}
 
-2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `url` field of the `vcap-local.json` file, replacing `CLOUDANT_DATABASE_URL`.
 
@@ -285,7 +285,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 
 Check out the following resources:
 
-* [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
+* [Samples](https://ibm-cloud.github.io){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 

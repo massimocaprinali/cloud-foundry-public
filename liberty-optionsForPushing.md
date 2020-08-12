@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -214,7 +214,7 @@ The Liberty server is used to run the application if the LIBERTY_NATIVE_SPRINGBO
 ### CDI 1.2
 {: #cdi12}
 
-For performance reasons, when deploying WAR and EAR files only, the [CDI 1.2 implicit bean archives scanning](https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/cwlp_cdi_behavior.html) is disabled by default. Implicit bean archive scanning can be enabled using the JBP_CONFIG_LIBERTY environment variable.
+For performance reasons, when deploying WAR and EAR files only, the [CDI 1.2 implicit bean archives scanning](https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/cwlp_cdi_behavior.html){: external} is disabled by default. Implicit bean archive scanning can be enabled using the JBP_CONFIG_LIBERTY environment variable.
 For example:
 
 ```
@@ -271,7 +271,7 @@ After the server directory is ready, you can deploy it to {{site.data.keyword.cl
 ```
 {: pre}
 
-Note: The web applications that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5%2F1-3-11-0-5-6). For example:
+Note: The web applications that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5%2F1-3-11-0-5-6){: external}. For example:
 
 ```
     http://<yourappname>.mybluemix.net/acme/
@@ -329,7 +329,7 @@ The following variables are defined in the `runtime-vars.xml` file, and referenc
 ### Accessing information of bound services
 {: #accessing_info_of_bound_services}
 
-When you want to bind a service to your application, information about the service, such as connection credentials, is included in the [VCAP_SERVICES environment variable ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES) that Cloud Foundry sets for the application. For [automatically configured services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config), the Liberty buildpack generates or updates service binding entries in the server.xml file. The contents of the service binding entries can be in one of the following forms:
+When you want to bind a service to your application, information about the service, such as connection credentials, is included in the [VCAP_SERVICES environment variable](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES){: external} that Cloud Foundry sets for the application. For [automatically configured services](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config), the Liberty buildpack generates or updates service binding entries in the server.xml file. The contents of the service binding entries can be in one of the following forms:
 
 * cloud.services.&lt;service-name&gt;.&lt;property&gt;, which describes the information such as the name, type, and plan of the service.
 * cloud.services.&lt;service-name&gt;.connection.&lt;property&gt;, which describes the connection information for the service.

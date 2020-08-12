@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -98,9 +98,9 @@ subcollection: cloud-foundry-public
 
 The Liberty for Java runtime includes [a subset of features](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features#liberty_features) that are available in Liberty. You can install features that are not included in the runtime by running the Liberty `installUtility` command as a Cloud Foundry pre-runtime hook when the application is pushed to {{site.data.keyword.cloud_notm}}.
 
-For a full list of available features, see [Liberty features ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html).
+For a full list of available features, see [Liberty features](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html){: external}.
 
-For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profile) in the Cloud Foundry documentation.
+For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profile){: external} in the Cloud Foundry documentation.
 
 1. In the root directory of the application that you want to push to {{site.data.keyword.cloud_notm}}, create a `.profile.d` directory.
 

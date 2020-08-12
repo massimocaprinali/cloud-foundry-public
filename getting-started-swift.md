@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -98,7 +98,7 @@ subcollection: cloud-foundry-public
 
 <!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-swift) and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-swift){: external} and explore on your own.
 {: hide-in-docs}
 
 By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
@@ -229,7 +229,7 @@ ibmcloud cf apps
   ```
   {: pre}
 
-You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
+You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external} to view your app.
 
 ## Step 5: Add a database
 {: #add_database-swift}
@@ -278,12 +278,12 @@ Update the `mappings.json` file in the `config` directory by replacing the `clou
   ```
   {: codeblock}
 
-This sample application uses the `CloudEnvironment` package to interact with {{site.data.keyword.cloud_notm}} to parse environment variables. [Learn more...](https://github.com/IBM-Swift/CloudEnvironment)
+This sample application uses the `CloudEnvironment` package to interact with {{site.data.keyword.cloud_notm}} to parse environment variables. [Learn more...](https://github.com/IBM-Swift/CloudEnvironment){: external}
 
 The `cloudant` placeholder in the `cloudfoundry:cloudant` configuration makes it easier to bind a user-provided Cloudant service to your application. With the `cloudfoundry:cloudant` configuration, you can create a Cloudant service that includes the string, `cloudant` somewhere in the service name and bind it to your application, without editing the `config.json` file. If you modify this configuration and later want to use a user-provided Cloudant service, you either need to edit the configuration to `cloudfoundry:cloudant` or define `cloudfoundry:` with the name of your user-provided service.
 {: tip}
 
-Find your app in the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 Copy and paste just the credentials to the corresponding fields in your local config.json file.
 
@@ -300,7 +300,7 @@ swift build
 
  View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
 
- This sample application uses the `Kitura-CouchDB` package to interact with Cloudant. [Learn more...](https://github.com/IBM-Swift/Kitura-CouchDB)
+ This sample application uses the `Kitura-CouchDB` package to interact with Cloudant. [Learn more...](https://github.com/IBM-Swift/Kitura-CouchDB){: external}
 
  Make any changes you want and re-deploy to {{site.data.keyword.cloud_notm}}!
 
@@ -317,8 +317,8 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 ## Next steps
 {: #nextsteps-swift}
 
-* [Kitura & Server-side Swift Tutorials ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.kitura.io/learn){: new_window}
-* [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
+* [Kitura & Server-side Swift Tutorials](https://www.kitura.io/learn){: external}
+* [Samples](https://ibm-cloud.github.io){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 

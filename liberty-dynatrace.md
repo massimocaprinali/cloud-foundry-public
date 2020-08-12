@@ -111,7 +111,7 @@ First, you'll need to set up a Dynatrace collector.  Then you must create a user
 service to pass information for the Dynatrace agent to connect with the Dynatrace collector. See [Dynatrace Architecture](https://community.dynatrace.com/community/display/DOCDT65/Architecture){: external} to better understand the relationship between Dynatrace components.
 
 1. Set up a Dynatrace collector.
-  * See the [Dynatrace community website ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/EVAL/Step+3+-+Connect+Agent+to+Dynatrace) for instructions on downloading and setting up the Dynatrace collector.
+  * See the [Dynatrace community website](https://community.dynatrace.com/community/display/EVAL/Step+3+-+Connect+Agent+to+Dynatrace){: external} for instructions on downloading and setting up the Dynatrace collector.
   * Ensure that the collector is set up in a location that is accessible to the Dynatrace agent running with your app in {{site.data.keyword.cloud_notm}}.
 2. Create a user-provided service that points to the running Dynatrace collector.
 
@@ -128,7 +128,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
     ```
     {: pre}
 
-    See the [_Agent Settings_ section of Agent Configuration ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents) at the Dynatrace community website for more information about available options. For example, by using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace_one_agent.md) for more details about configuring the user-provided service.
+    See the [_Agent Settings_ section of Agent Configuration](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents){: external} at the Dynatrace community website for more information about available options. For example, by using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace_one_agent.md){: external} for more details about configuring the user-provided service.
 
 3. After you push your app to {{site.data.keyword.cloud_notm}}, bind the user-provided service that you created to the app. For example, use the following command:
   ```
@@ -149,7 +149,7 @@ additional configuration steps are needed.
 ### Hosting the Dynatrace agent
 {: #hosting_dynatrace_agent}
 The Dynatrace agent must be hosted on a web server, and the Liberty buildpack must be able to download the agent `.jar` file from that server. The server must be configured with an `index.yml` file that specifies details about the agent `.jar` file. Complete the steps that follow to set up the Dynatrace agent:
-  1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace) at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the **dynatrace-agent-unix.jar** version **6.+**.
+  1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace){: external} at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the **dynatrace-agent-unix.jar** version **6.+**.
   2. Host the agent `.jar` file in a location from which the Liberty buildpack can download it. You can host it on {{site.data.keyword.cloud_notm}} itself using any of the available server facilities, or you can host it on some publicly available location.
      * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
 

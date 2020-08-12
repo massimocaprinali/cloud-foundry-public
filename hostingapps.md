@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -108,7 +108,7 @@ If all of the following principles are observed in your app, the app is cloud-re
 
 You can migrate your apps to {{site.data.keyword.cloud_notm}} incrementally, instead of shifting the app completely to the cloud environment. You can migrate a portion of your app first and connect to the existing data or system of records by using the Cloud Integration service.
 
-In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: new_window}.
+In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: external}.
 
 To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.cloud_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.cloud_notm}} by using the –b option with the cf push command. For details, see [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks).
 
@@ -116,7 +116,7 @@ You can use the following tools and services that {{site.data.keyword.cloud_notm
 
 | Tool | Method |
 |:------|:--------|
-| Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`**cf push**` command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html). |
+| Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`**cf push**` command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}. |
 | Eclipse | Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.cloud_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.cloud_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.cloud_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
 | {{site.data.keyword.cloud_notm}} DevOps Delivery Pipeline | Manage your code on DevOps GitHub repository and deploy your app to {{site.data.keyword.cloud_notm}} by using the DevOps Delivery Pipeline. |
@@ -193,7 +193,7 @@ Optional: If you change your app, you must upload those changes by entering the 
 
 * When you use the cf push command, the cf command line interface copies all of the files and directories from your current directory to {{site.data.keyword.cloud_notm}}. Ensure that you have only the required files in your app directory.
 * Ensure that your organization has enough memory for all instances of your app. To view the memory quota for your org, use cf org org_name.
-* For more information about cf push, see [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html).
+* For more information about cf push, see [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}.
 
 ## Migrating your data and using services
 {: #ht_service}

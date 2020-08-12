@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -194,7 +194,7 @@ Ensure that you created a space in your current organization. To create a space,
 * From the menu bar, click **Manage > Account**, and select **Cloud Foundry orgs**. Click the name of the organization that you want to create the space in, and click **Add a space**.
 * In the Cloud Foundry command-line interface, type `cf create-space <space_name> -o <organization_name>`.
 
-Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](http://ibm.biz/bluemixstatus){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") page to check whether a service or component has an issue.
+Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](http://ibm.biz/bluemixstatus){: external} page to check whether a service or component has an issue.
 
 ## Can't perform requested actions
 {: #ts_authority}
@@ -481,7 +481,7 @@ Use one of the following methods, depending on the cause of the problem:
 	  ```
       {: pre}
 
-    * Use the [package.json](https://www.npmjs.com/package/jsonfile){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") file. For example:
+    * Use the [package.json](https://www.npmjs.com/package/jsonfile){: external} file. For example:
 	    ```
 		  {
         ...
@@ -523,6 +523,6 @@ Use one of the following methods, depending on the cause of the problem:
     ```
     {: codeblock}
 
-For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: external}.
 
 

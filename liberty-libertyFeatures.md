@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ subcollection: cloud-foundry-public
 {: #liberty_features}
 
 The Liberty for Java runtime includes a subset of Liberty features. To use a feature that is not included in the runtime, see [Install Liberty features](/docs/cloud-foundry-public?topic=cloud-foundry-public-install-features). For a complete list of the features available in Liberty, along with Java EE versions and other information, see
-[Liberty features ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html).
+[Liberty features](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html){: external}.
 
 ## Cloud-specific features
 {:#cloud-features}
@@ -117,8 +117,8 @@ The Liberty for Java runtime also makes some Liberty beta features available. Th
 
 Some features that Liberty provides are not available in the Liberty for Java runtime because they are not applicable in the cloud environment.
 
-Keep in mind that a server cannot load incompatible features, so be sure it is configured to enable only features that are compatible. See [Supported Java EE 6 and 7 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos.html)
-and [Supported Java EE 7 and 8 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos_7_8.html).
+Keep in mind that a server cannot load incompatible features, so be sure it is configured to enable only features that are compatible. See [Supported Java EE 6 and 7 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos.html){: external}
+and [Supported Java EE 7 and 8 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos_7_8.html){: external}.
 
 Applications that use remote EJBs can be deployed to {{site.data.keyword.cloud_notm}}, but the remote EJBs are not remotely accessible with the CORBA/IIOP
 protocol because of port restrictions in the {{site.data.keyword.cloud_notm}} environment.

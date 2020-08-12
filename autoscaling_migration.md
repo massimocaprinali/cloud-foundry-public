@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -118,7 +118,7 @@ Running with both offering simultaneously may lead to unexpected scaling behavio
 
   The policy definition in new autoscaler is different than the one in legacy Auto-Scaling service. If you want to reuse the existing policy, you will need to convert it to the new format. A simple policy migration utility is also provided to help convert the policy.
 
-  - From the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+  - From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
   - On the **Resource List** page, click **Cloud Foundry Apps**.
   - Click the application to view its **Overview** page.
   - Select **Connections** in the left navigation pane, and hover the legacy **Auto-Scaling** service instance entry

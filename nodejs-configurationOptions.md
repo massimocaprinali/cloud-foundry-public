@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -102,7 +102,7 @@ sdk-for-nodejs buildpack.
 
 ## NPM scripts
 {: #npm_scripts}
-NPM provides a scripting facility allowing you to run scripts, including **preinstall** and **postinstall** scripts which are applied before and after your node_modules are installed.  See [npm-scripts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/misc/scripts) for complete details.
+NPM provides a scripting facility allowing you to run scripts, including **preinstall** and **postinstall** scripts which are applied before and after your node_modules are installed.  See [npm-scripts](https://docs.npmjs.com/misc/scripts){: external} for complete details.
 
 ## Cache behavior
 {: #cache_behavior}

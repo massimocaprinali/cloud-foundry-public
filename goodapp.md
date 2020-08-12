@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -133,7 +133,7 @@ As explained by the original concept creator,
 
 So that means that the 12 factor apps check-list is really just a set of guidelines that dictate how an application should be built to properly support the concept of independently managed and iterated services.
 
-The [12 factors web site](https://12factor.net) describes the 12 factors as:
+The [12 factors web site](https://12factor.net){: external} describes the 12 factors as:
 
 1. One codebase tracked in revision control, many deploys
 2. Explicitly declare and isolate dependencies

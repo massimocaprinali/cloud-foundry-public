@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -132,7 +132,7 @@ As your application is updated from DEA architecture to Diego, you might experie
 
 Complete the following steps to migrate your app to Diego:
 
- 1.  Install both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window}.
+ 1.  Install both the [cf CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external}.
  2. Review the known issues list in the following section.
  3. Set the Diego flag to change your app to running on Diego:
   ```
@@ -159,11 +159,11 @@ There are the following known issues that you might need to address when migrati
   * Worker applications deployed with the `--no-route` option do not report as healthy. To prevent this, disable the port-based health check with the `cf set-health-check APP_NAME none` command.
   * Some apps might use a high number of file descriptors (inodes). If you encounter this issue, you must increase disk quota for your app with the `cf scale APP_NAME [-k DISK]` command.
 
-For the comprehensive list of known issues, see the Cloud Foundry documentation page for [Migrating to Diego ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/diego-design-notes/blob/master/migrating-to-diego.md){: new_window}.
+For the comprehensive list of known issues, see the Cloud Foundry documentation page for [Migrating to Diego](https://github.com/cloudfoundry/diego-design-notes/blob/master/migrating-to-diego.md){: external}.
 
 Until support for the older DEA architecture is removed, you can run the following command to transition back to DEAs: `cf disable-diego APPLICATION_NAME`. You can also still deploy apps to the DEA architecture until support is removed.
 
-You must have both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window} installed to use the `disable-diego` command.
+You must have both the [cf CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external} installed to use the `disable-diego` command.
 {: note}
 
 1. Deploy the application without starting it:
@@ -192,7 +192,7 @@ If you still have applications running on DEAs, you can use the `**cf files**` c
 If the application fails to start, the application is stopped and the entire contents of your application container are removed. Therefore, if an application stops or if the staging process of an application fails, log files will not be available for you to use.
 {: note}
 
-If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){: new_window}.
+If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){: external}.
 
 The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `cf app logs appname` command in a separate command line from the cf command line interface to track the logs when you deploy the application.
 {: note}
@@ -265,7 +265,7 @@ A `package.json` file must be in your Node.js application for the application to
   ```
   {: codeblock}
 
-  For more information about the `package.json` file, see [Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+  For more information about the `package.json` file, see [Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file){: external}.
 
   * To deploy PHP, Ruby, or Python applications to {{site.data.keyword.cloud_notm}}, use the following command from the directory that contains your application source:
 
@@ -492,7 +492,7 @@ The following variables are defined by Diego:
 
 </dl>
 
-Variables that are defined by buildpacks are different for each buildpack. See [Buildpacks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){:new_window} for any other compatible buildpacks.
+Variables that are defined by buildpacks are different for each buildpack. See [Buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){: external} for any other compatible buildpacks.
 
 <ul>
     <li>The following variables are defined by the Liberty Buildpack:
@@ -533,7 +533,7 @@ if (process.env.VCAP_SERVICES) {
 ```
 {: codeblock}
 
-For more information about each environment variable, see [Cloud Foundry Environment Variables ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){: new_window}.
+For more information about each environment variable, see [Cloud Foundry Environment Variables](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){: external}.
 
 ## Customizing application deployments
 {: #customize_dep}

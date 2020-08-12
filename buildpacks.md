@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -101,7 +101,7 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 
 *  Cloud Foundry
 
-    Cloud Foundry is an open source platform for application lifecycle automation.  {{site.data.keyword.cloud}} is built on top of the Cloud Foundry platform as a service. Check out the [Cloud Foundry documentation](https://www.cloudfoundry.org/learn/) to learn more.
+    Cloud Foundry is an open source platform for application lifecycle automation.  {{site.data.keyword.cloud}} is built on top of the Cloud Foundry platform as a service. Check out the [Cloud Foundry documentation](https://www.cloudfoundry.org/learn/){: external} to learn more.
 
 *  Cloud Foundry Application
 

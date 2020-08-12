@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -115,7 +115,7 @@ There are three ways to develop your app:
 
 [Add a toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
-Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
+Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain){: external} tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
 {: tip}
 
 ## Creating your web app with the {{site.data.keyword.cloud_notm}} console
@@ -205,7 +205,7 @@ This environment variable is the serialization of a JSON object with one entry f
   ```
   {: pre}
 
-  For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html).
+  For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}.
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```

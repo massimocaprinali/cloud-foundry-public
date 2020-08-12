@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -109,7 +109,7 @@ Cloud-ready apps are horizontally scalable, and are therefore able to dynamicall
 ## Monitoring options
 {: #monitoring-bps}
 
-{{site.data.keyword.cloud_notm}} makes it easy to monitor your application with services like [Sysdig](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) and [New Relic ![External link icon](../icons/launch-glyph.svg)](http://newrelic.com/){: new_window}. Check out [Integrated logging capabilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring_logging_cloud_foundry_apps) for more information.
+{{site.data.keyword.cloud_notm}} makes it easy to monitor your application with services like [Sysdig](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) and [New Relic](http://newrelic.com/){: external}. Check out [Integrated logging capabilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-monitoring_logging_cloud_foundry_apps) for more information.
 
 ## Support options
 {: #support}
