@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,9 +96,9 @@ subcollection: cloud-foundry-public
 # Determining your organization architecture
 {: #orgstructure}
 
-<!-- This file is reused in the CF Public subcollection. -->
 
-To design an environment that uses {{site.data.keyword.cloud_notm}} Public, {{site.data.keyword.Bluemix_dedicated_notm}} or any combination, you can use the following organization architectures:
+
+You can use the following organization architectures:
 
 * Single-organization: Consider this architecture if you require the same set of users to access resources that are available anywhere in the organization.
 * Multi-organization: Consider this architecture if you require isolation between different environments.

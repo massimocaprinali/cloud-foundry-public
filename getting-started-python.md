@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,9 +96,9 @@ subcollection: cloud-foundry-public
 # Getting started with Python
 {: #getting-started-python}
 
-<!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-python) and explore on your own.
+
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-python){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Python getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
@@ -111,7 +111,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 
 You'll need the following:
 
-* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
+* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}
 * [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Python](https://www.python.org/downloads/){: external}
@@ -136,12 +136,12 @@ Peruse the files in the *get-started-python* directory to familiarize yourself w
 ## Step 2: Run the app locally
 {: #run_locally-python}
 
-See [The Hitchhiker’s Guide to Python! ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.python-guide.org/en/latest/) for help setting up Python on your system.
+See [The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/){: external} for help setting up Python on your system.
 {: tip}
 
-Install the dependencies listed in the [requirements.txt ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://pip.readthedocs.io/en/stable/user_guide/#requirements-files) file to be able to run the app locally.
+Install the dependencies listed in the [requirements.txt](https://pip.readthedocs.io/en/stable/user_guide/#requirements-files){: external} file to be able to run the app locally.
 
-You can optionally use a [virtual environment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://packaging.python.org/installing/#creating-and-using-virtual-environments) to avoid having these dependencies clash with those of other Python projects or your operating system.
+You can optionally use a [virtual environment](https://packaging.python.org/installing/#creating-and-using-virtual-environments){: external} to avoid having these dependencies clash with those of other Python projects or your operating system.
 
   ```
 pip install -r requirements.txt
@@ -228,7 +228,7 @@ ibmcloud cf apps
   ```
   {: pre}
 
-You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app.
+You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external} to view your app.
 
 ## Step 5: Add a database
 {: #add_database-python}
@@ -271,7 +271,7 @@ We're now going to update your local code to point to this database. We'll creat
   ```
   {: codeblock}
 
-2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste the `username`, `password`, and `host` from the credentials to the same fields of the `vcap-local.json` file replacing **CLOUDANT_DATABASE_USERNAME**, **CLOUDANT_DATABASE_PASSWORD**, and **CLOUDANT_DATABASE_HOST**.
 
@@ -292,7 +292,7 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 ## Next steps
 {: #nextsteps-python}
 
-* [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
+* [Samples](https://ibm-cloud.github.io){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 

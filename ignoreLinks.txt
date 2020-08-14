@@ -1,1 +1,6 @@
-https://{DomainName}
+https://{DomainName},
+https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com,
+/docs/ElephantSQL,
+/docs/get-support,
+https://www.youtube.com/watch?v=lH6EY761wgc,
+https://www.youtube.com/watch?v=oUpqXxmr6oU,

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -100,7 +100,7 @@ Applications run in a Java runtime environment (JRE) that is provided and config
 
 ## {{site.data.keyword.IBM_notm}} JRE
 
-By default, applications are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html).
+By default, applications are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html){: external}.
 
  {{site.data.keyword.IBM_notm}}JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
  Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
@@ -126,7 +126,7 @@ If enabled, OpenJDK version 8 is used by default. Use the JBP_CONFIG_OPENJDK env
 ```
 {: pre}
 
-The version property can be set to a version range such as 1.7.+, 1.8.+ or any specific version listed on the [list of available OpenJDK versions](https://download.run.pivotal.io/openjdk/lucid/x86_64/index.yml). For best results, use Java 8.
+The version property can be set to a version range such as 1.7.+, 1.8.+ or any specific version listed on the [list of available OpenJDK versions](https://download.run.pivotal.io/openjdk/lucid/x86_64/index.yml){: external}. For best results, use Java 8.
 
 ## OpenJ9
 {: #openj9}
@@ -171,7 +171,7 @@ The Liberty buildpack configures the default JVM options by taking into account:
 
 * The {{site.data.keyword.cloud_notm}} environment.
 
-    The JVM options are configured to provide optimization in a {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
+    The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
   * fast failure and recovery of an application is configured by disabling JVM dumps options and killing of the processes when an application's memory is exhausted.
   * virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
   * routing of information on the application's available memory resources at the time of failure to the Loggregator.
@@ -207,14 +207,14 @@ Applications can customize the JVM options with the specifications that are defi
 <td> {{site.data.keyword.IBM_notm}}JRE</td>
 <td>includes runtime options (prefixed by -X), any Java system properties (prefixed with -D), and does not recommend -XX for the casual usage (these options are subject to change)
 </td>
-<td>[Version 8 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/appendixes/cmdline/cmdline.html), [Version 7 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html)
+<td>[Version 8 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/appendixes/cmdline/cmdline.html){: external}, [Version 7 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html){: external}
 </td>
 </tr>
 
 <tr>
 <td> OpenJDK </td>
 <td>is based on the HotSpot runtime that has the notation of -X for non-standard, -XX for developer options, and Boolean flags to enable or disable the option </td>
-<td>[HotSpot Runtime Overview  ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://openjdk.java.net/groups/hotspot//docs/RuntimeOverview.html) </td>
+<td>[HotSpot Runtime Overview](http://openjdk.java.net/groups/hotspot//docs/RuntimeOverview.html){: external} </td>
 </tr>
 </table>
 

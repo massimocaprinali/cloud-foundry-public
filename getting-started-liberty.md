@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,9 +96,9 @@ subcollection: cloud-foundry-public
 # Getting started with Liberty for Java
 {: #getting-started-liberty}
 
-<!-- This file is reused in the CF Public subcollection. -->
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java) and explore on your own.
+
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Liberty for Java getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
@@ -111,7 +111,7 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 
 You'll need the following accounts and tools:
 
-* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
+* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}
 * [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Git](https://git-scm.com/downloads){: external}
 * [Maven](https://maven.apache.org/download.cgi){: external}
@@ -221,7 +221,7 @@ ibmcloud cf apps
   ```
   {: pre}
 
-You can also go to the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window} to view your app. If you click **Visit App URL**, remember to append "/GetStartedJava" to the URL.
+You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external} to view your app. If you click **Visit App URL**, remember to append "/GetStartedJava" to the URL.
 
 You can troubleshoot errors in the deployment process by using the `ibmcloud cf logs GetStartedJava --recent` command.
 {: tip}  
@@ -247,7 +247,7 @@ Environment variables enable you to separate deployment settings from your sourc
 
 We're now going to update your local code to point to this database. We'll store the credentials for the services in a properties file. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the `VCAP_SERVICES` environment variable.
 
-1. Find your app in the {{site.data.keyword.cloud_notm}} [resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+1. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 2. Copy and paste just the `url` from the credentials to the `url` field of the `src/main/resources/cloudant.properties` file, and save the changes.
 
@@ -278,7 +278,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 Check out the following resources:
 
 
-* [Samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-cloud.github.io){: new_window}
-* [Architecture Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/architecture/architectures){: new_window}
+* [Samples](https://ibm-cloud.github.io){: external}
+* [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
 

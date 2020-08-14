@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -126,7 +126,7 @@ applications:
 {: #pushing_published_app}
 
 If you want your application to contain all its required binaries so that the buildpack does not download any
-external binaries, you can push a published *self-contained* application.  See [.NET Core App Types](https://docs.microsoft.com/en-us/dotnet/articles/core/app-types){: new_window}
+external binaries, you can push a published *self-contained* application.  See [.NET Core App Types](https://docs.microsoft.com/en-us/dotnet/articles/core/app-types){: external}
 for more information on self-contained applications.
 
 To publish an application issue a command such as:

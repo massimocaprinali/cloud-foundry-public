@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ subcollection: cloud-foundry-public
 # Download, modify, and redeploy your Cloud Foundry app with the command-line interface
 {: #cf-deploy-cli}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Use the {{site.data.keyword.cloud}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
 {: shortdesc}
@@ -111,9 +111,9 @@ After you install the CLI, you can get started:
 
   <pre class="pre"><code class="hljs">cd <var class="keyword varname">your_new_directory</var></code></pre>
 
-  2.  Make changes to your app code as you see fit. For example, if you are using a {{site.data.keyword.cloud_notm}} sample application and your app contains the `src/main/webapp/index.html` file, you can modify it and edit "Thanks for creating ..." to say something new. Ensure the app runs locally before you deploy it back to {{site.data.keyword.cloud_notm}}.
+  2.  Make changes to your app code as you see fit. For example, if you are using an {{site.data.keyword.cloud_notm}} sample application and your app contains the `src/main/webapp/index.html` file, you can modify it and edit "Thanks for creating ..." to say something new. Ensure the app runs locally before you deploy it back to {{site.data.keyword.cloud_notm}}.
 
-    Take note of the `manifest.yml` file. When deploying your app back to {{site.data.keyword.cloud_notm}}, this file is used to determine your application’s URL, memory allocation, number of instances, and other crucial parameters. You can [read more about the manifest file ![External link icon](../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){: new_window} in the Cloud Foundry documentation.
+    Take note of the `manifest.yml` file. When deploying your app back to {{site.data.keyword.cloud_notm}}, this file is used to determine your application’s URL, memory allocation, number of instances, and other crucial parameters. You can [read more about the manifest file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){: external} in the Cloud Foundry documentation.
 
     Also pay attention to the `README.md` file, which contains details such as build instructions if applicable.
 
@@ -140,7 +140,7 @@ After you install the CLI, you can get started:
   ```
   {: pre}
 
-   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the **`ibmcloud cf push`** command. For more information, see [**`ibmcloud cf push`**](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
+   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
   6. Access your app by browsing to the app URL.
 

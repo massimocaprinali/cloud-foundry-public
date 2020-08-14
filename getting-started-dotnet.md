@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -96,16 +96,16 @@ subcollection: cloud-foundry-public
 # Getting started with ASP.NET Core
 {: #getting_started-dotnet}
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core) and explore on your own.
+Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core){: external} and explore on your own.
 {: hide-in-docs}
 
-By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud}} database service in your app. The ASP.NET core is complied into a .dll package. You can deploy the application with the code or with the precompiled file (.DLL) of your applicattion.
+By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud}} database service in your app. The ASP.NET core is complied into a .dll package. You can deploy the application with the code or with the precompiled file (.DLL) of your application.
 
 ## Before you begin
 {: #prereqs-dotnet}
 
 You'll need the following:
-* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration)
+* [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}
 * [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started)
 * [Git](https://git-scm.com/downloads){: external}
 * Install .NET Core SDK 3.1 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}.
@@ -203,7 +203,7 @@ ibmcloud cf apps
   ```
   {: pre}
 
-You can also go to the {{site.data.keyword.cloud_notm}} [Resource List](https://cloud.ibm.com/resources) to view your app.
+You can also go to the {{site.data.keyword.cloud_notm}} [Resource List](https://cloud.ibm.com/resources){: external} to view your app.
 
 ## Step 5: Add a database
 {: #add_database}
@@ -246,7 +246,7 @@ We're now going to update your local code to point to this database. We'll store
    ```
    {: codeblock}
 
-1. Find your app in the {{site.data.keyword.cloud_notm}} [Resource List](https://cloud.ibm.com/resources). On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
+1. Find your app in the {{site.data.keyword.cloud_notm}} [Resource List](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 1. Copy and paste just the `url` value from the credentials to the `url` field of the `vcap-local.json` file, replacing `CLOUDANT_DATABASE_URL`.
 

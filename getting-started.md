@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -101,6 +101,10 @@ subcollection: cloud-foundry-public
 
 {: shortdesc}
 
+## Before you begin
+
+Review the [{{site.data.keyword.ibmcf_full}} terms and conditions](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8884-01){: external}.
+
 ## Developing your app
 {: #develop}
 
@@ -115,7 +119,7 @@ There are three ways to develop your app:
 
 [Add a toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) that includes the {{site.data.keyword.contdelivery_full}} service to your app. Then, [use the toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
-Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain) tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
+Try the [Develop a Cloud Foundry app](https://www.ibm.com/cloud/architecture/tutorials/introduce-develop-cloud-foundry-app-toolchain){: external} tutorial to learn about using toolchains to modify and continuously deliver a simple "Hello World" sample Cloud Foundry app.
 {: tip}
 
 ## Creating your web app with the {{site.data.keyword.cloud_notm}} console
@@ -164,7 +168,7 @@ This environment variable is the serialization of a JSON object with one entry f
 ## Building your app by using the Cloud Foundry CLI
 {: #ee_cf}
 
-{{site.data.keyword.cloud_notm}} provides several tools for you to start coding your app, for example, the `cf` command line interface and Eclipse tools. In this example you will use the `cf` command line interface to start coding your app.
+{{site.data.keyword.cloud_notm}} provides several tools for you to start coding your app, for example, the `ibmcloud cf` command line interface and Eclipse tools. In this example you will use the `ibmcloud cf` command line interface to start coding your app.
 
   1. First, download and develop your app code.
 
@@ -173,39 +177,39 @@ This environment variable is the serialization of a JSON object with one entry f
     3. Extract the downloaded file to a directory.
     4. Develop the code with your locally integrated development environment.
 
-  2. Install the `cf` command line interface (CLI).
+  2. Install the `ibmcloud cf` command line interface (CLI).
 
-    1. Download the `cf` command line tool installation program for your operating system.
+    1. Download the `ibmcloud cf` command line tool installation program for your operating system.
     2. Follow the tool wizard to complete the installation.
-    3. Use the `cf -v` command to verify the version of the `cf` command line interface.
+    3. Use the `ibmcloud cf -v` command to verify the version of the `ibmcloud cf` command line interface.
 
-    **Requirement:** Make sure that you always use the latest version of the `cf` command line tool.
+    **Requirement:** Make sure that you always use the latest version of the `ibmcloud cf` command line tool.
 
-  3. After you install the `cf` command line interface, you must specify which {{site.data.keyword.cloud_notm}} region you want to work with by using the `cf api` command. The API endpoint for the US South region is `api.us-south.cf.cloud.ibm.com`. Additional API endpoints for other regions can be found [here](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). Enter the following command to connect to {{site.data.keyword.cloud_notm}}:
+  3. After you install the `ibmcloud cf` command line interface, you must specify which {{site.data.keyword.cloud_notm}} region you want to work with by using the `ibmcloud cf api` command. The API endpoint for the US South region is `api.us-south.cf.cloud.ibm.com`. Additional API endpoints for other regions can be found [here](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). Enter the following command to connect to {{site.data.keyword.cloud_notm}}:
 
   ```
-  cf api api.us-south.cf.cloud.ibm.com
+  ibmcloud cf api api.us-south.cf.cloud.ibm.com
   ```
 
   To find other API endpoints, see [Regions and Endpoints](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). After you specify the {{site.data.keyword.cloud_notm}} region, the location information that you specified is saved.
 
-  4. Next, log in to {{site.data.keyword.cloud_notm}} by using the `cf login` command.
+  4. Next, log in to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf login` command.
 
   ```
-  cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
+  ibmcloud cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
   ```
   {: pre}
 
-  If your organization uses single sign on, use `cf login -sso`.
+  If your organization uses single sign on, use `ibmcloud cf login -sso`.
 
   5. After you are logged in to {{site.data.keyword.cloud_notm}}, you are ready to deploy your app back to {{site.data.keyword.cloud_notm}}. From your app directory, enter the following command:
 
   ```
-  cf push <your_appname>
+  ibmcloud cf push <your_appname>
   ```
   {: pre}
 
-  For more information, see the [`cf push` command](/docs/cli/reference/ibmcloud?topic=cf-cli-plugin-cf-cli-plugin#cf_push).
+  For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}.
 
   6. Now, you can access the app by entering the following app URL in a browser:
   ```
@@ -215,26 +219,26 @@ This environment variable is the serialization of a JSON object with one entry f
 
 You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Getting started page of your app in the {{site.data.keyword.cloud_notm}} console.
 
-### Binding a service by using the cf cli
+### Binding a service by using the ibmcloud cf cli
 {: #ee_cfbind}
 
-You can also bind a service by using the `cf` command line interface. This example assumes that you want to add the {{site.data.keyword.cloudant}} service to your app with the `cf` command line interface.
+You can also bind a service by using the `ibmcloud cf` command line interface. This example assumes that you want to add the {{site.data.keyword.cloudant}} service to your app with the `ibmcloud cf` command line interface.
 
-To use the {{site.data.keyword.cloudant}} service within your app, create a {{site.data.keyword.cloudant}} service instance, bind your app to the service instance, and then use the service instance. The same procedure applies to all the other services.
+To use the {{site.data.keyword.cloudant}} service within your app, create an {{site.data.keyword.cloudant}} service instance, bind your app to the service instance, and then use the service instance. The same procedure applies to all the other services.
 
-  1. Create a {{site.data.keyword.cloudant}} NoSQL DB service instance.
+  1. Create an {{site.data.keyword.cloudant}} NoSQL DB service instance.
 
-  Use the `cf create-service` command to create a new instance of a service. In this example, <Lite> is the name of the plan. For example:
+  Use the `ibmcloud cf create-service` command to create a new instance of a service. In this example, `<Lite>` is the name of the plan. For example:
 
   ```
-  cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
+  ibmcloud cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
   ```
   {: pre}
 
-  You can also use the `cf services` command to see the list of service instances that you created.
+  You can also use the `ibmcloud cf services` command to see the list of service instances that you created.
 
   ```
-  cf services
+  ibmcloud cf services
   ```
   {: pre}
 
@@ -242,16 +246,16 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
 
   2. Bind the service instance to your app.
 
-  To use a service instance, you must bind it to your app. Use the `cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
+  To use a service instance, you must bind it to your app. Use the `ibmcloud cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
 
   ```
-  cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
+  ibmcloud cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
   ```
   {: pre}
 
   Binding a service instance to an app enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new app will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the app and the service instance differently during the binding. For example, some services might create a new tenant for each app that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the app allowing communication between the app and the service.
 
-  If the app is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the app is restarted. To restart your app, use the `cf restart` command.
+  If the app is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the app is restarted. To restart your app, use the `ibmcloud cf restart` command.
   {: note}
 
   3. Use the service instance.
@@ -263,7 +267,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   <dt>password</dt>
   <dd>secret</dd>
   <dt>url</dt>
-  <dd>https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com</dd></dl>
+  <dd>`https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com`</dd></dl>
 
   For example, your Node.js app might access this information as follows:
   ```
@@ -280,7 +284,7 @@ To use the {{site.data.keyword.cloudant}} service within your app, create a {{si
   ```
   {: codeblock}
 
-  As the sample code shows, to connect to a {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
+  As the sample code shows, to connect to an {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
   {: note}
 
   4. Interact with the service instance.
@@ -312,9 +316,9 @@ var create_message = function(req, res) {
 
   5. **Optional:** Unbind or delete a service instance.
 
-  You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the `cf unbind-service command`.  To delete a service instance, use the `cf delete-service` command.
+  You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the `ibmcloud cf unbind-service command`.  To delete a service instance, use the `ibmcloud cf delete-service` command.
 
-  For more information about services, see Services. For more information about the `cf` options that you can use to manage your apps in the {{site.data.keyword.cloud_notm}} environment, run `cf --help` in the `cf` command line interface.
+  For more information about services, see Services. For more information about the `ibmcloud cf` options that you can use to manage your apps in the {{site.data.keyword.cloud_notm}} environment, run `ibmcloud cf --help` in the `ibmcloud cf` command line interface.
 
   Make sure you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any app that is bound to a deleted service cannot have its <VCAP_SERVICES> environment variable updated until the app is restarted.
   {: important}
@@ -337,6 +341,6 @@ You can also calculate your app cost manually by adding up the prices of your ru
 
 As you build more apps, the quota might approach your limits. However, some apps that you might no longer use still occupy the quota. It’s easy to delete apps to free up some spaces in {{site.data.keyword.cloud_notm}} at any time.
 
-In the {{site.data.keyword.cloud_notm}} console, go to the app Overview page, click the menu icon, and delete the app that you no longer use. You can also use the `cf delete` command to delete apps.
+In the {{site.data.keyword.cloud_notm}} console, go to the app Overview page, click the menu icon, and delete the app that you no longer use. You can also use the `ibmcloud cf delete` command to delete apps.
 
 

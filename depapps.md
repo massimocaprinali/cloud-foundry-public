@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -132,11 +132,11 @@ As your application is updated from DEA architecture to Diego, you might experie
 
 Complete the following steps to migrate your app to Diego:
 
- 1.  Install both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window}.
+ 1.  Install both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external}.
  2. Review the known issues list in the following section.
  3. Set the Diego flag to change your app to running on Diego:
   ```
-  cf enable-diego APPLICATION_NAME
+  ibmcloud cf enable-diego APPLICATION_NAME
   ```
   {: pre}
 
@@ -147,7 +147,7 @@ IBM will alert you of the upcoming mandatory migration period when DEA architect
 To validate which backend the application is running on, use the following command:
 
   ```
-  cf has-diego-enabled APPLICATION_NAME
+  ibmcloud cf has-diego-enabled APPLICATION_NAME
   ```
   {: pre}
 
@@ -156,60 +156,60 @@ To validate which backend the application is running on, use the following comma
 
 There are the following known issues that you might need to address when migrating your apps to Diego:
 
-  * Worker applications deployed with the `--no-route` option do not report as healthy. To prevent this, disable the port-based health check with the `cf set-health-check APP_NAME none` command.
-  * Some apps might use a high number of file descriptors (inodes). If you encounter this issue, you must increase disk quota for your app with the `cf scale APP_NAME [-k DISK]` command.
+  * Worker applications deployed with the `--no-route` option do not report as healthy. To prevent this, disable the port-based health check with the `ibmcloud cf set-health-check APP_NAME none` command.
+  * Some apps might use a high number of file descriptors (inodes). If you encounter this issue, you must increase disk quota for your app with the `ibmcloud cf scale APP_NAME [-k DISK]` command.
 
-For the comprehensive list of known issues, see the Cloud Foundry documentation page for [Migrating to Diego ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/diego-design-notes/blob/master/migrating-to-diego.md){: new_window}.
+For the comprehensive list of known issues, see the Cloud Foundry documentation page for [Migrating to Diego](https://github.com/cloudfoundry/diego-design-notes/blob/master/migrating-to-diego.md){: external}.
 
-Until support for the older DEA architecture is removed, you can run the following command to transition back to DEAs: `cf disable-diego APPLICATION_NAME`. You can also still deploy apps to the DEA architecture until support is removed.
+Until support for the older DEA architecture is removed, you can run the following command to transition back to DEAs: `ibmcloud cf disable-diego APPLICATION_NAME`. You can also still deploy apps to the DEA architecture until support is removed.
 
-You must have both the [cf CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli/releases){: new_window} and the [Diego-Enabler CLI Plugin ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-incubator/Diego-Enabler){:new_window} installed to use the `disable-diego` command.
+You must have both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external} installed to use the `disable-diego` command.
 {: note}
 
 1. Deploy the application without starting it:
 ```
-cf push APPLICATION_NAME --no-start
+ibmcloud cf push APPLICATION_NAME --no-start
 ```
 {: pre}
 2. Run the disable-diego command:
 ```
-cf disable-diego APPLICATION_NAME
+ibmcloud cf disable-diego APPLICATION_NAME
 ```
 {: pre}
 3. Start the application:
 ```
-cf start APPLICATION_NAME
+ibmcloud cf start APPLICATION_NAME
 ```
 {: pre}
 
 ### Starting an application
 {: #startapp}
 
-When an application is started, the instance or instances of the application container are created. For applications running on Diego, you can use the `**cf ssh**` or `**cf scp**` command to access the file system of the application container which includes the logs. The `**cf files**` command does not work for apps running on the Diego architecture.
+When an application is started, the instance or instances of the application container are created. For applications running on Diego, you can use the `ibmcloud cf ssh` or `ibmcloud cf scp` command to access the file system of the application container which includes the logs. The `ibmcloud cf files` command does not work for apps running on the Diego architecture.
 
-If you still have applications running on DEAs, you can use the `**cf files**` command to view the files within the application container until support for DEAs is removed.
+If you still have applications running on DEAs, you can use the `ibmcloud cf files` command to view the files within the application container until support for DEAs is removed.
 
 If the application fails to start, the application is stopped and the entire contents of your application container are removed. Therefore, if an application stops or if the staging process of an application fails, log files will not be available for you to use.
 {: note}
 
-If the logs for your application are no longer available so that the `**cf ssh**`, `**cf scp**`, or `**cf files**` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `**cf logs**` command instead. The `**cf logs**` command uses the Cloud Foundry log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){: new_window}.
+If the logs for your application are no longer available so that the `ibmcloud cf ssh`, `ibmcloud cf scp`, or `ibmcloud cf files` command can no longer be used to see the cause of the staging errors inside the application container, you can use the `ibmcloud cf logs` command instead. The `ibmcloud cf logs` command uses the {{site.data.keyword.ibmcf_full}} log aggregator to collect the details of your application logs and system logs, and you can see what was buffered within the log aggregator. For more information about the log aggregator, see [Logging in Cloud Foundry](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){: external}.
 
-The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `cf app logs appname` command in a separate command line from the cf command line interface to track the logs when you deploy the application.
+The buffer size is limited. If an application runs for a long time and is not restarted, logs might not be displayed when you enter the `ibmcloud cf app logs appname --recent` command because the log buffer might have been cleared. Therefore, to debug staging errors for a large application, you can enter the `ibmcloud cf app logs appname` command in a separate command line from the `ibmcloud cf` command line interface to track the logs when you deploy the application.
 {: note}
 
-## Deploying applications by using the cf command
+## Deploying applications by using the ibmcloud cf command
 {: #dep_apps}
 
 When you deploy your applications to {{site.data.keyword.cloud_notm}} from the command line interface, a buildpack must be provided as the runtime environment according to your application language and framework. You can also use the Delivery Pipeline service to deploy applications to {{site.data.keyword.cloud_notm}}.
 
 {{site.data.keyword.cloud_notm}} [provides buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-available_buildpacks) that support Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your application by using the command line interface. Because {{site.data.keyword.cloud_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
 
-If you use an external buildpack, you must specify the URL of the buildpack by using the **-b** option when you deploy your application to {{site.data.keyword.cloud_notm}} from the command prompt.
+If you use an external buildpack, you must specify the URL of the buildpack by using the `-b` option when you deploy your application to {{site.data.keyword.cloud_notm}} from the command prompt.
 
   * To deploy Liberty server packages to {{site.data.keyword.cloud_notm}}, use the following command from your source directory:
 
   ```
-  cf push
+  ibmcloud cf push
   ```
   {: pre}
 
@@ -218,28 +218,28 @@ If you use an external buildpack, you must specify the URL of the buildpack by u
   * To deploy Java Tomcat applications to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
-  cf push appname -b https://github.com/cloudfoundry/java-buildpack.git -p app_path
+  ibmcloud cf push appname -b https://github.com/cloudfoundry/java-buildpack.git -p app_path
   ```
   {: pre}
 
   * To deploy WAR packages to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
-  cf push appname -p app.war
+  ibmcloud cf push appname -p app.war
   ```
   {: pre}
 
   Or, you can specify a directory that contains your application files by using the following command:
 
   ```
-  cf push appname -p "./app"
+  ibmcloud cf push appname -p "./app"
   ```
   {: pre}
 
   * To deploy Node.js applications to {{site.data.keyword.cloud_notm}}, use the following command:
 
   ```
-  cf push appname -p app_path
+  ibmcloud cf push appname -p app_path
   ```
   {: pre}
 
@@ -265,12 +265,12 @@ A `package.json` file must be in your Node.js application for the application to
   ```
   {: codeblock}
 
-  For more information about the `package.json` file, see [package.json](https://www.npmjs.org/doc/files/package.json.html){:new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+  For more information about the `package.json` file, see [Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file){: external}.
 
   * To deploy PHP, Ruby, or Python applications to {{site.data.keyword.cloud_notm}}, use the following command from the directory that contains your application source:
 
   ```
-  cf push appname
+  ibmcloud cf push appname
   ```
   {: pre}
 
@@ -278,33 +278,33 @@ A `package.json` file must be in your Node.js application for the application to
 
 An app is specific to the space where it is deployed. You can't move or copy an app from one space to another in {{site.data.keyword.cloud_notm}}. To deploy an app in multiple spaces, you must deploy your app in each space where you want to use the app by the following steps:
 
-  1. Switch to the space where you want to deploy your app by using the `**cf target**` command with the **-s** option:
+  1. Switch to the space where you want to deploy your app by using the `ibmcloud cf target` command with the `-s` option:
 
   ```
-  cf target -s <space_name>
+  ibmcloud cf target -s <space_name>
   ```
   {: pre}
 
-  2. Go to your app directory and deploy your app by using the `**cf app push**` command, where appname must be unique within your domain.
+  2. Go to your app directory and deploy your app by using the `ibmcloud cf app push` command, where appname must be unique within your domain.
 
   ```
-  cf app push appname
+  ibmcloud cf app push appname
   ```
   {: pre}
 
 ## Application manifest
 {: #appmanifest}
 
-Application manifests contain options that are applied to the `**cf push**` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.cloud_notm}}.
+Application manifests contain options that are applied to the `ibmcloud cf push` command. You can use an application manifest to reduce the number of deployment details that you must specify every time that you push an application to {{site.data.keyword.cloud_notm}}.
 
 In application manifests, you can specify options such as the number of application instances to create, the amount of memory and disk quota to allocate to applications, and other environment variables for the application. You can also use application manifests to automate application deployments. The default name of a manifest file is `manifest.yml`.
 
 ### Supported options in the manifest file
 
-The following table shows the supported options that you can use in an application manifest file. If you choose to use a different file name other than `manifest.yml`, you must use the **-f** option with the `**cf push**` command. In the following example, `appManifest.yml` is the file name:
+The following table shows the supported options that you can use in an application manifest file. If you choose to use a different file name other than `manifest.yml`, you must use the `-f` option with the `ibmcloud cf push` command. In the following example, `appManifest.yml` is the file name:
 
 ```
-cf push -f appManifest.yml
+ibmcloud cf push -f appManifest.yml
 ```
 {: pre}
 
@@ -492,7 +492,7 @@ The following variables are defined by Diego:
 
 </dl>
 
-Variables that are defined by buildpacks are different for each buildpack. See [Buildpacks ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){:new_window} for any other compatible buildpacks.
+Variables that are defined by buildpacks are different for each buildpack. See [Buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){: external} for any other compatible buildpacks.
 
 <ul>
     <li>The following variables are defined by the Liberty Buildpack:
@@ -533,7 +533,7 @@ if (process.env.VCAP_SERVICES) {
 ```
 {: codeblock}
 
-For more information about each environment variable, see [Cloud Foundry Environment Variables ![External link icon](../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){: new_window}.
+For more information about each environment variable, see [Cloud Foundry Environment Variables](http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html){: external}.
 
 ## Customizing application deployments
 {: #customize_dep}
@@ -548,14 +548,14 @@ To specify start commands for your application, you can use one of the following
 If you want the buildpack start commands to take precedence, specify **null** as the start command.
 {: note}
 
-  * Use the `**cf push**` command and specify the -c parameter. For example, when you deploy a Node.js application, you can specify the `**node app.js**` start command on the -c parameter:
+  * Use the `ibmcloud cf push` command and specify the `-c` parameter. For example, when you deploy a Node.js application, you can specify the `node app.js` start command on the `-c` parameter:
 
   ```
-  cf push appname -p app_path -c "node app.js"
+  ibmcloud cf push appname -p app_path -c "node app.js"
   ```
   {: pre}
 
-  * Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js application, you can specify the `**node app.js**` start command in the manifest file:
+  * Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js application, you can specify the `node app.js` start command in the manifest file:
 
   ```
   command: node app.js
@@ -573,9 +573,9 @@ User-defined environment variables are specific for an application. You have the
   	2. Click **Runtime** > **Environment Variables**.
   	3. Click **USER-DEFINED**, then click **ADD**.
   	4. Fill in the required fields, then click **SAVE**.
-  * Use the cf command line interface. Add a user-defined variable by using the `cf env-set` command. For example:
+  * Use the `ibmcloud cf` command line interface. Add a user-defined variable by using the `ibmcloud cf env-set` command. For example:
     ```
-    cf env-set appname env_var_name env_var_value
+    ibmcloud cf env-set appname env_var_name env_var_value
     ```
     {: pre}
 
@@ -606,7 +606,7 @@ export NODE_ENV=production;
 
 ###Preventing files and directories from being uploaded
 
-When you use the cf command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your application.
+When you use the `ibmcloud cf` command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your application.
 
 The `.cfignore` file must be in UTF-8 format.
 {: note}

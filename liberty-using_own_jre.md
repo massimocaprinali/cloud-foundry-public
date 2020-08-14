@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # Use your own JRE
 {: #using_own_jre}
 
-You can run your Liberty application on {{site.data.keyword.cloud}} with your own JRE. The liberty-for-java buildpack will provide support for the [runtimes supported by WebSphere Liberty](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_restrict.html#rwlp_restrict__rest13), but cannot guarantee full functionality of unsupported versions. You must complete the following to make your JRE available for your application.
+You can run your Liberty application on {{site.data.keyword.cloud}} with your own JRE. The liberty-for-java buildpack will provide support for the [runtimes supported by WebSphere Liberty](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_restrict.html#rwlp_restrict__rest13){: external}, but cannot guarantee full functionality of unsupported versions. You must complete the following to make your JRE available for your application.
 * Host the JRE in a location that the buildpack can download it from.
 * Host an `index.yml` file that provides the location of the JRE.
 * Configure your application to use your JRE.
@@ -129,7 +129,7 @@ Complete the following steps to host the JRE and the `index.yml` file:
 ## Configure the app
 {: #configure_app}
 
-You must set two environment variables on the Liberty application to configure the buildpack to use an alternative JRE. Set the **JBP_CONFIG_OPENJDK** to identify the location of the `index.yml` file  and set the **JVM** environment variable to *openjdk*. For more information on the format for version-value strings, see the Cloud Foundry documentation on [Version Syntax and Ordering and Wildcards ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/util-repositories.md){: new_window}.
+You must set two environment variables on the Liberty application to configure the buildpack to use an alternative JRE. Set the **JBP_CONFIG_OPENJDK** to identify the location of the `index.yml` file  and set the **JVM** environment variable to *openjdk*. For more information on the format for version-value strings, see the Cloud Foundry documentation on [Version Syntax and Ordering and Wildcards](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/util-repositories.md){: external}.
 
 The value for the **JBP_CONFIG_OPENJDK** variable is the `index.yml` file location and the JRE version to choose from the index.yml file.
 

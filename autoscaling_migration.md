@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -100,13 +100,13 @@ This new App Autoscaler offering is a replacement of the legacy. By migrating to
 
 * Simplified experience: No service creation and binding are needed to use the auto-scaling feature. You can directly configure the policy through the UI or CLI.
 
-* No need to re-stage your application: You do not need to re-stage your CF applications to make the auto-scaling take effect.
+* No need to re-stage your application: You do not need to re-stage your {{site.data.keyword.ibmcf_full}} applications to make the auto-scaling take effect.
 
 * Runtime independent: The app-autoscaler works for all language runtimes with the same user experience and same set of supported metrics.
 
 * No code injection: The new autoscaler does not require an autoscaler agent to be included in your code if you are using IBM runtimes and buildpacks. You simply set the policy and after a while,  the autoscaler will start collecting metrics and scale your app based on the metrics you defined in the policy.
 
-* Matching pace with the CF community: Future features of the app-autoscaler open-source project, will be available without delay in IBM Cloud.
+* Matching pace with the Cloud Foundry community: Future features of the app-autoscaler open-source project, will be available without delay in IBM Cloud.
 
 We provide similar user experience between the legacy offering and the new one, including the policy definition, metric statistics and scaling history retrieving.
 
@@ -118,7 +118,7 @@ Running with both offering simultaneously may lead to unexpected scaling behavio
 
   The policy definition in new autoscaler is different than the one in legacy Auto-Scaling service. If you want to reuse the existing policy, you will need to convert it to the new format. A simple policy migration utility is also provided to help convert the policy.
 
-  - From the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+  - From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
   - On the **Resource List** page, click **Cloud Foundry Apps**.
   - Click the application to view its **Overview** page.
   - Select **Connections** in the left navigation pane, and hover the legacy **Auto-Scaling** service instance entry
@@ -161,7 +161,7 @@ Alternatively, you can use command lines to migrate over.
 2. Unbind the legacy service instance from your application with Cloud Foundry Command Line tool:
 
    ```
-   cf unbind-service <YOUR_APP> <YOUR_SERVICE_INSTANCE>
+   ibmcloud cf unbind-service <YOUR_APP> <YOUR_SERVICE_INSTANCE>
    ```
    {: pre}
 
@@ -170,7 +170,7 @@ Alternatively, you can use command lines to migrate over.
    Now you can attach the new policy to your application through the new [AutoScaler CLI]:   
 
    ```
-   cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
+   ibmcloud cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
    ```
    {: pre}
 

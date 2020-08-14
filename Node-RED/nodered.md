@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -97,12 +97,12 @@ subcollection: cloud-foundry-public
 # Creating apps with the Node-RED Starter
 {: #gettingstarted-nodered}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Node-RED provides a browser-based flow editor that makes it easy to connect devices, APIs, and online services by using the wide range of nodes in the palette. You can deploy the flows to the Node.js runtime environment with a single click. This starter application provides a version of Node-RED that is customized to run in {{site.data.keyword.cloud}}.   
 {: shortdesc}
 
-Use the editor to create flows right away. You can also customize Node-RED itself. For more information, see the [Node-RED site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://nodered.org/){: new_window}{: new_window}.
+Use the editor to create flows right away. You can also customize Node-RED itself. For more information, see the [Node-RED site](http://nodered.org/){: external}.
 
 ## Using Node-RED
 {: #usingNodeRed}
@@ -128,7 +128,7 @@ You can customize your Node-RED instance for your needs. For example, you can re
 2. Ensure that the Cloud Foundry command-line interface (CLI) is installed. See [the instructions for installing the command line interface](/docs/cloud-foundry-public?topic=cloud-foundry-public-cf-deploy-cli) for more information.
 3. Log in to the {{site.data.keyword.cloud_notm}} environment.
   ```
-  cf login -a https://api.<ph conref="cloudoeconrefs.dita#cloudoeconrefs/domainname"></ph> -u <varname props="keyref(user_ID)">&lt;your user ID></varname> -p <varname>*****</varname> -o <varname props="keyref(org_name)">&lt;your org name></varname> -s <varname
+  ibmcloud cf login -a https://api.<ph conref="cloudoeconrefs.dita#cloudoeconrefs/domainname"></ph> -u <varname props="keyref(user_ID)">&lt;your user ID></varname> -p <varname>*****</varname> -o <varname props="keyref(org_name)">&lt;your org name></varname> -s <varname
   props="keyref(space_name)">&lt;your space name></varname>
   ```
   {: codeblock}
@@ -136,7 +136,7 @@ You can customize your Node-RED instance for your needs. For example, you can re
 
   For example, run the following command in the root directory of the application:
   ```
-  cf push <varname>&lt;yourappname></varname>
+  ibmcloud cf push <varname>&lt;yourappname></varname>
   ```
   {: pre}
 

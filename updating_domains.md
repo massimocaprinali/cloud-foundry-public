@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -107,7 +107,7 @@ The default shared domain is `mybluemix.net`, but `appdomain.cloud` is another d
 
 Complete these steps to update the domain for your Cloud Foundry org by using the console:
 
-1. From the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry Apps**.
 3. Click the application that you want to change the domain for. The app's **Overview** page is displayed.
 4. Select the **Routes** menu, notice the current domain, such as `<myapp.mybluemix.net>`, and click **Edit routes**.

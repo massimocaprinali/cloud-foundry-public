@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -97,9 +97,9 @@ subcollection: cloud-foundry-public
 # What is Cloud Foundry?
 {: #what-is-cloud-foundry}
 
-[Cloud Foundry](https://www.cloudfoundry.org/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") is the premier industry standard Platform-as-a-Service (PaaS), that ensures the fastest, easiest, and most reliable deployment of cloud-native applications. Cloud Foundry ensures that the build and deploy aspects of coding remain carefully coordinated with any attached services — resulting in quick, consistent and reliable iterating of applications.
+[Cloud Foundry](https://www.cloudfoundry.org/){: external} is the premier industry standard Platform-as-a-Service (PaaS), that ensures the fastest, easiest, and most reliable deployment of cloud-native applications. Cloud Foundry ensures that the build and deploy aspects of coding remain carefully coordinated with any attached services — resulting in quick, consistent and reliable iterating of applications.
 
-Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") to learn more about all the compute options available on {{site.data.keyword.cloud_notm}}.
+Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: external} to learn more about all the compute options available on {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Benefits of Cloud Foundry

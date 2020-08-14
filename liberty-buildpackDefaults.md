@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-10"
 
 keywords: cloud foundry
 
@@ -110,7 +110,7 @@ The buildpack provides two versions of the Liberty runtime:
   * Typically updated on a quarterly basis.
 
 2. The monthly release
-  * It must be explicity enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and
+  * It must be explicitly enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and
   the **IBM_LIBERTY_MONTHLY** environment variable with **true**.
   * It provides [monthly features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime).
   * Typically updated every 4 weeks.

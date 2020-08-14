@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -107,7 +107,7 @@ This capability is offered based on Cloud Foundry open source project [App-Autos
 
 If you already have an application deployed on Cloud Foundry,  access the autoscaling page with the following steps:
 
-1. From the [{{site.data.keyword.cloud_notm}} console ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry Apps**.
 3. Click the application to view its **Overview** page.
 4. Select the **Autoscaling** in the left navigation pane.
@@ -123,7 +123,7 @@ You can use  App Autoscaler command-line interface plug-in (aka AutoScaler CLI) 
 Use the following command to install `AutoScaler CLI` which is a plugin of Cloud Foundry CLI.  
 
 ```
-cf install-plugin -r CF-Community app-autoscaler-plugin
+ibmcloud cf install-plugin -r CF-Community app-autoscaler-plugin
 ```
 {:codeblock}
 
@@ -139,14 +139,14 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
     Use the command below to check the App-Autoscaler API endpoint setting.
 
     ```
-    cf asa
+    ibmcloud cf asa
     ```
     {: pre}
 
     If the App-Autoscaler API endpoint is incorrect, you need to reset it with command:
 
     ```
-    cf asa autoscaler.<DOMAIN>
+    ibmcloud cf asa autoscaler.<DOMAIN>
     ```
     {: pre}
 
@@ -186,21 +186,21 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
 *  Attach the policy to your application
 
     ```
-    cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
+    ibmcloud cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
     ```
     {: pre}
 
 *  (optional) Furthermore, you can query the most recent aggregated metrics of your application. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
 
     ```
-    cf asm <YOUR_APP> <METRIC_TYPE> --desc
+    ibmcloud cf asm <YOUR_APP> <METRIC_TYPE> --desc
     ```
     {: pre}
 
 *  (optional) Use the command below to query scaling history:
 
     ```
-    cf ash <YOUR_APP> --desc
+    ibmcloud cf ash <YOUR_APP> --desc
     ```
     {: pre}
 
@@ -262,8 +262,8 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 
 ## Related readings
 
-* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud)
-* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Applications](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications)
+* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
+* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Applications](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
 
 
 
@@ -272,9 +272,8 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 [autoscaler_user_guide]: https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md
 [autoscaling_policy]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/policy.md
 [autoscaler_cli]: https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-
-[autoscaling_cfee_doc]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
 [metric_type]: https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types
-[deploy_app]: https://{DomainName}/docs/cloud-foundry-public/deploy-apps.html#dep_apps
+[deploy_app]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps
 [legacy-autoscaling-catalog]: https://{DomainName}/catalog/services/auto-scaling
 [legacy-autoscaling-cli]: https://{DomainName}/docs/cli?topic=auto-scaling-cli-autoscalingcli#bx_as_policy_show
 [migrate_guide]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_migration

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -98,22 +98,21 @@ subcollection: cloud-foundry-public
 {: #offline_mode}
 
 When a Liberty application is pushed to {{site.data.keyword.cloud}}, the Liberty buildpack can access sites external to {{site.data.keyword.cloud_notm}}
-to acquire artifacts required by the application.  The following are the external sites that the Liberty buildpack can access.  In [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated) environments, these sites might need to be *whitelisted*.
+to acquire artifacts required by the application.  
 
 * https://download.run.pivotal.io, and https://java-buildpack.cloudfoundry.org are used to access components for:
-  * [AppDynamics agent ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.appdynamics.com/)
-  * [MariaDB JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mariadb.com/)
+  * [AppDynamics agent](https://www.appdynamics.com/){: external}
+  * [MariaDB JDBC driver](https://mariadb.com/){: external}
   * [New Relic agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic)
   * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
-  * [PostgreSQL JDBC driver ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.postgresql.org)
-* https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zeroturnaround.com/software/jrebel/).
-* https://download.ruxit.com/agent/paas/cloudfoundry/java is used to access components for [Dynatrace Ruxit agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
-* http://downloads.dynatracesaas.com/cloudfoundry/buildpack/java/  is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
+  * [PostgreSQL JDBC driver](https://www.postgresql.org){: external}
+* https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel](https://zeroturnaround.com/software/jrebel/){: external}.
+* https://files.dynatrace.com/downloads/appmon/cloudfoundry/buildpack/java/ is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
 
 ## Working with a proxy
 {: #liberty-working_with_proxy}
 
-In some environments, such as [{{site.data.keyword.Bluemix_dedicated_notm}}](/docs/dedicated/index.html#dedicated), a proxy can be configured. See
+In some environments a proxy might be required. See
 [Working with a proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-working_with_proxy) for more details.
 
 

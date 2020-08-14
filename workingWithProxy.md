@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -97,13 +97,13 @@ subcollection: cloud-foundry-public
 # Working with a proxy
 {: #working_with_proxy}
 
-In some environments such as [{{site.data.keyword.cloud_notm}} Dedicated](/docs/dedicated?topic=dedicated-dedicated) a proxy may be configured which affects the
-behavior of your application during staging and runtime.
+In some environments a proxy might be configured that affects the
+behavior of your application during staging and run time.
 
 You can configure your application to work with the proxy by using the following environment variables:
-  * [http_proxy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: new_window}
-  * [https_proxy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: new_window}
-  * [no_proxy ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.gnu.org/software/wget/manual/html_node/Proxies.html){: new_window}
+  * [http_proxy](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: external}
+  * [https_proxy](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: external}
+  * [no_proxy](http://www.gnu.org/software/wget/manual/html_node/Proxies.html){: external}
 
 You can set these environment variables using `**bluemix app env-set**` or via the `manifest.yml` file.  Depending on how you configure your proxy environment variables, if your application downloads resources from the internet during staging, your resources might download using the proxy. For example, if you have a Nodejs application in an environment with `http_proxy` set to `yourProxyURL` and you want to allow `npm` to download modules from the internet **but not the proxy**.  To download without using the proxy, set `no_proxy` to `npmjs.org`.
 
@@ -113,12 +113,12 @@ You might want your application to use the proxy during runtime, after staging. 
 ## Java applications
 {: #java_apps}
 
-For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_runtime) and the [java_buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-tomcat){: new_window} applications, the proxy settings can be passed to the runtime via the **JAVA_OPTS** environment variable.  For example you can issue the command and then restage your application:
+For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_runtime) and the [java_buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-tomcat){: external} applications, the proxy settings can be passed to the runtime via the **JAVA_OPTS** environment variable.  For example you can issue the command and then restage your application:
 ```
    ibmcloud app env-set myApp JAVA_OPTS "-Dhttp.proxyHost=yourProxyURL -Dhttp.proxyPort=yourProxyPort"
 ```
 {: pre}
 
-Your application then uses the specified proxy settings at runtime. See [Java Networking and Proxies ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html){: new_window} for more information about the Java proxy options.
+Your application then uses the specified proxy settings at runtime. See [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html){: external} for more information about the Java proxy options.
 
 

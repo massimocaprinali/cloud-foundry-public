@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-09"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -194,7 +194,7 @@ Ensure that you created a space in your current organization. To create a space,
 * From the menu bar, click **Manage > Account**, and select **Cloud Foundry orgs**. Click the name of the organization that you want to create the space in, and click **Add a space**.
 * In the Cloud Foundry command-line interface, type `cf create-space <space_name> -o <organization_name>`.
 
-Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](http://ibm.biz/bluemixstatus){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") page to check whether a service or component has an issue.
+Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](http://ibm.biz/bluemixstatus){: external} page to check whether a service or component has an issue.
 
 ## Can't perform requested actions
 {: #ts_authority}
@@ -235,15 +235,15 @@ Use one of the following methods to specify your disk quota. The maximum disk qu
 
   * In the `manifest.yml` file, add the following item:
   ```
-	disk_quota: <disk_quota>
-	```
+  disk_quota: <disk_quota>
+  ```
   {: codeblock}
 
-  * Use the **-k** option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
+  * Use the `-k` option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
 
   ```
-	ibmcloud cf push appname -p app_path -k <disk_quota>
-	```
+  ibmcloud cf push appname -p app_path -k <disk_quota>
+  ```
   {: pre}
 
 ## Org's services limit is exceeded
@@ -270,9 +270,9 @@ Delete any services instances that aren't needed, or remove the limit on the num
 	  2. Click **Delete Service**. You are prompted to restage the app that the service instance was bound to.
 
     To use the command line interface to delete a service instance, complete the following steps:
-	  3. Unbind the service instance from an app. Enter `cf unbind-service <appname> <service_instance_name>`.
-	  4. Delete the service instance. Enter `cf delete-service <service_instance_name>`.
-	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `cf restage <appname>`.
+	  3. Unbind the service instance from an app. Enter `ibmcloud cf unbind-service <appname> <service_instance_name>`.
+	  4. Delete the service instance. Enter `ibmcloud cf delete-service <service_instance_name>`.
+	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `ibmcloud cf restage <appname>`.
 
   * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
@@ -288,7 +288,7 @@ You can't run executables on {{site.data.keyword.cloud_notm}} when those executa
 If the content that you want to push to {{site.data.keyword.cloud_notm}} is already an executable, the content was previously built and doesn't need to be built on {{site.data.keyword.cloud_notm}}. In this case, no buildpack is required for the executable to be run on {{site.data.keyword.cloud_notm}}. You must explicitly indicate to {{site.data.keyword.cloud_notm}} that no buildpack is required.
 {: tsCauses}
 
-When you push the executable to {{site.data.keyword.cloud_notm}}, you must specify a `null-buildpack`, which indicates that no buildpack is required. Specify a `null-buildpack` by using the **-b** option with the `ibmcloud cf push` command:
+When you push the executable to {{site.data.keyword.cloud_notm}}, you must specify a `null-buildpack`, which indicates that no buildpack is required. Specify a `null-buildpack` by using the `-b` option with the `ibmcloud cf push` command:
 {: tsResolve}
 
 ```
@@ -331,15 +331,15 @@ You can either increase the memory quota of your account, or reduce the memory t
 
     1. Check how much memory is being used for your apps:
   	  ```
-	    ibmcloud cf list
-	    ```
+	  ibmcloud cf list
+	  ```
       {: pre}
 
-	    The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
+	  The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
 
     2. To reduce the amount of memory that is used by your app, reduce the number of app instances or the maximum memory limit, or both:
-	    ```
-	    ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
+	  ```
+	  ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
       ```
       {: pre}
 
@@ -371,7 +371,7 @@ In addition, you can code the app to identify and recover from problems such as 
 {: #ts_orgs}
 {: troubleshoot}
 
-You might not be able to locate your organization on {{site.data.keyword.cloud_notm}} when working on a {{site.data.keyword.cloud_notm}} region.
+You might not be able to locate your organization on {{site.data.keyword.cloud_notm}} when working on an {{site.data.keyword.cloud_notm}} region.
 
 You can log in to the {{site.data.keyword.cloud_notm}} console successfully, but you can't push apps by using the Cloud Foundry command line interface.
 {: tsSymptoms}
@@ -385,11 +385,11 @@ When you try to push an application to {{site.data.keyword.cloud_notm}} by using
 This problem occurs because the API endpoint of the region that you want to work with isn't specified, and the organization you're looking for might be in a different region.
 {: tsCauses}
 
-If you are pushing your application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
+If you are pushing your application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `ibmcloud cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
 {: tsResolve}
 
 ```
-cf api https://api.eu-gb.cf.cloud.ibm.com
+ibmcloud cf api https://api.eu-gb.cf.cloud.ibm.com
 ```
 {: pre}
 
@@ -413,10 +413,10 @@ The host name that you specify must be unique within the domain that you are usi
   * If you deploy your application by using the `manifest.yml` file, specify the host name in the host option.
     ```
     host: host_name
-	  ```
+	```
     {: codeblock}
 
-  * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the **-n** option.
+  * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
     ```
     ibmcloud cf push appname -p app_path -n host_name
     ```
@@ -435,7 +435,7 @@ When you upload a WAR app to {{site.data.keyword.cloud_notm}} by using the `ibmc
 This problem might happen if the WAR file isn't specified, or if the path to the WAR file isn't specified.
 {: tsCauses}
 
-Use the **-p** option to specify a WAR file or add the path to the WAR file. For example:
+Use the `-p` option to specify a WAR file or add the path to the WAR file. For example:
 {: tsResolve}
 
 ```
@@ -477,11 +477,11 @@ Use one of the following methods, depending on the cause of the problem:
   * Specify the start command by one of the following methods:
      * Use the Cloud Foundry command line interface. For example:
       ```
-		  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
-		  ```
+	  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
+	  ```
       {: pre}
 
-    * Use the [package.json](https://www.npmjs.com/package/jsonfile){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") file. For example:
+    * Use the [package.json](https://www.npmjs.com/package/jsonfile){: external} file. For example:
 	    ```
 		  {
         ...
@@ -490,10 +490,10 @@ Use one of the following methods, depending on the cause of the problem:
  	    }
 	    }
 	    ```
-      {: codeblock}
+        {: codeblock}
 
     * Use the `manifest.yml` file. For example:
-	    ```
+	  ```
 		  applications:
       name: MyUniqueNodejs01
       ...
@@ -523,6 +523,6 @@ Use one of the following methods, depending on the cause of the problem:
     ```
     {: codeblock}
 
-For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: external}.
 
 

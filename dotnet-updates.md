@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-12"
 
 keywords: cloud foundry
 
@@ -321,7 +321,7 @@ This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 
 ## September 20, 2018: Updated ASP.NET Core buildpack v2.0-20180918-1356
 
-**Important:** Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html). This release includes version 2.1.3 of the dotnet-core Cloud Foundry buildpack.
+**Important:** Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html){: external}. This release includes version 2.1.3 of the dotnet-core Cloud Foundry buildpack.
 
 * Add support for .NET Core SDK 1.1.9
 * Add support for .NET Core SDK 2.0.2
@@ -448,6 +448,6 @@ This version of the buildpack includes the following changes:
 ```
 {: pre}
 
-* Usage of the Nowin web server was removed from this buildpack and the [Kestrel](https://github.com/aspnet/KestrelHttpServer) web server is used instead.
+* Usage of the Nowin web server was removed from this buildpack and the [Kestrel](https://github.com/aspnet/KestrelHttpServer){: external} web server is used instead.
 
 
