@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -107,8 +107,7 @@ to acquire artifacts required by the application.
   * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
   * [PostgreSQL JDBC driver](https://www.postgresql.org){: external}
 * https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel](https://zeroturnaround.com/software/jrebel/){: external}.
-* https://download.ruxit.com/agent/paas/cloudfoundry/java is used to access components for [Dynatrace Ruxit agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
-* http://downloads.dynatracesaas.com/cloudfoundry/buildpack/java/  is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
+* https://files.dynatrace.com/downloads/appmon/cloudfoundry/buildpack/java/ is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
 
 ## Working with a proxy
 {: #liberty-working_with_proxy}
