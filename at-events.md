@@ -13,7 +13,6 @@ subcollection: cloud-foundry-public
 ---
 
 
-
 {:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
@@ -39,9 +38,9 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-<!-- Include your AT events file in the Reference nav group in your toc file. -->
 
-<!-- Make sure that the AT events file has the H1 ID set to: {: #at_events} -->
+
+
 
 # Activity Tracker events
 {: #at-events}

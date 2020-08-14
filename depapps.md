@@ -13,7 +13,6 @@ subcollection: cloud-foundry-public
 ---
 
 
-
 {:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
@@ -297,7 +296,7 @@ The following example shows a manifest file for a Node.js application that uses 
 ## Environment variables
 {: #app_env}
 
-<!-- Need to get review of this section as some env variables are no longer supported for Diego -->
+
 
 Environment variables contain the environment information of a deployed application on {{site.data.keyword.cloud_notm}}. Besides environment variables set by *Diego* and buildpacks, you can also set application-specific environment variables for applications on {{site.data.keyword.cloud_notm}}.
 

@@ -13,7 +13,6 @@ subcollection: cloud-foundry-public
 ---
 
 
-
 {:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
@@ -48,7 +47,7 @@ When you deploy Cloud Foundry apps, there are a known list of possible network a
 Network addresses are subject to change from time to time. You can monitor for updates to these addresses by subscribing to the repo notifications. Click **Edit Topic** and then select **Watching** in the Notifications dialog of the repo.
 {: tip}
 
-<!--- Everything below this line is refreshed periodically --->
+
 In the Dallas (us-south) region, the following network addresses are in use:
 ```
 169.46.101.192/27

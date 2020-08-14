@@ -13,7 +13,6 @@ subcollection: cloud-foundry-public
 ---
 
 
-
 {:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}
@@ -57,7 +56,7 @@ While the legacy `api.*.bluemix.net` Cloud Foundry API endpoints are still avail
 * api.eu-de.cf.cloud.ibm.com (previously api.eu-de.bluemix.net)
 * api.au-syd.cf.cloud.ibm.com (previously api.au-syd.bluemix.net)
 
-<!-- Don't know whether to include this section in CF-->
+
 ## Automatic failover between {{site.data.keyword.cloud_notm}} regions isn't available
 {: #ts_failover}
 {: troubleshoot}
