@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -98,7 +98,7 @@ subcollection: cloud-foundry-public
 # Design the structure of your environment
 {: #bpimplementation}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your environment from the space level up.
 

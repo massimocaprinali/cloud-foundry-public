@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # Best practices for running apps in production
 {: #production}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Cloud Foundry is an excellent platform for running cloud-ready applications in production. These best practices can help with running production Cloud Foundry apps with {{site.data.keyword.cloud}}.
 {: shortdesc}

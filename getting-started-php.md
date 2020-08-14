@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # Getting started with PHP
 {: #getting-started-php}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-php){: external} and explore on your own.
 {: hide-in-docs}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # Developing with Visual Studio
 {: #starter-vs}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 
   1. If you don't already have Visual Studio, install Visual Studio 2015 or Visual Studio Code by following the [documentation](https://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -98,7 +98,7 @@ subcollection: cloud-foundry-public
 # Start coding with Node-RED
 {: #startNodeRed}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Before you can start coding with Node-RED, you must first configure the editor.
 {: shortdesc}
@@ -126,18 +126,18 @@ cd <varname>directory_name</varname></codeblock>
 {: pre}
 3. Connect to {{site.data.keyword.cloud}}.
 ```
-cf api https://api.{DomainName}/
+ibmcloud cf api https://api.{DomainName}/
 ```
 {: pre}
 4. Log in to {{site.data.keyword.cloud_notm}}.
 ```
-cf login -u <varname props="keyref(user_ID)">user_name</varname>
-cf target -o <varname props="keyref(org_name)">org_name</varname> -s <varname props="keyref(space_name)">space_name</varname>
+ibmcloud cf login -u <varname props="keyref(user_ID)">user_name</varname>
+ibmcloud cf target -o <varname props="keyref(org_name)">org_name</varname> -s <varname props="keyref(space_name)">space_name</varname>
 ```
 {: codeblock}
 5. Deploy your app to {{site.data.keyword.cloud_notm}}.
 ```
-cf push <varname props="keyref(app_name)">app_name</varname>
+ibmcloud cf push <varname props="keyref(app_name)">app_name</varname>
 ```
 {: pre}
 6. Access your app to see your changes.

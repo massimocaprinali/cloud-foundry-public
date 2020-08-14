@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -239,7 +239,7 @@ Use one of the following methods to specify your disk quota. The maximum disk qu
   ```
   {: codeblock}
 
-  * Use the **-k** option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
+  * Use the `-k` option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
 
   ```
   ibmcloud cf push appname -p app_path -k <disk_quota>
@@ -270,9 +270,9 @@ Delete any services instances that aren't needed, or remove the limit on the num
 	  2. Click **Delete Service**. You are prompted to restage the app that the service instance was bound to.
 
     To use the command line interface to delete a service instance, complete the following steps:
-	  3. Unbind the service instance from an app. Enter `cf unbind-service <appname> <service_instance_name>`.
-	  4. Delete the service instance. Enter `cf delete-service <service_instance_name>`.
-	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `cf restage <appname>`.
+	  3. Unbind the service instance from an app. Enter `ibmcloud cf unbind-service <appname> <service_instance_name>`.
+	  4. Delete the service instance. Enter `ibmcloud cf delete-service <service_instance_name>`.
+	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `ibmcloud cf restage <appname>`.
 
   * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
@@ -288,7 +288,7 @@ You can't run executables on {{site.data.keyword.cloud_notm}} when those executa
 If the content that you want to push to {{site.data.keyword.cloud_notm}} is already an executable, the content was previously built and doesn't need to be built on {{site.data.keyword.cloud_notm}}. In this case, no buildpack is required for the executable to be run on {{site.data.keyword.cloud_notm}}. You must explicitly indicate to {{site.data.keyword.cloud_notm}} that no buildpack is required.
 {: tsCauses}
 
-When you push the executable to {{site.data.keyword.cloud_notm}}, you must specify a `null-buildpack`, which indicates that no buildpack is required. Specify a `null-buildpack` by using the **-b** option with the `ibmcloud cf push` command:
+When you push the executable to {{site.data.keyword.cloud_notm}}, you must specify a `null-buildpack`, which indicates that no buildpack is required. Specify a `null-buildpack` by using the `-b` option with the `ibmcloud cf push` command:
 {: tsResolve}
 
 ```
@@ -385,11 +385,11 @@ When you try to push an application to {{site.data.keyword.cloud_notm}} by using
 This problem occurs because the API endpoint of the region that you want to work with isn't specified, and the organization you're looking for might be in a different region.
 {: tsCauses}
 
-If you are pushing your application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
+If you are pushing your application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `ibmcloud cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
 {: tsResolve}
 
 ```
-cf api https://api.eu-gb.cf.cloud.ibm.com
+ibmcloud cf api https://api.eu-gb.cf.cloud.ibm.com
 ```
 {: pre}
 
@@ -416,7 +416,7 @@ The host name that you specify must be unique within the domain that you are usi
 	```
     {: codeblock}
 
-  * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the **-n** option.
+  * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
     ```
     ibmcloud cf push appname -p app_path -n host_name
     ```
@@ -435,7 +435,7 @@ When you upload a WAR app to {{site.data.keyword.cloud_notm}} by using the `ibmc
 This problem might happen if the WAR file isn't specified, or if the path to the WAR file isn't specified.
 {: tsCauses}
 
-Use the **-p** option to specify a WAR file or add the path to the WAR file. For example:
+Use the `-p` option to specify a WAR file or add the path to the WAR file. For example:
 {: tsResolve}
 
 ```

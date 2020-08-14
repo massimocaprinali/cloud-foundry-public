@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-08"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -150,7 +150,7 @@ You may have to pass additional parameters to configure Java trustStore. The fol
 
 When the connection succeeds, JConsole starts monitoring.
 
-If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding **-J-Djava.util.logging.config.file=c:/tmp/logging.properties** to the jconsole command.
+If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding `-J-Djava.util.logging.config.file=c:/tmp/logging.properties` to the jconsole command.
 Here is a sample logging properties file:
 ```
     handlers= java.util.logging.FileHandler

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ subcollection: cloud-foundry-public
 # Download, modify, and redeploy your Cloud Foundry app with the command-line interface
 {: #cf-deploy-cli}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 Use the {{site.data.keyword.cloud}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
 {: shortdesc}
@@ -140,7 +140,7 @@ After you install the CLI, you can get started:
   ```
   {: pre}
 
-   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the **`ibmcloud cf push`** command. For more information, see [**`ibmcloud cf push`**](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
+   5. From `your_new_directory`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
   6. Access your app by browsing to the app URL.
 

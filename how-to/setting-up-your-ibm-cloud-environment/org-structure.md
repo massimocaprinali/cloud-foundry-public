@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # Determining your organization architecture
 {: #orgstructure}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 You can use the following organization architectures:
 

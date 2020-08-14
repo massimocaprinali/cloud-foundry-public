@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -123,7 +123,7 @@ You can use  App Autoscaler command-line interface plug-in (aka AutoScaler CLI) 
 Use the following command to install `AutoScaler CLI` which is a plugin of Cloud Foundry CLI.  
 
 ```
-cf install-plugin -r CF-Community app-autoscaler-plugin
+ibmcloud cf install-plugin -r CF-Community app-autoscaler-plugin
 ```
 {:codeblock}
 
@@ -139,14 +139,14 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
     Use the command below to check the App-Autoscaler API endpoint setting.
 
     ```
-    cf asa
+    ibmcloud cf asa
     ```
     {: pre}
 
     If the App-Autoscaler API endpoint is incorrect, you need to reset it with command:
 
     ```
-    cf asa autoscaler.<DOMAIN>
+    ibmcloud cf asa autoscaler.<DOMAIN>
     ```
     {: pre}
 
@@ -186,21 +186,21 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
 *  Attach the policy to your application
 
     ```
-    cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
+    ibmcloud cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
     ```
     {: pre}
 
 *  (optional) Furthermore, you can query the most recent aggregated metrics of your application. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
 
     ```
-    cf asm <YOUR_APP> <METRIC_TYPE> --desc
+    ibmcloud cf asm <YOUR_APP> <METRIC_TYPE> --desc
     ```
     {: pre}
 
 *  (optional) Use the command below to query scaling history:
 
     ```
-    cf ash <YOUR_APP> --desc
+    ibmcloud cf ash <YOUR_APP> --desc
     ```
     {: pre}
 

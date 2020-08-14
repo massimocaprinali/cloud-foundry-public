@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -96,7 +96,7 @@ subcollection: cloud-foundry-public
 # What makes a good Cloud Foundry application?
 {: #goodapp}
 
-<!-- This file is reused in the CF Public subcollection. -->
+
 
 A modern cloud application, and thusly a Cloud Foundry application, are about some key development facets: Cloud platforms, agile methodology, DevOps, microservices, and continuous delivery.
 

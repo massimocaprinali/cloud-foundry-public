@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: cloud foundry
 
@@ -103,34 +103,34 @@ subcollection: cloud-foundry-public
 
 The {{site.data.keyword.cloud_notm}} console provides the ability to start, stop and restart application from the "Action" tab on your application from console.
 
-### Managing application through cf CLI
+### Managing application through ibmcloud cf CLI
 
 It can also be accomplished from command line.
 
   To start the application:
 
   ```
-  cf start myApp
+  ibmcloud cf start myApp
   ```
   {: pre}
 
   To stop an application:
 
   ```
-  cf stop myApp
+  ibmcloud cf stop myApp
   ```
   {: pre}
 
   To restart an application:
 
   ```
-  cf restart myApp
+  ibmcloud cf restart myApp
   ```
   {: pre}
 
 ## Application management through SSH shell session
 
-Application can be managed and debugged using the `ssh` command to access them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and cf CLI.
+Application can be managed and debugged using the `ssh` command to access them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and `ibmcloud cf` CLI.
 
 ### {{site.data.keyword.cloud_notm}} console
 
@@ -141,7 +141,7 @@ User can `ssh` into the application using the {{site.data.keyword.cloud_notm}} c
 To ssh into your application from the command line use:
 
 ```
-cf ssh myApp
+ibm cloud cf ssh myApp
 ```
 {: pre}
 
