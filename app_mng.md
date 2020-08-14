@@ -141,7 +141,7 @@ User can `ssh` into the application using the {{site.data.keyword.cloud_notm}} c
 To ssh into your application from the command line use:
 
 ```
-ibm cloud cf ssh myApp
+ibmcloud cf ssh myApp
 ```
 {: pre}
 
