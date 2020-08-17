@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -43,7 +43,7 @@ subcollection: cloud-foundry-public
 
 New Relic is a third-party service that provides monitoring metrics for your application. For more information on what the New Relic service provides, see [New Relic](http://newrelic.com/java){: external}.
 
-According to the [Java agent manual installation documentation](https://docs.newrelic.com/docs/agents/java-agent/installation/java-agent-manual-installation){: external}, Java applications that are to be monitored by using the New Relic service are typically required to be bundled and configured with a New Relic agent and an account license key. In the {{site.data.keyword.cloud}} environment, a New Relic license agreement and account can be obtained by creating a service instance in {{site.data.keyword.cloud_notm}}. Java applications can then be bound to the New Relic service instance and the Liberty buildpack auto configures the application that is ready to be monitored by the New Relic service.
+According to the [Java agent manual installation documentation](https://docs.newrelic.com/docs/agents/java-agent/installation/install-java-agent){: external}, Java applications that are to be monitored by using the New Relic service are typically required to be bundled and configured with a New Relic agent and an account license key. In the {{site.data.keyword.cloud}} environment, a New Relic license agreement and account can be obtained by creating a service instance in {{site.data.keyword.cloud_notm}}. Java applications can then be bound to the New Relic service instance and the Liberty buildpack auto configures the application that is ready to be monitored by the New Relic service.
 Specifically, the buildpack:
 
 * provides the application with a New Relic agent.

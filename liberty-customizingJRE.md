@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -152,7 +152,7 @@ Applications can customize the JVM options with the specifications that are defi
 <td> {{site.data.keyword.IBM_notm}}JRE</td>
 <td>includes runtime options (prefixed by -X), any Java system properties (prefixed with -D), and does not recommend -XX for the casual usage (these options are subject to change)
 </td>
-<td>[Version 8 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/appendixes/cmdline/cmdline.html){: external}, [Version 7 command-line options](http://www-01.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html){: external}
+<td>[Version 8 command-line options](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/openj9/cmdline_specifying/index.html){: external}, [Version 7 command-line options](https://www.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html){: external}
 </td>
 </tr>
 

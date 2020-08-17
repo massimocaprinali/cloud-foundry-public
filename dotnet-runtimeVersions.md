@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -45,7 +45,7 @@ subcollection: cloud-foundry-public
 ## Supported versions
 {: #supported_versions}
 
-This buildpack supports the following versions, those marked as deprecated will be removed in a future buildpack release.  See [Microsoft's support statement for LTS and Current releases](https://www.microsoft.com/net/core/support){: external}.
+This buildpack supports the following versions, those marked as deprecated will be removed in a future buildpack release.  See [Microsoft's .NET Support Policy](https://dotnet.microsoft.com/platform/support/policy/){: external}.
 
 
 ### .NET SDK version

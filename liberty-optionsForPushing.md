@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -159,7 +159,7 @@ The Liberty server is used to run the application if the LIBERTY_NATIVE_SPRINGBO
 ### CDI 1.2
 {: #cdi12}
 
-For performance reasons, when deploying WAR and EAR files only, the [CDI 1.2 implicit bean archives scanning](https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/cwlp_cdi_behavior.html){: external} is disabled by default. Implicit bean archive scanning can be enabled using the JBP_CONFIG_LIBERTY environment variable.
+For performance reasons, when deploying WAR and EAR files only, the [CDI 1.2 implicit bean archives scanning](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_cdi_behavior.html){: external} is disabled by default. Implicit bean archive scanning can be enabled using the JBP_CONFIG_LIBERTY environment variable.
 For example:
 
 ```
@@ -216,7 +216,7 @@ After the server directory is ready, you can deploy it to {{site.data.keyword.cl
 ```
 {: pre}
 
-Note: The web applications that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5%2F1-3-11-0-5-6){: external}. For example:
+Note: The web applications that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5){: external}. For example:
 
 ```
     http://<yourappname>.mybluemix.net/acme/

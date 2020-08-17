@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -53,7 +53,7 @@ You'll need the following:
 * [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}
 * [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started)
 * [Git](https://git-scm.com/downloads){: external}
-* Install .NET Core SDK 3.1 from the [.NET Core downloads website](https://www.microsoft.com/net/download/core){: external}.
+* Install .NET Core SDK 3.1 from the [.NET Core downloads website](https://dotnet.microsoft.com/download){: external}.
 
 ## Step 1: Clone the sample app
 {: #clone}

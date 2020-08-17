@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -53,7 +53,7 @@ If all of the following principles are observed in your app, the app is cloud-re
 
 You can migrate your apps to {{site.data.keyword.cloud_notm}} incrementally, instead of shifting the app completely to the cloud environment. You can migrate a portion of your app first and connect to the existing data or system of records by using the Cloud Integration service.
 
-In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console](https://developer.ibm.com/bluemix/2015/04/01/reaching-enterprise-backend-bluemix-secure-gateway/){: external}.
+In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console](https://www.ibm.com/blogs/cloud-archive/2015/04/reaching-enterprise-backend-bluemix-secure-gateway/){: external}.
 
 To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.cloud_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.cloud_notm}} by using the `–b` option with the `ibmcloud cf push` command. For details, see [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks).
 

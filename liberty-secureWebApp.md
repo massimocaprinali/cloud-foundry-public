@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -111,6 +111,6 @@ The secure starter application contains **BadServlet.java**. This application sh
 
 The secure starter application also contains **GoodServlet.java**, which includes a number of good secure coding practices such as input validation, output encoding, secure HTTP Header settings, and Content Security Policy. These practices are key countermeasures against XSS. Applying them can also mitigate other vulnerabilities such as some injection and directory traversal.
 
-Refer to the [XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS){: external} to learn more about XSS and its countermeasures.
+Refer to the [XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html){: external} to learn more about XSS and its countermeasures.
 
 

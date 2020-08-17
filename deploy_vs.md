@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -44,7 +44,7 @@ subcollection: cloud-foundry-public
 
 
 
-  1. If you don't already have Visual Studio, install Visual Studio 2015 or Visual Studio Code by following the [documentation](https://msdn.microsoft.com/en-us/library/e2h7fzkw.aspx){: external}.
+  1. If you don't already have Visual Studio, install Visual Studio 2015 or Visual Studio Code by following the [documentation]https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio-2015){: external}.
 
   1. {: hide-in-docs}[Download your starter code](https://cloud.ibm.com/){: external} and extract it into a folder on your hard drive.
 
