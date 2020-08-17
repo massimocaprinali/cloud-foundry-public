@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -52,7 +51,7 @@ to acquire artifacts required by the application.
   * [New Relic agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic)
   * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
   * [PostgreSQL JDBC driver](https://www.postgresql.org){: external}
-* https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel](https://zeroturnaround.com/software/jrebel/){: external}.
+* https://dl.zeroturnaround.com/jrebel/ is used to access components for [JRebel](https://www.jrebel.com/products/jrebel){: external}.
 * https://files.dynatrace.com/downloads/appmon/cloudfoundry/buildpack/java/ is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
 
 ## Working with a proxy

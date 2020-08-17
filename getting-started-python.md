@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -85,9 +84,9 @@ Peruse the files in the *get-started-python* directory to familiarize yourself w
 See [The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/){: external} for help setting up Python on your system.
 {: tip}
 
-Install the dependencies listed in the [requirements.txt](https://pip.readthedocs.io/en/stable/user_guide/#requirements-files){: external} file to be able to run the app locally.
+Install the dependencies listed in the [requirements.txt](https://pip.pypa.io/en/stable/user_guide/#requirements-files){: external} file to be able to run the app locally.
 
-You can optionally use a [virtual environment](https://packaging.python.org/installing/#creating-and-using-virtual-environments){: external} to avoid having these dependencies clash with those of other Python projects or your operating system.
+You can optionally use a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-and-using-virtual-environments){: external} to avoid having these dependencies clash with those of other Python projects or your operating system.
 
   ```
 pip install -r requirements.txt

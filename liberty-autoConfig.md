@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -58,7 +57,7 @@ This process is referred to as automatic configuration.
 
 The Liberty buildpack provides automatic configuration for the following service types:
 
-* [ClearDB MySQL Database](http://www.cleardb.com/developers){: external}
+* [ClearDB MySQL Database](https://w2.cleardb.net/developers/){: external}
 * [{{site.data.keyword.cloudant}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 * [{{site.data.keyword.composeForMongoDB}}](/docs/ComposeForMongoDB?topic=ComposeForMongoDB-about)
 * [{{site.data.keyword.composeForMySQL}}](/docs/ComposeForMySQL?topic=ComposeForMySQL-about)

@@ -14,7 +14,6 @@ subcollection: cloud-foundry-public
 
 
 
-
 {:beta: .beta}
 {:codeblock: .codeblock}
 {:deprecated: .deprecated}

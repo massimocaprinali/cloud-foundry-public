@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -78,7 +77,7 @@ As your application is updated from DEA architecture to Diego, you might experie
 
 Complete the following steps to migrate your app to Diego:
 
- 1.  Install both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external}.
+ 1.  Install both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-attic/Diego-Enabler){: external}.
  2. Review the known issues list in the following section.
  3. Set the Diego flag to change your app to running on Diego:
   ```
@@ -109,7 +108,7 @@ For the comprehensive list of known issues, see the Cloud Foundry documentation 
 
 Until support for the older DEA architecture is removed, you can run the following command to transition back to DEAs: `ibmcloud cf disable-diego APPLICATION_NAME`. You can also still deploy apps to the DEA architecture until support is removed.
 
-You must have both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-incubator/Diego-Enabler){: external} installed to use the `disable-diego` command.
+You must have both the [`ibmcloud cf` CLI](https://github.com/cloudfoundry/cli/releases){: external} and the [Diego-Enabler CLI Plugin ](https://github.com/cloudfoundry-attic/Diego-Enabler){: external} installed to use the `disable-diego` command.
 {: note}
 
 1. Deploy the application without starting it:
@@ -297,7 +296,7 @@ The following example shows a manifest file for a Node.js application that uses 
 ## Environment variables
 {: #app_env}
 
-<!-- Need to get review of this section as some env variables are no longer supported for Diego -->
+
 
 Environment variables contain the environment information of a deployed application on {{site.data.keyword.cloud_notm}}. Besides environment variables set by *Diego* and buildpacks, you can also set application-specific environment variables for applications on {{site.data.keyword.cloud_notm}}.
 

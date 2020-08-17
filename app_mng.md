@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -87,7 +86,7 @@ User can `ssh` into the application using the {{site.data.keyword.cloud_notm}} c
 To ssh into your application from the command line use:
 
 ```
-ibm cloud cf ssh myApp
+ibmcloud cf ssh myApp
 ```
 {: pre}
 
@@ -154,7 +153,7 @@ ibmcloud cf ssh -i 1 -N -T -L 5000:127.0.0.1:5001
 ```
 {: pre}
 
-For more information on configuring a JMX connector, see [Configuring secure JMX connection to the Liberty profile](https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_admin_restconnector.html){: external}.
+For more information on configuring a JMX connector, see [Configuring secure JMX connection to the Liberty profile](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_admin_restconnector.html){: external}.
 
 **Important**: The *jmx* utility does not start *proxy*.
 
@@ -196,7 +195,7 @@ The *noproxy* utility only applies to applications that run in a Diego cell.
 
 The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
-When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://developer.ibm.com/bluemix/2015/07/03/how-to-analyze-performance-in-bluemix/){: external}.
+When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
 
 **Important:** The *hc* utility starts *proxy*.
 

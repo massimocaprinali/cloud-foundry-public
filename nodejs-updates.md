@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -114,7 +113,7 @@ Beginning with this buildpack, the SDK for Node.js buildpack includes the Node.j
 The SDK for Node.js buildpack v3.22 provides IBM SDK for Node.js versions 4.8.5, 4.8.7 and Node.js community versions 6.14.3, 6.14.4, 8.11.3 and 8.11.4. The default is latest 6.x, so it is currently 6.14.4.
 
 This release also includes fixes for the following security vulnerability:
-* [CVE-2018-0732](https://www-01.ibm.com/support/docview.wss?uid=swg22012749){: external}
+* [CVE-2018-0732](https://www.ibm.com/support/pages/node/715089){: external}
 
 ## July 24, 2018: Updated Node.js buildpack v3.21
 
@@ -124,7 +123,7 @@ Beginning with the latest Node.js 6.x and 8.x versions in this release, the SDK 
 The SDK for Node.js buildpack v3.21 provides IBM SDK for Node.js versions 4.8.5, 4.8.7, 6.13.0 and 8.9.4 and Node.js community versions 6.14.3 and 8.11.3. The default is latest 6.x, so it is currently 6.14.3.
 
 This release also includes fixes for the following security vulnerability:
-* [CVE-2018-0739](http://www.ibm.com/support/docview.wss?uid=swg22016251){: external}
+* [CVE-2018-0739](https://www.ibm.com/support/pages/node/715221){: external}
 
 ## June 1, 2018: Updated Node.js buildpack v3.20.2
 The SDK for Node.js buildpack v3.20.2 adds Dynatrace Managed PaaS integration for the current Node.js runtimes.
@@ -190,7 +189,7 @@ This release of the buildpack supports IBM SDK for Node.js runtime versions: 0.1
 
 This release includes bug fixes, including those from the [Cloud Foundry’s Node.js buildpack 1.5.18](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.18){: external}.
 
-The release removes support for the strongpm App Management handler as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://developer.ibm.com/bluemix/2016/05/05/node-buildpack-update-fips-mode/){: external}.
+The release removes support for the strongpm App Management handler as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://www.ibm.com/blogs/cloud-archive/2016/05/node-buildpack-update-fips-mode/){: external}.
 
 Note that there is a known issue when using Node.js 6.x and Development Mode. As a work around you will need to restage your application after enabling Development Mode before you can begin using it.
 
@@ -200,13 +199,13 @@ This release of the buildpack supports IBM SDK for Node.js runtime versions: 0.1
 This release includes an updated App Management proxy that supports federated logins.
 
 Included are fixes for the following security vulnerabilities:
-* [CVE-2016-1669](http://www-01.ibm.com/support/docview.wss?uid=swg21986383){: external}
+* [CVE-2016-1669](https://www.ibm.com/support/pages/node/283763){: external}
 
 ## June 22, 2016: Updated Node.js buildpack v3.5-20160609-1608
 
 This release of the buildpack adds IBM SDK for Node.js runtime versions 4.4.5 and 6.2.0. The default becomes 4.4.5.
 
-The release removes support for older runtime versions as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://developer.ibm.com/bluemix/2016/05/05/node-buildpack-update-fips-mode/){: external}. The buildpack now supports 0.10.44, 0.10.45, 0.12.13, 0.12.14, 4.4.4, 4.4.5, 6.1.0, and 6.2.0.
+The release removes support for older runtime versions as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://www.ibm.com/blogs/cloud-archive/2016/05/node-buildpack-update-fips-mode/){: external}. The buildpack now supports 0.10.44, 0.10.45, 0.12.13, 0.12.14, 4.4.4, 4.4.5, 6.1.0, and 6.2.0.
 
 This release includes bug fixes from the [Cloud Foundry’s Node.js buildpack 1.5.14](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.14){: external}.
 
@@ -215,7 +214,7 @@ This release includes bug fixes from the [Cloud Foundry’s Node.js buildpack 1.
 This release of the buildpack adds IBM SDK for Node.js runtime versions 0.10.45, 0.12.14, 4.4.4, 6.0.0, and 6.1.0. The default is now 4.4.4.
 
 Included are fixes for the following security vulnerabilities:
-* [CVE-2015-8855](http://www-01.ibm.com/support/docview.wss?uid=swg21982852){: external}
+* [CVE-2015-8855](https://www.ibm.com/support/pages/node/278621){: external}
 * [CVE-2016-2108 CVE-2016-2107 CVE-2016-2105 CVE-2016-2106 CVE-2016-2109 CVE-2016-2176](https://www.openssl.org/news/secadv/20160503.txt){: external}
 
 Note that there is a known issue with NPM v3 and the App Management inspector utility. NPM 3.8.6 is the default with the 6.0.0 and 6.1.0 runtimes. If you want to use either of the 6.x runtimes and the inspector utility, you should specify a 2.x NPM version in your package.json as a temporary workaround.
@@ -227,9 +226,9 @@ i
 For 4.3.1 and up, it is now possible to use a FIPS-enabled version of the runtime by setting the `FIPS_MODE=true` environment variable for your app.
 
 The updated buildpack and the new runtime versions also contain fixes for security vulnerabilities:
-* [CVE-2016-2515](http://www-01.ibm.com/support/docview.wss?uid=swg21977578){: external}
-* [CVE-2016-2537](http://www-01.ibm.com/support/docview.wss?uid=swg21977578){: external}
-* [CVE-2016-3956](http://www-01.ibm.com/support/docview.wss?uid=swg21980827){: external}
+* [CVE-2016-2515](https://www.ibm.com/support/pages/node/543037){: external}
+* [CVE-2016-2537](https://www.ibm.com/support/pages/node/543037){: external}
+* [CVE-2016-3956](https://www.ibm.com/support/pages/node/275571){: external}
 
 The updated buildpack also contains fixes for several bugs:
 * Now IBM SDK for Node.js builds will always be used if one is available matching the requested range. Previously, this case was only true for 4.x runtime versions.
@@ -307,11 +306,11 @@ With 2.7, version 4.2.1.0 of the IBM SDK for Node.js (based on Node v4.2.1 LTS) 
 
 ## October 19, 2015: Updated Node.js buildpack v2.6.1-20151015-1326
 
-Node.js v2.6.1 introduces a bug fix to the [StrongPM app management handler](https://developer.ibm.com/bluemix/2015/10/15/strongloop-devops-on-bluemix/), and a more consistent NPM version.
+Node.js v2.6.1 introduces a bug fix to the [StrongPM app management handler](https://www.ibm.com/blogs/cloud-archive/2015/10/strongloop-devops-on-bluemix/), and a more consistent NPM version.
 
 ## October 15, 2015: Updated Node.js buildpack v2.6-20151006-1309
 
-This release of the Node.js buildpack features the integration of [StrongLoop Process Manager](https://strong-pm.io){: external} to the App Management feature. For more information, see the blog post [StrongLoop DevOps for Node.js Applications on {{site.data.keyword.cloud_notm}}](https://developer.ibm.com/bluemix/2015/10/15/strongloop-devops-on-bluemix/){: external}.
+This release of the Node.js buildpack features the integration of [StrongLoop Process Manager](https://strong-pm.io){: external} to the App Management feature. For more information, see the blog post [StrongLoop DevOps for Node.js Applications on {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/10/strongloop-devops-on-bluemix/){: external}.
 
 ## June 15, 2015: Updated Node.js buildpack v2.0-20150608-1503
 
@@ -364,7 +363,7 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## August 28, 2014: Updated Node.js buildpack v1.3-20140821-1143
 
-* The newest Node.js buildpack now comes with IBM SDK for Node.js v1.1.0.6. This update means you will get a fully supported IBM Node.js runtime when you specify the latest stable Node.js runtime, v0.10.30, for your application. This runtime fixes the [V8 Memory Corruption vulnerability](http://blog.nodejs.org/2014/07/31/v8-memory-corruption-stack-overflow){: external}.
+* The newest Node.js buildpack now comes with IBM SDK for Node.js v1.1.0.6. This update means you will get a fully supported IBM Node.js runtime when you specify the latest stable Node.js runtime, v0.10.30, for your application. This runtime fixes the [V8 Memory Corruption vulnerability](https://nodejs.org/en/blog/vulnerability/v8-memory-corruption-stack-overflow/){: external}.
 * The buildpack also includes improvements and bug fixes to the Monitoring and Analytics service extension, allowing you to diagnose performance and error conditions through the service.
 
 ## July 29, 2014: Updated Node.js buildpack v1.1-20140717-1447

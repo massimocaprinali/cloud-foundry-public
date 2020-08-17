@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -63,7 +62,7 @@ Some buildpacks aren't configured to automatically download all updated componen
 You can use buildpacks that have built-in mechanisms to avoid loading obsolete components, for example, the following buildpacks:
 {: tsResolve}
 
-  * [Cloud Foundry Java&reg buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/master/docs/extending-caches.md){: external}.
+  * [Cloud Foundry Java&reg buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/extending-caches.md){: external}.
   * [Cloud Foundry Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
 
   ```
@@ -305,7 +304,7 @@ Update the server.xml to use JVM's cacerts file as the trust store. Add the foll
 #### Update the configured trust store
 
 Modify the configured trust store to trust the DigitCert ROOT CA.
-  1. Download the DigiCert Root CA from https://www.digicert.com/CACerts/DigiCertGlobalRootCA.crt.
+  1. Download the DigiCert Root CA from https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.
   2. Assuming the resources/security/key.jks is used as the trust store, import the CA into the key using the Java's keytool utility:
 
 ```
@@ -408,7 +407,7 @@ Projects pushed from source code that contains a large number of NuGet package d
 {: tsCauses}
 
 ### Helpful links
-* [NuGet](https://docs.nuget.org/Consume/Overview){: external}
+* [NuGet](https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow){: external}
 * [ASP.NET Core Overview](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html){: external}
 
 ## PHP

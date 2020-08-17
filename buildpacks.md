@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 
 {:beta: .beta}
@@ -39,23 +38,23 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-# IBM Cloud Foundry buildpacks
+# {{site.data.keyword.ibmcf_notm}} buildpacks
 {: #available_buildpacks}
 
-Cloud Foundry buildpacks provide the runtime support for applications in the Cloud Foundry environment. When you deploy an application to {{site.data.keyword.cloud}}, it starts a buildpack that supports your application type. {{site.data.keyword.cloud_notm}} provides Cloud Foundry buildpack support for Java EE, Node.js, ASP.Net, Swift, and other application types.
+{{site.data.keyword.ibmcf_full}} buildpacks provide the runtime support for applications in the {{site.data.keyword.ibmcf_notm}} environment. When you deploy an application to {{site.data.keyword.cloud}} using {{site.data.keyword.ibmcf_notm}}, {{site.data.keyword.ibmcf_notm}} starts a buildpack that supports your application type. {{site.data.keyword.cloud_notm}} provides Cloud Foundry buildpack support for Java EE, Node.js, ASP.Net, Swift, and other application types.
 You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to deploy applications and bind them to services.
 
 *  Cloud Foundry
 
-    Cloud Foundry is an open source platform for application lifecycle automation.  {{site.data.keyword.cloud}} is built on top of the Cloud Foundry platform as a service. Check out the [Cloud Foundry documentation](https://www.cloudfoundry.org/learn/){: external} to learn more.
+    Cloud Foundry is an open source platform for application lifecycle automation.  {{site.data.keyword.ibmcf_notm}} is built on top of the open source Cloud Foundry platform as a service. Check out the [Cloud Foundry website](https://www.cloudfoundry.org/){: external} to learn more about the Cloud Foundry platform.
 
 *  Cloud Foundry Application
 
-   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.cloud_notm}}.
+   A cloud foundry application or app, is any application intended to be instantiated by on one of the buildpacks provided by {{site.data.keyword.ibmcf_notm}}.
 
 *  Buildpack
 
-   A buildpack is a typically language specific package of software provided by {{site.data.keyword.cloud_notm}}. When an application is deployed to {{site.data.keyword.cloud_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.cloud_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
+   A buildpack is a typically language specific package of software provided by {{site.data.keyword.ibmcf_notm}}. When an application is deployed to the {{site.data.keyword.cloud_notm}} a buildpack appropriate for the application is chosen. The buildpack provisions the runtime environment for the application.  You can see the set of buildpacks provided by {{site.data.keyword.ibmcf_notm}} by issuing the `ibmcloud cf buildpacks` command from the command line.
 
 *  Runtime
 
