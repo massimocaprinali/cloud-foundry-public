@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-24"
 
 keywords: cloud foundry
 
@@ -57,7 +57,7 @@ During the staging phase, {{site.data.keyword.cloud_notm}} takes care of the app
 #### Staging a new app
 {: #stageapp}
 
-All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the `**ibmcloud app push**` command:
+All new apps are deployed to the Diego architecture. To stage a new application, deploy the app with the `ibmcloud app push` command:
 
   1. Deploy the application:
 
@@ -66,7 +66,7 @@ All new apps are deployed to the Diego architecture. To stage a new application,
   ```
   {: pre}
 
-For more details,, see [`**ibmcloud push**`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
+For more details,, see [`ibmcloud push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 ### Migrating an existing app to {{site.data.keyword.cloud_notm}}
 {: #migrateapp}
@@ -300,7 +300,7 @@ The following example shows a manifest file for a Node.js application that uses 
 
 Environment variables contain the environment information of a deployed application on {{site.data.keyword.cloud_notm}}. Besides environment variables set by *Diego* and buildpacks, you can also set application-specific environment variables for applications on {{site.data.keyword.cloud_notm}}.
 
-You can view the following environment variables of a running {{site.data.keyword.cloud_notm}} application by using the **bluemix app env** command or from the {{site.data.keyword.cloud_notm}} user interface:
+You can view the following environment variables of a running {{site.data.keyword.cloud_notm}} application by using the `ibmcloud app env` command or from the {{site.data.keyword.cloud_notm}} user interface:
 
   * User-defined variables that are specific for an application. For more information, see [Adding user-defined environment variables](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#ud_env).
 
@@ -549,7 +549,7 @@ export NODE_ENV=production;
 ```
 {: pre}
 
-###Preventing files and directories from being uploaded
+### Preventing files and directories from being uploaded
 
 When you use the `ibmcloud cf` command line interface to deploy an application, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your application.
 

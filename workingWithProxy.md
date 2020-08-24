@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-24"
 
 keywords: cloud foundry
 
@@ -50,7 +50,7 @@ You can configure your application to work with the proxy by using the following
   * [https_proxy](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: external}
   * [no_proxy](http://www.gnu.org/software/wget/manual/html_node/Proxies.html){: external}
 
-You can set these environment variables using `**bluemix app env-set**` or via the `manifest.yml` file.  Depending on how you configure your proxy environment variables, if your application downloads resources from the internet during staging, your resources might download using the proxy. For example, if you have a Nodejs application in an environment with `http_proxy` set to `yourProxyURL` and you want to allow `npm` to download modules from the internet **but not the proxy**.  To download without using the proxy, set `no_proxy` to `npmjs.org`.
+You can set these environment variables using `ibmcloud app env-set` or using the `manifest.yml` file.  Depending on how you configure your proxy environment variables, if your application downloads resources from the internet during staging, your resources might download using the proxy. For example, if you have a Nodejs application in an environment with `http_proxy` set to `yourProxyURL` and you want to allow `npm` to download modules from the internet **but not the proxy**.  To download without using the proxy, set `no_proxy` to `npmjs.org`.
 
 You might want your application to use the proxy during runtime, after staging.  Runtime proxy use is entirely dependent on the application and is not affected by either the buildpack or the proxy environment variables.
 {: note}

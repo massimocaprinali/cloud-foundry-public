@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-24"
 
 keywords: cloud foundry
 
@@ -121,7 +121,7 @@ Open the manifest.yml file, and change the `name` from `GetStartedTomcat` to you
   ```
   {: codeblock}
 
-In this manifest.yml file, **`random-route: true`** generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace **`random-route: true`** with **`host: myChosenHostName`**, supplying a host name of your choice.
+In this `manifest.yml` file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: myChosenHostName`, supplying a host name of your choice.
 {: tip}
 
 ## Step 4: Deploy the app

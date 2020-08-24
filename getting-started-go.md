@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-24"
 
 keywords: cloud foundry
 
@@ -94,7 +94,7 @@ cd github.com/IBM-Cloud/get-started-go
   ```
   {: pre}
 
-1. Peruse the files in the **`get-started-go`** directory to familiarize yourself with the contents.
+1. Peruse the files in the `get-started-go` directory to familiarize yourself with the contents.
 
 ## Step 2: Run the app locally
 {: #run_locally-go}
@@ -133,7 +133,7 @@ Open the manifest.yml file, and change the `name` from `GetStartedGo` to your ap
   ```
   {: codeblock}
 
-In this manifest.yml file, **`random-route: true`** generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace **`random-route: true`** with **`host: myChosenHostName`**, supplying a host name of your choice.
+In this manifest.yml file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: myChosenHostName`, supplying a host name of your choice.
 {: tip}
 
 ## Step 4: Deploy the app
@@ -165,7 +165,7 @@ ibmcloud target --cf
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
 
-1. From within the **`get-started-go`** directory, push your app to {{site.data.keyword.cloud_notm}}
+1. From within the `get-started-go` directory, push your app to {{site.data.keyword.cloud_notm}}
 
   ```
 ibmcloud cf push

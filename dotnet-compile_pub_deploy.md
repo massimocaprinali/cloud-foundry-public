@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-24"
 
 keywords: cloud foundry
 
@@ -38,8 +38,8 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-
-#Compile, Publish, and Deploy Applications
+ 
+# Compile, Publish, and Deploy Applications
 {: #publish_configure_deploy}
 
 ## Compiling your application in Release configuration (MSBuild only)
