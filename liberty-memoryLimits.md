@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-28"
 
 keywords: cloud foundry
 
@@ -49,7 +49,7 @@ A memory limit must be specified when you deploy an application with the Liberty
 
 When you deploy an application with the Liberty buildpack, you are prompted for a "Memory Limit". The Liberty for Java buildpack sets a default heap memory size ratio to prevent your process from exceeding the memory limit. You can also specify the heap memory size or ratio by defining the `JVM_ARGS` or `JBP_CONFIG_IBMJDK` environmental variables. See [Heap memory options](#heap_memory_options) to learn more.
 
-To determine what Memory Limit to specify, it is important to understand that you are not specifying the size of the Java application heap. You are specifying the amount of memory available for the Diego container or DEA to use. This amount includes the memory that is used by the following components:
+To determine what Memory Limit to specify, it is important to understand that you are not specifying the size of the Java application heap. You are specifying the amount of memory available for the Diego container to use. This amount includes the memory that is used by the following components:
 
 * by the warden container.
 * to map kernel extensions and system libraries into the process.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-28"
 
 keywords: cloud foundry
 
@@ -92,9 +92,7 @@ The following scenarios show different approaches that you can adopt when you de
 
   Solution: You can create an organization for each business application delivery process. For example, one organization for retail banking, and one for investment banking.
 
-  ![Figure that shows segregation of users by business application delivery](images/bank_example.svg "Figure that shows segregation of users by business application delivery")
-
-  Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery
+  ![Figure that shows segregation of users by business application delivery](images/bank_example.svg "Figure shows two banks, Bank A and Bank B.  Bank A has two retail projects associated with it.  Bank B has two investment projects associated with it."){: caption="Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery" caption-side="bottom"}
 {: #bpfigure1}
 
 ### Scenario 2: Segregation based on type of users (internal users, external users)
@@ -115,9 +113,7 @@ The following scenarios show different approaches that you can adopt when you de
 
   Solution: You can create a single-organization and define a space for each delivery phase. Then, depending on the user role and job experience, grant the read and write access that they require to complete their work and also collaborate within the organization.
 
-  ![Figure that shows isolation of users by delivery phase](images/user_groups_example.svg "Figure that shows isolation of users by delivery phase")
-
-   Figure 2. Example of a single-organization architecture that is aligned by delivery phase
+  ![Figure that shows isolation of users by delivery phase](images/user_groups_example.svg "A single association can have multiple projects associated with it. Those projects can then have spaces for each delivery phase, for example, development, test, staging, and production."){: caption="Figure 2. Example of a single-organization architecture that is aligned by delivery phase" caption-side="bottom"}
 {: #bpfigure2}
 
 ## Organization naming, restrictions, and management

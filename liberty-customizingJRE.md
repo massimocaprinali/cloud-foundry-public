@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-28"
 
 keywords: cloud foundry
 
@@ -223,14 +223,7 @@ Except for application-defined options that are specified with the JVM_ARGS envi
 
 The JVM options for stand-alone Java application are persisted as command line options. They can be viewed from the `staging_info.yml` file.
 
-To view the `staging_info.yml` file on an application running in a DEA node, run:
-
-```
-    ibmcloud cf files myapp staging_info.yml
-```
-{: pre}
-
-To view the `staging_info.yml` file on an application running in a Diego cell, run:
+To view the `staging_info.yml` file, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat staging_info.yml"
@@ -239,14 +232,7 @@ To view the `staging_info.yml` file on an application running in a Diego cell, r
 
 The JVM options for WAR, EAR, server directory and packaged server deployment are persisted in a `jvm.options` file. The `jvm.options` file can be found in the `app/wlp/usr/servers/<serverName>/` directory. In the most cases the `<serverName>` is set to `defaultServer` unless a packaged server was deployed with a different server name. For example:
 
-To view the `jvm.options` file on an application running in a DEA node, run:
-
-```
-    ibmcloud cf files myapp app/wlp/usr/servers/defaultServer/jvm.options
-```
-{: pre}
-
-To view the `jvm.options` file on an application running in a Diego cell, run:
+To view the `jvm.options` file, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/jvm.options"
@@ -266,14 +252,7 @@ Deploying an application with customized JVM options to enable {{site.data.keywo
 ```
 {: codeblock}
 
-* To view the JVM generated verbose garbage collection log file on an application running in a DEA node, run:
-
-```
-    ibmcloud cf files myapp app/wlp/usr/servers/defaultServer/verbosegc.log.001
-```
-{: pre}
-
-* To view the JVM generated verbose garbage collection log file on an application running in a Diego cell, run:
+* To view the JVM generated verbose garbage collection log file, run:
 
 ```
     ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/verbosegc.log.001"

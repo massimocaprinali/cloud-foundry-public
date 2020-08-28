@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-28"
 
 keywords: cloud foundry
 
@@ -50,9 +50,7 @@ When you deploy an app to Cloud Foundry, you must configure {{site.data.keyword.
 
 Each execution environment, including both mobile and web, is isolated from the execution environment of other apps. The execution environments are isolated even though these apps are on the same physical machine. The following figure shows the basic flow of how Cloud Foundry manages the deployment of apps in {{site.data.keyword.cloud_notm}}:
 
-![Deploying an app](images/deploy.png)
-
-Figure 1. Deploying an app
+![Deploying an app](images/deploy.png "An application developer deploys an app with a runtime and framework to {{site.data.keyword.cloud_notm}} where it is deployed to one or more Diego cell."){: caption="Figure 1. Deploying an app" caption-side="bottom"}
 
 When you create an app and deploy it to Cloud Foundry, the {{site.data.keyword.cloud_notm}} environment determines an appropriate virtual server to send the app, or the artifacts that the app represents, to. For a mobile app, a mobile back-end projection is created on {{site.data.keyword.cloud_notm}}. Any code for the mobile app running in the cloud eventually runs in the {{site.data.keyword.cloud_notm}} environment. For a web app, the code running in the cloud is the app itself that the developer deploys to {{site.data.keyword.cloud_notm}}. The determination of the virtual server is based on several factors, including:
 
@@ -61,19 +59,15 @@ When you create an app and deploy it to Cloud Foundry, the {{site.data.keyword.c
 
 After a virtual server is chosen, an application manager on each virtual server installs the appropriate framework and runtime for the app. Then, the app can be deployed into that framework. When the deployment completes, the application artifacts are started.
 
-The following figure shows the structure of a virtual server, also known as Droplet execution agent (DEA), that has multiple apps deployed to it:
+The following figure shows the structure of a virtual server, also known as a Diego cell, that has multiple apps deployed to it:
 
-![Design of a virtual server](images/container-diego.png)
-
-Figure 2. Design of a virtual server
+![Design of a virtual server](images/container-diego.png "A Diego cell contains one or more containers. A container contains a framework, which contains a runtime, which contains an app. "){: caption="Figure 2. Design of a virtual server" caption-side="bottom"}
 
 In each virtual server, an application manager communicates with the rest of the {{site.data.keyword.cloud_notm}} infrastructure, and manages the apps that are deployed to this virtual server. Each virtual server has containers to separate and protect apps. In each container, {{site.data.keyword.cloud_notm}} installs the appropriate framework and runtime that are required for each app.
 
 When the app is deployed, if it has a web interface (as for a Java web app), or other REST-based services (such as mobile services exposed publicly to the mobile app), users of the app can communicate with it by using normal HTTP requests.
 
-![Invoking an {{site.data.keyword.cloud_notm}} app](images/execute.png)
-
-Figure 3. Invoking an {{site.data.keyword.cloud_notm}} app
+![Invoking an {{site.data.keyword.cloud_notm}} app](images/execute.png "The user of an app access the app by using a URL which then communicates to the app running in the Diego cell."){: caption="Figure 3. Invoking an {{site.data.keyword.cloud_notm}} app" caption-side="bottom"}
 
 Each app can have one or more URLs associated with it, but they must all point to the {{site.data.keyword.cloud_notm}} endpoint. When a request comes in, {{site.data.keyword.cloud_notm}} examines the request, determines which app it is intended for, then selects an instance of the app to receive the request.
 
@@ -91,16 +85,13 @@ Clients--which can be mobile apps, apps that run externally, apps that are built
 
 The following figure shows the high-level Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}.
 
-![{{site.data.keyword.cloud_notm}} architecture](images/arch.png)
-
-Figure 4. Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}
+![{{site.data.keyword.cloud_notm}} architecture](images/arch.png "A mobile or web application client accesses an app by using a REST HTTP API.  The REST API communicates with the Diego cell that is running the app.  The app can use {site.data.keyword.cloud_notm}} services.  The app developer can use either a browser or command line to deploy an app.  When deploying an app using a browser, the app developer uses the {site.data.keyword.cloud_notm}} console that uses a router to communicate with the VM running the Diego cell.  An app developer can also use a CLI that makes REST HTTP calls to the router to deploy apps to the Diego cell.  All these services run on on the provisioned infrastructure."){: caption="Figure 4. Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
 
 You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, for latency or security considerations. You can choose to deploy either to one region or across multiple regions.
 
 
-![Multi-region application development](images/multi-region.png)
+![Multi-region application development](images/multi-region.png "A user can access an app that is deployed in one or more regions over the internet."){: caption="Figure 5. Multi-region application deployment" caption-side="bottom"}
 
-Figure 5. Multi-region application deployment
 
 {{site.data.keyword.cloud_notm}} infrastructure layers
 {: #infralayers}
