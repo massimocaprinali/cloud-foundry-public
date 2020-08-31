@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -43,7 +43,7 @@ subcollection: cloud-foundry-public
 
 
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
+Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Liberty for Java getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
@@ -111,7 +111,7 @@ Open the manifest.yml file, and change the `name` from `GetStartedJava` to your 
 {: download}
 
   ```
-  applications:
+  apps:
    - name: GetStartedJava
      random-route: true
      path: target/GetStartedJava.war
@@ -152,14 +152,14 @@ ibmcloud target --cf
   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
   {: tip}
 
-1. From within the `get-started-java` directory, push your application to {{site.data.keyword.cloud_notm}}.
+1. From within the `get-started-java` directory, push your app to {{site.data.keyword.cloud_notm}}.
 
   ```
 ibmcloud cf push
   ```
   {: pre}
 
-Deploying your application can take a few minutes. When deployment completes, a message shows that your app is running. View your app at the URL listed in the output of the push command with "/GetStartedJava" appended to the end, or view both the app deployment status and the URL by running the following command:
+Deploying your app can take a few minutes. When deployment completes, a message shows that your app is running. View your app at the URL listed in the output of the push command with "/GetStartedJava" appended to the end, or view both the app deployment status and the URL by running the following command:
 
   ```
 ibmcloud cf apps
@@ -174,15 +174,15 @@ You can troubleshoot errors in the deployment process by using the `ibmcloud cf 
 ## Step 5: Add a database
 {: #add_database-liberty}
 
-Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this application and set up the application so that it can run locally and on {{site.data.keyword.cloud_notm}}.
+Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this app and set up the app so that it can run locally and on {{site.data.keyword.cloud_notm}}.
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
-1. In the navigation, go to **Connections**, then click **Create connection**. Select your application, and click **Connect**.
-1. Using the default values, click **Connect & restage app** to connect the database to your application. Click **Restage** when prompted.
+1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is available to the application only when it is running on {{site.data.keyword.cloud_notm}}.
+   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -190,7 +190,7 @@ Environment variables enable you to separate deployment settings from your sourc
 ## Step 6: Use the database
 {: #use_database-liberty}
 
-We're now going to update your local code to point to this database. We'll store the credentials for the services in a properties file. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the `VCAP_SERVICES` environment variable.
+We're now going to update your local code to point to this database. We'll store the credentials for the services in a properties file. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the `VCAP_SERVICES` environment variable.
 
 1. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 

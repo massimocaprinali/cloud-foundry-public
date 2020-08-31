@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -41,13 +41,13 @@ subcollection: cloud-foundry-public
 # Install Liberty features
 {: #install-features}
 
-The Liberty for Java runtime includes [a subset of features](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features#liberty_features) that are available in Liberty. You can install features that are not included in the runtime by running the Liberty `installUtility` command as a Cloud Foundry pre-runtime hook when the application is pushed to {{site.data.keyword.cloud_notm}}.
+The Liberty for Java runtime includes [a subset of features](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features#liberty_features) that are available in Liberty. You can install features that are not included in the runtime by running the Liberty `installUtility` command as a Cloud Foundry pre-runtime hook when the app is pushed to {{site.data.keyword.cloud_notm}}.
 
 For a full list of available features, see [Liberty features](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html){: external}.
 
 For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profile){: external} in the Cloud Foundry documentation.
 
-1. In the root directory of the application that you want to push to {{site.data.keyword.cloud_notm}}, create a `.profile.d` directory.
+1. In the root directory of the app that you want to push to {{site.data.keyword.cloud_notm}}, create a `.profile.d` directory.
 
 1. In the `.profile.d` directory, create a script file that runs the `installUtility` command as shown in the following example.
 
@@ -65,15 +65,15 @@ For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](ht
    You can install multiple features by specifying additional features names separated by spaces.
    {: tip}
 
-1. Push your app to {{site.data.keyword.cloud_notm}}, using the `-p` parameter to specify the application's root directory.
+1. Push your app to {{site.data.keyword.cloud_notm}}, using the `-p` option to specify the app's root directory.
 
    For example, run the following command to push your app:
    ```
-   ibmcloud cf push myApp -p /<path-to-application>
+   ibmcloud cf push myApp -p /<path-to-app>
    ```
    {: codeblock}
 
-1. Verify that the feature installed successfully by viewing the application's recent log.
+1. Verify that the feature installed successfully by viewing the app's recent log.
 
    For example, run the following command to display the log:
    ```

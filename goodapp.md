@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -38,16 +38,16 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-# What makes a good Cloud Foundry application?
+# What makes a good Cloud Foundry app?
 {: #goodapp}
 
 
 
-A modern cloud application, and thusly a Cloud Foundry application, are about some key development facets: Cloud platforms, agile methodology, DevOps, microservices, and continuous delivery.
+A modern cloud app, and thusly a Cloud Foundry app, are about some key development facets: Cloud platforms, agile methodology, DevOps, microservices, and continuous delivery.
 
 Due to these pieces, you really want to have a Platform-as-a-Service (PaaS) model. Although not absolutely required, a PaaS makes things a lot easier. Most cloud customers are using or start out with infrastructure-as-a-service (IaaS), which helps abstract their apps from the underlying hardware. But PaaS adds an extra layer to abstract the underlying OS, so you can focus entirely on the business logic of your app and not worry about repetative and consumable services that you could easily be engaging instead.
 
-As part of this, there are two major concepts that come into play: "Cloud-native" applications and "12 Factor Apps".
+As part of this, there are two major concepts that come into play: "Cloud-native" apps and "12 Factor Apps".
 
 
 ## Cloud-Native
@@ -55,16 +55,16 @@ As part of this, there are two major concepts that come into play: "Cloud-native
 
 A "cloud-native" app has been defined by the Cloud Native Computing Foundation as
 
-> “Cloud-native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
+> “Cloud-native technologies empower organizations to build and run scalable apps in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
 > These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably, with minimal toil.”
 
-So a "cloud native" application isn't just an "application". It's a set of processes and best practices that also go along with it. It's a transformation of development processes that is critical - the "development ecosystem" are learning at a fast pace the very best ways to deliver software, and that is an important part of the latest application creation process.
+So a "cloud native" app isn't just an "app". It's a set of processes and best practices that also go along with it. It's a transformation of development processes that is critical - the "development ecosystem" are learning at a fast pace the very best ways to deliver software, and that is an important part of the latest app creation process.
 
 So let's overview the important points about cloud-native apps:
 
-* Applications are highly connected with a variety of technologies and architectures, such as containers, container orchestration, microservices, and declarative APIs.
-* Applications are built to run on modern infrastructures, typically "clouds". Those can be an external cloud vendor, or your own internal cloud environment.
+* Apps are highly connected with a variety of technologies and architectures, such as containers, container orchestration, microservices, and declarative APIs.
+* Apps are built to run on modern infrastructures, typically "clouds". Those can be an external cloud vendor, or your own internal cloud environment.
 * Building cloud-native apps is critically a practice and philosophy, not just a technology choice - it's about changing the way software is delivered in a DevOps and automation culture.
 * They represent the dynamic and distributed nature of computing today, and needs for increased deployment speed, flexibility, agility, scalability, reliability, and security.
 
@@ -76,7 +76,7 @@ As explained by the original concept creator,
 
 > "Twelve Factor apps are built for agility and rapid deployment, enabling continuous delivery and reducing the time and cost for new developers to join a project. At the same time, they are architected to exploit the principles of modern cloud platforms while permitting maximum portability between them. Finally, they can scale up without significant changes to tooling, architecture or development practices"
 
-So that means that the 12 factor apps check-list is really just a set of guidelines that dictate how an application should be built to properly support the concept of independently managed and iterated services.
+So that means that the 12 factor apps check-list is really just a set of guidelines that dictate how an app should be built to properly support the concept of independently managed and iterated services.
 
 The [12 factors web site](https://12factor.net){: external} describes the 12 factors as:
 
@@ -93,6 +93,6 @@ The [12 factors web site](https://12factor.net){: external} describes the 12 fac
 11. Treat logs as event streams
 12. Run admin/management asks as one-off processes
 
-These steps allow a maturing development organization to start adopting the range of cloud-native capabilities and create highly capable and flexible cloud applications.
+These steps allow a maturing development organization to start adopting the range of cloud-native capabilities and create highly capable and flexible cloud apps.
 
 

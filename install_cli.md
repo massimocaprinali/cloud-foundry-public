@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-18"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -44,7 +44,7 @@ subcollection: cloud-foundry-public
 
 
 
-Use the {{site.data.keyword.ibmcf_full}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry applications and service instances.
+Use the {{site.data.keyword.ibmcf_full}} command-line interface (CLI) to download, modify, and redeploy your Cloud Foundry apps and service instances.
 {: shortdesc}
 
 Before you begin, [download and install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
@@ -66,13 +66,13 @@ After you install the CLI, you can get started:
     ```
     {: pre}
 
-2. Make changes to your app code as you see fit. For example, if you are using an {{site.data.keyword.cloud_notm}} sample application and your app contains the `src/main/webapp/index.html` file, you can modify it and edit "Thanks for creating ..." to say something new. Ensure the app runs locally before you deploy it back to {{site.data.keyword.cloud_notm}}.
+2. Make changes to your app code as you see fit. For example, if you are using an {{site.data.keyword.cloud_notm}} sample app and your app contains the `src/main/webapp/index.html` file, you can modify it and edit "Thanks for creating ..." to say something new. Ensure the app runs locally before you deploy it back to {{site.data.keyword.cloud_notm}}.
 
-    When deploying your app back to {{site.data.keyword.cloud_notm}}, the `manifest.yml` is used to determine your application’s URL, memory allocation, number of instances, and other crucial parameters. You can [read more about the manifest file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){: external} in the Cloud Foundry documentation.
+    When deploying your app back to {{site.data.keyword.cloud_notm}}, the `manifest.yml` is used to determine your app’s URL, memory allocation, number of instances, and other crucial options . You can [read more about the manifest file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){: external} in the Cloud Foundry documentation.
 
     Also pay attention to the `README.md` file, which contains details such as any applicable build instructions.
 
-    If your application is a Liberty app, you must build it before redeploying.
+    If your app is a Liberty app, you must build it before redeploying.
     {: note}
 
 3. Log in to {{site.data.keyword.cloud_notm}} with your IBMid. If you have multiple accounts, you will be prompted to select the account to use. If you do not specify a region with the `-r` flag, you must also select a region.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -40,11 +40,11 @@ subcollection: cloud-foundry-public
 # Use Dynatrace to monitor Liberty in {{site.data.keyword.cloud_notm}}
 {: #using_dynatrace}
 
-Dynatrace is a third-party service that provides monitoring for your app. You can integrate Dynatrace with your Liberty application, but IBM does not provide support for third-party services. See [Third-party services](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_support_statement#third-party) for more information.
+Dynatrace is a third-party service that provides monitoring for your app. You can integrate Dynatrace with your Liberty app, but IBM does not provide support for third-party services. See [Third-party services](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_support_statement#third-party) for more information.
 
-For more information about Dynatrace and its licensing, see [Dynatrace Application Monitoring](https://www.dynatrace.com/solutions/application-monitoring/){: external}.
+For more information about Dynatrace and its licensing, see [Dynatrace Application Monitoring](https://www.dynatrace.com/solutions/app-monitoring/){: external}.
 
-When your Liberty application is configured to use Dynatrace, the default behavior is that the
+When your Liberty app is configured to use Dynatrace, the default behavior is that the
 Liberty runtime will acquire a Dynatrace agent `.jar` file from a Dynatrace site and run
 that Dynatrace agent with your app.  With that default behavior the minimal necessary
 configuration to use Dynatrace is to create a user-provided service that points to
@@ -66,10 +66,10 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   ```
   {: pre}
 
-    In this example, my-dynatrace-collector is the name given to the service, DynatraceCollectorIPaddress is the IP address of the Dynatrace collector you     have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is Monitoring. You can specify optional parameters as in the example that follows.
+    In this example, my-dynatrace-collector is the name given to the service, DynatraceCollectorIPaddress is the IP address of the Dynatrace collector you     have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is Monitoring. You can specify optional options as in the example that follows.
 
     ```
-    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring",              "options" : {"dynatrace-parameter-1": "value", "dynatrace-parameter-2": "value"}}'
+    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring","options" : {"dynatrace-option-1": "value", "dynatrace-option-2": "value"}}'
     ```
     {: pre}
 
@@ -81,7 +81,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   ```
   {: pre}
 
-    **Note:** You must restage your application after binding the service.
+    **Note:** You must restage your app after binding the service.
 
 ## Optional configuration
 {: #optional_configuration}
@@ -110,7 +110,7 @@ The Dynatrace agent must be hosted on a web server, and the Liberty buildpack mu
 
 The Liberty app you want to monitor must be configured to locate the server hosting the agent `.jar` file you previously set up. You can configure the app with the **JBP_CONFIG_DYNATRACEAPPMONAGENT** environment variable. The **JBP_CONFIG_DYNATRACEAPPMONAGENT** environment variable tells the buildpack where to download the Dynatrace agent from. To set the environment variable, complete these steps:
 
-1. Set the variable **JBP_CONFIG_DYNATRACEAPPMONAGENT** so it has the value *"repository_root: URL_of_server_hosting_index.yml"*. For example, after pushing your application issue the following command:
+1. Set the variable **JBP_CONFIG_DYNATRACEAPPMONAGENT** so it has the value *"repository_root: URL_of_server_hosting_index.yml"*. For example, after pushing your app issue the following command:
 
     ```
     ibmcloud cf se myApp JBP_CONFIG_DYNATRACEAPPMONAGENT 'repository_root: https://my-dynatrace-agent-host.mybluemix.net'

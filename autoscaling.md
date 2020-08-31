@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -42,23 +42,23 @@ subcollection: cloud-foundry-public
 # Autoscaling
 {: #autoscale_cloud_foundry_apps}
 
-{{site.data.keyword.cloud}} has a built-in autoscaling support for Cloud Foundry applications to adjust application instance number automatically through
-  * Dynamic scaling based on application performance metrics.
+{{site.data.keyword.cloud}} has a built-in autoscaling support for Cloud Foundry apps to adjust app instance number automatically through
+  * Dynamic scaling based on app performance metrics.
   * Scheduled scaling based on time.
 
 This capability is offered based on Cloud Foundry open source project [App-Autoscaler][autoscaler_project]. Refer to [user guide][autoscaler_user_guide] to get started.
 
 ## Managing autoscaling from the console
 
-If you already have an application deployed on Cloud Foundry,  access the autoscaling page with the following steps:
+If you already have an app deployed on Cloud Foundry,  access the autoscaling page with the following steps:
 
 1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry Apps**.
-3. Click the application to view its **Overview** page.
+3. Click the app to view its **Overview** page.
 4. Select the **Autoscaling** in the left navigation pane.
-5. In the **Policy** tab configure your scaling policy for the application.
+5. In the **Policy** tab configure your scaling policy for the app.
 
-If you don't have an Cloud Foundry application running on {{site.data.keyword.cloud}}, [deploy a Cloud Foundry application](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) to {{site.data.keyword.cloud}} first.
+If you don't have an Cloud Foundry app running on {{site.data.keyword.cloud}}, [deploy a Cloud Foundry app](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) to {{site.data.keyword.cloud}} first.
 
 ## Managing autoscaling from the CLI
 
@@ -76,7 +76,7 @@ The same command can be used to update `AutoScaler CLI` plugin to the latest ver
 
 ### Using the AutoScaler CLI
 
-If you already logged in to a Cloud Foundry environment on {{site.data.keyword.cloud}} and have applications running in your space as described in [deploying apps guide][deploy_app], follow steps below to create a scaling policy for your application, and query metrics and scaling history.
+If you already logged in to a Cloud Foundry environment on {{site.data.keyword.cloud}} and have apps running in your space as described in [deploying apps guide][deploy_app], follow steps below to create a scaling policy for your app, and query metrics and scaling history.
 
  *  (optional) Confirm the App-Autoscaler API endpoint is set correctly by default.  
 
@@ -128,14 +128,14 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
 
     The policy above is used to trigger  scaling based on memory utilization  when the defined threshold is breached for at least `120    seconds`.  Refer to [Cloud Foundry App-Autoscaler user guide][autoscaler_user_guide] for how to create your own autoscaling policy.
 
-*  Attach the policy to your application
+*  Attach the policy to your app
 
     ```
     ibmcloud cf aasp <YOUR_APP> <YOUR_POLICY_FILE>
     ```
     {: pre}
 
-*  (optional) Furthermore, you can query the most recent aggregated metrics of your application. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
+*  (optional) Furthermore, you can query the most recent aggregated metrics of your app. App-Autoscaler supports multiple [metric types][metric_type], but only the metrics you defined in your policy could be retrieved, i.e. `memoryutil` in above example.  
 
     ```
     ibmcloud cf asm <YOUR_APP> <METRIC_TYPE> --desc
@@ -153,35 +153,35 @@ If you already logged in to a Cloud Foundry environment on {{site.data.keyword.c
 
 ## Policy configuration
 
-Autoscaling determines when and how to scale your application's capacity according to the autoscaling policy that you defined.  You can create the autoscaling policy from scratch or import it from an existing JSON file.  
+Autoscaling determines when and how to scale your app's capacity according to the autoscaling policy that you defined.  You can create the autoscaling policy from scratch or import it from an existing JSON file.  
 
 To create a policy from scratch, follow steps below:
 
 1. Click  **Create Auto-Scaling policy**
-2. Set **Default Instance Limits** of your application with **Minimum Instance Count** and **Maximum Instance Count** to restrict the scope of resource consumption
+2. Set **Default Instance Limits** of your app with **Minimum Instance Count** and **Maximum Instance Count** to restrict the scope of resource consumption
 3. Create a series of **Dynamic Scaling Rules** with selected metric types, thresholds and adjustment strategies.  The following describes related fields in the dynamic scaling rule.
 
    **Metric types:** The following metric types are supported in dynamic scaling rule:
-   * **Memory used** represents the absolute value of the used memory of your application. The unit of _memory utilization_ unit is "MB".
-   * **Memory utilization**, a short name of `memory utilization`, is the used memory of the total memory allocated to the application in percentage. For example, if the memory usage of the application is 100MB  and memory quota is 200MB, the value of _memory utilization_ is 50%.   
-   * **CPU** , a short name of `cpu utilization`, is the cpu percentage used by the application. The unit of **cpu** is "%".  
+   * **Memory used** represents the absolute value of the used memory of your app. The unit of _memory utilization_ unit is "MB".
+   * **Memory utilization**, a short name of `memory utilization`, is the used memory of the total memory allocated to the app in percentage. For example, if the memory usage of the app is 100MB  and memory quota is 200MB, the value of _memory utilization_ is 50%.   
+   * **CPU** , a short name of `cpu utilization`, is the cpu percentage used by the app. The unit of **cpu** is "%".  
       _Note_: `cpu utilization` may be affected by the total workload of the hosting hardware and other factors.
-   * **Response time** represents the average amount of time the application takes to respond to a request in a given time period.  The unit of _Response time_ is "ms" (milliseconds).
+   * **Response time** represents the average amount of time the app takes to respond to a request in a given time period.  The unit of _Response time_ is "ms" (milliseconds).
    * **Throughput** is the total number of the processed requests  in a given time period. The unit of _throughput_ is "rps" (requests per second).
    * **Custom metric**
      You can define your own metric name using a combination of alphabets and numbers, and then emit the corresponding metrics to App Autoscaler in order to trigger dynamic scaling. See details in [Custom metric usage guide][custom_metric_usage_guide].
 
    **Operator**, **Threshold**, **Breach Duration** , **Adjustment** and **Cooldown**:
 
-   Once the **threshold** is continuously breached during the **breach duration** period,  App Autoscaler will trigger a scaling action to ** adjust** application instance number unless **Cool down** setting is not fulfilled.
+   Once the **threshold** is continuously breached during the **breach duration** period,  App Autoscaler will trigger a scaling action to ** adjust** app instance number unless **Cool down** setting is not fulfilled.
 
    * **Operator** could be defined as `>=`, `>`, `<=` or `<`.
    * **Threshold** must be defined as a numeric value.  
    * **Breach duration** is defined in `seconds`.  Optional, default value is 120 seconds.
-   * **Adjustment** defines how to change the number of application instances in each scaling action.  You can specify an absolute number or a percentage of instances to add or remove.
-   * **Cooldown** defines the time duration to wait before the next scaling action takes place. A cooldown period helps to ensure that your application does not launch new instances or terminate old instances before your application becomes stable. **Cooldown** is defined in `seconds`. **Cooldown**  is an optional setting as well, and the default value is 300 seconds.
+   * **Adjustment** defines how to change the number of app instances in each scaling action.  You can specify an absolute number or a percentage of instances to add or remove.
+   * **Cooldown** defines the time duration to wait before the next scaling action takes place. A cooldown period helps to ensure that your app does not launch new instances or terminate old instances before your app becomes stable. **Cooldown** is defined in `seconds`. **Cooldown**  is an optional setting as well, and the default value is 300 seconds.
 
-4. (Optional) Define **Schedules** to scale your application during a set of time periods.
+4. (Optional) Define **Schedules** to scale your app during a set of time periods.
 
    You can define _Schedules_ to prepare enough instances for peak hours. The schedule policy overwrites the default instance limits and set the instance number to **Initial Minimum Instance Count** to enforce the instance number at the beginning of a schedule.
 
@@ -198,7 +198,7 @@ You can also import a policy file in JSON through **Import From JSON**.  Refer t
 
 Once a policy is defined with dynamic scaling rules, you will be able to view the latest metric values, and  metrics history in in the past 2 hours.
 
-_Note_: the metric value is not the raw data from each application instance but averaged over all the application instances.
+_Note_: the metric value is not the raw data from each app instance but averaged over all the app instances.
 
 ## Scaling history
 
@@ -207,8 +207,8 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 
 ## Related readings
 
-* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
-* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Applications](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
+* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-apps-on-ibm-cloud){: external}
+* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Apps](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-apps){: external}
 
 
 

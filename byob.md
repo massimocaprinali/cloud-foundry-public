@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -41,10 +41,10 @@ subcollection: cloud-foundry-public
 # Using community buildpacks
 {: #using_buildpacks}
 
-If you can't find a starter in the {{site.data.keyword.cloud}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.cloud_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your application by using the `ibmcloud cf push` command.
+If you can't find a starter in the {{site.data.keyword.cloud}} catalog that provides the runtime you want, you can bring an external buildpack to {{site.data.keyword.cloud_notm}}. You can specify a custom, Cloud Foundry-compatible buildpack when you deploy your app by using the `ibmcloud cf push` command.
 {: shortdesc}
 
-External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your application to {{site.data.keyword.cloud_notm}}, make sure that you install the {{site.data.keyword.cloud_notm}} command line interface.
+External buildpacks are provided by the Cloud Foundry community for you to use as your own buildpacks. Before you deploy your app to {{site.data.keyword.cloud_notm}}, make sure that you install the {{site.data.keyword.cloud_notm}} command line interface.
 
 External buildpacks are not provided by IBM. Contact the Cloud Foundry community for support.
 {: note}
@@ -72,21 +72,21 @@ nodejs_buildpack   9      true      false    buildpack_nodejs_v8-177-g2b0a5cf.zi
 
 For the same runtime or framework, IBM-created buildpacks take precedence over the community ones. If you want to use the community buildpack to overwrite the IBM-created buildpack, you must specify the buildpack by using the `-b` option with the `ibmcloud cf push` command.
 
-For example, you can use the community buildpack for Java™ web applications by using the following command.
+For example, you can use the community buildpack for Java™ web apps by using the following command.
 
 ```
 ibmcloud cf push app_name -b java_buildpack -p app_path
 ```
 {: pre}
 
-You can also use the community buildpack for Node.js application with the following command.
+You can also use the community buildpack for Node.js app with the following command.
 
 ```
 ibmcloud cf push app_name -b nodejs_buildpack -p app_path
 ```
 {: pre}
 
-For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the `-b` option with the `ibmcloud cf push` command. For example, for Ruby applications, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command.
+For a runtime or framework that is not supported by IBM-created buildpacks but is supported by built-in community buildpacks, you do not have to use the `-b` option with the `ibmcloud cf push` command. For example, for Ruby apps, there are no IBM-created buildpacks. You can use the built-in community buildpack by entering the following command.
 
 ```
 ibmcloud cf push app_name -p app_path
@@ -102,14 +102,14 @@ ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/staticf
 ```
 {: pre}
 
-If you don't want to use the built-in community buildpack for Ruby applications, you can use an external buildpack by entering the following command.
+If you don't want to use the built-in community buildpack for Ruby apps, you can use an external buildpack by entering the following command.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/ruby-buildpack.git
 ```
 {: pre}
 
-You can also use a custom buildpack for your application. For example, you can use an open source PHP buildpack that is provided by the Cloud Foundry community. When you deploy your PHP application to {{site.data.keyword.cloud_notm}}, enter the following command to specify the Git repository URL of the buildpack.
+You can also use a custom buildpack for your app. For example, you can use an open source PHP buildpack that is provided by the Cloud Foundry community. When you deploy your PHP app to {{site.data.keyword.cloud_notm}}, enter the following command to specify the Git repository URL of the buildpack.
 
 ```
 ibmcloud cf push app_name -p app_path -b https://github.com/cloudfoundry/php-buildpack.git
@@ -133,7 +133,7 @@ ibmcloud cf set-env app_name JBP_CONFIG_OPEN_JDK_JRE &apos;{jre: { version: 1.7.
 ```
 {: pre}
 
-Then, restage your application to make the change effective.
+Then, restage your app to make the change effective.
 
 ```
 ibmcloud cf restage app_name

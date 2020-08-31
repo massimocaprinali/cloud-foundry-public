@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -321,7 +321,7 @@ You might not be able to locate your organization on {{site.data.keyword.cloud_n
 You can log in to the {{site.data.keyword.cloud_notm}} console successfully, but you can't push apps by using the Cloud Foundry command line interface.
 {: tsSymptoms}
 
-When you try to push an application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, you see one of the following error messages with the organization name that is specified in the message:
+When you try to push an app to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, you see one of the following error messages with the organization name that is specified in the message:
 
 `Error finding org`
 
@@ -330,7 +330,7 @@ When you try to push an application to {{site.data.keyword.cloud_notm}} by using
 This problem occurs because the API endpoint of the region that you want to work with isn't specified, and the organization you're looking for might be in a different region.
 {: tsCauses}
 
-If you are pushing your application to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `ibmcloud cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
+If you are pushing your app to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `ibmcloud cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
 {: tsResolve}
 
 ```
@@ -355,13 +355,13 @@ This problem occurs if the host name that you specified is already being used.
 The host name that you specify must be unique within the domain that you are using. To specify a different host name, use one of the following methods:
 {: tsResolve}
 
-  * If you deploy your application by using the `manifest.yml` file, specify the host name in the host option.
+  * If you deploy your app by using the `manifest.yml` file, specify the host name in the host option.
     ```
     host: host_name
 	```
     {: codeblock}
 
-  * If you deploy your application from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
+  * If you deploy your app from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
     ```
     ibmcloud cf push appname -p app_path -n host_name
     ```
@@ -439,7 +439,7 @@ Use one of the following methods, depending on the cause of the problem:
 
     * Use the `manifest.yml` file. For example:
 	  ```
-		  applications:
+		  apps:
       name: MyUniqueNodejs01
       ...
       command: node app.js
@@ -468,6 +468,6 @@ Use one of the following methods, depending on the cause of the problem:
     ```
     {: codeblock}
 
-For more tips about Node.js apps, see [Tips for Node.js Applications](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: external}.
+For more tips about Node.js apps, see [Tips for Node.js Apps](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: external}.
 
 

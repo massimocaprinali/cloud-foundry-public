@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -51,7 +51,7 @@ subcollection: cloud-foundry-public
 ### Push the server package
 {: #push_server_package}
 
-Push the server package containing your application limiting it to a single instance. Your server.xml file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
+Push the server package containing your app limiting it to a single instance. Your server.xml file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
 ```
        <featureManager>
            <feature>jsp-2.2</feature>
@@ -80,7 +80,7 @@ JConsole is included with your Java installation.  To start the JConsole app go 
 ```
 {: pre}
 
-You may have to pass additional parameters to configure Java trustStore. The following parameters should work in most cases:
+You may have to pass additional options to configure Java trustStore. The following options should work in most cases:
 ```
     -J-Djavax.net.ssl.trustStore=<java-home>/jre/lib/security/cacerts -J-Djavax.net.ssl.trustStorePassword=changeit -J-Djavax.net.ssl.trustStoreType=jks
 ```

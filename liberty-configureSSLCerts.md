@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -40,7 +40,7 @@ subcollection: cloud-foundry-public
 
 # Security Considerations
 
-If you want to add your own certificates to the Liberty keystore, there are a few considerations to note. When a stand-alone application is deployed, a default Liberty configuration is provided for the application. You would need to configure an on-prem Liberty server and use one of the following methods for pushing your application: [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server).
+If you want to add your own certificates to the Liberty keystore, there are a few considerations to note. When a stand-alone app is deployed, a default Liberty configuration is provided for the app. You would need to configure an on-prem Liberty server and use one of the following methods for pushing your app: [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server).
 
 ## Adding trusted certificates to Liberty
 In the IBM Knowledge Center there are a few resources that will help guide you to create certificates in the Liberty keystore.

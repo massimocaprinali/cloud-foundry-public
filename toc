@@ -111,7 +111,7 @@ Cloud Foundry Public
     Networking
         network-address.md
         [Hybrid Connectivity using Secure Gateway](/docs/SecureGateway?topic=SecureGateway-iptables-rules#iptables-dynamic-ips)
-        [Adding Global Load Balancing to the application](https://test.cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-multi-region-webapp#add-global-load-balancing-to-the-application)
+        [Secure web application across multiple regions](docs/solution-tutorials?topic=solution-tutorials-multi-region-webapp)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

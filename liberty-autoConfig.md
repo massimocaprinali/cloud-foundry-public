@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -43,11 +43,11 @@ subcollection: cloud-foundry-public
 # Configure bound services
 {: #auto_config}
 
-You can bind various services to your Liberty for Java application. Services can be container-managed, application-managed, or both, depending on what the developer wants.
+You can bind various services to your Liberty for Java app. Services can be container-managed, app-managed, or both, depending on what the developer wants.
 
-An application-managed service is a service that is managed entirely by the application, without any assistance from Liberty. The application typically reads VCAP_SERVICES to obtain information about the bound service and accesses the service directly. The application provides all necessary client access code. There is no dependency on Liberty features or the `server.xml` file configuration. The Liberty buildpack automatic configuration does not apply to services of this type.
+An app-managed service is a service that is managed entirely by the app, without any assistance from Liberty. The app typically reads VCAP_SERVICES to obtain information about the bound service and accesses the service directly. The app provides all necessary client access code. There is no dependency on Liberty features or the `server.xml` file configuration. The Liberty buildpack automatic configuration does not apply to services of this type.
 
-A container-managed service is a service that is managed by the Liberty runtime. In some cases, the application might look up the bound service in JNDI, while in others the service is used directly by Liberty itself. The Liberty buildpack reads VCAP_SERVICES to obtain information about the bound services. For each container-managed service, the buildpack performs three functions.
+A container-managed service is a service that is managed by the Liberty runtime. In some cases, the app might look up the bound service in JNDI, while in others the service is used directly by Liberty itself. The Liberty buildpack reads VCAP_SERVICES to obtain information about the bound services. For each container-managed service, the buildpack performs three functions.
 
 * Generates [cloud variables](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#accessing_info_of_bound_services) for the bound service.
 * Installs Liberty features and client access codes that are required to access the bound service.
@@ -66,7 +66,7 @@ The Liberty buildpack provides automatic configuration for the following service
 * [ElephantSQL](/docs/ElephantSQL)
 * [{{site.data.keyword.ssoshort}}](/docs/appid?topic=appid-cd-sso)
 
-The Compose services can be either container managed or application managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the application to manage the service, you can opt-out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).
+The Compose services can be either container managed or app managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the app to manage the service, you can opt-out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).
 
 ## Installation of Liberty features and client access code
 {: #installation_of_liberty_features}
@@ -78,11 +78,11 @@ See the [Opting out of service auto-configuration](#opting_out) section for more
 ## Generating or updating server.xml configuration stanzas
 {: #generating_or_updating_serverxml}
 
-The Liberty buildpack can automatically generate or update configuration stanzas in your `server.xml` file when you push a stand-alone application, depending on how your application is bound to services and whether you have an existing `server.xml` file.
+The Liberty buildpack can automatically generate or update configuration stanzas in your `server.xml` file when you push a stand-alone app, depending on how your app is bound to services and whether you have an existing `server.xml` file.
 
-When you push a stand-alone application, the Liberty buildpack generates the `server.xml` configuration stanza, as described in [Options for Pushing Liberty Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing), to {{site.data.keyword.cloud_notm}}.
+When you push a stand-alone app, the Liberty buildpack generates the `server.xml` configuration stanza, as described in [Options for Pushing Liberty Apps](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing), to {{site.data.keyword.cloud_notm}}.
 
-When you push a stand-alone application and bind to container-managed services, the Liberty buildpack generates the necessary `server.xml` stanzas for the bound services.
+When you push a stand-alone app and bind to container-managed services, the Liberty buildpack generates the necessary `server.xml` stanzas for the bound services.
 
 When you provide a `server.xml` file and bind to container-managed services, the Liberty buildpack will either generate or update the configuration stanzas.
 
@@ -96,7 +96,7 @@ See the documentation for the bound service type for more details.
 
 In some cases, you might not want the Liberty buildpack to automatically configure the services that have been bound. Consider the following scenarios.
 
-* My application uses *dashDB*, but I want the application to directly manage the connection to the database. The application contains the necessary client driver JAR file. I do not want the Liberty buildpack to automatically configure the *dashDB* service.
+* My app uses *dashDB*, but I want the app to directly manage the connection to the database. The app contains the necessary client driver JAR file. I do not want the Liberty buildpack to automatically configure the *dashDB* service.
 * I am providing a `server.xml` file and I provided the configuration stanzas for the *cloudant* instance because I require a non-standard datasource configuration. I do not want the Liberty buildpack to update my `server.xml` file, but I still require the Liberty buildpack to ensure that the appropriate supporting software is installed.
 
 To opt out of automatic service configuration, use the services_autoconfig_excludes environment variable. You can include this environment variable in a manifest.yml or set it using the {{site.data.keyword.cloud_notm}} client.
@@ -139,7 +139,7 @@ Here are sample opt-out specifications in a `manifest.yml` file for the *dashDB*
 ```
 {: codeblock}
 
-Here are examples of how to set the `services_autoconfig_excludes` environment variable for the application `myapp` by using the command-line interface.
+Here are examples of how to set the `services_autoconfig_excludes` environment variable for the app `myapp` by using the command-line interface.
 
 ```
     ibmcloud cf set-env myapp services_autoconfig_excludes cloudant=config

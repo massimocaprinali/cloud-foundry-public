@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -42,7 +42,7 @@ subcollection: cloud-foundry-public
 # Customize NuGet package sources
 {: #customizing_nuget}
 
-You can use the `NuGet.Config` file in the application's root directory to control where the application downloads dependencies. In the following example, configuring the `<packageSources>` property defines any keys and API URLs for the application to retrieve packages.
+You can use the `NuGet.Config` file in the app's root directory to control where the app downloads dependencies. In the following example, configuring the `<packageSources>` property defines any keys and API URLs for the app to retrieve packages.
 ```
    <?xml version="1.0" encoding="utf-8"?>
    <configuration>

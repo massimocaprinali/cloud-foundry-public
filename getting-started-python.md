@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -43,7 +43,7 @@ subcollection: cloud-foundry-public
 
 
 
-Congratulations, you deployed a Hello World sample application on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-python){: external} and explore on your own.
+Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-python){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Python getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
@@ -118,7 +118,7 @@ Open the manifest.yml file, and change the `name` from `GetStartedPython` to you
 {: download}
 
   ```
-  applications:
+  apps:
   - name: GetStartedPython
     random-route: true
     memory: 128M
@@ -178,15 +178,15 @@ You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://
 ## Step 5: Add a database
 {: #add_database-python}
 
-Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this application and set up the application so that it can run locally and on {{site.data.keyword.cloud_notm}}.
+Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this app and set up the app so that it can run locally and on {{site.data.keyword.cloud_notm}}.
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
-1. In the navigation, go to **Connections**, then click **Create connection**. Select your application, and click **Connect**.
-1. Using the default values, click **Connect & restage app** to connect the database to your application. Click **Restage** when prompted.
+1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is available to the application only when it is running on {{site.data.keyword.cloud_notm}}.
+   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -194,7 +194,7 @@ Environment variables enable you to separate deployment settings from your sourc
 ## Step 6: Use the database
 {: #use_database-python}
 
-We're now going to update your local code to point to this database. We'll create a JSON file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
+We're now going to update your local code to point to this database. We'll create a JSON file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
 
 1. Create a file called `vcap-local.json` in the `get-started-python` directory with the following content:
 
@@ -220,7 +220,7 @@ We're now going to update your local code to point to this database. We'll creat
 
 3. Copy and paste the `username`, `password`, and `host` from the credentials to the same fields of the `vcap-local.json` file replacing **CLOUDANT_DATABASE_USERNAME**, **CLOUDANT_DATABASE_PASSWORD**, and **CLOUDANT_DATABASE_HOST**.
 
-4. Run your application locally.
+4. Run your app locally.
 
   ```
 python hello.py

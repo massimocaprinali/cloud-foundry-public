@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -54,7 +54,7 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
 
 1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry Apps**.
-3. Click the application that you want to change the domain for. The app's **Overview** page is displayed.
+3. Click the app that you want to change the domain for. The app's **Overview** page is displayed.
 4. Select the **Routes** menu, notice the current domain, such as `<myapp.mybluemix.net>`, and click **Edit routes**.
 5. Select the list of domains, and then click the domain that you want to use, such as `us-south.cf.appdomain.cloud`.
 6. Confirm your updates by clicking **Save**.
@@ -77,7 +77,7 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
    * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
    * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
 
-2. Add the route with the new domain to an application by typing the following command:
+2. Add the route with the new domain to an app by typing the following command:
    ```
    ibmcloud app route-map <APPNAME> <DOMAIN> -n <HOSTNAME>
    ```

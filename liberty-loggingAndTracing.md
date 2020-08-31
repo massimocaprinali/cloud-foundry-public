@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -44,7 +44,7 @@ subcollection: cloud-foundry-public
 ## Log files
 {: #log_files}
 
-The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are available in {{site.data.keyword.cloud}} in the `logs` directory of each application instance. These logs can be accessed from the {{site.data.keyword.cloud_notm}} console or via the {{site.data.keyword.cloud_notm}} CLI. For example:
+The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are available in {{site.data.keyword.cloud}} in the `logs` directory of each app instance. These logs can be accessed from the {{site.data.keyword.cloud_notm}} console or via the {{site.data.keyword.cloud_notm}} CLI. For example:
 
 * To access recent logs for an app, run the following command:
 
@@ -68,11 +68,11 @@ The log level and other trace options can be set through the Liberty configurati
 
 ### Using trace and dump in {{site.data.keyword.cloud_notm}} console (Deprecated)
 
-The Liberty tracing configuration can be adjusted for a running application directly from the {{site.data.keyword.cloud_notm}} console. The console also provides capability for requesting and downloading thread and heap dumps. In order to adjust the tracing configuration or request a dump, select a Liberty application in the {{site.data.keyword.cloud_notm}} console and choose the `Runtime` menu in the navigation. In the `Runtime` view, select an instance and press the *TRACE* or *DUMP* button. If adjusting the trace level, see [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html){: external} for the details of the syntax of the trace specification.
+The Liberty tracing configuration can be adjusted for a running app directly from the {{site.data.keyword.cloud_notm}} console. The console also provides capability for requesting and downloading thread and heap dumps. In order to adjust the tracing configuration or request a dump, select a Liberty app in the {{site.data.keyword.cloud_notm}} console and choose the `Runtime` menu in the navigation. In the `Runtime` view, select an instance and press the *TRACE* or *DUMP* button. If adjusting the trace level, see [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html){: external} for the details of the syntax of the trace specification.
 
 ### Changing trace configuration via SSH
 
-When you push the application, the server.xml file includes the default properties  **updateTrigger** set to **polled** and **monitorInterval** set to 1 minute. The Liberty server is automatically configured to check for updates to the server.xml file each minute.
+When you push the app, the server.xml file includes the default properties  **updateTrigger** set to **polled** and **monitorInterval** set to 1 minute. The Liberty server is automatically configured to check for updates to the server.xml file each minute.
 
 See [Push Liberty apps with server.xml](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#options_for_pushing) for options to push Liberty apps with a customized `server.xml` file.
 
@@ -112,7 +112,7 @@ See the documentation below for details on downloading the generated dump files.
 ## Download dump files
 {: #download_dumps}
 
-By default, the various dump files are placed in the `dumps` directory of the application container. Use {{site.data.keyword.cloud_notm}} CLI `ibmcloud cf ssh` to view and download the dump files.
+By default, the various dump files are placed in the `dumps` directory of the app container. Use {{site.data.keyword.cloud_notm}} CLI `ibmcloud cf ssh` to view and download the dump files.
 
 * To see the generated dumps, run the following command:
 

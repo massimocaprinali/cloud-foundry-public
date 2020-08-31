@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -51,7 +51,7 @@ Before you can start coding with Node-RED, you must first configure the editor.
 ## Open the Node-RED flow editor
 {: #openEditor}
 
-1. After your application starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
+1. After your app starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
 ```
     http://<varname>&lt;yourhost></varname>.mybluemix.net
 ```

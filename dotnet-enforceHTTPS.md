@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -38,10 +38,10 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-# Enforce HTTPS on all pages in your application
+# Enforce HTTPS on all pages in your app
 {: #dotnet-enforce_https}
 
-To enforce HTTPS instead of HTTP on all pages in your application when it runs in {{site.data.keyword.cloud}}, you need to make the following changes to your application.
+To enforce HTTPS instead of HTTP on all pages in your app when it runs in {{site.data.keyword.cloud}}, you need to make the following changes to your app.
 
 Add the following `using` statements in the `Startup` class:
 

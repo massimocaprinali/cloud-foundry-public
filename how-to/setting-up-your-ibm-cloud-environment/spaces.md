@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -47,7 +47,7 @@ Within an organization, spaces provide an extra level of boundary enforcement an
 
 A space is a reserved area in the organization where users can develop and run apps and services. You can create any number of spaces in an organization, and you can control the users that have access to a space. See [Spaces](/docs/account?topic=account-orgsspacesusers) for more details.
 
-If you plan to define many spaces, you might want to create an application to help manage the spaces. When the number of spaces exceeds sixty, you might want to consider defining another organization.
+If you plan to define many spaces, you might want to create an app to help manage the spaces. When the number of spaces exceeds sixty, you might want to consider defining another organization.
 
 ## Spaces for single-organization versus multi-organization
 {: #spaceconsiderations}
@@ -60,13 +60,13 @@ When you adopt a single-organization architecture, the level of segregation and 
   spaces for apps that are in production.
 * If the delivery lifecycle boundary is not sufficient, you can achieve more segregation by defining one or more spaces per LOB and delivery phase.
 * Identify if you need to enforce boundaries for different users groups.
-  For example, your developers cannot develop the application and test it. You require a different set of users to test the application. In this scenario, you create two spaces, one for
-  developers of the application and one for testers of the application. Then, grant each set of users access to the correct space.
+  For example, your developers cannot develop the app and test it. You require a different set of users to test the app. In this scenario, you create two spaces, one for
+  developers of the app and one for testers of the app. Then, grant each set of users access to the correct space.
 
 When you implement a multi-organization architecture, you can segregate each organization by the LOB, the delivery lifecycle, or both. You can then define multiple spaces, which are based on the number of apps or projects that are delivered by the same department in the company. Consider the following guidance when you plan the spaces in an organization:
 
 * Define a space to host a service that requires provisioning and configuring only once in the organization.
-* Define a space per application, per group of related apps, or for a specific project.
+* Define a space per app, per group of related apps, or for a specific project.
 * If you need to enforce boundaries for different users, define a space for each set of users. When a user is granted a developer role in a space, that user has full access to any resources and {{site.data.keyword.cloud_notm}} services) that are provisioned and running in that space. When you need to enforce tighter security to prevent users controlling every resource, consider defining different spaces. Within any of these spaces, you can provision {{site.data.keyword.cloud_notm}} services that are used by the apps running in that space.
 
 ## Space naming, restrictions, and management

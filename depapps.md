@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -428,14 +428,14 @@ To specify start commands for your app, you can use one of the following options
 If you want the buildpack start commands to take precedence, specify `null` as the start command.
 {: note}
 
-* Use the `ibmcloud cf push` command and specify the `-c` parameter. For example, when you deploy a Node.js app, you can specify the `node app.js` start command on the `-c` parameter:
+* Use the `ibmcloud cf push` command and specify the `-c` option. For example, when you deploy a Node.js app, you can specify the `node app.js` start command on the `-c` option:
 
 ```
 ibmcloud cf push appname -p app_path -c "node app.js"
 ```
 {: pre}
 
-* Use the command parameter in the `manifest.yml` file. For example, when you deploy a Node.js app, you can specify the `node app.js` start command in the manifest file:
+* Use the command option in the `manifest.yml` file. For example, when you deploy a Node.js app, you can specify the `node app.js` start command in the manifest file:
 
 ```
 command: node app.js

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -46,18 +46,18 @@ The Node.js runtime on {{site.data.keyword.cloud}} is powered by the sdk-for-nod
 The sdk-for-nodejs buildpack provides a complete runtime environment for Node.js apps.
 {: shortdesc}
 
-The sdk-for-nodejs buildpack is used when the application contains a **package.json** file in the root directory.
+The sdk-for-nodejs buildpack is used when the app contains a **package.json** file in the root directory.
 
-The application must listen on the port that is assigned to it through the PORT environment variable.
+The app must listen on the port that is assigned to it through the PORT environment variable.
 ```
 var port = (process.env.PORT || 3000);
 ```
 {: codeblock}
 
-## Starter application
-{: #nodejs-starter_application}
+## Starter app
+{: #nodejs-starter_app}
 
-{{site.data.keyword.cloud_notm}} provides a Node.js starter applications.  The Node.js starter application is a simple Node.js app that provides a template that you can use for your app. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
+{{site.data.keyword.cloud_notm}} provides a Node.js starter apps.  The Node.js starter app is a simple Node.js app that provides a template that you can use for your app. You can experiment with the starter app, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
 
 ## App Management (deprecated)
 {: #nodejs-app_management}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -41,11 +41,11 @@ subcollection: cloud-foundry-public
 # Customize the JRE
 {: #customizing_jre}
 
-Applications run in a Java runtime environment (JRE) that is provided and configured by the Liberty buildpack. The Liberty buildpack also makes it possible to configure the JRE version or type, customize the JVM options, or overlay the JRE functions.
+Apps run in a Java runtime environment (JRE) that is provided and configured by the Liberty buildpack. The Liberty buildpack also makes it possible to configure the JRE version or type, customize the JVM options, or overlay the JRE functions.
 
 ## {{site.data.keyword.IBM_notm}} JRE
 
-By default, applications are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html){: external}.
+By default, apps are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html){: external}.
 
  {{site.data.keyword.IBM_notm}}JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
  Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
@@ -59,7 +59,7 @@ The version property can be set to a version range. There are two supported vers
 ## OpenJDK
 {: #openjdk}
 
-Optionally, applications can be configured to run with OpenJDK as the JRE. To enable an application to run with OpenJDK set the JVM environment variable to "openjdk". For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
+Optionally, apps can be configured to run with OpenJDK as the JRE. To enable an app to run with OpenJDK set the JVM environment variable to "openjdk". For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
 ```
     ibmcloud cf set-env myapp JVM 'openjdk'
 ```
@@ -76,7 +76,7 @@ The version property can be set to a version range such as 1.7.+, 1.8.+ or any s
 ## OpenJ9
 {: #openj9}
 
-Optionally, applications can be configured to run with OpenJ9 as the JRE or JDK. To enable an application to run with OpenJ9 set the JVM environment variable to "openj9". For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
+Optionally, apps can be configured to run with OpenJ9 as the JRE or JDK. To enable an app to run with OpenJ9 set the JVM environment variable to "openj9". For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
 ```
     ibmcloud cf set-env myapp JVM 'openj9'
 ```
@@ -107,8 +107,8 @@ See [Using your own JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-u
 
 The Liberty buildpack configures the default JVM options by taking into account:
 
-* An application's memory limit.  The applied JVM heap settings are calculated based on:
-  * an application's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
+* An app's memory limit.  The applied JVM heap settings are calculated based on:
+  * an app's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
   * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
 
 * The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features).
@@ -117,12 +117,12 @@ The Liberty buildpack configures the default JVM options by taking into account:
 * The {{site.data.keyword.cloud_notm}} environment.
 
     The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
-  * fast failure and recovery of an application is configured by disabling JVM dumps options and killing of the processes when an application's memory is exhausted.
+  * fast failure and recovery of an app is configured by disabling JVM dumps options and killing of the processes when an app's memory is exhausted.
   * virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
-  * routing of information on the application's available memory resources at the time of failure to the Loggregator.
-  * if an application is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common application "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
+  * routing of information on the app's available memory resources at the time of failure to the Loggregator.
+  * if an app is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common app "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
 
-The following is an example default JVM configuration that is generated by the buildpack for an application that is deployed with a 512M Memory Limit:
+The following is an example default JVM configuration that is generated by the buildpack for an app that is deployed with a 512M Memory Limit:
 
 ```
     -Xtune:virtualized
@@ -139,7 +139,7 @@ The following is an example default JVM configuration that is generated by the b
 ### Customizing the JVM configuration
 {: #customizing_jvm}
 
-Applications can customize the JVM options with the specifications that are defined by the JRE configured for the application. Reference the guidelines on how to specify an option and its usage directly from the JRE's documentation, as the options vary according to the JRE.
+Apps can customize the JVM options with the specifications that are defined by the JRE configured for the app. Reference the guidelines on how to specify an option and its usage directly from the JRE's documentation, as the options vary according to the JRE.
 
 <table>
 <tr>
@@ -158,12 +158,12 @@ Applications can customize the JVM options with the specifications that are defi
 
 <tr>
 <td> OpenJDK </td>
-<td>is based on the HotSpot runtime that has the notation of -X for non-standard, -XX for developer options, and Boolean flags to enable or disable the option </td>
+<td>is based on the HotSpot runtime that has the notation of -X for non-standard, -XX for developer options, and Boolean values to enable or disable the option </td>
 <td>[HotSpot Runtime Overview](http://openjdk.java.net/groups/hotspot//docs/RuntimeOverview.html){: external} </td>
 </tr>
 </table>
 
-An application that requires customized JVM options can set the option as a value for one of the environment variables IBM_JAVA_OPTIONS, JAVA_OPTS, or JVM_ARGS in {{site.data.keyword.cloud_notm}}. Refer to the Environment Variables section on how to set an application's environment variable. A packaged server or a server directory can also include a jvm.options file that contains the command line options instead of setting an environment variable.
+An app that requires customized JVM options can set the option as a value for one of the environment variables IBM_JAVA_OPTIONS, JAVA_OPTS, or JVM_ARGS in {{site.data.keyword.cloud_notm}}. Refer to the Environment Variables section on how to set an app's environment variable. A packaged server or a server directory can also include a jvm.options file that contains the command line options instead of setting an environment variable.
 
 When the JVM options are applied to the JRE, the Liberty buildpack's default options are applied first, followed by the customized options. The customized options are appended in a specific order, which is listed in the table. The sequence of the applied Java options defines which options take precedence. Options that are applied last have precedence over options that were previously applied.
 
@@ -172,10 +172,10 @@ Note: Some options might not go into effect unless the option is triggered by an
 <table>
 <tr>
 <th align="left">Applied order</th>
-<th align="left">Application JVM options setting</th>
+<th align="left">App JVM options setting</th>
 <th align="left">Description</th>
-<th align="left">Supported application type</th>
-<th align="left">To update the JVM option of a deployed application</th>
+<th align="left">Supported app type</th>
+<th align="left">To update the JVM option of a deployed app</th>
 <th align="left">Applicable to OpenJDK JRE</th>
 </tr>
 
@@ -184,7 +184,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 <td>IBM_JAVA_OPTIONS</td>
 <td>an environment variable that is supported by the {{site.data.keyword.IBM_notm}} JRE</td>
 <td>All</td>
-<td>Restart or restage the application</td>
+<td>Restart or restage the app</td>
 <td>No</td>
 </tr>
 
@@ -216,12 +216,12 @@ Note: Some options might not go into effect unless the option is triggered by an
 </tr>
 </table>
 
-### Determining the applied JVM options of a running application
+### Determining the applied JVM options of a running app
 {: #determining_applied_jvm_options}
 
-Except for application-defined options that are specified with the JVM_ARGS environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java applications) or in a `jvm.options` file (non-standalone Java applications). The applied JVM options for the application can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
+Except for app-defined options that are specified with the JVM_ARGS environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java apps) or in a `jvm.options` file (non-standalone Java apps). The applied JVM options for the app can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
 
-The JVM options for stand-alone Java application are persisted as command line options. They can be viewed from the `staging_info.yml` file.
+The JVM options for stand-alone Java app are persisted as command line options. They can be viewed from the `staging_info.yml` file.
 
 To view the `staging_info.yml` file, run:
 
@@ -243,8 +243,8 @@ To view the `jvm.options` file, run:
 #### Example usage
 {: #example_usage}
 
-Deploying an application with customized JVM options to enable {{site.data.keyword.IBM_notm}} JRE verbose garbage collection logging:
-* The JVM options included in an application's `manifest.yml` file:
+Deploying an app with customized JVM options to enable {{site.data.keyword.IBM_notm}} JRE verbose garbage collection logging:
+* The JVM options included in an app's `manifest.yml` file:
 
 ```
     env:
@@ -259,7 +259,7 @@ Deploying an application with customized JVM options to enable {{site.data.keywo
 ```
 {: pre}
 
-* To update a deployed application's {{site.data.keyword.IBM_notm}} JRE option to trigger a heap, snap, and javacore on an OutOfMemory condition, set the application's environment variable with the JVM option and restart the application:
+* To update a deployed app's {{site.data.keyword.IBM_notm}} JRE option to trigger a heap, snap, and javacore on an OutOfMemory condition, set the app's environment variable with the JVM option and restart the app:
 
 ```
     ibmcloud cf set-env myapp JVM_ARGS '-Xdump:heap+java+snap:events=systhrow,filter=java/lang/OutOfMemoryError'
@@ -275,9 +275,9 @@ Deploying an application with customized JVM options to enable {{site.data.keywo
 ### Overlaying the JRE
 {: #overlaying_jre}
 
-There are some cases where files need to be bundled with the JRE to expose their functions. The application developer can supply JRE files for customization.
+There are some cases where files need to be bundled with the JRE to expose their functions. The app developer can supply JRE files for customization.
 
-The files to be overlaid can be packaged with the application WAR, EAR, or JAR in a resources folder at the root of the archive. For a server (compressed file or server directory), the files can be packaged in a resources folder in the server directory, with the server.xml file.
+The files to be overlaid can be packaged with the app WAR, EAR, or JAR in a resources folder at the root of the archive. For a server (compressed file or server directory), the files can be packaged in a resources folder in the server directory, with the server.xml file.
 
 * WAR file
   * WEB-INF
@@ -318,7 +318,7 @@ For example, if you want to use AES 256-bit encryption, you need to overlay thes
 ```
 {: codeblock}
 
-Download the appropriate unrestricted policy files and add them to your application as:
+Download the appropriate unrestricted policy files and add them to your app as:
 
 ```
     resources\.java-overlay\.java\jre\lib\security\US_export_policy.jar
@@ -326,6 +326,6 @@ Download the appropriate unrestricted policy files and add them to your applicat
 ```
 {: codeblock}
 
-When you push your application, these jars overlay the default policy jars in the Java runtime. This process enables AES 256-bit encryption.
+When you push your app, these jars overlay the default policy jars in the Java runtime. This process enables AES 256-bit encryption.
 
 

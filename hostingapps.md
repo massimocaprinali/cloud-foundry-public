@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -92,7 +92,7 @@ Optional: If you want to specify and save the deployment details before you push
   2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
 
   ```
-  applications:
+  apps:
   - disk_quota: 1024M
   host: myjavatest
   name: MyJavaTest

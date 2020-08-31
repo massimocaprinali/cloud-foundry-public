@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -65,7 +65,7 @@ Some features that Liberty provides are not available in the Liberty for Java ru
 Keep in mind that a server cannot load incompatible features, so be sure it is configured to enable only features that are compatible. See [Supported Java EE 6 and 7 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos.html){: external}
 and [Supported Java EE 7 and 8 feature combinations](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_prog_model_supported_combos_7_8.html){: external}.
 
-Applications that use remote EJBs can be deployed to {{site.data.keyword.cloud_notm}}, but the remote EJBs are not remotely accessible with the CORBA/IIOP
+Apps that use remote EJBs can be deployed to {{site.data.keyword.cloud_notm}}, but the remote EJBs are not remotely accessible with the CORBA/IIOP
 protocol because of port restrictions in the {{site.data.keyword.cloud_notm}} environment.
 
 ## Liberty features index

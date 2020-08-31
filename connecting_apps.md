@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -43,15 +43,15 @@ subcollection: cloud-foundry-public
 # Managing connections
 {: #connect_app}
 
-You can connect a service to an existing or new {{site.data.keyword.cloud}} application from the **Connections** tab on your service dashboard. Connecting a Cloud Foundry service to a Cloud Foundry application creates a binding between them, and you can unbind, add additional connections, or delete connections from the **Connections** tab.
+You can connect a service to an existing or new {{site.data.keyword.cloud}} app from the **Connections** tab on your service dashboard. Connecting a Cloud Foundry service to a Cloud Foundry app creates a binding between them, and you can unbind, add additional connections, or delete connections from the **Connections** tab.
 
-However, when you connect a service instance that is managed by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to a Cloud Foundry application, an alias of the service managed by IAM is automatically created in the corresponding Cloud Foundry space with the binding information that you specified. This alias is represented as a Cloud Foundry service instance of your IAM-managed service.
+However, when you connect a service instance that is managed by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to a Cloud Foundry app, an alias of the service managed by IAM is automatically created in the corresponding Cloud Foundry space with the binding information that you specified. This alias is represented as a Cloud Foundry service instance of your IAM-managed service.
 {: shortdesc}
 
 ## What is an alias?
 {: #what_is_alias}
 
-An alias is a connection between your IAM-managed service within a resource group and a Cloud Foundry application within an org or a space. In the {{site.data.keyword.cloud_notm}} console, the connection (alias) is represented as a Cloud Foundry service instance. You can manage your alias by modifying the service instance that represents your connection.
+An alias is a connection between your IAM-managed service within a resource group and a Cloud Foundry app within an org or a space. In the {{site.data.keyword.cloud_notm}} console, the connection (alias) is represented as a Cloud Foundry service instance. You can manage your alias by modifying the service instance that represents your connection.
 
 Aliases are like symlinks that hold references to remote resources and enable interoperability and reuse of an instance across the platform. For example, you can create an instance of a service in a resource group and then reuse it from any available Cloud Foundry region by creating an alias in an org or space in those regions.
 
@@ -59,16 +59,16 @@ The following rules apply to aliases:
 
 * There is no extra charge for an alias, but each alias counts against your quota in your Cloud Foundry organization.
 * You can create only one alias per Cloud Foundry space in the {{site.data.keyword.cloud_notm}} console. However, more than one alias per space can be created using the {{site.data.keyword.cloud_notm}} CLI. For more information, see [Working with resource groups and resources](/docs/cli?topic=cli-ibmcloud_commands_resource).
-* You can create multiple connections between your IAM-managed service and any Cloud Foundry application in any space, organization, and region in the same account if you have permission.
+* You can create multiple connections between your IAM-managed service and any Cloud Foundry app in any space, organization, and region in the same account if you have permission.
 * Multiple connections made in the same space to different Cloud Foundry apps from an IAM-managed service instance will use the same alias.
 * Un-binding an IAM-managed service instance *will not* delete the Cloud Foundry service instance that represents the alias.
-* Deleting the Cloud Foundry application that your IAM-managed service instance is connected to *will not* delete the Cloud Foundry instance that represents the alias.
+* Deleting the Cloud Foundry app that your IAM-managed service instance is connected to *will not* delete the Cloud Foundry instance that represents the alias.
 * Deleting an IAM-managed service instance *will* delete the Cloud Foundry service instance that represents the alias.
 
 ## Creating a connection (alias) between an IAM-managed service and a Cloud Foundry app
 {: #creating_alias}
 
-To connect your IAM-managed service instance to a Cloud Foundry application:
+To connect your IAM-managed service instance to a Cloud Foundry app:
 
 1. Go to your dashboard.
 
