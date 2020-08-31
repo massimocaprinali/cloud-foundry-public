@@ -66,7 +66,7 @@ The Liberty buildpack provides automatic configuration for the following service
 * [ElephantSQL](/docs/ElephantSQL)
 * [{{site.data.keyword.ssoshort}}](/docs/appid?topic=appid-cd-sso)
 
-The Compose services can be either container managed or app managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the app to manage the service, you can opt-out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).
+The Compose services can be either container managed or app managed. By default, the Liberty buildpack assumes that these services are container managed, and automatically configures them. If you want the app to manage the service, you can opt out of automatic configuration for the service by setting the `services_autoconfig_excludes` environment variable. For more information, see [Opting out of service auto-configuration](#opting_out).
 
 ## Installation of Liberty features and client access code
 {: #installation_of_liberty_features}

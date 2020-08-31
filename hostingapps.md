@@ -82,55 +82,58 @@ You can manage your code on local client and use Cloud Foundry command line inte
 Take the following steps to migrate your app:
 
 Install the Cloud Foundry command line interface. Ensure that you use the latest version of the `ibmcloud cf` command line interface.
-  1. Download the installation program for your operating system.
-  2. Follow the tool wizard to install the command line.
-  3. Use the following command to verify the version of the `ibmcloud cf` command line interface: `ibmcloud cf -v`
+
+1. Download the installation program for your operating system.
+2. Follow the tool wizard to install the command line.
+3. Use the following command to verify the version of the `ibmcloud cf` command line interface: `ibmcloud cf -v`
 
 Optional: If you want to specify and save the deployment details before you push an app to {{site.data.keyword.cloud_notm}}, you can add the app manifest by taking the following steps:
 
-  1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
-  2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
+1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
+2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
 
-  ```
-  apps:
-  - disk_quota: 1024M
-  host: myjavatest
-  name: MyJavaTest
-  path: webStarterApp.war
-  domain: mybluemix.net
-  instances: 1
-  memory: 512M
-  ```
-  {: codeblock}
+   ```
+   applications:
+   - disk_quota: 1024M
+   host: myjavatest
+   name: MyJavaTest
+   path: webStarterApp.war
+   domain: mybluemix.net
+   instances: 1
+   memory: 512M
+   ```
+   {: codeblock}
 
 For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
 ### Push your app
 
 You can upload your app by using the `ibmcloud cf push` command.
-  1. Connect and log in to {{site.data.keyword.cloud_notm}} by running the following command. Select your organization and space when prompted.
-  ```
-  ibmcloud cf login -a https://api.ng.bluemix.net
-  ```
-  {: pre}
 
-  Add the `-sso` flag if your organization uses Single Sign On.
+1. Connect and log in to {{site.data.keyword.cloud_notm}} by running the following command. Select your organization and space when prompted.
 
-  2. From your app directory, enter the `ibmcloud cf push` command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
+   ```
+   ibmcloud cf login -a https://api.ng.bluemix.net
+   ```
+   {: pre}
 
-  ```
-  ibmcloud cf push appname
-  ```
-  {: pre}
+   Add the `-sso` flag if your organization uses Single Sign On.
 
-  3. Optional: If you use an external buildpack, you must use the -b option with the `ibmcloud cf push` command. For example:
+2. From your app directory, enter the `ibmcloud cf push` command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
 
-  ```
-  ibmcloud cf push appname -b buildpack_URL
-  ```
-  {: pre}
+   ```
+   ibmcloud cf push appname
+   ```
+   {: pre}
 
-  See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
+3. Optional: If you use an external buildpack, you must use the -b option with the `ibmcloud cf push` command. For example:
+
+   ```
+   ibmcloud cf push appname -b buildpack_URL
+   ```
+   {: pre}
+
+   See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The `ibmcloud cf` command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 

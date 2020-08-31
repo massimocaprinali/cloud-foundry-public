@@ -50,7 +50,7 @@ You can configure your app to work with the proxy by using the following environ
   * [https_proxy](https://docs.cloudfoundry.org/buildpacks/proxy-usage.html){: external}
   * [no_proxy](http://www.gnu.org/software/wget/manual/html_node/Proxies.html){: external}
 
-You can set these environment variables using `ibmcloud app env-set` or using the `manifest.yml` file.  Depending on how you configure your proxy environment variables, if your app downloads resources from the internet during staging, your resources might download using the proxy. For example, if you have a Nodejs app in an environment with `http_proxy` set to `yourProxyURL` and you want to allow `npm` to download modules from the internet **but not the proxy**.  To download without using the proxy, set `no_proxy` to `npmjs.org`.
+You can set these environment variables using `ibmcloud app env-set` or using the `manifest.yml` file.  Depending on how you configure your proxy environment variables, if your app downloads resources from the internet during staging, your resources might download using the proxy. For example, if you have a Node.js app in an environment with `http_proxy` set to `yourProxyURL` and you want to allow `npm` to download modules from the internet **but not the proxy**.  To download without using the proxy, set `no_proxy` to `npmjs.org`.
 
 You might want your app to use the proxy during runtime, after staging.  Runtime proxy use is entirely dependent on the app and is not affected by either the buildpack or the proxy environment variables.
 {: note}

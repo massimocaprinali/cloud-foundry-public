@@ -81,7 +81,7 @@ New Relic service instance:
 
 ```
         &dash;&dash;&dash;
-        apps:
+        applications:
         - name: myapp
          memory: 1G
          instances: 1

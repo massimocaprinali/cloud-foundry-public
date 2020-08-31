@@ -69,7 +69,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
     In this example, my-dynatrace-collector is the name given to the service, DynatraceCollectorIPaddress is the IP address of the Dynatrace collector you     have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is Monitoring. You can specify optional options as in the example that follows.
 
     ```
-    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring","options" : {"dynatrace-option-1": "value", "dynatrace-option-2": "value"}}'
+    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring","options" : {"dynatrace-parameterr-1": "value", "dynatrace-parameter-2": "value"}}'
     ```
     {: pre}
 

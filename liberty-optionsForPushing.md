@@ -91,7 +91,8 @@ These features correspond to the Java EE 7 Web Profile features. You can specify
 ```
 {: pre}
 
-Note: For best results, set the Liberty features with the JBP_CONFIG_LIBERTY environment variable or deploy your app as a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) with a custom server.xml file. Setting this environment variable ensures that your app uses only the feature that it needs and it is not affected by the buildpack's default Liberty feature set changes. If you need to provide extra Liberty configuration beyond the feature set, use the [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or the [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) option to deploy your app.
+For best results, set the Liberty features with the JBP_CONFIG_LIBERTY environment variable or deploy your app as a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) with a custom server.xml file. Setting this environment variable ensures that your app uses only the feature that it needs and it is not affected by the buildpack's default Liberty feature set changes. If you need to provide extra Liberty configuration beyond the feature set, use the [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or the [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server) option to deploy your app.
+{: note}
 
 If you deployed a WAR file, the web app is accessible under the context root as set in the embedded ibm-web-ext.xml file. If the ibm-web-ext.xml file does not exist, or does not specify the context root, the app is accessible under the root context. For example,
 
@@ -138,7 +139,7 @@ The entire default Liberty server.xml configuration file is as follows:
        <applicationMonitor dropinsEnabled='false' updateTrigger='mbean'/>
        <config updateTrigger='mbean'/>
        <cdi12 enableImplicitBeanArchives='false'/>
-       <applicationstate2 appName='myapp'/>
+       <appstate2 appName='myapp'/>
     </server>
 ```
 {: codeblock}
@@ -216,7 +217,7 @@ After the server directory is ready, you can deploy it to {{site.data.keyword.cl
 ```
 {: pre}
 
-Note: The web apps that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5){: external}. For example:
+The web apps that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5){: external}. For example:
 
 ```
     http://<yourappname>.mybluemix.net/acme/
@@ -246,7 +247,8 @@ For example:
 ```
 {: pre}
 
-Note: The web apps that are deployed as part of the packaged server are accessible under the context root, as determined by the Liberty profile.
+The web apps that are deployed as part of the packaged server are accessible under the context root, as determined by the Liberty profile.
+{: note}
 
 ### Modification of the server.xml file
 {: #modifications_of_serverxml}

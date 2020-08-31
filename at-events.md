@@ -45,12 +45,12 @@ subcollection: cloud-foundry-public
 # Activity Tracker events
 {: #at-events}
 
-As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and apps interact with Cloud Foundry Public.
+As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and apps interact with {{site.data.keyword.ibmcf_full}}.
 {: shortdesc}
 
 Activity Tracker records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard.
 
-The following Activity Tracker service is available in the {{site.data.keyword.cloud_notm}} catalog. Cloud Foundry Public sends events to this service that can be used to monitor Cloud Foundry Public activity in {{site.data.keyword.cloud_notm}}.
+The following Activity Tracker service is available in the {{site.data.keyword.cloud_notm}} catalog. {{site.data.keyword.ibmcf_notm}} sends events to this service that can be used to monitor {{site.data.keyword.ibmcf_notm}} activity in {{site.data.keyword.cloud_notm}}.
 
 For more information, see:
 * [{{site.data.keyword.at_full}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started)

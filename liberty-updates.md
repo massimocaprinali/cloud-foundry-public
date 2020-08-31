@@ -426,7 +426,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 
 ### July 21, 2015: Updated Liberty buildpack v1.20-20150713-1450
 * The buildpack contains an updated version of the Liberty profile based on the [8.5.5.6 release](https://developer.ibm.com/wasdev/blog/2015/06/25/java-ee-7-has-landed-in-was-liberty/){: external}. With this release all the Java EE 7 Liberty features previous available as beta features, are now available as production-ready features. Due to port and other restrictions in the {{site.data.keyword.cloud_notm}}, some features such as for example remote EJBs are not be fully supported in the platform.
-* The buildpack recognizes and runs apps packaged in the [distZip-style](https://docs.gradle.org/current/userguide/app_plugin.html){: external}.
+* The buildpack recognizes and runs apps packaged in the [distZip-style](https://docs.gradle.org/current/userguide/application_plugin.html){: external}.
 * The buildpack contains an updated data collector for the Monitoring and Analytics service and WebSphere eXtreme Scale Client that support the new Liberty runtime version.
 
 ### June 30, 2015: Updated Liberty buildpack v1.19.1-20150622-1509
