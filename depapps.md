@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-01"
 
 keywords: cloud foundry
 
@@ -449,10 +449,10 @@ command: node app.js
 User-defined environment variables are specific for an app. You have the following options to add a user-defined environment variable to a running app:
 
 * Use the {{site.data.keyword.cloud_notm}} user interface. 
-  1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The app details page is displayed.
-	2. Click **Runtime** > **Environment Variables**.
-	3. Click **USER-DEFINED**, then click **ADD**.
-	4. Fill in the required fields, then click **SAVE**.
+  1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The app details page is displayed
+  2. Click **Runtime** > **Environment Variables**.
+  3. Click **USER-DEFINED**, then click **ADD**.
+  4. Fill in the required fields, then click **SAVE**.
 
 * Use the `ibmcloud cf` command line interface. Add a user-defined variable by using the `ibmcloud cf env-set` command. For example:
 
