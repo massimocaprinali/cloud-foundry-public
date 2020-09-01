@@ -316,9 +316,9 @@ The following variables are defined by Diego:
         "disk": 1024,
         "fds": 16384
     },
-    "app_version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
-    "app_name": "testapp",
-    "app_uris": [
+    "application_version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
+    "application_name": "testapp",
+    "application_uris": [
         "testapp.AppDomainNamestage1.mybluemix.net"
     ],
     "version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
@@ -329,7 +329,7 @@ The following variables are defined by Diego:
         "testapp.AppDomainNamestage1.mybluemix.net"
     ],
     "users": null,
-    "app_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
+    "application_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
     "instance_id": "09f50e22848d4ec0b943e9e487c23569",
     "instance_index": 0,
     "host": "0.0.0.0",
