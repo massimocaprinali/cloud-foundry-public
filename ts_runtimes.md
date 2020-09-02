@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -89,16 +89,16 @@ If the buildpack that you are using doesn't provide a mechanism to load the late
   ```
   {: pre}
 
-### The application continues to restart
+### The app continues to restart
 {: #ts_apprestart}
 
-The application continues to crash and restart.
+The app continues to crash and restart.
 {: tsSymptoms}
 
-The application container lifecycle, such as evacuation and shut down, can impact your application functions.  
+The app container lifecycle, such as evacuation and shut down, can impact your app functions.  
 {: tsCauses}
 
-Identify which step of the application container lifecycle is causing errors in application deployment. Learn more about the [Cloud Foundry application lifecycle](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#evacuation){: external}.
+Identify which step of the app container lifecycle is causing errors in app deployment. Learn more about the [Cloud Foundry app lifecycle](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#evacuation){: external}.
 {: tsResolve}
 
 ### The Actions button on the Instance Details page is disabled (Deprecated)
@@ -113,7 +113,7 @@ Identify which step of the application container lifecycle is causing errors in 
    * The app isn't deployed with the embedded Liberty buildpack.
    * The app was deployed with an early version of Liberty buildpack.
 
-  If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client application log files to the support team:
+  If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client app log files to the support team:
   {: tsResolve}
 
     * logs/messages.log
@@ -205,10 +205,10 @@ Identify which step of the application container lifecycle is causing errors in 
 ## Liberty for Java
 {: #ts_liberty}
 
-### Application fails to start accepting connections
+### App fails to start accepting connections
 {: #health_check_timeout}
 
-A Liberty application fails to start with a "_Failed to start accepting connections_" error. For example, the error in the logs might look like the following:
+A Liberty app fails to start with a "_Failed to start accepting connections_" error. For example, the error in the logs might look like the following:
 {: tsSymptoms}
 
 ```
@@ -217,15 +217,15 @@ A Liberty application fails to start with a "_Failed to start accepting connecti
 ```
 {: codeblock}
 
-{{site.data.keyword.cloud_notm}} performs a health check on the application to see whether it has successfully started. The health check tests if the application is listening on the port that is assigned to the application. The default timeout for this check is 60 seconds and some applications might take longer than 60 seconds to start. There are a number of reasons why the application might take longer to start. For example, binding services such as [New Relic](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic) will increase the start-up time. The application might also perform initialization steps that might take a long time to finish.
+{{site.data.keyword.cloud_notm}} performs a health check on the app to see whether it has successfully started. The health check tests if the app is listening on the port that is assigned to the app. The default timeout for this check is 60 seconds and some apps might take longer than 60 seconds to start. There are a number of reasons why the app might take longer to start. For example, binding services such as [New Relic](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic) will increase the start-up time. The app might also perform initialization steps that might take a long time to finish.
 {: tsCauses}
 
-First, examine the logs for any obvious errors that might cause the Liberty application to fail. If no obvious errors are found, then try the following solutions:
+First, examine the logs for any obvious errors that might cause the Liberty app to fail. If no obvious errors are found, then try the following solutions:
 {: tsResolve}
 
 #### Increase the health check timeout
 
-* When you deploy the application by using the `ibmcloud cf push` command, specify a longer application start timeout by using the `-t` option. For example:
+* When you deploy the app by using the `ibmcloud cf push` command, specify a longer app start timeout by using the `-t` option. For example:
 
   ```
   	ibmcloud cf push myApp -t 180
@@ -243,27 +243,27 @@ First, examine the logs for any obvious errors that might cause the Liberty appl
 
 #### Disable the appstate feature
 
-The appstate feature integrates with the {{site.data.keyword.cloud_notm}} health check process to ensure that the Liberty application is fully initialized before the application can receive HTTP requests. After the application is fully initialized the appstate feature has no more effect.  The side effect of this feature is that some applications might take longer to start up. To disable the appstate feature, set the following environment property on your application and restage the application:
+The appstate feature integrates with the {{site.data.keyword.cloud_notm}} health check process to ensure that the Liberty app is fully initialized before the app can receive HTTP requests. After the app is fully initialized the appstate feature has no more effect.  The side effect of this feature is that some apps might take longer to start up. To disable the appstate feature, set the following environment property on your app and restage the app:
 
 ```
 ibmcloud cf set-env myApp JBP_CONFIG_LIBERTY "app_state: false"
 ```
 {: pre}
 
-#### Consider re-factoring the application
+#### Consider re-factoring the app
 
-If your application takes a long time to initialize, you might have to re-factor the application to do lazy and/or asynchronous initialization.
+If your app takes a long time to initialize, you might have to re-factor the app to do lazy and/or asynchronous initialization.
 
 #### Deploy with the "no-route" option
 
-1. Deploy your application with "--no-route" option. This will disable the port health check. For example:
+1. Deploy your app with "--no-route" option. This will disable the port health check. For example:
 
   ```
   	ibmcloud cf push myApp –no-route
   ```
   {: pre}
 
-2. Once the application is initialized, map a route to the application. For example:
+2. Once the app is initialized, map a route to the app. For example:
 
 ```
   ibmcloud cf map-route myApp mybluemix.net
@@ -274,7 +274,7 @@ If your application takes a long time to initialize, you might have to re-factor
 {: #ssl_handshake_failure}
 
 
-The following errors are visible in the logs and the application may fail to start:
+The following errors are visible in the logs and the app may fail to start:
 {: tsSymptoms}
 
 ```
@@ -285,10 +285,10 @@ The following errors are visible in the logs and the application may fail to sta
 ```
 {: screen}
 
-The errors can be generated when a secure service is bound to a Liberty application and the Liberty application was deployed as a server directory or packaged server that contains server.xml that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty application causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty's server.xml, the configured trust store may not trust the certificate used by the secure service.
+The errors can be generated when a secure service is bound to a Liberty app and the Liberty app was deployed as a server directory or packaged server that contains server.xml that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty app causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty's server.xml, the configured trust store may not trust the certificate used by the secure service.
 {: tsCauses}
 
-Modify configuration to use the JVM's trust store with one of the options that follow.  Be sure to restage your application after making the change.
+Modify configuration to use the JVM's trust store with one of the options that follow.  Be sure to restage your app after making the change.
 {: tsResolve}
 
 #### Update Liberty's server.xml
@@ -316,11 +316,11 @@ keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resour
 ## SDK for Node.js
 {: #ts_nodejs}
 
-### Application fails to start: General troubleshooting
+### App fails to start: General troubleshooting
 
-For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try vendoring your dependencies as a first troubleshooting step. Vendoring dependencies means that you package the dependencies in the same source files as your application. This can resolve various errors that can occur when dependencies assume that they are in the same base directory as the application.
+For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try vendoring your dependencies as a first troubleshooting step. Vendoring dependencies means that you package the dependencies in the same source files as your app. This can resolve various errors that can occur when dependencies assume that they are in the same base directory as the app.
 
-1. From your application root directory, install dependencies by running the following command.
+1. From your app root directory, install dependencies by running the following command.
 
    ```
    npm install
@@ -333,13 +333,13 @@ For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try 
    ```
    {: codeblock}
 
-Now when you deploy your application with the  `ibmcloud cf push` command, instead of downloading your dependencies to a separate location, the dependencies are copied into the same directory as the rest of the application.
+Now when you deploy your app with the  `ibmcloud cf push` command, instead of downloading your dependencies to a separate location, the dependencies are copied into the same directory as the rest of the app.
 
-### Application fails to start with a "No space left on device" error
+### App fails to start with a "No space left on device" error
 {: #no_space_left_on_device}
 
 
-A Node.js application fails to start with a "No space left on device" error. For example, the error in the logs might look like the following:
+A Node.js app fails to start with a "No space left on device" error. For example, the error in the logs might look like the following:
 {: tsSymptoms}
 
 ```
@@ -348,10 +348,10 @@ A Node.js application fails to start with a "No space left on device" error. For
 ```
 {: screen}
 
-Node.js applications using NPM versions prior to version 3 consume more space downloading dependencies.
+Node.js apps using NPM versions prior to version 3 consume more space downloading dependencies.
 {: tsCauses}
 
-Modify the package.json file for your application to use an NPM version 3 or greater.
+Modify the package.json file for your app to use an NPM version 3 or greater.
 {: tsResolve}
 
 ```
@@ -367,10 +367,10 @@ Modify the package.json file for your application to use an NPM version 3 or gre
 ```
 {: codeblock}
 
-### Application restarts due to memory constraints
+### App restarts due to memory constraints
 {: #oom}
 
-Node.js does not know how much memory is available to the application, so the garbage collector might not run before memory is exhausted.
+Node.js does not know how much memory is available to the app, so the garbage collector might not run before memory is exhausted.
 
 ```
 2017-09-01T11:00:42.19-0400 [APP/PROC/WEB/0]OUT Exit status 137
@@ -382,7 +382,7 @@ Node.js does not know how much memory is available to the application, so the ga
 ```
 {: screen}
 
-A possible solution is to set the `--max_old_space_size` option on the application's start command in the package.json file. This option represents part of the application's memory footprint and should be set to a value less than the total memory available to the application. Read about [Large memory spikes and Heroku](https://github.com/nodejs/node/issues/3370){: external} for a more in-depth discussion of this topic.
+A possible solution is to set the `--max_old_space_size` option on the app's start command in the package.json file. This option represents part of the app's memory footprint and should be set to a value less than the total memory available to the app. Read about [Large memory spikes and Heroku](https://github.com/nodejs/node/issues/3370){: external} for a more in-depth discussion of this topic.
 
 ```
   "scripts": {
@@ -394,13 +394,13 @@ A possible solution is to set the `--max_old_space_size` option on the applicati
 ## ASP.NET Core
 {: #ts_dotnet}
 
-The application fails to deploy with the message: `API/0App instance exited ... payload: {... "reason"=>"CRASHED", "exit_status"=>-1, ...}`.
+The app fails to deploy with the message: `API/0App instance exited ... payload: {... "reason"=>"CRASHED", "exit_status"=>-1, ...}`.
 {: tsSymptoms}
 
-If you receive a similar message when you push your ASP.net application, it is most likely because your application exceeds either the memory or disk quota limits.  Increase the quotas for memory or disk space for your application.
+If you receive a similar message when you push your ASP.net app, it is most likely because your app exceeds either the memory or disk quota limits.  Increase the quotas for memory or disk space for your app.
 {: tsCauses}
 
-The application fails to deploy with the message: `Failed to compress droplet: signal: broken pipe` or `No space left on device`.  How can I fix this?
+The app fails to deploy with the message: `Failed to compress droplet: signal: broken pipe` or `No space left on device`.  How can I fix this?
 {: tsSymptoms}
 
 Projects pushed from source code that contains a large number of NuGet package dependencies can sometimes cause this error when the NuGet package cache is enabled.  Set the `CACHE_NUGET_PACKAGES` environment variable to `false` to disable the cache.
@@ -429,7 +429,7 @@ When you push an app to {{site.data.keyword.cloud_notm}} by using a PHP buildpac
 ```
 {: screen}
 
-In the PHP buildpack, the error_log parameter defines the logging level. By default, the value of the `error_log` parameter is **stderr notice**. The following example shows the default logging level configuration in the `nginx-defaults.conf` file of the PHP buildpack that Cloud Foundry provides. For more information, see [cloudfoundry/php-buildpack](https://github.com/cloudfoundry/php-buildpack/blob/ff71ea41d00c1226d339e83cf2c7d6dda6c590ef/defaults/config/nginx/1.5.x/nginx-defaults.conf){: external}.
+In the PHP buildpack, the error_log option defines the logging level. By default, the value of the `error_log` option is **stderr notice**. The following example shows the default logging level configuration in the `nginx-defaults.conf` file of the PHP buildpack that Cloud Foundry provides. For more information, see [cloudfoundry/php-buildpack](https://github.com/cloudfoundry/php-buildpack/blob/ff71ea41d00c1226d339e83cf2c7d6dda6c590ef/defaults/config/nginx/1.5.x/nginx-defaults.conf){: external}.
 {: tsCauses}
 
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -44,7 +44,7 @@ subcollection: cloud-foundry-public
 
 
 
-Node-RED provides a browser-based flow editor that makes it easy to connect devices, APIs, and online services by using the wide range of nodes in the palette. You can deploy the flows to the Node.js runtime environment with a single click. This starter application provides a version of Node-RED that is customized to run in {{site.data.keyword.cloud}}.   
+Node-RED provides a browser-based flow editor that makes it easy to connect devices, APIs, and online services by using the wide range of nodes in the palette. You can deploy the flows to the Node.js runtime environment with a single click. This starter app provides a version of Node-RED that is customized to run in {{site.data.keyword.cloud}}.   
 {: shortdesc}
 
 Use the editor to create flows right away. You can also customize Node-RED itself. For more information, see the [Node-RED site](http://nodered.org/){: external}.
@@ -52,12 +52,12 @@ Use the editor to create flows right away. You can also customize Node-RED itsel
 ## Using Node-RED
 {: #usingNodeRed}
 
-Complete the following steps to use the Node-RED starter application from the {{site.data.keyword.cloud_notm}} console.
+Complete the following steps to use the Node-RED starter app from the {{site.data.keyword.cloud_notm}} console.
 
-1. Create a Node-RED starter application and download the starter code:
-  1. Click **Create App** to deploy a Node-RED starter application.
+1. Create a Node-RED starter app and download the starter code:
+  1. Click **Create App** to deploy a Node-RED starter app.
   2. Provide the app name and host in the prompt.
-2. After your application starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
+2. After your app starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
   ```
     http://<varname>&lt;yourhost></varname>.mybluemix.net
   ```
@@ -69,7 +69,7 @@ Complete the following steps to use the Node-RED starter application from the {{
 
 You can customize your Node-RED instance for your needs. For example, you can replace the landing page with your own page, add http authentication to the flow editor, or add new nodes to the palette.
 
-1. Download the application code by clicking **Start Coding > Download Starter Code** on the application's overview page.
+1. Download the app code by clicking **Start Coding > Download Starter Code** on the app's overview page.
 2. Ensure that the Cloud Foundry command-line interface (CLI) is installed. See [the instructions for installing the command line interface](/docs/cloud-foundry-public?topic=cloud-foundry-public-cf-deploy-cli) for more information.
 3. Log in to the {{site.data.keyword.cloud_notm}} environment.
   ```
@@ -77,9 +77,9 @@ You can customize your Node-RED instance for your needs. For example, you can re
   props="keyref(space_name)">&lt;your space name></varname>
   ```
   {: codeblock}
-4. Modify the application, and deploy it again. The default application landing page describes some of the customization. Nodes and packages can be added to your instance of NodeRED by adding them to the list of dependencies.  After you complete your changes, use the CLI to deploy the application to {{site.data.keyword.cloud_notm}} again.
+4. Modify the app, and deploy it again. The default app landing page describes some of the customization. Nodes and packages can be added to your instance of NodeRED by adding them to the list of dependencies.  After you complete your changes, use the CLI to deploy the app to {{site.data.keyword.cloud_notm}} again.
 
-  For example, run the following command in the root directory of the application:
+  For example, run the following command in the root directory of the app:
   ```
   ibmcloud cf push <varname>&lt;yourappname></varname>
   ```
@@ -91,7 +91,7 @@ You can customize your Node-RED instance for your needs. For example, you can re
 To access the VCAP_SERVICES environment from a Node-RED flow, you must add the environment variable to the Function node's global context.
 
 1. Edit your "bluemix-settings.js" and add an entry to the *functionGlobalContext* property to parse VCAP_SERVICES.
-2. Redeploy your Node-RED application.
+2. Redeploy your Node-RED app.
 
   ```
   functionGlobalContext: { VCAP_SERVICES: JSON.parse(process.env.VCAP_SERVICES)}

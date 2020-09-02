@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -51,13 +51,13 @@ Before you can start coding with Node-RED, you must first configure the editor.
 ## Open the Node-RED flow editor
 {: #openEditor}
 
-1. After your application starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
+1. After your app starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
 ```
     http://<varname>&lt;yourhost></varname>.mybluemix.net
 ```
 2. Click **Go to your Node-RED flow editor** to open the browser-based flow editor. The editor makes it easy to connect devices, APIs, and online services by using the wide range of nodes that are included in the palette.
 
-##Customizing your Node-RED instance
+## Customizing your Node-RED instance
 {: #customize_instance}
 
 Before you begin, install the [Cloud Foundry command-line interface](https://github.com/cloudfoundry/cli/releases){: external}.

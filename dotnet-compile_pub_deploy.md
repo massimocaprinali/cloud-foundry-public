@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -38,15 +38,15 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-
-#Compile, Publish, and Deploy Applications
+ 
+# Compile, Publish, and Deploy Apps
 {: #publish_configure_deploy}
 
-## Compiling your application in Release configuration (MSBuild only)
+## Compiling your app in Release configuration (MSBuild only)
 {: #compiling_in_release_configuration}
 
-MSBuild based projects are now published using the `dotnet publish` command during staging.  By default, the buildpack will publish your application in `Debug` configuration.
-To publish your application in `Release` configuration, set the `PUBLISH_RELEASE_CONFIG` environment variable to `true`.
+MSBuild based projects are now published using the `dotnet publish` command during staging.  By default, the buildpack will publish your app in `Debug` configuration.
+To publish your app in `Release` configuration, set the `PUBLISH_RELEASE_CONFIG` environment variable to `true`.
 
 You can do this with the {{site.data.keyword.cloud_notm}} CLI with the following command:
 
@@ -55,11 +55,11 @@ ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
 ```
 {: pre}
 
-Alternatively, you can set the variable in your application's manifest.yml file:
+Alternatively, you can set the variable in your app's manifest.yml file:
 
 ```
 ---
-applications:
+apps:
 - name: sample-aspnetcore-app
   memory: 512M
   env:
@@ -67,34 +67,34 @@ applications:
 ```
 {: codeblock}
 
-## Pushing a Published Application
+## Pushing a Published App
 {: #pushing_published_app}
 
-If you want your application to contain all its required binaries so that the buildpack does not download any
-external binaries, you can push a published *self-contained* application.  See [.NET Core App Types](https://docs.microsoft.com/en-us/dotnet/articles/core/app-types){: external}
-for more information on self-contained applications.
+If you want your app to contain all its required binaries so that the buildpack does not download any
+external binaries, you can push a published *self-contained* app.  See [.NET Core App Types](https://docs.microsoft.com/en-us/dotnet/articles/core/app-types){: external}
+for more information on self-contained apps.
 
-To publish an application issue a command such as:
+To publish an app issue a command such as:
 ```
 dotnet publish -r ubuntu.14.04-x64
 ```
 {: pre}
 
-For self-contained applications, the app can then be pushed from the
+For self-contained apps, the app can then be pushed from the
 ```
   bin/<Debug|Release>/<framework>/<runtime>/publish
 ```
 {: codeblock}
 directory.
 
-For portable applications, the app can be pushed from the
+For portable apps, the app can be pushed from the
 ```
   bin/<Debug|Release>/<framework>/publish
 ```
 {:codeblock}
 directory.
 
-Also note that if you are using a manifest.yml file in your application, you can specify the path to the publish output folder in your manifest.yml.  Then you don't have to be in that folder when you push the application.
+Also note that if you are using a manifest.yml file in your app, you can specify the path to the publish output folder in your manifest.yml.  Then you don't have to be in that folder when you push the app.
 
 ## Deploying apps with multiple projects
 {: #developing_apps_with_multiple_projects}

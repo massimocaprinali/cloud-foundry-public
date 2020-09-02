@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -71,6 +71,6 @@ Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIB
     ```
     {: .codeblock}
 
-If you are enabling the monthly runtime on an existing application you may need to delete and re-push your application after you set the environment variables.
+If you are enabling the monthly runtime on an existing app you may need to delete and re-push your app after you set the environment variables.
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-09-01"
 
 keywords: cloud foundry
 
@@ -51,8 +51,8 @@ IBM Cloud Foundry Public service is available in the following regions:
 
 | Region                | Location  |
 |-----------------------|-----------|
-| `US SOUTH`            | Dallas    |
-| `US EAST`             | Washington, D.C.|
+| `US-SOUTH`            | Dallas    |
+| `US-EAST`             | Washington, D.C.|
 | `EU-GB`               | London    |
 | `EU-DE`               | Frankfurt |
 | `AU-SYD`              | Sydney    |
@@ -61,11 +61,10 @@ IBM Cloud Foundry Public service is available in the following regions:
 ## API Endpoints
 {: #api-endpoint-options}
 
-
 | Region        | API Endpoint                    |
 | ------------- | ------------------------------- |
-| `US SOUTH`    | `api.us-south.cf.cloud.ibm.com` |
-| `US EAST`     | `api.us-east.cf.cloud.ibm.com`  |
+| `US-SOUTH`    | `api.us-south.cf.cloud.ibm.com` |
+| `US-EAST`     | `api.us-east.cf.cloud.ibm.com`  |
 | `EU-GB`       | `api.eu-gb.cf.cloud.ibm.com`    |
 | `EU-DE`       | `api.eu-de.cf.cloud.ibm.com`    |
 | `AU-SYD`      | `api.au-syd.cf.cloud.ibm.com`   |

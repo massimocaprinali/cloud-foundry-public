@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -44,46 +44,46 @@ subcollection: cloud-foundry-public
 
 ## {{site.data.keyword.cloud_notm}} console and CLI
 
-### Managing application through {{site.data.keyword.cloud_notm}} console
+### Managing app through {{site.data.keyword.cloud_notm}} console
 
-The {{site.data.keyword.cloud_notm}} console provides the ability to start, stop and restart application from the "Action" tab on your application from console.
+The {{site.data.keyword.cloud_notm}} console provides the ability to start, stop and restart app from the "Action" tab on your app from console.
 
-### Managing application through ibmcloud cf CLI
+### Managing app through ibmcloud cf CLI
 
 It can also be accomplished from command line.
 
-  To start the application:
+  To start the app:
 
   ```
   ibmcloud cf start myApp
   ```
   {: pre}
 
-  To stop an application:
+  To stop an app:
 
   ```
   ibmcloud cf stop myApp
   ```
   {: pre}
 
-  To restart an application:
+  To restart an app:
 
   ```
   ibmcloud cf restart myApp
   ```
   {: pre}
 
-## Application management through SSH shell session
+## App management through SSH shell session
 
-Application can be managed and debugged using the `ssh` command to access them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and `ibmcloud cf` CLI.
+App can be managed and debugged using the `ssh` command to access them. This can be accomplished through {{site.data.keyword.cloud_notm}} console and `ibmcloud cf` CLI.
 
 ### {{site.data.keyword.cloud_notm}} console
 
-User can `ssh` into the application using the {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your application and then click `SSH` to manage.
+User can `ssh` into the app using the {{site.data.keyword.cloud_notm}} console. Navigate to the Runtime tab on your app and then click `SSH` to manage.
 
 ### Command Line CLI
 
-To ssh into your application from the command line use:
+To ssh into your app from the command line use:
 
 ```
 ibmcloud cf ssh myApp
@@ -91,7 +91,7 @@ ibmcloud cf ssh myApp
 {: pre}
 
 
-App Management is a set of development and debugging utilities that can be enabled for your Liberty applications on {{site.data.keyword.cloud}}.
+App Management is a set of development and debugging utilities that can be enabled for your Liberty apps on {{site.data.keyword.cloud}}.
 {: shortdesc}
 
 
@@ -108,7 +108,7 @@ App Management is a set of development and debugging utilities that can be enabl
 ## How to configure App Management
 {: #configure}
 
-To enable App Management utilities, set the value of the *BLUEMIX_APP_MGMT_ENABLE* environment variable to the utility or list of utilities you want to enable, then restage your application. You can enable multiple utilities by separating them with a **+**.
+To enable App Management utilities, set the value of the *BLUEMIX_APP_MGMT_ENABLE* environment variable to the utility or list of utilities you want to enable, then restage your app. You can enable multiple utilities by separating them with a **+**.
 
 For example, to enable *hc*, *debug* and *trace* utilities, run the following command:
 
@@ -117,16 +117,16 @@ ibmcloud cf set-env myApp BLUEMIX_APP_MGMT_ENABLE hc+debug+trace
 ```
 {: pre}
 
-Restage your application after you set the environment variable:
+Restage your app after you set the environment variable:
 
 ```
 ibmcloud cf restage myApp
 ```
 {: pre}
 
-If you do not want the App Management utilities to be installed with your application, set the *BLUEMIX_APP_MGMT_INSTALL* environment variable to 'false' and restage your application.
+If you do not want the App Management utilities to be installed with your app, set the *BLUEMIX_APP_MGMT_INSTALL* environment variable to 'false' and restage your app.
 
-For example, run the following commands to stage your application without App Management utilities:
+For example, run the following commands to stage your app without App Management utilities:
 
 ```
 ibmcloud cf set-env myApp BLUEMIX_APP_MGMT_INSTALL false
@@ -136,7 +136,7 @@ ibmcloud cf restage myApp
 
 ## Restrictions
 {: #restrictions}
-* Changes that you make to your application by using App Management are transient and are lost after you exit this mode. This mode is only for temporary development use and is not intended to be used as a production environment due to performance.
+* Changes that you make to your app by using App Management are transient and are lost after you exit this mode. This mode is only for temporary development use and is not intended to be used as a production environment due to performance.
 
 ### Liberty utilities
 {: #liberty_utilities}
@@ -144,9 +144,9 @@ ibmcloud cf restage myApp
 #### jmx
 {: #jmx}
 
-The *jmx* utility enables the JMX REST Connector to allow a remote JMX client to manage the application by using {{site.data.keyword.cloud_notm}} user credentials.
+The *jmx* utility enables the JMX REST Connector to allow a remote JMX client to manage the app by using {{site.data.keyword.cloud_notm}} user credentials.
 
-You can monitor multiple instances of an application by using JMX, but it requires a separate JMX connection for each instance. The default is to monitor instance 0. To monitor instance 1, you can use the following code snip:
+You can monitor multiple instances of an app by using JMX, but it requires a separate JMX connection for each instance. The default is to monitor instance 0. To monitor instance 1, you can use the following code snip:
 
 ```
 ibmcloud cf ssh -i 1 -N -T -L 5000:127.0.0.1:5001
@@ -160,12 +160,12 @@ For more information on configuring a JMX connector, see [Configuring secure JMX
 #### localjmx
 {: #localjmx}
 
-The *localjmx* utility enables the [localConnector-1.0](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feature_localConnector-1.0.html){: external} Liberty feature. Combined with local port forwarding, *localjmx* acts an alternate way of allowing a remote JMX client to manage the application.
+The *localjmx* utility enables the [localConnector-1.0](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feature_localConnector-1.0.html){: external} Liberty feature. Combined with local port forwarding, *localjmx* acts an alternate way of allowing a remote JMX client to manage the app.
 
 
 **Before you begin**: *localjmx* requires you to install JConsole.
 
-The *localjmx* utility is only applicable to applications running on a Diego cell. To use *localjmx*, first establish port forwarding using the `ibmcloud cf ssh` command. For example:
+The *localjmx* utility is only applicable to apps running on a Diego cell. To use *localjmx*, first establish port forwarding using the `ibmcloud cf ssh` command. For example:
 
 ```
 ibmcloud cf ssh -N -T -L 5000:127.0.0.1:5000 <appName>
@@ -177,25 +177,25 @@ Next, to connect with JConsole, choose **Remote Process**, specify `127.0.0.1:50
 #### proxy
 {: #proxy}
 
-The *proxy* utility provides minimal application management between your application and {{site.data.keyword.cloud_notm}}.
+The *proxy* utility provides minimal app management between your app and {{site.data.keyword.cloud_notm}}.
 
-When enabled, the buildpack starts a proxy agent that is located between your application's runtime and container.  The *proxy* utility handles all requests that the application receives. Based on the type of request, it either takes an App Management action or forwards the request to your application. By using *proxy*, your application container continues to live even if the application crashes. The proxy agent also allows for incremental file updates, which enables the *Live Edit* mode.
+When enabled, the buildpack starts a proxy agent that is located between your app's runtime and container.  The *proxy* utility handles all requests that the app receives. Based on the type of request, it either takes an App Management action or forwards the request to your app. By using *proxy*, your app container continues to live even if the app crashes. The proxy agent also allows for incremental file updates, which enables the *Live Edit* mode.
 
-Some App Management utilities require you to use the *proxy* utility with your application, and can start *proxy* automatically.
+Some App Management utilities require you to use the *proxy* utility with your app, and can start *proxy* automatically.
 
 #### noproxy
 {: #noproxy}
 
-The *noproxy* utility disables the *proxy* utility when it is automatically started by another utility.  With Diego, the proxy is not necessary because Diego provides the capability to *ssh* directly to your application and set up port forwarding.
+The *noproxy* utility disables the *proxy* utility when it is automatically started by another utility.  With Diego, the proxy is not necessary because Diego provides the capability to *ssh* directly to your app and set up port forwarding.
 
-The *noproxy* utility only applies to applications that run in a Diego cell.
+The *noproxy* utility only applies to apps that run in a Diego cell.
 
 #### hc
 {: #hc}
 
-The (*hc*) Health Center agent enables your application to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
+The (*hc*) Health Center agent enables your app to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
-When you have the Health Center agent enabled, you can analyze the performance of your Liberty applications by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
+When you have the Health Center agent enabled, you can analyze the performance of your Liberty apps by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
 
 **Important:** The *hc* utility starts *proxy*.
 
@@ -221,7 +221,7 @@ ibmcloud cf ssh -N -T -L 9229:127.0.0.1:9229 <appName>
 ```
 {: pre}
 
-Get the startup log for the application by using the following command.
+Get the startup log for the app by using the following command.
 ```
 ibmcloud cf logs <appName> --recent
 ```
@@ -234,6 +234,6 @@ If the *inspector* utility is active, the log contains messages similar to the f
 ```
 
 Use an up-to-date version of the Google Chrome web browser to browse to `chrome://inspect`.
-From this URL, you see your app listed along with a link to your application files, such as `file://home/vcap/app/app.js`, then select **inspect** to access the inspect interface.
+From this URL, you see your app listed along with a link to your app files, such as `file://home/vcap/app/app.js`, then select **inspect** to access the inspect interface.
 
 

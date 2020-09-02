@@ -103,7 +103,7 @@ Cloud Foundry Public
         updating_domains.md
         monitoring_logging_cloud_foundry_apps.md
         at-events.md
-        [Zero Downtime Deployment](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
+        [Rolling App Deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html)
         autoscaling.md
         autoscaling_migration.md
 
@@ -111,7 +111,7 @@ Cloud Foundry Public
     Networking
         network-address.md
         [Hybrid Connectivity using Secure Gateway](/docs/SecureGateway?topic=SecureGateway-iptables-rules#iptables-dynamic-ips)
-        [Adding Global Load Balancing to the application](https://test.cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-multi-region-webapp#add-global-load-balancing-to-the-application)
+        [Secure web application across multiple regions](/docs/solution-tutorials?topic=solution-tutorials-multi-region-webapp)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

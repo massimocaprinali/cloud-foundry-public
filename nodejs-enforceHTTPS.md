@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -38,10 +38,10 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
-# Enforce HTTPS on all pages in your application
+# Enforce HTTPS on all pages in your app
 {: #nodejs-enforce_https}
 
-When you run your application in {{site.data.keyword.cloud}} with the express framework, the following changes need to be made to enforce HTTPS instead of HTTP on all pages in your application.
+When you run your app in {{site.data.keyword.cloud}} with the express framework, the following changes need to be made to enforce HTTPS instead of HTTP on all pages in your app.
 
 ```
 var express = require("express");

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -43,7 +43,7 @@ subcollection: cloud-foundry-public
 
 **Important**:  Starting with Liberty for Java buildpack v3.28, the beta runtime is no longer included.  
 
-The Liberty beta features provide early access to new functionality and programming models that might be included in a future Liberty release. Most of the beta features can also be used in applications deployed to {{site.data.keyword.cloud}}.
+The Liberty beta features provide early access to new functionality and programming models that might be included in a future Liberty release. Most of the beta features can also be used in apps deployed to {{site.data.keyword.cloud}}.
 
 **Important**: The beta features are for development and test purposes only and cannot be used in production. For the complete terms of use, see the [beta license agreement](http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/beta/lafiles/en.html){: external}.
 
@@ -56,7 +56,7 @@ The Liberty beta features provide early access to new functionality and programm
 
 To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will need to do the following:
 
-1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the server.xml file as in the example that follows:
+1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the `server.xml` file as in the example that follows:
 
   ```
 <server>
@@ -67,7 +67,7 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
   ```
   {: .codeblock}
 
-2.  Set the `IBM_LIBERTY_BETA` environment variable to `true`. This variable directs the Liberty buildpack to install and enable the beta features for your application.  For example:
+2.  Set the `IBM_LIBERTY_BETA` environment variable to `true`. This variable directs the Liberty buildpack to install and enable the beta features for your app.  For example:
   * Using the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli):
     ```
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_BETA true
@@ -95,6 +95,6 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
     ```
     {: .codeblock}
 
-If you are enabling the beta features on an existing application, don't forget to re-stage your application after you set the environment variables.
+If you are enabling the beta features on an existing app, don't forget to re-stage your app after you set the environment variables.
 
 

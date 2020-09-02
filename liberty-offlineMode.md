@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -42,8 +42,8 @@ subcollection: cloud-foundry-public
 # Use the offline mode for Liberty
 {: #offline_mode}
 
-When a Liberty application is pushed to {{site.data.keyword.cloud}}, the Liberty buildpack can access sites external to {{site.data.keyword.cloud_notm}}
-to acquire artifacts required by the application.  
+When a Liberty app is pushed to {{site.data.keyword.cloud}}, the Liberty buildpack can access sites external to {{site.data.keyword.cloud_notm}}
+to acquire artifacts required by the app.  
 
 * https://download.run.pivotal.io, and https://java-buildpack.cloudfoundry.org are used to access components for:
   * [AppDynamics agent](https://www.appdynamics.com/){: external}

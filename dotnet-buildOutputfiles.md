@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -42,7 +42,7 @@ subcollection: cloud-foundry-public
 # Copy required files to build output folder
 {: #copy_files_build_output}
 
-You can use either the project.json tooling or MSBuild tooling to ensure that your application has all of its required files in the build output folder.
+You can use either the project.json tooling or MSBuild tooling to ensure that your app has all of its required files in the build output folder.
 {: shortdesc}
 
 
@@ -74,7 +74,7 @@ In Program.cs `Main` method, remove the following line.
 ```
 {: codeblock}
 
-These changes should allow the .NET CLI to find your application's `Views` as they will now be copied to the build output when the `dotnet run` command executes.  If your application has any other files, such as JSON configuration files, that are required at runtime, also add the files to the `include` section of `copyToOutput` in the `project.json` file for your project.
+These changes should allow the .NET CLI to find your app's `Views` as they will now be copied to the build output when the `dotnet run` command executes.  If your app has any other files, such as JSON configuration files, that are required at runtime, also add the files to the `include` section of `copyToOutput` in the `project.json` file for your project.
 
 ## Use MSBuild tooling
 {: #msbuild}
@@ -102,6 +102,6 @@ In the `Program.cs` `Main` method, remove the following line.
 ```
 {: codeblock}
 
-These changes allow the .NET CLI to find your application's `Views` as they are copied to the build output when the `dotnet publish` command executes.  If your application has any other files, such as JSON configuration files, that are required at runtime, also add those to the `Include` property of the `Content` element in the .csproj file for your project, separated by semi-colons.
+These changes allow the .NET CLI to find your app's `Views` as they are copied to the build output when the `dotnet publish` command executes.  If your app has any other files, such as JSON configuration files, that are required at runtime, also add those to the `Include` property of the `Content` element in the .csproj file for your project, separated by semi-colons.
 
 

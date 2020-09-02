@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -88,7 +88,7 @@ This buildpack supports the following versions, those marked as deprecated will 
 
 ## Specifying the .NET SDK version
 
-Control the .NET SDK version with an optional `global.json` file in the application's root directory. For example:
+Control the .NET SDK version with an optional `global.json` file in the app's root directory. For example:
 ```
    {
       "sdk": {

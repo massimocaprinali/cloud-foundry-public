@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: cloud foundry
 
@@ -306,7 +306,7 @@ This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET Core SDK 1.1.0-preview1-005051
 * Add support for .NET Core SDK 2.0.0-preview2-006497
 * Update Node version to 6.11.1
-* Always make self-contained applications executable
+* Always make self-contained apps executable
 
 ## June 20, 2017: Updated ASP.NET Core buildpack v1.0.20-20170620-1449
 
@@ -316,7 +316,7 @@ This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 * Remove support for .NET Core runtime version 1.0.0
 * Remove support for .NET Core runtime version 1.0.1
 * Remove support for .NET Core SDK version 1.0.0-preview2-1-003177
-* Add staging_task.log file to application container
+* Add staging_task.log file to app container
 * Lower disk usage when caching dependencies
 
 ## May 12, 2017: Updated ASP.NET Core buildpack v1.0.18-20170516-1601
@@ -376,7 +376,7 @@ This version of the buildpack includes the following changes:
 
 * The runtime's name is changed from ASP.NET 5 to ASP.NET Core.
 * The buildpack version number is included in detect script output.
-* This version of the buildpack removes support for DNX based applications using CoreCLR RC1 and lower.
+* This version of the buildpack removes support for DNX based apps using CoreCLR RC1 and lower.
 * This version of the buildpack supports the .NET CLI and .NET Core RC2.
 * The buildpack detects projects with either a project.json file or *.runtimeconfig.json files from publish output.
 
@@ -386,7 +386,7 @@ This version of the buildpack includes the following changes:
 
 ## September 18, 2015: Updated ASP.NET 5 buildpack v0.6-20150916-1220
 
-* This version of the buildpack supports Beta 7 DNX changes, and it can run applications dependent on older beta releases with the following custom start command:
+* This version of the buildpack supports Beta 7 DNX changes, and it can run apps dependent on older beta releases with the following custom start command:
 
 ```
    dnx src/dotnetstarter kestrel --server.urls http://${VCAP_APP_HOST}:${PORT}
