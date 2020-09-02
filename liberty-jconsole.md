@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -44,14 +44,14 @@ subcollection: cloud-foundry-public
 ## Monitor the Liberty runtime with JConsole:
 {: #steps_to_monitor}
 
-1. Push your app within a server package containing an appropriate server.xml.
+1. Push your app within a server package containing an appropriate `server.xml` file.
 2. Start the JConsole app with the appropriate system properties on the command line.
 3. Provide the proper Remote Process URL, Username, and Password to JConsole.
 
 ### Push the server package
 {: #push_server_package}
 
-Push the server package containing your app limiting it to a single instance. Your server.xml file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
+Push the server package containing your app limiting it to a single instance. Your `server.xml` file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
 ```
        <featureManager>
            <feature>jsp-2.2</feature>
@@ -90,7 +90,7 @@ You may have to pass additional options to configure Java trustStore. The follow
 {: start_jconsole_app}
   * Fill in the Remote Process field the following url:
     * service:jmx:rest://&lt;appName&gt;.mybluemix.net:443/IBMJMXConnectorREST.
-  *  Also fill in the Username and Password fields with an administrator-role role user and password from the server.xml file.
+  *  Also fill in the Username and Password fields with an administrator-role role user and password from the `server.xml` file.
   * Click Connect.
 
 When the connection succeeds, JConsole starts monitoring.
@@ -109,7 +109,7 @@ Here is a sample logging properties file:
 ```
 {: codeblock}
 
-You can also add <b>&dash;J&dash;Djavax.net.debug=ssl</b> to the jconsole command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your server.xml file:
+You can also add <b>&dash;J&dash;Djavax.net.debug=ssl</b> to the jconsole command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your `server.xml` file:
 ```
     <logging traceSpecification="com.ibm.ws.jmx.*=all"/>
 ```

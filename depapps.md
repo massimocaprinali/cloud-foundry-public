@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -84,7 +84,7 @@ When you deploy your apps to {{site.data.keyword.cloud_notm}} from the command l
 
 {{site.data.keyword.cloud_notm}} [provides buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-available_buildpacks) supporting Java and Node.js among others. If you are using these languages and frameworks, you don't need to specify the buildpack when you deploy your app by using the command line interface. Because {{site.data.keyword.cloud_notm}} is built on Cloud Foundry, the command defaults to these buildpacks.
 
-If you use an external buildpack, when depoying your app you must specify the URL of the buildpack by using the `-b` option.
+If you use an external buildpack, when deploying your app you must specify the URL of the buildpack by using the `-b` option.
 
 * To deploy Liberty server packages to {{site.data.keyword.cloud_notm}}, use the following command from your source directory:
 
@@ -93,7 +93,7 @@ ibmcloud cf push
 ```
 {: pre}
 
-For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry-public?pic=cloud-foundry-public-getting-started-liberty).
+For more information about Liberty Buildpack, see [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty).
 
 * To deploy Java Tomcat apps to {{site.data.keyword.cloud_notm}}, use the following command:
 
@@ -192,7 +192,7 @@ ibmcloud cf push -f appManifest.yml
 |:----------|:--------------|:---------------|
 |**buildpack**	|The URL or name of the custom buildpack.	|`buildpack:` *buildpack_URL*|
 |**disk_quota**	|The disk quota that is allocated for an app. The default value is 1GB.	|`disk_quota: 500MB`|
-|**domain**	|The domain name of the app in {{site.data.keyword.cloud_notm}}.	|`domain:` ng.mybluemix.net|
+|**domain**	|The domain name of the app in {{site.data.keyword.cloud_notm}}.	|`domain: ng.mybluemix.net`|
 |**host**	|The host name of the app in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`host:` *host_name*|
 |**name**	|The app name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`name:` *appname*|
 |**path**	|The location of your app. This value can be a relative path or absolute path.	|`path:` *path_to_app*|

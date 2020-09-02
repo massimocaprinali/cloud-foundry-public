@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -42,7 +42,7 @@ subcollection: cloud-foundry-public
 
 Dynatrace is a third-party service that provides monitoring for your app. You can integrate Dynatrace with your Liberty app, but IBM does not provide support for third-party services. See [Third-party services](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_support_statement#third-party) for more information.
 
-For more information about Dynatrace and its licensing, see [Dynatrace Application Monitoring](https://www.dynatrace.com/solutions/app-monitoring/){: external}.
+For more information about Dynatrace and its licensing, see [Dynatrace Application Monitoring](https://www.dynatrace.com/solutions/application-monitoring/){: external}.
 
 When your Liberty app is configured to use Dynatrace, the default behavior is that the
 Liberty runtime will acquire a Dynatrace agent `.jar` file from a Dynatrace site and run

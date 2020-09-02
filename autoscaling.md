@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -207,8 +207,8 @@ The **Scaling history** tab allows you to query the scaling events within the pa
 
 ## Related readings
 
-* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-apps-on-ibm-cloud){: external}
-* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Apps](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-apps){: external}
+* [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
+* [Bring Your Own Metrics to Autoscale Your IBM Cloud Foundry Apps](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
 
 
 

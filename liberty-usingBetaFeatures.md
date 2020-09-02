@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: cloud foundry
 
@@ -56,7 +56,7 @@ The Liberty beta features provide early access to new functionality and programm
 
 To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will need to do the following:
 
-1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the server.xml file as in the example that follows:
+1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the `server.xml` file as in the example that follows:
 
   ```
 <server>
