@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-08"
 
 keywords: cloud foundry
 
@@ -55,7 +55,7 @@ To retain logs for a longer period and advanced analysis, services like [{{site.
 
 For more information about how to monitor {{site.data.keyword.ibmcf_notm}} apps, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
 
-{{site.data.keyword.ibmcf_notm}} apps can configure and expose metrics that can be monitored using SysDig. For more information, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
+{{site.data.keyword.ibmcf_notm}} apps can configure and expose metrics that can be monitored using {{site.data.keyword.mon_full}}. For more information, see [Monitoring Cloud Foundry metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-monitor-cf-sysdig).
 
 
 
