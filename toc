@@ -108,6 +108,10 @@ Cloud Foundry Public
         autoscaling_migration.md
 
     {: .topicgroup}
+    Enhancing Security
+        data-security.md
+
+    {: .topicgroup}
     Networking
         network-address.md
         [Hybrid Connectivity using Secure Gateway](/docs/SecureGateway?topic=SecureGateway-iptables-rules#iptables-dynamic-ips)
