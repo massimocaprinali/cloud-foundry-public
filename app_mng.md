@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -193,9 +193,9 @@ The *noproxy* utility only applies to apps that run in a Diego cell.
 #### hc
 {: #hc}
 
-The (*hc*) Health Center agent enables your app to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the IBM SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
+The (*hc*) Health Center agent enables your app to be monitored by the Health Center client.  For Node.js, the *hc* agent is only available with the Node.js runtime versions included with the {{site.data.keyword.IBM_notm}} SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
 
-When you have the Health Center agent enabled, you can analyze the performance of your Liberty apps by using the IBM Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
+When you have the Health Center agent enabled, you can analyze the performance of your Liberty apps by using the {{site.data.keyword.IBM_notm}} Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
 
 **Important:** The *hc* utility starts *proxy*.
 

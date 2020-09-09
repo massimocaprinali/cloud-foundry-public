@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -41,7 +41,7 @@ subcollection: cloud-foundry-public
 # Options for pushing Liberty apps
 {: #options_for_pushing}
 
-The behavior of the Liberty server in {{site.data.keyword.cloud}} is controlled by the Liberty buildpack. Buildpacks can provide a complete runtime environment for a specific class of apps. They are key to providing portability across clouds and contributing to an open cloud architecture. The Liberty buildpack provides WebSphere Liberty container capable of running Jakarta EE, Eclipse MicroProfile, Java EE, and OSGi apps. It supports popular frameworks such as Spring and includes the IBM JRE. WebSphere Liberty enables rapid app development that is suited to the cloud. The Liberty buildpack supports multiple apps that are deployed into a single Liberty server. As part of the Liberty buildpack integration into {{site.data.keyword.cloud_notm}}, the buildpack ensures that environment variables for binding services are shown as configuration variables in the Liberty server.
+The behavior of the Liberty server in {{site.data.keyword.cloud}} is controlled by the Liberty buildpack. Buildpacks can provide a complete runtime environment for a specific class of apps. They are key to providing portability across clouds and contributing to an open cloud architecture. The Liberty buildpack provides WebSphere Liberty container capable of running Jakarta EE, Eclipse MicroProfile, Java EE, and OSGi apps. It supports popular frameworks such as Spring and includes the {{site.data.keyword.IBM_notm}} JRE. WebSphere Liberty enables rapid app development that is suited to the cloud. The Liberty buildpack supports multiple apps that are deployed into a single Liberty server. As part of the Liberty buildpack integration into {{site.data.keyword.cloud_notm}}, the buildpack ensures that environment variables for binding services are shown as configuration variables in the Liberty server.
 
 
 You can use the following methods to deploy your Liberty apps to {{site.data.keyword.cloud_notm}}.

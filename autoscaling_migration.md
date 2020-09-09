@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -49,7 +49,7 @@ This new App Autoscaler offering is a replacement of the legacy. By migrating to
 
 * Runtime independent: The app-autoscaler works for all language runtimes with the same user experience and same set of supported metrics.
 
-* No code injection: The new autoscaler does not require an autoscaler agent to be included in your code if you are using IBM runtimes and buildpacks. You simply set the policy and after a while,  the autoscaler will start collecting metrics and scale your app based on the metrics you defined in the policy.
+* No code injection: The new autoscaler does not require an autoscaler agent to be included in your code if you are using {{site.data.keyword.IBM}} runtimes and buildpacks. You simply set the policy and after a while,  the autoscaler will start collecting metrics and scale your app based on the metrics you defined in the policy.
 
 * Matching pace with the Cloud Foundry community: Future features of the app-autoscaler open-source project, will be available without delay in {{site.data.keyword.cloud}}.
 
