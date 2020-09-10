@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: cloud foundry
 
@@ -55,5 +55,5 @@ When an app is deleted from {{site.data.keyword.ibmcf_notm}} the app and any ass
 ## Restoring deleted data for {{site.data.keyword.ibmcf_notm}}
 {: #data-restore}
 
-An app that was deleted from {{site.data.keyword.ibmcf_notm}} cannot be restored.  If you need to restore a deleted app, you will need to redeploy the app.
+An app that was deleted from {{site.data.keyword.ibmcf_notm}} cannot be restored.  If you need to restore a deleted app, redeploy the app.
 
