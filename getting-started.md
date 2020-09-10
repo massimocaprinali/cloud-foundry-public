@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-09-08"
 
 keywords: cloud foundry
 
@@ -56,7 +56,7 @@ Review the [{{site.data.keyword.ibmcf_full}} terms and conditions](https://www-0
 There are three ways to develop your app:
 
 * With the Continuous Delivery service
-* In the IBM Cloud console
+* In the {{site.data.keyword.cloud}} console
 * At the Cloud Foundry command line
 
 ## Developing and deploying your apps by using toolchains and the {{site.data.keyword.contdelivery_short}} service

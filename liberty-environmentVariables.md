@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -77,7 +77,7 @@ Environment variables supported by Liberty for Java.
 
 <tr>
 <td>JBP_CONFIG_IBMJDK </td>
-<td>Configure the [IBM JRE version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
+<td>Configure the [{{site.data.keyword.IBM}} JRE version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
 </tr>
 
 <tr>

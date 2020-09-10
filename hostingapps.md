@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -11,7 +11,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
 
 {:beta: .beta}
 {:codeblock: .codeblock}
@@ -38,10 +37,11 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 
+
 # Hosting apps in {{site.data.keyword.cloud_notm}}
 {: #hosting_apps}
 
-With {{site.data.keyword.cloud}}, you can create apps, and host your existing apps. You can move your app to {{site.data.keyword.cloud_notm}} as long as it is cloud-ready. {{site.data.keyword.cloud_notm}} provides lots of ways for you to run your apps, for example, Cloud Foundry, IBM Containers, and Virtual Machines.
+With {{site.data.keyword.cloud}}, you can create apps, and host your existing apps. You can move your app to {{site.data.keyword.cloud_notm}} as long as it is cloud-ready. {{site.data.keyword.cloud_notm}} provides lots of ways for you to run your apps, for example, Cloud Foundry, {{site.data.keyword.containershort}}, and virtual machines.
 
 ## Making your apps cloud-ready
 {: #cloud-readyapps}
@@ -62,7 +62,7 @@ You can use the following tools and services that {{site.data.keyword.cloud_notm
 | Tool | Method |
 |:------|:--------|
 | Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`ibmcloud cf push` command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}. |
-| Eclipse | Manage your code in Eclipse and use the IBM Eclipse tools for {{site.data.keyword.cloud_notm}} to push your app. |
+| Eclipse | Manage your code in Eclipse and use the {{site.data.keyword.IBM}} Eclipse tools for {{site.data.keyword.cloud_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.cloud_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.cloud_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
 | {{site.data.keyword.cloud_notm}} DevOps Delivery Pipeline | Manage your code on DevOps GitHub repository and deploy your app to {{site.data.keyword.cloud_notm}} by using the DevOps Delivery Pipeline. |
 {: caption="Table 1. {{site.data.keyword.cloud_notm}} tools" caption-side="top"}

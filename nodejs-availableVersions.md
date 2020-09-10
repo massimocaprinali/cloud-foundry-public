@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-09"
 
 keywords: cloud foundry
 
@@ -44,7 +44,7 @@ subcollection: cloud-foundry-public
 {{site.data.keyword.cloud}} provides all [the currently available Node.js runtimes](http://nodejs.org/dist/){: external}. Of the available runtimes, {{site.data.keyword.IBM_notm}} provides specific versions that contain enhancements and bug fixes. See [Latest updates to the Node.js buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for more information about the supported versions.
 {: shortdesc}
 
-The IBM Node.js buildpack caches the {{site.data.keyword.IBM_notm}} runtime versions. If you use {{site.data.keyword.IBM_notm}} SDK for Node.js runtime in your app, your app performs faster when you push it to {{site.data.keyword.cloud_notm}}.
+The {{site.data.keyword.IBM_notm}} Node.js buildpack caches the {{site.data.keyword.IBM_notm}} runtime versions. If you use {{site.data.keyword.IBM_notm}} SDK for Node.js runtime in your app, your app performs faster when you push it to {{site.data.keyword.cloud_notm}}.
 
 ## Specifying a version
 

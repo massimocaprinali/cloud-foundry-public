@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-08"
 
 keywords: cloud foundry
 
@@ -41,13 +41,13 @@ subcollection: cloud-foundry-public
 # Regions and endpoints
 {: #endpoints}
 
-A list of supported regions and API endpoints for the IBM Cloud Foundry Public service:
+A list of supported regions and API endpoints for the {{site.data.keyword.ibmcf_full}} service:
 {: shortdesc}
 
 ## Regions
 {: #endpoints_regions}
 
-IBM Cloud Foundry Public service is available in the following regions:
+{{site.data.keyword.ibmcf_notm}} service is available in the following regions:
 
 | Region                | Location  |
 |-----------------------|-----------|

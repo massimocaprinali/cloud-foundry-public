@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-08"
 
 keywords: cloud foundry
 
@@ -103,7 +103,7 @@ You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, 
 ### Viewing {{site.data.keyword.cloud_notm}} infrastructure layers
 {: #viewinfra}
 
-You can run the **ibmcloud cf stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **ibmcloud cf push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem. IBM Cloud Foundry Public only supports `cflinuxfs3` currently:
+You can run the **ibmcloud cf stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **ibmcloud cf push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem. {{site.data.keyword.ibmcf_notm}} only supports `cflinuxfs3` currently:
 
 ```
 ibmcloud cf push <APP_NAME> -s STACK
