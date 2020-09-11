@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-11"
 
 keywords: cloud foundry
 
@@ -46,7 +46,7 @@ subcollection: cloud-foundry-public
 ### July 29, 2020: Updated Liberty buildpack v3.47-20200723-1022
 * The default Liberty runtime GA version is the [20.0.0.6](https://openliberty.io/blog/2020/06/05/graphql-open-liberty-20006.html){: external} release.
 * The alternate Liberty runtime GA version was changed to the 20.0.0.8 release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP11](https://developer.ibm.com/javasdk/2020/06/26/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-11/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP11.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.8_10_openj9-0.21.0.
 
 ### July 7, 2020: Updated Liberty buildpack v3.46-20200626-1029
@@ -56,7 +56,7 @@ subcollection: cloud-foundry-public
 ### June 5, 2020: Updated Liberty buildpack v3.45-20200601-1056
 * The default Liberty runtime GA version is the [20.0.0.6](https://openliberty.io/blog/2020/06/05/graphql-open-liberty-20006.html){: external} release.
 * The alternate Liberty runtime GA version was changed to `20.0.0.6` release
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP10](https://developer.ibm.com/javasdk/2020/05/06/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-10/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP10.
 
 ### May 4, 2020: Updated Liberty buildpack v.3.44-20200430-1451
 
@@ -69,7 +69,7 @@ subcollection: cloud-foundry-public
 
 * The default Liberty runtime version is the [20.0.0.3](https://openliberty.io/blog/2020/03/13/access-specific-kafka-properties-samesite-20003.html){: external} release.
 * The alternate Liberty runtime version was changed to the [20.0.0.4](https://openliberty.io/blog/2020/04/09/microprofile-3-3-open-liberty-20004.html){: external} release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP7](https://developer.ibm.com/javasdk/2020/03/30/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-7/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP7.
 * The {{site.data.keyword.IBM_notm}} JRE 8 SR6 FP7 includes [CVE-2020-2654](https://www.ibm.com/support/pages/node/5736807){: external}.
 
 ### March 11, 2020: Updated Liberty buildpack v3.42-20200306-1144
@@ -90,14 +90,14 @@ To use the alternate Liberty runtime set the following environment variables:
 ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
 ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 ```
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6FP5](https://developer.ibm.com/javasdk/2020/01/31/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-5/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6FP5.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.6_10_openj9-0.18.1.
 
 ### January 9, 2020: Updated Liberty buildpack v3.40-20200108-1523
 
 * The default Liberty runtime GA version is [19.0.0.12](https://openliberty.io/blog/2019/12/06/microprofile-32-health-metrics-190012.html){: external} release.
 * The alternate Liberty runtime GA version [20.0.0.1](https://openliberty.io/blog/2020/01/17/openshift-oauth-server-social-login-liberty-20001.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6](https://developer.ibm.com/javasdk/2019/11/28/ibm-sdk-java-technology-edition-version-8-service-refresh-6/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6.
 
 ### November 21, 2019: Updated Liberty buildpack v3.39-20191121-1047
 
@@ -114,33 +114,33 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 
 * The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html){: external} release.
 * The alternate Liberty runtime GA version [19.0.0.10](https://openliberty.io/blog/2019/10/11/configure-logs-JSON-format-190010.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP41](https://developer.ibm.com/javasdk/2019/09/26/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-41/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP41.
 
 ### September 13, 2019: Updated Liberty buildpack v3.36-20190905-1704
 
 * The default Liberty runtime GA version was changed to the [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html){: external} release.
 * The alternate Liberty runtime GA version is also the `19.0.0.9` release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP40](https://developer.ibm.com/javasdk/2019/08/21/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-40/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP40.
 
 ### August 17, 2019: Updated Liberty buildpack v3.35
 
 * The default Liberty runtime GA version is [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external}.
 * The alternate Liberty runtime GA version `19.0.0.8` was added.
-* The default JRE is {{site.data.keyword.IBM_notm}} Small footprint JRE version [8 SR5 FP37](https://developer.ibm.com/javasdk/2019/06/27/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-37/){: external}.
+* The default JRE is {{site.data.keyword.IBM_notm}} Small footprint JRE version 8 SR5 FP37.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.4+11_openj9-0.15.1.
 
 ### July 18, 2019: Updated Liberty buildpack v3.34
 
 * The default Liberty runtime GA version is [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external}.
 * The alternate Liberty runtime GA version is [19.0.0.7](https://openliberty.io/blog/2019/07/18/microprofile-30-developer-experience.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP37](https://developer.ibm.com/javasdk/2019/06/27/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-37/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP37.
 * The OpenJ9 version 11.03 alternate JRE was updated to version 11.0.3+7_openj9-0.14.3.
 
 ### June 14, 2019: Updated Liberty buildpack v3.33-20190619-1058
 
 * The default Liberty runtime GA version was changed to the [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external} release.
 * The alternate Liberty runtime GA version is also the `19.0.0.6` release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP36](https://developer.ibm.com/javasdk/2019/05/31/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-36/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP36.
 
 ### May 17, 2019: Updated Liberty buildpack v3.32-20190523-1138
 
