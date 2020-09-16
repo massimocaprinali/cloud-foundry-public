@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -66,7 +66,7 @@ The buildpack provides two versions of the Liberty runtime:
 When you deploy WAR or EAR files, the buildpack provides a configuration for the app with a default set of Liberty features. Although rare, that default set of Liberty features might change between the buildpack releases. The change in the default feature set might adversely affect the app. There are options to ensure that the app is not affected by the change in the feature defaults.
 
 * Set the JBP_CONFIG_LIBERTY environment variable to explicitly specify a list of enabled features for the app. For more information, see [Stand-alone Apps](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps).
-* Deploy your app as a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). Provide a custom server.xml file that specifies the exact set of features that are needed by your app.
+* Deploy your app as a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). Provide a custom `server.xml` file that specifies the exact set of features that are needed by your app.
 
 Apps that are deployed as a server directory or a packaged server are unaffected by the change in the Liberty features default.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -66,7 +66,7 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   ```
   {: pre}
 
-    In this example, my-dynatrace-collector is the name given to the service, DynatraceCollectorIPaddress is the IP address of the Dynatrace collector you     have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is Monitoring. You can specify optional options as in the example that follows.
+    In this example, `my-dynatrace-collector` is the name given to the service, `DynatraceCollectorIPaddress` is the IP address of the Dynatrace collector you have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is `Monitoring`. You can specify optional options as illustrated in the following example.
 
     ```
     ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring","options" : {"dynatrace-parameterr-1": "value", "dynatrace-parameter-2": "value"}}'

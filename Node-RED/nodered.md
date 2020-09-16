@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -59,7 +59,7 @@ Complete the following steps to use the Node-RED starter app from the {{site.dat
   2. Provide the app name and host in the prompt.
 2. After your app starts, click **Routes URL** or enter the following URL in a browser to display the Node-RED landing page.
   ```
-    http://<varname>&lt;yourhost></varname>.mybluemix.net
+  http://<varname>&lt;yourhost></varname>.mybluemix.net
   ```
 
 3. Click **Go to your Node-RED flow editor** to open the browser-based flow editor. The editor makes it easy to connect devices, APIs, and online services by using the wide range of nodes that are included in the palette.
@@ -67,7 +67,7 @@ Complete the following steps to use the Node-RED starter app from the {{site.dat
 ## Customizing your Node-RED instance
 {: #customizingNodeRed}
 
-You can customize your Node-RED instance for your needs. For example, you can replace the landing page with your own page, add http authentication to the flow editor, or add new nodes to the palette.
+You can customize your Node-RED instance for your needs. For example, you can replace the landing page with your own page, add HTTP authentication to the flow editor, or add new nodes to the palette.
 
 1. Download the app code by clicking **Start Coding > Download Starter Code** on the app's overview page.
 2. Ensure that the Cloud Foundry command-line interface (CLI) is installed. See [the instructions for installing the command line interface](/docs/cloud-foundry-public?topic=cloud-foundry-public-cf-deploy-cli) for more information.
@@ -77,7 +77,7 @@ You can customize your Node-RED instance for your needs. For example, you can re
   props="keyref(space_name)">&lt;your space name></varname>
   ```
   {: codeblock}
-4. Modify the app, and deploy it again. The default app landing page describes some of the customization. Nodes and packages can be added to your instance of NodeRED by adding them to the list of dependencies.  After you complete your changes, use the CLI to deploy the app to {{site.data.keyword.cloud_notm}} again.
+4. Modify the app, and deploy it again. The default app landing page describes some of the customization. Nodes and packages can be added to your instance of Node-RED by adding them to the list of dependencies.  After you complete your changes, use the CLI to deploy the app to {{site.data.keyword.cloud_notm}} again.
 
   For example, run the following command in the root directory of the app:
   ```

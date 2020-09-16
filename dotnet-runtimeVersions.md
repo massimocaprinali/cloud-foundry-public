@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -74,9 +74,9 @@ This buildpack supports the following versions, those marked as deprecated will 
 
 
 
-### .NET aspnetcore versions
+### .NET ASP.NET Core versions
 
-| .NET aspnetcore version | Release type        |
+| .NET ASP.NET Core version | Release type        |
 |---------------------------|-------------------|
 | 3.1.4                     | Current           |
 | 3.1.3                     | Normal            |

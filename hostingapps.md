@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -53,7 +53,7 @@ If all of the following principles are observed in your app, the app is cloud-re
 
 You can migrate your apps to {{site.data.keyword.cloud_notm}} incrementally, instead of shifting the app completely to the cloud environment. You can migrate a portion of your app first and connect to the existing data or system of records by using the Cloud Integration service.
 
-In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between a {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console](https://www.ibm.com/blogs/cloud-archive/2015/04/reaching-enterprise-backend-bluemix-secure-gateway/){: external}.
+In your cloud apps, you might need to access the backend data or services, for example, a system of record. In {{site.data.keyword.cloud_notm}}, you can use the Secure Gateway service to establish a secured tunnel between an {{site.data.keyword.cloud_notm}} organization and the enterprise backend network. The service enables the apps on {{site.data.keyword.cloud_notm}} to access the backend network’s data and services. For details, see [Reaching enterprise backend with {{site.data.keyword.cloud_notm}} Secure Gateway via console](https://www.ibm.com/blogs/cloud-archive/2015/04/reaching-enterprise-backend-bluemix-secure-gateway/){: external}.
 
 To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, select a runtime from the {{site.data.keyword.cloud_notm}} catalog. The runtime contains a starter Hello World app that you can replace with your own app. If you cannot find a starter that provides the runtime you want, you can bring a custom, Cloud Foundry-compatible buildpack to {{site.data.keyword.cloud_notm}} by using the `–b` option with the `ibmcloud cf push` command. For details, see [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks).
 
@@ -150,7 +150,7 @@ After you upload your app to {{site.data.keyword.cloud_notm}}, select the servic
 
 The VCAP_SERVICES environment variable of your app is a JSON object that contains information about how to interact with a service instance in {{site.data.keyword.cloud_notm}}. The information includes the service instance name, credentials, and the connection URL to the service instance.
 
-To run your code in {{site.data.keyword.cloud_notm}}, you must add the code logic for parsing the VCAP_SERVICES variable to obtain information about service connection. Modify your app to get the dynamically assigned host and port of the service instance through the environment variables. The following example shows how to get the credentials of a Postgre SQL service instance in a Ruby app:
+To run your code in {{site.data.keyword.cloud_notm}}, you must add the code logic for parsing the VCAP_SERVICES variable to obtain information about service connection. Modify your app to get the dynamically assigned host and port of the service instance through the environment variables. The following example shows how to get the credentials of a `Postgre` SQL service instance in a Ruby app:
 
 ```
 services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)

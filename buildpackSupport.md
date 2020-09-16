@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -53,7 +53,7 @@ Problems and issues can be reported against any version of the built-in {{site.d
 ## Built-in community buildpacks
 {: #built-in_community_buildpacks}
 
-The following built-in Community Buildpacks are provided by the Cloud Foundry Community:
+The following built-in community buildpacks are provided by the Cloud Foundry Community:
 
 * Tomcat
 * PHP

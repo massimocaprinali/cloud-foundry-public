@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -50,11 +50,11 @@ General problems with creating Cloud Foundry apps might include apps that can't 
 
 While the legacy `api.*.bluemix.net` Cloud Foundry API endpoints are still available, you can update scripts and infrastructure automation to use the following updated Cloud Foundry API endpoints for your region:
 
-* api.us-south.cf.cloud.ibm.com (previously api.ng.bluemix.net)
-* api.eu-gb.cf.cloud.ibm.com (previously api.eu-gb.bluemix.net)
-* api.us-east.cf.cloud.ibm.com (previously api.us-east.bluemix.net)
-* api.eu-de.cf.cloud.ibm.com (previously api.eu-de.bluemix.net)
-* api.au-syd.cf.cloud.ibm.com (previously api.au-syd.bluemix.net)
+* api.us-south.cf.cloud.ibm.com (previously `api.ng.bluemix.net`)
+* api.eu-gb.cf.cloud.ibm.com (previously `api.eu-gb.bluemix.net`)
+* api.us-east.cf.cloud.ibm.com (previously `api.us-east.bluemix.net`)
+* api.eu-de.cf.cloud.ibm.com (previously `api.eu-de.bluemix.net`)
+* api.au-syd.cf.cloud.ibm.com (previously `api.au-syd.bluemix.net`)
 
 
 ## Automatic failover between {{site.data.keyword.cloud_notm}} regions isn't available
@@ -139,7 +139,7 @@ Ensure that you created a space in your current organization. To create a space,
 * From the menu bar, click **Manage > Account**, and select **Cloud Foundry orgs**. Click the name of the organization that you want to create the space in, and click **Add a space**.
 * In the Cloud Foundry command-line interface, type `cf create-space <space_name> -o <organization_name>`.
 
-Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](http://ibm.biz/bluemixstatus){: external} page to check whether a service or component has an issue.
+Try again. If this message occurs again, go to the [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status){: external} page to check whether a service or component has an issue.
 
 ## Can't perform requested actions
 {: #ts_authority}
@@ -225,9 +225,9 @@ Delete any services instances that aren't needed, or remove the limit on the num
 {: #ts_executable}
 {: troubleshoot}
 
-You might be unable to run executable files on {{site.data.keyword.cloud_notm}} when those executables were developed and built in a different environment.
+You might be unable to run executable files on {{site.data.keyword.cloud_notm}} when those executable files were developed and built in a different environment.
 
-You can't run executables on {{site.data.keyword.cloud_notm}} when those executables were developed and built in a different environment.
+You can't run executable files on {{site.data.keyword.cloud_notm}} when those executable files were developed and built in a different environment.
 {: tsSymptoms}
 
 If the content that you want to push to {{site.data.keyword.cloud_notm}} is already an executable, the content was previously built and doesn't need to be built on {{site.data.keyword.cloud_notm}}. In this case, no buildpack is required for the executable to be run on {{site.data.keyword.cloud_notm}}. You must explicitly indicate to {{site.data.keyword.cloud_notm}} that no buildpack is required.

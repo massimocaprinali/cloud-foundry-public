@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -75,7 +75,7 @@ Each app can have one or more URLs associated with it, but they must all point t
 ## Cloud Foundry architecture in {{site.data.keyword.cloud_notm}}
 {: #architecture}
 
-In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.cloud_notm}} in Cloud Foundry. Layers such as root filesystems and middleware components are abstracted so that you can focus on your app code. However, you can learn more about these layers if you need specifics on where your app is running.
+In general, you don't have to worry about the operating system and infrastructure layers when running apps on {{site.data.keyword.cloud_notm}} in Cloud Foundry. Layers such as root file systems and middleware components are abstracted so that you can focus on your app code. However, you can learn more about these layers if you need specifics on where your app is running.
 
 See [Viewing {{site.data.keyword.cloud_notm}} infrastructure layers](/docs/cloud-foundry-public?topic=cloud-foundry-public-howwork#viewinfra) for details.
 
@@ -103,7 +103,7 @@ You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, 
 ### Viewing {{site.data.keyword.cloud_notm}} infrastructure layers
 {: #viewinfra}
 
-You can run the **ibmcloud cf stacks** command to show the available stacks, or root filesystems, that your apps are to be deployed to. You can also specify the stack when you use the **ibmcloud cf push** command with the *-s* option and the *stack_name*, where the stack_name is the root filesystem. {{site.data.keyword.ibmcf_notm}} only supports `cflinuxfs3` currently:
+You can run the **ibmcloud cf stacks** command to show the available stacks, or root file systems, that your apps are to be deployed to. You can also specify the stack when you use the **ibmcloud cf push** command with the *-s* option and the *stack_name*, where the stack_name is the root file system. {{site.data.keyword.ibmcf_notm}} only supports `cflinuxfs3` currently:
 
 ```
 ibmcloud cf push <APP_NAME> -s STACK

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -61,18 +61,19 @@ Running with both offering simultaneously may lead to unexpected scaling behavio
 
 1. (Optional) Convert the autoscaling policy
 
-  The policy definition in new autoscaler is different than the one in legacy Auto-Scaling service. If you want to reuse the existing policy, you will need to convert it to the new format. A simple policy migration utility is also provided to help convert the policy.
+   The policy definition in new autoscaler is different than the one in legacy Auto-Scaling service. If you want to reuse the existing policy, you will need to convert it to the new format. A simple policy migration utility is also provided to help convert the policy.
 
-  - From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
-  - On the **Resource List** page, click **Cloud Foundry Apps**.
-  - Click the app to view its **Overview** page.
-  - Select **Connections** in the left navigation pane, and hover the legacy **Auto-Scaling** service instance entry
-  - Click on **Auto-Scaling** service instance link to view its service dashboard,  then select **Policy** tab.
-  - Click the button **Policy Migration**, copy the new `App Autoscaler` policy on the right side to your clipboard and save it as a local file.
+   - From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+   - On the **Resource List** page, click **Cloud Foundry Apps**.
+   - Click the app to view its **Overview** page.
+   - Select **Connections** in the left navigation pane, and hover the legacy **Auto-Scaling** service instance entry.
+   - Click on **Auto-Scaling** service instance link to view its service dashboard,  then select **Policy** tab.
+   - Click **Policy Migration**, copy the new `App Autoscaler` policy on the right side to your clipboard, and save it as a local file.
 
-  **Note**: The new Autoscaler doesn't support **HeapUsage** metric particularly for Liberty and Node.js runtime. As a result, the _Heap Usage_ related rules will be discarded during the conversion.  You need to use other metrics, such as "cpu", "memoryused", "memoryutil", "response" or "throughput" in the new  `App Autocaler`.
+   The Autoscaler doesn't support the **HeapUsage** metric, particularly for Liberty and Node.js runtime. As a result, the _Heap Usage_ related rules are discarded during the conversion.  You need to use other metrics, such as `cpu`, `memoryused`, `memoryutil`, `response` or `throughput` in the `App Autocaler`.
+   {: note}
 
-  Refer to [legacy Auto-Scaling policy JSON specification][legacy_autoscaling_policy] and [App Autoscaler policy JSON specification][autoscaling_policy] to get the detailed policy definitions.
+   Refer to [legacy Auto-Scaling policy JSON specification][legacy_autoscaling_policy] and [App Autoscaler policy JSON specification][autoscaling_policy] to get the detailed policy definitions.
 
 2. Unbind legacy **Auto-scaling** service
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -72,29 +72,29 @@ The Liberty tracing configuration can be adjusted for a running app directly fro
 
 ### Changing trace configuration via SSH
 
-When you push the app, the server.xml file includes the default properties  **updateTrigger** set to **polled** and **monitorInterval** set to 1 minute. The Liberty server is automatically configured to check for updates to the server.xml file each minute.
+When you push the app, the `server.xml` file includes the default properties  **updateTrigger** set to **polled** and **monitorInterval** set to 1 minute. The Liberty server is automatically configured to check for updates to the `server.xml` file each minute.
 
-See [Push Liberty apps with server.xml](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#options_for_pushing) for options to push Liberty apps with a customized `server.xml` file.
+See [Push Liberty apps with `server.xml`](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#options_for_pushing) for options to push Liberty apps with a customized `server.xml` file.
 
-See [Controlling Dynamic Updates](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_setup_dyn_upd.html){: external} for how to set up dynamic update in the server.xml file.
+See [Controlling Dynamic Updates](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_setup_dyn_upd.html){: external} for how to set up dynamic updates in the `server.xml` file.
 
 Follow these steps to change tracing configuration:
 
 1. SSH to your app
 
   ```
- ibmcloud cf ssh <appname> [-i instance_index]
+  ibmcloud cf ssh <appname> [-i instance_index]
   ```
   {: pre}
 
-2. Edit `<logging traceSpecification="xxxx"/>` in the server.xml to set your desired trace specification,  for example using *vi*:
+2. Edit `<logging traceSpecification="xxxx"/>` in the `server.xml` file to set your trace specification;  for example, using *vi*:
 
   ```
   vi /app/wlp/usr/servers/defaultServer/server.xml
   ```
   {: pre}
 
-Note: The server.xml change will be lost on a restage or restart and is only valid for the instance you ssh into.
+Note: The `server.xml` file change will be lost on a restage or restart and is only valid for the SSH instance.
 
 See [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html){: external} for the details of the syntax of the trace specification.
 

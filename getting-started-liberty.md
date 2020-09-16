@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -42,8 +42,7 @@ subcollection: cloud-foundry-public
 {: #getting-started-liberty}
 
 
-
-Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
+Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide.  Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Liberty for Java getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.

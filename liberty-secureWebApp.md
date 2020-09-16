@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -79,7 +79,7 @@ View the app at http://localhost:9080/GetStartedSecureJava/
 
 To enforce HTTPS instead of HTTP on all pages in your app, the following changes need to be made.
 
-Modify your server.xml to enable the `appSecurity-2.0` feature:
+Modify your `server.xml` to enable the `appSecurity-2.0` feature:
 
 ```
   <featureManager>
@@ -88,7 +88,7 @@ Modify your server.xml to enable the `appSecurity-2.0` feature:
 ```
 {: codeblock}
 
-Modify your web.xml file to include the following security constraint:
+Modify your `web.xml` file to include the following security constraint:
 
 ```
   <security-constraint>
@@ -105,12 +105,14 @@ Modify your web.xml file to include the following security constraint:
 
 This makes your app force all connections to use HTTPS automatically and will not allow any HTTP connections.
 
-## More Info
+## Secure starter app contents
 {: more}
 The secure starter app contains **BadServlet.java**. This app shows an example of insecure code that developers might write if care is not taken.
 
 The secure starter app also contains **GoodServlet.java**, which includes a number of good secure coding practices such as input validation, output encoding, secure HTTP Header settings, and Content Security Policy. These practices are key countermeasures against XSS. Applying them can also mitigate other vulnerabilities such as some injection and directory traversal.
 
-Refer to the [XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html){: external} to learn more about XSS and its countermeasures.
+## XSS cheat sheet
+
+See the [XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html){: external} to learn more about XSS and its countermeasures.
 
 

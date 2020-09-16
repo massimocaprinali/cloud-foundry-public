@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -47,12 +47,12 @@ Liberty for Java apps on {{site.data.keyword.cloud}} are powered by the liberty-
 ## Detection
 {: #liberty-detection}
 The Liberty buildpack is used when the following kinds of apps are deployed:
-* [WAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
-* [EAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
+* [`WAR` files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
+* [`EAR` files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
 * [Liberty server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory)
 * [Liberty packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server)
 * [Java main](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#java_main)
-* [Distzip](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/container-distZip.md){: external}
+* [`Distzip`](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/container-distZip.md){: external}
 
 ## Starter app
 {: #liberty-starter_app}

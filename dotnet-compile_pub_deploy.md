@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -55,7 +55,7 @@ ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
 ```
 {: pre}
 
-Alternatively, you can set the variable in your app's manifest.yml file:
+Alternatively, you can set the variable in your app's `manifest.yml` file:
 
 ```
 ---
@@ -94,20 +94,20 @@ For portable apps, the app can be pushed from the
 {:codeblock}
 directory.
 
-Also note that if you are using a manifest.yml file in your app, you can specify the path to the publish output folder in your manifest.yml.  Then you don't have to be in that folder when you push the app.
+Also note that if you are using a `manifest.yml` file in your app, you can specify the path to the publish output folder in your `manifest.yml` file.  Then you don't have to be in that folder when you push the app.
 
 ## Deploying apps with multiple projects
 {: #developing_apps_with_multiple_projects}
 
-To deploy an app which contains multiple projects, you will need to specify which project you want the buildpack to run as the main project. This can be done by creating a .deployment file in the root folder of the solution which sets the path to the main project. The path to the main project can be specified as the project folder or the project file (.xproj or .csproj).
+To deploy an app which contains multiple projects, you will need to specify which project you want the buildpack to run as the main project. This can be done by creating a `.deployment` file in the root folder of the solution which sets the path to the main project. The path to the main project can be specified as the project folder or the project file (`.xproj` or `.csproj`).
 
-For example if a solution which contains three projects, *MyApp.DAL*, *MyApp.Services*, and *MyApp.Web* in the *src* folder, and *MyApp.Web* is the main project, the format of the .deployment file would be as follows:
+For example if a solution which contains three projects, `MyApp.DAL`, `MyApp.Services`, and `MyApp.Web` in the `src` folder, and `MyApp.Web` is the main project, the format of the `.deployment` file is as follows:
 ```
   [config]
   project = src/MyApp.Web/MyApp.Web.csproj
 ```
 {: codeblock}
 
-In this example, the buildpack would automatically compile the *MyApp.DAL* and *MyApp.Services* projects if they are listed as dependencies in the project.json file for *MyApp.Web*, but the buildpack would only attempt to execute the main project, *MyApp.Web*, with dotnet run -p src/MyApp.Web.
+In this example, the buildpack will automatically compile the `MyApp.DAL` and `MyApp.Services` projects if they are listed as dependencies in the `project.json` file for `MyApp.Web`, but the buildpack only attempts to execute the main project, `MyApp.Web`, when running `-p src/MyApp.Web`.
 
 

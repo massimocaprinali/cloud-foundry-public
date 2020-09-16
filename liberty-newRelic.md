@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -97,7 +97,7 @@ New Relic service instance:
 
 Auto configuration of the New Relic service is different from the auto configuration of other services as it is a container managed service that is made available through the buildpack's framework.  Since it is made available through the framework, the auto configuration for this service is different from the other services in three ways:
 * Opting out is not an option.
-* The service integration relies on New Relic's agent, a Java agent. Therefore, it is configured through Java options as opposed to cloud variables in the server.xml file.
+* The service integration relies on New Relic's agent, a Java agent. Therefore, it is configured through Java options as opposed to cloud variables in the `server.xml` file.
 * The configuration relies on both VCAP_SERVICES and VCAP_APPLICATION.
 
 
