@@ -148,13 +148,13 @@ The entire default Liberty `server.xml` configuration file is as follows:
 {: #java_main}
 
 Java apps, including Spring Boot apps, that contain a class with a main() method are executed using `java -jar`.  Liberty's native Spring Boot support can be enabled using the `LIBERTY_NATIVE_SPRINGBOOT` environment variable.
-For example, to use Liberty's springBoot-2.0 feature:
+For example, to use Liberty's `springBoot-2.0` feature:
 
 ```
 	ibmcloud cf set-env myapp LIBERTY_NATIVE_SPRINGBOOT 2.0
 ```
 
-The Liberty server is used to run the app if the LIBERTY_NATIVE_SPRINGBOOT environment variable is set to a valid Liberty springBoot feature version.
+The Liberty server is used to run the app if the `LIBERTY_NATIVE_SPRINGBOOT` environment variable is set to a valid Liberty `springBoot` feature version.
 
 
 ### CDI 1.2
@@ -258,7 +258,7 @@ When a packaged server or a Liberty server directory is pushed, the Liberty buil
 * The buildpack ensures that there is exactly one `httpEndpoint` element in the file.
 * The buildpack ensures that the `httpPort` attribute in the `httpEndpoint` element points to a system variable that is called ${port}. The buildpack also overrides the host attribute.
 * The buildpack sets the `logDirectory` attribute in the logging element to point to a system log directory.
-* The buildpack ensures that a `runtime-vars.xml` file is logically merged with your `server.xml` file. Specifically, the buildpack appends the line `<include location="runtime-vars.xml" />` to your server.xml file.
+* The buildpack ensures that a `runtime-vars.xml` file is logically merged with your `server.xml` file. Specifically, the buildpack appends the line `<include location="runtime-vars.xml" />` to your `server.xml` file.
 
 ### Variables that can be referenced
 {: #referenceable_variables}

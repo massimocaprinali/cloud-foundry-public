@@ -112,7 +112,7 @@ The Liberty buildpack configures the default JVM options by taking into account:
   * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
 
 * The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features).
-  * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting -Dcom.ibm.tx.jta.disable2PC=true.
+  * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting `-Dcom.ibm.tx.jta.disable2PC=true`.
 
 * The {{site.data.keyword.cloud_notm}} environment.
 
@@ -219,7 +219,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 ### Determining the applied JVM options of a running app
 {: #determining_applied_jvm_options}
 
-Except for app-defined options that are specified with the JVM_ARGS environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java apps) or in a `jvm.options` file (non-standalone Java apps). The applied JVM options for the app can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
+Except for app-defined options that are specified with the `JVM_ARGS` environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java apps) or in a `jvm.options` file (non-standalone Java apps). The applied JVM options for the app can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
 
 The JVM options for stand-alone Java app are persisted as command line options. They can be viewed from the `staging_info.yml` file.
 

@@ -143,7 +143,7 @@ Here are examples of how to set the `services_autoconfig_excludes` environment v
 
 ```
     ibmcloud cf set-env myapp services_autoconfig_excludes cloudant=config
-``
+```
 {: pre}
 
 ```

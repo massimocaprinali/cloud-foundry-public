@@ -96,7 +96,7 @@ You may have to pass additional options to configure Java trustStore. The follow
 
 When the connection succeeds, JConsole starts monitoring.
 
-If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding `-J-Djava.util.logging.config.file=c:/tmp/logging.properties` to the jconsole command.
+If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding `-J-Djava.util.logging.config.file=c:/tmp/logging.properties` to the `jconsole` command.
 Here is a sample logging properties file:
 ```
     handlers= java.util.logging.FileHandler
@@ -110,7 +110,7 @@ Here is a sample logging properties file:
 ```
 {: codeblock}
 
-You can also add `-J-Djavax.net.debug=ssl` to the jconsole command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your `server.xml` file:
+You can also add `-J-Djavax.net.debug=ssl` to the `jconsole` command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your `server.xml` file:
 ```
     <logging traceSpecification="com.ibm.ws.jmx.*=all"/>
 ```
