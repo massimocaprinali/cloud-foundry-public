@@ -1,8 +1,8 @@
-# cloud-foundry
-Upstream repo for Cloud Foundry (Public) docs
+# cloud-foundry-public
+Publishing repo for Cloud Foundry (Public) docs
 
-**Note:** This repo is replacing the draft branches of `cloud-docs/cloud-foundry` and `cloud-docs/cloud-foundry-public` repos which will be deprecated after all source material is moved and restructured.  Effective 7/15/2020 Cloud Foundry Enterprise (`cloud-docs/cloud-foundry`) is deprecated.  Only Cloud Foundry Public (`cloud-docs/cloud-foundry-public`) will continued to be supported and this repo is the "upstream repo" for that publishing repo.
+**Note:** All SOURCE updates need to be made to `alchemy-writers/cloud-foundry`.  This repo is populated by automation from that repo.  Changes should not be made directly to this repo.
 
-Within this repo are several folders with `CFEE` in their name.  These contain unique CFEE source files from the original `cloud-docs/cloud-foundry` draft branch and are being maintained here should they be needed at some point for CFP.
+Topics in `draft` are published to `test.cloud.ibm.com`.  Topics in `publish` are externally published to `cloud.ibm.com`.
 
-
+Effective 7/15/2020 Cloud Foundry Enterprise Environment (`cloud-docs/cloud-foundry`) is deprecated.  Only Cloud Foundry Public (`cloud-docs/cloud-foundry-public`) will continued to be published.  All topics that were previously linked from CFEE are now incorporated into the CFP source repository (`alchemy-writers/cloud-foundry`).
