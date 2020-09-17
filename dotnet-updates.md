@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -46,14 +46,14 @@ A list of the latest updates in the ASP.NET Core buildpack.
 ## June 18, 2020: Updated the ASP.NET Core buildpack v2.7-20200615-1457
 This release includes version 2.3.11 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.18
-* Add support for .NET Aspnetcore 3.1.4
+* Add support for .NET ASP.NET Core 2.1.18
+* Add support for .NET ASP.NET Core 3.1.4
 * Add support for .NET Runtime 3.1.4
 * Add support for .NET SDK 2.1.701
 * Add support for .NET SDK 2.1.806
 * Add support for .NET SDK 3.1.202
-* Remove support for .NET Aspnetcore 3.1.2
-* Remove support for .NET Aspnetcore 2.1.16
+* Remove support for .NET ASP.NET Core 3.1.2
+* Remove support for .NET ASP.NET Core 2.1.16
 * Remove support for .NET Runtime 2.1.16
 * Remove support for .NET SDK 2.1.804
 * Remove support for .NET SDK 3.1.200
@@ -62,10 +62,10 @@ This release includes version 2.3.11 of the dotnet-core Cloud Foundry buildpack.
 ## May 1, 2020: Updated the ASP.NET Core buildpack v2.6-20200424-1047
 This release includes version 2.3.9 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.16
-* Add support for .NET Aspnetcore 2.1.17
-* Add support for .NET Aspnetcore 3.1.2
-* Add support for .NET Aspnetcore 3.1.3
+* Add support for .NET ASP.NET Core 2.1.16
+* Add support for .NET ASP.NET Core 2.1.17
+* Add support for .NET ASP.NET Core 3.1.2
+* Add support for .NET ASP.NET Core 3.1.3
 * Add support for .NET Runtime 2.1.16
 * Add support for .NET Runtime 2.1.17
 * Add support for .NET Runtime 3.1.3
@@ -78,11 +78,11 @@ This release includes version 2.3.9 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET SDK 2.1.805
 * Add support for .NET SDK 3.1.200
 * Add support for .NET SDK 3.1.201
-* Remove support for .NET Aspnetcore 2.1.12
-* Remove support for .NET Aspnetcore 2.1.13
-* Remove support for .NET Aspnetcore 2.2.6
-* Remove support for .NET Aspnetcore 2.2.7
-* Remove support for .NET Aspnetcore 3.0.0
+* Remove support for .NET ASP.NET Core 2.1.12
+* Remove support for .NET ASP.NET Core 2.1.13
+* Remove support for .NET ASP.NET Core 2.2.6
+* Remove support for .NET ASP.NET Core 2.2.7
+* Remove support for .NET ASP.NET Core 3.0.0
 * Remove support for .NET Runtime 2.1.12
 * Remove support for .NET Runtime 2.1.13
 * Remove support for .NET Runtime 2.2.6
@@ -99,11 +99,11 @@ This release includes version 2.3.9 of the dotnet-core Cloud Foundry buildpack.
 ## December 18, 2019: Updated the ASP.NET Core buildpack v2.5-20191209-1920
 This release includes version 2.3.2 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.13
-* Add support for .NET Aspnetcore 2.1.14
-* Add support for .NET Aspnetcore 2.2.7
-* Add support for .NET Aspnetcore 2.2.8
-* Add support for .NET Aspnetcore 3.0.1
+* Add support for .NET ASP.NET Core 2.1.13
+* Add support for .NET ASP.NET Core 2.1.14
+* Add support for .NET ASP.NET Core 2.2.7
+* Add support for .NET ASP.NET Core 2.2.8
+* Add support for .NET ASP.NET Core 3.0.1
 * Add support for .NET Runtime 2.1.13
 * Add support for .NET Runtime 2.1.14
 * Add support for .NET Runtime 2.2.7
@@ -115,12 +115,12 @@ This release includes version 2.3.2 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET SDK 2.2.402
 * Add support for .NET SDK 3.0.100
 * Add support for .NET SDK 3.0.101
-* Remove support for .NET Aspnetcore 2.1.5
-* Remove support for .NET Aspnetcore 2.1.11
-* Remove support for .NET Aspnetcore 2.1.12
-* Remove support for .NET Aspnetcore 2.2.5
-* Remove support for .NET Aspnetcore 2.2.6
-* Remove support for .NET Aspnetcore 3.0.0-preview7.19365.7
+* Remove support for .NET ASP.NET Core 2.1.5
+* Remove support for .NET ASP.NET Core 2.1.11
+* Remove support for .NET ASP.NET Core 2.1.12
+* Remove support for .NET ASP.NET Core 2.2.5
+* Remove support for .NET ASP.NET Core 2.2.6
+* Remove support for .NET ASP.NET Core 3.0.0-preview7.19365.7
 * Remove support for .NET Runtime 2.1.5
 * Remove support for .NET Runtime 2.1.11
 * Remove support for .NET Runtime 2.1.12
@@ -136,9 +136,9 @@ This release includes version 2.3.2 of the dotnet-core Cloud Foundry buildpack.
 ## September 20, 2019: Updated the ASP.NET Core buildpack v2.4-20190912-1554
 This release includes version 2.2.14 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.12
-* Add support for .NET Aspnetcore 2.2.6
-* Add support for .NET Aspnetcore 3.0.0-preview7.19365.7
+* Add support for .NET ASP.NET Core 2.1.12
+* Add support for .NET ASP.NET Core 2.2.6
+* Add support for .NET ASP.NET Core 3.0.0-preview7.19365.7
 * Add support for .NET Runtime 2.1.12
 * Add support for .NET Runtime 2.2.6
 * Add support for .NET Runtime 3.0.0-preview7-27912-14
@@ -150,8 +150,8 @@ This release includes version 2.2.14 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET SDK 2.2.301
 * Add support for .NET SDK 2.2.401
 * Add support for .NET SDK 3.0.100-preview7-012821
-* Remove support for .NET Aspnetcore 2.1.10
-* Remove support for .NET Aspnetcore 2.2.4
+* Remove support for .NET ASP.NET Core 2.1.10
+* Remove support for .NET ASP.NET Core 2.2.4
 * Remove support for .NET Runtime 1.0.15
 * Remove support for .NET Runtime 1.1.12
 * Remove support for .NET Runtime 1.1.13
@@ -168,11 +168,11 @@ This release includes version 2.2.14 of the dotnet-core Cloud Foundry buildpack.
 ## June 21, 2019: Updated ASP.NET Core buildpack v2.3-20190609-2145
 This release includes version 2.2.12 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.5
-* Add support for .NET Aspnetcore 2.1.10
-* Add support for .NET Aspnetcore 2.1.11
-* Add support for .NET Aspnetcore 2.2.4
-* Add support for .NET Aspnetcore 2.2.5
+* Add support for .NET ASP.NET Core 2.1.5
+* Add support for .NET ASP.NET Core 2.1.10
+* Add support for .NET ASP.NET Core 2.1.11
+* Add support for .NET ASP.NET Core 2.2.4
+* Add support for .NET ASP.NET Core 2.2.5
 * Add support for .NET Runtime 1.1.12
 * Add support for .NET Runtime 1.1.13
 * Add support for .NET Runtime 2.1.5
@@ -186,10 +186,10 @@ This release includes version 2.2.12 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET SDK 2.2.107
 * Add support for .NET SDK 2.2.203
 * Add support for .NET SDK 2.2.204
-* Remove support for .NET Aspnetcore 2.1.7
-* Remove support for .NET Aspnetcore 2.1.8
-* Remove support for .NET Aspnetcore 2.2.1
-* Remove support for .NET Aspnetcore 2.2.2
+* Remove support for .NET ASP.NET Core 2.1.7
+* Remove support for .NET ASP.NET Core 2.1.8
+* Remove support for .NET ASP.NET Core 2.2.1
+* Remove support for .NET ASP.NET Core 2.2.2
 * Remove support for .NET Runtime 1.0.11
 * Remove support for .NET Runtime 1.0.12
 * Remove support for .NET Runtime 1.1.10
@@ -210,10 +210,10 @@ This release includes version 2.2.12 of the dotnet-core Cloud Foundry buildpack.
 ## March 20, 2019: Updated ASP.NET Core buildpack v2.2-20190319-1114
 This release includes version 2.2.7 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.7
-* Add support for .NET Aspnetcore 2.1.8
-* Add support for .NET Aspnetcore 2.2.1
-* Add support for .NET Aspnetcore 2.2.2
+* Add support for .NET ASP.NET Core 2.1.7
+* Add support for .NET ASP.NET Core 2.1.8
+* Add support for .NET ASP.NET Core 2.2.1
+* Add support for .NET ASP.NET Core 2.2.2
 * Add support for .NET Runtime 1.1.11
 * Add support for .NET Runtime 2.1.7
 * Add support for .NET Runtime 2.1.8
@@ -222,9 +222,9 @@ This release includes version 2.2.7 of the dotnet-core Cloud Foundry buildpack.
 * Add support for .NET SDK 1.1.12
 * Add support for .NET SDK 2.1.504
 * Add support for .NET SDK 2.2.104
-* Remove support for .NET Aspnetcore 2.1.5
-* Remove support for .NET Aspnetcore 2.1.4
-* Remove support for .NET Aspnetcore 2.1.2
+* Remove support for .NET ASP.NET Core 2.1.5
+* Remove support for .NET ASP.NET Core 2.1.4
+* Remove support for .NET ASP.NET Core 2.1.2
 * Remove support for .NET Runtime 1.1.9
 * Remove support for .NET Runtime 2.1.2
 * Remove support for .NET Runtime 2.1.4
@@ -236,9 +236,9 @@ This release includes version 2.2.7 of the dotnet-core Cloud Foundry buildpack.
 ## December 12, 2018: Updated ASP.NET Core buildpack v2.1-20181205-1536
 This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 
-* Add support for .NET Aspnetcore 2.1.2
-* Add support for .NET Aspnetcore 2.1.4
-* Add support for .NET Aspnetcore 2.1.5
+* Add support for .NET ASP.NET Core 2.1.2
+* Add support for .NET ASP.NET Core 2.1.4
+* Add support for .NET ASP.NET Core 2.1.5
 * Add support for .NET Runtime 1.0.11
 * Add support for .NET Runtime 1.0.12
 * Add support for .NET Runtime 1.1.9
@@ -359,7 +359,7 @@ This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 
 ## Aug 31, 2016: Updated ASP.NET Core buildpack v1.0-20160826-1345
 
-* Add support for running pre and post compile scripts using NPM and Bower to install front-end javascript and css libraries.
+* Add support for running pre and post compile scripts using NPM and Bower to install front-end JavaScript and CSS libraries.
 * Move buildpack from Beta status to GA status
 
 ## July 11, 2016: Updated ASP.NET Core buildpack v0.9-20160706-1603
@@ -378,7 +378,7 @@ This version of the buildpack includes the following changes:
 * The buildpack version number is included in detect script output.
 * This version of the buildpack removes support for DNX based apps using CoreCLR RC1 and lower.
 * This version of the buildpack supports the .NET CLI and .NET Core RC2.
-* The buildpack detects projects with either a project.json file or *.runtimeconfig.json files from publish output.
+* The buildpack detects projects with either a `project.json` file or `*.runtimeconfig.json` files from publish output.
 
 ## October 22, 2015: Updated ASP.NET 5 buildpack v0.7-20151022-1257
 

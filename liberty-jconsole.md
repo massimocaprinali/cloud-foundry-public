@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -51,7 +51,7 @@ subcollection: cloud-foundry-public
 ### Push the server package
 {: #push_server_package}
 
-Push the server package containing your app limiting it to a single instance. Your `server.xml` file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a basicRegistry element and administrator-role element.
+Push the server package containing your app limiting it to a single instance. Your `server.xml` file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a `basicRegistry` element and administrator-role element.
 ```
        <featureManager>
            <feature>jsp-2.2</feature>
@@ -69,7 +69,8 @@ Push the server package containing your app limiting it to a single instance. Yo
 ```
 {: codeblock}
 
-   * Note: The password should be encoded with the securityUtility tool provided by Liberty.
+Encode the password with the `securityUtility` tool provided by Liberty.
+{: note}
 
 ### Start the JConsole app
 {: start_jconsole_app}
@@ -88,14 +89,14 @@ You may have to pass additional options to configure Java trustStore. The follow
 
 ### Complete the connection
 {: start_jconsole_app}
-  * Fill in the Remote Process field the following url:
-    * service:jmx:rest://&lt;appName&gt;.mybluemix.net:443/IBMJMXConnectorREST.
-  *  Also fill in the Username and Password fields with an administrator-role role user and password from the `server.xml` file.
-  * Click Connect.
+
+1. In the Remote Process field enter the following URL: `service:jmx:rest://<appName>.mybluemix.net:443/IBMJMXConnectorREST`.
+2. Specify the Username and Password fields.  Enter a user with an administrator-role, and a password from the `server.xml` file.
+3. Click Connect.
 
 When the connection succeeds, JConsole starts monitoring.
 
-If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding `-J-Djava.util.logging.config.file=c:/tmp/logging.properties` to the jconsole command.
+If the connection fails, you can produce logs to help diagnose the problem.  First, try collecting client side trace by adding `-J-Djava.util.logging.config.file=c:/tmp/logging.properties` to the `jconsole` command.
 Here is a sample logging properties file:
 ```
     handlers= java.util.logging.FileHandler
@@ -109,7 +110,7 @@ Here is a sample logging properties file:
 ```
 {: codeblock}
 
-You can also add <b>&dash;J&dash;Djavax.net.debug=ssl</b> to the jconsole command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your `server.xml` file:
+You can also add `-J-Djavax.net.debug=ssl` to the `jconsole` command. This produces SSL diagnostic tracing in a separate JConsole output window.  Lastly, you can enable tracing on the server side by adding the following to your `server.xml` file:
 ```
     <logging traceSpecification="com.ibm.ws.jmx.*=all"/>
 ```

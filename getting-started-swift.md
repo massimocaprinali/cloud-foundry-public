@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -189,7 +189,7 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
-Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store it in an environment variable that you reference in your source code.
+Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
 
 ## Step 6: Use the database
@@ -230,7 +230,7 @@ The `cloudant` placeholder in the `cloudfoundry:cloudant` configuration makes it
 
 Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
-Copy and paste just the credentials to the corresponding fields in your local config.json file.
+Copy and paste just the credentials to the corresponding fields in your local `config.json` file.
 
 Build and run your app locally.
  ```

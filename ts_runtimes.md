@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -62,7 +62,7 @@ Some buildpacks aren't configured to automatically download all updated componen
 You can use buildpacks that have built-in mechanisms to avoid loading obsolete components, for example, the following buildpacks:
 {: tsResolve}
 
-  * [Cloud Foundry Java&reg buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/extending-caches.md){: external}.
+  * [Cloud Foundry Java buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/extending-caches.md){: external}.
   * [Cloud Foundry Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
 
   ```
@@ -158,16 +158,16 @@ Identify which step of the app container lifecycle is causing errors in app depl
   {: tsResolve}
 
 
-### Instances have different traceSpecification configurations (Deprecated)
+### Instances have different `traceSpecification` configurations (Deprecated)
   {: #ts_different_config}
 
-  For different instances of one app, you might see different traceSpecification configurations.
+  For different instances of one app, you might see different `traceSpecification` configurations.
   {: tsSymptoms}
 
   This behavior occurs for the following reasons:
   {: tsCauses}
 
-    * You changed the configuration for one or more instances previously. If you change the traceSpecification configuration for one instance, the change doesn't apply to other instances of the same app. For example, your app uses log4j and you have 2 instances for this app. You can change the log level of instance 0 from info to debug, but the log level of instance 1 remains as info.
+    * You changed the configuration for one or more instances previously. If you change the `traceSpecification` configuration for one instance, the change doesn't apply to other instances of the same app. For example, your app uses log4j and you have 2 instances for this app. You can change the log level of instance 0 from info to debug, but the log level of instance 1 remains as info.
 
   No action is required. This behavior is expected.
   {: tsResolve}
@@ -241,9 +241,9 @@ First, examine the logs for any obvious errors that might cause the Liberty app 
 ```
 {: codeblock}
 
-#### Disable the appstate feature
+#### Disable the `appstate` feature
 
-The appstate feature integrates with the {{site.data.keyword.cloud_notm}} health check process to ensure that the Liberty app is fully initialized before the app can receive HTTP requests. After the app is fully initialized the appstate feature has no more effect.  The side effect of this feature is that some apps might take longer to start up. To disable the appstate feature, set the following environment property on your app and restage the app:
+The `appstate` feature integrates with the {{site.data.keyword.cloud_notm}} health check process to ensure that the Liberty app is fully initialized before the app can receive HTTP requests. After the app is fully initialized the `appstate` feature has no more effect.  The side effect of this feature is that some apps might take longer to start up. To disable the `appstate` feature, set the following environment property on your app and restage the app:
 
 ```
 ibmcloud cf set-env myApp JBP_CONFIG_LIBERTY "app_state: false"
@@ -278,22 +278,22 @@ The following errors are visible in the logs and the app may fail to start:
 {: tsSymptoms}
 
 ```
-    2016-11-03T12:32:44.82-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: Certificate chaining error
-    2016-11-03T12:32:44.83-0200 [App/0]      ERR [ERROR   ] CWPKI0022E: SSL HANDSHAKE FAILURE:  A signer with SubjectDN CN=*.gateway.prd.na.ca.ibmserviceengage.com, O=International Business Machines Corp., L=Armonk, ST=New York, C=US was sent from the target host.  The signer might need to be added to local trust store /home/vcap/app/wlp/usr/servers/defaultServer/resources/security/key.jks, located in SSL configuration alias defaultSSLConfig.  The extended error message from the SSL handshake exception is: PKIX path building failed: java.security.cert.CertPathBuilderException: PKIXCertPathBuilderImpl could not build a valid CertPath.; internal cause is:
-    2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: The certificate issued by CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US is not trusted; internal cause is:
-    2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: Certificate chaining error
+2016-11-03T12:32:44.82-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: Certificate chaining error
+2016-11-03T12:32:44.83-0200 [App/0]      ERR [ERROR   ] CWPKI0022E: SSL HANDSHAKE FAILURE:  A signer with SubjectDN CN=*.gateway.prd.na.ca.ibmserviceengage.com, O=International Business Machines Corp., L=Armonk, ST=New York, C=US was sent from the target host.  The signer might need to be added to local trust store /home/vcap/app/wlp/usr/servers/defaultServer/resources/security/key.jks, located in SSL configuration alias defaultSSLConfig.  The extended error message from the SSL handshake exception is: PKIX path building failed: java.security.cert.CertPathBuilderException: PKIXCertPathBuilderImpl could not build a valid CertPath.; internal cause is:
+2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: The certificate issued by CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US is not trusted; internal cause is:
+2016-11-03T12:32:44.83-0200 [App/0]      ERR java.security.cert.CertPathValidatorException: Certificate chaining error
 ```
 {: screen}
 
-The errors can be generated when a secure service is bound to a Liberty app and the Liberty app was deployed as a server directory or packaged server that contains server.xml that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty app causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty's server.xml, the configured trust store may not trust the certificate used by the secure service.
+The errors can be generated when a secure service is bound to a Liberty app and the Liberty app was deployed as a server directory or packaged server that contains a `server.xml` file that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty app causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty `server.xml` file, the configured trust store may not trust the certificate used by the secure service.
 {: tsCauses}
 
 Modify configuration to use the JVM's trust store with one of the options that follow.  Be sure to restage your app after making the change.
 {: tsResolve}
 
-#### Update Liberty's server.xml
+#### Update the Liberty `server.xml` file
 
-Update the server.xml to use JVM's cacerts file as the trust store. Add the following to your server.xml:
+Update the `server.xml` file to use the JVM `cacerts` file as the trust store. Add the following to your `server.xml` file:
 
 ```
         <ssl id="defaultSSLConfig" trustStoreRef="defaultTrustStore"/>
@@ -303,9 +303,9 @@ Update the server.xml to use JVM's cacerts file as the trust store. Add the foll
 
 #### Update the configured trust store
 
-Modify the configured trust store to trust the DigitCert ROOT CA.
-  1. Download the DigiCert Root CA from https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.
-  2. Assuming the resources/security/key.jks is used as the trust store, import the CA into the key using the Java's keytool utility:
+Modify the configured trust store to trust the DigiCert ROOT CA.
+  1. Download the DigiCert Root CA from `https://cacerts.digicert.com/DigiCertGlobalRootCA.crt`.
+  2. Assuming the `resources/security/key.jks` is used as the trust store, import the CA into the key using the Java `keytool` utility:
 
 ```
 keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resources/security/key.jks -file DigiCertGlobalRootCA.crt
@@ -318,7 +318,7 @@ keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resour
 
 ### App fails to start: General troubleshooting
 
-For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try vendoring your dependencies as a first troubleshooting step. Vendoring dependencies means that you package the dependencies in the same source files as your app. This can resolve various errors that can occur when dependencies assume that they are in the same base directory as the app.
+For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try packaging the dependencies in the same source files as your app. This can resolve various errors that can occur when dependencies assume that they are in the same base directory as the app.
 
 1. From your app root directory, install dependencies by running the following command.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -42,8 +42,7 @@ subcollection: cloud-foundry-public
 {: #getting-started-liberty}
 
 
-
-Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
+Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide.  Or, [download the sample code](https://github.com/IBM-Cloud/get-started-java){: external} and explore on your own.
 {: hide-in-docs}
 
 By following the Liberty for Java getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
@@ -184,7 +183,7 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
-Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store it in an environment variable that you reference in your source code.
+Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
 
 ## Step 6: Use the database
@@ -216,7 +215,7 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 [Manage your Liberty for Java app](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_runtime). Some example tasks include:
 
 
-* Configure logginga tracing.
+* Configure logging and tracing.
 * Install Liberty features.
 * Connect services to your app.  
 

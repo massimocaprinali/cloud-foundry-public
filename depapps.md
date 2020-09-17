@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -372,7 +372,7 @@ The following variables are defined by Diego:
 
 </dl>
 
-Variables that are defined by buildpacks are different for each buildpack. For other compatible buildpacks, see [Buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){: external}.
+Variables that are defined by buildpacks are different for each buildpack. For other compatible buildpacks, see [the buildpack information for Cloud Foundry](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){: external}.
 
 <ul>
     <li>The following variables are defined by the Liberty Buildpack:

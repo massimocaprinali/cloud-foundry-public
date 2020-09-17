@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -44,97 +44,27 @@ subcollection: cloud-foundry-public
 
 Environment variables supported by Liberty for Java.
 
-<table>
-<tr>
-<th align="left">Environment Variable Name</th>
-<th align="left">Description</th>
-</tr>
 
-<tr>
-<td>BLUEMIX_APP_MGMT_ENABLE</td>
-<td>Enable [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management)</td>
-</tr>
+Environment Variable Name              | Description
+---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`BLUEMIX_APP_MGMT_ENABLE`              | Enable [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management)
+`BLUEMIX_APP_MGMT_INSTALL`             | Install [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management)
+`IBM_LIBERTY_MONTHLY`                  | Enable [Liberty monthly release runtime/](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+`JAVA_OPTS`                            | Set [Java options](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`JBP_CONFIG_DYNATRACEAPPMONAGENT`      | Configure the [Dynatrace agent location information](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace)
+`JBP_CONFIG_IBMJDK`                    | Configure the [{{site.data.keyword.IBM}} JRE version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`JBP_CONFIG_LIBERTY`                   | Configure a variety of Liberty runtime options including [features for WAR or EAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
+`JBP_CONFIG_OPENJDK`                   | Configure the [OpenJDK version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`JBP_CONFIG_OPENJ9`                    | Configure the [OpenJ9 version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`JBP_CONFIG_SPRINGAUTORECONFIGURATION` | Disable the [Spring Auto-Reconfiguration framework](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/framework-spring_auto_reconfiguration.md){: external}. To disable, set value to enabled: false.
+`JBP_LOG_LEVEL`                        | Set logging level of the buildpack. Possible values: `DEBUG`, `INFO` (default), `WARN`, `ERROR`, or `FATAL`
+`JVM`                                  | Select the [JRE type](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`JVM_ARGS`                             | Set the [JVM arguments](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)
+`LBP_SERVICE_CONFIG_xxxx`              | [Override service configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config#override_service_config)
+`HTTP_PROXY`                           | Set proxy server information
+`HTTPS_PROXY`                          | Set proxy server information
+`services_autoconfig_excludes`         | Disable service [auto-configuration.](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config#opting_out)
 
-<tr>
-<td>BLUEMIX_APP_MGMT_INSTALL</td>
-<td>Install [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management)</td>
-</tr>
-
-<tr>
-<td>IBM_LIBERTY_MONTHLY</td>
-<td>Enable [Liberty monthly release runtime/](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)</td>
-</tr>
-
-<tr>
-<td>JAVA_OPTS</td>
-<td>Set [Java options](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_DYNATRACEAPPMONAGENT</td>
-<td>Configure the [Dynatrace agent location information](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_IBMJDK </td>
-<td>Configure the [{{site.data.keyword.IBM}} JRE version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_LIBERTY</td>
-<td>Configure a variety of Liberty runtime options including [features for WAR or EAR files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_OPENJDK</td>
-<td>Configure the [OpenJDK version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_OPENJ9</td>
-<td>Configure the [OpenJ9 version](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>JBP_CONFIG_SPRINGAUTORECONFIGURATION </td>
-<td>Disable the [Spring Auto-Reconfiguration framework](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/framework-spring_auto_reconfiguration.md){: external}. To disable, set value to enabled: false. </td>
-</tr>
-
-<tr>
-<td>JBP_LOG_LEVEL</td>
-<td>Set logging level of the buildpack. Possible values: <b>DEBUG</b>, <b>INFO</b> (default), <b>WARN</b>, <b>ERROR</b>, or <b>FATAL</b></td>
-</tr>
-
-<tr>
-<td>JVM</td>
-<td>Select the [JRE type](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>JVM_ARGS</td>
-<td>Set the [JVM arguments](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre)</td>
-</tr>
-
-<tr>
-<td>LBP_SERVICE_CONFIG_xxxx</td>
-<td>[Override service configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config#override_service_config)</td>
-</tr>
-
-<tr>
-<td>HTTP_PROXY</td>
-<td>Set proxy server information</td>
-</tr>
-
-<tr>
-<td>HTTPS_PROXY</td>
-<td>Set proxy server information</td>
-</tr>
-
-<tr>
-<td>services_autoconfig_excludes</td>
-<td>Disable service [auto-configuration.](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config#opting_out)</td>
-</tr>
-</table>
 {: caption="Table 1. Environment variables available for Liberty for Java" caption-side="top"}
 
 ## Disabled attributes in the Liberty for Java buildpack
@@ -143,47 +73,17 @@ There are some attributes that are automatically disabled by the Liberty buildpa
 
 ### Disabled attribute table
 
-<table>
-<tr>
-<th>Disabled attribute </th>
-<th>Element</th>
-</tr>
 
-<tr>
-<td>host</td>
-<td>httpEndpoint</td>
-</tr>
+Disabled attribute         | Element
+---------------------------|-----------------
+`host`                     | `httpEndpoint`
+`httpPort`                 | `httpEndpoint`
+`trustHostHeaderPort`      | `webContainer`
+`andextractHostHeaderPort` | `webContainer`
+`logDirectory`             | `logging`
+`consoleLogLevel`          | `logging`
+`enableWelcomePage`        | `httpDispatcher`
 
-<tr>
-<td>httpPort</td>
-<td>httpEndpoint</td>
-</tr>
-
-<tr>
-<td>trustHostHeaderPort</td>
-<td>webContainer</td>
-</tr>
-
-<tr>
-<td>andextractHostHeaderPort</td>
-<td>webContainer</td>
-</tr>
-
-<tr>
-<td>logDirectory</td>
-<td>logging</td>
-</tr>
-
-<tr>
-<td>consoleLogLevel</td>
-<td>logging</td>
-</tr>
-
-<tr>
-<td>enableWelcomePage</td>
-<td>httpDispatcher</td>
-</tr>
-</table>
 {: caption="Table 1. Attributes disabled by Liberty for Java" caption-side="top"}
 
 

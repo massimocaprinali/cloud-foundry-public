@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -102,6 +102,6 @@ In the `Program.cs` `Main` method, remove the following line.
 ```
 {: codeblock}
 
-These changes allow the .NET CLI to find your app's `Views` as they are copied to the build output when the `dotnet publish` command executes.  If your app has any other files, such as JSON configuration files, that are required at runtime, also add those to the `Include` property of the `Content` element in the .csproj file for your project, separated by semi-colons.
+These changes allow the .NET CLI to find your app's `Views` as they are copied to the build output when the `dotnet publish` command executes.  If your app has any other files, such as JSON configuration files, that are required at runtime, also add those to the `Include` property of the `Content` element in the `.csproj` file for your project, separated by semi-colons.
 
 

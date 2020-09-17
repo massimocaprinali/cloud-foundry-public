@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -207,11 +207,11 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
   In this scenario, the <VCAP_SERVICES> environment variable includes information, such as the following items, that an app can use to connect to this instance of {{site.data.keyword.cloudant}}:
 
-  <dl><dt>username</dt>
+  <dl><dt>`username`</dt>
   <dd>d72837bb-b341-4038-9c8e-7f7232916197-bluemix</dd>
-  <dt>password</dt>
+  <dt>`password`</dt>
   <dd>secret</dd>
-  <dt>url</dt>
+  <dt>`url`</dt>
   <dd>`https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com`</dd></dl>
 
   For example, your Node.js app might access this information as follows:

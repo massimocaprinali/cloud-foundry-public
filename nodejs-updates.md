@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -43,6 +43,10 @@ subcollection: cloud-foundry-public
 
 A list of the latest updates in the sdk-for-nodejs buildpack.
 
+## September 8, 2020: Updated Node.js buildpack v4.4-20200828-1028
+
+The SDK for Node.js buildpack v4.3 provides Node.js community runtime versions v10.21.0, v.10.22.0, v12.18.2, v12.18.3. The default is latest 10.x, so it is currently 10.21.0.  This buildpack is based on the community node.js buildpack [v1.7.26](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.7.26). 
+
 ## June 8, 2020: Updated Node.js buildpack v4.3-20200606-1928
 
 The SDK for Node.js buildpack v4.3 provides Node.js community runtime versions v10.20.1, v10.21.0, v12.17.0, v12.18.0. The default is latest 10.x, so it is currently 10.21.0.  This buildpack is based on the community node.js buildpack [v1.7.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.7.20){: external}.  
@@ -75,7 +79,7 @@ The SDK for Node.js buildpack v4.1 provides Node.js community versions v8.16.1, 
 
 The SDK for Node.js buildpack v4.0 provides Node.js community versions v8.16.0, v8.16.1, v10.16.0, v10.16.3, v12.7.0, v12.8.1. The default is latest 10.x, so it is currently 10.16.0.  
 
-The sdk-for-nodejs buildpack was rebased on the community node.js buildpack v1.6.53 and contains some [important changes](https://www.ibm.com/cloud/blog/upcoming-important-changes-to-the-sdk-for-nodejs-buildpack){: external}.
+The sdk-for-nodejs buildpack was re-based on the community node.js buildpack v1.6.53 and contains some [important changes](https://www.ibm.com/cloud/blog/upcoming-important-changes-to-the-sdk-for-nodejs-buildpack){: external}.
 {: important}
 
 In addition, this buildpack contains fixes for the following security vulnerabilities:  CVE-2019-9516 CVE-2019-9515 CVE-2019-9518 CVE-2019-9517 CVE-2019-9512 CVE-2019-9511 CVE-2019-9514 CVE-2019-9513.
@@ -145,7 +149,7 @@ The SDK for Node.js buildpack v3.17 provides {{site.data.keyword.IBM_notm}} SDK 
 
 ## December 11, 2017: Updated Node.js buildpack v3.16.1
 The SDK for Node.js buildpack v3.16.1 provides {{site.data.keyword.IBM_notm}} SDK for Node.js versions v4.8.4, v4.8.5, v6.11.4, v6.12.0, v8.6.0, v8.9.0. The default is latest 6.x, so it is currently 6.12.0.
-Please note that it fixes PSIRTs: Advisory ID: 10237 Product Record ID: 104487 Title: Node.js zlib DOS security vulnerability, October 2017 (CVE-2017-14919). It is recommended to upgrade to v3.16.1 to get fixes for security vulnerabilities affecting 8.6.0.0 and earlier, 6.10.2.0 to 6.11.4.0 and 4.8.2.0 to 4.8.4.0.
+Please note that it fixes PSIRT Advisory ID: 10237 Product Record ID: 104487 Title: Node.js `zlib` DOS security vulnerability, October 2017 (CVE-2017-14919). It is recommended to upgrade to v3.16.1 to get fixes for security vulnerabilities affecting 8.6.0.0 and earlier, 6.10.2.0 to 6.11.4.0 and 4.8.2.0 to 4.8.4.0.
 
 ## November 1, 2017: Updated Node.js buildpack v3.15
 The SDK for Node.js buildpack v3.15 provides {{site.data.keyword.IBM_notm}} SDK for Node.js versions 4.8.3, 4.8.4, 6.11.3, 6.11.4, 8.3.0 and 8.6.0. The default is latest 6.x, so it is currently 6.11.4.
@@ -166,11 +170,11 @@ In addition to the new runtimes, this release contains a buildpack bug fix an is
 ## March 10, 2017: Updated Node.js buildpack v3.11
 This release of the buildpack supports {{site.data.keyword.IBM_notm}} SDK for Node.js runtime versions: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.3, 4.8.0, 6.9.5, and 6.10.0. The default version now is 4.8.0.
 
-In addition to the new runtimes, this release contains a fix for a bug encountered when enabling the shell app management handler using the devconsole UI. This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps, it is being replaced by logmet.
+In addition to the new runtimes, this release contains a fix for a bug encountered when enabling the shell app management handler using the `devconsole` UI. This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps, it is being replaced by `logmet`.
 
 ## January 20, 2017: Updated Node.js buildpack v3.10
 This release of the buildpack supports {{site.data.keyword.IBM_notm}} SDK for Node.js runtime versions: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.0, 4.7.2, 6.9.2, and 6.9.4. The default is now 4.7.2.  It is also synchronized with the [Cloud Foundry Node.js buildpack v1.5.24](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.24){: external}.
-It contains a fix for a bug where "npm start" was not always called to start apps.
+It contains a fix for a bug where `npm start` was not always called to start apps.
 
 ## November 17, 2016: Updated Node.js buildpack v3.9
 This release of the buildpack supports {{site.data.keyword.IBM_notm}} SDK for Node.js runtime versions: 0.10.47, 0.10.48, 0.12.16, 0.12.17, 4.6.1, 4.6.2, 6.7.0, and 6.9.1. The default is now 4.6.2.
@@ -189,7 +193,7 @@ This release of the buildpack supports {{site.data.keyword.IBM_notm}} SDK for No
 
 This release includes bug fixes, including those from the [Cloud Foundry’s Node.js buildpack 1.5.18](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.18){: external}.
 
-The release removes support for the strongpm App Management handler as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://www.ibm.com/blogs/cloud-archive/2016/05/node-buildpack-update-fips-mode/){: external}.
+The release removes support for the `strongpm` App Management handler as announced in [{{site.data.keyword.cloud_notm}} Node.js Buildpack v3.3 – FIPS mode and more](https://www.ibm.com/blogs/cloud-archive/2016/05/node-buildpack-update-fips-mode/){: external}.
 
 Note that there is a known issue when using Node.js 6.x and Development Mode. As a work around you will need to restage your app after enabling Development Mode before you can begin using it.
 
@@ -233,7 +237,7 @@ The updated buildpack and the new runtime versions also contain fixes for securi
 The updated buildpack also contains fixes for several bugs:
 * Now {{site.data.keyword.IBM_notm}} SDK for Node.js builds will always be used if one is available matching the requested range. Previously, this case was only true for 4.x runtime versions.
 * Now the App Management inspector utility will work with 4.x runtime versions.
-* Fixed a regression in the strongpm App Management utility.
+* Fixed a regression in the `strongpm` App Management utility.
 
 ## March 18, 2016: Updated Node.js buildpack v3.2-20160315-1257
 
@@ -251,7 +255,7 @@ This release is fully synchronized with the [Cloud Foundry community Node.js](ht
 
   * Node.js v4.2.4 ({{site.data.keyword.IBM_notm}} SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your app to behave differently if a particular version is not specified for your app. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} app, see [Node.js runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs_runtime){: external} documentation.
 
-  * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stacktraces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the NPM install phase only. This function allows users to set NODE_ENV to another value like *development* for app runtime. For clarity, NPM scripts will see the message **NODE_ENV=production**.
+  * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stack traces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the NPM install phase only. This function allows users to set NODE_ENV to another value like *development* for app runtime. For clarity, NPM scripts will see the message **NODE_ENV=production**.
 
   * A Bug-fix to the Monitoring and Analytics service is included.
 
@@ -306,7 +310,7 @@ With 2.7, version 4.2.1.0 of the {{site.data.keyword.IBM_notm}} SDK for Node.js 
 
 ## October 19, 2015: Updated Node.js buildpack v2.6.1-20151015-1326
 
-Node.js v2.6.1 introduces a bug fix to the [StrongPM app management handler](https://www.ibm.com/blogs/cloud-archive/2015/10/strongloop-devops-on-bluemix/), and a more consistent NPM version.
+Node.js v2.6.1 introduces a bug fix to the [`strongpm` app management handler](https://www.ibm.com/blogs/cloud-archive/2015/10/strongloop-devops-on-bluemix/), and a more consistent NPM version.
 
 ## October 15, 2015: Updated Node.js buildpack v2.6-20151006-1309
 
@@ -330,8 +334,8 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 {: codeblock}
 
 * Known issues with v0.12.1:
-   * The "Suspend" feature is broken when you use the Debug Tools feature provided by {{site.data.keyword.cloud_notm}} Live Sync.
-   * The mqlight module that is used for the MQ Light service is not supported on v0.12.x
+   * The `Suspend` feature is broken when you use the Debug Tools feature provided by {{site.data.keyword.cloud_notm}} Live Sync.
+   * The `mqlight` module that is used for the MQ Light service is not supported on v0.12.x
 
 * Various security vulnerabilities were resolved:
   * Fixed vulnerabilities in OpenSSL affecting {{site.data.keyword.IBM_notm}} SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerabilities-in-openssl-affect-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-0286-cve-2015-0287-cve-2015-0288-cve-2015-0289-cve-2015-0292-cve-2015-0293-cv/){: external}.
@@ -353,7 +357,7 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## October 23, 2014: Updated Node.js buildpack v1.6-20141013-1736
 
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.8](https://developer.ibm.com/node/sdk/){: external}. This update means you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the NPM module and other improvements in the http and url modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog){: external}.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.8](https://developer.ibm.com/node/sdk/){: external}. This update means you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the NPM module and other improvements in the HTTP and URL modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog){: external}.
 * The buildpack also contains a fix for a bug that was adding an incorrect index.html file in the customer’s app during deployment.
 
 ## September 30, 2014: Updated Node.js buildpack v1.4-20140908-1746

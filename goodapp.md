@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -42,10 +42,9 @@ subcollection: cloud-foundry-public
 {: #goodapp}
 
 
+Modern cloud apps, including those using Cloud Foundry, follow key development methodologies: cloud platforms, agile development, DevOps, microservices, and continuous delivery.
 
-A modern cloud app, and thusly a Cloud Foundry app, are about some key development facets: Cloud platforms, agile methodology, DevOps, microservices, and continuous delivery.
-
-Due to these pieces, you really want to have a Platform-as-a-Service (PaaS) model. Although not absolutely required, a PaaS makes things a lot easier. Most cloud customers are using or start out with infrastructure-as-a-service (IaaS), which helps abstract their apps from the underlying hardware. But PaaS adds an extra layer to abstract the underlying OS, so you can focus entirely on the business logic of your app and not worry about repetative and consumable services that you could easily be engaging instead.
+To follow these methodologies you want to have a Platform-as-a-Service (PaaS) model. Although not absolutely required, PaaS makes things a lot easier. Most cloud customers are using or start out with infrastructure-as-a-service (IaaS), which helps abstract their apps from the underlying hardware. However, PaaS adds an extra layer to abstract the underlying OS, so you can focus entirely on the business logic of your app and not have to worry about managing the platform.
 
 As part of this, there are two major concepts that come into play: "Cloud-native" apps and "12 Factor Apps".
 

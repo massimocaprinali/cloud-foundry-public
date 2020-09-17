@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 keywords: cloud foundry
 
@@ -46,7 +46,7 @@ subcollection: cloud-foundry-public
 ### July 29, 2020: Updated Liberty buildpack v3.47-20200723-1022
 * The default Liberty runtime GA version is the [20.0.0.6](https://openliberty.io/blog/2020/06/05/graphql-open-liberty-20006.html){: external} release.
 * The alternate Liberty runtime GA version was changed to the 20.0.0.8 release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP11](https://developer.ibm.com/javasdk/2020/06/26/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-11/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP11.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.8_10_openj9-0.21.0.
 
 ### July 7, 2020: Updated Liberty buildpack v3.46-20200626-1029
@@ -56,7 +56,7 @@ subcollection: cloud-foundry-public
 ### June 5, 2020: Updated Liberty buildpack v3.45-20200601-1056
 * The default Liberty runtime GA version is the [20.0.0.6](https://openliberty.io/blog/2020/06/05/graphql-open-liberty-20006.html){: external} release.
 * The alternate Liberty runtime GA version was changed to `20.0.0.6` release
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP10](https://developer.ibm.com/javasdk/2020/05/06/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-10/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP10.
 
 ### May 4, 2020: Updated Liberty buildpack v.3.44-20200430-1451
 
@@ -69,7 +69,7 @@ subcollection: cloud-foundry-public
 
 * The default Liberty runtime version is the [20.0.0.3](https://openliberty.io/blog/2020/03/13/access-specific-kafka-properties-samesite-20003.html){: external} release.
 * The alternate Liberty runtime version was changed to the [20.0.0.4](https://openliberty.io/blog/2020/04/09/microprofile-3-3-open-liberty-20004.html){: external} release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6 FP7](https://developer.ibm.com/javasdk/2020/03/30/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-7/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6 FP7.
 * The {{site.data.keyword.IBM_notm}} JRE 8 SR6 FP7 includes [CVE-2020-2654](https://www.ibm.com/support/pages/node/5736807){: external}.
 
 ### March 11, 2020: Updated Liberty buildpack v3.42-20200306-1144
@@ -90,14 +90,14 @@ To use the alternate Liberty runtime set the following environment variables:
 ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
 ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 ```
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6FP5](https://developer.ibm.com/javasdk/2020/01/31/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-5/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6FP5.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.6_10_openj9-0.18.1.
 
 ### January 9, 2020: Updated Liberty buildpack v3.40-20200108-1523
 
 * The default Liberty runtime GA version is [19.0.0.12](https://openliberty.io/blog/2019/12/06/microprofile-32-health-metrics-190012.html){: external} release.
 * The alternate Liberty runtime GA version [20.0.0.1](https://openliberty.io/blog/2020/01/17/openshift-oauth-server-social-login-liberty-20001.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR6](https://developer.ibm.com/javasdk/2019/11/28/ibm-sdk-java-technology-edition-version-8-service-refresh-6/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6.
 
 ### November 21, 2019: Updated Liberty buildpack v3.39-20191121-1047
 
@@ -114,33 +114,33 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 
 * The default Liberty runtime GA version is [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html){: external} release.
 * The alternate Liberty runtime GA version [19.0.0.10](https://openliberty.io/blog/2019/10/11/configure-logs-JSON-format-190010.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP41](https://developer.ibm.com/javasdk/2019/09/26/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-41/){: external}
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP41.
 
 ### September 13, 2019: Updated Liberty buildpack v3.36-20190905-1704
 
 * The default Liberty runtime GA version was changed to the [19.0.0.9](https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html){: external} release.
 * The alternate Liberty runtime GA version is also the `19.0.0.9` release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP40](https://developer.ibm.com/javasdk/2019/08/21/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-40/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP40.
 
 ### August 17, 2019: Updated Liberty buildpack v3.35
 
 * The default Liberty runtime GA version is [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external}.
 * The alternate Liberty runtime GA version `19.0.0.8` was added.
-* The default JRE is {{site.data.keyword.IBM_notm}} Small footprint JRE version [8 SR5 FP37](https://developer.ibm.com/javasdk/2019/06/27/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-37/){: external}.
+* The default JRE is {{site.data.keyword.IBM_notm}} Small footprint JRE version 8 SR5 FP37.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.4+11_openj9-0.15.1.
 
 ### July 18, 2019: Updated Liberty buildpack v3.34
 
 * The default Liberty runtime GA version is [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external}.
 * The alternate Liberty runtime GA version is [19.0.0.7](https://openliberty.io/blog/2019/07/18/microprofile-30-developer-experience.html){: external} was added.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP37](https://developer.ibm.com/javasdk/2019/06/27/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-37/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP37.
 * The OpenJ9 version 11.03 alternate JRE was updated to version 11.0.3+7_openj9-0.14.3.
 
 ### June 14, 2019: Updated Liberty buildpack v3.33-20190619-1058
 
 * The default Liberty runtime GA version was changed to the [19.0.0.6](https://openliberty.io/blog/2019/06/21/microprofile-rest-client-19006.html){: external} release.
 * The alternate Liberty runtime GA version is also the `19.0.0.6` release.
-* The {{site.data.keyword.IBM_notm}} JRE version was updated to [8 SR5 FP36](https://developer.ibm.com/javasdk/2019/05/31/ibm-sdk-java-technology-edition-version-8-service-refresh-5-fix-pack-36/){: external}.
+* The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP36.
 
 ### May 17, 2019: Updated Liberty buildpack v3.32-20190523-1138
 
@@ -155,7 +155,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The alternate Liberty runtime GA version [19.0.0.4](https://openliberty.io/blog/2019/04/26/reactive-microservices-microprofile-19004.html){: external} was added.  
 * The auto-scaling agent was updated.
 * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP31.  
-* Possible breaking change: Review the [Potential WebSphere App Server problems when deployed behind a WebSphere-aware proxy server](https://www.ibm.com/support/pages/node/879485){: external} document to determine if your app is affected. This document includes the steps that are needed to resolve the issue. To resolve the issue, you will need to add a httpDispatcher directive with the trustedSensitiveHeaderOrigin attribute set to "*" and enableWelcomePage set to "false" to the server.xml.
+* Possible breaking change: Review the [Potential WebSphere App Server problems when deployed behind a WebSphere-aware proxy server](https://www.ibm.com/support/pages/node/879485){: external} document to determine if your app is affected. This document includes the steps that are needed to resolve the issue. To resolve the issue, you will need to add a `httpDispatcher` directive with the `trustedSensitiveHeaderOrigin` attribute set to "*" and `enableWelcomePage` set to "false" to the `server.xml` file.
 
 ### April 1, 2019: Updated Liberty buildpack v3.30-20190325-1301
 
@@ -163,7 +163,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The alternate Liberty runtime GA version is also the `19.0.0.3` release.  
 * The Cloudant client libraries were updated to 2.15.0.
 * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5 FP30.  
-* Possible breaking change: Review the [Potential WebSphere App Server problems when deployed behind a WebSphere-aware proxy server](https://www.ibm.com/support/pages/node/879485){: external} document to determine if your app is affected. This document includes the steps that are needed to resolve the issue. To resolve the issue, you will need to add a httpDispatcher directive with the trustedSensitiveHeaderOrigin attribute set to "*" and enableWelcomePage set to "false" to the server.xml.
+* Possible breaking change: Review the [Potential WebSphere App Server problems when deployed behind a WebSphere-aware proxy server](https://www.ibm.com/support/pages/node/879485){: external} document to determine if your app is affected. This document includes the steps that are needed to resolve the issue. To resolve the issue, you will need to add a `httpDispatcher` directive with the `trustedSensitiveHeaderOrigin` attribute set to "*" and `enableWelcomePage` set to "false" to the `server.xml` file.
 
 ### March 1, 2019: Updated Liberty buildpack v3.29-20190223-2128
 
@@ -248,7 +248,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The monthly Liberty runtime version was updated to 2017.10.0.0.
 
 ### October 17, 2017: Updated Liberty buildpack v3.14-20171013-1023
-* The default Liberty runtime version wasupdated to the 17.0.0.3 release.
+* The default Liberty runtime version was updated to the 17.0.0.3 release.
 * The monthly Liberty runtime version was updated to 2017.9.0.1.
 * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR5.
 
@@ -264,7 +264,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * A buildpack bug that prevented Liberty apps from [shutting down gracefully](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#shutdown){: external} was fixed.
 
 ### July 14, 2017: Updated Liberty buildpack v3.11-20170710-0312
-* The default Liberty runtime version `17.0.0.2` was updated to include the IFPI83713 iFix.
+* The default Liberty runtime version `17.0.0.2` was updated to include the IFPI83713 interim fix.
 * The monthly Liberty runtime version was updated to the [2017.7.0.0](https://developer.ibm.com/wasdev/blog/2017/07/07/beta-websphere-liberty-tools-july-2017/){: external} release.
 * The buildpack also contains updated {{site.data.keyword.IBM_notm}} JREs: version 8 SR4 FP7 and version 7.1 SR4 FP5.
 * The default Cloudant Library is now the official [java-cloudant](https://github.com/cloudant/java-cloudant){: external}, the [Ektorp library](https://github.com/helun/Ektorp){: external} is still available as an option, for details on this change see the [blog post](https://www.ibm.com/blogs/bluemix/2017/05/default-library-change-cloudant-auto-wiring-liberty-buildpack/){: external}.
@@ -287,16 +287,16 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 
 ### March 14, 2017: Updated Liberty buildpack v3.8-20170308-1507
 * The default Liberty runtime version was updated to the 17.0.0.1 release.
-* The default Liberty runtime also includes the PI75512 WebSockets iFix.
+* The default Liberty runtime also includes the PI75512 WebSockets interim fix.
 * The monthly Liberty runtime version was updated to the [2017.2.0.0](https://developer.ibm.com/wasdev/blog/2017/02/17/beta-websphere-liberty-tools-february-2017/){: external} release.
 * The {{site.data.keyword.IBM_notm}} JRE versions 8 and 7.1 were updated to SR4 FP1.
 * The auto-configuration support was also extended to work with `ibm-websphere-extreme-scale` container.
-* The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of org.ektorp. To enable the use of the Cloudant Java Library you must set the following environment variable:    
+* The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of `org.ektorp`. To enable the use of the Cloudant Java Library you must set the following environment variable:    
 ```
 ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
 ```
 * The buildpack also provides an updated version of the agent for the Auto-Scaling service and a number of app management enhancements.
-* This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps; it is being replaced by logmet.  
+* This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps; it is being replaced by `logmet`.  
 
 
 ### January 23, 2017: Updated Liberty buildpack v3.7-20170118-2046
@@ -309,7 +309,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The {{site.data.keyword.IBM_notm}} JRE version 8 was updated to SR3 FP21 version.
 * The [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) support was also extended to work with the [Compose for PostgreSQL service](/docs/ComposeForPostgreSQL?topic=ComposeForPostgreSQL-about).
 * The buildpack also provides an updated version of the agent for the Auto-Scaling service.
-* The buildpack was updated to support environment variables as part of the include locations in the `server.xml` files.
+* The buildpack was updated to support environment variables as part of the include locations in the `server.xml` file.
 
 ### November 29, 2016: Updated Liberty buildpack v3.5-20161114-1152
 * The default Liberty runtime version `16.0.0.3` was updated to include [PI62375](https://www.ibm.com/support/pages/node/587681){: external} fix and to provide the `microProfile-1.0` convenience feature.
@@ -319,7 +319,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The Monitoring and Analytics service integration was fixed to work with [Diego](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html){: external}.
 * The [Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) service integrations were updated to work better with the Dynatrace service offerings.
 * The [auto-configuration](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config) support for PostgreSQL and MySQL type of services was improved to work better when deploying a server directory or packaged server.
-* The Node.js runtime that is used by the [devconsole and shell App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest `0.12.17` version.
+* The Node.js runtime that is used by the [`devconsole` and `shell` App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest `0.12.17` version.
 * [Security fixes](https://www.ibm.com/support/pages/node/286257){: external} for the Liberty runtime are included.
 
 ### November 1, 2016: Updated Liberty buildpack v3.4.1-20161030-2241
@@ -366,7 +366,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack adds initial support for the [AppDynamics](https://www.appdynamics.com/){: external} app monitoring agent.
 * The [Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) support was improved to simplify the installation of the agent.
 * The buildpack provides an updated data collector for the Monitoring and Analytics service. It contains a fix for a problem with collection of the max heap data.
-* The Node.js runtime that is used by the [devconsole and shell App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest 0.12.13 version.
+* The Node.js runtime that is used by the [`devconsole` and `shell` App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest 0.12.13 version.
 
 ### March 25, 2016: Updated Liberty buildpack v2.7-20160321-1358
 * The buildpack contains an updated version of WebSphere Liberty based on the [March beta](https://developer.ibm.com/wasdev/blog/2016/03/18/new-websphere-liberty-features-march-2016/){: external}. The updated version of Liberty makes the cloudant-1.0 beta feature available in {{site.data.keyword.cloud_notm}}
@@ -374,11 +374,11 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack provides an updated version of the agent for the Auto-Scaling service.
 * The buildpack now comes with a new data collector for the Monitoring and Analytics service. The new collector enables configuration of monitoring thresholds and contains a number of bug fixes.
 * The buildpack provides an updated DB2® JDBC driver version 4.19.49.
-* The Node.js runtime that is used by the [devconsole and shell App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest 0.12.12 version.
+* The Node.js runtime that is used by the [`devconsole` and `shell` App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the latest 0.12.12 version.
 
 ### March 7, 2016: Updated Liberty buildpack v2.6-20160225-1649
 * The buildpack adds support for Dynatrace app monitoring. See [Using Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) for details.
-* The buildpack adds support for DynamicPULSE.
+* The buildpack adds support for `DynamicPULSE`.
 
 ### February 10, 2016: Updated Liberty buildpack v2.5-20160209-1336
 * The buildpack contains an updated version of WebSphere Liberty based on the [February beta](https://developer.ibm.com/wasdev/blog/2016/02/12/beta-websphere-liberty-and-tools-february/){: external}. The updated version of the Liberty profile makes the apiDiscovery-1.0 GA feature available in {{site.data.keyword.cloud_notm}}.
@@ -403,7 +403,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also contains an updated {{site.data.keyword.IBM_notm}} JRE 8 SR1 FP11.
 * The buildpack also provides a number of performance improvements and optimizations:
   * The [CDI 1.2](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.
-  * To reduce the droplet size, the [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) devconsole and shell, require a restage operation instead of a restart.
+  * To reduce the droplet size, the [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) `devconsole` and `shell`, require a restage operation instead of a restart.
   * The {{site.data.keyword.IBM_notm}} JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.cloud_notm}} environment.
 
 ### September 18, 2015: Updated Liberty buildpack v2.0-20150914-1535
@@ -411,7 +411,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
   * The default configuration for WAR and EAR files enables Java EE 7 Web Profile features instead of Java EE 6 Web Profile features.
   * The default Java version is version 8 instead of version 7.
 * Refer to the [Upcoming Liberty for Java buildpack changes](https://www.ibm.com/blogs/cloud-archive/2015/09/upcoming-liberty-for-java-buildpack-changes/){: external} blog post for details about these changes and how they may affect your app.
-* The buildpack also introduces app_state configuration option to disable the appstate feature via the JBP_CONFIG_LIBERTY environment variable. The appstate feature integrates with the Cloud Foundry health check process to ensure the Liberty app is fully initialized before the app can receive HTTP requests. To disable the appstate feature, you can set the JBP_CONFIG_LIBERTY environment variable to "app_state: false".
+* The buildpack also introduces app_state configuration option to disable the `appstate` feature via the `JBP_CONFIG_LIBERTY` environment variable. The `appstate` feature integrates with the Cloud Foundry health check process to ensure the Liberty app is fully initialized before the app can receive HTTP requests. To disable the `appstate` feature, you can set the `JBP_CONFIG_LIBERTY` environment variable to `app_state: false`.
 
 ### September 4, 2015: Updated Liberty buildpack v1.22-20150824-1104
 * The buildpack supports the [HTTP_PROXY and HTTPS_PROXY environment variables](/docs/cloud-foundry-public?topic=cloud-foundry-public-environment_variables). If set, the buildpack uses the proxy server specified by these environment variables when it downloads various buildpack components.
@@ -449,7 +449,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 
 ### April 15, 2015: Updated Liberty buildpack v1.16-20150407-1737
 * This version of the buildpack contains an updated {{site.data.keyword.IBM_notm}} JRE 7.1-2.11 with a [security fix for the Bar Mitzvah vulnerability](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-rc4-stream-cipher-affects-liberty-for-java-for-ibm-bluemix-cve-2015-2808/){: external}.
-* When stand-alone WAR files are deployed, if provided, the buildpack now uses the context-root that is specified in the embedded **ibm-web-ext.xml** file as the app's context root. With this change, apps that were previously deployed under the root context might be deployed under a different context based on the settings in the **ibm-web-ext.xml** file.
+* When stand-alone WAR files are deployed, if provided, the buildpack now uses the context-root that is specified in the embedded `ibm-web-ext.xml` file as the app's context root. With this change, apps that were previously deployed under the root context might be deployed under a different context based on the settings in the `ibm-web-ext.xml` file.
 
 ### April 3, 2015: Updated Liberty buildpack v1.15-20150402-1422
 * The buildpack contains an updated version of the Liberty profile based on the [March beta](https://developer.ibm.com/wasdev/blog/2015/03/13/announcing-liberty-beta-tools-march-2015/){: external}. The updated version of the Liberty profiles makes the jsf-2.2 beta feature available in {{site.data.keyword.cloud_notm}}.
@@ -458,14 +458,14 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 ### March 20, 2015: Updated Liberty buildpack v1.14-20150319-1159
 * This version of the buildpack contains an updated {{site.data.keyword.IBM_notm}} JRE 7.1.2.11 with a security fix for the [FREAK vulnerability](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-freak-vulnerability-fixed-in-liberty-for-java-for-ibm-bluemix-cve-2015-0138/).
 * The [SQL Database](/docs/sql-query?topic=sql-query-gettingstarted){: external} service offers paid plans that provide an option for connecting with the database server over the SSL protocol. The buildpack's auto-configuration support for SQL Database service was updated to configure the runtime to connect with the database over SSL if the SSL connection information is available.
-* The buildpack was updated to report an error when a stand-alone WAR or EAR file that contains a **server.xml** configuration file in root of the app archive is deployed.
-* The buildpack contains a fix for MongoDB's auto-configuration service plug-in that in certain cases generated an invalid **server.xml** configuration.
+* The buildpack was updated to report an error when a stand-alone WAR or EAR file that contains a `server.xml` configuration file in root of the app archive is deployed.
+* The buildpack contains a fix for MongoDB's auto-configuration service plug-in that in certain cases generated an invalid `server.xml` configuration.
 
 ### February 10, 2015: Updated Liberty buildpack v1.13-20150209-1122
-* The buildpack contains security fixes for the [Apache HttpComponents and Java overlay feature vulnerabilities](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-multiple-vulnerabilities-fixed-in-liberty-for-java-for-ibm-bluemix-cve-2012-6153-cve-2014-3577-cve-2015-0178/){: external}.
+* The buildpack contains security fixes for the [Apache `HttpComponents` and Java overlay feature vulnerabilities](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-multiple-vulnerabilities-fixed-in-liberty-for-java-for-ibm-bluemix-cve-2012-6153-cve-2014-3577-cve-2015-0178/){: external}.
 * The buildpack contains an updated version of the Liberty profile based on the [February beta](https://developer.ibm.com/wasdev/blog/2015/02/13/announcing-liberty-beta-tools-february-2015/){: external}. The updated version of the Liberty profile provides an updated version of the WebSocket GA feature websocket-1.1. It also makes the following Java EE 7 beta features available in {{site.data.keyword.cloud_notm}}:
   * cdi-1.2, el-3.0, jsp-2.3, jca-1.7, jacc-1.5, and jaspic-1.1
-* The buildpack provides integration with the [ZeroTrunaround's JRebel tool](https://www.jrebel.com/products/jrebel){: external}. The integration makes it easy to use JRebel with {{site.data.keyword.cloud_notm}} apps and perform instant app updates without redeploying or restaging the app. Only stand-alone web apps are supported.
+* The buildpack provides integration with the [JRebel tool](https://www.jrebel.com/products/jrebel){: external}. The integration makes it easy to use JRebel with {{site.data.keyword.cloud_notm}} apps and perform instant app updates without redeploying or restaging the app. Only stand-alone web apps are supported.
 
 ### February 6, 2015: Updated Liberty buildpack v1.12-20150130-1016
 * The buildpack contains an updated version of the Liberty profile based on the [January beta](https://developer.ibm.com/wasdev/blog/2015/01/16/announcing-liberty-beta-tools-january-2015/){: external}.
@@ -487,7 +487,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
   * websocket-1.0.
 * The buildpack provides integration with the New Relic service. Once an app is bound to the New Relic service, the buildpack automatically downloads and configures the runtime with the New Relic agent.
 * The buildpack has the following known limitations:
-  * When in development mode, a SessionCache service cannot be bound.
+  * When in development mode, a `SessionCache` service cannot be bound.
   * When in development mode, a thread dump cannot be created.
   * When using the servlet-3.1 or websocket-v1.0 feature, the Monitoring & Analytics service cannot be bound.
 
@@ -507,13 +507,13 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 ### October 23, 2014: Updated the Liberty Buildpack v1.6-20141013-1628
 * The buildpack now comes with a new data collector for the Monitoring and Analytics. The new data collector collects diagnostic deep dive information, which enables users of the Diagnostics plan of the service to diagnose problems with their apps, down to the specific line of code.
 * The buildpack contains updated versions of the management and auto-scaling agents that include bug fixes and minor improvements. It also includes an updated version of the [Liberty profile](https://developer.ibm.com/wasdev/) and [Java MongoDB Driver](https://docs.mongodb.com/drivers/java){: external}, v2.12.3.
-* In the cloudAutowiring feature, a bug that caused resource injection errors in some apps was fixed.
+* In the `cloudAutowiring` feature, a bug that caused resource injection errors in some apps was fixed.
 
 ### October 3, 2014: Updated Liberty Buildpack v1.5-20140923-1143
-* With the updated buildpack, the apps can now use the Liberty beta features, including WebSocket 1.0, Servlet 3.1, or JAX-RS 2.0.
+* With the updated buildpack, the apps can now use the Liberty beta features, including `WebSocket 1.0`, `Servlet 3.1`, or `JAX-RS 2.0`.
 
 ### September 30, 2014: Updated Liberty Buildpack v1.4-20140908-1803
-* The buildpack now provides support for ElephantSQL and ClearDB MySQL Database third-party services. The auto-configuration support also works with posgresql and mysql experimental services. With the new total of 13 services, the auto-configuration support in the Liberty buildpack makes it quicker and easier to consume {{site.data.keyword.cloud_notm}} services in Liberty apps.
+* The buildpack now provides support for ElephantSQL and ClearDB MySQL Database third-party services. The auto-configuration support also works with `posgresql` and `mysql` experimental services. With the new total of 13 services, the auto-configuration support in the Liberty buildpack makes it quicker and easier to consume {{site.data.keyword.cloud_notm}} services in Liberty apps.
 * During app staging the buildpack displays improved log messages about auto-configuration and other actions it takes.
 * The buildpack contains an updated version of Liberty profile with fixes and improvements.
 * It also contains an updated version of {{site.data.keyword.IBM_notm}} JRE version 7.1 that has performance improvements. 
@@ -521,13 +521,13 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 ### August 28, 2014: Updated Liberty Buildpack v1.3-20140818-1538
 * The buildpack contains an updated version of the [Liberty Profile](https://developer.ibm.com/wasdev/){: external} with the latest fixes and improvements.
 * This version of the buildpack fixes support for the JAVA_OPTS environment variable for passing additional JVM options to the app runtime.
-* It also fixes a problem that prevented deployment of standalone Spring-based Jar apps.
+* It also fixes a problem that prevented deployment of stand-alone Spring-based apps.
 * It is now possible to generate and download {{site.data.keyword.IBM_notm}} JVM snap traces using the {{site.data.keyword.cloud_notm}} UI. See the [Troubleshooting topic](https://www.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/troubleshooting.html){: external} in the {{site.data.keyword.IBM_notm}} JVM documentation to learn more about the snap traces or other diagnostic information that is generated by the JVM.
 
 ### July 29, 2014: Updated Liberty Buildpack v1.1-20140725-1341
 * The new version of Liberty’s {{site.data.keyword.cloud_notm}} Edition is here!
   * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
-  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through VCAP_SERVICES and providing the ektorp client jars is no longer necessary.
+  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through VCAP_SERVICES and providing the `ektorp` client `.jar` files are no longer necessary.
 * The new version of {{site.data.keyword.IBM_notm}} SDK for Java is here!
   * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
 
