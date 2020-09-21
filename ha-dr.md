@@ -56,7 +56,7 @@ To increase your SLA to 99.999975% you will need to deploy your app in multiple 
 
 To ensure your app is responsive and highly available for basic operations and performance, do the following:
 
-1. Make sure your app is stateless and handles multiple connections. See [The Twelve-Factor App](https://12factor.net/){. external} for best practices in constructing your app.
+1. Make sure your app is stateless and handles multiple connections. See [The Twelve-Factor App](https://12factor.net/){: external} for best practices in constructing your app.
 
 2. Deploy two or more instances of your app.  Optimally, you will want to deploy at least three instances, which is a standard {{site.data.keyword.cloud}} deployment.  Your instances will be deployed to multiple hardware-isolated Availability Zones in a single {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` or `EU-DE`.
 
@@ -64,7 +64,7 @@ To ensure your app is responsive and highly available for basic operations and p
 
 To ensure your app is the most responsive and has the highest availability, do the following:
 
-1. Make sure your app is stateless and handles multiple connections. See [The Twelve-Factor App](https://12factor.net/){. external} for best practices in constructing your app.
+1. Make sure your app is stateless and handles multiple connections. See [The Twelve-Factor App](https://12factor.net/){: external} for best practices in constructing your app.
 
 2. Deploy two or more instances of your app in multiple regions.  Optimally, you will want to deploy at least three instances in each region, which is a standard {{site.data.keyword.cloud}} deployment for a region.  Your instances will be deployed to multiple hardware-isolated Availability Zones in each {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` and `EU-DE`.
 
@@ -86,11 +86,11 @@ Not every app will require the capability to monitor app performance but most wi
 
 You can try out configuring high availability by using the following labs:
 
-* [High availability in a single region](https://ibm.ent.box.com/notes/344432520384?s=qw9hjyrwd1bm0t8pnegvekdq08y3ubu9){. external}
+* [High availability in a single region](https://ibm.ent.box.com/notes/344432520384?s=qw9hjyrwd1bm0t8pnegvekdq08y3ubu9){: external}
 
-* [High availability in multiple regions](https://ibm.ent.box.com/notes/344405888320?s=he7jr9pt5o6rlvk813nlbm3z1m0eyv33){. external}
+* [High availability in multiple regions](https://ibm.ent.box.com/notes/344405888320?s=he7jr9pt5o6rlvk813nlbm3z1m0eyv33){: external}
 
-* [Scaling instances depending on load](https://ibm.ent.box.com/notes/302764242833?s=8fybw54tw7i6oq7luqugj6i1m8bbzp4l){. external}
+* [Scaling instances depending on load](https://ibm.ent.box.com/notes/302764242833?s=8fybw54tw7i6oq7luqugj6i1m8bbzp4l){: external}
 
 ## For more information
 
