@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-09-22"
 
 keywords: HA for cloud foundry, DR for cloud foundry, high availability for cloud foundry, disaster recovery for cloud foundry, failover for cloud foundry
 
@@ -80,7 +80,7 @@ Once you have a high-availability deployment, you can optimize your environment.
 
 Not every app will require the capability to monitor app performance but most will benefit.  Monitoring will ensure that your app will keep up with the usage load.
 
-{{site.data.keyword.ibmcf_notm}} can [dynamically scale](/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps) your app instances as usage changes over time.  Autoscaling automatically increases or decreases the capacity of your app.  The number of app instances are dynaically adjusted based on defined policies.
+{{site.data.keyword.ibmcf_notm}} can [dynamically scale](/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps) your app instances as usage changes over time.  Autoscaling automatically increases or decreases the capacity of your app.  The number of app instances are dynamically adjusted based on defined policies.
 
 ## Try it out
 
