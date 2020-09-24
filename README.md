@@ -1,5 +1,5 @@
 # cloud-foundry
-Upstream repo for Cloud Foundry (Public) docs
+Repo for Cloud Foundry (Public) docs
 
 
 
