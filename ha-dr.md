@@ -58,7 +58,7 @@ To ensure your app is responsive and highly available for basic operations and p
 
 1. Make sure your app is stateless and handles multiple connections. For more information about the best practices for constructing an app, see [The Twelve-Factor App](https://12factor.net/){: external}.
 
-2. Deploy two or more instances of your app.  Optimally, want to deploy at least three instances, which is a standard {{site.data.keyword.cloud}} deployment.  Your instances are deployed to multiple hardware-isolated Availability Zones in a single {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` or `EU-DE`.
+2. Deploy two or more instances of your app.  Optimally, you want to deploy at least three instances, which is a standard {{site.data.keyword.cloud}} deployment.  Your instances are deployed to multiple hardware-isolated Availability Zones in a single {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` or `EU-DE`.
 
 ## High availability by using multiple regions
 
@@ -66,7 +66,7 @@ To ensure your app is the most responsive and has the highest availability, comp
 
 1. Make sure your app is stateless and handles multiple connections. For more information about the best practices for constructing an app, see [The Twelve-Factor App](https://12factor.net/){: external}.
 
-2. Deploy two or more instances of your app in multiple regions.  Optimally, want to deploy at least three instances in each region, which is a standard {{site.data.keyword.cloud}} deployment for a region.  Your instances are  deployed to multiple hardware-isolated Availability Zones in each {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` and `EU-DE`.
+2. Deploy two or more instances of your app in multiple regions.  Optimally, you want to deploy at least three instances in each region, which is a standard {{site.data.keyword.cloud}} deployment for a region.  Your instances are  deployed to multiple hardware-isolated Availability Zones in each {{site.data.keyword.cloud}} multi-zone region; for example, `US-SOUTH` and `EU-DE`.
 
 3. Use a global load balancer.  
 
