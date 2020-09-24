@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-21"
 
 keywords: cloud foundry
 
@@ -473,7 +473,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 
 ### January 23, 2015: Updated Liberty buildpack v1.11-20150119-1511
 * The buildpack contains an updated {{site.data.keyword.IBM_notm}} JRE version 7.1 SR2 FP1.
-* It also contains an updated WebSphere eXterme Scale Client version 8.6.0.6 and updated agent for the Auto-Scaling service.
+* It also contains an updated WebSphere eXtreme Scale Client version 8.6.0.6 and updated agent for the Auto-Scaling service.
 * The New Relic service support was enhanced to support user-defined services.
 * The buildpack was improved to report detailed versions of the Liberty profile and {{site.data.keyword.IBM_notm}} JRE.
 
