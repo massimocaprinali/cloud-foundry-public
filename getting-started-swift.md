@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-24"
 
 keywords: cloud foundry
 
@@ -262,7 +262,6 @@ Remember, if you don't need your app live, stop it so you don't incur any unexpe
 ## Next steps
 {: #nextsteps-swift}
 
-* [Kitura & Server-side Swift Tutorials](https://www.kitura.io/learn){: external}
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
 
