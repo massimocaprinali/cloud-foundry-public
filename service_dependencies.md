@@ -45,7 +45,7 @@ subcollection: cloud-foundry-public
 
 {{site.data.keyword.ibmcf_full}} uses several services.  How {{site.data.keyword.ibmcf_notm}} connects to these services and how they are used depends on the service. 
 
-|Service name|Description|Private/ public endpoint|
+|Service name|Description|Endpoint|
 |---------|--------------------|---------------|
 |{{site.data.keyword.at_short}}|{{site.data.keyword.ibmcf_notm}} integrates with {{site.data.keyword.cloudaccesstrailshort}} to forward workspace audit events to the {{site.data.keyword.cloudaccesstrailshort}} service instance that is set up and owned by the {{site.data.keyword.ibmcf_notm}} user. For more information, see [IBM Cloud Activity Tracker with LogDNA events](/docs/cloud-foundry-public?topic=cloud-foundry-public-at-events). Additionally, the {{site.data.keyword.ibmcf_notm}} service team uses {{site.data.keyword.cloudaccesstrailshort}} to monitor service-internal audit events.|Private|
 |Akamai |Akamai provides intrusion and Denial-of-Service (DDOS) protection, as well as other security services, for {{site.data.keyword.ibmcf_notm}}.|Private |
