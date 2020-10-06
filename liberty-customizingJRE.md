@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -219,7 +219,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 ### Determining the applied JVM options of a running app
 {: #determining_applied_jvm_options}
 
-Except for app-defined options that are specified with the `JVM_ARGS` environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java apps) or in a `jvm.options` file (non-standalone Java apps). The applied JVM options for the app can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
+Except for app-defined options that are specified with the `JVM_ARGS` environment variable, the resulting options are persisted in the runtime environment either as command line options (stand-alone Java apps) or in a `jvm.options` file (non-stand-alone Java apps). The applied JVM options for the app can be viewed either from the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI.
 
 The JVM options for stand-alone Java app are persisted as command line options. They can be viewed from the `staging_info.yml` file.
 

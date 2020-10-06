@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: 09-17-2020
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -43,7 +43,7 @@ subcollection: cloud-foundry-public
 A list of the latest updates in the ASP.NET Core buildpack.
 
 ## September 17, 2020: Updated the ASP.NET Core buildpack v2.8-20200908-1929
-This release includes version 2.3.13 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.3.13 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 3.1.8
 * Add support for .NET ASP.NET Core 3.1.7
@@ -60,7 +60,7 @@ This release includes version 2.3.13 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.22.1
 
 ## June 18, 2020: Updated the ASP.NET Core buildpack v2.7-20200615-1457
-This release includes version 2.3.11 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.3.11 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.18
 * Add support for .NET ASP.NET Core 3.1.4
@@ -76,7 +76,7 @@ This release includes version 2.3.11 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.21.0
 
 ## May 1, 2020: Updated the ASP.NET Core buildpack v2.6-20200424-1047
-This release includes version 2.3.9 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.3.9 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.16
 * Add support for .NET ASP.NET Core 2.1.17
@@ -113,7 +113,7 @@ This release includes version 2.3.9 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.20.1
 
 ## December 18, 2019: Updated the ASP.NET Core buildpack v2.5-20191209-1920
-This release includes version 2.3.2 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.3.2 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.13
 * Add support for .NET ASP.NET Core 2.1.14
@@ -150,7 +150,7 @@ This release includes version 2.3.2 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.17.0
 
 ## September 20, 2019: Updated the ASP.NET Core buildpack v2.4-20190912-1554
-This release includes version 2.2.14 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.2.14 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.12
 * Add support for .NET ASP.NET Core 2.2.6
@@ -182,7 +182,7 @@ This release includes version 2.2.14 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.16.3
 
 ## June 21, 2019: Updated ASP.NET Core buildpack v2.3-20190609-2145
-This release includes version 2.2.12 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.2.12 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.5
 * Add support for .NET ASP.NET Core 2.1.10
@@ -224,7 +224,7 @@ This release includes version 2.2.12 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 10.15.2
 
 ## March 20, 2019: Updated ASP.NET Core buildpack v2.2-20190319-1114
-This release includes version 2.2.7 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.2.7 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.7
 * Add support for .NET ASP.NET Core 2.1.8
@@ -250,7 +250,7 @@ This release includes version 2.2.7 of the dotnet-core Cloud Foundry buildpack.
 * Update Node.js version to 6.17.0
 
 ## December 12, 2018: Updated ASP.NET Core buildpack v2.1-20181205-1536
-This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
+This release includes version 2.2.0 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET ASP.NET Core 2.1.2
 * Add support for .NET ASP.NET Core 2.1.4
@@ -282,7 +282,7 @@ This release includes version 2.2.0 of the dotnet-core Cloud Foundry buildpack.
 
 ## September 20, 2018: Updated ASP.NET Core buildpack v2.0-20180918-1356
 
-**Important:** Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html){: external}. This release includes version 2.1.3 of the dotnet-core Cloud Foundry buildpack.
+**Important:** Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html){: external}. This release includes version 2.1.3 of the `dotnet-core` Cloud Foundry buildpack.
 
 * Add support for .NET Core SDK 1.1.9
 * Add support for .NET Core SDK 2.0.2

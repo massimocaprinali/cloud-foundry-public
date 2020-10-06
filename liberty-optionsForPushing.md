@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -282,8 +282,8 @@ When you want to bind a service to your app, information about the service, such
 * cloud.services.&lt;service-name&gt;.connection.&lt;property&gt;, which describes the connection information for the service.
 
 The typical set of information is as follows:
-* name: The name of the service, for example, mysql-e3abd.
-* label: The type of the created service, for example, mysql-5.5.
+* name: The name of the service, for example, `mysql-e3abd`.
+* label: The type of the created service, for example, `mysql-5.5`.
 * plan: The service plan, as indicated by the unique identifier for that plan, for example, 100.
 * connection.name: A unique identifier for the connection, which takes the form of a UUID, for example, d01af3a5fabeb4d45bb321fe114d652ee.
 * connection.hostname: The host name of the server that is running the service, for example, `mysql-server.mydomain.com`.

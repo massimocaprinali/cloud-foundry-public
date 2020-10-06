@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -94,7 +94,7 @@ Alternatively, you can use command lines to migrate over.
 
    - If you already exported the converted new policy as described in above steps, just save it to a local file.
    - If you would like to convert the policy by yourself, take the below steps:
-      - Retrieve the existing policy using [Auto-scaling service CLI plugin][legacy-autoscaling-cli]:
+      - Retrieve the existing policy using [Auto-scaling service CLI plug-in][legacy-autoscaling-cli]:
         ```
         ibmcloud as policy-show <APP_NAME> [--json]
         ```
@@ -121,12 +121,14 @@ Alternatively, you can use command lines to migrate over.
    {: pre}
 
 
-[autoscaler_project]: https://github.com/cloudfoundry/app-autoscaler
-[autoscaler_user_guide]: https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md
-[autoscaling_policy]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/policy.md
-[autoscaler_cli]: https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-
-[metric_type]:https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types
-[deploy_app]: https://{DomainName}/docs/cloud-foundry-public/deploy-apps.html#dep_apps
-[autoscaler-get-started]: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps
+## Related links
+
+* [autoscaler_project](https://github.com/cloudfoundry/app-autoscaler){: external}
+* [autoscaler_user_guide](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external}
+* [autoscaling_policy](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/policy.md){: external}
+* [autoscaler_cli](https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-){: external}
+* [metric_type](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types){: external}
+* [deploy_app](https://{DomainName}/docs/cloud-foundry-public/deploy-apps.html#dep_apps){: external}
+* [autoscaler-get-started](https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps#autoscale_cloud_foundry_apps){: external}
 
 

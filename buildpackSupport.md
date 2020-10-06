@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -45,7 +45,7 @@ subcollection: cloud-foundry-public
 ## Built-in {{site.data.keyword.IBM_notm}} buildpacks
 {: #built-in_ibm_buildpacks}
 
-For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty), [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node), and [ASP.NET Core](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting_started-dotnet), {{site.data.keyword.IBM}} supports two versions (n & n - 1), for example, {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.12 & {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.11. Each buildpack provides and supports one or more major versions of its corresponding runtime as appropriate. The liberty-for-java buildpack is refreshed once a month. The sdk-for-node.js and dotnet-core buildpacks are typically refreshed once a quarter with the latest minor version of the runtime that is available.
+For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty), [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node), and [ASP.NET Core](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting_started-dotnet), {{site.data.keyword.IBM}} supports two versions (n & n - 1), for example, {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.12 & {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.11. Each buildpack provides and supports one or more major versions of its corresponding runtime as appropriate. The liberty-for-java buildpack is refreshed once a month. The `sdk-for-node.js` and `dotnet-core` buildpacks are typically refreshed once a quarter with the latest minor version of the runtime that is available.
 
 
 Problems and issues can be reported against any version of the built-in {{site.data.keyword.IBM_notm}} Buildpack that is currently supported on {{site.data.keyword.cloud_notm}}, but they will be verified against the latest version. If a defect is found, {{site.data.keyword.IBM_notm}} will provide a fix in a future level of the runtime and corresponding buildpack. {{site.data.keyword.IBM_notm}} will not provide fixes for earlier major and minor versions (N-1, n-1). {{site.data.keyword.IBM_notm}} will not provide support for community runtimes even when using {{site.data.keyword.IBM_notm}} buildpacks, for example, using Open JDK with the Liberty buildpack. These community runtimes follow the same support policy as the built-in community buildpacks, as described in the following section.
