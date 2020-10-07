@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-07"
 
 keywords: cloud foundry
 
@@ -47,12 +47,12 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
 * The default Liberty runtime version `20.0.0.9` includes a fix for the [CVE-2020-4590 security vulnerability](https://www.ibm.com/support/pages/node/6333623).
 * The alternate Liberty runtime GA version is changed to the [20.0.0.10](https://openliberty.io/blog/2020/09/25/signed-certificate-with-acme-200010.html) release.
-* There are no changes to the AdoptOpenJDK or IBM JRE Version which is [8 SR 6 FP15](https://developer.ibm.com/javasdk/2020/08/04/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-15/).
+* There are no changes to the AdoptOpenJDK or IBM JRE Version which is 8 SR 6 FP15.
 
 ### August 26, 2020: Updated Liberty buildpack v3.48-20200821-1648
 * The default Liberty runtime GA version is the `20.0.0.9` release.
 * The alternate Liberty runtime GA version is changed to the `20.0.0.9` release.
-* The IBM JRE version is updated to [8 SR6 FP15](https://developer.ibm.com/javasdk/2020/08/04/ibm-sdk-java-technology-edition-version-8-service-refresh-6-fix-pack-15/).
+* The IBM JRE version is updated to 8 SR6 FP15.
 * The IBM JRE 8 SR6 FP15 includes fixes for the following three PSIRTs: 
   * [CVE-2020-2590](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2590-may-affect-ibm-sdk-java-technology-edition/) was disclosed as part of the Oracle January 2020 Critical Patch Update.
   * [CVE-2020-2601](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2601-may-affect-ibm-sdk-java-technology-edition/) was also  disclosed as part of the Oracle January 2020 Critical Patch Update.
