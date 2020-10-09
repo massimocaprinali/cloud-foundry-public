@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: cloud foundry
 
@@ -491,7 +491,7 @@ export NODE_ENV=production;
 
 When you use the `ibmcloud cf` command line interface to deploy an app, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your app.
 
-The `.cfignore` file must be in UTF-8 format.
+The `.cfignore` file must be in *UTF-8* format.
 {: note}
 
 The `.cfignore` file contains the names of files and directories that you want to ignore, one name per line. You can use an asterisk (*) as a wildcard character. When you specify a directory, all files and subdirectories under that directory are also ignored. For example, the following content in the `.cfignore` file indicates that all the `.swp` files and all files and subdirectories under the `tmp/` directory won't be uploaded to {{site.data.keyword.cloud_notm}}.

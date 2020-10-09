@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-30"
 
 keywords: cloud foundry
 
@@ -223,7 +223,7 @@ Update the `mappings.json` file in the `config` directory by replacing the `clou
   ```
   {: codeblock}
 
-This sample app uses the `CloudEnvironment` package to interact with {{site.data.keyword.cloud_notm}} to parse environment variables. [Learn more...](https://github.com/IBM-Swift/CloudEnvironment){: external}
+This sample app uses the `CloudEnvironment` package to interact with {{site.data.keyword.cloud_notm}} to parse environment variables. [Learn more...](https://github.com/Kitura/CloudEnvironment){: external}
 
 The `cloudant` placeholder in the `cloudfoundry:cloudant` configuration makes it easier to bind a user-provided Cloudant service to your app. With the `cloudfoundry:cloudant` configuration, you can create a Cloudant service that includes the string, `cloudant` somewhere in the service name and bind it to your app, without editing the `config.json` file. If you modify this configuration and later want to use a user-provided Cloudant service, you either need to edit the configuration to `cloudfoundry:cloudant` or define `cloudfoundry:` with the name of your user-provided service.
 {: tip}
@@ -245,7 +245,7 @@ swift build
 
  View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
 
- This sample app uses the `Kitura-CouchDB` package to interact with Cloudant. [Learn more...](https://github.com/IBM-Swift/Kitura-CouchDB){: external}
+ This sample app uses the `Kitura-CouchDB` package to interact with Cloudant. [Learn more...](https://github.com/Kitura/Kitura-CouchDB){: external}
 
  Make any changes you want and re-deploy to {{site.data.keyword.cloud_notm}}!
 

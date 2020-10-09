@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -88,7 +88,7 @@ When you specify the heap memory using environment variables, you override the d
 
 You can set the heap memory size by using environment variables or by changing the `jvm.options` file. When you use either the `JVM_ARGS` or `JBP_CONFIG_IBMJDK` environment variables, any changes will take effect when pushing your app to {{site.data.keyword.cloud_notm}}. By changing the `jvm.options` file, the effect to the heap size configuration can also be tested locally.
 
-* Use the `JVM_ARGS` environment variable and the -Xmx argument. For example to set the maximum heap size to 512M use the command that follows, then restage your app.
+* Use the `JVM_ARGS` environment variable and the `-Xmx` argument. For example to set the maximum heap size to 512 M use the following command, then restage your app.
 
 ```
     ibmcloud cf set-env myapp JVM_ARGS -Xmx512m
@@ -102,6 +102,6 @@ You can set the heap memory size by using environment variables or by changing t
 ```
 {: codeblock}
 
-* Specify the -Xmx argument in the `jvm.options` file if your app is a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). For more information on using the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](https://www.ibm.com/support/pages/node/476495){: external}.  
+* Specify the `-Xmx` argument in the `jvm.options` file if your app is a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). For more information about  using the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](https://www.ibm.com/support/pages/node/476495){: external}.  
 
 

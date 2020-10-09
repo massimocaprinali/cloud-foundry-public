@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -65,33 +65,30 @@ You'll need the following:
 
 1. First, we'll set up the local environment by ensuring all GO environment variables are set properly. For example:
 
-  ```
-mkdir $HOME/work
-export GOPATH=$HOME/work
-export PATH=$PATH:$GOPATH/bin
-  ```
-  {: codeblock}
+   ```
+   mkdir $HOME/work
+   export GOPATH=$HOME/work
+   export PATH=$PATH:$GOPATH/bin
+   ```
+   {: codeblock}
 
-1. Change path to $GOPATH/src
+1. Change path to `$GOPATH/src`
 
-  ```
-mkdir $GOPATH/src
-cd $GOPATH/src
-  ```
-  {: codeblock}
+   ```
+   mkdir $GOPATH/src
+   cd $GOPATH/src
+   ```
+   {: codeblock}
 
   Now you're ready to start working with the simple Go *hello world* app.
+
 1. Clone the repository and change to the directory where the sample app is located.
 
-  ```
-go get github.com/IBM-Cloud/get-started-go
-  ```
-  {: pre}
-
-  ```
-cd github.com/IBM-Cloud/get-started-go
-  ```
-  {: pre}
+   ```
+   go get github.com/IBM-Cloud/get-started-go
+   cd github.com/IBM-Cloud/get-started-go
+   ```
+   {: pre}
 
 1. Peruse the files in the `get-started-go` directory to familiarize yourself with the contents.
 
@@ -100,37 +97,32 @@ cd github.com/IBM-Cloud/get-started-go
 
 1. Build and run the app locally by running the following commands.
 
-  ```
-make
-  ```
-  {: pre}
-
-  ```
-go run main.go
-  ```
+   ```
+   make
+   go run main.go
+   ```
   {: pre}
 
 1. View your app at the following URL: http://localhost:8080
 
-Press *Ctrl-C* to stop your app from the same window where you started the app.
-{: tip}
+   Press *Ctrl-C* to stop your app from the same window where you started the app.
+   {: tip}
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-go}
 
 To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-go` directory.
 
-Open the manifest.yml file, and change the `name` from `GetStartedGo` to your app name, <var class="keyword varname" data-hd-keyref="app_name">app_name</var>.
-{: download}
+Open the manifest.yml file, and change the `name` from `GetStartedGo` to your app name, *app_name*.
 
-  ```
- apps:
- - name: GetStartedGo
-   random-route: true
-   memory: 128M
-   buildpack: go_buildpack
-  ```
-  {: codeblock}
+```
+apps:
+- name: GetStartedGo
+  random-route: true
+  memory: 128M
+  buildpack: go_buildpack
+```
+{: codeblock}
 
 In this manifest.yml file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: myChosenHostName`, supplying a host name of your choice.
 {: tip}
@@ -142,43 +134,43 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
-  ```
-ibmcloud login
-  ```
-  {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
 
-  ```
-ibmcloud login --sso
-  ```
-  {: pre}
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
 
 1. Target a Cloud Foundry org and space:
 
-  ```	  
-ibmcloud target --cf
-  ```
-  {: pre}
+   ```	  
+   ibmcloud target --cf
+   ```
+   {: pre}
 
-  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-  {: tip}
+   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+   {: tip}
 
 1. From within the `get-started-go` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-  ```
-ibmcloud cf push
-  ```
-  {: pre}
+   ```
+   ibmcloud cf push
+   ```
+   {: pre}
 
-  This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command. You can also issue the following command to view your app's status and see the URL.
 
-  ```
+```
 ibmcloud cf apps
-  ```
-  {: pre}
+```
+{: pre}
 
 You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external} to view your app.
 
@@ -188,12 +180,16 @@ You can also go to the {{site.data.keyword.cloud_notm}} [resource list](https://
 Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this app and set up the app so that it can run locally and on {{site.data.keyword.cloud_notm}}.
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
+
 1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
+
 1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
+
 1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+
 1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -205,31 +201,30 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. Create a file called `.env` in the `get-started-go` directory with the following content:
 
-  ```
-CLOUDANT_URL=
-  ```
-  {: codeblock}
+   ```
+   CLOUDANT_URL=
+   ```
+   {: codeblock}
 
 2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `CLOUDANT_URL` field of the `.env` file and save the changes.  The result will be something like:
 
-  ```
-CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
-  ```
-  {: codeblock}
+   ```
+   CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
+   ```
+   {: codeblock}
 
 4. Run your app locally.
 
-  ```
-go run main.go
-  ```
-  {: pre}
+   ```
+   go run main.go
+   ```
+   {: pre}
 
-  View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
+5. View your app at: http://localhost:8080. Any names that you enter into the app are added to the database.
 
-Your local app and  the {{site.data.keyword.cloud_notm}} app are sharing the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
-
+Your local app and the {{site.data.keyword.cloud_notm}} app share the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command.  Names you add from either app show in both apps when you refresh the browsers.
 
 If you don't need your app live, stop it so you don't incur any unexpected charges.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -116,9 +116,9 @@ Identify which step of the app container lifecycle is causing errors in app depl
   If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client app log files to the support team:
   {: tsResolve}
 
-    * logs/messages.log
-    * logs/stdout.log
-    * logs/stderr.log
+    * `logs/messages.log`
+    * `logs/stdout.log`
+    * `logs/stderr.log`
 
 
 ### Credentials are required to open a trace or memory dump window (Deprecated)
@@ -285,7 +285,7 @@ The following errors are visible in the logs and the app may fail to start:
 ```
 {: screen}
 
-The errors can be generated when a secure service is bound to a Liberty app and the Liberty app was deployed as a server directory or packaged server that contains a `server.xml` file that configures the Liberty ssl-1.0 feature. Binding the secure service to the Liberty app causes the runtime to connect to the service over a secure connection. That secure connection is established using the default SSL settings. Since, the default SSL settings are specified in the Liberty `server.xml` file, the configured trust store may not trust the certificate used by the secure service.
+The errors can be generated when a secure service is bound to a Liberty app and the Liberty app was deployed as a server directory or packaged server that contains a `server.xml` file that configures the Liberty `ssl-1.0` feature. Binding the secure service to the Liberty app causes the runtime to connect to the service over a secure connection. That secure connection is established by using the default SSL settings. Because the default SSL settings are specified in the Liberty `server.xml` file, the configured trust store might not trust the certificate that is used by the secure service.
 {: tsCauses}
 
 Modify configuration to use the JVM's trust store with one of the options that follow.  Be sure to restage your app after making the change.
@@ -439,7 +439,7 @@ pid @{HOME}/nginx/logs/nginx.pid;
 ```
 {: codeblock}
 
-The `NOTICE` messages are for information and might not indicate a problem. You can stop the logging of these messages by changing the logging level from `stderr notice` to `stderr error` in the nginx-defaults.conf file of your buildpack. For example: 	
+The `NOTICE` messages are for information and might not indicate a problem. You can stop the logging of these messages by changing the logging level from `stderr notice` to `stderr error` in the `nginx-defaults.conf` file in  your buildpack. For example: 	
 {: tsResolve}
 
 ```
