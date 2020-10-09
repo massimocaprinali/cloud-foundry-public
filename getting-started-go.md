@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -222,9 +222,9 @@ We're now going to update your local code to point to this database. We'll creat
    ```
    {: pre}
 
-5. View your app at: http://localhost:8080. Any names you enter into the app will now get added to the database.
+5. View your app at: http://localhost:8080. Any names that you enter into the app are added to the database.
 
-Your local app and the {{site.data.keyword.cloud_notm}} app are sharing the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
+Your local app and the {{site.data.keyword.cloud_notm}} app share the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command.  Names you add from either app show in both apps when you refresh the browsers.
 
 If you don't need your app live, stop it so you don't incur any unexpected charges.
 {: tip}

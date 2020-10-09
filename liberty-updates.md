@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -47,7 +47,7 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
 * The default Liberty runtime version `20.0.0.9` includes a fix for the [CVE-2020-4590 security vulnerability](https://www.ibm.com/support/pages/node/6333623).
 * The alternate Liberty runtime GA version is changed to the [20.0.0.10](https://openliberty.io/blog/2020/09/25/signed-certificate-with-acme-200010.html) release.
-* There are no changes to the AdoptOpenJDK or IBM JRE Version which is 8 SR 6 FP15.
+* AdoptOpenJDK and the IBM JRE Version (8 SR 6 FP15) is unchanged.
 
 ### August 26, 2020: Updated Liberty buildpack v3.48-20200821-1648
 * The default Liberty runtime GA version is the `20.0.0.9` release.
@@ -247,7 +247,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The default Liberty runtime also includes the [PI90804 Apache Commons interim fix](https://www.ibm.com/support/pages/node/301027){: external}.
 
 ### January 31, 2018: Updated Liberty buildpack v3.17.1-20180131-1532
-* The buildpack was updated to include Liberty feature `microProfile-1.2`.
+* The buildpack includes Liberty feature `microProfile-1.2`.
 
 ### January 26, 2018: Updated Liberty buildpack v3.17-20180122-1037
 * The buildpack was updated to add the ability to dynamically set tracing on the Liberty server.
@@ -283,7 +283,7 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The default Liberty runtime version `17.0.0.2` was updated to include the IFPI83713 interim fix.
 * The monthly Liberty runtime version was updated to the [2017.7.0.0](https://developer.ibm.com/wasdev/blog/2017/07/07/beta-websphere-liberty-tools-july-2017/){: external} release.
 * The buildpack also contains updated {{site.data.keyword.IBM_notm}} JREs: version 8 SR4 FP7 and version 7.1 SR4 FP5.
-* The default Cloudant Library is now the official [`java-cloudant`](https://github.com/cloudant/java-cloudant){: external}, the [Ektorp library](https://github.com/helun/Ektorp){: external} is still available as an option, for details on this change see the [blog post](https://www.ibm.com/blogs/bluemix/2017/05/default-library-change-cloudant-auto-wiring-liberty-buildpack/){: external}.
+* The default Cloudant Library is now the official [`java-cloudant`](https://github.com/cloudant/java-cloudant){: external}, the [Ektorp library](https://github.com/helun/Ektorp){: external} is still available as an option, for details about this change see the [blog post](https://www.ibm.com/blogs/bluemix/2017/05/default-library-change-cloudant-auto-wiring-liberty-buildpack/){: external}.
 * The default heap size ratio is now 50% when your app has less than 512mb of memory, if it has more than 512mb it will still be 75%.
 * A new staging task log is now generated, which allows for easier debugging of staging errors.
 * The Node.js runtime that is used by the [App Management utility](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) was updated to the 6.13.0 version.

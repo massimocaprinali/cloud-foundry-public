@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-09"
 
 keywords: cloud foundry
 
@@ -352,7 +352,7 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## January 5, 2015: Updated Node.js buildpack v1.9.1-20141208-1221
 
-* The Node.js buildpack now includes dynamic log setting support. With this support, developers can change the log level of their app dynamically if the app is using log4js, bunyan, or {{site.data.keyword.cloud_notm}} modules for logging.
+* The Node.js buildpack now includes dynamic log setting support. With this support, developers can change the log level of their app dynamically if the app is using `log4js`, `bunyan`, or {{site.data.keyword.cloud_notm}} modules for logging.
 * The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.10.33](https://developer.ibm.com/node/sdk/){: external}. This update includes fixes for the POODLE issue.
 
 ## October 23, 2014: Updated Node.js buildpack v1.6-20141013-1736
