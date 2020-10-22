@@ -273,7 +273,7 @@ ibmcloud cf ash <YOUR_APP> --desc
 
 ## More information about autoscaling
 
-* [Cloud Foundry App Autoscaler CLI plug-in guide][https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-]{: external}
+* [Cloud Foundry App Autoscaler CLI plug-in guide](https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-){: external}
 * [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
 * [Bring Your Own Metrics to Autoscale Your {{site.data.keyword.ibmcf_notm}} Apps](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
 
