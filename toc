@@ -106,7 +106,6 @@ Cloud Foundry Public
         [Rolling App Deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html)
         ha-dr.md
         autoscaling.md
-        autoscaling_migration.md
 
     {: .topicgroup}
     Enhancing Security
