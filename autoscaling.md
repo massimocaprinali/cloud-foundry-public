@@ -131,7 +131,7 @@ Autoscaling determines when and how your app's capacity is changed according to 
    * `Cpu`, is the CPU percentage that is used by the app. `Cpu` is specified in percentage.  The CPU utilization can be affected by the total workload of the hosting hardware and other factors.
    * `Responsetime` is the average amount of time that the app takes to respond to a request.  `Responsetime` is specified in `ms` (milliseconds).
    * `Throughput` is the total number of the requests that are processed in a given time period. `Throughput` is specified in `rps` (requests per second).
-   * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. When emitting the corresponding metric to the App Autoscaler, autoscaling is triggered. For more information, see the [custom metric usage guide][https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics]{: external}.
+   * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. When emitting the corresponding metric to the App Autoscaler, autoscaling is triggered. For more information, see the [custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics){: external}.
 
    In addition to specifying the metric type, specify an operator, threshold, breach duration, adjustment, and cooldown period values. 
 
@@ -161,7 +161,7 @@ Autoscaling determines when and how your app's capacity is changed according to 
 
 ### Importing a JSON policy file
 
-You can import a JSON policy file by clicking **Import From JSON**.  See the [policy specification][https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md]{: external} for the autoscaling policy JSON format. 
+You can import a JSON policy file by clicking **Import From JSON**.  See the [policy specification](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external} for the autoscaling policy JSON format. 
 
 ### Metric statistics
 
@@ -190,7 +190,7 @@ If you already have the `AutoScaler CLI` plug-in installed, you can use the same
 
 ### Using the AutoScaler CLI
 
-If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment on {{site.data.keyword.cloud}} and have apps running in your space as described in the [deploying apps guide][https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps]{: external}, use the following steps to create a scaling policy for your app, access query metrics, and to view the autoscaling history.
+If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment on {{site.data.keyword.cloud}} and have apps running in your space as described in the [deploying apps guide](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps), use the following steps to create a scaling policy for your app, access query metrics, and to view the autoscaling history.
 
 #### Creating autoscaling policies
 
@@ -242,7 +242,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
     ```
     {: codeblock}
 
-    This example policy triggers autoscaling based on memory utilization when the defined threshold is breached for at least 120 seconds.  See the [App AutoScaler User Guide][https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md]{: external} for information about how to create your own autoscaling policy.
+    This example policy triggers autoscaling based on memory utilization when the defined threshold is breached for at least 120 seconds.  See the [App AutoScaler User Guide](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external} for information about how to create your own autoscaling policy.
 
 3. Attach the policy to your app by running the following command:
 
@@ -253,7 +253,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
 
 #### Metric statistics
 
-You can query the most recent aggregated metrics for your app. The App Autoscaler supports multiple [metric types][https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types]{: external}, but you can retrieve only the metrics that are defined in your policy.  For example, `memoryutil` in the previous CLI example.  
+You can query the most recent aggregated metrics for your app. The App Autoscaler supports multiple [metric types](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types){: external}, but you can retrieve only the metrics that are defined in your policy.  For example, `memoryutil` in the previous CLI example.  
 
 ```
 ibmcloud cf asm <YOUR_APP> <METRIC_TYPE> --desc
