@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-26"
 
 keywords: cloud foundry
 
@@ -97,6 +97,11 @@ subcollection: cloud-foundry-public
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### October 22, 2020: Updated Liberty buildpack v3.50-20201019-1521
+* The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
+* The alternate Liberty runtime GA version is the [20.0.0.11](https://openliberty.io/blog/2020/10/23/kerberos-grafana-200011.html) release.
+* The IBM JRE version is updated to 8 SR6 FP16.
 
 ### October 15, 2020: Updated Liberty buildpack v3.49.1-20201014-1251
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
