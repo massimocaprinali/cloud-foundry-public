@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-09"
 
-keywords: cloud foundry
+keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
 subcollection: cloud-foundry-public
 
