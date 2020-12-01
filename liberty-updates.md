@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-17"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -97,6 +97,13 @@ subcollection: cloud-foundry-public
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### November 16, 2020: Updated Liberty buildpack v3.51-20201113-1351
+* The default Liberty runtime GA version is the `20.0.0.12` release.
+* The alternate Liberty runtime GA version is changed to the `20.0.0.12` release.
+* The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.9_11_openj9-0.23.0. 
+* The alternate Liberty runtime version `20.0.0.12` includes a fix for the [CVE-2020-10693 security vulnerability](https://www.ibm.com/support/pages/node/6348216){: external}.
+* The IBM JRE Version (8 SR 6 FP16) remains unchanged
 
 ### October 22, 2020: Updated Liberty buildpack v3.50-20201019-1521
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
