@@ -110,6 +110,7 @@ Cloud Foundry Public
     {: .topicgroup}
     Enhancing Security
         data-security.md
+        secapps.md
 
     {: .topicgroup}
     Networking
