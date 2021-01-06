@@ -100,6 +100,7 @@ Cloud Foundry Public
     {: .topicgroup}
     Managing your apps
         custom_domains.md
+        secapps.md
         updating_domains.md
         monitoring_logging_cloud_foundry_apps.md
         at-events.md
@@ -110,8 +111,7 @@ Cloud Foundry Public
     {: .topicgroup}
     Enhancing Security
         data-security.md
-        secapps.md
-
+ 
     {: .topicgroup}
     Networking
         network-address.md
