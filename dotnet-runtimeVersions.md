@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "09-15-2020"
+  years: 2015, 2021
+lastupdated: "2021-01-13"
 
 keywords: cloud foundry
 
@@ -12,30 +12,86 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 # Runtime Versions
@@ -51,39 +107,33 @@ This buildpack supports the following versions, those marked as deprecated will 
 
 | .NET SDK version        | Default          |
 |-------------------------|------------------|
-| 3.1.402                 |   Yes            |
-| 3.1.401                 |   No             |
+| 5.0.100                 |   No             |
+| 3.1.404                 |   Yes            |
+| 3.1.403                 |   No             |
+| 2.1.811                 |   No             |
 | 2.1.810                 |   No             |
-| 2.1.809                 |   No             |
-| 2.1.701                 |   No             |
-| 2.1.606                 |   No             |
-| 2.1.605                 |   No             |
-| 2.1.509                 |   No             |
-| 2.1.508                 |   No             |
-| 2.1.403                 |   No             |
 
 
 ### .NET Core runtime versions
 
 | .NET Core runtime version | Release type      |
 |---------------------------|-------------------|
-| 3.1.8                     | Current           |
-| 3.1.7                     | Normal            |
-| 2.1.21                    | Normal            |
-| 2.1.22                    | Normal            |
-
+| 5.0.0                     | Current           |
+| 3.1.10                    | Normal            |
+| 3.1.9                     | Normal            |
+| 2.1.23                    | Normal            |
+| 2.1.22.                   | Normal            |
 
 
 ### .NET ASP.NET Core versions
 
 | .NET ASP.NET Core version | Release type      |
 |---------------------------|-------------------|
-| 3.1.8                     | Current           |
-| 3.1.7                     | Normal            |
-| 2.1.21                    | Normal            |
-
-
-
+| 5.0.0                     | Current           |
+| 3.1.10                    | Normal            |
+| 3.1.9                     | Normal            |
+| 2.1.23                    | Normal            |
+| 2.1.22                    | Normal            |
 
 
 ## Specifying the .NET SDK version
@@ -92,7 +142,7 @@ Control the .NET SDK version with an optional `global.json` file in the app's ro
 ```
    {
       "sdk": {
-        "version": "3.1.402"
+        "version": "3.1.404"
       }
    }
 ```
