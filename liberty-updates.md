@@ -99,6 +99,11 @@ subcollection: cloud-foundry-public
 
 ## A list of the latest updates in the Liberty buildpack.
 
+### January 15, 2021: Updated Liberty buildpack v3.53-20210114-1605
+* The alternate Liberty runtime GA version is changed to the `21.0.0.1` release.
+* The default Liberty runtime GA version is the `20.0.0.12` release.
+* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.9_11_openj9-0.23.0) and IBM JRE Version (8 SR 6 FP20) remains unchanged. 
+
 ### December 17, 2020: Updated Liberty buildpack v3.52-20201210-1626
 * The default and alternate Liberty runtime GA version is the [20.0.0.12](https://openliberty.io/blog/2020/11/20/JNDI-gRPC-200012.html) release.
 * The IBM JRE version is updated to 8 SR6 FP20. 
