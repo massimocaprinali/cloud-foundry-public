@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-02"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -91,7 +91,7 @@ subcollection: cloud-foundry-public
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 # Latest updates to the SDK for Node.js buildpack 
@@ -101,7 +101,7 @@ A list of the latest updates in the `sdk-for-nodejs` buildpack.
 
 ## December 2, 2020: Updated Node.js buildpack v4.5-20201130-1530
 
-The SDK for Node.js buildpack v4.5 is based on community buildpack v1.7.36, introduces v14 runtimes, and includes the following Node.js runtimes: v10.22.1, v10.23.0, v12.19.0, v12.19.1, v14.15.0, v14.15.1. The default runtime is the latest v10.x (currently 10.23.0). This buildpack is based on the community node.js buildack [v1.7.36](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.7.36).
+The SDK for Node.js buildpack v4.5 is based on community buildpack v1.7.36, introduces v14 runtimes, and includes the following Node.js runtimes: v10.22.1, v10.23.0, v12.19.0, v12.19.1, v14.15.0, v14.15.1. The default runtime is the latest v10.x (currently 10.23.0). This buildpack is based on the community node.js buildpack [v1.7.36](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.7.36).
 
 This release also includes CVE-2020-8201, CVE-2020-8251, CVE-2020-8252, CVE-2020-8277:
 * [September 2020 Security Releases](https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/)
@@ -387,7 +387,7 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## May 5, 2015: Updated Node.js buildpack v1.17-20150429-1033
 
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.12.1](https://developer.ibm.com/node/sdk/){: external}.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.12.1](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 * If your app doesn’t specify a runtime in its package.json file, your app will now start by using v0.12.1, instead of v0.10.x. If you need to use the previous version, specify v0.10.x in your package.json as shown.
 
 ```
@@ -412,21 +412,21 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
   * Live Edit: Allows you to make changes to a Node.js app that runs in {{site.data.keyword.cloud_notm}} and test them in your browser right away.
   * Debug: Shell into your environment and debug! You can edit code dynamically, insert breakpoints, step through code, restart the runtime, and more by using the Node Inspector debugger
 * We pulled in the latest changes from the [Cloud Foundry’s Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This change comes with a number of bug-fixes and improvements made by the community.
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.13](https://developer.ibm.com/node/sdk/){: external}.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.13](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 
 ## January 5, 2015: Updated Node.js buildpack v1.9.1-20141208-1221
 
 * The Node.js buildpack now includes dynamic log setting support. With this support, developers can change the log level of their app dynamically if the app is using `log4js`, `bunyan`, or {{site.data.keyword.cloud_notm}} modules for logging.
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.10.33](https://developer.ibm.com/node/sdk/){: external}. This update includes fixes for the POODLE issue.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.10.33](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}. This update includes fixes for the POODLE issue.
 
 ## October 23, 2014: Updated Node.js buildpack v1.6-20141013-1736
 
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.8](https://developer.ibm.com/node/sdk/){: external}. This update means you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the NPM module and other improvements in the HTTP and URL modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog){: external}.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.8](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}. This update means you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.32. This latest SDK comes with a fix for an issue with the embedded qs module that resulted in a denial-of-service. It also contains an updated version of the NPM module and other improvements in the HTTP and URL modules. For more details, see the [v0.10.32 Change Log](https://raw.githubusercontent.com/joyent/node/v0.10.32/ChangeLog){: external}.
 * The buildpack also contains a fix for a bug that was adding an incorrect index.html file in the customer’s app during deployment.
 
 ## September 30, 2014: Updated Node.js buildpack v1.4-20140908-1746
 
-* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.7](https://developer.ibm.com/node/sdk/){: external}. This update means that you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.31. With a fully supported Node.js runtime, the customers receive a consistent support experience.
+* The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.7](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}. This update means that you get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.31. With a fully supported Node.js runtime, the customers receive a consistent support experience.
 * The buildpack contains an improved service framework. Specifically, it works better when binding the Monitoring and Analytics service and provides more diagnostic information if the service fails.
 
 ## August 28, 2014: Updated Node.js buildpack v1.3-20140821-1143
@@ -436,6 +436,6 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 
 ## July 29, 2014: Updated Node.js buildpack v1.1-20140717-1447
 
-The Node.js buildpack now comes with {{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.5. This update means you'll get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.29. See more about the [{{site.data.keyword.IBM_notm}} Node.js SDKs](https://developer.ibm.com/node/sdk/){: external}.
+The Node.js buildpack now comes with {{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.5. This update means you'll get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.29. See more about the [{{site.data.keyword.IBM_notm}} Node.js SDKs](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 
 

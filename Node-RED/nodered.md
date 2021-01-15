@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-01"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -91,7 +91,7 @@ subcollection: cloud-foundry-public
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -146,7 +146,7 @@ You can customize your Node-RED instance for your needs. For example, you can re
 
 To access the VCAP_SERVICES environment from a Node-RED flow, you must add the environment variable to the Function node's global context.
 
-1. Edit your "bluemix-settings.js" and add an entry to the *functionGlobalContext* property to parse VCAP_SERVICES.
+1. Edit your `bluemix-settings.js` and add an entry to the `functionGlobalContext` property to parse VCAP_SERVICES.
 2. Redeploy your Node-RED app.
 
   ```

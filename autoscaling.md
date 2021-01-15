@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-10-22"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -16,6 +16,7 @@ subcollection: cloud-foundry-public
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -24,6 +25,7 @@ subcollection: cloud-foundry-public
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -41,7 +43,6 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -75,7 +76,6 @@ subcollection: cloud-foundry-public
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -87,10 +87,11 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -164,6 +165,7 @@ Autoscaling determines when and how your app's capacity is changed according to 
 You can import a JSON policy file by clicking **Import From JSON**.  See the [policy specification](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external} for the autoscaling policy JSON format. 
 
 ### Metric statistics
+{: #metric_statistics_console}
 
 After a policy is defined with autoscaling rules, you can view the metric values and metrics history for the previous 2 hours.
 
@@ -171,6 +173,7 @@ The metric value is not the raw data from each app instance, but the metric valu
 {: note}
 
 ### Scaling history
+{: #scaling_history_console}
 
 Use the **Scaling history** tab to view the autoscaling events for the past 30 days. If autoscaling attempts failed, the tab also shows the error messages.
 
@@ -252,6 +255,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
     {: pre}
 
 #### Metric statistics
+{: #metric_statistics_cli}
 
 You can query the most recent aggregated metrics for your app. The App Autoscaler supports multiple [metric types](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md#metric-types){: external}, but you can retrieve only the metrics that are defined in your policy.  For example, `memoryutil` in the previous CLI example.  
 
@@ -262,6 +266,7 @@ ibmcloud cf asm <YOUR_APP> <METRIC_TYPE> --desc
 
 
 #### Scaling history
+{: #scaling_history_cli}
 
 You can use the following command to query autoscaling history for an app.
 

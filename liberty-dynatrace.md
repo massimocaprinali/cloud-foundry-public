@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-16"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -12,30 +12,86 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Use Dynatrace to monitor Liberty in {{site.data.keyword.cloud_notm}}
 {: #using_dynatrace}
@@ -60,7 +116,8 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
   * Ensure that the collector is set up in a location that is accessible to the Dynatrace agent running with your app in {{site.data.keyword.cloud_notm}}.
 2. Create a user-provided service that points to the running Dynatrace collector.
 
-  **Note:** The name of the user-provided service must contain the string **dynatrace**. Case is ignored. For example, use the command that follows, where **my-dynatrace-collector** contains **dynatrace**:
+  **Note:** The name of the user-provided service must contain the string `dynatrace`. Case is ignored. For example, use the command that follows, where `my-dynatrace-collector` contains `dynatrace`:
+
   ```
   ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring"}'
   ```
@@ -94,7 +151,7 @@ additional configuration steps are needed.
 ### Hosting the Dynatrace agent
 {: #hosting_dynatrace_agent}
 The Dynatrace agent must be hosted on a web server, and the Liberty buildpack must be able to download the agent `.jar` file from that server. The server must be configured with an `index.yml` file that specifies details about the agent `.jar` file. Complete the steps that follow to set up the Dynatrace agent:
-  1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace){: external} at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the **dynatrace-agent-unix.jar** version **6.+**.
+  1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace){: external} at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the `dynatrace-agent-unix.jar` version `6.+`.
   2. Host the agent `.jar` file in a location from which the Liberty buildpack can download it. You can host it on {{site.data.keyword.cloud_notm}} itself using any of the available server facilities, or you can host it on some publicly available location.
      * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
 
@@ -103,7 +160,7 @@ The Dynatrace agent must be hosted on a web server, and the Liberty buildpack mu
      ```
      {: codeblock}
 
-     * The **dynatrace-agent-6.3.0-unix.jar** file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
+     * The `dynatrace-agent-6.3.0-unix.jar` file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
 
 ### Configuring the Liberty app
 {: #configuring_liberty_app}
@@ -117,7 +174,7 @@ The Liberty app you want to monitor must be configured to locate the server host
     ```
     {: pre}
 
-    In this example, *my-dynatrace-agent-host.mybluemix.net* is the URL of the `index.yml` file hosted by the server that you previously configured.
+    In this example, `my-dynatrace-agent-host.mybluemix.net` is the URL of the `index.yml` file hosted by the server that you previously configured.
 
 2. After you set the environment variable, restage your app. Check the staging log for a message indicating successful download of the Dynatrace agent from your agent hosting server. For example:
 ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-16"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -13,30 +13,86 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -96,12 +152,12 @@ See the documentation for the bound service type for more details.
 
 In some cases, you might not want the Liberty buildpack to automatically configure the services that have been bound. Consider the following scenarios.
 
-* My app uses *dashDB*, but I want the app to directly manage the connection to the database. The app contains the necessary client driver `JAR` file. I do not want the Liberty buildpack to automatically configure the *dashDB* service.
-* I am providing a `server.xml` file and I provided the configuration stanzas for the *cloudant* instance because I require a non-standard datasource configuration. I do not want the Liberty buildpack to update my `server.xml` file, but I still require the Liberty buildpack to ensure that the appropriate supporting software is installed.
+* My app uses `dashDB`, but I want the app to directly manage the connection to the database. The app contains the necessary client driver `JAR` file. I do not want the Liberty buildpack to automatically configure the `dashDB` service.
+* I am providing a `server.xml` file and I provided the configuration stanzas for the `cloudant` instance because I require a non-standard datasource configuration. I do not want the Liberty buildpack to update my `server.xml` file, but I still require the Liberty buildpack to ensure that the appropriate supporting software is installed.
 
 To opt out of automatic service configuration, use the services_autoconfig_excludes environment variable. You can include this environment variable in a manifest.yml or set it using the {{site.data.keyword.cloud_notm}} client.
 
-You can opt out of automatic configuration of services on a per-service-type basis. You can choose to completely opt out (as in the *dashDB* scenario) or opt out of only the `server.xml` file configuration updates (as in the *cloudant* scenario). The value that you specify for the services_autoconfig_excludes environment variable is a string as shown below.
+You can opt out of automatic configuration of services on a per-service-type basis. You can choose to completely opt out (as in the `dashDB` scenario) or opt out of only the `server.xml` file configuration updates (as in the `cloudant` scenario). The value that you specify for the services_autoconfig_excludes environment variable is a string as shown below.
 
 * The string can contain opt-out specifications for one or more services.
 * The opt-out specification for a specific service is service_type=option, where:
@@ -123,9 +179,9 @@ See the following example of `services_autoconfig_excludes` string grammar:
 **Important**: The service type that you specify must match the services label as it appears in the VCAP_SERVICES environment variable. White space is not allowed.
 **Important**: No white space is allowed within a `<service_type_specification>`. The only allowed use of white space is to separate multiple `<service_type_specification>` instances.
 
-Use the **all** option to opt out of all automatic configuration actions for a service, as in the *dashDB* scenario above. Use the **config** option to opt out of only the configuration update actions as in the *cloudant* scenario above.
+Use the **all** option to opt out of all automatic configuration actions for a service, as in the `dashDB` scenario above. Use the **config** option to opt out of only the configuration update actions as in the `cloudant` scenario above.
 
-Here are sample opt-out specifications in a `manifest.yml` file for the *dashDB* and *cloudant* scenarios.
+Here are sample opt-out specifications in a `manifest.yml` file for the `dashDB` and `cloudant` scenarios.
 
 ```
     env:

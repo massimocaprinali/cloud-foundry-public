@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-17"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -121,7 +121,7 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
 * The alternate Liberty runtime GA version is the [20.0.0.10](https://openliberty.io/blog/2020/09/25/signed-certificate-with-acme-200010.html) release.
 * This buildpack contains a DB2 service fixing: 
-  * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new VCAP service format. 
+  * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new `VCAP` service format. 
 
 ### October 2, 2020: Updated Liberty buildpack v3.49-20200918-0244
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
@@ -454,10 +454,10 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also contains security fixes for the [Apache Standard Taglibs vulnerability](https://www.ibm.com/support/pages/node/282471){: external}.
 
 ### May 25, 2016: Updated Liberty buildpack v2.9-20160519-1249
-* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/){: external}. The updated version of Liberty makes the *bluemixLogCollector-1.1* and *logstashCollector-1.1* beta features available in {{site.data.keyword.cloud_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/){: external}. The updated version of Liberty makes the `bluemixLogCollector-1.1` and `logstashCollector-1.1` beta features available in {{site.data.keyword.cloud_notm}}.
 
 ### May 5, 2016: Updated Liberty buildpack v2.8-20160430-1011
-* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/){: external}. The updated version of Liberty makes the *logstashCollector-1.0* GA feature and the *logmetCollector-1.0* beta feature available in {{site.data.keyword.cloud_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/){: external}. The updated version of Liberty makes the `logstashCollector-1.0` GA feature and the `logmetCollector-1.0` beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains updated versions of {{site.data.keyword.IBM_notm}} JRE: 8 SR3 and 7.1 SR3 FP40.
 * The buildpack adds initial support for the [AppDynamics](https://www.appdynamics.com/){: external} app monitoring agent.
 * The [Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) support was improved to simplify the installation of the agent.
@@ -622,7 +622,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 ### July 29, 2014: Updated Liberty Buildpack v1.1-20140725-1341
 * The new version of Liberty’s {{site.data.keyword.cloud_notm}} Edition is here!
   * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
-  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through VCAP_SERVICES and providing the `ektorp` client `.jar` files are no longer necessary.
+  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through `VCAP_SERVICES` and providing the `ektorp` client `.jar` files are no longer necessary.
 * The new version of {{site.data.keyword.IBM_notm}} SDK for Java is here!
   * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
 
