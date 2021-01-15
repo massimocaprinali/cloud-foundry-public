@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-10-06"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry
 
@@ -13,30 +13,86 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Deploying apps
 {: #deployingapps}
@@ -194,7 +250,7 @@ ibmcloud cf push -f appManifest.yml
 |**disk_quota**	|The disk quota that is allocated for an app. The default value is 1GB.	|`disk_quota: 500MB`|
 |**domain**	|The domain name of the app in {{site.data.keyword.cloud_notm}}.	|`domain: ng.mybluemix.net`|
 |**host**	|The host name of the app in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`host:` *host_name*|
-|**name**	|The app name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`name:` *appname*|
+|**name**	|The app name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`name: appname`|
 |**path**	|The location of your app. This value can be a relative path or absolute path.	|`path:` *path_to_app*|
 |**command**	|The custom start command for your app, or the command to run script files.	|`command:` *custom_command* `command:` *`bash ./run.sh`*|
 |**memory**	|The amount of memory to allocate for the app. The default value is 1GB.	|`memory: 512MB`|
@@ -491,7 +547,7 @@ export NODE_ENV=production;
 
 When you use the `ibmcloud cf` command line interface to deploy an app, you can save upload time by skipping certain files and directories that {{site.data.keyword.cloud_notm}} can obtain elsewhere. To prevent these files and directories from being uploaded to {{site.data.keyword.cloud_notm}}, you can create a `.cfignore` file at the root directory of your app.
 
-The `.cfignore` file must be in *UTF-8* format.
+The `.cfignore` file must be in `UTF-8` format.
 {: note}
 
 The `.cfignore` file contains the names of files and directories that you want to ignore, one name per line. You can use an asterisk (*) as a wildcard character. When you specify a directory, all files and subdirectories under that directory are also ignored. For example, the following content in the `.cfignore` file indicates that all the `.swp` files and all files and subdirectories under the `tmp/` directory won't be uploaded to {{site.data.keyword.cloud_notm}}.

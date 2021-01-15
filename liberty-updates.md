@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-11-17"
+  years: 2015, 2021
+lastupdated: "2021-01-15"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -16,6 +16,7 @@ subcollection: cloud-foundry-public
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -24,6 +25,7 @@ subcollection: cloud-foundry-public
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -41,7 +43,6 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -75,7 +76,6 @@ subcollection: cloud-foundry-public
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -87,16 +87,28 @@ subcollection: cloud-foundry-public
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 # Latest updates to the Liberty buildpack
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### January 15, 2021: Updated Liberty buildpack v3.53-20210114-1605
+* The alternate Liberty runtime GA version is changed to the `21.0.0.1` release.
+* The default Liberty runtime GA version is the `20.0.0.12` release.
+* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.9_11_openj9-0.23.0) and IBM JRE Version (8 SR 6 FP20) remains unchanged. 
+
+### December 17, 2020: Updated Liberty buildpack v3.52-20201210-1626
+* The default and alternate Liberty runtime GA version is the [20.0.0.12](https://openliberty.io/blog/2020/11/20/JNDI-gRPC-200012.html) release.
+* The IBM JRE version is updated to 8 SR6 FP20. 
+* The IBM JRE 8 SR6 FP20 includes the following Oracle and IBM fixes: [CVE-2020-14792, CVE-2020-14797, CVE-2020-14781, CVE-2020-14779, CVE-2020-14798, CVE-2020-14796](https://www.ibm.com/support/pages/node/6370057)
+* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.9_11_openj9-0.23.0) remains unchanged.
 
 ### November 16, 2020: Updated Liberty buildpack v3.51-20201113-1351
 * The default Liberty runtime GA version is the `20.0.0.12` release.
@@ -114,7 +126,7 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
 * The alternate Liberty runtime GA version is the [20.0.0.10](https://openliberty.io/blog/2020/09/25/signed-certificate-with-acme-200010.html) release.
 * This buildpack contains a DB2 service fixing: 
-  * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new VCAP service format. 
+  * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new `VCAP` service format. 
 
 ### October 2, 2020: Updated Liberty buildpack v3.49-20200918-0244
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
@@ -447,10 +459,10 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack also contains security fixes for the [Apache Standard Taglibs vulnerability](https://www.ibm.com/support/pages/node/282471){: external}.
 
 ### May 25, 2016: Updated Liberty buildpack v2.9-20160519-1249
-* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/){: external}. The updated version of Liberty makes the *bluemixLogCollector-1.1* and *logstashCollector-1.1* beta features available in {{site.data.keyword.cloud_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [May beta](https://developer.ibm.com/wasdev/blog/2016/05/06/beta-websphere-liberty-and-tools-may-2016/){: external}. The updated version of Liberty makes the `bluemixLogCollector-1.1` and `logstashCollector-1.1` beta features available in {{site.data.keyword.cloud_notm}}.
 
 ### May 5, 2016: Updated Liberty buildpack v2.8-20160430-1011
-* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/){: external}. The updated version of Liberty makes the *logstashCollector-1.0* GA feature and the *logmetCollector-1.0* beta feature available in {{site.data.keyword.cloud_notm}}.
+* The buildpack contains an updated version of WebSphere Liberty based on the [April beta](https://developer.ibm.com/wasdev/blog/2016/04/08/beta-websphere-liberty-and-tools-april-2016/){: external}. The updated version of Liberty makes the `logstashCollector-1.0` GA feature and the `logmetCollector-1.0` beta feature available in {{site.data.keyword.cloud_notm}}.
 * The buildpack also contains updated versions of {{site.data.keyword.IBM_notm}} JRE: 8 SR3 and 7.1 SR3 FP40.
 * The buildpack adds initial support for the [AppDynamics](https://www.appdynamics.com/){: external} app monitoring agent.
 * The [Dynatrace](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace) support was improved to simplify the installation of the agent.
@@ -615,7 +627,7 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 ### July 29, 2014: Updated Liberty Buildpack v1.1-20140725-1341
 * The new version of Liberty’s {{site.data.keyword.cloud_notm}} Edition is here!
   * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
-  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through VCAP_SERVICES and providing the `ektorp` client `.jar` files are no longer necessary.
+  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through `VCAP_SERVICES` and providing the `ektorp` client `.jar` files are no longer necessary.
 * The new version of {{site.data.keyword.IBM_notm}} SDK for Java is here!
   * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
 
