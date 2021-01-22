@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: cloud foundry
 
@@ -153,17 +153,16 @@ Use Maven to build your source code and run the resulting app.
    ```
    {: pre}
 
-When you see the message `The server defaultServer is ready to run a smarter planet.`, you can view your app at: http://localhost:9080/GetStartedJava.
+When you see the message `The server defaultServer is ready to run a smarter planet.`, you can view your app at: `http://localhost:9080/GetStartedJava/`.
 
 To stop your app, press **Ctrl-C** in the command-line window where you started the app.
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-liberty}
 
-To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-java` directory.
+To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `manifest.yml` file. The `manifest.yml` file includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample `manifest.yml` file in the `get-started-java` directory.
 
-Open the manifest.yml file, and change the `name` from `GetStartedJava` to your app name, <var class="keyword varname" data-hd-keyref="app_name">app_name</var>.
-{: download}
+Open the `manifest.yml` file, and change the `name` from `GetStartedJava` to your app name, `app_name`.
 
 ```
 apps:
@@ -175,7 +174,7 @@ apps:
 ```
 {: codeblock}
 
-In this manifest.yml file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
+In this `manifest.yml` file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
 {: tip}
 
 ## Step 4: Deploy to {{site.data.keyword.cloud_notm}}
@@ -214,7 +213,7 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
    ```
    {: pre}
 
-Deploying your app can take a few minutes. When deployment completes, a message shows that your app is running. View your app at the URL listed in the output of the push command with "/GetStartedJava" appended to the end, or view both the app deployment status and the URL by running the following command:
+Deploying your app can take a few minutes. When deployment completes, a message shows that your app is running. View your app at the URL listed in the output of the push command with `/GetStartedJava` appended to the end, or view both the app deployment status and the URL by running the following command:
 
 ```
 ibmcloud cf apps
@@ -262,7 +261,7 @@ We're now going to update your local code to point to this database. We'll store
 
 3. Restart the server.
 
-Refresh your browser view at http://localhost:9080/GetStartedJava/. Any names that you enter into the app will now get added to the database.
+Refresh your browser view at `http://localhost:9080/GetStartedJava/`. Any names that you enter into the app will now get added to the database.
 
 Your local app and the {{site.data.keyword.cloud_notm}} app are sharing the database. Names you add from either app will appear in both when you refresh the browsers.
 
