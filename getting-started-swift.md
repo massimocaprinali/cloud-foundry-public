@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: cloud foundry
 
@@ -129,7 +129,7 @@ cd get-started-swift
 ```
 {: pre}
 
-Peruse the files in the *get-started-swift* directory to familiarize yourself with the contents.
+Peruse the files in the `get-started-swift` directory to familiarize yourself with the contents.
 
 ## Step 2: Run the app locally
 {: #run_locally-swift}
@@ -171,10 +171,9 @@ Once you have installed the Swift compiler and cloned this Git repository, you c
 ## Step 3: Prepare the app for deployment
 {: #prepare-swift}
 
-To deploy to {{site.data.keyword.Bluemix_short}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-swift` directory.
+To deploy to {{site.data.keyword.Bluemix_short}}, it can be helpful to set up a `manifest.yml` file. The `manifest.yml` file includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample `manifest.yml` file in the `get-started-swift` directory.
 
-Open the manifest.yml file, and change the `name` from `GetStartedSwift` to your app name, <var class="keyword varname" data-hd-keyref="app_name">app_name</var>.
-{: download}
+Open the `manifest.yml` file, and change the `name` from `GetStartedSwift` to your app name, `app_name`.
 
 ```
 apps:
@@ -186,7 +185,7 @@ apps:
 ```
 {: codeblock}
 
-In this manifest.yml file, **random-route: true** generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
+In this `manifest.yml` file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
 {: tip}
 
 ## Step 4: Deploy the app
@@ -218,7 +217,7 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
    {: tip}
 
-1. From within the *get-started-swift* directory, push your app to {{site.data.keyword.cloud_notm}}
+1. From within the `get-started-swift` directory, push your app to {{site.data.keyword.cloud_notm}}
 
    ```
    ibmcloud cf push
@@ -259,7 +258,7 @@ Environment variables enable you to separate deployment settings from your sourc
 ## Step 6: Use the database
 {: #use_database-swift}
 
-We're now going to update your local code to point to this database. Create a JSON file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
+We're now going to update your local code to point to this database. Create a `JSON` file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
 
 Create a file called `my-cloudant-credentials.json` in the `config` directory with the following content (as reference, see `config/my-cloudant-credentials.json.example`):
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: cloud foundry
 
@@ -150,14 +150,14 @@ cd get-started-php
    ```
    {: pre}
 
-1. View your app at the following URL: http://localhost:8000
+1. View your app at the following URL: `http://localhost:8000`
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-php}
 
-To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-php` directory.
+To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `manifest.yml` file. The `manifest.yml` file includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample `manifest.yml` file in the `get-started-php` directory.
 
-Open the manifest.yml file, and change the `name` from `GetStartedPHP` to your app name, `app_name`.
+Open the `manifest.yml` file, and change the `name` from `GetStartedPHP` to your app name, `app_name`.
 {: download}
 
 ```
@@ -183,12 +183,12 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
    ```
    {: pre}
 
-  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
+   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
   
-  ```
-  ibmcloud login --sso
-  ```
-  {: pre}
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
 
 1. Target a Cloud Foundry org and space:
 
@@ -241,7 +241,7 @@ Environment variables enable you to separate deployment settings from your sourc
 ## Step 6: Use the database
 {: #use_database-php}
 
-We're now going to update your local code to point to this database. We'll create an .env file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
+We're now going to update your local code to point to this database. We'll create an `.env` file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the VCAP_SERVICES environment variable.
 
 1. Create a file called `.env` in the `get-started-php` directory with the following content:
 
@@ -270,7 +270,7 @@ We're now going to update your local code to point to this database. We'll creat
    ```
    {: pre}
 
-View your app at: http://localhost:8000. Any names you enter into the app will now get added to the database.
+View your app at: `http://localhost:8000`. Any names you enter into the app will now get added to the database.
 
 Your local app and  the {{site.data.keyword.cloud_notm}} app are sharing the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
 

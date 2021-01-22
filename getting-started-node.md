@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-22"
 
 keywords: cloud foundry
 
@@ -134,6 +134,7 @@ git clone https://github.com/IBM-Cloud/get-started-node
 Use the NPM package manager to install dependencies and run your app.
 
 1. On the command line, change the directory to where the sample app is located.
+  
    ```
    cd get-started-node
    ```
@@ -153,7 +154,7 @@ Use the NPM package manager to install dependencies and run your app.
    ```
    {: pre}
 
-1. View your app at the following URL: http://localhost:3000
+1. View your app at the following URL: `http://localhost:3000`
 
 Use [`nodemon`](https://nodemon.io/){: external} for automatic restarting of app on file changes.
 {: tip}
@@ -161,10 +162,9 @@ Use [`nodemon`](https://nodemon.io/){: external} for automatic restarting of app
 ## Step 3: Prepare the app for deployment
 {: #prepare-node}
 
-To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a manifest.yml file. The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample manifest.yml file in the `get-started-node` directory.
+To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `manifest.yml` file. The `manifest.yml` file includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. We've provided a sample `manifest.yml` file in the `get-started-node` directory.
 
-Open the manifest.yml file, and change the `name` from `GetStartedNode` to your app name, `app_name`.
-{: download}
+Open the `manifest.yml` file, and change the `name` from `GetStartedNode` to your app name, `app_name`.
 
 ```
 apps:
@@ -174,7 +174,7 @@ apps:
 ```
 {: codeblock}
 
-In this manifest.yml file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
+In this `manifest.yml` file, `random-route: true` generates a random route for your app to prevent your route from colliding with others.  If you choose to, you can replace `random-route: true` with `host: <myChosenHostName>`, supplying a host name of your choice.
 {: tip}
 
 ## Step 4: Deploy the app
@@ -189,24 +189,23 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps to {{site.da
    ```
    {: pre}
 
-  If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
+   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
   
-  ```
-  ibmcloud login --sso
-  ```
-  {: pre}
-
-1. Target a Cloud Foundry org and space:
+   ```
+   ibmcloud login --sso
+   ```
+   
+   Target a Cloud Foundry org and space:
 
    ```	  
    ibmcloud target --cf
    ```
-  {: pre}
+   {: pre}
 
-  If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-  {: tip}
+   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+   {: tip}
 
-1. From within the *get-started-node* directory, push your app to {{site.data.keyword.cloud_notm}}.
+1. From within the `get-started-node` directory, push your app to {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud cf push
@@ -231,9 +230,13 @@ You can troubleshoot errors in the deployment process by using the `ibmcloud cf 
 Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to this app and set up the app so that it can run locally and on {{site.data.keyword.cloud_notm}}.
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
+
 1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
+
 1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
+
 1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+
 1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
@@ -247,6 +250,7 @@ Environment variables enable you to separate deployment settings from your sourc
 We're now going to update your local code to point to this database. We'll create a JSON file that will store the credentials for the services the app will use. This file will get used ONLY when the app is running locally. When running in {{site.data.keyword.cloud_notm}}, the credentials will be read from the `VCAP_SERVICES` environment variable.
 
 1. In the `get-started-node` directory, create a file called `vcap-local.json` with the following content:
+
    ```
    {
      "services": {
@@ -274,7 +278,7 @@ We're now going to update your local code to point to this database. We'll creat
    ```
    {: pre}
 
-  View your local app at http://localhost:3000. Any names you enter into the app will now get added to the database.
+   View your local app at `http://localhost:3000`. Any names you enter into the app will now get added to the database.
 
 **Avoid trouble**: {{site.data.keyword.cloud_notm}} defines the PORT environment variable when your app runs on the cloud. When you run your app locally, the PORT variable is not defined, so 3000 is used as the port number. See [Run your app locally](/docs/cloud-foundry-public?topic=cloud-foundry-public-hints) for more information.
 
