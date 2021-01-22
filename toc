@@ -115,8 +115,8 @@ Cloud Foundry Public
     {: .topicgroup}
     Networking
         network-address.md
-        [Hybrid Connectivity using Secure Gateway](/SecureGateway/SecureGateway?topic=SecureGateway-iptables-rules#iptables-dynamic-ips)
-        [Secure web application across multiple regions](/solution-tutorials/solution-tutorials?topic=solution-tutorials-multi-region-webapp)
+        [Hybrid Connectivity using Secure Gateway](/SecureGateway/SecureGateway-iptables-rules#iptables-dynamic-ips)
+        [Secure web application across multiple regions](/solution-tutorials/solution-tutorials-multi-region-webapp)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
