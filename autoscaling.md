@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-02-19"
 
 keywords: cloud foundry
 
@@ -107,20 +107,20 @@ This capability is based on the [App AutoScaler](https://github.com/cloudfoundry
 
 ## Managing autoscaling from the console
 
-Autoscaling can be defined for apps that are deployed on {{site.data.keyword.ibmcf_notm}}. If you don't have an {{site.data.keyword.ibmcf_notm}} app running on {{site.data.keyword.cloud}}, [deploy a Cloud Foundry app](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) to {{site.data.keyword.cloud}} before configuring autoscaling.  
+Autoscaling can be defined for apps that are deployed on {{site.data.keyword.ibmcf_notm}}. If you don't have an {{site.data.keyword.ibmcf_notm}} app running on {{site.data.keyword.cloud}}, [deploy a Cloud Foundry app](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps) to {{site.data.keyword.cloud}} before you configure autoscaling.  
 
-1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **Menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
+1. From the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, click the **menu** icon ![Menu icon](../icons/icon_hamburger.svg), and select **Resource List**.
 2. On the **Resource List** page, click **Cloud Foundry apps**.
 3. Click the app to view its **Overview** page.
 4. Click **Autoscaling**.
-5. In the **Policy** tab configure your scaling policy for the app.
+5. In the **Policy** tab, configure your scaling policy for the app.
 
 ### Creating autoscaling policies
 {: #console_autoscaling_policies}
 
 Autoscaling determines when and how your app's capacity is changed according to the autoscaling policy that you define.  You can create the autoscaling policies directly by using the console or by importing them from a JSON file.  
 
-#### Defining autoscaling policies using the console
+#### Defining autoscaling policies by using the console
 
 1. Click  **Create Auto-Scaling policy**.
 2. Set the **Default Instance Limits** of your app with a **Minimum Instance Count** and **Maximum Instance Count**.  These values restrict the scope of your app's resources.
@@ -128,15 +128,15 @@ Autoscaling determines when and how your app's capacity is changed according to 
 
    The following metric types are supported:
    * `Memoryused` is the amount of memory that is used by your app. `Memoryused` is specified in MB.
-   * `Memoryutil` specifies the memory that is used by the app as a percentage of the total memory quota allocated to the app.  For example, if the app is using 100MB, and the memory quota is 200MB, the memory utilization is 50%.   
+   * `Memoryutil` specifies the memory that is used by the app as a percentage of the total memory quota that is allocated to the app.  For example, if the app is using 100 MB, and the memory quota is 200 MB, the memory utilization is 50%.   
    * `Cpu`, is the CPU percentage that is used by the app. `Cpu` is specified in percentage.  The CPU utilization can be affected by the total workload of the hosting hardware and other factors.
    * `Responsetime` is the average amount of time that the app takes to respond to a request.  `Responsetime` is specified in `ms` (milliseconds).
-   * `Throughput` is the total number of the requests that are processed in a given time period. `Throughput` is specified in `rps` (requests per second).
-   * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. When emitting the corresponding metric to the App Autoscaler, autoscaling is triggered. For more information, see the [custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics){: external}.
+   * `Throughput` is the total number of the requests that are processed in a time period. `Throughput` is specified in `rps` (requests per second).
+   * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. Autoscaling is triggered when the corresponding metric is emitted to the App Autoscaler. For more information, see the [custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics){: external}.
 
    In addition to specifying the metric type, specify an operator, threshold, breach duration, adjustment, and cooldown period values. 
 
-   When the threshold is continuously breached during the breach duration period, and the cooldown period has not elapsed, the App AutoScaler triggers the defined scaling action adjusting the number or percentage of app instances. 
+   When the threshold is continuously breached during the breach duration period, and beyond the cooldown period, the App AutoScaler triggers the defined autoscaling action.  The number or percentage of app instances is adjusted. 
 
    * The operator can be `>=`, `>`, `<=`, or `<`.
    * The threshold must be a numeric value.  
@@ -146,7 +146,7 @@ Autoscaling determines when and how your app's capacity is changed according to 
 
 4. (Optional) Define **Schedules** to scale your app during a set time period.
 
-   You can define specific time periods when you know your app will require different numbers of instances to handle peak loads. The schedule policy overwrites the default instance limits and sets the number of instances to the **Initial Minimum Instance Count** value for the scheduled period. 
+   You can define specific time periods when you know that your app requires different numbers of instances to handle peak loads. The schedule policy overwrites the default instance limits and sets the number of instances to the **Initial Minimum Instance Count** value for the scheduled period. 
 
    To define a schedule, complete the following steps. You can define multiple schedules.
 
@@ -179,7 +179,7 @@ Use the **Scaling history** tab to view the autoscaling events for the past 30 d
 
 ## Managing autoscaling from the CLI
 
-You can also use the App Autoscaler command line interface (also known as the AutoScaler CLI) to manage policies, query metrics, and view scaling history.
+You can also use the App Autoscaler command-line interface (also known as the AutoScaler CLI) to manage policies, query metrics, and view the scaling history.
 
 ### Installing or updating the AutoScaler CLI
 Use the following command to install the `AutoScaler CLI`, which is a plug-in to the {{site.data.keyword.ibmcf_notm}} CLI.  
@@ -189,15 +189,15 @@ ibmcloud cf install-plugin -r CF-Community app-autoscaler-plugin
 ```
 {: pre}
 
-If you already have the `AutoScaler CLI` plug-in installed, you can use the same command to update the plug-in to the latest version.
+If the `AutoScaler CLI` plug-in is already installed, you can use the same command to update the plug-in to the latest version.
 
 ### Using the AutoScaler CLI
 
-If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment on {{site.data.keyword.cloud}} and have apps running in your space as described in the [deploying apps guide](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps), use the following steps to create a scaling policy for your app, access query metrics, and to view the autoscaling history.
+If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment on {{site.data.keyword.cloud}} and have running apps in your space as described in the [deploying apps guide](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps), do the following to create a scaling policy for your app, access query metrics, and view the autoscaling history.
 
 #### Creating autoscaling policies
 
-1. (Optional) Confirm the App Autoscaler API endpoint is set correctly.  
+1. (Optional) Confirm that the App Autoscaler API endpoint is set correctly.  
 
     If the {{site.data.keyword.ibmcf_notm}} API endpoint is `api.<DOMAIN>`, the App Autoscaler API endpoint must be `autoscaler.<DOMAIN>`.  
 
@@ -208,7 +208,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
     ```
     {: pre}
 
-    If the App Autoscaler API endpoint is incorrect, set it with the following command:
+    If the App Autoscaler API endpoint is incorrect, set it with the following command.
 
     ```
     ibmcloud cf asa autoscaler.<DOMAIN>
@@ -245,7 +245,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
     ```
     {: codeblock}
 
-    This example policy triggers autoscaling based on memory utilization when the defined threshold is breached for at least 120 seconds.  See the [App AutoScaler User Guide](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external} for information about how to create your own autoscaling policy.
+    This example policy triggers autoscaling based on memory utilization when the defined threshold is breached for at least 120 seconds.  See the [App AutoScaler User Guide](https://github.com/cloudfoundry/app-autoscaler/blob/master/docs/Readme.md){: external} for more information about how to create your own autoscaling policy.
 
 3. Attach the policy to your app by running the following command:
 
