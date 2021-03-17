@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-03-08"
 
 keywords: cloud foundry
 
@@ -98,6 +98,13 @@ subcollection: cloud-foundry-public
 {: #nodejs-latest_updates}
 
 A list of the latest updates in the `sdk-for-nodejs` buildpack.
+
+## March 5, 2021: Updated Node.js buildpack v4.6-20210305-2036
+The SDK for Node.js buildpack v4.6 is based on community buildpack v1.7.44 and includes the following Node.js runtimes: v10.23.3, v10.24.0, v12.20.2, v12.21.0, v14.15.5, v14.16.0. The default runtime is the latest v10.x (currently 10.23.3). This buildpack is based on the community node.js buildpack [v1.7.44](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.7.44).
+
+This release also includes fixes for CVE-2021-23839, CVE-2021-23840, CVE-2021-23841, CVE-2020-1971, CVE-2020-8265, CVE-2020-8287: 
+* [January 2021 Security Releases](https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/)
+* [February 2021 Security Releases](https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/)
 
 ## December 2, 2020: Updated Node.js buildpack v4.5-20201130-1530
 
