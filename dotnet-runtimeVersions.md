@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-03-29"
 
 keywords: cloud foundry
 
@@ -107,33 +107,36 @@ This buildpack supports the following versions, those marked as deprecated will 
 
 | .NET SDK version        | Default          |
 |-------------------------|------------------|
-| 5.0.100                 |   No             |
-| 3.1.404                 |   Yes            |
-| 3.1.403                 |   No             |
-| 2.1.811                 |   No             |
-| 2.1.810                 |   No             |
+| 5.0.201                 |   Yes            |
+| 5.0.200                 |   No             |
+| 3.1.407                 |   No             |
+| 3.1.406                 |   No             |
+| 2.1.814                 |   No             |
+| 2.1.813                 |   No             |
 
 
 ### .NET Core runtime versions
 
 | .NET Core runtime version | Release type      |
 |---------------------------|-------------------|
-| 5.0.0                     | Current           |
-| 3.1.10                    | Normal            |
-| 3.1.9                     | Normal            |
-| 2.1.23                    | Normal            |
-| 2.1.22.                   | Normal            |
+| 5.0.4                     | Current           |
+| 5.0.3                     | Normal            |
+| 3.1.13                    | Normal            |
+| 3.1.12                    | Normal            |
+| 2.1.26                    | Normal            |
+| 2.1.25                    | Normal            |
 
 
 ### .NET ASP.NET Core versions
 
 | .NET ASP.NET Core version | Release type      |
 |---------------------------|-------------------|
-| 5.0.0                     | Current           |
-| 3.1.10                    | Normal            |
-| 3.1.9                     | Normal            |
-| 2.1.23                    | Normal            |
-| 2.1.22                    | Normal            |
+| 5.0.4                     | Current           |
+| 5.0.3                     | Normal            |
+| 3.1.13                    | Normal            |
+| 3.1.12                    | Normal            |
+| 2.1.26                    | Normal            |
+| 2.1.25                    | Normal            |
 
 
 ## Specifying the .NET SDK version
@@ -142,7 +145,7 @@ Control the .NET SDK version with an optional `global.json` file in the app's ro
 ```
    {
       "sdk": {
-        "version": "3.1.404"
+        "version": "5.0.201"
       }
    }
 ```
