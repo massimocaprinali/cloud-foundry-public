@@ -96,8 +96,8 @@ subcollection: cloud-foundry-public
 
 
 
-# Special Note
-Please note the [Swift buildpack deprecation](http://ibm.biz/cf-buildpack-swift-deprecation) details{: external}.
+# Deprecated
+Please note the [Swift buildpack is deprecated](http://ibm.biz/cf-buildpack-swift-deprecation) details{: external}.
 
 
 
