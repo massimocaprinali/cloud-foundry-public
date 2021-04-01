@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-04-01"
 
 keywords: cloud foundry
 
@@ -76,8 +76,6 @@ subcollection: cloud-foundry-public
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -106,7 +104,9 @@ subcollection: cloud-foundry-public
 
 ## Before you begin
 
-Review the [{{site.data.keyword.ibmcf_full}} terms and conditions](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8884-01){: external}.
+* Review the [{{site.data.keyword.ibmcf_full}} terms and conditions](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8884-01){: external}.
+* Review the [Swift buildpack deprecation statement](http://ibm.biz/cf-buildpack-swift-deprecation){: external}.
+* Review the [Node.js buildpack change](http://ibm.biz/cf-buildpack-node-change){: external}.
 
 ## Developing your app
 {: #develop}
