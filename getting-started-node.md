@@ -111,9 +111,8 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 ## Before you begin
 {: #prereqs-node}
 
-
-## Special Note
-Please note the [Node.js buildpack change](http://ibm.biz/cf-buildpack-node-change) details regarding buildpack types and build order{: external}.
+Note the [Node.js buildpack change](http://ibm.biz/cf-buildpack-node-change) details regarding buildpack types and build order{: external}.
+{: important}
 
 
 You'll need the following accounts and tools:
