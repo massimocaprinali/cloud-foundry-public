@@ -105,7 +105,7 @@ subcollection: cloud-foundry-public
 ## Before you begin
 
 * Review the [{{site.data.keyword.ibmcf_full}} terms and conditions](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8884-01){: external}.
-* Review the [Swift buildpack deprecation](http://ibm.biz/cf-buildpack-swift-deprecation){: external}.
+* Review the [Swift buildpack deprecation statement](http://ibm.biz/cf-buildpack-swift-deprecation){: external}.
 * Review the [Node.js buildpack change](http://ibm.biz/cf-buildpack-node-change){: external}.
 
 ## Developing your app
