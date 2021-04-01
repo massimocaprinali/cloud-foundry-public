@@ -96,14 +96,12 @@ subcollection: cloud-foundry-public
 
 
 
-# Deprecated
-Please note the [Swift buildpack is deprecated](http://ibm.biz/cf-buildpack-swift-deprecation) details{: external}.
-
-
 
 # Getting started with Swift
 {: #getting-started-swift}
 
+Note the [Swift buildpack is deprecated](http://ibm.biz/cf-buildpack-swift-deprecation){: external}.
+{: important}
 
 Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-swift){: external} and explore on your own.
 {: hide-in-docs}
