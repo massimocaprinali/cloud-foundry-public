@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-04-01"
 
 keywords: cloud foundry
 
@@ -110,6 +110,11 @@ Throughout these docs, references to the Cloud Foundry CLI are now updated to th
 
 ## Before you begin
 {: #prereqs-node}
+
+
+## Special Note
+Please note the [Node.js buildpack change](http://ibm.biz/cf-buildpack-node-change) details regarding buildpack types and build order{: external}.
+
 
 You'll need the following accounts and tools:
 
