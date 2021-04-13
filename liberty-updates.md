@@ -101,7 +101,7 @@ subcollection: cloud-foundry-public
 
 ### April 9, 2021: Updated Liberty buildpack v3.56-20210409-1236
 * The alternate Liberty runtime GA version is changed to the `21.0.0.4` release.
-* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6348216) security vulnerability.
+* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
   * To specify the monthly runtime set the following two variables: 
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
