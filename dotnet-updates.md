@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-05-13"
 
 keywords: cloud foundry
 
@@ -10,6 +10,10 @@ subcollection: cloud-foundry-public
 
 
 ---
+
+The IBM Supported dotnet-core buildpack has been deprecated. The latest updates on the dotnet-core buildpack can be found here: https://github.com/cloudfoundry/dotnet-core-buildpack/releases.{: external}.
+{: important}
+
 
 
 {:DomainName: data-hd-keyref="APPDomain"}
