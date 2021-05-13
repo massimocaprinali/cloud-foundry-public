@@ -77,18 +77,7 @@ Cloud Foundry Public
             nodejs-configurationOptions.md
             nodejs-availableVersions.md
 
-        {: .topicgroup}
-        ASP.NET
-            getting-started-dotnet.md
-            dotnet-index.md
-            dotnet-disablingNuGet.md
-            dotnet-usingNuGet.md
-            dotnet-compile_pub_deploy.md
-            dotnet-enforceHTTPS.md
-            dotnet-buildOutputfiles.md
-            dotnet-usingCustomLib.md
-            dotnet-runtimeVersions.md
-
+        getting-started-dotnet.md
         getting-started-swift.md
         getting-started-go.md
         getting-started-php.md

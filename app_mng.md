@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-16"
+  years: 2015, 2021
+lastupdated: "2021-05-13"
 
 keywords: cloud foundry
 
@@ -13,33 +13,89 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
-# Managing Liberty and Node.js apps
+# Managing Liberty apps
 {: #app_management}
 
 App Management is a set of development and debugging utilities that can be enabled for your Liberty apps on {{site.data.keyword.cloud}}.
@@ -193,7 +249,7 @@ The `noproxy` utility only applies to apps that run in a Diego cell.
 #### hc
 {: #hc}
 
-The (`hc`) Health Center agent enables your app to be monitored by the Health Center client.  For Node.js, the `hc` agent is only available with the Node.js runtime versions included with the {{site.data.keyword.IBM_notm}} SDK for Node.js buildpack.  See [Latest updates to the sdk-for-nodejs buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for the current set of runtimes.
+The (`hc`) Health Center agent enables your app to be monitored by the Health Center client.
 
 When you have the Health Center agent enabled, you can analyze the performance of your Liberty apps by using the {{site.data.keyword.IBM_notm}} Monitoring and Diagnostic Tools. For more information see [How to analyze the performance of Liberty Java in {{site.data.keyword.cloud_notm}}](https://www.ibm.com/blogs/cloud-archive/2015/07/how-to-analyze-performance-in-bluemix/){: external}.
 
@@ -210,34 +266,5 @@ ibmcloud cf ssh -N -T -L 1883:127.0.0.1:1883 <appName>
 {: pre}
 
 To connect with the Health Center client, use a [MQTT connection](http://www.ibm.com/support/knowledgecenter/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/connectingtojvm.html){: external} and specify the host as `127.0.0.1` and port as `1883`.
-
-##### For Node.js versions after 6.3.0
-
-When you start the debugging mode, `proxy` is automatically enabled, even if you use a version of Node.js that does not include `proxy`. Versions of Node.js after 6.3.0 do not include `proxy`. If you use the `inspector` utility with versions of Node.js after 6.3.0, you can turn off `proxy` again by using `noproxy`.
-
-Instead of using `proxy` to access the `inspector` interface, you use the Developer Tools capability of the Google Chrome web browser.  
-
-Enable access to the URL with local port forwarding with the following command:
-```
-ibmcloud cf ssh -N -T -L 9229:127.0.0.1:9229 <appName>
-```
-{: pre}
-
-Get the startup log for the app by using the following command.
-```
-ibmcloud cf logs <appName> --recent
-```
-{: pre}
-
-If the `inspector` utility is active, the log contains messages similar to the following:
-
-```
-... You will need an SSH tunnel for port 9229 to be able to use the Chrome DevTools to remotely debug your app
-... Starting app with 'node --inspect=9229  app.js '
-```
-{: screen}
-
-Use an up-to-date version of the Google Chrome web browser to browse to `chrome://inspect`.
-From this URL, you see your app listed along with a link to your app files, such as `file://home/vcap/app/app.js`, then select **inspect** to access the inspect interface.
 
 

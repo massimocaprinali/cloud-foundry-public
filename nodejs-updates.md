@@ -2,16 +2,16 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-05-13"
 
 keywords: cloud foundry
 
 subcollection: cloud-foundry-public
 
-
-
 ---
 
+The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: https://github.com/cloudfoundry/nodejs-buildpack/releases. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
+{: important}
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
