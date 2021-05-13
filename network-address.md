@@ -8,10 +8,7 @@ keywords: cloud foundry
 
 subcollection: cloud-foundry-public
 
-
-
 ---
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -103,7 +100,7 @@ When you deploy Cloud Foundry apps, there are a known list of possible network a
 Network addresses are subject to change from time to time. 
 {: important}
 
-
+<!--- Everything below this line is refreshed periodically --->
 In the Dallas (us-south) region, the following network addresses are in use:
 ```
 169.46.101.192/27
@@ -184,11 +181,9 @@ In the Sydney (au-syd) region, the following network addresses are in use:
 168.1.40.96/27
 168.1.44.160/27
 168.1.44.64/27
-168.1.44.96/27
 168.1.45.0/27
 168.1.45.64/27
 168.1.45.96/27
 168.1.8.32/27
 ```
-
 
