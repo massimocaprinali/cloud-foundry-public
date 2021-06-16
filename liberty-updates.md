@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-06-11"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -80,6 +80,7 @@ subcollection: cloud-foundry-public
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -98,6 +99,31 @@ subcollection: cloud-foundry-public
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### June 11, 2021: Updated Liberty buildpack v3.58-20210602-1655
+* The default and alternate Liberty runtime GA version is changed to the `21.0.0.6` release.
+* The IBM JRE Version is updated to 8 SR6 FP31. 
+* The IBM JRE 8 SR6 FP31 includes the following security fix: 
+  * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017) - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
+  * To specify the monthly runtime set the following two variables: 
+    ```
+    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+    ```
+* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) remains unchanged.
+
+### May 19, 2021: Updated Liberty buildpack v3.57-20210512-1446
+* The alternate Liberty runtime GA version is changed to the [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) release.
+* The default Liberty runtime GA version remains the same [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html) release.
+* * The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
+  * To specify the monthly runtime set the following two variables: 
+    ```
+    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+    ```
+  * For more information see [Use the monthly runtime](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP26) remains unchanged.d
+
 
 ### April 9, 2021: Updated Liberty buildpack v3.56-20210412-1223
 * The alternate Liberty runtime GA version is changed to the `21.0.0.4` release.
