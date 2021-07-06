@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-05"
+lastupdated: "2021-07-06"
 
 keywords: cloud foundry
 
