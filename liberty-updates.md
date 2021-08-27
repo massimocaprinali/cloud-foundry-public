@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-27"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -22,6 +22,7 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -55,11 +56,9 @@ subcollection: cloud-foundry-public
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -67,6 +66,7 @@ subcollection: cloud-foundry-public
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -113,6 +113,16 @@ subcollection: cloud-foundry-public
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### September 3, 2021: Updated Liberty buildpack v3.61-20210826-1015
+* The alternate and default Liberty runtime GA version is changed to the `21.0.0.9` release.
+    * To specify the monthly runtime set the following two variables: 
+      ```
+      ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+      ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+      ```
+* The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html).  
+* The AdoptOpenJDK Open J9 alternate JRE is updated to 11.0.12_7_openj9-0.27.0
 
 ### August 6, 2021: Updated Liberty buildpack v3.60-20210730-0620
 * The alternate Liberty runtime GA version is changed to the `21.0.0.8` release.
