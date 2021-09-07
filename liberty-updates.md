@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,8 +85,10 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +96,7 @@ subcollection: cloud-foundry-public
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -100,62 +114,100 @@ subcollection: cloud-foundry-public
 
 ## A list of the latest updates in the Liberty buildpack.
 
+### September 3, 2021: Updated Liberty buildpack v3.61-20210826-1015
+* The alternate and default Liberty runtime GA version is changed to the `21.0.0.9` release.
+    * To specify the monthly runtime set the following two variables: 
+    
+      ```
+      ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+      ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+      ```
+      {: codeblock} 
+
+* The new release includes MicroProfile 4.1 package. 
+* The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
+* The AdoptOpenJDK Open J9 alternate JRE is updated to 11.0.12_7_openj9-0.27.0.
+
+### August 6, 2021: Updated Liberty buildpack v3.60-20210730-0620
+* The alternate Liberty runtime GA version is changed to the `21.0.0.8` release.
+* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external}. 
+    * To specify the monthly runtime set the following two variables: 
+  
+         ```
+         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+         ```
+         {: codeblock}
+      
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP31`) remains unchanged.
+
 ### July 8, 2021: Updated Liberty buildpack v3.59-20210701-1053
 * The alternate Liberty runtime GA version is changed to the `21.0.0.7` release.
-* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html) release.
-  * To specify the monthly runtime set the following two variables: 
-    ```
-    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-    ```
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP31) remains unchanged.
+* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external} release.
+    * To specify the monthly runtime set the following two variables: 
+  
+        ```
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock}
+    
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP31`) remains unchanged.
 
 ### June 11, 2021: Updated Liberty buildpack v3.58-20210602-1655
 * The default and alternate Liberty runtime GA version is changed to the `21.0.0.6` release.
 * The IBM JRE Version is updated to 8 SR6 FP31. 
 * The IBM JRE 8 SR6 FP31 includes the following security fix: 
-  * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017) - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
-  * To specify the monthly runtime set the following two variables: 
-    ```
-    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-    ```
+    * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017){: external} - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock}
+    
 * The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) remains unchanged.
 
 ### May 19, 2021: Updated Liberty buildpack v3.57-20210512-1446
-* The alternate Liberty runtime GA version is changed to the [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) release.
-* The default Liberty runtime GA version remains the same [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html) release.
-* * The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
-  * To specify the monthly runtime set the following two variables: 
-    ```
-    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-    ```
-  * For more information see [Use the monthly runtime](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP26) remains unchanged.d
-
+* The alternate Liberty runtime GA version is changed to the [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html){: external} release.
+* The default Liberty runtime GA version remains the same [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html){: external} release.
+* The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock}
+    
+    * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged.d
 
 ### April 9, 2021: Updated Liberty buildpack v3.56-20210412-1223
 * The alternate Liberty runtime GA version is changed to the `21.0.0.4` release.
-* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
-  * To specify the monthly runtime set the following two variables: 
-    ```
-    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-    ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-    ```
-  * For more information see [Use the monthly runtime](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
+    * To specify the monthly runtime set the following two variables: 
+ 
+         ```
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock}
+    
+    * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
 
-* The default Liberty runtime GA version is the [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html) release.
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.10_9_openj9-0.24.0) and IBM JRE Version (8 SR6 FP26) remains unchanged. 
+* The default Liberty runtime GA version is the [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html){: external} release.
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.10_9_openj9-0.24.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged. 
 
 ### March 15, 2021: Updated Liberty buildpack v3.55-20210311-1642
 * The default and alternate Liberty runtime GA version is changed to the `21.0.0.3` release.
 * The IBM JRE Version is updated to 8 SR6 FP26.
 * The IBM JRE 8 SR6 FP26 includes the following security fixes:
-  * [CVE-2020-14782](https://www.ibm.com/support/pages/node/6370061)- A vulnerability in Java SE related to Libraries Component
-  * [CVE-2020-14781](https://www.ibm.com/support/pages/node/6370061)- A vulnerability in Java SE related to JNDI Component.
-  * [CVE-2020-27221](https://www.ibm.com/support/pages/node/6417051)- Eclipse OpenJ9 vulnerability to a stack-based buffer overflow.
-  * [CVE-2020-2773](https://www.ibm.com/support/pages/node/6414729)- A vulnerability in Java SE related to the Java SE Security component.
+    * [CVE-2020-14782](https://www.ibm.com/support/pages/node/6370061){: external} - A vulnerability in Java SE related to Libraries Component
+    * [CVE-2020-14781](https://www.ibm.com/support/pages/node/6370061){: external} - A vulnerability in Java SE related to JNDI Component.
+    * [CVE-2020-27221](https://www.ibm.com/support/pages/node/6417051){: external} - Eclipse OpenJ9 vulnerability to a stack-based buffer overflow.
+    * [CVE-2020-2773](https://www.ibm.com/support/pages/node/6414729){: external} - A vulnerability in Java SE related to the Java SE Security component.
 
 ### February 12, 2021: Updated Liberty buildpack v3.54-20210211-1310
 * The alternate Liberty runtime GA version is changed to the `21.0.0.2` release.
@@ -190,7 +242,7 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
 * The alternate Liberty runtime GA version is the [20.0.0.10](https://openliberty.io/blog/2020/09/25/signed-certificate-with-acme-200010.html) release.
 * This buildpack contains a DB2 service fixing: 
-  * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new `VCAP` service format. 
+    * Liberty incompatibility issue with updated DB2 paid plans. It will allow users to create the paid plan of the service and bind the application with new `VCAP` service format. 
 
 ### October 2, 2020: Updated Liberty buildpack v3.49-20200918-0244
 * The default Liberty runtime GA version is the [20.0.0.9](https://openliberty.io/blog/2020/08/28/graphql-apis-open-liberty-20009.html) release.
@@ -203,9 +255,9 @@ subcollection: cloud-foundry-public
 * The alternate Liberty runtime GA version is changed to the `20.0.0.9` release.
 * The IBM JRE version is updated to 8 SR6 FP15.
 * The IBM JRE 8 SR6 FP15 includes fixes for the following three PSIRTs: 
-  * [CVE-2020-2590](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2590-may-affect-ibm-sdk-java-technology-edition/) was disclosed as part of the Oracle January 2020 Critical Patch Update.
-  * [CVE-2020-2601](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2601-may-affect-ibm-sdk-java-technology-edition/) was also  disclosed as part of the Oracle January 2020 Critical Patch Update.
-  * IBM SDK, Java Technology Edition [Quarterly CPU - Jul 2020](https://www.ibm.com/blogs/psirt/security-bulletin-ibm-sdk-java-technology-edition-quarterly-cpu-jul-2020-includes-oracle-jul-2020-cpu-plus-one-additional-vulnerability-affects-content-collecor-for-sap-applications/).
+    * [CVE-2020-2590](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2590-may-affect-ibm-sdk-java-technology-edition/) was disclosed as part of the Oracle January 2020 Critical Patch Update.
+    * [CVE-2020-2601](https://www.ibm.com/blogs/psirt/security-bulletin-cve-2020-2601-may-affect-ibm-sdk-java-technology-edition/) was also  disclosed as part of the Oracle January 2020 Critical Patch Update.
+    * IBM SDK, Java Technology Edition [Quarterly CPU - Jul 2020](https://www.ibm.com/blogs/psirt/security-bulletin-ibm-sdk-java-technology-edition-quarterly-cpu-jul-2020-includes-oracle-jul-2020-cpu-plus-one-additional-vulnerability-affects-content-collecor-for-sap-applications/).
 
 
 ### July 29, 2020: Updated Liberty buildpack v3.47-20200723-1022
@@ -567,14 +619,14 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack contains an updated version of the Liberty profile based on the [October beta](https://developer.ibm.com/wasdev/blog/2015/09/25/beta-was-liberty-beta-with-tools-october-2015/){: external}. With this update, the `bells-1.0`, `rtcomm-1.0`, `rtcommGateway-1.0`, `samlWeb-2.0`, `sipServlet-1.1` Liberty features, previously available as beta features, are now available as production-ready features.
 * The buildpack also contains an updated {{site.data.keyword.IBM_notm}} JRE 8 SR1 FP11.
 * The buildpack also provides a number of performance improvements and optimizations:
-  * The [CDI 1.2](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.
-  * To reduce the droplet size, the [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) `devconsole` and `shell`, require a restage operation instead of a restart.
-  * The {{site.data.keyword.IBM_notm}} JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.cloud_notm}} environment.
+    * The [CDI 1.2](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.
+    * To reduce the droplet size, the [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) `devconsole` and `shell`, require a restage operation instead of a restart.
+    * The {{site.data.keyword.IBM_notm}} JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.cloud_notm}} environment.
 
 ### September 18, 2015: Updated Liberty buildpack v2.0-20150914-1535
 * The buildpack introduces two major changes:
-  * The default configuration for WAR and EAR files enables Java EE 7 Web Profile features instead of Java EE 6 Web Profile features.
-  * The default Java version is version 8 instead of version 7.
+    * The default configuration for WAR and EAR files enables Java EE 7 Web Profile features instead of Java EE 6 Web Profile features.
+    * The default Java version is version 8 instead of version 7.
 * Refer to the [Upcoming Liberty for Java buildpack changes](https://www.ibm.com/blogs/cloud-archive/2015/09/upcoming-liberty-for-java-buildpack-changes/){: external} blog post for details about these changes and how they may affect your app.
 * The buildpack also introduces app_state configuration option to disable the `appstate` feature via the `JBP_CONFIG_LIBERTY` environment variable. The `appstate` feature integrates with the Cloud Foundry health check process to ensure the Liberty app is fully initialized before the app can receive HTTP requests. To disable the `appstate` feature, you can set the `JBP_CONFIG_LIBERTY` environment variable to `app_state: false`.
 
@@ -645,15 +697,15 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 * The buildpack provides a development mode for apps. The development mode is a special mode that allows developers to conduct many activities for an app instance that were not possible before. By using this feature, this version of the {{site.data.keyword.eclipsetoolsfull}} can now support remote debugging with incremental file updates against a Liberty app that is running in {{site.data.keyword.cloud_notm}}. This makes it convenient for a developer that uses Eclipse to debug an app in the cloud and apply changes to that app instantly.
 * The buildpack also contains an updated version of the Liberty profile based on the [December beta](https://developer.ibm.com/wasdev/blog/2014/12/10/announcing-liberty-beta-december/){: external}.
 * In addition, the following four Liberty features that were previously available as beta features, are now production-ready:
-  * `concurrent-1.0`
-  * `jsonp-1.0`
-  * `servlet-3.1`
-  * `websocket-1.0`
+    * `concurrent-1.0`
+    * `jsonp-1.0`
+    * `servlet-3.1`
+    * `websocket-1.0`
 * The buildpack provides integration with the New Relic service. Once an app is bound to the New Relic service, the buildpack automatically downloads and configures the runtime with the New Relic agent.
 * The buildpack has the following known limitations:
-  * When in development mode, a `SessionCache` service cannot be bound.
-  * When in development mode, a thread dump cannot be created.
-  * When using the `servlet-3.1` or `websocket-v1.0` feature, the Monitoring & Analytics service cannot be bound.
+    * When in development mode, a `SessionCache` service cannot be bound.
+    * When in development mode, a thread dump cannot be created.
+    * When using the `servlet-3.1` or `websocket-v1.0` feature, the Monitoring & Analytics service cannot be bound.
 
 ### December 5, 2014: Updated Liberty buildpack v1.9-20141202-0947
 * The buildpack provides an enhanced JVM option support. The JVM options can now be applied with a restart operation. Restaging of the app is not necessary. Also, the default JVM options are optimized for fast failure and pre-configured with a common location that makes it easy to find the generated dumps. More details are provided in the [Custom Configuration of Java JVM for the Liberty Runtime article](https://www.ibm.com/blogs/cloud-archive/2014/12/custom-configurations-java-jvm-liberty-runtime/){: external}.
@@ -690,9 +742,11 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
 
 ### July 29, 2014: Updated Liberty Buildpack v1.1-20140725-1341
 * The new version of Liberty’s {{site.data.keyword.cloud_notm}} Edition is here!
-  * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
-  * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through `VCAP_SERVICES` and providing the `ektorp` client `.jar` files are no longer necessary.
+    * With this version of Liberty, there are fixes in addition to new features that allow you to consume {{site.data.keyword.cloud_notm}} services more effectively!
+    * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through `VCAP_SERVICES` and providing the `ektorp` client `.jar` files are no longer necessary.
 * The new version of {{site.data.keyword.IBM_notm}} SDK for Java is here!
-  * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
+    * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
+
+
 
 

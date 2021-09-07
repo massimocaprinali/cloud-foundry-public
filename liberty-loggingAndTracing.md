@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,14 +85,18 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -104,18 +119,18 @@ The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are a
 
 * To access recent logs for an app, run the following command:
 
-  ```
-  ibmcloud cf logs --recent <appname>
-  ```
-  {: pre}
+    ```
+    ibmcloud cf logs --recent <appname>
+    ```
+    {: pre}
 
 
 * To see the `messages.log` file of an app, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -c "cat logs/messages.log"
-  ```
-  {: pre}
+    ```
+    ibmcloud cf ssh <appname> -c "cat logs/messages.log"
+    ```
+    {: pre}
 
 The log level and other trace options can be set through the Liberty configuration file. For more information, see [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html){: external}.
 
@@ -138,17 +153,17 @@ Follow these steps to change tracing configuration:
 
 1. SSH to your app
 
-  ```
-  ibmcloud cf ssh <appname> [-i instance_index]
-  ```
-  {: pre}
+    ```
+    ibmcloud cf ssh <appname> [-i instance_index]
+    ```
+    {: pre}
 
 2. Edit `<logging traceSpecification="xxxx"/>` in the `server.xml` file to set your trace specification;  for example, using *vi*:
 
-  ```
-  vi /app/wlp/usr/servers/defaultServer/server.xml
-  ```
-  {: pre}
+    ```
+    vi /app/wlp/usr/servers/defaultServer/server.xml
+    ```
+    {: pre}
 
 Note: The `server.xml` file change will be lost on a restage or restart and is only valid for the SSH instance.
 
@@ -158,10 +173,10 @@ See [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/know
 
 Use the command below to trigger a thread and heap dump via {{site.data.keyword.cloud_notm}} CLI using the SSH feature:
 
-  ```
-  ibmcloud cf ssh <appname> -c "pkill -3 java"
-  ```
-  {: pre}
+    ```
+    ibmcloud cf ssh <appname> -c "pkill -3 java"
+    ```
+    {: pre}
 
 See the documentation below for details on downloading the generated dump files.
 
@@ -172,18 +187,20 @@ By default, the various dump files are placed in the `dumps` directory of the ap
 
 * To see the generated dumps, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -c "ls -l dumps"
-  ```
-  {: pre}
+    ```
+    ibmcloud cf ssh <appname> -c "ls -l dumps"
+    ```
+    {: pre}
 
 * To download a dump file, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -i <instance_id> -c "cat dumps/<dump_file_name>" > <local_dump_file_name>
-  ```
-  {: pre}
+    ```
+    ibmcloud cf ssh <appname> -i <instance_id> -c "cat dumps/<dump_file_name>" > <local_dump_file_name>
+    ```
+    {: pre}
 
 It is also possible to use `scp` and other similar tools to view and download the dump files. Refer to [Accessing Apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html){: external} for more information.
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-08-31"
+  years: 2015, 2021
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -13,30 +13,101 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Install Liberty features
 {: #install-features}
@@ -51,35 +122,35 @@ For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](ht
 
 1. In the `.profile.d` directory, create a script file that runs the `installUtility` command as shown in the following example.
 
-   This example installs the `audit-1.0` feature.
+    This example installs the `audit-1.0` feature.
 
-   ```
-   #!/bin/sh
-   echo "Installing audit-1.0"
-   export PATH=$PATH:$HOME/app/.java/jre/bin
+    ```
+    #!/bin/sh
+    echo "Installing audit-1.0"
+    export PATH=$PATH:$HOME/app/.java/jre/bin
 
-   $HOME/app/.liberty/bin/installUtility install audit-1.0 --acceptLicense
-   ```
-   {: codeblock}
+    $HOME/app/.liberty/bin/installUtility install audit-1.0 --acceptLicense
+    ```
+    {: codeblock}
 
-   You can install multiple features by specifying additional features names separated by spaces.
-   {: tip}
+    You can install multiple features by specifying additional features names separated by spaces.
+    {: tip}
 
 1. Push your app to {{site.data.keyword.cloud_notm}}, using the `-p` option to specify the app's root directory.
 
-   For example, run the following command to push your app:
-   ```
-   ibmcloud cf push myApp -p /<path-to-app>
-   ```
-   {: codeblock}
+    For example, run the following command to push your app:
+    ```
+    ibmcloud cf push myApp -p /<path-to-app>
+    ```
+    {: codeblock}
 
 1. Verify that the feature installed successfully by viewing the app's recent log.
 
-   For example, run the following command to display the log:
-   ```
-   ibmcloud cf logs myApp --recent
-   ```
-   {: codeblock}
+    For example, run the following command to display the log:
+    ```
+    ibmcloud cf logs myApp --recent
+    ```
+    {: codeblock}
 
     If the feature was installed, the output shows the following messages:
 
@@ -92,5 +163,7 @@ For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](ht
     2018-09-18T13:01:25.87-0400 [APP/PROC/WEB/0] OUT The --acceptLicense argument was found. This indicates that you have
     2018-09-18T13:01:25.87-0400 [APP/PROC/WEB/0] OUT accepted the terms of the license agreement.
     ```
+
+
 
 

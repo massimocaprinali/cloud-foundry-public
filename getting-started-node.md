@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,14 +85,18 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -138,25 +153,25 @@ git clone https://github.com/IBM-Cloud/get-started-node
 Use the NPM package manager to install dependencies and run your app.
 
 1. On the command line, change the directory to where the sample app is located.
-  
-   ```
-   cd get-started-node
-   ```
-   {: pre}
+
+    ```
+    cd get-started-node
+    ```
+    {: pre}
 
 1. Install the dependencies listed in the [package.json](https://docs.npmjs.com/files/package.json){: external} file to run the app locally.  
-  
-   ```
-   npm install
-   ```
-   {: pre}
+
+    ```
+    npm install
+    ```
+    {: pre}
 
 1. Run the app.
- 
-   ```
-   npm start  
-   ```
-   {: pre}
+
+    ```
+    npm start  
+    ```
+    {: pre}
 
 1. View your app at the following URL: `http://localhost:3000`
 
@@ -188,33 +203,33 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps to {{site.da
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```
+    ibmcloud login
+    ```
+    {: pre}
 
-   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
-  
-   ```
-   ibmcloud login --sso
-   ```
-   
-   Target a Cloud Foundry org and space:
+    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
-   ```	  
-   ibmcloud target --cf
-   ```
-   {: pre}
+    ```
+    ibmcloud login --sso
+    ```
 
-   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-   {: tip}
+    Target a Cloud Foundry org and space:
+
+    ```      
+    ibmcloud target --cf
+    ```
+    {: pre}
+
+    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+    {: tip}
 
 1. From within the `get-started-node` directory, push your app to {{site.data.keyword.cloud_notm}}.
 
-   ```
-   ibmcloud cf push
-   ```
-   {: pre}
+    ```
+    ibmcloud cf push
+    ```
+    {: pre}
 
 Deploying your app can take a few minutes. When deployment completes, you'll see a message that your app is running. View your app at the URL listed in the output of the push command, or view both the app deployment status and the URL by running the following command:
 
@@ -243,7 +258,7 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
+    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -255,34 +270,34 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. In the `get-started-node` directory, create a file called `vcap-local.json` with the following content:
 
-   ```
-   {
-     "services": {
-       "cloudantNoSQLDB": [
-         {
-           "credentials": {
-             "url":"CLOUDANT_DATABASE_URL"
-           },
-           "label": "cloudantNoSQLDB"
-         }
-       ]
-     }
-   }
-   ```
-   {: codeblock}
+    ```
+    {
+        "services": {
+        "cloudantNoSQLDB": [
+            {
+            "credentials": {
+                "url":"CLOUDANT_DATABASE_URL"
+            },
+            "label": "cloudantNoSQLDB"
+            }
+        ]
+        }
+    }
+    ```
+    {: codeblock}
 
 2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `url` field of the `vcap-local.json` file, replacing `CLOUDANT_DATABASE_URL`.
 
 4. Run your app locally.
-  
-   ```
-   npm start  
-   ```
-   {: pre}
 
-   View your local app at `http://localhost:3000`. Any names you enter into the app will now get added to the database.
+    ```
+    npm start  
+    ```
+    {: pre}
+
+    View your local app at `http://localhost:3000`. Any names you enter into the app will now get added to the database.
 
 **Avoid trouble**: {{site.data.keyword.cloud_notm}} defines the PORT environment variable when your app runs on the cloud. When you run your app locally, the PORT variable is not defined, so 3000 is used as the port number. See [Run your app locally](/docs/cloud-foundry-public?topic=cloud-foundry-public-hints) for more information.
 
@@ -301,5 +316,7 @@ Check out the following resources:
 
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
+
+
 
 
