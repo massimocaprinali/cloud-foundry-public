@@ -122,10 +122,11 @@ subcollection: cloud-foundry-public
       ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
       ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
       ```
-      {: codeblock}
-      
-* The IBM JRE Version is updated to `8 SR6 FP35` and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
-* The AdoptOpenJDK Open J9 alternate JRE is updated to `11.0.12_7_openj9-0.27.0`.
+      {: codeblock} 
+
+* The new release includes MicroProfile 4.1 package. 
+* The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
+* The AdoptOpenJDK Open J9 alternate JRE is updated to 11.0.12_7_openj9-0.27.0.
 
 ### August 6, 2021: Updated Liberty buildpack v3.60-20210730-0620
 * The alternate Liberty runtime GA version is changed to the `21.0.0.8` release.
