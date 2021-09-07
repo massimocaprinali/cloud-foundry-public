@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-08-31"
+  years: 2015, 2021
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -13,30 +13,101 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 # Adding and using a custom domain
@@ -77,31 +148,31 @@ As an example, you can use `*.mycompany.com` to associate the route `www.mybluem
 {: #custom-domain-cli}
 
 1. For Cloud Foundry apps, connect to your targeted Cloud Foundry API endpoint by typing the following command:
-   ```
-   ibmcloud target --cf-api <CF_ENDPOINT>
-   ```
-   {: pre}
+    ```
+    ibmcloud target --cf-api <CF_ENDPOINT>
+    ```
+    {: pre}
 
-   **Cloud Foundry API endpoints:**
-   * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
-   * US-EAST - `api.us-east.cf.cloud.ibm.com`
-   * EU-DE - `api.eu-de.cf.cloud.ibm.com`
-   * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
-   * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
+    **Cloud Foundry API endpoints:**
+    * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
+    * US-EAST - `api.us-east.cf.cloud.ibm.com`
+    * EU-DE - `api.eu-de.cf.cloud.ibm.com`
+    * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
+    * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
 
 2. Create a custom domain for your organization by typing the following command:
-   ```
-   ibmcloud app domain-create <MY_ORGNAME> <MY_DOMAIN>
-   ```
-   {: pre}
+    ```
+    ibmcloud app domain-create <MY_ORGNAME> <MY_DOMAIN>
+    ```
+    {: pre}
 
 3. Add the route with the custom domain to an app.
 
-   For Cloud Foundry apps, run the following command:
-   ```
-   ibmcloud app route-map <MY_APPNAME> <MY_DOMAIN> -n <MY_HOSTNAME>
-   ```
-   {: pre}
+    For Cloud Foundry apps, run the following command:
+    ```
+    ibmcloud app route-map <MY_APPNAME> <MY_DOMAIN> -n <MY_HOSTNAME>
+    ```
+    {: pre}
 
 ## Mapping the custom domain to the system domain
 {: #mapcustomdomain}
@@ -111,12 +182,12 @@ After you configure the custom domain in {{site.data.keyword.cloud_notm}}, map t
 1. Set up a 'CNAME' record for the custom domain name on your DNS server. Steps for setting up the CNAME record vary depending on your DNS provider. For example, if you use GoDaddy, you follow the [Domains Help](https://www.godaddy.com/help/add-a-cname-record-19236){: external} guidance from GoDaddy.
 2. Map the custom domain name to the secure endpoint for the {{site.data.keyword.cloud_notm}} region where your app is running. Use the following region endpoints to provide the URL route that is allocated to your organization in {{site.data.keyword.cloud_notm}}. For example, point your CNAME to `custom-domain.us-east.cf.cloud.ibm.com.`
 
-  **Cloud Foundry endpoints:**
-  * US-SOUTH - `custom-domain.us-south.cf.cloud.ibm.com`
-  * US-EAST - `custom-domain.us-east.cf.cloud.ibm.com`
-  * EU-DE - `custom-domain.eu-de.cf.cloud.ibm.com`
-  * EU-GB - `custom-domain.eu-gb.cf.cloud.ibm.com`
-  * AU-SYD - `custom-domain.au-syd.cf.cloud.ibm.com`
+    **Cloud Foundry endpoints:**
+    * US-SOUTH - `custom-domain.us-south.cf.cloud.ibm.com`
+    * US-EAST - `custom-domain.us-east.cf.cloud.ibm.com`
+    * EU-DE - `custom-domain.eu-de.cf.cloud.ibm.com`
+    * EU-GB - `custom-domain.eu-gb.cf.cloud.ibm.com`
+    * AU-SYD - `custom-domain.au-syd.cf.cloud.ibm.com`
 
 ## Accessing your app
 {: #access-app}
@@ -137,5 +208,7 @@ ibmcloud app route-delete <MY_DOMAIN> -n <MY_HOSTNAME> -f
 {: pre}
 
 In that example, `MY_DOMAIN` is the name of your domain, and `MY_HOSTNAME` is the host name of the route for your app. For more information about the `ibmcloud app route-delete` command, enter the command `ibmcloud app route-delete -h`.
+
+
 
 

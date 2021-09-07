@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-16"
+  years: 2015, 2021
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -12,30 +12,101 @@ subcollection: cloud-foundry-public
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 # Hosting apps in {{site.data.keyword.cloud_notm}}
@@ -92,17 +163,17 @@ Optional: If you want to specify and save the deployment details before you push
 1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
 2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
 
-   ```
-   applications:
-   - disk_quota: 1024M
-   host: myjavatest
-   name: MyJavaTest
-   path: webStarterApp.war
-   domain: mybluemix.net
-   instances: 1
-   memory: 512M
-   ```
-   {: codeblock}
+    ```
+    applications:
+    - disk_quota: 1024M
+    host: myjavatest
+    name: MyJavaTest
+    path: webStarterApp.war
+    domain: mybluemix.net
+    instances: 1
+    memory: 512M
+    ```
+    {: codeblock}
 
 For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
@@ -112,28 +183,28 @@ You can upload your app by using the `ibmcloud cf push` command.
 
 1. Connect and log in to {{site.data.keyword.cloud_notm}} by running the following command. Select your organization and space when prompted.
 
-   ```
-   ibmcloud cf login -a https://api.ng.bluemix.net
-   ```
-   {: pre}
+    ```
+    ibmcloud cf login -a https://api.ng.bluemix.net
+    ```
+    {: pre}
 
-   Add the `-sso` flag if your organization uses Single Sign On.
+    Add the `-sso` flag if your organization uses Single Sign On.
 
 2. From your app directory, enter the `ibmcloud cf push` command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
 
-   ```
-   ibmcloud cf push appname
-   ```
-   {: pre}
+    ```
+    ibmcloud cf push appname
+    ```
+    {: pre}
 
 3. Optional: If you use an external buildpack, you must use the -b option with the `ibmcloud cf push` command. For example:
 
-   ```
-   ibmcloud cf push appname -b buildpack_URL
-   ```
-   {: pre}
+    ```
+    ibmcloud cf push appname -b buildpack_URL
+    ```
+    {: pre}
 
-   See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
+    See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The `ibmcloud cf` command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
@@ -164,8 +235,10 @@ services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
           end
         end.flatten!.first
 ```
-{:codeblock}
+{: codeblock}
 
 To ensure that your app can run in a local environment after you modify the app for {{site.data.keyword.cloud_notm}}, check for the presence of the VCAP_SERVICES environment variable, which is set for all {{site.data.keyword.cloud_notm}} Cloud Foundry apps.
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-10-06"
+  years: 2015, 2021
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -13,30 +13,101 @@ subcollection: cloud-foundry-public
 ---
 
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 # Customize the JRE
 {: #customizing_jre}
@@ -47,8 +118,8 @@ Apps run in a Java runtime environment (JRE) that is provided and configured by 
 
 By default, apps are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html){: external}.
 
- {{site.data.keyword.IBM_notm}} JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
- Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
+    {{site.data.keyword.IBM_notm}} JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
+    Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
 ```
     ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
 ```
@@ -108,19 +179,19 @@ See [Using your own JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-u
 The Liberty buildpack configures the default JVM options by taking into account:
 
 * An app's memory limit.  The applied JVM heap settings are calculated based on:
-  * an app's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
-  * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
+    * an app's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
+    * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
 
 * The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features).
-  * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting `-Dcom.ibm.tx.jta.disable2PC=true`.
+    * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting `-Dcom.ibm.tx.jta.disable2PC=true`.
 
 * The {{site.data.keyword.cloud_notm}} environment.
 
-  The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
-  * Fast failure and recovery of an app is configured by disabling JVM dumps options and killing of the processes when an app's memory is exhausted.
-  * Virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
-  * Routing of information on the app's available memory resources at the time of failure to the Loggregator.
-  * If an app is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common app "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
+    The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
+    * Fast failure and recovery of an app is configured by disabling JVM dumps options and killing of the processes when an app's memory is exhausted.
+    * Virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
+    * Routing of information on the app's available memory resources at the time of failure to the Loggregator.
+    * If an app is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common app "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
 
 The following is an example default JVM configuration that is generated by the buildpack for an app that is deployed with a 512M Memory Limit:
 
@@ -152,14 +223,14 @@ Apps can customize the JVM options with the specifications that are defined by t
 <td> {{site.data.keyword.IBM_notm}} JRE</td>
 <td>includes runtime options (prefixed by -X), any Java system properties (prefixed with -D), and does not recommend -XX for the casual usage (these options are subject to change)
 </td>
-<td>[Version 8 command-line options](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/openj9/cmdline_specifying/index.html){: external}, [Version 7 command-line options](https://www.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html){: external}
+<td><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/openj9/cmdline_specifying/index.html">Version 8 command-line options</a>{: external}, <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_7.0.0/com.ibm.java.lnx.70.doc/diag/appendixes/cmdline/cmdline.html">Version 7 command-line options</a>{: external}
 </td>
 </tr>
 
 <tr>
 <td> OpenJDK </td>
 <td>is based on the HotSpot runtime that has the notation of -X for non-standard, -XX for developer options, and Boolean values to enable or disable the option </td>
-<td>[HotSpot Runtime Overview](http://openjdk.java.net/groups/hotspot//docs/RuntimeOverview.html){: external} </td>
+<td><a href="http://openjdk.java.net/groups/hotspot//docs/RuntimeOverview.html">HotSpot Runtime Overview</a>{: external} </td>
 </tr>
 </table>
 
@@ -181,7 +252,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 
 <tr>
 <td>1</td>
-<td>`IBM_JAVA_OPTIONS`</td>
+<td><code>IBM_JAVA_OPTIONS</code></td>
 <td>an environment variable that is supported by the {{site.data.keyword.IBM_notm}} JRE</td>
 <td>All</td>
 <td>Restart or restage the app</td>
@@ -190,7 +261,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 
 <tr>
 <td>2</td>
-<td>`JAVA_OPTS`</td>
+<td><code>JAVA_OPTS</code></td>
 <td>an environment variable through the Liberty buildpack Java Options framework</td>
 <td>All</td>
 <td>Restage the app</td>
@@ -199,7 +270,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 
 <tr>
 <td>3</td>
-<td>`jvm.options`</td>
+<td><code>jvm.options</code></td>
 <td>a JVM configuration file that is supported by the Liberty runtime packaged server or server directory</td>
 <td>Server package</td>
 <td>Restage the app</td>
@@ -208,7 +279,7 @@ Note: Some options might not go into effect unless the option is triggered by an
 
 <tr>
 <td>4</td>
-<td>`JVM_ARGS`</td>
+<td><code>JVM_ARGS</code></td>
 <td>an environment variable that is supported by the Liberty runtime</td>
 <td>All</td>
 <td>Restart or restage the app</td>
@@ -265,12 +336,13 @@ Deploying an app with customized JVM options to enable {{site.data.keyword.IBM_n
     ibmcloud cf set-env myapp JVM_ARGS '-Xdump:heap+java+snap:events=systhrow,filter=java/lang/OutOfMemoryError'
 ```
 {: pre}
+
 ```
     ibmcloud cf restart myapp
 ```
 {: pre}
 
- See the [Logging and tracing](/docs/cloud-foundry-public?topic=cloud-foundry-public-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
+    See the [Logging and tracing](/docs/cloud-foundry-public?topic=cloud-foundry-public-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
 
 ### Overlaying the JRE
 {: #overlaying_jre}
@@ -280,33 +352,33 @@ There are some cases where files need to be bundled with the JRE to expose their
 The files to be overlaid can be packaged with the app `WAR`, `EAR`, or `JAR` file in a resources folder at the root of the archive. For a server (compressed file or server directory), the files can be packaged in a resources folder in the server directory, with the `server.xml` file.
 
 * `WAR` file
-  * `WEB-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `WEB-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * `EAR` file
-  * `META-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `META-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * `JAR` file
-  * `META-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `META-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * <server_name> DIR
-  * `apps`
-  * `dropins`
-  * `server.xml`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `apps`
+    * `dropins`
+    * `server.xml`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 The `.java-overlay` directory contains specific files in the same file hierarchy as the Java JRE that is being overlaid starting with `.java/jre`.
 
@@ -327,5 +399,7 @@ Download the appropriate unrestricted policy files and add them to your app as:
 {: codeblock}
 
 When you push your app, these jars overlay the default policy jars in the Java runtime. This process enables AES 256-bit encryption.
+
+
 
 

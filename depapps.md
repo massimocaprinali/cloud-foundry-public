@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,14 +85,18 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -183,20 +198,20 @@ A `package.json` file must be in your Node.js app for the app to be recognized b
 
 ```
 {
-      "name": "MyUniqueNodejs01",
-      "version": "0.0.1",
-      "description": "A sample package.json file",
-      "dependencies": {
-              "express": ">=3.4.7 <4",
-              "jade": ">=1.1.4"
-      },
-      "scripts": {
-              "start": "node app.js"
-      },
-      "engines": {
-              "node": ">=0.10.0"
-      },
-      "repository": {}
+    "name": "MyUniqueNodejs01",
+    "version": "0.0.1",
+    "description": "A sample package.json file",
+    "dependencies": {
+            "express": ">=3.4.7 <4",
+            "jade": ">=1.1.4"
+    },
+    "scripts": {
+            "start": "node app.js"
+    },
+    "engines": {
+            "node": ">=0.10.0"
+    },
+    "repository": {}
 }
 ```
 {: codeblock}
@@ -244,22 +259,22 @@ ibmcloud cf push -f appManifest.yml
 ```
 {: pre}
 
-|Options	|Description	|Usage or example|
+|Options|Description|Usage or example|
 |:----------|:--------------|:---------------|
-|**buildpack**	|The URL or name of the custom buildpack.	|`buildpack:` *buildpack_URL*|
-|**disk_quota**	|The disk quota that is allocated for an app. The default value is 1GB.	|`disk_quota: 500MB`|
-|**domain**	|The domain name of the app in {{site.data.keyword.cloud_notm}}.	|`domain: ng.mybluemix.net`|
-|**host**	|The host name of the app in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`host:` *host_name*|
-|**name**	|The app name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.	|`name: appname`|
-|**path**	|The location of your app. This value can be a relative path or absolute path.	|`path:` *path_to_app*|
-|**command**	|The custom start command for your app, or the command to run script files.	|`command:` *custom_command* `command:` *`bash ./run.sh`*|
-|**memory**	|The amount of memory to allocate for the app. The default value is 1GB.	|`memory: 512MB`|
-|**instances**	|The number of instances to create for your app.	|`instances: 2`|
-|**timeout**	|The maximum amount of time in seconds that is used to start the app. The default value is 60 seconds.	|`timeout: 80`|
-|**no-route**	|A Boolean value to prevent a route from being assigned to the app if the app is running in the background. The default value is **false**.	|`no-route: true`|
-|**random-route**	|A Boolean value to assign a random route to the app. The default value is **false**.	|`random-route: true`|
-|**services**	|The services to bind to the app.	|`services: - mysql_maptest`|
-|**env**	|The custom environment variables for the app.|`env: DEV_ENV: production`|
+|**buildpack**    |The URL or name of the custom buildpack.    |`buildpack:` *buildpack_URL*|
+|**disk_quota**    |The disk quota that is allocated for an app. The default value is 1GB.    |`disk_quota: 500MB`|
+|**domain**    |The domain name of the app in {{site.data.keyword.cloud_notm}}.    |`domain: ng.mybluemix.net`|
+|**host**    |The host name of the app in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.    |`host:` *host_name*|
+|**name**    |The app name in {{site.data.keyword.cloud_notm}}. This value must be unique in the {{site.data.keyword.cloud_notm}} environment.    |`name: appname`|
+|**path**    |The location of your app. This value can be a relative path or absolute path.    |`path:` *path_to_app*|
+|**command**    |The custom start command for your app, or the command to run script files.    |`command:` *custom_command* `command:` *`bash ./run.sh`*|
+|**memory**    |The amount of memory to allocate for the app. The default value is 1GB.    |`memory: 512MB`|
+|**instances**    |The number of instances to create for your app.    |`instances: 2`|
+|**timeout**    |The maximum amount of time in seconds that is used to start the app. The default value is 60 seconds.    |`timeout: 80`|
+|**no-route**    |A Boolean value to prevent a route from being assigned to the app if the app is running in the background. The default value is **false**.    |`no-route: true`|
+|**random-route**    |A Boolean value to assign a random route to the app. The default value is **false**.    |`random-route: true`|
+|**services**    |The services to bind to the app.    |`services: - mysql_maptest`|
+|**env**    |The custom environment variables for the app.|`env: DEV_ENV: production`|
 {: caption="Table 1. Supported options in the manifest YAML file" caption-side="top"}
 
 ### A sample manifest.yml file
@@ -299,47 +314,47 @@ You can view the following environment variables of a running {{site.data.keywor
 
 ```
 {
- "VCAP_SERVICES": {
-  "AppScan Dynamic Analyzer": [
-   {
+    "VCAP_SERVICES": {
+    "AppScan Dynamic Analyzer": [
+    {
     "credentials": {
-     "bindingid": "0ab3162a-867e-4137-a2e7-39346a89472e",
-     "password": "xxxxxxxxxxxxxx"
+        "bindingid": "0ab3162a-867e-4137-a2e7-39346a89472e",
+        "password": "xxxxxxxxxxxxxx"
     },
     "label": "AppScan Dynamic Analyzer",
     "name": "AppScan Dynamic Analyzer-9q",
     "plan": "standard",
     "tags": [
-     "Security",
-     "security",
-     "ibm_created"
+        "Security",
+        "security",
+        "ibm_created"
     ]
-   }
-  ],
-  "mysql-5.5": [
-   {
+    }
+    ],
+    "mysql-5.5": [
+    {
     "credentials": {
-     "host": "23.246.200.38",
-     "hostname": "23.246.200.38",
-     "name": "d296abcc06c9e418b94cbaaafdf547620",
-     "password": "xxxxxxxxxxxxxxx",
-     "port": 3307,
-     "uri": "mysql://uzpGf7eGJ7mtB:peRiYCG4ZYqu3@23.246.200.38:3307/d296abcc06c9e418b94abcaafdf547620",
-     "user": "uzpGf7eGJ7mtB",
-     "username": "uzpGf7eGJ7mtB"
+        "host": "23.246.200.38",
+        "hostname": "23.246.200.38",
+        "name": "d296abcc06c9e418b94cbaaafdf547620",
+        "password": "xxxxxxxxxxxxxxx",
+        "port": 3307,
+        "uri": "mysql://uzpGf7eGJ7mtB:peRiYCG4ZYqu3@23.246.200.38:3307/d296abcc06c9e418b94abcaafdf547620",
+        "user": "uzpGf7eGJ7mtB",
+        "username": "uzpGf7eGJ7mtB"
     },
     "label": "mysql-5.5",
     "name": "mysql-ix",
     "plan": "300",
     "tags": [
-     "mysql",
-     "relational",
-     "data_management",
-     "ibm_experimental"
+        "mysql",
+        "relational",
+        "data_management",
+        "ibm_experimental"
     ]
-   }
-  ]
- }
+    }
+    ]
+    }
 }
 ```
 {: codeblock}
@@ -349,25 +364,25 @@ You also have access to the environment variables that are set by Diego and the 
 The following variables are defined by Diego:
 
 <dl>
-  <dt><strong>HOME</strong></dt>
-  <dd>The root directory of the deployed app.</dd>
-  <dt><strong>MEMORY_LIMIT</strong></dt>
-  <dd>The maximum amount of memory that each instance of your app can use. You can specify the value in an app <span class="ph filepath">manifest.yml</span> file, or on the command line when you push the app.</dd>
-  <dt><strong>PORT</strong></dt>
-  <dd>The port on Diego for communication with the app. Diego allocates a port to the app at staging time.</dd>
-  <dt><strong>PWD</strong></dt>
-  <dd>The current working directory that is running the buildpack.</dd>
-  <dt><strong>TMPDIR</strong></dt>
-  <dd>The directory where temporary and staging files are stored.</dd>
-  <dt><strong>USER</strong></dt>
-  <dd>The user ID that is running Diego.</dd>
-  <dt><strong>VCAP_APP_HOST</strong></dt>
-  <dd>The IP address of the Diego host.</dd>
-  <dt><strong>VCAP_APP</strong></dt>
-  <dd>A JSON string that contains information about the deployed app. The information includes the app name, URIs, memory limits, time stamp when the app achieved its current state, and other values. For example:
-  <pre class="pre codeblock"><code>
-  {
-    "limits": {
+    <dt><strong>HOME</strong></dt>
+    <dd>The root directory of the deployed app.</dd>
+    <dt><strong>MEMORY_LIMIT</strong></dt>
+    <dd>The maximum amount of memory that each instance of your app can use. You can specify the value in an app <span class="ph filepath">manifest.yml</span> file, or on the command line when you push the app.</dd>
+    <dt><strong>PORT</strong></dt>
+    <dd>The port on Diego for communication with the app. Diego allocates a port to the app at staging time.</dd>
+    <dt><strong>PWD</strong></dt>
+    <dd>The current working directory that is running the buildpack.</dd>
+    <dt><strong>TMPDIR</strong></dt>
+    <dd>The directory where temporary and staging files are stored.</dd>
+    <dt><strong>USER</strong></dt>
+    <dd>The user ID that is running Diego.</dd>
+    <dt><strong>VCAP_APP_HOST</strong></dt>
+    <dd>The IP address of the Diego host.</dd>
+    <dt><strong>VCAP_APP</strong></dt>
+    <dd>A JSON string that contains information about the deployed app. The information includes the app name, URIs, memory limits, time stamp when the app achieved its current state, and other values. For example:
+    <pre class="pre codeblock"><code>
+    {
+        "limits": {
         "mem": 512,
         "disk": 1024,
         "fds": 16384
@@ -396,11 +411,11 @@ The following variables are defined by Diego:
     "state_timestamp": 1421391051
 }
 </code></pre></dd>
-  <dt><strong>VCAP_SERVICES</strong></dt>
-  <dd>A JSON string that contains information about the service bound to the deployed app. For example:
-  <pre class="pre codeblock"><code>
-  {
-    "mysql-5.5": [
+    <dt><strong>VCAP_SERVICES</strong></dt>
+    <dd>A JSON string that contains information about the service bound to the deployed app. For example:
+    <pre class="pre codeblock"><code>
+    {
+        "mysql-5.5": [
         {
             "name": "mysql-ix",
             "label": "mysql-5.5",
@@ -433,28 +448,28 @@ Variables that are defined by buildpacks are different for each buildpack. For o
 <ul>
     <li>The following variables are defined by the Liberty Buildpack:
 
-	  <dl>
-	  <dt><strong>JAVA_HOME</strong></dt>
-	  <dd>The location of Java SDK that runs the app.</dd>
-	  <dt><strong>IBM_JAVA_OPTIONS</strong></dt>
-	  <dd>The Java SDK options to use when running the app.</dd>
-	  <dt><strong>IBM_JAVA_COMMAND_LINE</strong></dt>
-	  <dd>The Java command to start up a Liberty profile server instance in Diego.</dd>
-	  <dt><strong>WLP_USR_DIR</strong></dt>
-	  <dd>The location of shared resources and server definitions when starting up a Liberty profile server instance in Diego.</dd>
-	  <dt><strong>WLP_OUTPUT_DIR</strong></dt>
-	  <dd>The location of generated output such as log files and working directory of a running Liberty profile server instance.</dd>
-	  </dl>
+    <dl>
+    <dt><strong>JAVA_HOME</strong></dt>
+    <dd>The location of Java SDK that runs the app.</dd>
+    <dt><strong>IBM_JAVA_OPTIONS</strong></dt>
+    <dd>The Java SDK options to use when running the app.</dd>
+    <dt><strong>IBM_JAVA_COMMAND_LINE</strong></dt>
+    <dd>The Java command to start up a Liberty profile server instance in Diego.</dd>
+    <dt><strong>WLP_USR_DIR</strong></dt>
+    <dd>The location of shared resources and server definitions when starting up a Liberty profile server instance in Diego.</dd>
+    <dt><strong>WLP_OUTPUT_DIR</strong></dt>
+    <dd>The location of generated output such as log files and working directory of a running Liberty profile server instance.</dd>
+    </dl>
 </li>
 <li>The following variables are defined by the Node.js Buildpack:
-	<dl>
-	<dt><strong>BUILD_DIR</strong></dt>
-	<dd>The directory of the Node.js runtime environment.</dd>
-	<dt><strong>CACHE_DIR</strong></dt>
-	<dd>The directory that the Node.js runtime environment uses for caching.</dd>
-	<dt><strong>PATH</strong></dt>
-	<dd>The system path that is used by the Node.js runtime environment.</dd>
-	</dl>
+    <dl>
+    <dt><strong>BUILD_DIR</strong></dt>
+    <dd>The directory of the Node.js runtime environment.</dd>
+    <dt><strong>CACHE_DIR</strong></dt>
+    <dd>The directory that the Node.js runtime environment uses for caching.</dd>
+    <dt><strong>PATH</strong></dt>
+    <dd>The system path that is used by the Node.js runtime environment.</dd>
+    </dl>
 </li>
 </li>
 </ul>
@@ -505,26 +520,26 @@ command: node app.js
 User-defined environment variables are specific for an app. You have the following options to add a user-defined environment variable to a running app:
 
 * Use the {{site.data.keyword.cloud_notm}} user interface. 
-  1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The app details page is displayed
-  2. Click **Runtime** > **Environment Variables**.
-  3. Click **USER-DEFINED**, then click **ADD**.
-  4. Fill in the required fields, then click **SAVE**.
+    1. On the {{site.data.keyword.cloud_notm}} Dashboard, click your app tile. The app details page is displayed
+    2. Click **Runtime** > **Environment Variables**.
+    3. Click **USER-DEFINED**, then click **ADD**.
+    4. Fill in the required fields, then click **SAVE**.
 
 * Use the `ibmcloud cf` command line interface. Add a user-defined variable by using the `ibmcloud cf env-set` command. For example:
 
-  ```
-  ibmcloud cf env-set appname <environment_variable_name> <environment_variable_value>
-  ```
-  {: pre}
+    ```
+    ibmcloud cf env-set appname <environment_variable_name> <environment_variable_value>
+    ```
+    {: pre}
 
 * Use the `manifest.yml` file. Add value pairs in the file. For example:
 
-  ```
-	env:
-      VAR1:<environment_variable_name>
-      VAR2:<environment_variable_value>
-  ```
-  {: codeblock}
+    ```
+    env:
+        VAR1:<environment_variable_name>
+        VAR2:<environment_variable_value>
+    ```
+    {: codeblock}
 
 After you add a user-defined environment variable, you can use the following sample Node.js code to get the value of the defined variable:
 
@@ -557,5 +572,7 @@ The `.cfignore` file contains the names of files and directories that you want t
 tmp/
 ```
 {: codeblock}
+
+
 
 

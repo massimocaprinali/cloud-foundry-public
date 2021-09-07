@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,14 +85,18 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -175,52 +190,52 @@ This environment variable is the serialization of a JSON object with one entry f
 
 1. First, download and develop your app code.
 
-   1. Click **Getting started** in your app dashboard.
-   2. Click the **Download the sample code** link to download your app code.
-   3. Extract the downloaded file to a directory.
-   4. Develop the code with your locally integrated development environment.
+    1. Click **Getting started** in your app dashboard.
+    2. Click the **Download the sample code** link to download your app code.
+    3. Extract the downloaded file to a directory.
+    4. Develop the code with your locally integrated development environment.
 
 2. Install the `ibmcloud cf` command line interface (CLI).
 
-   1. Download the `ibmcloud cf` command line tool installation program for your operating system.
-   2. Follow the tool wizard to complete the installation.
-   3. Use the `ibmcloud cf -v` command to verify the version of the `ibmcloud cf` command line interface.
+    1. Download the `ibmcloud cf` command line tool installation program for your operating system.
+    2. Follow the tool wizard to complete the installation.
+    3. Use the `ibmcloud cf -v` command to verify the version of the `ibmcloud cf` command line interface.
 
-   Make sure that you always use the latest version of the `ibmcloud cf` command line tool.
-   {: important}
+    Make sure that you always use the latest version of the `ibmcloud cf` command line tool.
+    {: important}
 
 3. After you install the `ibmcloud cf` command line interface, you must specify which {{site.data.keyword.cloud_notm}} region you want to work with by using the `ibmcloud cf api` command. The API endpoint for the US South region is `api.us-south.cf.cloud.ibm.com`. Additional API endpoints for other regions can be found [here](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). Enter the following command to connect to {{site.data.keyword.cloud_notm}}:
 
-   ```
-   ibmcloud cf api api.us-south.cf.cloud.ibm.com
-   ```
+    ```
+    ibmcloud cf api api.us-south.cf.cloud.ibm.com
+    ```
 
-   To find other API endpoints, see [Regions and Endpoints](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). After you specify the {{site.data.keyword.cloud_notm}} region, the location information that you specified is saved.
+    To find other API endpoints, see [Regions and Endpoints](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). After you specify the {{site.data.keyword.cloud_notm}} region, the location information that you specified is saved.
 
 4. Next, log in to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf login` command.
 
-   ```
-   ibmcloud cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
-   ```
-   {: pre}
+    ```
+    ibmcloud cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
+    ```
+    {: pre}
 
-   If your organization uses single sign on, use `ibmcloud cf login -sso`.
+    If your organization uses single sign on, use `ibmcloud cf login -sso`.
 
 5. After you are logged in to {{site.data.keyword.cloud_notm}}, you are ready to deploy your app back to {{site.data.keyword.cloud_notm}}. From your app directory, enter the following command:
 
-   ```
-   ibmcloud cf push <your_appname>
-   ```
-   {: pre}
+    ```
+    ibmcloud cf push <your_appname>
+    ```
+    {: pre}
 
-   For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}.
+    For more information, see the [Pushing an app](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}.
 
 6. Now, you can access the app by entering the following app URL in a browser:
 
-   ```
-   http://<your_app>.us-south.cf.appdomain.cloud
-   ```
-   {: codeblock}
+    ```
+    http://<your_app>.us-south.cf.appdomain.cloud
+    ```
+    {: codeblock}
 
 You can also choose other tools to build your app, such as Eclipse tools. For more information, see the Getting started page of your app in the {{site.data.keyword.cloud_notm}} console.
 
@@ -233,100 +248,100 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
 1. Create an {{site.data.keyword.cloudant}} NoSQL DB service instance.
 
-   Use the `ibmcloud cf create-service` command to create a new instance of a service. In this example, `<Lite>` is the name of the plan. For example:
+    Use the `ibmcloud cf create-service` command to create a new instance of a service. In this example, `<Lite>` is the name of the plan. For example:
 
-   ```
-   ibmcloud cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
-   ```
-   {: pre}
+    ```
+    ibmcloud cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
+    ```
+    {: pre}
 
-   You can also use the `ibmcloud cf services` command to see the list of service instances that you created.
+    You can also use the `ibmcloud cf services` command to see the list of service instances that you created.
 
-   ```
-   ibmcloud cf services
-   ```
-   {: pre}
+    ```
+    ibmcloud cf services
+    ```
+    {: pre}
 
-   After a service instance is created, it is available for any of your apps to bind and use.
+    After a service instance is created, it is available for any of your apps to bind and use.
 
 2. Bind the service instance to your app.
 
-   To use a service instance, you must bind it to your app. Use the `ibmcloud cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
+    To use a service instance, you must bind it to your app. Use the `ibmcloud cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
 
-   ```
-   ibmcloud cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
-   ```
-   {: pre}
+    ```
+    ibmcloud cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
+    ```
+    {: pre}
 
-   Binding a service instance to an app enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new app will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the app and the service instance differently during the binding. For example, some services might create a new tenant for each app that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the app allowing communication between the app and the service.
+    Binding a service instance to an app enables {{site.data.keyword.cloud_notm}} to communicate to the service, and to specify that a new app will communicate with that service instance. For different services, {{site.data.keyword.cloud_notm}} might process the app and the service instance differently during the binding. For example, some services might create a new tenant for each app that communicates to the service instance. The service responds back to {{site.data.keyword.cloud_notm}} with information, such as credentials, that must be passed to the app allowing communication between the app and the service.
 
-   If the app is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the app is restarted. To restart your app, use the `ibmcloud cf restart` command.
-   {: note}
+    If the app is running when it is bound to a service instance, the <VCAP_SERVICES> environment variable is not updated until the app is restarted. To restart your app, use the `ibmcloud cf restart` command.
+    {: note}
 
 3. Use the service instance.
 
-   In this scenario, the <VCAP_SERVICES> environment variable includes information, such as the following items, that an app can use to connect to this instance of {{site.data.keyword.cloudant}}:
+    In this scenario, the <VCAP_SERVICES> environment variable includes information, such as the following items, that an app can use to connect to this instance of {{site.data.keyword.cloudant}}:
 
-   `username`: `d72837bb-b341-4038-9c8e-7f7232916197-bluemix`
+    `username`: `d72837bb-b341-4038-9c8e-7f7232916197-bluemix`
 
-   `password`: secret   
-   
-   `url`: `https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com`  
+    `password`: secret   
 
-   For example, your Node.js app might access this information as follows:
-  
-   ```
-   if (process.env.VCAP_SERVICES) {
-         var env = JSON.parse(process.env.VCAP_SERVICES);
-         var cloudant = env['cloudantNoSQLDB'][0].credentials;
-   } else {
-         var cloudant = {
-                 "username" : "user1",
-                 "password" : "secret",
-                 "url" : "https://user1:secret@localhost:25002"
-                 }
-         };
-   ```
-   {: codeblock}
+    `url`: `https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com`  
 
-   As the sample code shows, to connect to an {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
-   {: note}
+    For example, your Node.js app might access this information as follows:
+
+    ```
+    if (process.env.VCAP_SERVICES) {
+            var env = JSON.parse(process.env.VCAP_SERVICES);
+            var cloudant = env['cloudantNoSQLDB'][0].credentials;
+    } else {
+            var cloudant = {
+"username" : "user1",
+"password" : "secret",
+"url" : "https://user1:secret@localhost:25002"
+}
+            };
+    ```
+    {: codeblock}
+
+    As the sample code shows, to connect to an {{site.data.keyword.cloudant}} service instance, you can check whether the <VCAP_SERVICES> environment variable exists first. If it exists, the app can use the {{site.data.keyword.cloudant}} variable's properties to access the database. However, if the <VCAP_SERVICES> environment variable is not present, the local {{site.data.keyword.cloudant}} service instance is used with the provided default values.
+    {: note}
 
 4. Interact with the service instance.
 
-   You can interact with the service instance by using the credential information. The actions that you can take include read, write, and update. The following example demonstrates how to insert a JSON object into the {{site.data.keyword.cloudant}} service instance:
+    You can interact with the service instance by using the credential information. The actions that you can take include read, write, and update. The following example demonstrates how to insert a JSON object into the {{site.data.keyword.cloudant}} service instance:
 
-   ```
-   // create a new message
-   var create_message = function(req, res) {
-     require('cloudantdb').connect(cloudant.url, function(err, conn) {
-       var collection = conn.collection('messages');
+    ```
+    // create a new message
+    var create_message = function(req, res) {
+        require('cloudantdb').connect(cloudant.url, function(err, conn) {
+        var collection = conn.collection('messages');
 
-   // create message record
+    // create message record
     var parsedUrl = require('url').parse(req.url, true);
     var queryObject = parsedUrl.query;
     var name = (queryObject["name"] || 'Bluemix');
     var message = { 'message': 'Hello, ' + name, 'ts': new Date()
     };
     collection.insert(message, {safe:true}, function(err){
-      if (err) { console.log(err.stack); }
-      res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.write(JSON.stringify(message));
-      res.end('\n');
+        if (err) { console.log(err.stack); }
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.write(JSON.stringify(message));
+        res.end('\n');
         });
-      });
+        });
     }
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 
 5. **Optional:** Unbind or delete a service instance.
 
-   You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the `ibmcloud cf unbind-service command`.  To delete a service instance, use the `ibmcloud cf delete-service` command.
+    You might want to unbind or delete a service instance when it is no longer used or when you want to free up some spaces. To unbind a service instance from your app, use the `ibmcloud cf unbind-service command`.  To delete a service instance, use the `ibmcloud cf delete-service` command.
 
-   For more information about services, see Services. For more information about the `ibmcloud cf` options that you can use to manage your apps in the {{site.data.keyword.cloud_notm}} environment, run `ibmcloud cf --help` in the `ibmcloud cf` command line interface.
+    For more information about services, see Services. For more information about the `ibmcloud cf` options that you can use to manage your apps in the {{site.data.keyword.cloud_notm}} environment, run `ibmcloud cf --help` in the `ibmcloud cf` command line interface.
 
-   Make sure you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any app that is bound to a deleted service cannot have its <VCAP_SERVICES> environment variable updated until the app is restarted.
-   {: important}
+    Make sure you no longer require a service instance before you delete it. Deleting a service instance erases all data that is associated with that instance of the service. Any app that is bound to a deleted service cannot have its <VCAP_SERVICES> environment variable updated until the app is restarted.
+    {: important}
 
 ## Calculating your app cost
 {: #ee_billing}
@@ -347,5 +362,7 @@ You can also calculate your app cost manually by adding up the prices of your ru
 As you build more apps, the quota might approach your limits. However, some apps that you might no longer use still occupy the quota. It’s easy to delete apps to free up some spaces in {{site.data.keyword.cloud_notm}} at any time.
 
 In the {{site.data.keyword.cloud_notm}} console, go to the app Overview page, click the menu icon, and delete the app that you no longer use. You can also use the `ibmcloud cf delete` command to delete apps.
+
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry
 
@@ -22,15 +22,19 @@ subcollection: cloud-foundry-public
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +47,27 @@ subcollection: cloud-foundry-public
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,14 +85,18 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -118,32 +133,34 @@ Some buildpacks aren't configured to automatically download all updated componen
 You can use buildpacks that have built-in mechanisms to avoid loading obsolete components, for example, the following buildpacks:
 {: tsResolve}
 
-  * [Cloud Foundry Java buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/extending-caches.md){: external}.
-  * [Cloud Foundry Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface: 	
+    * [Cloud Foundry Java buildpack](https://github.com/cloudfoundry/java-buildpack){: external}. This buildpack has a built-in mechanism to ensure that the latest version of the buildpack is used. For more information about how this mechanism works, see [extending-caches.md](https://github.com/cloudfoundry/java-buildpack/blob/main/docs/extending-caches.md){: external}.
+    * [Cloud Foundry Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This buildpack provides similar functions by using environment variables. To enable the Node.js buildpack to download node modules from the internet every time, type the following command in the {{site.data.keyword.cloud_notm}} command-line interface:     
 
-  ```
-  set NODE_MODULES_CACHE=false
-  ```
-  {: codeblock}
+    ```
+    set NODE_MODULES_CACHE=false
+    ```
+    {: codeblock}
 
 If the buildpack that you are using doesn't provide a mechanism to load the latest components automatically, you can manually delete the contents in the cache directory and push your app again. Use the following steps:
 
- 1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: external}.  
- 2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: external}.
-  ```
-  rm -rfv $2/*
-  ```
-  {: pre}
- 3. Push your app with the null buildpack that was modified to delete the cache by using the following command. After you complete this step, all contents in the cache directory of your app are deleted.
-  ```
-  ibmcloud cf push appname -p app_path -b <modified_null_buildpack>
-  ```
-  {: pre}
- 4. Push your app with the latest buildpack that you want to use by using the following command:
-  ```
-  ibmcloud cf push appname -p app_path -b <latest_buildpack>
-  ```
-  {: pre}
+    1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: external}.  
+    2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: external}.
+    ```
+    rm -rfv $2/*
+    ```
+    {: pre}
+
+    3. Push your app with the null buildpack that was modified to delete the cache by using the following command. After you complete this step, all contents in the cache directory of your app are deleted.
+    ```
+    ibmcloud cf push appname -p app_path -b <modified_null_buildpack>
+    ```
+    {: pre}
+
+    4. Push your app with the latest buildpack that you want to use by using the following command:
+    ```
+    ibmcloud cf push appname -p app_path -b <latest_buildpack>
+    ```
+    {: pre}
 
 ### The app continues to restart
 {: #ts_apprestart}
@@ -158,19 +175,19 @@ Identify which step of the app container lifecycle is causing errors in app depl
 {: tsResolve}
 
 ### The Actions button on the Instance Details page is disabled (Deprecated)
-  {: #ts_actionsbutton}
+{: #ts_actionsbutton}
 
-  The Actions button on the Instance Details page is unavailable.
-  {: tsSymptoms}
+    The Actions button on the Instance Details page is unavailable.
+    {: tsSymptoms}
 
-  This problem occurs for the following reasons:
-  {: tsCauses}
+    This problem occurs for the following reasons:
+    {: tsCauses}
 
-   * The app isn't deployed with the embedded Liberty buildpack.
-   * The app was deployed with an early version of Liberty buildpack.
+    * The app isn't deployed with the embedded Liberty buildpack.
+    * The app was deployed with an early version of Liberty buildpack.
 
-  If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client app log files to the support team:
-  {: tsResolve}
+    If the problem is caused by an early version of Liberty buildpack, redeploy the app in {{site.data.keyword.cloud_notm}}. Otherwise, you can provide the following client app log files to the support team:
+    {: tsResolve}
 
     * `logs/messages.log`
     * `logs/stdout.log`
@@ -178,85 +195,85 @@ Identify which step of the app container lifecycle is causing errors in app depl
 
 
 ### Credentials are required to open a trace or memory dump window (Deprecated)
-  {: #ts_username}
+{: #ts_username}
 
-  A user name and password are required to open the trace or memory dump window.
-  {: tsSymptoms}
+    A user name and password are required to open the trace or memory dump window.
+    {: tsSymptoms}
 
-  This problem occurs because of the login session timeout.
-  {: tsCauses}
+    This problem occurs because of the login session timeout.
+    {: tsCauses}
 
-  Enter the user name and password again.
-  {: tsResolve}
+    Enter the user name and password again.
+    {: tsResolve}
 
 
 ### Error occurs when trace or memory dump operations are running (Deprecated)
-  {: #ts_target}
+{: #ts_target}
 
-  An error message is displayed while the trace or memory dump operations are running. The message indicates that a target instance for an app isn't in the running state:
-  {: tsSymptoms}
+    An error message is displayed while the trace or memory dump operations are running. The message indicates that a target instance for an app isn't in the running state:
+    {: tsSymptoms}
 
-  ```
-  Instance 0: Trace specification is set successfully
-  Instance 2: Trace specification is set successfully
-  Instance 1: Target instance 1 for app abcd is not in the running state.
-  Instance 3: Trace specification is set successfully
-  Instance 4: Trace specification is set successfully
-  ```
+    ```
+    Instance 0: Trace specification is set successfully
+    Instance 2: Trace specification is set successfully
+    Instance 1: Target instance 1 for app abcd is not in the running state.
+    Instance 3: Trace specification is set successfully
+    Instance 4: Trace specification is set successfully
+    ```
 
-  This problem occurs for the following reasons:
-  {: tsCauses}
+    This problem occurs for the following reasons:
+    {: tsCauses}
 
     * The trace or dump management capabilities are only for app instances that are running. Trace or dump operations can't be used on app instances that are stopped, starting, or crashed.
     * The status of the app instance is changing when the trace or dump dialog is opened.
 
-  Close the window, then open it again.
-  {: tsResolve}
+    Close the window, then open it again.
+    {: tsResolve}
 
 
 ### Instances have different `traceSpecification` configurations (Deprecated)
-  {: #ts_different_config}
+{: #ts_different_config}
 
-  For different instances of one app, you might see different `traceSpecification` configurations.
-  {: tsSymptoms}
+    For different instances of one app, you might see different `traceSpecification` configurations.
+    {: tsSymptoms}
 
-  This behavior occurs for the following reasons:
-  {: tsCauses}
+    This behavior occurs for the following reasons:
+    {: tsCauses}
 
     * You changed the configuration for one or more instances previously. If you change the `traceSpecification` configuration for one instance, the change doesn't apply to other instances of the same app. For example, your app uses log4j and you have 2 instances for this app. You can change the log level of instance 0 from info to debug, but the log level of instance 1 remains as info.
 
-  No action is required. This behavior is expected.
-  {: tsResolve}
+    No action is required. This behavior is expected.
+    {: tsResolve}
 
 
 ### Disk quota exceeded
-  {: #ts_diskquota}
+{: #ts_diskquota}
 
-  You might see, in your app log, that your disk quota is exceeded.
+    You might see, in your app log, that your disk quota is exceeded.
 
-  You see the `Disk quota exceeded` error message in the log of your app.
-  {: tsSymptoms}
+    You see the `Disk quota exceeded` error message in the log of your app.
+    {: tsSymptoms}
 
-  This problem occurs for one of the following reasons:
-  {: tsCauses}
+    This problem occurs for one of the following reasons:
+    {: tsCauses}
 
     * The dump files are generated with the running app instances, and the files use up the allocated disk quota. By default, the disk quota for one app instance is 1 GB. You can check your disk usage by clicking **Dashboard > Application > App Runtime**. The following example shows the runtime information, including disk usage, for two instances of an app:
-      ```
-      Instance	State	CPU	Memory Usage	Disk Usage
+        ```
+        Instance    State    CPU    Memory Usage    Disk Usage
 
-  	0		Running	1.0%	344.8MB/512MB	236.8MB/1GB
-  	2		Running	2.3%	361.2MB/512MB	235.7MB/1GB
-      ```
+        0        Running    1.0%    344.8MB/512MB    236.8MB/1GB
+        2        Running    2.3%    361.2MB/512MB    235.7MB/1GB
+        ```
     * The disk quota is limited by the current organization quota.
 
-  Use one of the following methods:
-  {: tsResolve}
+    Use one of the following methods:
+    {: tsResolve}
 
     * Delete dump files after they are downloaded.
     * Redeploy the app with a bigger disk quota by including the following entry in the deployment manifest:
-      ```
-      disk_quota: 2048
-      ```
+        ```
+        disk_quota: 2048
+        ```
 
 ## Liberty for Java
 {: #ts_liberty}
@@ -268,8 +285,8 @@ A Liberty app fails to start with a "_Failed to start accepting connections_" er
 {: tsSymptoms}
 
 ```
-   2016-11-14T14:44:58.45+0000 [API/0]      OUT App instance exited with guid 21ac63eb-9595-428a-94c7-b0b02aaf77cc payload: {"cc_partition"=>"default", "droplet"=>"21ac63eb-9595-428a-94c7-b0b02aaf77cc", "version"=>"b2772438-92de-4d47-b680-ea772ac2288a", "instance"=>"f4799c8c89214bbd8067883c3ffe23e0", "index"=>0, "reason"=>"CRASHED", "exit_status"=>255, "exit_description"=>"failed to accept connections within health check timeout", "crash_timestamp"=>1479134698}
-   2016-11-14T14:45:07.50+0000 [DEA/4]      ERR Instance (index 0) failed to start accepting connections
+    2016-11-14T14:44:58.45+0000 [API/0]      OUT App instance exited with guid 21ac63eb-9595-428a-94c7-b0b02aaf77cc payload: {"cc_partition"=>"default", "droplet"=>"21ac63eb-9595-428a-94c7-b0b02aaf77cc", "version"=>"b2772438-92de-4d47-b680-ea772ac2288a", "instance"=>"f4799c8c89214bbd8067883c3ffe23e0", "index"=>0, "reason"=>"CRASHED", "exit_status"=>255, "exit_description"=>"failed to accept connections within health check timeout", "crash_timestamp"=>1479134698}
+    2016-11-14T14:45:07.50+0000 [DEA/4]      ERR Instance (index 0) failed to start accepting connections
 ```
 {: codeblock}
 
@@ -283,17 +300,17 @@ First, examine the logs for any obvious errors that might cause the Liberty app 
 
 * When you deploy the app by using the `ibmcloud cf push` command, specify a longer app start timeout by using the `-t` option. For example:
 
-  ```
-  	ibmcloud cf push myApp -t 180
-  ```
-  {: pre}
+    ```
+        ibmcloud cf push myApp -t 180
+    ```
+    {: pre}
 
 * The health check timeout can also be specified in the manifest.yml file. For example:
 
 ```
-       ---
-           ...
-           timeout: 180
+        ---
+            ...
+            timeout: 180
 ```
 {: codeblock}
 
@@ -314,15 +331,15 @@ If your app takes a long time to initialize, you might have to re-factor the app
 
 1. Deploy your app with "--no-route" option. This will disable the port health check. For example:
 
-  ```
-  	ibmcloud cf push myApp –no-route
-  ```
-  {: pre}
+    ```
+        ibmcloud cf push myApp –no-route
+    ```
+    {: pre}
 
 2. Once the app is initialized, map a route to the app. For example:
 
 ```
-  ibmcloud cf map-route myApp mybluemix.net
+    ibmcloud cf map-route myApp mybluemix.net
 ```
 {: pre}
 
@@ -360,8 +377,8 @@ Update the `server.xml` file to use the JVM `cacerts` file as the trust store. A
 #### Update the configured trust store
 
 Modify the configured trust store to trust the DigiCert ROOT CA.
-  1. Download the DigiCert Root CA from `https://cacerts.digicert.com/DigiCertGlobalRootCA.crt`.
-  2. Assuming the `resources/security/key.jks` is used as the trust store, import the CA into the key using the Java `keytool` utility:
+    1. Download the DigiCert Root CA from `https://cacerts.digicert.com/DigiCertGlobalRootCA.crt`.
+    2. Assuming the `resources/security/key.jks` is used as the trust store, import the CA into the key using the Java `keytool` utility:
 
 ```
 keytool -importcert --storepass <keyStorePassword> -keystore &lt;path&gt;/resources/security/key.jks -file DigiCertGlobalRootCA.crt
@@ -378,16 +395,17 @@ For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try 
 
 1. From your app root directory, install dependencies by running the following command.
 
-   ```
-   npm install
-   ```
-   {: pre}
+    ```
+    npm install
+    ```
+    {: pre}
+
 1. Ensure that your `.cfignore` file does not include the following line:
 
-   ```
-   node_modules/
-   ```
-   {: codeblock}
+    ```
+    node_modules/
+    ```
+    {: codeblock}
 
 Now when you deploy your app with the  `ibmcloud cf push` command, instead of downloading your dependencies to a separate location, the dependencies are copied into the same directory as the rest of the app.
 
@@ -399,7 +417,7 @@ A Node.js app fails to start with a "No space left on device" error. For example
 {: tsSymptoms}
 
 ```
-   2017-01-16T14:25:14.61-0500 [CELL/0]     ERR tar: ./app/node_modules/pm2/node_modules/cron/node_modules/moment-timezone/LICENSE: Cannot write: No space left on device
+    2017-01-16T14:25:14.61-0500 [CELL/0]     ERR tar: ./app/node_modules/pm2/node_modules/cron/node_modules/moment-timezone/LICENSE: Cannot write: No space left on device
 
 ```
 {: screen}
@@ -412,13 +430,13 @@ Modify the package.json file for your app to use an NPM version 3 or greater.
 
 ```
 {
-  "name": "myapp",
-  "description": "this is my app",
-  "version": "0.1",
-  "engines": {
-     "node": "4.2.4",
-     "npm": "3.10.10"
-  }
+    "name": "myapp",
+    "description": "this is my app",
+    "version": "0.1",
+    "engines": {
+        "node": "4.2.4",
+        "npm": "3.10.10"
+    }
 }
 ```
 {: codeblock}
@@ -441,9 +459,9 @@ Node.js does not know how much memory is available to the app, so the garbage co
 A possible solution is to set the `--max_old_space_size` option on the app's start command in the package.json file. This option represents part of the app's memory footprint and should be set to a value less than the total memory available to the app. Read about [Large memory spikes and Heroku](https://github.com/nodejs/node/issues/3370){: external} for a more in-depth discussion of this topic.
 
 ```
-  "scripts": {
-    "start": "node --max_old_space_size=800 server.js"
-  }
+    "scripts": {
+        "start": "node --max_old_space_size=800 server.js"
+    }
 ```
 {: codeblock}
 
@@ -495,7 +513,7 @@ pid @{HOME}/nginx/logs/nginx.pid;
 ```
 {: codeblock}
 
-The `NOTICE` messages are for information and might not indicate a problem. You can stop the logging of these messages by changing the logging level from `stderr notice` to `stderr error` in the `nginx-defaults.conf` file in  your buildpack. For example: 	
+The `NOTICE` messages are for information and might not indicate a problem. You can stop the logging of these messages by changing the logging level from `stderr notice` to `stderr error` in the `nginx-defaults.conf` file in  your buildpack. For example:     
 {: tsResolve}
 
 ```
@@ -525,24 +543,26 @@ Configuration information for the Python app is missing.
 Add a `requirements.txt` file and a `Procfile` file to the root directory of your Python app. The following information assumes that you are importing the `web.py` library:
 {: tsResolve}
 
- 1. Add a `requirements.txt` file to the root directory of your Python app.
+    1. Add a `requirements.txt` file to the root directory of your Python app.
 
- The `requirements.txt` file specifies the library packages that are required for your Python app and the version of the packages. The following example shows the content of the `requirements.txt` file, where `web.py==0.37` indicates the version of the `web.py` library that will be downloaded is 0.37, and `wsgiref==0.1.2` indicates the version of the web server gateway interface that is required by the web.py library is 0.1.2.
-	 ```
-	 web.py==0.37
-     wsgiref==0.1.2
-	 ```
-     {: codeblock}
+    The `requirements.txt` file specifies the library packages that are required for your Python app and the version of the packages. The following example shows the content of the `requirements.txt` file, where `web.py==0.37` indicates the version of the `web.py` library that will be downloaded is 0.37, and `wsgiref==0.1.2` indicates the version of the web server gateway interface that is required by the web.py library is 0.1.2.
+        ```
+        web.py==0.37
+        wsgiref==0.1.2
+        ```
+        {: codeblock}
 
-	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files){: external}.
+        For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files){: external}.
 
- 2. Add a `Procfile` file to the root directory of your Python app.
- The `Procfile` file must contain the start command for your Python app. In the following command, `<yourappname>` is the name of your Python app, and *PORT* is the port number that your Python app must use to receive requests from users of the app. *$PORT* is optional. If you don't specify PORT in the start command, the port number under the `VCAP_APP_PORT` environment variable that is inside the app is used.
-	```
-	web: python <yourappname>.py $PORT
-	```
+    2. Add a `Procfile` file to the root directory of your Python app.
+    The `Procfile` file must contain the start command for your Python app. In the following command, `<yourappname>` is the name of your Python app, and *PORT* is the port number that your Python app must use to receive requests from users of the app. *$PORT* is optional. If you don't specify PORT in the start command, the port number under the `VCAP_APP_PORT` environment variable that is inside the app is used.
+    ```
+    web: python <yourappname>.py $PORT
+    ```
     {: codeblock}
 
 You can now import the third-party Python library into {{site.data.keyword.cloud_notm}}.
+
+
 
 
