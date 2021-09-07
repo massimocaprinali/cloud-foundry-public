@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-07"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -117,79 +117,97 @@ subcollection: cloud-foundry-public
 ### September 3, 2021: Updated Liberty buildpack v3.61-20210826-1015
 * The alternate and default Liberty runtime GA version is changed to the `21.0.0.9` release.
     * To specify the monthly runtime set the following two variables: 
+    
       ```
       ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
       ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
       ```
-* The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html).  
-* The AdoptOpenJDK Open J9 alternate JRE is updated to 11.0.12_7_openj9-0.27.0
+      {: codeblock}
+      
+* The IBM JRE Version is updated to `8 SR6 FP35` and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
+* The AdoptOpenJDK Open J9 alternate JRE is updated to `11.0.12_7_openj9-0.27.0`.
 
 ### August 6, 2021: Updated Liberty buildpack v3.60-20210730-0620
 * The alternate Liberty runtime GA version is changed to the `21.0.0.8` release.
-* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html) 
+* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external}. 
   * To specify the monthly runtime set the following two variables: 
+  
       ```
       ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
       ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
       ```
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP31) remains unchanged.
+      {: codeblock}
+      
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP31`) remains unchanged.
 
 ### July 8, 2021: Updated Liberty buildpack v3.59-20210701-1053
 * The alternate Liberty runtime GA version is changed to the `21.0.0.7` release.
-* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html) release.
+* The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external} release.
   * To specify the monthly runtime set the following two variables: 
+  
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
     ```
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP31) remains unchanged.
+    {: codeblock}
+    
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP31`) remains unchanged.
 
 ### June 11, 2021: Updated Liberty buildpack v3.58-20210602-1655
 * The default and alternate Liberty runtime GA version is changed to the `21.0.0.6` release.
 * The IBM JRE Version is updated to 8 SR6 FP31. 
 * The IBM JRE 8 SR6 FP31 includes the following security fix: 
-  * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017) - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
+  * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017){: external} - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
   * To specify the monthly runtime set the following two variables: 
+    
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
     ```
+    {: codeblock}
+    
 * The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) remains unchanged.
 
 ### May 19, 2021: Updated Liberty buildpack v3.57-20210512-1446
-* The alternate Liberty runtime GA version is changed to the [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) release.
-* The default Liberty runtime GA version remains the same [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html) release.
-* * The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
+* The alternate Liberty runtime GA version is changed to the [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html){: external} release.
+* The default Liberty runtime GA version remains the same [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html){: external} release.
+* * The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
   * To specify the monthly runtime set the following two variables: 
+    
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
     ```
-  * For more information see [Use the monthly runtime](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.11_9_openj9-0.26.0) and IBM JRE Version (8 SR6 FP26) remains unchanged.d
+    {: codeblock}
+    
+  * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged.d
 
 
 ### April 9, 2021: Updated Liberty buildpack v3.56-20210412-1223
 * The alternate Liberty runtime GA version is changed to the `21.0.0.4` release.
-* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433) security vulnerability.
+* The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
   * To specify the monthly runtime set the following two variables: 
+  
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
     ```
-  * For more information see [Use the monthly runtime](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
+    {: codeblock}
+    
+  * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
 
-* The default Liberty runtime GA version is the [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html) release.
-* The AdoptOpenJDK OpenJ9 alternate JRE (11.0.10_9_openj9-0.24.0) and IBM JRE Version (8 SR6 FP26) remains unchanged. 
+* The default Liberty runtime GA version is the [21.0.0.3](https://openliberty.io/blog/2021/03/19/microprofile-4-21003.html){: external} release.
+* The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.10_9_openj9-0.24.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged. 
 
 ### March 15, 2021: Updated Liberty buildpack v3.55-20210311-1642
 * The default and alternate Liberty runtime GA version is changed to the `21.0.0.3` release.
 * The IBM JRE Version is updated to 8 SR6 FP26.
 * The IBM JRE 8 SR6 FP26 includes the following security fixes:
-  * [CVE-2020-14782](https://www.ibm.com/support/pages/node/6370061)- A vulnerability in Java SE related to Libraries Component
-  * [CVE-2020-14781](https://www.ibm.com/support/pages/node/6370061)- A vulnerability in Java SE related to JNDI Component.
-  * [CVE-2020-27221](https://www.ibm.com/support/pages/node/6417051)- Eclipse OpenJ9 vulnerability to a stack-based buffer overflow.
-  * [CVE-2020-2773](https://www.ibm.com/support/pages/node/6414729)- A vulnerability in Java SE related to the Java SE Security component.
+  * [CVE-2020-14782](https://www.ibm.com/support/pages/node/6370061){: external} - A vulnerability in Java SE related to Libraries Component
+  * [CVE-2020-14781](https://www.ibm.com/support/pages/node/6370061){: external} - A vulnerability in Java SE related to JNDI Component.
+  * [CVE-2020-27221](https://www.ibm.com/support/pages/node/6417051){: external} - Eclipse OpenJ9 vulnerability to a stack-based buffer overflow.
+  * [CVE-2020-2773](https://www.ibm.com/support/pages/node/6414729){: external} - A vulnerability in Java SE related to the Java SE Security component.
 
 ### February 12, 2021: Updated Liberty buildpack v3.54-20210211-1310
 * The alternate Liberty runtime GA version is changed to the `21.0.0.2` release.
