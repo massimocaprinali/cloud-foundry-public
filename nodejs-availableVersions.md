@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -127,19 +127,17 @@ See the following example:
 
 ```
 {
-    "name": "myapp",
-    "description": "this is my app",
-    "version": "0.1",
-    "engines": {
-        "node": "4.2.4",
-        "npm": "3.10.10"
-    }
+  "name": "myapp",
+  "description": "this is my app",
+  "version": "0.1",
+  "engines": {
+     "node": "4.2.4",
+     "npm": "3.10.10"
+  }
 }
 ```
 {: codeblock}
 
 **Note:** Always specify a node version in the `package.json` file. If a version is not specified, the latest node version is used.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -138,7 +138,5 @@ Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: e
 **High availability** - Supports full high availability for high app availability.
 
 **Automatic deployment scaling** - The Auto-Scaling for {{site.data.keyword.cloud_notm}} service automatically increases or decreases the compute capacity of your app, to rapidly adjust to dynamic loading needs.
-
-
 
 

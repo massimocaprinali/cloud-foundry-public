@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -170,10 +170,8 @@ After you install the CLI, you can get started:
     ```
     {: pre}
 
-    5. From `<your_new_directory>`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
+ 5. From `<your_new_directory>`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 6. Access your app by browsing to the app URL.
-
-
 
 

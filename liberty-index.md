@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -128,7 +128,5 @@ The Liberty buildpack is used when the following kinds of apps are deployed:
 ## Starter app
 {: #liberty-starter_app}
 {{site.data.keyword.cloud_notm}} provides several Liberty starter apps.  The Liberty starter apps are simple Liberty apps that provide a template that you can use. You can experiment with the starter apps, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -135,12 +135,10 @@ Note that node_modules that are included in your app are not cached.
 You can use a `cacheDirectories` array in your top-level `package.json` file to achieve fine grained control over what modules are cached.  When the `cacheDirectories` element is present in the `package.json` file only those modules which are in the `cacheDirectories` array will be cached.  In the following example only `node_modules` and `bower_components` are cached.
 ```
 {
-    "cacheDirectories": ["node_modules","bower_components"],
-    ...
+  "cacheDirectories": ["node_modules","bower_components"],
+  ...
 }
 ```
 {: codeblock}
-
-
 
 

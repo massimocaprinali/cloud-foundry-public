@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -156,7 +156,5 @@ Disabled attribute         | Element
 `enableWelcomePage`        | `httpDispatcher`
 
 {: caption="Table 1. Attributes disabled by Liberty for Java" caption-side="top"}
-
-
 
 

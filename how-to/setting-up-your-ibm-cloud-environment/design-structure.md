@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -133,7 +133,5 @@ The number of spaces can multiply rapidly because of iterative development. You 
 Have one person create and manage an organization, define the spaces, and grant team member access. A second person can be given the same access to maintain the environment when the organization manager is disabled.  
 
 Identify all of the people who need access to each space and organization. Determine their role. The job role of a team member determines their authority. For example, a senior developer needs the authority to view and update the entire development environment. However, a junior developer is limited as to what they can view and update.
-
-
 
 

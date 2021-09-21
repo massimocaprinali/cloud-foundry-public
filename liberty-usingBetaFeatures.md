@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -129,23 +129,23 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
 
 1. [Deploy a server directory or a packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing) with one or more beta features enabled in the `server.xml` file as in the example that follows:
 
-    ```
+  ```
 <server>
     <featureManager>
         <feature>jdbc-4.3</feature>
     </featureManager>
 </server>
-    ```
-    {: .codeblock}
+  ```
+  {: .codeblock}
 
-2. Set the `IBM_LIBERTY_BETA` environment variable to `true`. This variable directs the Liberty buildpack to install and enable the beta features for your app.  For example:
-    * Using the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli):
+2.  Set the `IBM_LIBERTY_BETA` environment variable to `true`. This variable directs the Liberty buildpack to install and enable the beta features for your app.  For example:
+  * Using the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli):
     ```
     ibmcloud cf set-env <yourappname> IBM_LIBERTY_BETA true
     ```
     {: .pre}
 
-    * Or, using the `manifest.yml` file:
+  * Or, using the `manifest.yml` file:
     ```
       env:
           IBM_LIBERTY_BETA: "true"
@@ -153,13 +153,13 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
     {: .codeblock}
 
 3. Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"`. This variable enables the [Liberty monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_defauts#liberty_versions), which supports beta features. For example:
-    * Using the {{site.data.keyword.cloud_notm}} CLI tool:
+  * Using the {{site.data.keyword.cloud_notm}} CLI tool:
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ```
     {: .pre}
 
-    * Or, using the `manifest.yml` file:
+  * Or, using the `manifest.yml` file:
     ```
       env:
           JBP_CONFIG_LIBERTY: "version: +"
@@ -167,7 +167,5 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
     {: .codeblock}
 
 If you are enabling the beta features on an existing app, don't forget to re-stage your app after you set the environment variables.
-
-
 
 

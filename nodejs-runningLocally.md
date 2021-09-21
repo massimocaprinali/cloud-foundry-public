@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -124,7 +124,5 @@ In the following example for a **js** file, **3000** is used as the port number.
 var port = (process.env.PORT || 3000);
 ```
 {: codeblock}
-
-
 
 

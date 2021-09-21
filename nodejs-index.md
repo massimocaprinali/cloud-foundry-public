@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -136,7 +136,5 @@ var port = (process.env.PORT || 3000);
 **Deprecation Note**:  As of version 4.0, the SDK for Node.js buildpack no longer supports App Management.    
 
 {{site.data.keyword.cloud_notm}} provides a number of utilities for managing and debugging your Node.js app.  See [App Management](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) for complete details.  
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -122,35 +122,35 @@ For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](ht
 
 1. In the `.profile.d` directory, create a script file that runs the `installUtility` command as shown in the following example.
 
-    This example installs the `audit-1.0` feature.
+   This example installs the `audit-1.0` feature.
 
-    ```
-    #!/bin/sh
-    echo "Installing audit-1.0"
-    export PATH=$PATH:$HOME/app/.java/jre/bin
+   ```
+   #!/bin/sh
+   echo "Installing audit-1.0"
+   export PATH=$PATH:$HOME/app/.java/jre/bin
 
-    $HOME/app/.liberty/bin/installUtility install audit-1.0 --acceptLicense
-    ```
-    {: codeblock}
+   $HOME/app/.liberty/bin/installUtility install audit-1.0 --acceptLicense
+   ```
+   {: codeblock}
 
-    You can install multiple features by specifying additional features names separated by spaces.
-    {: tip}
+   You can install multiple features by specifying additional features names separated by spaces.
+   {: tip}
 
 1. Push your app to {{site.data.keyword.cloud_notm}}, using the `-p` option to specify the app's root directory.
 
-    For example, run the following command to push your app:
-    ```
-    ibmcloud cf push myApp -p /<path-to-app>
-    ```
-    {: codeblock}
+   For example, run the following command to push your app:
+   ```
+   ibmcloud cf push myApp -p /<path-to-app>
+   ```
+   {: codeblock}
 
 1. Verify that the feature installed successfully by viewing the app's recent log.
 
-    For example, run the following command to display the log:
-    ```
-    ibmcloud cf logs myApp --recent
-    ```
-    {: codeblock}
+   For example, run the following command to display the log:
+   ```
+   ibmcloud cf logs myApp --recent
+   ```
+   {: codeblock}
 
     If the feature was installed, the output shows the following messages:
 
@@ -163,7 +163,5 @@ For information on using pre-runtime hooks, see [Configure Pre-Runtime Hooks](ht
     2018-09-18T13:01:25.87-0400 [APP/PROC/WEB/0] OUT The --acceptLicense argument was found. This indicates that you have
     2018-09-18T13:01:25.87-0400 [APP/PROC/WEB/0] OUT accepted the terms of the license agreement.
     ```
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -125,19 +125,19 @@ subcollection: cloud-foundry-public
 
 Push the server package that contains your app to a single instance. Your `server.xml` file must contain the `monitor-1.0` and `restConnector-1.0` features. It must also contain a `basicRegistry` element and `administrator-role` element.
 ```
-        <featureManager>
-            <feature>jsp-2.2</feature>
-            <feature>monitor-1.0</feature>
-            <feature>restConnector-1.0</feature>
-        </featureManager>
+       <featureManager>
+           <feature>jsp-2.2</feature>
+           <feature>monitor-1.0</feature>
+           <feature>restConnector-1.0</feature>
+       </featureManager>
 
-        <basicRegistry>
-            <user name="jconuser" password="jconpassw0rd"/>
-        </basicRegistry>
+       <basicRegistry>
+           <user name="jconuser" password="jconpassw0rd"/>
+       </basicRegistry>
 
-        <administrator-role>
-            <user>jconuser</user>
-        </administrator-role>
+       <administrator-role>
+           <user>jconuser</user>
+       </administrator-role>
 ```
 {: codeblock}
 
@@ -188,7 +188,5 @@ You can add `-J-Djavax.net.debug=ssl` to the `jconsole` command. The `-J-Djavax.
     <logging traceSpecification="com.ibm.ws.jmx.*=all"/>
 ```
 {: codeblock}
-
-
 
 

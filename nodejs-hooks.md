@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -119,7 +119,5 @@ The SDK for Node.js buildpack includes the Dynatrace hook. Dynatrace enables app
 
 When following instructions in third-party documentation, remember to use the `ibmcloud cf` command instead of `cf` to run commands for your {{site.data.keyword.cloud_notm}} buildpack.
 {: tip}
-
-
 
 

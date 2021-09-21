@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -176,8 +176,8 @@ You can opt out of automatic configuration of services on a per-service-type bas
 
 * The string can contain opt-out specifications for one or more services.
 * The opt-out specification for a specific service is service_type=option, where:
-    * The service_type is the label for the service as displayed in VCAP_SERVICES.
-    * The option is either `all` or `config`.
+  * The service_type is the label for the service as displayed in VCAP_SERVICES.
+  * The option is either `all` or `config`.
 * If the String contains an opt-out specification for more than one service, the individual opt-out specifications must be separated by a single white-space character.
 
 See the following example of `services_autoconfig_excludes` string grammar:
@@ -232,13 +232,13 @@ To find the *label* for a service in VCAP_SERVICES issue a command like the foll
 The output includes text similar to the following, where you can see the `label` field with value `elephantsql`:
 
 ```
-    "elephantsql": [
-    {
-        "credentials": {
-        "max_conns": "5",
-        "uri":      "..."
-    },
-    "label": "elephantsql",
+   "elephantsql": [
+   {
+      "credentials": {
+      "max_conns": "5",
+      "uri":      "..."
+   },
+   "label": "elephantsql",
 
 ```
 {: codeblock}
@@ -275,7 +275,5 @@ Environment Variable Name               | Configuration Syntax
 `LBP_SERVICE_CONFIG_COMPOSE_MYSQL`      | `"{driver: { version: x.y.z }, connection_pool_size: 15}"`
 `LBP_SERVICE_CONFIG_COMPOSE_POSTGRESQL` | `"{driver: { version: x.y.z }}"`
 `LBP_SERVICE_CONFIG_POSTGRESQL`         | `"{driver: { version: x.y.z }}"`
-
-
 
 

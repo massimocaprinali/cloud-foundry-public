@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -129,7 +129,7 @@ If a `Procfile` is not present, the {{site.data.keyword.cloud_notm}} Node.js bui
 {
     ...   
     "scripts": {
-        "start": "node app.js"
+      "start": "node app.js"
     }
 }
 ```
@@ -142,7 +142,5 @@ If a start script entry is present in the `package.json`, a `Procfile` is genera
 {: codeblock}
 
 For more information on the `Procfile` and `package.json` file see [Tips for Node.js Apps](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html){: external}.
-
-
 
 

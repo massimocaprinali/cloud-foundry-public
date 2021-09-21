@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -172,7 +172,5 @@ The easiest way to delete the alias is to delete the IAM-managed service instanc
 {: #cf}
 
 For more details about binding a Cloud Foundry service to another Cloud Foundry service, see [Using services in another region](/docs/account?topic=account-cross_region_service).
-
-
 
 

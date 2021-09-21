@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -127,16 +127,16 @@ First, you'll need to set up a Dynatrace collector.  Then you must create a user
 service to pass information for the Dynatrace agent to connect with the Dynatrace collector. See [Dynatrace Architecture](https://community.dynatrace.com/community/display/DOCDT65/Architecture){: external} to better understand the relationship between Dynatrace components.
 
 1. Set up a Dynatrace collector.
-    * See the [Dynatrace community website](https://community.dynatrace.com/community/display/EVAL/Step+3+-+Connect+Agent+to+Dynatrace){: external} for instructions on downloading and setting up the Dynatrace collector.
-    * Ensure that the collector is set up in a location that is accessible to the Dynatrace agent running with your app in {{site.data.keyword.cloud_notm}}.
+  * See the [Dynatrace community website](https://community.dynatrace.com/community/display/EVAL/Step+3+-+Connect+Agent+to+Dynatrace){: external} for instructions on downloading and setting up the Dynatrace collector.
+  * Ensure that the collector is set up in a location that is accessible to the Dynatrace agent running with your app in {{site.data.keyword.cloud_notm}}.
 2. Create a user-provided service that points to the running Dynatrace collector.
 
-    **Note:** The name of the user-provided service must contain the string `dynatrace`. Case is ignored. For example, use the command that follows, where `my-dynatrace-collector` contains `dynatrace`:
+  **Note:** The name of the user-provided service must contain the string `dynatrace`. Case is ignored. For example, use the command that follows, where `my-dynatrace-collector` contains `dynatrace`:
 
-    ```
-    ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring"}'
-    ```
-    {: pre}
+  ```
+  ibmcloud cf cups my-dynatrace-collector -p '{"server":"DynatraceCollectorIPaddress","profile":"Monitoring"}'
+  ```
+  {: pre}
 
     In this example, `my-dynatrace-collector` is the name given to the service, `DynatraceCollectorIPaddress` is the IP address of the Dynatrace collector you have configured, and profile is the optional Dynatrace profile name associated with this monitored app. The default profile value is `Monitoring`. You can specify optional options as illustrated in the following example.
 
@@ -148,10 +148,10 @@ service to pass information for the Dynatrace agent to connect with the Dynatrac
     See the [_Agent Settings_ section of Agent Configuration](https://community.dynatrace.com/community/display/DOCDT65/Set+up+Agents){: external} at the Dynatrace community website for more information about available options. For example, by using the exclude option, you can exclude classes from being monitored by Dynatrace. See [Dynatrace Agent Framework](https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack/blob/master/docs/framework-dynatrace_one_agent.md){: external} for more details about configuring the user-provided service.
 
 3. After you push your app to {{site.data.keyword.cloud_notm}}, bind the user-provided service that you created to the app. For example, use the following command:
-    ```
-    ibmcloud cf bs myApp my-dynatrace-collector
-    ```
-    {: pre}
+  ```
+  ibmcloud cf bs myApp my-dynatrace-collector
+  ```
+  {: pre}
 
     **Note:** You must restage your app after binding the service.
 
@@ -166,16 +166,16 @@ additional configuration steps are needed.
 ### Hosting the Dynatrace agent
 {: #hosting_dynatrace_agent}
 The Dynatrace agent must be hosted on a web server, and the Liberty buildpack must be able to download the agent `.jar` file from that server. The server must be configured with an `index.yml` file that specifies details about the agent `.jar` file. Complete the steps that follow to set up the Dynatrace agent:
-    1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace){: external} at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the `dynatrace-agent-unix.jar` version `6.+`.
-    2. Host the agent `.jar` file in a location from which the Liberty buildpack can download it. You can host it on {{site.data.keyword.cloud_notm}} itself using any of the available server facilities, or you can host it on some publicly available location.
-        * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
+  1. Download the Dynatrace agent `.jar` file. See [Dynatrace Server Platform Installers](https://community.dynatrace.com/community/display/EVAL/Step+1+-+Download+and+install+Dynatrace){: external} at the Dynatrace community website for instructions on downloading the Dynatrace agent `.jar` file. The appropriate agent `.jar` file for running on {{site.data.keyword.cloud_notm}} is the `dynatrace-agent-unix.jar` version `6.+`.
+  2. Host the agent `.jar` file in a location from which the Liberty buildpack can download it. You can host it on {{site.data.keyword.cloud_notm}} itself using any of the available server facilities, or you can host it on some publicly available location.
+     * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
 
-        ```
-        6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
-        ```
-        {: codeblock}
+     ```
+     6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
+     ```
+     {: codeblock}
 
-        * The `dynatrace-agent-6.3.0-unix.jar` file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
+     * The `dynatrace-agent-6.3.0-unix.jar` file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
 
 ### Configuring the Liberty app
 {: #configuring_liberty_app}
@@ -196,7 +196,5 @@ The Liberty app you want to monitor must be configured to locate the server host
     Downloading dynatrace-agent-6.3.0-unix.jar 6.3.0 from https://my-dynatrace-agent-host.mybluemix.net/dynatrace-agent-6.3.0-unix.jar (17.8s)
 ```
 {: screen}
-
-
 
 

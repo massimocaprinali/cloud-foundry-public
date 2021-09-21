@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: HA for cloud foundry, DR for cloud foundry, high availability for cloud foundry, disaster recovery for cloud foundry, failover for cloud foundry
 
@@ -141,9 +141,9 @@ To ensure your app is the most responsive and has the highest availability, comp
 
 3. Use a global load balancer.  
 
-    {{site.data.keyword.ibmcf_notm}} provides a load balancer to balance traffic within a single region. To balance traffic across multiple regions you must use a global load balancer such as [{{site.data.keyword.cloud}} Internet Services](/docs/cis?topic=cis-getting-started).  
-
-    Each app that is deployed in a region is a separate URL target.  A global load balancer connects multiple URLs and spreads the load over multiple regions.
+   {{site.data.keyword.ibmcf_notm}} provides a load balancer to balance traffic within a single region. To balance traffic across multiple regions you must use a global load balancer such as [{{site.data.keyword.cloud}} Internet Services](/docs/cis?topic=cis-getting-started).  
+   
+   Each app that is deployed in a region is a separate URL target.  A global load balancer connects multiple URLs and spreads the load over multiple regions.
 
 ## Scaling instances depending on load
 
@@ -166,7 +166,5 @@ You can try out configuring high availability by using the following labs:
 ## Related links
 
 See [how {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find more information about [Service Level Agreements](/docs/overview?topic=overview-slas).  
-
-
 
 

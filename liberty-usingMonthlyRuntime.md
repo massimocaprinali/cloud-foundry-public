@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -117,7 +117,7 @@ The Liberty monthly runtime provides the latest version and access to new functi
 To use the Liberty monthly runtime in {{site.data.keyword.cloud_notm}}, you will need to do the following:
 
 Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIBERTY_MONTHLY` environment variable to `true`. These variables enable the [Liberty monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-buildpack_defauts#liberty_versions). For example:
-    * Using the {{site.data.keyword.cloud_notm}} CLI tool:
+  * Using the {{site.data.keyword.cloud_notm}} CLI tool:
     ```
     ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
     ```
@@ -127,7 +127,7 @@ Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIB
     ```
     {: .pre}
 
-    * Or, using the `manifest.yml` file:
+  * Or, using the `manifest.yml` file:
     ```
       env:
           JBP_CONFIG_LIBERTY: "version: +"
@@ -143,7 +143,5 @@ Set the `JBP_CONFIG_LIBERTY` environment variable to `"version: +"` and `IBM_LIB
     {: .codeblock}
 
 If you are enabling the monthly runtime on an existing app you may need to delete and re-push your app after you set the environment variables.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -123,10 +123,10 @@ You can run your Liberty app on {{site.data.keyword.cloud}} with your own JRE. T
 You must host the JRE file on a web server that the liberty-for-java buildpack can download from. You can host the file on {{site.data.keyword.cloud_notm}} with any of the available server facilities, or you can host it in a publicly available location. The server must be configured with an `index.yml` file that specifies details about the JRE file.
 
 Complete the following steps to host the JRE and the `index.yml` file:
-    1. Acquire the JRE, which must be the version for use on a UNIX 64-bit OS, and must be a `tar.gz` file.
-    2. Host the JRE file in a location from which the liberty-for-java buildpack can download it.
-    3. Provide an `index.yml` file at the hosting location. The `index.yml` file must include an entry that contains a version ID of the JRE followed by a colon and the complete JRE file location URL.
-        * Define the JRE version in the `index.yml` file.
+  1. Acquire the JRE, which must be the version for use on a UNIX 64-bit OS, and must be a `tar.gz` file.
+  2. Host the JRE file in a location from which the liberty-for-java buildpack can download it.
+  3. Provide an `index.yml` file at the hosting location. The `index.yml` file must include an entry that contains a version ID of the JRE followed by a colon and the complete JRE file location URL.
+    * Define the JRE version in the `index.yml` file.
 
     ```
     ---
@@ -176,10 +176,8 @@ ibmcloud cf se myApp JVM 'openjdk'
 To confirm that Liberty is using the expected JRE, check the staging log. Look for a message that indicates the server downloaded the buildpack from the location indicated in the `index.yml` file. See the following snippet for an example of the log output when Liberty successfully uses the expected JRE.
 ```
 -----> Downloading OpenJdk 1.8.0_91 from
-    https://myHostingApp.ng.bluemix.net/jre-8u91-fcs-bin-b14-linux-x64-01_apr_2016.tar.gz (6.2s)
+ https://myHostingApp.ng.bluemix.net/jre-8u91-fcs-bin-b14-linux-x64-01_apr_2016.tar.gz (6.2s)
 ```
 {: screen}
-
-
 
 

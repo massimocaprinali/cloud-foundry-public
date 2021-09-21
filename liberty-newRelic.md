@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -140,11 +140,11 @@ If you have an existing New Relic account and license key, you may bind the exis
 
 1. Create a user-provided service instance using your existing license key.  For example, if your existing license key is 1234567, you can use the {{site.data.keyword.cloud_notm}} CLI to "create-user-provided-service" and provide the license key 1234567 at the prompt as in the following:
 
-    ```
-        ibmcloud cf create-user-provided-service mynewrelic -p "licenseKey"
+  ```
+    ibmcloud cf create-user-provided-service mynewrelic -p "licenseKey"
     licenseKey> 1234567
-    ```
-    {: pre}
+  ```
+  {: pre}
 
 2. Deploy your app to {{site.data.keyword.cloud_notm}} with the user-provided New Relic service instance.  The following
 is a sample app manifest that uses a user-provided
@@ -170,7 +170,5 @@ Auto configuration of the New Relic service is different from the auto configura
 * Opting out is not an option.
 * The service integration relies on New Relic's agent, a Java agent. Therefore, it is configured through Java options as opposed to cloud variables in the `server.xml` file.
 * The configuration relies on both VCAP_SERVICES and VCAP_APPLICATION.
-
-
 
 

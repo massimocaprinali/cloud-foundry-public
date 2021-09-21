@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -157,25 +157,25 @@ Review the files in the `get-started-tomcat` directory to familiarize yourself w
 You must install the dependencies and build a `.war` file as defined in the `pom.xml` file to run the app.
 
 1. Install the dependencies.
-
-    ```
-    mvn clean install  
-    ```
-    {: pre}
+  
+   ```
+   mvn clean install  
+   ```
+   {: pre}
 
 2. Copy the `GetStartedTomcat.war` file from the `target` directory into your `tomcat-install-dir` `webapps` directory.
 
 3. Run the app.  
-
-    ```
-    <tomcat-install-dir>/bin/startup.bat|.sh
-    ```
-    {: pre}
+  
+   ```
+   <tomcat-install-dir>/bin/startup.bat|.sh
+   ```
+   {: pre}
 
 4. View your app the following URL: `http://localhost:8080/GetStartedTomcat/`
 
-    Use `shutdown.bat|.sh` to stop your app.  Note you may need to give the commands execute permission.
-    {: tip}
+   Use `shutdown.bat|.sh` to stop your app.  Note you may need to give the commands execute permission.
+   {: tip}
 
 ## Step 3: Prepare the app for {{site.data.keyword.cloud_notm}} deployment
 {: #prepare-tomcat}
@@ -204,36 +204,36 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud}} account, and select an API endpoint.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
+   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
-    ```
-    ibmcloud login --sso
-    ```
-    {: pre}
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
 
 2. Next, target a Cloud Foundry org and space:
+  
+   ```	  
+   ibmcloud target --cf
+   ```
+   {: pre}
 
-    ```      
-    ibmcloud target --cf
-    ```
-    {: pre}
-
-    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-    {: tip}
+   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+   {: tip}
 
 3. From within the `get-started-tomcat` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-    ```
-    ibmcloud cf push
-    ```
-    {: pre}
+   ```
+   ibmcloud cf push
+   ```
+   {: pre}
 
-    This can take around two minutes. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+   This can take around two minutes. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command.  You can also issue the following command to view your apps status and see the URL.
 
@@ -259,7 +259,7 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 5. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
+   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -272,11 +272,11 @@ We're now going to update your local code to point to this database. We'll store
 1. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 2. Copy and paste just the `url` from the credentials to the `url` field of the `cloudant.properties` file, and save the changes.
-
-    ```
-    cloudant_url=https://123456789 ... bluemix.cloudant.com
-    ```
-    {: codeblock}
+  
+   ```
+   cloudant_url=https://123456789 ... bluemix.cloudant.com
+   ```
+   {:codeblock}
 
 3. Restart the server
 
@@ -292,7 +292,5 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
-
-
 
 

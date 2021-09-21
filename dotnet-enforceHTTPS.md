@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -117,48 +117,46 @@ To enforce HTTPS instead of HTTP on all pages in your app when it runs in {{site
 Add the following `using` statements in the `Startup` class:
 
 ```
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Rewrite;
+  using Microsoft.AspNetCore.Mvc;
+  using Microsoft.AspNetCore.Rewrite;
 ```
 {: codeblock}
 
 Add the following to the `ConfigureServices` method in the `Startup` class:
 
 ```
-    // if app is running in {{site.data.keyword.cloud_notm}}
-    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
+  // if app is running in {{site.data.keyword.cloud_notm}}
+  if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
+  {
+    services.Configure<MvcOptions>(options =>
     {
-        services.Configure<MvcOptions>(options =>
-    {
-        options.Filters.Add(new RequireHttpsAttribute());
+      options.Filters.Add(new RequireHttpsAttribute());
     });
-    }
+  }
 ```
 {: codeblock}
 
 Add the following to your `Configure` method in the `Startup` class:
 
 ```
-    // if app is running in {{site.data.keyword.cloud_notm}}
-    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
-    {
-        app.Use(async (context, next) =>
-        {
+  // if app is running in {{site.data.keyword.cloud_notm}}
+  if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
+  {
+    app.Use(async (context, next) =>
+      {
         if (string.Equals(context.Request.Headers["X-Forwarded-Proto"], "https", StringComparison.OrdinalIgnoreCase))
         {
           context.Request.Scheme = "https";
         }
 
         await next();
-        });
+      });
     var options = new RewriteOptions()
                 .AddRedirectToHttps();
 
     app.UseRewriter(options);
-    }
+  }
 ```
 {: codeblock}
-
-
 
 

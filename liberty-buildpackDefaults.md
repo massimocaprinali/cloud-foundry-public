@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -121,15 +121,15 @@ The buildpack has default values for settings such as the Java version or Libert
 
 The buildpack provides two versions of the Liberty runtime:
 1. A long-term stable release
-    * It is the default Liberty runtime.
-    * It does not provide any [beta features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_beta_features).
-    * Typically updated on a quarterly basis.
+  * It is the default Liberty runtime.
+  * It does not provide any [beta features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_beta_features).
+  * Typically updated on a quarterly basis.
 
 2. The monthly release
-    * It must be explicitly enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and
-    the **IBM_LIBERTY_MONTHLY** environment variable with **true**.
-    * It provides [monthly features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime).
-    * Typically updated every 4 weeks.
+  * It must be explicitly enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and
+  the **IBM_LIBERTY_MONTHLY** environment variable with **true**.
+  * It provides [monthly features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime).
+  * Typically updated every 4 weeks.
 
 ## Liberty features
 {: #default_liberty_features}
@@ -147,7 +147,5 @@ Apps that are deployed as a server directory or a packaged server are unaffected
 The buildpack provides a default JRE for the app. The major or minor version of the JRE might change between the buildpack releases. The minor version of the JRE might be updated frequently while the major version is rarely updated. The change in the major version of the JRE might adversely affect the app.
 
 To ensure that the app is not affected by the major version change, set the environment variable with the appropriate JRE version as described in [Customizing the JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre). For best results, adopt Java 8 for your apps.
-
-
 
 

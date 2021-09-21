@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -121,16 +121,14 @@ var app = express();
 app.enable('trust proxy');
 
 app.use (function (req, res, next) {
-    if (req.secure || process.env.BLUEMIX_REGION === undefined) {
-        next();
-    } else {
-        console.log('redirecting to https');
+  if (req.secure || process.env.BLUEMIX_REGION === undefined) {
+    next();
+  } else {
+    console.log('redirecting to https');
     res.redirect('https://' + req.headers.host + req.url);
-    }
+  }
 });
 ```
 {: codeblock}
-
-
 
 

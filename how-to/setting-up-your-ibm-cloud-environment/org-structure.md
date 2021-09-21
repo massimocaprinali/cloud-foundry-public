@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -159,32 +159,32 @@ The following scenarios show different approaches that you can adopt when you de
 
 ### Scenario 1: Segregation of user groups by business app delivery
 
-Description: Corporate rules require that the apps of each LOB must be developed, managed, and deployed by users from each LOB. Security must be enforced so that users can access only the apps that are relevant to their part of the business. So, the users work in different business areas, the apps they are working on require access to different {{site.data.keyword.cloud_notm}} resources, and there is no activity overlap.
+ Description: Corporate rules require that the apps of each LOB must be developed, managed, and deployed by users from each LOB. Security must be enforced so that users can access only the apps that are relevant to their part of the business. So, the users work in different business areas, the apps they are working on require access to different {{site.data.keyword.cloud_notm}} resources, and there is no activity overlap.
 
-Solution: You can create an organization for each business app delivery process. For example, one organization for retail banking, and one for investment banking.
+  Solution: You can create an organization for each business app delivery process. For example, one organization for retail banking, and one for investment banking.
 
-![Figure that shows segregation of users by business app delivery](../../images/bank_example.svg "Figure shows two banks, Bank A and Bank B.  Bank A has two retail projects associated with it.  Bank B has two investment projects associated with it."){: caption="Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery" caption-side="bottom"}
+  ![Figure that shows segregation of users by business app delivery](../../images/bank_example.svg "Figure shows two banks, Bank A and Bank B.  Bank A has two retail projects associated with it.  Bank B has two investment projects associated with it."){: caption="Figure 1. Example of a multi-organization architecture that is aligned to LOB delivery" caption-side="bottom"}
 {: #bpfigure1}
 
 ### Scenario 2: Segregation based on type of users (internal users, external users)
 
-Description: Your company works with different partners and you require clear boundaries between internal and external users.
+  Description: Your company works with different partners and you require clear boundaries between internal and external users.
 
-Solution: You can create an organization to deliver apps that are used internally. In addition, you can create one organization for each external partner.
+  Solution: You can create an organization to deliver apps that are used internally. In addition, you can create one organization for each external partner.
 
 ### Scenario 3: Isolation by project
 
-Description: Your company runs hackathons to identify new services.  
+  Description: Your company runs hackathons to identify new services.  
 
-Solution: You can define one organization per hackathon and use the organization as a sandbox. After the hackathon, you can promote the sandbox organization into an extra organization in your account.
+  Solution: You can define one organization per hackathon and use the organization as a sandbox. After the hackathon, you can promote the sandbox organization into an extra organization in your account.
 
 ### Scenario 4: Isolation of users by delivery phase
 
-Description: A company wants development, test, and production users to collaborate across a delivery, but their access is controlled by user role and job experience.
+  Description: A company wants development, test, and production users to collaborate across a delivery, but their access is controlled by user role and job experience.
 
-Solution: You can create a single-organization and define a space for each delivery phase. Then, depending on the user role and job experience, grant the read and write access that they require to complete their work and also collaborate within the organization.
+  Solution: You can create a single-organization and define a space for each delivery phase. Then, depending on the user role and job experience, grant the read and write access that they require to complete their work and also collaborate within the organization.
 
-![Figure that shows isolation of users by delivery phase](../../images/user_groups_example.svg "A single association can have multiple projects associated with it. Those projects can then have spaces for each delivery phase, for example, development, test, staging, and production."){: caption="Figure 2. Example of a single-organization architecture that is aligned by delivery phase" caption-side="bottom"}
+  ![Figure that shows isolation of users by delivery phase](../../images/user_groups_example.svg "A single association can have multiple projects associated with it. Those projects can then have spaces for each delivery phase, for example, development, test, staging, and production."){: caption="Figure 2. Example of a single-organization architecture that is aligned by delivery phase" caption-side="bottom"}
 {: #bpfigure2}
 
 ## Organization naming, restrictions, and management
@@ -196,7 +196,5 @@ Consider the following organization guidance:
 * Define the restrictions that apply to the organization. For example, define the role of each of the team members and the permissions they need to work in that organization.
 * Identify the manager of the organization. You might want to delegate the organization administration to more that one person.
 * Identify the area of the business that is allocated to this organization. The app usage that is generated in each of the spaces, within the organization, is accumulated and reported at the organization level.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -187,7 +187,5 @@ You can use the `ibmcloud cf buildpacks` command to show the available buildpack
 ibmcloud cf push <APP_NAME> -b BUILDPACK_NAME
 ```
 {: pre}
-
-
 
 

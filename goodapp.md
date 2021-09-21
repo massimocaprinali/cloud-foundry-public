@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -164,7 +164,5 @@ The [12 factors website](https://12factor.net){: external} describes the 12 fact
 12. Run admin or management tasks as one-off processes.
 
 These steps allow a maturing development organization to start adopting the range of cloud-native capabilities and create highly capable and flexible cloud apps.
-
-
 
 

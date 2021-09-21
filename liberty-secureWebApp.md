@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -157,7 +157,7 @@ Modify your `server.xml` to enable the `appSecurity-2.0` feature:
 
 ```
 <featureManager>
-    <feature>appSecurity-2.0</feature>
+  <feature>appSecurity-2.0</feature>
 </featureManager>
 ```
 {: codeblock}
@@ -166,13 +166,13 @@ Modify your `web.xml` file to include the following security constraint:
 
 ```
 <security-constraint>
-    <web-resource-collection>
-        <web-resource-name>Entire Application</web-resource-name>
+  <web-resource-collection>
+    <web-resource-name>Entire Application</web-resource-name>
     <url-pattern>/*</url-pattern>
-    </web-resource-collection>
-    <user-data-constraint>
-        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-constraint>
+  </web-resource-collection>
+  <user-data-constraint>
+    <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+  </user-data-constraint>
 </security-constraint>
 ```
 {: codeblock}
@@ -188,7 +188,5 @@ The secure starter app also contains **GoodServlet.java**, which includes a numb
 ## XSS cheat sheet
 
 See the [XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html){: external} to learn more about XSS and its countermeasures.
-
-
 
 

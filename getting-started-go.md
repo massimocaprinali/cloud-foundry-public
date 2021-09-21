@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -136,30 +136,30 @@ You'll need the following:
 
 1. First, we'll set up the local environment by ensuring all GO environment variables are set properly. For example:
 
-    ```
-    mkdir $HOME/work
-    export GOPATH=$HOME/work
-    export PATH=$PATH:$GOPATH/bin
-    ```
-    {: codeblock}
+   ```
+   mkdir $HOME/work
+   export GOPATH=$HOME/work
+   export PATH=$PATH:$GOPATH/bin
+   ```
+   {: codeblock}
 
 1. Change path to `$GOPATH/src`
 
-    ```
-    mkdir $GOPATH/src
-    cd $GOPATH/src
-    ```
-    {: codeblock}
+   ```
+   mkdir $GOPATH/src
+   cd $GOPATH/src
+   ```
+   {: codeblock}
 
-    Now you're ready to start working with the simple Go *hello world* app.
+   Now you're ready to start working with the simple Go *hello world* app.
 
 1. Clone the repository and change to the directory where the sample app is located.
 
-    ```
-    go get github.com/IBM-Cloud/get-started-go
-    cd github.com/IBM-Cloud/get-started-go
-    ```
-    {: pre}
+   ```
+   go get github.com/IBM-Cloud/get-started-go
+   cd github.com/IBM-Cloud/get-started-go
+   ```
+   {: pre}
 
 1. Peruse the files in the `get-started-go` directory to familiarize yourself with the contents.
 
@@ -168,16 +168,16 @@ You'll need the following:
 
 1. Build and run the app locally by running the following commands.
 
-    ```
-    make
-    go run main.go
-    ```
-    {: pre}
+   ```
+   make
+   go run main.go
+   ```
+   {: pre}
 
 1. View your app at the following URL: `http://localhost:8080`
 
-    Press *Ctrl-C* to stop your app from the same window where you started the app.
-    {: tip}
+   Press *Ctrl-C* to stop your app from the same window where you started the app.
+   {: tip}
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-go}
@@ -205,36 +205,36 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
+   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
 
-    ```
-    ibmcloud login --sso
-    ```
-    {: pre}
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
 
 1. Target a Cloud Foundry org and space:
 
-    ```      
-    ibmcloud target --cf
-    ```
-    {: pre}
+   ```	  
+   ibmcloud target --cf
+   ```
+   {: pre}
 
-    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-    {: tip}
+   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+   {: tip}
 
 1. From within the `get-started-go` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-    ```
-    ibmcloud cf push
-    ```
-    {: pre}
+   ```
+   ibmcloud cf push
+   ```
+   {: pre}
 
-    This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command. You can also issue the following command to view your app's status and see the URL.
 
@@ -272,26 +272,26 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. Create a file called `.env` in the `get-started-go` directory with the following content:
 
-    ```
-    CLOUDANT_URL=
-    ```
-    {: codeblock}
+   ```
+   CLOUDANT_URL=
+   ```
+   {: codeblock}
 
 2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `CLOUDANT_URL` field of the `.env` file and save the changes.  The result will be something like:
 
-    ```
-    CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
-    ```
-    {: codeblock}
+   ```
+   CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
+   ```
+   {: codeblock}
 
 4. Run your app locally.
 
-    ```
-    go run main.go
-    ```
-    {: pre}
+   ```
+   go run main.go
+   ```
+   {: pre}
 
 5. View your app at: `http://localhost:8080`. Any names that you enter into the app are added to the database.
 
@@ -305,7 +305,5 @@ If you don't need your app live, stop it so you don't incur any unexpected charg
 
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
-
-
 
 

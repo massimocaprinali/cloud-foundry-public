@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -138,7 +138,7 @@ java_buildpack     7      true      false    buildpack_java_v2.0.2.zip
 ruby_buildpack     8      true      false    buildpack_ruby_v46-245-g2fc4ad8.zip
 nodejs_buildpack   9      true      false    buildpack_nodejs_v8-177-g2b0a5cf.zip
 ```
-{: screen}
+{:screen}
 
 
 For the same runtime or framework, IBM-created buildpacks take precedence over the community ones. If you want to use the community buildpack to overwrite the IBM-created buildpack, you must specify the buildpack by using the `-b` option with the `ibmcloud cf push` command.
@@ -214,7 +214,5 @@ ibmcloud cf restage app_name
 ## Use the `manifest.yml` file.
 
 You can add the environment variable and the value that you want to specify directly to the `manifest.yml` file. See [Environment variables](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block){: external}.
-
-
 
 

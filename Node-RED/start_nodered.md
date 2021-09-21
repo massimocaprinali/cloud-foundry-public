@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -140,32 +140,25 @@ Before you begin, install the [Cloud Foundry command-line interface](https://git
 cd <varname>directory_name</varname></codeblock>
 ```
 {: pre}
-
 3. Connect to {{site.data.keyword.cloud}}.
 ```
 ibmcloud cf api https://api.{DomainName}/
 ```
 {: pre}
-
 4. Log in to {{site.data.keyword.cloud_notm}}.
 ```
 ibmcloud cf login -u <varname props="keyref(user_ID)">user_name</varname>
 ibmcloud cf target -o <varname props="keyref(org_name)">org_name</varname> -s <varname props="keyref(space_name)">space_name</varname>
 ```
 {: codeblock}
-
 5. Deploy your app to {{site.data.keyword.cloud_notm}}.
 ```
 ibmcloud cf push <varname props="keyref(app_name)">app_name</varname>
 ```
 {: pre}
-
 6. Access your app to see your changes.
 ```
 <varname props="keyref(host)">host</varname>.<keyword conref="cloudoeconrefs.dita#cloudoeconrefs/Appdomainname"/>
 ```
 {: pre}
-
-
-
 

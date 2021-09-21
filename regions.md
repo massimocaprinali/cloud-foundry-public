@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -140,7 +140,5 @@ A list of supported regions and API endpoints for the {{site.data.keyword.ibmcf_
 | `EU-DE`       | `api.eu-de.cf.cloud.ibm.com`    |
 | `AU-SYD`      | `api.au-syd.cf.cloud.ibm.com`   |
 {: caption="Table 1. Lists API endpoints for interacting with Cloud Foundry Public" caption-side="top"}
-
-
 
 

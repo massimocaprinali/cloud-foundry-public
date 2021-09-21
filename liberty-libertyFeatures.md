@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -364,7 +364,5 @@ Skip to the section of the feature list by using the following index, or you can
 * `wsAtomicTransaction-1.2`
 * `wsSecurity-1.1`
 * `wsSecuritySaml-1.1`
-
-
 
 

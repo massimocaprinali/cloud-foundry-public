@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -144,7 +144,5 @@ For external buildpacks, support will not be provided by {{site.data.keyword.IBM
 {: #third-party}
 
 The buildpacks enable you to use some third-party services, such as Dynatrace or New Relic, within your apps. {{site.data.keyword.IBM_notm}} does not provide support for third-party services. For information about using third-party services in {{site.data.keyword.cloud}}, see the information about the service you want to use in the latest [{{site.data.keyword.cloud}} Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm){: external}. Before you use a third-party service, also review the licensing information from the service provider.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -141,39 +141,39 @@ Autoscaling determines when and how your app's capacity is changed according to 
 2. Set the **Default Instance Limits** of your app with a **Minimum Instance Count** and **Maximum Instance Count**.  These values restrict the scope of your app's resources.
 3. Create the **Scaling Rules** with metric types, thresholds, and adjustment strategies.  
 
-    The following metric types are supported:
-    * `Memoryused` is the amount of memory that is used by your app. `Memoryused` is specified in MB.
-    * `Memoryutil` specifies the memory that is used by the app as a percentage of the total memory quota that is allocated to the app.  For example, if the app is using 100 MB, and the memory quota is 200 MB, the memory utilization is 50%.   
-    * `Cpu`, is the CPU percentage that is used by the app. `Cpu` is specified in percentage.  The CPU utilization can be affected by the total workload of the hosting hardware and other factors.
-    * `Responsetime` is the average amount of time that the app takes to respond to a request.  `Responsetime` is specified in `ms` (milliseconds).
-    * `Throughput` is the total number of the requests that are processed in a time period. `Throughput` is specified in `rps` (requests per second).
-    * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. Autoscaling is triggered when the corresponding metric is emitted to the App Autoscaler. For more information, see the [custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics){: external}.
+   The following metric types are supported:
+   * `Memoryused` is the amount of memory that is used by your app. `Memoryused` is specified in MB.
+   * `Memoryutil` specifies the memory that is used by the app as a percentage of the total memory quota that is allocated to the app.  For example, if the app is using 100 MB, and the memory quota is 200 MB, the memory utilization is 50%.   
+   * `Cpu`, is the CPU percentage that is used by the app. `Cpu` is specified in percentage.  The CPU utilization can be affected by the total workload of the hosting hardware and other factors.
+   * `Responsetime` is the average amount of time that the app takes to respond to a request.  `Responsetime` is specified in `ms` (milliseconds).
+   * `Throughput` is the total number of the requests that are processed in a time period. `Throughput` is specified in `rps` (requests per second).
+   * `Custom_metric` is your own custom metric. The `Custom_metric` name can be any alphanumeric value. Autoscaling is triggered when the corresponding metric is emitted to the App Autoscaler. For more information, see the [custom metric usage guide](https://github.com/cloudfoundry/app-autoscaler/tree/develop/docs#auto-scale-your-application-with-custom-metrics){: external}.
 
-    In addition to specifying the metric type, specify an operator, threshold, breach duration, adjustment, and cooldown period values. 
+   In addition to specifying the metric type, specify an operator, threshold, breach duration, adjustment, and cooldown period values. 
 
-    When the threshold is continuously breached during the breach duration period, and beyond the cooldown period, the App AutoScaler triggers the defined autoscaling action.  The number or percentage of app instances is adjusted. 
+   When the threshold is continuously breached during the breach duration period, and beyond the cooldown period, the App AutoScaler triggers the defined autoscaling action.  The number or percentage of app instances is adjusted. 
 
-    * The operator can be `>=`, `>`, `<=`, or `<`.
-    * The threshold must be a numeric value.  
-    * The breach duration is defined in `seconds`.  The default value is 120 seconds.
-    * The adjustment value specifies how the number of app instances change in each scaling action.  You can specify an absolute number or a percentage of instances to add or remove.
-    * The cooldown period specifies the time to wait before the taking the next autoscaling action. A cooldown period ensures that your app does not launch new instances or stop existing instances before your app is stable. The cooldown period is specified in `seconds`. The default cooldown period is 300 seconds.
+   * The operator can be `>=`, `>`, `<=`, or `<`.
+   * The threshold must be a numeric value.  
+   * The breach duration is defined in `seconds`.  The default value is 120 seconds.
+   * The adjustment value specifies how the number of app instances change in each scaling action.  You can specify an absolute number or a percentage of instances to add or remove.
+   * The cooldown period specifies the time to wait before the taking the next autoscaling action. A cooldown period ensures that your app does not launch new instances or stop existing instances before your app is stable. The cooldown period is specified in `seconds`. The default cooldown period is 300 seconds.
 
 4. (Optional) Define **Schedules** to scale your app during a set time period.
 
-    You can define specific time periods when you know that your app requires different numbers of instances to handle peak loads. The schedule policy overwrites the default instance limits and sets the number of instances to the **Initial Minimum Instance Count** value for the scheduled period. 
+   You can define specific time periods when you know that your app requires different numbers of instances to handle peak loads. The schedule policy overwrites the default instance limits and sets the number of instances to the **Initial Minimum Instance Count** value for the scheduled period. 
 
-    To define a schedule, complete the following steps. You can define multiple schedules.
+   To define a schedule, complete the following steps. You can define multiple schedules.
 
-    1. Open **Schedules**.
-    2. Select the **Time Zone** where the schedule is defined.
-    3. Indicate whether the schedule is always in effect (recurring schedules), or is only in effect for the specified date range (specific schedules).
-    4. For recurring schedules, select whether the schedule is repeated weekly or monthly. 
-    5. For recurring schedules, select the days of the week or month when the schedule applies.
-    6. Specify the start and end time of the schedule, the minimum number of instances to be run, the initial minimum instances, and the maximum instances that are run during the period.
+   1. Open **Schedules**.
+   2. Select the **Time Zone** where the schedule is defined.
+   3. Indicate whether the schedule is always in effect (recurring schedules), or is only in effect for the specified date range (specific schedules).
+   4. For recurring schedules, select whether the schedule is repeated weekly or monthly. 
+   5. For recurring schedules, select the days of the week or month when the schedule applies.
+   6. Specify the start and end time of the schedule, the minimum number of instances to be run, the initial minimum instances, and the maximum instances that are run during the period.
 
-    During the scheduled time periods, all other autoscaling rules are still in effect.
-    {: note}
+   During the scheduled time periods, all other autoscaling rules are still in effect.
+   {: note}
 
 ### Importing a JSON policy file
 
@@ -230,7 +230,7 @@ If you are already logged in to an {{site.data.keyword.ibmcf_notm}} environment 
     ```
     {: pre}
 
-2. Create a JSON policy file on your local machine.  The following code is an example policy file.  You can define the same [scaling policy specifications](#console_autoscaling_policies) in the console and in the JSON policy file.
+2.  Create a JSON policy file on your local machine.  The following code is an example policy file.  You can define the same [scaling policy specifications](#console_autoscaling_policies) in the console and in the JSON policy file.
 
     ```
     cat > <YOUR_POLICY_FILE> << EOF
@@ -296,7 +296,5 @@ ibmcloud cf ash <YOUR_APP> --desc
 * [Cloud Foundry App Autoscaler CLI plug-in guide](https://github.com/cloudfoundry/app-autoscaler-cli-plugin#cloud-foundry-cli-autoscaler-plug-in-){: external}
 * [Best practices when setting up autoscaling policies](https://www.ibm.com/cloud/blog/autoscale-your-cloud-foundry-applications-on-ibm-cloud){: external}
 * [Bring Your Own Metrics to Autoscale Your {{site.data.keyword.ibmcf_notm}} Apps](https://www.ibm.com/cloud/blog/bring-your-own-metrics-to-autoscale-your-ibm-cloud-foundry-applications){: external}
-
-
 
 

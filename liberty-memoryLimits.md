@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -132,11 +132,11 @@ More information on JVM memory usage can be found at the developerWorks article 
 
 When you deploy an app, the memory usage of the entire process is monitored. If memory usage exceeds the memory limit that you specified when the app was deployed, the kernel stops the process. This action happens without warning and might be manifested in several ways.
 
-    If the Memory Limit is exceeded during app deployment, you receive a message that a failure occurred and you might see any the following.
+ If the Memory Limit is exceeded during app deployment, you receive a message that a failure occurred and you might see any the following.
 
-    * You might see that the app is flapping.
-    * You might see that the app attempted to start multiple times, always unsuccessfully.
-    * You might receive a message that indicates the app deployment failed.
+  * You might see that the app is flapping.
+  * You might see that the app attempted to start multiple times, always unsuccessfully.
+  * You might receive a message that indicates the app deployment failed.
 
 If the Memory Limit is exceeded while the app is in service, the process stops and Cloud Foundry attempts to restart the app. The app might restart, but it is unavailable for some amount of time.
 
@@ -174,7 +174,5 @@ You can set the heap memory size by using environment variables or by changing t
 {: codeblock}
 
 * Specify the `-Xmx` argument in the `jvm.options` file if your app is a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). For more information about  using the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](https://www.ibm.com/support/pages/node/476495){: external}.  
-
-
 
 

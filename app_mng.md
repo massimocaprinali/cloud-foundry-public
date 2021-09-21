@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -281,7 +281,5 @@ ibmcloud cf ssh -N -T -L 1883:127.0.0.1:1883 <appName>
 {: pre}
 
 To connect with the Health Center client, use a [MQTT connection](http://www.ibm.com/support/knowledgecenter/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/connectingtojvm.html){: external} and specify the host as `127.0.0.1` and port as `1883`.
-
-
 
 

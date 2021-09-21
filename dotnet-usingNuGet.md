@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -115,15 +115,13 @@ subcollection: cloud-foundry-public
 
 You can use the `NuGet.Config` file in the app's root directory to control where the app downloads dependencies. In the following example, configuring the `<packageSources>` property defines any keys and API URLs for the app to retrieve packages.
 ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-    <packageSources>
-        <add key="NuGet.org" value="https://api.nuget.org/v3/index.json"/>
-    </packageSources>
-    </configuration>
+   <?xml version="1.0" encoding="utf-8"?>
+   <configuration>
+   <packageSources>
+      <add key="NuGet.org" value="https://api.nuget.org/v3/index.json"/>
+   </packageSources>
+   </configuration>
 ```
 {: codeblock}
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -109,7 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
-
+ 
 # Compile, Publish, and Deploy Apps
 {: #publish_configure_deploy}
 
@@ -164,13 +164,11 @@ To deploy an app containing multiple projects, you need to specify which project
 
 For example, if a solution contains three projects, `MyApp.DAL`, `MyApp.Services`, and `MyApp.Web` in the `src` folder, and `MyApp.Web` is the main project, the format of the `.deployment` file is as follows:
 ```
-[config]
-project = src/MyApp.Web/MyApp.Web.csproj
+  [config]
+  project = src/MyApp.Web/MyApp.Web.csproj
 ```
 {: codeblock}
 
 In this example, the buildpack automatically compiles the `MyApp.DAL` and `MyApp.Services` projects if they are listed as dependencies in the `project.json` file for `MyApp.Web`.  However, the buildpack only attempts to run the main project, `MyApp.Web`, when running `-p src/MyApp.Web`.
-
-
 
 

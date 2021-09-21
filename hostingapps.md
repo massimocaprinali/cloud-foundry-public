@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -163,17 +163,17 @@ Optional: If you want to specify and save the deployment details before you push
 1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
 2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
 
-    ```
-    applications:
-    - disk_quota: 1024M
-    host: myjavatest
-    name: MyJavaTest
-    path: webStarterApp.war
-    domain: mybluemix.net
-    instances: 1
-    memory: 512M
-    ```
-    {: codeblock}
+   ```
+   applications:
+   - disk_quota: 1024M
+   host: myjavatest
+   name: MyJavaTest
+   path: webStarterApp.war
+   domain: mybluemix.net
+   instances: 1
+   memory: 512M
+   ```
+   {: codeblock}
 
 For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
@@ -183,28 +183,28 @@ You can upload your app by using the `ibmcloud cf push` command.
 
 1. Connect and log in to {{site.data.keyword.cloud_notm}} by running the following command. Select your organization and space when prompted.
 
-    ```
-    ibmcloud cf login -a https://api.ng.bluemix.net
-    ```
-    {: pre}
+   ```
+   ibmcloud cf login -a https://api.ng.bluemix.net
+   ```
+   {: pre}
 
-    Add the `-sso` flag if your organization uses Single Sign On.
+   Add the `-sso` flag if your organization uses Single Sign On.
 
 2. From your app directory, enter the `ibmcloud cf push` command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
 
-    ```
-    ibmcloud cf push appname
-    ```
-    {: pre}
+   ```
+   ibmcloud cf push appname
+   ```
+   {: pre}
 
 3. Optional: If you use an external buildpack, you must use the -b option with the `ibmcloud cf push` command. For example:
 
-    ```
-    ibmcloud cf push appname -b buildpack_URL
-    ```
-    {: pre}
+   ```
+   ibmcloud cf push appname -b buildpack_URL
+   ```
+   {: pre}
 
-    See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
+   See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The `ibmcloud cf` command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
@@ -235,10 +235,8 @@ services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
           end
         end.flatten!.first
 ```
-{: codeblock}
+{:codeblock}
 
 To ensure that your app can run in a local environment after you modify the app for {{site.data.keyword.cloud_notm}}, check for the presence of the VCAP_SERVICES environment variable, which is set for all {{site.data.keyword.cloud_notm}} Cloud Foundry apps.
-
-
 
 
