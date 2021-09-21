@@ -121,7 +121,8 @@ You can use either the project.json tooling or MSBuild tooling to ensure that yo
 {: #projectjson}
 
 Add the following property to the `buildOptions` section of the `project.json` file.
-```
+
+```json
   "copyToOutput": {
     "include": [
       "wwwroot",
@@ -134,13 +135,15 @@ Add the following property to the `buildOptions` section of the `project.json` f
 {: codeblock}
 
 In Startup.cs `Startup` method, remove the following line.
-```
+
+```json
   .SetBasePath(env.ContentRootPath)
 ```
 {: codeblock}
 
 In Program.cs `Main` method, remove the following line.
-```
+
+```json
   .UseContentRoot(Directory.GetCurrentDirectory())
 ```
 {: codeblock}
@@ -151,7 +154,8 @@ These changes should allow the .NET CLI to find your app's `Views` as they will 
 {: #msbuild}
 
 Add a `<Content>` element to the `<ItemGroup>` element of your `.csproj` file.
-```
+
+```text
   <ItemGroup>
     <Content Include="wwwroot/**/*;Areas/**/Views/*;Views/*;appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -162,13 +166,15 @@ Add a `<Content>` element to the `<ItemGroup>` element of your `.csproj` file.
 {: codeblock}
 
 In the `Startup.cs` `Startup` method, remove the following line.
-```
+
+```text
   .SetBasePath(env.ContentRootPath)
 ```
 {: codeblock}
 
 In the `Program.cs` `Main` method, remove the following line.
-```
+
+```text
   .UseContentRoot(Directory.GetCurrentDirectory())
 ```
 {: codeblock}

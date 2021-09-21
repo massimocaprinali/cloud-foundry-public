@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Enforce HTTPS on all pages in your app
 {: #dotnet-enforce_https}
 
@@ -116,7 +117,7 @@ To enforce HTTPS instead of HTTP on all pages in your app when it runs in {{site
 
 Add the following `using` statements in the `Startup` class:
 
-```
+```text
   using Microsoft.AspNetCore.Mvc;
   using Microsoft.AspNetCore.Rewrite;
 ```
@@ -124,7 +125,7 @@ Add the following `using` statements in the `Startup` class:
 
 Add the following to the `ConfigureServices` method in the `Startup` class:
 
-```
+```text
   // if app is running in {{site.data.keyword.cloud_notm}}
   if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
   {
@@ -138,7 +139,7 @@ Add the following to the `ConfigureServices` method in the `Startup` class:
 
 Add the following to your `Configure` method in the `Startup` class:
 
-```
+```text
   // if app is running in {{site.data.keyword.cloud_notm}}
   if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BLUEMIX_REGION")))
   {

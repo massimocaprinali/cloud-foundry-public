@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Getting started with Go
 {: #getting-started-go}
 
@@ -117,6 +118,7 @@ Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cl
 {: hide-in-docs}
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
+{: shortdesc}
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
@@ -136,48 +138,48 @@ You'll need the following:
 
 1. First, we'll set up the local environment by ensuring all GO environment variables are set properly. For example:
 
-   ```
-   mkdir $HOME/work
-   export GOPATH=$HOME/work
-   export PATH=$PATH:$GOPATH/bin
-   ```
-   {: codeblock}
+    ```text
+    mkdir $HOME/work
+    export GOPATH=$HOME/work
+    export PATH=$PATH:$GOPATH/bin
+    ```
+    {: codeblock}
 
-1. Change path to `$GOPATH/src`
+2. Change path to `$GOPATH/src`
 
-   ```
-   mkdir $GOPATH/src
-   cd $GOPATH/src
-   ```
-   {: codeblock}
+    ```text
+    mkdir $GOPATH/src
+    cd $GOPATH/src
+    ```
+    {: codeblock}
 
-   Now you're ready to start working with the simple Go *hello world* app.
+    Now you're ready to start working with the simple Go *hello world* app.
 
-1. Clone the repository and change to the directory where the sample app is located.
+3. Clone the repository and change to the directory where the sample app is located.
 
-   ```
-   go get github.com/IBM-Cloud/get-started-go
-   cd github.com/IBM-Cloud/get-started-go
-   ```
-   {: pre}
+    ```text
+    go get github.com/IBM-Cloud/get-started-go
+    cd github.com/IBM-Cloud/get-started-go
+    ```
+    {: pre}
 
-1. Peruse the files in the `get-started-go` directory to familiarize yourself with the contents.
+4. Peruse the files in the `get-started-go` directory to familiarize yourself with the contents.
 
 ## Step 2: Run the app locally
 {: #run_locally-go}
 
 1. Build and run the app locally by running the following commands.
 
-   ```
-   make
-   go run main.go
-   ```
-   {: pre}
+    ```text
+    make
+    go run main.go
+    ```
+    {: pre}
 
-1. View your app at the following URL: `http://localhost:8080`
+2. View your app at the following URL: `http://localhost:8080`
 
-   Press *Ctrl-C* to stop your app from the same window where you started the app.
-   {: tip}
+    Press *Ctrl-C* to stop your app from the same window where you started the app.
+    {: tip}
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-go}
@@ -186,7 +188,7 @@ To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a man
 
 Open the `manifest.yml` file, and change the `name` from `GetStartedGo` to your app name, `app_name`.
 
-```
+```yaml
 apps:
 - name: GetStartedGo
   random-route: true
@@ -205,40 +207,40 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```text
+    ibmcloud login
+    ```
+    {: pre}
 
-   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
+    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
 
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+    ```text
+    ibmcloud login --sso
+    ```
+    {: pre}
 
-1. Target a Cloud Foundry org and space:
+2. Target a Cloud Foundry org and space:
 
-   ```	  
-   ibmcloud target --cf
-   ```
-   {: pre}
+    ```text	  
+    ibmcloud target --cf
+    ```
+    {: pre}
 
-   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-   {: tip}
+    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+    {: tip}
 
-1. From within the `get-started-go` directory, push your app to {{site.data.keyword.cloud_notm}}
+3. From within the `get-started-go` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-   ```
-   ibmcloud cf push
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf push
+    ```
+    {: pre}
 
-   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+    This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command. You can also issue the following command to view your app's status and see the URL.
 
-```
+```text
 ibmcloud cf apps
 ```
 {: pre}
@@ -252,13 +254,13 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 
-1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
+2. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 
-1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
+3. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
 
-1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+4. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
 
-1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
+5. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
 {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
@@ -272,26 +274,26 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. Create a file called `.env` in the `get-started-go` directory with the following content:
 
-   ```
-   CLOUDANT_URL=
-   ```
-   {: codeblock}
+    ```text
+    CLOUDANT_URL=
+    ```
+    {: codeblock}
 
 2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `CLOUDANT_URL` field of the `.env` file and save the changes.  The result will be something like:
 
-   ```
-   CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
-   ```
-   {: codeblock}
+    ```text
+    CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
+    ```
+    {: codeblock}
 
 4. Run your app locally.
 
-   ```
-   go run main.go
-   ```
-   {: pre}
+    ```text
+    go run main.go
+    ```
+    {: pre}
 
 5. View your app at: `http://localhost:8080`. Any names that you enter into the app are added to the database.
 

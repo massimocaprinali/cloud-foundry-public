@@ -121,14 +121,14 @@ To publish your app in `Release` configuration, set the `PUBLISH_RELEASE_CONFIG`
 
 You can set the `PUBLISH_RELEASE_CONFIG` environment variable by using the following command:
 
-```
+```text
 ibmcloud cf set-env <app_name> PUBLISH_RELEASE_CONFIG true
 ```
 {: pre}
 
 Alternatively, you can set the variable in your app's `manifest.yml` file:
 
-```
+```yaml
 ---
 apps:
 - name: sample-aspnetcore-app
@@ -146,7 +146,8 @@ external binary files, you can push a published *self-contained* app.  For more 
 .
 
 To publish an app, issue a command similar to the following.
-```
+
+```text
 dotnet publish -r ubuntu.14.04-x64
 ```
 {: pre}
@@ -163,7 +164,8 @@ If you are using a `manifest.yml` file in your app, you can specify the path to 
 To deploy an app containing multiple projects, you need to specify which project you want the buildpack to run as the main project. The main project is specified in a `.deployment` file in the root folder of the solution which sets the path to the main project. The path to the main project can be specified as the project folder or the project file (`.xproj` or `.csproj`).
 
 For example, if a solution contains three projects, `MyApp.DAL`, `MyApp.Services`, and `MyApp.Web` in the `src` folder, and `MyApp.Web` is the main project, the format of the `.deployment` file is as follows:
-```
+
+```text
   [config]
   project = src/MyApp.Web/MyApp.Web.csproj
 ```

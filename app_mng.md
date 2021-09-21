@@ -128,21 +128,21 @@ You can also manage your app by using the command line.  In the commands replace
 
 To start the app:
 
-```
+```text
 ibmcloud cf start <myApp>
 ```
 {: pre}
 
 To stop an app:
 
-```
+```text
 ibmcloud cf stop <myApp>
 ```
 {: pre}
 
 To restart an app:
 
-```
+```text
 ibmcloud cf restart <myApp>
 ```
 {: pre}
@@ -159,7 +159,7 @@ User can `ssh` into the app by using the {{site.data.keyword.cloud_notm}} consol
 
 To use `ssh` to access your app from the command line use:
 
-```
+```text
 ibmcloud cf ssh <myApp>
 ```
 {: pre}
@@ -168,10 +168,15 @@ ibmcloud cf ssh <myApp>
 {: #Utilities}
 
 ### Liberty utilities
+
 * [`proxy`](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#proxy)
+
 * [`noproxy`](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#noproxy)
+
 * [`hc`](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#hc)
+
 * [`jmx`](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#jmx)
+
 * [`localjmx`](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management#localjmx)
 
 ## How to configure App Management
@@ -181,14 +186,14 @@ To enable App Management utilities, set the value of the `BLUEMIX_APP_MGMT_ENABL
 
 For example, to enable `hc`, `debug` and `trace` utilities, run the following command:
 
-```
+```text
 ibmcloud cf set-env <myApp> BLUEMIX_APP_MGMT_ENABLE hc+debug+trace
 ```
 {: pre}
 
 Restage your app after you set the environment variable:
 
-```
+```text
 ibmcloud cf restage <myApp>
 ```
 {: pre}
@@ -197,11 +202,11 @@ If you do not want the App Management utilities to be installed with your app, s
 
 For example, run the following commands to stage your app without App Management utilities:
 
-```
+```text
 ibmcloud cf set-env <myApp> BLUEMIX_APP_MGMT_INSTALL false
 ibmcloud cf restage <myApp>
 ```
-{: codeblock}
+{: pre}
 
 ## Restrictions
 {: #restrictions}
@@ -218,7 +223,7 @@ The `jmx` utility enables the JMX REST Connector to allow a remote JMX client to
 
 You can monitor multiple instances of an app by using JMX, but it requires a separate JMX connection for each instance. The default is to monitor instance 0. To monitor instance 1, you can use the following:
 
-```
+```text
 ibmcloud cf ssh -i 1 -N -T -L 5000:127.0.0.1:5001
 ```
 {: pre}
@@ -238,7 +243,7 @@ The `localjmx` utility enables the [localConnector-1.0](http://www.ibm.com/suppo
 
 To use `localjmx`, first establish port forwarding by using the `ibmcloud cf ssh` command. For example:
 
-```
+```text
 ibmcloud cf ssh -N -T -L 5000:127.0.0.1:5000 <appName>
 ```
 {: pre}
@@ -275,7 +280,7 @@ The `hc` utility starts `proxy`.
 
 The `hc` utility can be used in conjunction with `noproxy`. To use Health Center with `noproxy`, first establish port forwarding by using the `ibmcloud cf ssh` command. For example:
 
-```
+```text
 ibmcloud cf ssh -N -T -L 1883:127.0.0.1:1883 <appName>
 ```
 {: pre}

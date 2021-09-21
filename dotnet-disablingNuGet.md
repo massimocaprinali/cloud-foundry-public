@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Disable the NuGet Package Cache
 {: #disabling_the_nuget_package_cache}
 
@@ -116,14 +117,14 @@ In some situations, it might be necessary to clear the NuGet package cache for y
 
 You can clear the cache by setting the `CACHE_NUGET_PACKAGES` environment variable to `false` using the {{site.data.keyword.cloud_notm}} CLI:
 
-```
+```text
 ibmcloud cf set-env <app_name> CACHE_NUGET_PACKAGES false
 ```
 {: pre}
 
 Alternatively, you can set the `CACHE_NUGET_PACKAGES` environment variable to `false` in your app's `manifest.yml` file:
 
-```
+```yaml
 ---
 apps:
 - name: sample-aspnetcore-app

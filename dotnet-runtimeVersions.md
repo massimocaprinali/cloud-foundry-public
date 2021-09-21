@@ -157,7 +157,8 @@ This buildpack supports the following versions, those marked as deprecated will 
 ## Specifying the .NET SDK version
 
 Control the .NET SDK version with an optional `global.json` file in the app's root directory. For example:
-```
+
+```json
    {
       "sdk": {
         "version": "5.0.201"
