@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -363,116 +363,126 @@ You also have access to the environment variables that are set by Diego and the 
 
 The following variables are defined by Diego:
 
-<dl>
-  <dt><strong>HOME</strong></dt>
-  <dd>The root directory of the deployed app.</dd>
-  <dt><strong>MEMORY_LIMIT</strong></dt>
-  <dd>The maximum amount of memory that each instance of your app can use. You can specify the value in an app <span class="ph filepath">manifest.yml</span> file, or on the command line when you push the app.</dd>
-  <dt><strong>PORT</strong></dt>
-  <dd>The port on Diego for communication with the app. Diego allocates a port to the app at staging time.</dd>
-  <dt><strong>PWD</strong></dt>
-  <dd>The current working directory that is running the buildpack.</dd>
-  <dt><strong>TMPDIR</strong></dt>
-  <dd>The directory where temporary and staging files are stored.</dd>
-  <dt><strong>USER</strong></dt>
-  <dd>The user ID that is running Diego.</dd>
-  <dt><strong>VCAP_APP_HOST</strong></dt>
-  <dd>The IP address of the Diego host.</dd>
-  <dt><strong>VCAP_APP</strong></dt>
-  <dd>A JSON string that contains information about the deployed app. The information includes the app name, URIs, memory limits, time stamp when the app achieved its current state, and other values. For example:
-  <pre class="pre codeblock"><code>
-  {
-    "limits": {
-        "mem": 512,
-        "disk": 1024,
-        "fds": 16384
-    },
-    "application_version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
-    "application_name": "testapp",
-    "application_uris": [
-        "testapp.AppDomainNamestage1.mybluemix.net"
-    ],
-    "version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
-    "name": "testapp",
-    "space_name": "dev",
-    "space_id": "c6ed3a8e-436b-43ac-9f96-b676ee335000",
-    "uris": [
-        "testapp.AppDomainNamestage1.mybluemix.net"
-    ],
-    "users": null,
-    "application_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
-    "instance_id": "09f50e22848d4ec0b943e9e487c23569",
-    "instance_index": 0,
-    "host": "0.0.0.0",
-    "port": 61399,
-    "started_at": "2015-01-16 06:50:51 +0000",
-    "started_at_timestamp": 1421391051,
-    "start": "2015-01-16 06:50:51 +0000",
-    "state_timestamp": 1421391051
-}
-</code></pre></dd>
-  <dt><strong>VCAP_SERVICES</strong></dt>
-  <dd>A JSON string that contains information about the service bound to the deployed app. For example:
-  <pre class="pre codeblock"><code>
-  {
-    "mysql-5.5": [
-        {
-            "name": "mysql-ix",
-            "label": "mysql-5.5",
-            "tags": [
-                "mysql",
-                "relational",
-                "data_management",
-                "ibm_experimental"
-            ],
-            "plan": "300",
-            "credentials": {
-                "name": "d296abcc06c9e418b94abcaafdf547620",
-                "hostname": "23.246.200.38",
-                "host": "23.246.200.38",
-                "port": 3307,
-                "user": "uzpGf7eGJ7mtB",
-                "username": "uzpGf7eGJ7mtB",
-                "password": "xxxxxxxxxxxxxxx",
-                "uri": "mysql://uzpGf7eGJ7mtB:peRiYCG4ZYqu3@23.246.200.38:3307/d296abcc06c9e418b94abcaafdf547620"
-            }
-        }
-    ]
-}
-</code></pre></dd>
+HOME
+:   The root directory of the deployed app.
 
-</dl>
+MEMORY_LIMIT
+:   The maximum amount of memory that each instance of your app can use. You can specify the value in an app `manifest.yml` file, or on the command line when you push the app.
+
+PORT
+:   The port on Diego for communication with the app. Diego allocates a port to the app at staging time.
+
+PWD
+:   The current working directory that is running the buildpack.
+
+TMPDIR
+:   The directory where temporary and staging files are stored.
+
+USER
+:   The user ID that is running Diego.
+
+VCAP_APP_HOST
+:   The IP address of the Diego host.
+
+VCAP_APP
+:   A JSON string that contains information about the deployed app. The information includes the app name, URIs, memory limits, time stamp when the app achieved its current state, and other values. For example:
+
+    ```json  
+    {
+      "limits": {
+          "mem": 512,
+          "disk": 1024,
+          "fds": 16384
+      },
+      "application_version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
+      "application_name": "testapp",
+      "application_uris": [
+          "testapp.AppDomainNamestage1.mybluemix.net"
+      ],
+      "version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
+      "name": "testapp",
+      "space_name": "dev",
+      "space_id": "c6ed3a8e-436b-43ac-9f96-b676ee335000",
+      "uris": [
+          "testapp.AppDomainNamestage1.mybluemix.net"
+      ],
+      "users": null,
+      "application_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
+      "instance_id": "09f50e22848d4ec0b943e9e487c23569",
+      "instance_index": 0,
+      "host": "0.0.0.0",
+      "port": 61399,
+      "started_at": "2015-01-16 06:50:51 +0000",
+      "started_at_timestamp": 1421391051,
+      "start": "2015-01-16 06:50:51 +0000",
+      "state_timestamp": 1421391051
+    }
+    ```
+    {: codeblock}
+
+VCAP_SERVICES
+:   A JSON string that contains information about the service bound to the deployed app. For example:
+
+    ```json
+    {
+      "mysql-5.5": [
+          {
+              "name": "mysql-ix",
+              "label": "mysql-5.5",
+              "tags": [
+                  "mysql",
+                  "relational",
+                  "data_management",
+                  "ibm_experimental"
+              ],
+              "plan": "300",
+              "credentials": {
+                  "name": "d296abcc06c9e418b94abcaafdf547620",
+                  "hostname": "23.246.200.38",
+                  "host": "23.246.200.38",
+                  "port": 3307,
+                  "user": "uzpGf7eGJ7mtB",
+                  "username": "uzpGf7eGJ7mtB",
+                  "password": "xxxxxxxxxxxxxxx",
+                  "uri": "mysql://uzpGf7eGJ7mtB:peRiYCG4ZYqu3@23.246.200.38:3307/d296abcc06c9e418b94abcaafdf547620"
+              }
+          }
+        ]
+    }
+    ```
+    {: codeblock}
 
 Variables that are defined by buildpacks are different for each buildpack. For other compatible buildpacks, see [the buildpack information for Cloud Foundry](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks){: external}.
 
-<ul>
-    <li>The following variables are defined by the Liberty Buildpack:
+* The following variables are defined by the Liberty Buildpack:
 
-	  <dl>
-	  <dt><strong>JAVA_HOME</strong></dt>
-	  <dd>The location of Java SDK that runs the app.</dd>
-	  <dt><strong>IBM_JAVA_OPTIONS</strong></dt>
-	  <dd>The Java SDK options to use when running the app.</dd>
-	  <dt><strong>IBM_JAVA_COMMAND_LINE</strong></dt>
-	  <dd>The Java command to start up a Liberty profile server instance in Diego.</dd>
-	  <dt><strong>WLP_USR_DIR</strong></dt>
-	  <dd>The location of shared resources and server definitions when starting up a Liberty profile server instance in Diego.</dd>
-	  <dt><strong>WLP_OUTPUT_DIR</strong></dt>
-	  <dd>The location of generated output such as log files and working directory of a running Liberty profile server instance.</dd>
-	  </dl>
-</li>
-<li>The following variables are defined by the Node.js Buildpack:
-	<dl>
-	<dt><strong>BUILD_DIR</strong></dt>
-	<dd>The directory of the Node.js runtime environment.</dd>
-	<dt><strong>CACHE_DIR</strong></dt>
-	<dd>The directory that the Node.js runtime environment uses for caching.</dd>
-	<dt><strong>PATH</strong></dt>
-	<dd>The system path that is used by the Node.js runtime environment.</dd>
-	</dl>
-</li>
-</li>
-</ul>
+    JAVA_HOME
+    :   The location of Java SDK that runs the app.
+
+    IBM_JAVA_OPTIONS
+    :   The Java SDK options to use when running the app.
+
+    IBM_JAVA_COMMAND_LINE
+    :   The Java command to start up a Liberty profile server instance in Diego.
+
+	WLP_USR_DIR
+    :   The location of shared resources and server definitions when starting up a Liberty profile server instance in Diego.
+
+	WLP_OUTPUT_DIR
+    :   The location of generated output such as log files and working directory of a running Liberty profile server instance.
+	  
+
+* The following variables are defined by the Node.js Buildpack:
+	
+    BUILD_DIR
+    :   The directory of the Node.js runtime environment.
+
+    CACHE_DIR
+    :   The directory that the Node.js runtime environment uses for caching.
+
+	PATH
+    :   The system path that is used by the Node.js runtime environment.
+
 
 You can use the following sample Node.js code to get the value of the VCAP_SERVICES environment variable:
 
