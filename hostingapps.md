@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -131,7 +131,7 @@ To deploy your app to {{site.data.keyword.cloud_notm}} as a Cloud Foundry app, s
 You can use the following tools and services that {{site.data.keyword.cloud_notm}} provides:
 
 | Tool | Method |
-|:------|:--------|
+|------|--------|
 | Cloud Foundry CLI | Manage your code on local client and use the CLI to push your app to {{site.data.keyword.cloud_notm}} manually. For more information, see the [`ibmcloud cf push` command](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html){: external}. |
 | Eclipse | Manage your code in Eclipse and use the {{site.data.keyword.IBM}} Eclipse tools for {{site.data.keyword.cloud_notm}} to push your app. |
 | Git integration | Manage your code on GitHub and integrate Git into {{site.data.keyword.cloud_notm}}. You can collaborate with other developers. Your app is deployed to {{site.data.keyword.cloud_notm}} automatically when you commit changes in the code. You do not need to push the app manually. |
@@ -141,7 +141,7 @@ You can use the following tools and services that {{site.data.keyword.cloud_notm
 If the Cloud Foundry platform does not support your app requirements, you can use a container or VM where the runtime is set up, configured, and maintained with more customized options.
 
 ## Developing and deploying your apps using toolchains in Continuous Delivery
-{:ht_cd}
+{: ht_cd}
 
 Add a [toolchain to your app](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started#creating_a_toolchain_from_an_app) and then use the [Continuous Delivery toolchain UI](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-using) to develop and deploy your app.
 
@@ -160,20 +160,20 @@ Install the Cloud Foundry command line interface. Ensure that you use the latest
 
 Optional: If you want to specify and save the deployment details before you push an app to {{site.data.keyword.cloud_notm}}, you can add the app manifest by taking the following steps:
 
-1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.</li>
+1. Go to the working directory of your app and create a file entitled manifest.yml, which is the default name.
 2. Specify deployment details in the manifest file. The following example shows a manifest file for a Java™ app.
 
-   ```
-   applications:
-   - disk_quota: 1024M
-   host: myjavatest
-   name: MyJavaTest
-   path: webStarterApp.war
-   domain: mybluemix.net
-   instances: 1
-   memory: 512M
-   ```
-   {: codeblock}
+    ```text
+    applications:
+    - disk_quota: 1024M
+    host: myjavatest
+    name: MyJavaTest
+    path: webStarterApp.war
+    domain: mybluemix.net
+    instances: 1
+    memory: 512M
+    ```
+    {: codeblock}
 
 For more information about the supported options that you can use in this file, see [App manifest](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps#appmanifest).
 
@@ -183,28 +183,28 @@ You can upload your app by using the `ibmcloud cf push` command.
 
 1. Connect and log in to {{site.data.keyword.cloud_notm}} by running the following command. Select your organization and space when prompted.
 
-   ```
-   ibmcloud cf login -a https://api.ng.bluemix.net
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf login -a https://api.ng.bluemix.net
+    ```
+    {: pre}
 
-   Add the `-sso` flag if your organization uses Single Sign On.
+    Add the `-sso` flag if your organization uses Single Sign On.
 
 2. From your app directory, enter the `ibmcloud cf push` command with the app name. The app name must be unique in the {{site.data.keyword.cloud_notm}} environment.
 
-   ```
-   ibmcloud cf push appname
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf push appname
+    ```
+    {: pre}
 
 3. Optional: If you use an external buildpack, you must use the -b option with the `ibmcloud cf push` command. For example:
 
-   ```
-   ibmcloud cf push appname -b buildpack_URL
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf push appname -b buildpack_URL
+    ```
+    {: pre}
 
-   See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
+    See [Using community buildpacks](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_buildpacks) for details.
 
 Optional: If you change your app, you must upload those changes by entering the `cf push command` again. The `ibmcloud cf` command line interface uses your previous options and your responses to the prompts to update any running instances of your app with the new bits of code.
 
@@ -223,7 +223,7 @@ The VCAP_SERVICES environment variable of your app is a JSON object that contain
 
 To run your code in {{site.data.keyword.cloud_notm}}, you must add the code logic for parsing the VCAP_SERVICES variable to obtain information about service connection. Modify your app to get the dynamically assigned host and port of the service instance through the environment variables. The following example shows how to get the credentials of a `Postgre` SQL service instance in a Ruby app:
 
-```
+```ruby
 services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
         url = services.values.map do |srvs|
           srvs.map do |srv|
@@ -235,7 +235,7 @@ services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
           end
         end.flatten!.first
 ```
-{:codeblock}
+{: codeblock}
 
 To ensure that your app can run in a local environment after you modify the app for {{site.data.keyword.cloud_notm}}, check for the presence of the VCAP_SERVICES environment variable, which is set for all {{site.data.keyword.cloud_notm}} Cloud Foundry apps.
 

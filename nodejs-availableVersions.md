@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Available versions
 {: #available_versions}
 
@@ -125,7 +126,7 @@ The {{site.data.keyword.IBM_notm}} Node.js buildpack caches the {{site.data.keyw
 
 See the following example:
 
-```
+```text
 {
   "name": "myapp",
   "description": "this is my app",

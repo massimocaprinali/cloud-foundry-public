@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -117,11 +117,11 @@ When a Liberty app is pushed to {{site.data.keyword.cloud}}, the Liberty buildpa
 to acquire artifacts required by the app.  
 
 * `https://download.run.pivotal.io` and `https://java-buildpack.cloudfoundry.org` are used to access components for:
-  * [AppDynamics agent](https://www.appdynamics.com/){: external}
-  * [MariaDB JDBC driver](https://mariadb.com/){: external}
-  * [New Relic agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic)
-  * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
-  * [PostgreSQL JDBC driver](https://www.postgresql.org){: external}
+    * [AppDynamics agent](https://www.appdynamics.com/){: external}
+    * [MariaDB JDBC driver](https://mariadb.com/){: external}
+    * [New Relic agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-new_relic)
+    * [OpenJDK](/docs/cloud-foundry-public?topic=cloud-foundry-public-customizing_jre#openjdk)
+    * [PostgreSQL JDBC driver](https://www.postgresql.org){: external}
 * `https://dl.zeroturnaround.com/jrebel/` is used to access components for [JRebel](https://www.jrebel.com/products/jrebel){: external}.
 * `https://files.dynatrace.com/downloads/appmon/cloudfoundry/buildpack/java/` is used to access the [Dynatrace agent](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_dynatrace).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Troubleshooting for Cloud Foundry apps
 {: #ts-cf-apps}
 
@@ -144,7 +145,8 @@ You can use a DNS provider that supports intelligent failover among many ID addr
 {: tsResolve}
 
 When you configure your DNS settings, you must specify the public IP addresses of the {{site.data.keyword.cloud_notm}} regions that your apps are running in. To get the public IP address of an {{site.data.keyword.cloud_notm}} region, use the `nslookup` command. For example, you can type the following command in a command line window.
-```
+
+```text
 nslookup cloud.ibm.com
 ```
 {: pre}
@@ -166,29 +168,33 @@ When an app is deleted, its route, which is the URL for the app, isn't automatic
 Complete the following steps to delete the unused route:
 {: tsResolve}
 
-  1. Check whether the route belongs to the current space by entering the following command:
-    ```
+1. Check whether the route belongs to the current space by entering the following command:
+
+    ```text
     ibmcloud cf routes
     ```
     {: pre}
 
-  2. If the route doesn't belong to the current space, switch to the space or org that it belongs to by entering the following command:
-    ```
+2. If the route doesn't belong to the current space, switch to the space or org that it belongs to by entering the following command:
+  
+    ```text
     ibmcloud cf target -o org_name -s space_name
     ```
     {: pre}
 
-  3. Delete the app route by entering the following command:
-    ```
+3. Delete the app route by entering the following command:
+
+    ```text
     ibmcloud cf delete-route domain_name -n host_name
     ```
     {: pre}
 
-  For example:
-  ```
-  ibmcloud cf delete-route cf.cloud.ibm.com -n app001
-  ```
-  {: pre}
+    For example:
+  
+    ```text
+    ibmcloud cf delete-route cf.cloud.ibm.com -n app001
+    ```
+    {: pre}
 
 ## Can't retrieve spaces in the org
 {: #ts_retrieve_space}
@@ -249,18 +255,19 @@ The default disk quota that is allocated for an app is 1 GB. If you need more di
 Use one of the following methods to specify your disk quota. The maximum disk quota that you can specify is 2 GB. If 2 GB is still not enough, try an external service such as [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 {: tsResolve}
 
-  * In the `manifest.yml` file, add the following item:
-  ```
-  disk_quota: <disk_quota>
-  ```
-  {: codeblock}
+* In the `manifest.yml` file, add the following item:
 
-  * Use the `-k` option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
+    ```text
+    disk_quota: <disk_quota>
+    ```
+    {: codeblock}
 
-  ```
-  ibmcloud cf push appname -p app_path -k <disk_quota>
-  ```
-  {: pre}
+* Use the `-k` option with the `ibmcloud cf push` command when you push your app to {{site.data.keyword.cloud_notm}}:
+
+    ```text
+    ibmcloud cf push appname -p app_path -k <disk_quota>
+    ```
+    {: pre}
 
 ## Org's services limit is exceeded
 {: #ts_servicelimit}
@@ -279,18 +286,18 @@ This error occurs when you exceed the limit on the number of service instances t
 Delete any services instances that aren't needed, or remove the limit on the number of service instances that you can have.
 {: tsResolve}
 
-  * To delete a services instance, you can use the {{site.data.keyword.cloud_notm}} console or the command line interface.
+* To delete a services instance, you can use the {{site.data.keyword.cloud_notm}} console or the command line interface.
 
     To use the {{site.data.keyword.cloud_notm}} console to delete a service instance, complete the following steps:
 	  1. In the resource list, click the **Actions** menu for the service that you want to delete.
 	  2. Click **Delete Service**. You are prompted to restage the app that the service instance was bound to.
 
     To use the command line interface to delete a service instance, complete the following steps:
-	  3. Unbind the service instance from an app. Enter `ibmcloud cf unbind-service <appname> <service_instance_name>`.
-	  4. Delete the service instance. Enter `ibmcloud cf delete-service <service_instance_name>`.
-	  5. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `ibmcloud cf restage <appname>`.
+	  1. Unbind the service instance from an app. Enter `ibmcloud cf unbind-service <appname> <service_instance_name>`.
+	  2. Delete the service instance. Enter `ibmcloud cf delete-service <service_instance_name>`.
+	  3. After you delete the service instance, you might want to restage your app that the service instance was bound to. Enter `ibmcloud cf restage <appname>`.
 
-  * To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
+* To remove the limit on the number of service instances that you can have, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
 ## Executable files can't be run on {{site.data.keyword.cloud_notm}}
 {: #ts_executable}
@@ -307,13 +314,14 @@ If the content that you want to push to {{site.data.keyword.cloud_notm}} is alre
 When you push the executable to {{site.data.keyword.cloud_notm}}, you must specify a `null-buildpack`, which indicates that no buildpack is required. Specify a `null-buildpack` by using the `-b` option with the `ibmcloud cf push` command:
 {: tsResolve}
 
-```
+```text
 ibmcloud cf push appname -p app_path -c <start_command> -b <null-buildpack>
 ```
 {: pre}
 
 For example:
-```
+
+```text
 ibmcloud cf push appname -p app_path -c ./RunMeNow -b https://github.com/ryandotsmith/null-buildpack
 ```
 {: pre}
@@ -335,31 +343,33 @@ This error occurs when the amount of memory that is remaining for your organizat
 You can either increase the memory quota of your account, or reduce the memory that your apps use.
 {: tsResolve}
 
-  * To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
-  * To reduce the memory that your apps use, use either the {{site.data.keyword.cloud_notm}} console or the Cloud Foundry command line interface.
+* To increase the memory quota of your account, upgrade your Lite account to a billable account. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
+* To reduce the memory that your apps use, use either the {{site.data.keyword.cloud_notm}} console or the Cloud Foundry command line interface.
 
-    If you use the {{site.data.keyword.cloud_notm}} console, complete the following steps:
+If you use the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
-    1. Select your app from the resource list. The app details page opens.
-    2. In the runtime pane, you can reduce the maximum memory limit or the numbers of app instances, or both, for your app.
+1. Select your app from the resource list. The app details page opens.
+2. In the runtime pane, you can reduce the maximum memory limit or the numbers of app instances, or both, for your app.
 
-    If you use the command line interface, complete the following steps:
+If you use the command line interface, complete the following steps:
 
-    1. Check how much memory is being used for your apps:
-  	  ```
+1. Check how much memory is being used for your apps:
+
+    ```text
 	  ibmcloud cf list
 	  ```
-      {: pre}
+    {: pre}
 
 	  The `ibmcloud cf list` command lists all the apps that you deployed in your current space. The status of each app is also displayed.
 
-    2. To reduce the amount of memory that is used by your app, reduce the number of app instances or the maximum memory limit, or both:
-	  ```
-	  ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
-      ```
-      {: pre}
+2. To reduce the amount of memory that is used by your app, reduce the number of app instances or the maximum memory limit, or both:
 
-    3. Restart your app for the changes to take effect.
+	  ```text
+	  ibmcloud cf push appname -p app_path -i instance_number -m memory_limit
+    ```
+    {: pre}
+
+3. Restart your app for the changes to take effect.
 
 ## Apps aren't automatically restarted
 {: #ts_apps_not_auto_restarted}
@@ -376,7 +386,7 @@ This behavior is by design of Cloud Foundry.
 You can manually restart an app that is already deployed by typing the following command in the command-line interface:
 {: tsResolve}
 
-```
+```text
 ibmcloud cf restart <APPNAME>
 ```
 {: pre}
@@ -404,7 +414,7 @@ This problem occurs because the API endpoint of the region that you want to work
 If you are pushing your app to {{site.data.keyword.cloud_notm}} by using the Cloud Foundry command line interface, enter the `ibmcloud cf api` command and specify the API endpoint of the region. For example, enter the following command to connect to the {{site.data.keyword.cloud_notm}} Europe United Kingdom region:
 {: tsResolve}
 
-```
+```text
 ibmcloud cf api https://api.eu-gb.cf.cloud.ibm.com
 ```
 {: pre}
@@ -426,14 +436,16 @@ This problem occurs if the host name that you specified is already being used.
 The host name that you specify must be unique within the domain that you are using. To specify a different host name, use one of the following methods:
 {: tsResolve}
 
-  * If you deploy your app by using the `manifest.yml` file, specify the host name in the host option.
-    ```
+* If you deploy your app by using the `manifest.yml` file, specify the host name in the host option.
+
+    ```text
     host: host_name
-	```
+	  ```
     {: codeblock}
 
-  * If you deploy your app from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
-    ```
+* If you deploy your app from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
+
+    ```text
     ibmcloud cf push appname -p app_path -n host_name
     ```
     {: pre}
@@ -444,9 +456,8 @@ The host name that you specify must be unique within the domain that you are usi
 
 You might not be able to use the `ibmcloud cf push` command to deploy an archived web app to {{site.data.keyword.cloud_notm}} if the app location isn't specified correctly.
 
-When you upload a WAR app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command, you see the following error message:
+When you upload a WAR app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command, you see the following error message: `Staging error: cannot get instances since staging failed.`
 {: tsSymptoms}
-`Staging error: cannot get instances since staging failed.`
 
 This problem might happen if the WAR file isn't specified, or if the path to the WAR file isn't specified.
 {: tsCauses}
@@ -454,12 +465,12 @@ This problem might happen if the WAR file isn't specified, or if the path to the
 Use the `-p` option to specify a WAR file or add the path to the WAR file. For example:
 {: tsResolve}
 
-```
+```text
 ibmcloud cf push MyUniqueAppName01 -p app.war
 ```
 {: pre}
 
-```
+```text
 ibmcloud cf push MyUniqueAppName02 -p "./app.war"
 ```
 {: pre}
@@ -484,58 +495,63 @@ When you update a Node.js app or deploy your Node.js app to {{site.data.keyword.
 Possible causes are as follows:
 {: tsCauses}
 
-  * The start command isn't specified.
-  * Files that are required to deploy a Node.js app are either missing from the app or in a folder other than the root directory.
+* The start command isn't specified.
+* Files that are required to deploy a Node.js app are either missing from the app or in a folder other than the root directory.
 
 Use one of the following methods, depending on the cause of the problem:
 {: tsResolve}
 
-  * Specify the start command by one of the following methods:
-     * Use the Cloud Foundry command line interface. For example:
-      ```
-	  ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
-	  ```
-      {: pre}
+* Specify the start command by one of the following methods:
+    * Use the Cloud Foundry command line interface. For example:
+        
+        ```text
+	      ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
+	      ```
+        {: pre}
 
     * Use the [package.json](https://www.npmjs.com/package/jsonfile){: external} file. For example:
-	    ```
-		  {
-        ...
-  	    "scripts": {
-	 		  "start": "node app.js"
- 	    }
-	    }
-	    ```
+	
+        ```json
+  		  {
+          ...
+    	    "scripts": {
+	   		  "start": "node app.js"
+ 	      }
+  	    }
+	      ```
         {: codeblock}
 
     * Use the `manifest.yml` file. For example:
-	  ```
-		  apps:
-      name: MyUniqueNodejs01
-      ...
-      command: node app.js
-      ...
-      ```
-      {: codeblock}
+	  
+        ```yaml
+		    apps:
+        name: MyUniqueNodejs01
+        ...
+        command: node app.js
+        ...
+        ```
+        {: codeblock}
 
-  * Ensure that a `package.json` file exists in your Node.js app so that the Node.js buildpack can recognize the app. Ensure that this file is in the root directory of your app.
+* Ensure that a `package.json` file exists in your Node.js app so that the Node.js buildpack can recognize the app. Ensure that this file is in the root directory of your app.
+    
     The following example shows a simple `package.json` file:
-	```
-	{
-        "name": "MyUniqueNodejs01",
-        "version": "0.0.1",
-        "description": "A sample package.json file",
-        "dependencies": {
-                "express": "3.4.x",
-                "jade": "1.1.x"
-        },
-        "engines": {
-                "node": "0.10.x"
-        },
-        "scripts": {
-                  "start": "node app.js"
-        }
- }
+
+    ```json
+    {
+           "name": "MyUniqueNodejs01",
+           "version": "0.0.1",
+           "description": "A sample package.json file",
+           "dependencies": {
+                   "express": "3.4.x",
+                   "jade": "1.1.x"
+           },
+           "engines": {
+                   "node": "0.10.x"
+           },
+           "scripts": {
+                     "start": "node app.js"
+           }
+    }
     ```
     {: codeblock}
 

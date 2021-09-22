@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Getting started with Ruby
 {: #getting-started-ruby}
 
@@ -118,6 +119,7 @@ Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cl
 {: hide-in-docs}
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
+{: shortdesc}
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
@@ -138,12 +140,12 @@ You'll need the following:
 
 First, clone the repo and change the directory to where the sample app is located.
 
-```
+```text
 git clone https://github.com/IBM-Cloud/get-started-ruby
 ```
 {: pre}
 
-```
+```text
 cd get-started-ruby
 ```
 {: pre}
@@ -154,32 +156,32 @@ cd get-started-ruby
 
 1. Run the app locally by running the following commands.
  
-   ```
-   rbenv install 2.3.0
-   ```
-   {: pre}
+    ```text
+    rbenv install 2.3.0
+    ```
+    {: pre}
 
-   ```
-   rbenv local 2.3.0
-   ```
-   {: pre}
+    ```text
+    rbenv local 2.3.0
+    ```
+    {: pre}
 
-   ```
-   gem install bundler
-   ```
-   {: pre}
+    ```text
+    gem install bundler
+    ```
+    {: pre}
 
-   ```
-   bundle install
-   ```
-   {: pre}
+    ```text
+    bundle install
+    ```
+    {: pre}
 
-   ```
-   rails server
-   ```
-   {: pre}
+    ```text
+    rails server
+    ```
+    {: pre}
 
-1. View your app at the following URL: `http://localhost:3000`
+2. View your app at the following URL: `http://localhost:3000`
 
 ## Step 3: Prepare the app for deployment
 {: #prepare-ruby}
@@ -188,7 +190,7 @@ To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `ma
 
 Open the `manifest.yml` file, and change the `name` from `GetStartedRuby` to your app name, `app_name`.
 
-```
+```yaml
 apps:
 - name: GetStartedRuby
   random-route: true
@@ -206,40 +208,40 @@ You can use the {{site.data.keyword.Bluemix_short}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.Bluemix_short}} account, and select an API endpoint.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```text
+    ibmcloud login
+    ```
+    {: pre}
 
-   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
+    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) to learn more.
 
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+    ```text
+    ibmcloud login --sso
+    ```
+    {: pre}
 
-1. Target a Cloud Foundry org and space:
+2. Target a Cloud Foundry org and space:
 
-   ```	   
-   ibmcloud target --cf
-   ```
-   {: pre}
+    ```text	   
+    ibmcloud target --cf
+    ```
+    {: pre}
 
-   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-   {: tip}
+    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+    {: tip}
 
-1. From within the `get-started-node` directory, push your app to {{site.data.keyword.Bluemix_short}}.
+3. From within the `get-started-node` directory, push your app to {{site.data.keyword.Bluemix_short}}.
 
-   ```
-   ibmcloud cf push
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf push
+    ```
+    {: pre}
 
-   This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+    This can take a minute. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command.  You can also issue the following command to view your apps status and see the URL.
 
-```
+```text
 ibmcloud cf apps
 ```
 {: pre}
@@ -253,15 +255,15 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 
-1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
+2. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 
-1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
+3. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
 
-1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+4. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
 
-1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
+5. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
+    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -273,33 +275,33 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. Create a file called `.env` in the `get-started-ruby` directory with the following content:
 
-   ```
-   CLOUDANT_URL=
-   ```
-   {: codeblock}
+    ```text
+    CLOUDANT_URL=
+    ```
+    {: codeblock}
 
 2. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 3. Copy and paste just the `url` from the credentials to the `CLOUDANT_URL` field of the `.env` file and save the changes.  The result will be something like:
 
-   ```
-   CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
-   ```
-   {: codeblock}
+    ```text
+    CLOUDANT_URL=https://123456789 ... bluemix.cloudant.com
+    ```
+    {: codeblock}
 
 4. Run your app locally.
 
-   ```
-   rails server
-   ```
-   {: pre}
+    ```text
+    rails server
+    ```
+    {: pre}
 
-   View your app at: `http://localhost:3000`. Any names you enter into the app will now get added to the database.
+    View your app at: `http://localhost:3000`. Any names you enter into the app will now get added to the database.
 
-   Your local app and the {{site.data.keyword.cloud_notm}} app are sharing the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
+    Your local app and the {{site.data.keyword.cloud_notm}} app are sharing the database.  View your {{site.data.keyword.cloud_notm}} app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
 
-   If you don't need your app live, stop it so you don't incur any unexpected charges.
-   {: tip}
+    If you don't need your app live, stop it so you don't incur any unexpected charges.
+    {: tip}
 
 ## Next steps
 {: #nextsteps-ruby}

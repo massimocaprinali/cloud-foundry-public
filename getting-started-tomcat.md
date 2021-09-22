@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Getting started with Tomcat
 {: #getting-started-tomcat}
 
@@ -118,6 +119,7 @@ Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cl
 {: hide-in-docs}
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
+{: shortdesc}
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
@@ -139,12 +141,12 @@ You'll need the following:
 
 Clone the repository and change to the directory to where the sample app is located.
 
-```
+```text
 git clone https://github.com/IBM-Cloud/get-started-tomcat
 ```
 {: pre}
 
-```
+```text
 cd get-started-tomcat
 ```
 {: pre}
@@ -158,24 +160,24 @@ You must install the dependencies and build a `.war` file as defined in the `pom
 
 1. Install the dependencies.
   
-   ```
-   mvn clean install  
-   ```
-   {: pre}
+    ```text
+    mvn clean install  
+    ```
+    {: pre}
 
 2. Copy the `GetStartedTomcat.war` file from the `target` directory into your `tomcat-install-dir` `webapps` directory.
 
 3. Run the app.  
   
-   ```
-   <tomcat-install-dir>/bin/startup.bat|.sh
-   ```
-   {: pre}
+    ```text
+    <tomcat-install-dir>/bin/startup.bat|.sh
+    ```
+    {: pre}
 
 4. View your app the following URL: `http://localhost:8080/GetStartedTomcat/`
 
-   Use `shutdown.bat|.sh` to stop your app.  Note you may need to give the commands execute permission.
-   {: tip}
+    Use `shutdown.bat|.sh` to stop your app.  Note you may need to give the commands execute permission.
+    {: tip}
 
 ## Step 3: Prepare the app for {{site.data.keyword.cloud_notm}} deployment
 {: #prepare-tomcat}
@@ -184,7 +186,7 @@ To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `ma
 
 Open the `manifest.yml` file, and change the `name` from `GetStartedTomcat` to your app name, `app_name`.
 
-```
+```yaml
 apps:
 - name: GetStartedTomcat
   random-route: true
@@ -204,40 +206,40 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud}} account, and select an API endpoint.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```text
+    ibmcloud login
+    ```
+    {: pre}
 
-   If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
+    If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+    ```text
+    ibmcloud login --sso
+    ```
+    {: pre}
 
 2. Next, target a Cloud Foundry org and space:
   
-   ```	  
-   ibmcloud target --cf
-   ```
-   {: pre}
+    ```text	  
+    ibmcloud target --cf
+    ```
+    {: pre}
 
-   If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
-   {: tip}
+    If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
+    {: tip}
 
 3. From within the `get-started-tomcat` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-   ```
-   ibmcloud cf push
-   ```
-   {: pre}
+    ```text
+    ibmcloud cf push
+    ```
+    {: pre}
 
-   This can take around two minutes. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
+    This can take around two minutes. If there is an error in the deployment process you can use the command `ibmcloud cf logs <Your-App-Name> --recent` to troubleshoot.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command.  You can also issue the following command to view your apps status and see the URL.
 
-```
+```text
 ibmcloud cf apps
 ```
 {: pre}
@@ -259,7 +261,7 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 5. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
-   {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
+    {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of specifying a database password in your source code, you can store it in an environment variable that you reference in your source code.
 {: tip}
@@ -273,10 +275,10 @@ We're now going to update your local code to point to this database. We'll store
 
 2. Copy and paste just the `url` from the credentials to the `url` field of the `cloudant.properties` file, and save the changes.
   
-   ```
-   cloudant_url=https://123456789 ... bluemix.cloudant.com
-   ```
-   {:codeblock}
+    ```text
+    cloudant_url=https://123456789 ... bluemix.cloudant.com
+    ```
+    {: codeblock}
 
 3. Restart the server
 

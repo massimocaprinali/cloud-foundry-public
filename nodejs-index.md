@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -120,7 +120,8 @@ The `sdk-for-nodejs` buildpack provides a complete runtime environment for Node.
 The `sdk-for-nodejs` buildpack is used when the app contains a **package.json** file in the root directory.
 
 The app must listen on the port that is assigned to it through the PORT environment variable.
-```
+
+```text
 var port = (process.env.PORT || 3000);
 ```
 {: codeblock}

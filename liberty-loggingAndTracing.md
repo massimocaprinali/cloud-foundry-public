@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Configure logging and tracing
 {: #logging_tracing}
 
@@ -119,18 +120,18 @@ The standard Liberty logs, such as `messages.log` or the `ffdc` directory, are a
 
 * To access recent logs for an app, run the following command:
 
-  ```
-  ibmcloud cf logs --recent <appname>
-  ```
-  {: pre}
+    ```text
+    ibmcloud cf logs --recent <appname>
+    ```
+    {: pre}
 
 
 * To see the `messages.log` file of an app, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -c "cat logs/messages.log"
-  ```
-  {: pre}
+    ```text
+    ibmcloud cf ssh <appname> -c "cat logs/messages.log"
+    ```
+    {: pre}
 
 The log level and other trace options can be set through the Liberty configuration file. For more information, see [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_logging.html){: external}.
 
@@ -153,17 +154,17 @@ Follow these steps to change tracing configuration:
 
 1. SSH to your app
 
-  ```
-  ibmcloud cf ssh <appname> [-i instance_index]
-  ```
-  {: pre}
+    ```text
+    ibmcloud cf ssh <appname> [-i instance_index]
+    ```
+    {: pre}
 
 2. Edit `<logging traceSpecification="xxxx"/>` in the `server.xml` file to set your trace specification;  for example, using *vi*:
 
-  ```
-  vi /app/wlp/usr/servers/defaultServer/server.xml
-  ```
-  {: pre}
+    ```text
+    vi /app/wlp/usr/servers/defaultServer/server.xml
+    ```
+    {: pre}
 
 Note: The `server.xml` file change will be lost on a restage or restart and is only valid for the SSH instance.
 
@@ -173,10 +174,10 @@ See [Troubleshooting Liberty: Logging and Trace](http://www.ibm.com/support/know
 
 Use the command below to trigger a thread and heap dump via {{site.data.keyword.cloud_notm}} CLI using the SSH feature:
 
-  ```
-  ibmcloud cf ssh <appname> -c "pkill -3 java"
-  ```
-  {: pre}
+```text
+ibmcloud cf ssh <appname> -c "pkill -3 java"
+```
+{: pre}
 
 See the documentation below for details on downloading the generated dump files.
 
@@ -187,17 +188,17 @@ By default, the various dump files are placed in the `dumps` directory of the ap
 
 * To see the generated dumps, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -c "ls -l dumps"
-  ```
-  {: pre}
+    ```text
+    ibmcloud cf ssh <appname> -c "ls -l dumps"
+    ```
+    {: pre}
 
 * To download a dump file, run the following command:
 
-  ```
-  ibmcloud cf ssh <appname> -i <instance_id> -c "cat dumps/<dump_file_name>" > <local_dump_file_name>
-  ```
-  {: pre}
+    ```text
+    ibmcloud cf ssh <appname> -i <instance_id> -c "cat dumps/<dump_file_name>" > <local_dump_file_name>
+    ```
+    {: pre}
 
 It is also possible to use `scp` and other similar tools to view and download the dump files. Refer to [Accessing Apps with SSH](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html){: external} for more information.
 

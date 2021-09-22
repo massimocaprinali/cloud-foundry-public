@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Liberty for Java
 {: #liberty_runtime}
 
@@ -117,6 +118,7 @@ Liberty for Java apps on {{site.data.keyword.cloud}} are powered by the liberty-
 
 ## Detection
 {: #liberty-detection}
+
 The Liberty buildpack is used when the following kinds of apps are deployed:
 * [`WAR` files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
 * [`EAR` files](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps)
@@ -127,6 +129,7 @@ The Liberty buildpack is used when the following kinds of apps are deployed:
 
 ## Starter app
 {: #liberty-starter_app}
+
 {{site.data.keyword.cloud_notm}} provides several Liberty starter apps.  The Liberty starter apps are simple Liberty apps that provide a template that you can use. You can experiment with the starter apps, and make and push changes to the {{site.data.keyword.cloud_notm}} environment.
 
 

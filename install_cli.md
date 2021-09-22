@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -122,7 +122,7 @@ Before you begin, [download and install the {{site.data.keyword.cloud_notm}} CLI
 
 Then install the {{site.data.keyword.ibmcf_notm}} CLI by running the following command:
 
-```
+```text
 ibmcloud cf install
 ```
 {: pre}
@@ -132,7 +132,7 @@ After you install the CLI, you can get started:
 
 1. Change to the directory where your code is located.
 
-    ```
+    ```text
     cd <your_new_directory>
     ```
     {: pre}
@@ -148,7 +148,7 @@ After you install the CLI, you can get started:
 
 3. Log in to {{site.data.keyword.cloud_notm}} with your IBMid. If you have multiple accounts, you will be prompted to select the account to use. If you do not specify a region with the `-r` flag, you must also select a region.
 
-    ```
+    ```text
     ibmcloud login
     ```
     {: pre}
@@ -158,19 +158,19 @@ After you install the CLI, you can get started:
 
 4. To access Cloud Foundry services, you must specify a Cloud Foundry org and space. You can run the following command to be prompted to indicate your org and space:
 
-    ```
+    ```text
     ibmcloud target --cf
     ```
     {: pre}
 
     Or, if you know the org and space the service belongs to, you can use the following command:
 
-    ```
+    ```text
     ibmcloud target -o <org name> -s <space name>
     ```
     {: pre}
 
- 5. From `<your_new_directory>`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
+5. From `<your_new_directory>`, redeploy your app to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf push` command. For more information, see [`ibmcloud cf push`](/docs/cli?topic=cli-ibmcloud_commands_apps#ibmcloud_app_push).
 
 6. Access your app by browsing to the app URL.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -131,17 +131,17 @@ You can use the [secure starter app](https://github.com/IBM-Cloud/java-secure-ap
 
 First, download this secure starter app, then build and deploy it on {{site.data.keyword.cloud_notm}} or locally the same way as you do with the [getting-started-java](https://github.com/IBM-Cloud/get-started-java){: external} sample app.  Go to [Getting started with Liberty on {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty) to learn more about building and deploying apps on {{site.data.keyword.cloud_notm}}.  To get started, you can use these steps to clone, build, and run the app.
 
-```
+```text
 git clone https://github.com/IBM-Cloud/java-secure-app
 ```
 {: pre}
 
-```
+```text
 cd java-secure-app
 ```
 {: pre}
 
-```
+```text
 mvn install liberty:run-server
 ```
 {: pre}
@@ -155,7 +155,7 @@ To enforce HTTPS instead of HTTP on all pages in your app, the following changes
 
 Modify your `server.xml` to enable the `appSecurity-2.0` feature:
 
-```
+```text
 <featureManager>
   <feature>appSecurity-2.0</feature>
 </featureManager>
@@ -164,7 +164,7 @@ Modify your `server.xml` to enable the `appSecurity-2.0` feature:
 
 Modify your `web.xml` file to include the following security constraint:
 
-```
+```text
 <security-constraint>
   <web-resource-collection>
     <web-resource-name>Entire Application</web-resource-name>
@@ -181,6 +181,7 @@ This makes your app force all connections to use HTTPS automatically and will no
 
 ## Secure starter app contents
 {: more}
+
 The secure starter app contains **BadServlet.java**. This app shows an example of insecure code that developers might write if care is not taken.
 
 The secure starter app also contains **GoodServlet.java**, which includes a number of good secure coding practices such as input validation, output encoding, secure HTTP Header settings, and Content Security Policy. These practices are key countermeasures against XSS. Applying them can also mitigate other vulnerabilities such as some injection and directory traversal.

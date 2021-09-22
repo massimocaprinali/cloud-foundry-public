@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Memory limits and the Liberty buildpack
 {: #memory_limits}
 
@@ -132,11 +133,11 @@ More information on JVM memory usage can be found at the developerWorks article 
 
 When you deploy an app, the memory usage of the entire process is monitored. If memory usage exceeds the memory limit that you specified when the app was deployed, the kernel stops the process. This action happens without warning and might be manifested in several ways.
 
- If the Memory Limit is exceeded during app deployment, you receive a message that a failure occurred and you might see any the following.
+If the Memory Limit is exceeded during app deployment, you receive a message that a failure occurred and you might see any the following.
 
-  * You might see that the app is flapping.
-  * You might see that the app attempted to start multiple times, always unsuccessfully.
-  * You might receive a message that indicates the app deployment failed.
+* You might see that the app is flapping.
+* You might see that the app attempted to start multiple times, always unsuccessfully.
+* You might receive a message that indicates the app deployment failed.
 
 If the Memory Limit is exceeded while the app is in service, the process stops and Cloud Foundry attempts to restart the app. The app might restart, but it is unavailable for some amount of time.
 
@@ -161,15 +162,15 @@ You can set the heap memory size by using environment variables or by changing t
 
 * Use the `JVM_ARGS` environment variable and the `-Xmx` argument. For example to set the maximum heap size to 512 M use the following command, then restage your app.
 
-```
-    ibmcloud cf set-env myapp JVM_ARGS -Xmx512m
+```text
+ibmcloud cf set-env myapp JVM_ARGS -Xmx512m
 ```
 {: codeblock}
 
 * Specify the heap size ratio using the JBP_CONFIG_IBMJDK environment variable.  The heap_size_ratio is a floating point value which specifies how much of memory limit to allocate to the heap.  For example, to allocate half of the available memory to the heap (50% or 0.50), issue the following command and restage your app.
 
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "heap_size_ratio: 0.50"
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "heap_size_ratio: 0.50"
 ```
 {: codeblock}
 

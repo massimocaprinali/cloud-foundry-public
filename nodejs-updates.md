@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -108,6 +108,7 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+
 
 # Latest updates to the SDK for Node.js buildpack 
 {: #nodejs-latest_updates}
@@ -312,7 +313,7 @@ Note that there is a known issue with NPM v3 and the App Management inspector ut
 ## April 29, 2016: Updated Node.js buildpack v3.3-20160428-1409
 
 This release of the buildpack adds {{site.data.keyword.IBM_notm}} SDK for Node.js runtime versions 0.10.44, 0.12.13, 4.4.0, 4.4.1, 4.4.2, and 4.4.3. The default is now 4.4.3.
-i
+
 For 4.3.1 and up, it is now possible to use a FIPS-enabled version of the runtime by setting the `FIPS_MODE=true` environment variable for your app.
 
 The updated buildpack and the new runtime versions also contain fixes for security vulnerabilities:
@@ -339,25 +340,25 @@ This release is fully synchronized with the [Cloud Foundry community Node.js](ht
 
 * Buildpack updates:
 
-  * Node.js v4.2.4 ({{site.data.keyword.IBM_notm}} SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your app to behave differently if a particular version is not specified for your app. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} app, see [Node.js runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs_runtime){: external} documentation.
+    * Node.js v4.2.4 ({{site.data.keyword.IBM_notm}} SDK for Node.js Version 4) is now the default runtime on {{site.data.keyword.cloud_notm}}, replacing v0.12.9. This change might cause your app to behave differently if a particular version is not specified for your app. To learn how to specify a version of Node.js for your {{site.data.keyword.cloud_notm}} app, see [Node.js runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs_runtime){: external} documentation.
 
-  * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stack traces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the NPM install phase only. This function allows users to set NODE_ENV to another value like *development* for app runtime. For clarity, NPM scripts will see the message **NODE_ENV=production**.
+    * NODE_ENV is now set to *production* by default. This change will cause some node dependencies to behave differently. For example, the Express framework will no longer return stack traces in the web browser for faulty endpoints, but instead displays *Internal Server Error*. When NPM_CONFIG_PRODUCTION is set to *true*, NPM will set NODE_ENV to *production* for subshell scripts in the NPM install phase only. This function allows users to set NODE_ENV to another value like *development* for app runtime. For clarity, NPM scripts will see the message **NODE_ENV=production**.
 
-  * A Bug-fix to the Monitoring and Analytics service is included.
+    * A Bug-fix to the Monitoring and Analytics service is included.
 
 * Caching updates:
 
-  * If cache is disabled (NODE_MODULES_CACHE=false) the buildpack will not attempt to cache any modules/components. Previously this setting made it so that the cache is not popped, but it would still cache the installed modules for future deploys. Now, it will not pop the cache or attempt to store any cache.
+    * If cache is disabled (NODE_MODULES_CACHE=false) the buildpack will not attempt to cache any modules/components. Previously this setting made it so that the cache is not popped, but it would still cache the installed modules for future deploys. Now, it will not pop the cache or attempt to store any cache.
 
-  * Bower_components are cached by default in addition to node_modules.
+    * Bower_components are cached by default in addition to node_modules.
 
 * Other updates:
 
-  * Added Helpful warnings for missing dependencies like gulp, bower, and angular.
+    * Added Helpful warnings for missing dependencies like gulp, bower, and angular.
 
-  * The detect script is updated with buildpack version information.
+    * The detect script is updated with buildpack version information.
 
-  * The clustering recommendation (WEB_CONCURRENCY) initially introduced by community is removed as memory determination was inaccurate on {{site.data.keyword.cloud_notm}}.
+    * The clustering recommendation (WEB_CONCURRENCY) initially introduced by community is removed as memory determination was inaccurate on {{site.data.keyword.cloud_notm}}.
 
 
 ## December 16, 2015: Updated Node.js buildpack v2.8-20151209-1403 and v3.0beta-20151211-2041
@@ -373,17 +374,17 @@ In addition, in v3.0beta the default Node.js runtime is changed to v4.2.3.
 To push your app with v3.0beta:
 * Use "-b" option in your `ibmcloud cf push` command:
 
-```
-        ibmcloud cf push -b sdk-for-nodejs-v3beta
-```
-{: pre}
+    ```text
+    ibmcloud cf push -b sdk-for-nodejs-v3beta
+    ```
+    {: pre}
 
 * Or use the "buildpack" option in your manifest.yml file:
 
-```
-        buildpack: sdk-for-nodejs-v3beta
-```
-{: codeblock}
+    ```yaml
+    buildpack: sdk-for-nodejs-v3beta
+    ```
+    {: codeblock}
 
 This change to the default runtime will not affect your app if you configured a specific version of Node.js in your app's package.json.
 
@@ -412,27 +413,27 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 * The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.12.1](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 * If your app doesn’t specify a runtime in its package.json file, your app will now start by using v0.12.1, instead of v0.10.x. If you need to use the previous version, specify v0.10.x in your package.json as shown.
 
-```
+    ```text
         "engines": {
             "node": "0.10.x"
         }
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
 * Known issues with v0.12.1:
-   * The `Suspend` feature is broken when you use the Debug Tools feature provided by {{site.data.keyword.cloud_notm}} Live Sync.
-   * The `mqlight` module that is used for the MQ Light service is not supported on v0.12.x
+    * The `Suspend` feature is broken when you use the Debug Tools feature provided by {{site.data.keyword.cloud_notm}} Live Sync.
+    * The `mqlight` module that is used for the MQ Light service is not supported on v0.12.x
 
 * Various security vulnerabilities were resolved:
-  * Fixed vulnerabilities in OpenSSL affecting {{site.data.keyword.IBM_notm}} SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerabilities-in-openssl-affect-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-0286-cve-2015-0287-cve-2015-0288-cve-2015-0289-cve-2015-0292-cve-2015-0293-cv/){: external}.
-  * Fixed vulnerability in RC4 Stream Cipher affecting {{site.data.keyword.IBM_notm}} SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-rc4-stream-cipher-affects-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-2808/){: external}.
+    * Fixed vulnerabilities in OpenSSL affecting {{site.data.keyword.IBM_notm}} SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerabilities-in-openssl-affect-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-0286-cve-2015-0287-cve-2015-0288-cve-2015-0289-cve-2015-0292-cve-2015-0293-cv/){: external}.
+    * Fixed vulnerability in RC4 Stream Cipher affecting {{site.data.keyword.IBM_notm}} SDK for Node.js. More details are available in the [security bulletin](https://www.ibm.com/blogs/psirt/ibm-security-bulletin-vulnerability-in-rc4-stream-cipher-affects-ibm-sdk-for-node-js-in-ibm-bluemix-cve-2015-2808/){: external}.
 
 ##  April 2, 2015: Updated Node.js buildpack v1.15-20150331-2231
 
 * The Node.js buildpack now includes three new features to help quickly develop on {{site.data.keyword.cloud_notm}} as you would on the desktop, without redeploying
-  * Desktop Sync: Synchronize any (Windows) desktop tree to a cloud-based project workspace
-  * Live Edit: Allows you to make changes to a Node.js app that runs in {{site.data.keyword.cloud_notm}} and test them in your browser right away.
-  * Debug: Shell into your environment and debug! You can edit code dynamically, insert breakpoints, step through code, restart the runtime, and more by using the Node Inspector debugger
+    * Desktop Sync: Synchronize any (Windows) desktop tree to a cloud-based project workspace
+    * Live Edit: Allows you to make changes to a Node.js app that runs in {{site.data.keyword.cloud_notm}} and test them in your browser right away.
+    * Debug: Shell into your environment and debug! You can edit code dynamically, insert breakpoints, step through code, restart the runtime, and more by using the Node Inspector debugger
 * We pulled in the latest changes from the [Cloud Foundry’s Node.js buildpack](https://github.com/cloudfoundry/nodejs-buildpack){: external}. This change comes with a number of bug-fixes and improvements made by the community.
 * The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.13](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 

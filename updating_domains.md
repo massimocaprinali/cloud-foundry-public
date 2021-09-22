@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Updating your domain
 {: #update-domain}
 
@@ -136,22 +137,24 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
 {: #update-domain-cli}
 
 1. Connect to your targeted Cloud Foundry API endpoint by typing the following command:
-   ```
-   ibmcloud target --cf-api <CF_ENDPOINT>
-   ```
-   {: pre}
 
-   **Cloud Foundry API endpoints:**
-   * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
-   * US-EAST - `api.us-east.cf.cloud.ibm.com`
-   * EU-DE - `api.eu-de.cf.cloud.ibm.com`
-   * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
-   * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
+    ```text
+    ibmcloud target --cf-api <CF_ENDPOINT>
+    ```
+    {: pre}
+
+    **Cloud Foundry API endpoints:**
+    * US-SOUTH - `api.us-south.cf.cloud.ibm.com`
+    * US-EAST - `api.us-east.cf.cloud.ibm.com`
+    * EU-DE - `api.eu-de.cf.cloud.ibm.com`
+    * EU-GB - `api.eu-gb.cf.cloud.ibm.com`
+    * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
 
 2. Add the route with the new domain to an app by typing the following command:
-   ```
-   ibmcloud app route-map <APPNAME> <DOMAIN> -n <HOSTNAME>
-   ```
-   {: pre}
+   
+    ```text
+    ibmcloud app route-map <APPNAME> <DOMAIN> -n <HOSTNAME>
+    ```
+    {: pre}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -135,7 +135,6 @@ Environment Variable Name              | Description
 `HTTP_PROXY`                           | Set proxy server information.
 `HTTPS_PROXY`                          | Set proxy server information.
 `services_autoconfig_excludes`         | Disable service [auto-configuration.](/docs/cloud-foundry-public?topic=cloud-foundry-public-auto_config#opting_out).
-
 {: caption="Table 1. Environment variables available for Liberty for Java" caption-side="top"}
 
 ## Disabled attributes in the Liberty for Java buildpack
@@ -154,7 +153,6 @@ Disabled attribute         | Element
 `logDirectory`             | `logging`
 `consoleLogLevel`          | `logging`
 `enableWelcomePage`        | `httpDispatcher`
-
 {: caption="Table 1. Attributes disabled by Liberty for Java" caption-side="top"}
 
 

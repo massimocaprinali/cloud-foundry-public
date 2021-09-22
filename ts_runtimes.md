@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -144,21 +144,21 @@ You can use buildpacks that have built-in mechanisms to avoid loading obsolete c
 
 If the buildpack that you are using doesn't provide a mechanism to load the latest components automatically, you can manually delete the contents in the cache directory and push your app again. Use the following steps:
 
- 1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: external}.
+1. Check out a branch of a null buildpack, for example, https://github.com/ryandotsmith/null-buildpack. For information about how to check out a branch, see [Git Basics - Getting a Git Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository){: external}.
 
- 2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: external}.
+2. Add the following line to the `null-buildpack/bin/compile` file and commit the changes. For information about how to commit changes, see [Git Basics - Recording Changes to the Repository](http://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository){: external}.
  
-      ```text
-      rm -rfv $2/*
-      ```
-      {: pre}
+    ```text
+    rm -rfv $2/*
+    ```
+    {: pre}
 
 3. Push your app with the null buildpack that was modified to delete the cache by using the following command. After you complete this step, all contents in the cache directory of your app are deleted.
 
     ```text
     ibmcloud cf push appname -p app_path -b <modified_null_buildpack>
     ```
-  {: pre}
+    {: pre}
 
 4. Push your app with the latest buildpack that you want to use by using the following command:
 
@@ -413,17 +413,17 @@ For the {{site.data.keyword.runtime_nodejs_notm}} buildpack V3.23 or later, try 
 
 1. From your app root directory, install dependencies by running the following command.
 
-   ```text
-   npm install
-   ```
-   {: pre}
+    ```text
+    npm install
+    ```
+    {: pre}
 
-1. Ensure that your `.cfignore` file does not include the following line:
+2. Ensure that your `.cfignore` file does not include the following line:
 
     ```text
     node_modules/
     ```
-   {: codeblock}
+    {: codeblock}
 
 Now when you deploy your app with the  `ibmcloud cf push` command, instead of downloading your dependencies to a separate location, the dependencies are copied into the same directory as the rest of the app.
 
@@ -565,7 +565,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 
  1. Add a `requirements.txt` file to the root directory of your Python app.
 
- The `requirements.txt` file specifies the library packages that are required for your Python app and the version of the packages. The following example shows the content of the `requirements.txt` file, where `web.py==0.37` indicates the version of the `web.py` library that will be downloaded is 0.37, and `wsgiref==0.1.2` indicates the version of the web server gateway interface that is required by the web.py library is 0.1.2.
+     The `requirements.txt` file specifies the library packages that are required for your Python app and the version of the packages. The following example shows the content of the `requirements.txt` file, where `web.py==0.37` indicates the version of the `web.py` library that will be downloaded is 0.37, and `wsgiref==0.1.2` indicates the version of the web server gateway interface that is required by the web.py library is 0.1.2.
 	 
     ```text
 	  web.py==0.37
@@ -573,7 +573,7 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
 	  ```
     {: codeblock}
 
-	 For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files){: external}.
+	  For more information about how to configure the `requirements.txt` file, see [Requirements files](https://pip.pypa.io/en/stable/user_guide/?highlight=requirements.txt#requirements-files){: external}.
 
  2. Add a `Procfile` file to the root directory of your Python app.
  The `Procfile` file must contain the start command for your Python app. In the following command, `<yourappname>` is the name of your Python app, and *PORT* is the port number that your Python app must use to receive requests from users of the app. *$PORT* is optional. If you don't specify PORT in the start command, the port number under the `VCAP_APP_PORT` environment variable that is inside the app is used.
@@ -584,5 +584,6 @@ Add a `requirements.txt` file and a `Procfile` file to the root directory of you
     {: codeblock}
 
 You can now import the third-party Python library into {{site.data.keyword.cloud_notm}}.
+
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,12 +109,13 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Enforce HTTPS on all pages in your app
 {: #nodejs-enforce_https}
 
 When you run your app in {{site.data.keyword.cloud}} with the express framework, the following changes need to be made to enforce HTTPS instead of HTTP on all pages in your app.
 
-```
+```text
 var express = require("express");
 var app = express();
 

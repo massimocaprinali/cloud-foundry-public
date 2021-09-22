@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Liberty for Java buildpack defaults
 {: #buildpack_defauts}
 
@@ -121,15 +122,14 @@ The buildpack has default values for settings such as the Java version or Libert
 
 The buildpack provides two versions of the Liberty runtime:
 1. A long-term stable release
-  * It is the default Liberty runtime.
-  * It does not provide any [beta features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_beta_features).
-  * Typically updated on a quarterly basis.
+    * It is the default Liberty runtime.
+    * It does not provide any [beta features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_beta_features).
+    * Typically updated on a quarterly basis.
 
 2. The monthly release
-  * It must be explicitly enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and
-  the **IBM_LIBERTY_MONTHLY** environment variable with **true**.
-  * It provides [monthly features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime).
-  * Typically updated every 4 weeks.
+    * It must be explicitly enabled by setting the **JBP_CONFIG_LIBERTY** environment variable with the **"version: +"** value and the **IBM_LIBERTY_MONTHLY** environment variable with **true**.
+    * It provides [monthly features](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime).
+    * Typically updated every 4 weeks.
 
 ## Liberty features
 {: #default_liberty_features}

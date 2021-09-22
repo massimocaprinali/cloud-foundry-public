@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Customize the JRE
 {: #customizing_jre}
 
@@ -118,10 +119,11 @@ Apps run in a Java runtime environment (JRE) that is provided and configured by 
 
 By default, apps are configured to run with a lightweight version of the {{site.data.keyword.IBM}} JRE. This lightweight JRE is stripped down to provide core, essential function with a much reduced disk and memory footprint. For more information about the contents of the lightweight JRE, see [Small Footprint JRE](http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/small_jre.html){: external}.
 
- {{site.data.keyword.IBM_notm}} JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
- Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
+{{site.data.keyword.IBM_notm}} JRE version 8 is used by default.  The Liberty buildpack also includes the latest OpenJ9 11 JRE as an alternate JRE.  
+Use the JBP_CONFIG_IBMJDK environment variable to specify an alternative JRE. For example, to use the latest OpenJ9 JRE provided by the Liberty buildpack set the following environment variable:
+
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
 ```
 {: pre}
 
@@ -131,14 +133,16 @@ The version property can be set to a version range. There are two supported vers
 {: #openjdk}
 
 Optionally, apps can be configured to run with OpenJDK as the JRE. To enable an app to run with OpenJDK set the JVM environment variable to `openjdk`. For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
-```
-    ibmcloud cf set-env myapp JVM 'openjdk'
+
+```text
+ibmcloud cf set-env myapp JVM 'openjdk'
 ```
 {: pre}
 
 If enabled, OpenJDK version 8 is used by default. Use the JBP_CONFIG_OPENJDK environment variable to specify an alternative version of OpenJDK. For example, to use the latest OpenJDK 7, set the following environment variable:
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_OPENJDK "version: 1.7.+"
+
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_OPENJDK "version: 1.7.+"
 ```
 {: pre}
 
@@ -148,20 +152,23 @@ The version property can be set to a version range such as 1.7.+, 1.8.+ or any s
 {: #openj9}
 
 Optionally, apps can be configured to run with OpenJ9 as the JRE or JDK. To enable an app to run with OpenJ9 set the JVM environment variable to "openj9". For example, using the {{site.data.keyword.cloud_notm}} command line tool, run the command:
-```
-    ibmcloud cf set-env myapp JVM 'openj9'
+
+```text
+ibmcloud cf set-env myapp JVM 'openj9'
 ```
 {: pre}
 
 If enabled, OpenJ9 version 11 is used by default. Use the JBP_CONFIG_OPENJ9 environment variable to specify an alternative version of OpenJ9. For example, to use the latest OpenJ9 8, set the following environment variable:
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "version: 8.+"
+
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "version: 8.+"
 ```
 {: pre}
 
 If enabled, the OpenJ9 JRE is used by default. Use the JBP_CONFIG_OPENJ9 environment variable to use the JDK version of OpenJ9. For example, to use the OpenJ9 JDK, set the following environment variable:
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "type: jdk"
+
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_OPENJ9 "type: jdk"
 ```
 {: pre}
 
@@ -179,23 +186,23 @@ See [Using your own JRE](/docs/cloud-foundry-public?topic=cloud-foundry-public-u
 The Liberty buildpack configures the default JVM options by taking into account:
 
 * An app's memory limit.  The applied JVM heap settings are calculated based on:
-  * an app's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
-  * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
+    * an app's memory limit, as explained in [Memory limits and the Liberty buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-memory_limits)
+    * the JRE type, as the heap-related options for the JVM vary according to the JRE's supported options.
 
 * The [Liberty features supported in {{site.data.keyword.cloud_notm}}](/docs/cloud-foundry-public?topic=cloud-foundry-public-liberty_features).
-  * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting `-Dcom.ibm.tx.jta.disable2PC=true`.
+    * Two-phase commit global database transactions are unsupported in {{site.data.keyword.cloud_notm}} and therefore disabled by setting `-Dcom.ibm.tx.jta.disable2PC=true`.
 
 * The {{site.data.keyword.cloud_notm}} environment.
 
-  The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
-  * Fast failure and recovery of an app is configured by disabling JVM dumps options and killing of the processes when an app's memory is exhausted.
-  * Virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
-  * Routing of information on the app's available memory resources at the time of failure to the Loggregator.
-  * If an app is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common app "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
+    The JVM options are configured to provide optimization in an {{site.data.keyword.cloud_notm}} environment and to aide diagnostics of memory-related error conditions.
+    * Fast failure and recovery of an app is configured by disabling JVM dumps options and killing of the processes when an app's memory is exhausted.
+    * Virtualization tuning ({{site.data.keyword.IBM_notm}} JRE only).
+    * Routing of information on the app's available memory resources at the time of failure to the Loggregator.
+    * If an app is configured to enable JVM memory dumps, the killing of Java processes is disabled, and JVM memory dumps are routed to a common app "dumps" directory. These dumps can then be viewed from the {{site.data.keyword.cloud_notm}} dashboard or the {{site.data.keyword.cloud_notm}} CLI.
 
 The following is an example default JVM configuration that is generated by the buildpack for an app that is deployed with a 512M Memory Limit:
 
-```
+```text
     -Xtune:virtualized
     -Xmx384M
     -Xdump:none
@@ -296,8 +303,8 @@ The JVM options for stand-alone Java app are persisted as command line options. 
 
 To view the `staging_info.yml` file, run:
 
-```
-    ibmcloud cf ssh myapp -c "cat staging_info.yml"
+```text
+ibmcloud cf ssh myapp -c "cat staging_info.yml"
 ```
 {: pre}
 
@@ -305,8 +312,8 @@ The JVM options for WAR, EAR, server directory and packaged server deployment ar
 
 To view the `jvm.options` file, run:
 
-```
-    ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/jvm.options"
+```text
+ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/jvm.options"
 ```
 {: pre}
 
@@ -317,29 +324,30 @@ To view the `jvm.options` file, run:
 Deploying an app with customized JVM options to enable {{site.data.keyword.IBM_notm}} JRE verbose garbage collection logging:
 * The JVM options included in an app's `manifest.yml` file:
 
-```
-    env:
-      JAVA_OPTS: "-verbose:gc -Xverbosegclog:./verbosegc.log,10,1000"
-```
-{: codeblock}
+    ```yaml
+        env:
+          JAVA_OPTS: "-verbose:gc -Xverbosegclog:./verbosegc.log,10,1000"
+    ```
+    {: codeblock}
 
 * To view the JVM generated verbose garbage collection log file, run:
 
-```
+    ```text
     ibmcloud cf ssh myapp -c "cat app/wlp/usr/servers/defaultServer/verbosegc.log.001"
-```
-{: pre}
+    ```
+    {: pre}
 
 * To update a deployed app's {{site.data.keyword.IBM_notm}} JRE option to trigger a `heap`, `snap`, and `javacore` on an out-of-memory condition, set the app's environment variable with the JVM option and restart the app:
 
-```
+    ```text
     ibmcloud cf set-env myapp JVM_ARGS '-Xdump:heap+java+snap:events=systhrow,filter=java/lang/OutOfMemoryError'
-```
-{: pre}
-```
+    ```
+    {: pre}
+
+    ```text
     ibmcloud cf restart myapp
-```
-{: pre}
+    ```
+    {: pre}
 
  See the [Logging and tracing](/docs/cloud-foundry-public?topic=cloud-foundry-public-logging_tracing#download_dumps) documentation for details on viewing and downloading the generated dump files.
 
@@ -351,39 +359,39 @@ There are some cases where files need to be bundled with the JRE to expose their
 The files to be overlaid can be packaged with the app `WAR`, `EAR`, or `JAR` file in a resources folder at the root of the archive. For a server (compressed file or server directory), the files can be packaged in a resources folder in the server directory, with the `server.xml` file.
 
 * `WAR` file
-  * `WEB-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `WEB-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * `EAR` file
-  * `META-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `META-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * `JAR` file
-  * `META-INF`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `META-INF`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 
 * <server_name> DIR
-  * `apps`
-  * `dropins`
-  * `server.xml`
-  * `resources`
-    * `other files`
-    * `.java-overlay`
+    * `apps`
+    * `dropins`
+    * `server.xml`
+    * `resources`
+        * `other files`
+        * `.java-overlay`
 
 The `.java-overlay` directory contains specific files in the same file hierarchy as the Java JRE that is being overlaid starting with `.java/jre`.
 
 For example, if you want to use AES 256-bit encryption, you need to overlay these Java policy files:
 
-```
+```text
     .java\jre\lib\security\US_export_policy.jar
     .java\jre\lib\security\local_policy.jar
 ```
@@ -391,7 +399,7 @@ For example, if you want to use AES 256-bit encryption, you need to overlay thes
 
 Download the appropriate unrestricted policy files and add them to your app as:
 
-```
+```text
     resources\.java-overlay\.java\jre\lib\security\US_export_policy.jar
     resources\.java-overlay\.java\jre\lib\security\local_policy.jar
 ```
