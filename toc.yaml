@@ -138,10 +138,10 @@ toc:
 
   - navgroup: 
       id: reference
-      links: 
-        - link: 
-            label: Sample App
-            href: https://github.com/IBM-Cloud/cf-nodejs-c2c-demo
+      links:
+      - link:
+          label: Sample App
+          href: https://github.com/IBM-Cloud/cf-nodejs-c2c-demo
     
       topics: 
       - app_mng.md
