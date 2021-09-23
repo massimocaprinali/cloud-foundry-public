@@ -142,11 +142,6 @@ toc:
       - link:
           label: Sample App
           href: https://github.com/IBM-Cloud/cf-nodejs-c2c-demo
-    
-      topics: 
-      - app_mng.md
-      - service_dependencies.md
-     
       - link: 
           label: Cloud Foundry Explained - Video
           href: https://www.youtube.com/watch?v=oUpqXxmr6oU
@@ -156,7 +151,9 @@ toc:
       - link: 
           label: Cloud Foundry Docs
           href: https://docs.cloudfoundry.org/
-      
+      topics: 
+      - app_mng.md
+      - service_dependencies.md      
       - cfp_responsibilities.md
       - ha-dr.md
 
