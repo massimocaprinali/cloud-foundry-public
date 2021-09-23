@@ -8,8 +8,6 @@ keywords: cloud foundry
 
 subcollection: cloud-foundry-public
 
-
-
 ---
 
 
@@ -85,7 +83,7 @@ subcollection: cloud-foundry-public
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
+{:step: data-tutorial-type='step'} <!-- Apply to steps for automatic numbering -->
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -119,7 +117,7 @@ When you deploy Cloud Foundry apps, there are a known list of possible network a
 Network addresses are subject to change from time to time. 
 {: important}
 
-
+<!--- Everything below this line is refreshed periodically --->
 In the Dallas (us-south) region, the following network addresses are in use:
 
 ```text
@@ -209,7 +207,6 @@ In the Sydney (au-syd) region, the following network addresses are in use:
 168.1.40.96/27
 168.1.44.160/27
 168.1.44.64/27
-168.1.44.96/27
 168.1.45.0/27
 168.1.45.64/27
 168.1.45.96/27
