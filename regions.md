@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Regions and endpoints
 {: #endpoints}
 
@@ -139,8 +140,6 @@ A list of supported regions and API endpoints for the {{site.data.keyword.ibmcf_
 | `EU-GB`       | `api.eu-gb.cf.cloud.ibm.com`    |
 | `EU-DE`       | `api.eu-de.cf.cloud.ibm.com`    |
 | `AU-SYD`      | `api.au-syd.cf.cloud.ibm.com`   |
-{: caption="Table 1. Lists API endpoints for interacting with Cloud Foundry Public" caption-side="top"}
-
-
+{: caption="Table 2. Lists API endpoints for interacting with Cloud Foundry Public" caption-side="top"}
 
 

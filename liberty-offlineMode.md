@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -130,7 +130,5 @@ to acquire artifacts required by the app.
 
 In some environments a proxy might be required. See
 [Working with a proxy](/docs/cloud-foundry-public?topic=cloud-foundry-public-working_with_proxy) for more details.
-
-
 
 

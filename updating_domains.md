@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Updating your domain
 {: #update-domain}
 
@@ -136,7 +137,8 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
 {: #update-domain-cli}
 
 1. Connect to your targeted Cloud Foundry API endpoint by typing the following command:
-    ```
+
+    ```text
     ibmcloud target --cf-api <CF_ENDPOINT>
     ```
     {: pre}
@@ -149,11 +151,10 @@ Complete these steps to update the domain for your Cloud Foundry org by using th
     * AU-SYD - `api.au-syd.cf.cloud.ibm.com`
 
 2. Add the route with the new domain to an app by typing the following command:
-    ```
+   
+    ```text
     ibmcloud app route-map <APPNAME> <DOMAIN> -n <HOSTNAME>
     ```
     {: pre}
-
-
 
 

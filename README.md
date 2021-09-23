@@ -8,5 +8,3 @@ Repo for Cloud Foundry (Public) docs
 
 
 
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Available versions
 {: #available_versions}
 
@@ -125,21 +126,19 @@ The {{site.data.keyword.IBM_notm}} Node.js buildpack caches the {{site.data.keyw
 
 See the following example:
 
-```
+```text
 {
-    "name": "myapp",
-    "description": "this is my app",
-    "version": "0.1",
-    "engines": {
-        "node": "4.2.4",
-        "npm": "3.10.10"
-    }
+  "name": "myapp",
+  "description": "this is my app",
+  "version": "0.1",
+  "engines": {
+     "node": "4.2.4",
+     "npm": "3.10.10"
+  }
 }
 ```
 {: codeblock}
 
 **Note:** Always specify a node version in the `package.json` file. If a version is not specified, the latest node version is used.
-
-
 
 

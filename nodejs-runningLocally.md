@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -120,11 +120,9 @@ When the app is running on {{site.data.keyword.cloud_notm}}, the PORT environmen
 
 In the following example for a **js** file, **3000** is used as the port number. By using **3000**, you can run the app locally for testing purposes and on {{site.data.keyword.cloud_notm}} without making changes.
 
-```
+```text
 var port = (process.env.PORT || 3000);
 ```
 {: codeblock}
-
-
 
 

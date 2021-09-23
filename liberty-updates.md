@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Latest updates to the Liberty buildpack
 {: #liberty-latest_updates}
 
@@ -118,11 +119,11 @@ subcollection: cloud-foundry-public
 * The alternate and default Liberty runtime GA version is changed to the `21.0.0.9` release.
     * To specify the monthly runtime set the following two variables: 
     
-      ```
-      ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-      ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-      ```
-      {: codeblock} 
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
 
 * The new release includes MicroProfile 4.1 package. 
 * The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
@@ -133,11 +134,11 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external}. 
     * To specify the monthly runtime set the following two variables: 
   
-         ```
-         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
-         ```
-         {: codeblock}
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock}
       
 * The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP31`) remains unchanged.
 
@@ -146,7 +147,7 @@ subcollection: cloud-foundry-public
 * The default Liberty runtime GA version remains the same [21.0.0.6](https://openliberty.io/blog/2021/06/11/request-timing-21006.html){: external} release.
     * To specify the monthly runtime set the following two variables: 
   
-        ```
+        ```text
         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
         ```
@@ -161,7 +162,7 @@ subcollection: cloud-foundry-public
     * [CVE-2021-20492](https://www.ibm.com/support/pages/node/6456017){: external} - Websphere Application Server Java Batch is vulnerable to an XML External Entity Injection (XXE) attack when processing XML data
     * To specify the monthly runtime set the following two variables: 
     
-        ```
+        ```text
         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
         ```
@@ -175,7 +176,7 @@ subcollection: cloud-foundry-public
 * The alternate Liberty runtime version [21.0.0.5](https://openliberty.io/blog/2021/05/14/ldap-multipart-21005.html) includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
     * To specify the monthly runtime set the following two variables: 
     
-        ```
+        ```text
         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
         ```
@@ -184,12 +185,13 @@ subcollection: cloud-foundry-public
     * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
 * The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged.d
 
+
 ### April 9, 2021: Updated Liberty buildpack v3.56-20210412-1223
 * The alternate Liberty runtime GA version is changed to the `21.0.0.4` release.
 * The alternate Liberty runtime version `21.0.0.4` includes a fix for the [CVE-2021-26296)](https://www.ibm.com/support/pages/node/6441433){: external} security vulnerability.
     * To specify the monthly runtime set the following two variables: 
- 
-         ```
+  
+        ```text
         ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
         ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
         ```
@@ -302,11 +304,14 @@ subcollection: cloud-foundry-public
 * The alternate Liberty runtime version `20.0.0.2` includes a fix for the [CVE-2019-12406 security vulnerability](https://www.ibm.com/support/pages/node/1288774){: external}.
 * The alternate Liberty runtime version `20.0.0.2` includes a fix for the [CVE-2019-4720 security vulnerability]( https://www.ibm.com/support/pages/node/1285372){: external}.
 
-To use the alternate Liberty runtime set the following environment variables:
-```
-ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
-ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
-```
+    To use the alternate Liberty runtime set the following environment variables:
+
+    ```text
+    ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
+    ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
+    ```
+    {: codeblock}
+
 * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6FP5.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.6_10_openj9-0.18.1.
 
@@ -509,9 +514,12 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The {{site.data.keyword.IBM_notm}} JRE versions 8 and 7.1 were updated to SR4 FP1.
 * The auto-configuration support was also extended to work with `ibm-websphere-extreme-scale` container.
 * The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of `org.ektorp`. To enable the use of the Cloudant Java Library you must set the following environment variable:    
-```
-ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
-```
+
+    ```text
+    ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
+    ```
+    {: codeblock}
+
 * The buildpack also provides an updated version of the agent for the Auto-Scaling service and a number of app management enhancements.
 * This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps; it is being replaced by `logmet`.  
 
@@ -619,7 +627,7 @@ ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudan
 * The buildpack contains an updated version of the Liberty profile based on the [October beta](https://developer.ibm.com/wasdev/blog/2015/09/25/beta-was-liberty-beta-with-tools-october-2015/){: external}. With this update, the `bells-1.0`, `rtcomm-1.0`, `rtcommGateway-1.0`, `samlWeb-2.0`, `sipServlet-1.1` Liberty features, previously available as beta features, are now available as production-ready features.
 * The buildpack also contains an updated {{site.data.keyword.IBM_notm}} JRE 8 SR1 FP11.
 * The buildpack also provides a number of performance improvements and optimizations:
-    * The [CDI 1.2](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.
+    * The [CDI 1.2](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#stand_alone_apps) implicit bean archive scanning feature is disabled by default when deploying WAR or EAR files.  
     * To reduce the droplet size, the [App Management utilities](/docs/cloud-foundry-public?topic=cloud-foundry-public-app_management) `devconsole` and `shell`, require a restage operation instead of a restart.
     * The {{site.data.keyword.IBM_notm}} JRE's shared class cache is disabled as it was not being reused in the {{site.data.keyword.cloud_notm}} environment.
 
@@ -746,7 +754,5 @@ The updated JREs contain [latest security fixes](https://www.ibm.com/support/pag
     * With the new CouchDB feature available, the Cloudant® service can now automatically configure it so that a connector object is handily available! Parsing through `VCAP_SERVICES` and providing the `ektorp` client `.jar` files are no longer necessary.
 * The new version of {{site.data.keyword.IBM_notm}} SDK for Java is here!
     * When your apps are pushed again, they use {{site.data.keyword.IBM_notm}} SDK for Java Version 7.1-1.0. This comes with a substantial performance upgrade. Your app shows better throughput and reduced memory usage. See more about the {{site.data.keyword.IBM_notm}} Java SDK [here](https://www.ibm.com/support/pages/node/508269){: external}.
-
-
 
 

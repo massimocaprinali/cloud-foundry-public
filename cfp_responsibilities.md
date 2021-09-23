@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -114,6 +114,4 @@ Learn about the management responsibilities and terms and conditions that you ha
 {: shortdesc}
 
 There are no unique responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.ibmcf_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
-
-
 

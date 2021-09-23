@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Node.js buildpacks
 
 {{site.data.keyword.cloud}} provides multiple versions of the Node.js buildpack.
@@ -121,18 +122,16 @@ The **sdk-for-nodejs** buildpack takes precedence over the **nodejs_buildpack** 
 
 Typically the current **sdk-for-nodejs** buildpack and a previous version are available.  To see all the available buildpacks us the `ibmcloud cf buildpacks` command. 
 
-```
-    ibmcloud cf buildpacks
-    Getting buildpacks...
+```text
+ibmcloud cf buildpacks
+Getting buildpacks...
 
-    buildpack                                 position   enabled   locked   filename   
+buildpack                                 position   enabled   locked   filename   
 
-    sdk_for_nodejs                            2          true      false    buildpack_sdk-for-nodejs_v2.8-20151209-1403.zip   
-    nodejs_buildpack                          5          true      false    nodejs_buildpack-cached-v1.5.0.zip   
-    sdk-for-nodejs_v2_7-20151118-1003         17         true      false    buildpack_sdk-for-nodejs_v2.7-20151118-1003.zip
+sdk_for_nodejs                            2          true      false    buildpack_sdk-for-nodejs_v2.8-20151209-1403.zip   
+nodejs_buildpack                          5          true      false    ejs_buildpack-cached-v1.5.0.zip   
+sdk-for-nodejs_v2_7-20151118-1003         17         true      false    buildpack_sdk-for-nodejs_v2.7-20151118-1003.zip
 ```
 {: screen}
-
-
 
 

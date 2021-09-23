@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Best practices for running apps in production
 {: #production}
 
@@ -133,7 +134,5 @@ Cloud-ready apps are horizontally scalable, and are therefore able to dynamicall
 {{site.data.keyword.cloud_notm}} paid pricing plan offers a number of different account types with optional paid support.  No matter the type of your account, if you plan to bring an app to production on {{site.data.keyword.cloud_notm}}, consider enrolling in this option.
 
 With or without paid support, you can get help as described at [Getting support](/docs/get-support), but paying for support will help  ensure that your support tickets will be given the level attention that they deserve.
-
-
 
 

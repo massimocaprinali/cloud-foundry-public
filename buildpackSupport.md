@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Buildpack support statement
 {: #buildpack_support_statement}
 
@@ -117,6 +118,7 @@ subcollection: cloud-foundry-public
 {: #built-in_ibm_buildpacks}
 
 For [Liberty for Java](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-liberty) supports two versions (n & n - 1), for example, {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.12 & {{site.data.keyword.IBM_notm}} Liberty Buildpack v3.11. Each buildpack provides and supports one or more major versions of its corresponding runtime as appropriate. The liberty-for-java buildpack is refreshed once a month.
+{: shortdesc}
 
 Problems and issues can be reported against any version of the built-in {{site.data.keyword.IBM_notm}} Buildpack that is currently supported on {{site.data.keyword.cloud_notm}}, but they will be verified against the latest version. If a defect is found, {{site.data.keyword.IBM_notm}} will provide a fix in a future level of the runtime and corresponding buildpack. {{site.data.keyword.IBM_notm}} will not provide fixes for earlier major and minor versions (N-1, n-1). {{site.data.keyword.IBM_notm}} will not provide support for community runtimes even when using {{site.data.keyword.IBM_notm}} buildpacks, for example, using Open JDK with the Liberty buildpack. These community runtimes follow the same support policy as the built-in community buildpacks, as described in the following section.
 
@@ -144,7 +146,5 @@ For external buildpacks, support will not be provided by {{site.data.keyword.IBM
 {: #third-party}
 
 The buildpacks enable you to use some third-party services, such as Dynatrace or New Relic, within your apps. {{site.data.keyword.IBM_notm}} does not provide support for third-party services. For information about using third-party services in {{site.data.keyword.cloud}}, see the information about the service you want to use in the latest [{{site.data.keyword.cloud}} Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm){: external}. Before you use a third-party service, also review the licensing information from the service provider.
-
-
 
 

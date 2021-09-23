@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # What makes a good Cloud Foundry app?
 {: #goodapp}
 
@@ -142,9 +143,9 @@ So let's overview the important points about cloud-native apps:
 ## 12 Factor App
 {: #12factor}
 
-As explained by the original concept creator,
+As explained by the original concept creator:
 
-> "Twelve Factor apps are built for agility and rapid deployment, enabling continuous delivery and reducing the time and cost for new developers to join a project. They are designed to use the principles of modern cloud platforms while permitting maximum portability between projects. Finally, they can scale up without significant changes to tooling, architecture, or development practices"
+*"Twelve Factor apps are built for agility and rapid deployment, enabling continuous delivery and reducing the time and cost for new developers to join a project. They are designed to use the principles of modern cloud platforms while permitting maximum portability between projects. Finally, they can scale up without significant changes to tooling, architecture, or development practices"*
 
 The 12 factor apps check-list is a set of guidelines that dictate how an app is built to properly support the concept of independently-managed and iterated services.
 
@@ -164,7 +165,5 @@ The [12 factors website](https://12factor.net){: external} describes the 12 fact
 12. Run admin or management tasks as one-off processes.
 
 These steps allow a maturing development organization to start adopting the range of cloud-native capabilities and create highly capable and flexible cloud apps.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # How Cloud Foundry works with {{site.data.keyword.cloud_notm}}
 {: #howwork}
 
@@ -117,6 +118,7 @@ subcollection: cloud-foundry-public
 When you deploy an app to Cloud Foundry, you must configure {{site.data.keyword.cloud}} with enough information to support the app.
 
 * For a mobile app, {{site.data.keyword.cloud_notm}} contains an artifact that represents the mobile app's back end, such as the services that the mobile app uses to communicate with a server.
+
 * For a web app, you must ensure that information about the runtime and framework is communicated to {{site.data.keyword.cloud_notm}} so that {{site.data.keyword.cloud_notm}} can set up the appropriate execution environment to run the app.
 
 Each execution environment, including both mobile and web, is isolated from the execution environment of other apps. The execution environments are isolated even though these apps are on the same physical machine. The following figure shows the basic flow of how Cloud Foundry manages the deployment of apps in {{site.data.keyword.cloud_notm}}:
@@ -126,6 +128,7 @@ Each execution environment, including both mobile and web, is isolated from the 
 When you create an app and deploy it to Cloud Foundry, the {{site.data.keyword.cloud_notm}} environment determines an appropriate virtual server to send the app, or the artifacts that the app represents, to. For a mobile app, a mobile back-end projection is created on {{site.data.keyword.cloud_notm}}. Any code for the mobile app that is running in the cloud eventually runs in the {{site.data.keyword.cloud_notm}} environment. For a web app, the code that is running in the cloud is the app itself that the developer deploys to {{site.data.keyword.cloud_notm}}. The determination of the virtual server is based on several factors.
 
 * The load already on the machine.
+
 * Runtimes or frameworks that are supported by that virtual server.
 
 After a virtual server is chosen, an app manager on each virtual server installs the appropriate framework and runtime for the app. Then, the app can be deployed into that framework. When the deployment completes, the app artifacts are started.
@@ -164,30 +167,28 @@ You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, 
 ![Multi-region app development](images/multi-region.png "A user can access an app that is deployed in one or more regions over the internet."){: caption="Figure 5. Multi-region app deployment" caption-side="bottom"}
 
 
-{{site.data.keyword.cloud_notm}} infrastructure layers
+## {{site.data.keyword.cloud_notm}} infrastructure layers
 {: #infralayers}
 
 
 {{site.data.keyword.cloud_notm}} abstracts and hides operating system and infrastructure layers so that you don't need to manage them. However, sometimes you might want to know more about the operating system and middleware for your app.
-{: shortdesc}
+
 
 ### Viewing {{site.data.keyword.cloud_notm}} infrastructure layers
 {: #viewinfra}
 
 You can run the `ibmcloud cf stacks` command to show the available stacks, or root file systems, that your apps are to be deployed to. You can also specify the stack when you use the `ibmcloud cf push` command with the `-s` option and the `stack_name`, where the `stack_name` is the root file system. {{site.data.keyword.ibmcf_notm}} currently only supports `cflinuxfs3`.
 
-```
+```text
 ibmcloud cf push <APP_NAME> -s STACK
 ```
 {: pre}
 
 You can use the `ibmcloud cf buildpacks` command to show the available buildpacks, such as Liberty for Java and SDK for Node.js, that are available as runtimes for your app to run in. And you can specify the runtime environment for your app by using the following command:
 
-```
+```text
 ibmcloud cf push <APP_NAME> -b BUILDPACK_NAME
 ```
 {: pre}
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -108,6 +108,7 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+
 
 # Latest updates to the SDK for Node.js buildpack 
 {: #nodejs-latest_updates}
@@ -312,7 +313,7 @@ Note that there is a known issue with NPM v3 and the App Management inspector ut
 ## April 29, 2016: Updated Node.js buildpack v3.3-20160428-1409
 
 This release of the buildpack adds {{site.data.keyword.IBM_notm}} SDK for Node.js runtime versions 0.10.44, 0.12.13, 4.4.0, 4.4.1, 4.4.2, and 4.4.3. The default is now 4.4.3.
-i
+
 For 4.3.1 and up, it is now possible to use a FIPS-enabled version of the runtime by setting the `FIPS_MODE=true` environment variable for your app.
 
 The updated buildpack and the new runtime versions also contain fixes for security vulnerabilities:
@@ -373,17 +374,17 @@ In addition, in v3.0beta the default Node.js runtime is changed to v4.2.3.
 To push your app with v3.0beta:
 * Use "-b" option in your `ibmcloud cf push` command:
 
-```
-        ibmcloud cf push -b sdk-for-nodejs-v3beta
-```
-{: pre}
+    ```text
+    ibmcloud cf push -b sdk-for-nodejs-v3beta
+    ```
+    {: pre}
 
 * Or use the "buildpack" option in your manifest.yml file:
 
-```
-        buildpack: sdk-for-nodejs-v3beta
-```
-{: codeblock}
+    ```yaml
+    buildpack: sdk-for-nodejs-v3beta
+    ```
+    {: codeblock}
 
 This change to the default runtime will not affect your app if you configured a specific version of Node.js in your app's package.json.
 
@@ -412,12 +413,12 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 * The Node.js buildpack now comes with [{{site.data.keyword.IBM_notm}} SDK for Node.js v0.12.1](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 * If your app doesn’t specify a runtime in its package.json file, your app will now start by using v0.12.1, instead of v0.10.x. If you need to use the previous version, specify v0.10.x in your package.json as shown.
 
-```
+    ```text
         "engines": {
             "node": "0.10.x"
         }
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
 * Known issues with v0.12.1:
     * The `Suspend` feature is broken when you use the Debug Tools feature provided by {{site.data.keyword.cloud_notm}} Live Sync.
@@ -459,7 +460,5 @@ In addition, we revamped the App Management feature in the Node.js buildpack, wh
 ## July 29, 2014: Updated Node.js buildpack v1.1-20140717-1447
 
 The Node.js buildpack now comes with {{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.5. This update means you'll get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.29. See more about the [{{site.data.keyword.IBM_notm}} Node.js SDKs](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -109,6 +109,7 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Options for pushing Liberty apps
 {: #options_for_pushing}
 
@@ -131,8 +132,8 @@ Stand-alone apps such as WAR or EAR files can be deployed to Liberty in {{site.d
 To deploy a stand-alone app, run the `ibmcloud cf push` command with the -p option that points to your WAR or EAR file.
 For example:
 
-```
-    ibmcloud cf push <yourappname> -p myapp.war
+```text
+ibmcloud cf push <yourappname> -p myapp.war
 ```
 {: pre}
 
@@ -157,8 +158,8 @@ When a stand-alone app is deployed, a default Liberty configuration is provided 
 
 These features correspond to the Java EE 7 Web Profile features. You can specify a different set of Liberty features by setting the `JBP_CONFIG_LIBERTY` environment variable. For example, to enable only the `jsp-2.3` and `websocket-1.1` features, run the command and restage the app:
 
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: {features: [jsp-2.3, websocket-1.1]}"
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: {features: [jsp-2.3, websocket-1.1]}"
 ```
 {: pre}
 
@@ -167,22 +168,23 @@ For best results, set the Liberty features with the `JBP_CONFIG_LIBERTY` environ
 
 If you deployed a WAR file, the web app is accessible under the context root as set in the embedded `ibm-web-ext.xml` file. If the `ibm-web-ext.xml` file does not exist, or does not specify the context root, the app is accessible under the root context. For example,
 
-```
-    http://<yourappname>.mybluemix.net/
+```text
+http://<yourappname>.mybluemix.net/
 ```
 {: codeblock}
 
 If you deployed an EAR file, the embedded web app is accessible under the context root as defined in the EAR deployment descriptor. For example,
 
-```
-    http://<yourappname>.mybluemix.net/acme/
+```text
+http://<yourappname>.mybluemix.net/acme/
 ```
 {: codeblock}
 
 The entire default Liberty `server.xml` configuration file is as follows:
-```
+
+```text
     <server>
-        <featureManager>
+       <featureManager>
           <feature>beanValidation-1.1</feature>
           <feature>cdi-1.2</feature>
           <feature>ejbLite-3.2</feature>
@@ -199,18 +201,18 @@ The entire default Liberty `server.xml` configuration file is as follows:
           <feature>websocket-1.1</feature>
           <feature>icap:managementConnector-1.0</feature>
           <feature>appstate-2.0</feature>
-        </featureManager>
+       </featureManager>
 
-        <application name='myapp' location='myapp.war' type='war' context-root='/'/>
-        <httpEndpoint id='defaultHttpEndpoint' host='*' httpPort='${port}'/>
-        <webContainer trustHostHeaderPort='true' extractHostHeaderPort='true'/>
-        <include location='runtime-vars.xml'/>
-        <logging logDirectory='${application.log.dir}' consoleLogLevel='INFO'/>
-        <httpDispatcher enableWelcomePage='false'/>
-        <applicationMonitor dropinsEnabled='false' updateTrigger='mbean'/>
-        <config updateTrigger='mbean'/>
-        <cdi12 enableImplicitBeanArchives='false'/>
-        <appstate2 appName='myapp'/>
+       <application name='myapp' location='myapp.war' type='war' context-root='/'/>
+       <httpEndpoint id='defaultHttpEndpoint' host='*' httpPort='${port}'/>
+       <webContainer trustHostHeaderPort='true' extractHostHeaderPort='true'/>
+       <include location='runtime-vars.xml'/>
+       <logging logDirectory='${application.log.dir}' consoleLogLevel='INFO'/>
+       <httpDispatcher enableWelcomePage='false'/>
+       <applicationMonitor dropinsEnabled='false' updateTrigger='mbean'/>
+       <config updateTrigger='mbean'/>
+       <cdi12 enableImplicitBeanArchives='false'/>
+       <appstate2 appName='myapp'/>
     </server>
 ```
 {: codeblock}
@@ -219,10 +221,11 @@ The entire default Liberty `server.xml` configuration file is as follows:
 {: #java_main}
 
 Java apps, including Spring Boot apps, that contain a class with a main() method are executed using `java -jar`.  Liberty's native Spring Boot support can be enabled using the `LIBERTY_NATIVE_SPRINGBOOT` environment variable.
+
 For example, to use Liberty's `springBoot-2.0` feature:
 
-```
-    ibmcloud cf set-env myapp LIBERTY_NATIVE_SPRINGBOOT 2.0
+```text
+ibmcloud cf set-env myapp LIBERTY_NATIVE_SPRINGBOOT 2.0
 ```
 
 The Liberty server is used to run the app if the `LIBERTY_NATIVE_SPRINGBOOT` environment variable is set to a valid Liberty `springBoot` feature version.
@@ -232,17 +235,18 @@ The Liberty server is used to run the app if the `LIBERTY_NATIVE_SPRINGBOOT` env
 {: #cdi12}
 
 For performance reasons, when deploying WAR and EAR files only, the [CDI 1.2 implicit bean archives scanning](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_cdi_behavior.html){: external} is disabled by default. Implicit bean archive scanning can be enabled using the `JBP_CONFIG_LIBERTY` environment variable.
+
 For example:
 
-```
-    ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: { implicit_cdi: true }"
+```text
+ibmcloud cf set-env myapp JBP_CONFIG_LIBERTY "app_archive: { implicit_cdi: true }"
 ```    
 {: pre}
 
 Important: In order for your environment variable changes to take effect you must restage your app:
 
-```
-    ibmcloud cf restage myapp
+```text
+ibmcloud cf restage myapp
 ```
 {: pre}
 
@@ -254,8 +258,8 @@ In some cases, it might be necessary to provide a custom Liberty server configur
 If you installed the Liberty profile on your workstation and you already created a Liberty server with your app, you can push the contents of that directory to {{site.data.keyword.cloud_notm}}.
 For example, if your Liberty server is named `defaultServer`, run the command:
 
-```
-    ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer
+```text
+ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer
 ```
 {: pre}
 
@@ -268,7 +272,7 @@ If a Liberty profile is not installed on your workstation, you can use the follo
     * Make sure to update the location or the type attribute of the app element to match the file name and the type of your app.
     * The `server.xml` file in the diagram shows a minimal feature set. You might have to adjust the feature set depending on your app's needs.
 
-```
+    ```text
     <server>
         <featureManager>
             <feature>jsp-2.3</feature>
@@ -278,20 +282,20 @@ If a Liberty profile is not installed on your workstation, you can use the follo
 
         <application name="myapp" context-root="/" type="war" location="myapp.war"/>
     </server>
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
 After the server directory is ready, you can deploy it to {{site.data.keyword.cloud_notm}}.
 
-```
-    ibmcloud cf push <yourappname> -p defaultServer
+```text
+ibmcloud cf push <yourappname> -p defaultServer
 ```
 {: pre}
 
 The web apps that are deployed as part of the server directory are accessible under the [context root, as determined by the Liberty profile](https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_dep_war.html?cp=SSAW57_8.5.5){: external}. For example:
 
-```
-    http://<yourappname>.mybluemix.net/acme/
+```text
+http://<yourappname>.mybluemix.net/acme/
 ```
 {: codeblock}
 
@@ -303,18 +307,19 @@ You can also push a packaged server file to {{site.data.keyword.cloud_notm}}. Th
 To package a Liberty server, use the `./bin/server package` command from your Liberty installation directory. Specify your server name and include the `--include=usr` option.
 For example, if your Liberty server is `defaultServer`, run the command:
 
-```
-    wlp/bin/server package defaultServer --include=usr
+```text
+wlp/bin/server package defaultServer --include=usr
 ```
 {: pre}
 
 This command generates a `serverName.zip` file in the server's directory. If you used the `--archive` option to specify a different archive file, make sure it has the `.zip` extension instead of `.jar`. **The buildpack does not support packaged server files created with the `.jar` extension**.
 
 You can then push the generated `.zip` file to {{site.data.keyword.cloud_notm}} with the `ibmcloud cf push` command.
+
 For example:
 
-```
-    ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer/defaultServer.zip
+```text
+ibmcloud cf push <yourappname> -p wlp/usr/servers/defaultServer/defaultServer.zip
 ```
 {: pre}
 
@@ -365,7 +370,5 @@ The typical set of information is as follows:
 * connection.password: The password that is used to authenticate this app to the service. The password is auto-generated by Cloud Foundry, for example, pvyCY0YzX9pu5.
 
 For bound services that are not automatically configured by the Liberty buildpack, the app needs to manage the access of the backend resource on its own.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -109,14 +109,17 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Determining your organization architecture
 {: #orgstructure}
 
 
 
-You can use the following organization architectures:
+You can use the following two organization architectures.
+{: shortdesc}
 
 * Single-organization: Consider this architecture if you require the same set of users to access resources that are available anywhere in the organization.
+
 * Multi-organization: Consider this architecture if you require isolation between different environments.
 
 ## Single-organization versus multi-organization
@@ -127,12 +130,12 @@ In a single-organization environment, the infrastructure resources are shared by
 Both organization architectures support the following principles:
 
 * Boundary enforcement for apps, projects, or both.
+
 * Authorization to manage resources that are granted by user role.
 
 You can then define multiple spaces that are based on different lines of business (LOB), the delivery phases, specific projects, apps, user permissions, or a combination of these components.
 
 To implement a multi-organization architecture you can define organizations that correspond to different LOBs, delivery phases, specific projects, user permissions, or a combination of these components. You can then define multiple spaces that are based on apps or projects that are delivered by the same department in the company.
-
 {: tip}
 
 ## Organization considerations
@@ -145,14 +148,19 @@ When you implement a multi-organization architecture, organizations provide the 
 The number of organizations that you require depends on multiple factors:
 
 * The level of granularity that you require within your organization to manage quotas and control costs.
+
 * The level of security that you must enforce in your different environments. For example, if you are using containers, you might want to segregate container images that are used for development from the container images that are used for production.
+
 * The location of the organizations due to corporate, country, and industry requirements. For example, you might want to run all of your apps in an environment that is located in a specific region in your geography (geo).
 
 When you are defining the different organizations for your cloud structure, consider the following guidance:
 
 * Define and then enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the process phase (development, testing, or production). For organizations that are located in {{site.data.keyword.cloud_notm}} Public, you might want to add information about the region too.
+
 * Define the restrictions that apply to the organization. For example, define the role of the team members that are going to work in that organization.
+
 * Identify the manager of the organization.
+
 * Identify the area of the business that is allocated to this organization.
 
 The following scenarios show different approaches that you can adopt when you define the number of Cloud Foundry organizations in an environment:
@@ -193,10 +201,11 @@ Solution: You can create a single-organization and define a space for each deliv
 Consider the following organization guidance:
 
 * Define and enforce a naming convention. For example, define a naming convention where the name of the organization includes information about the business area, the type of cloud, and the IT role (development, testing, or production). For organizations that are located in {{site.data.keyword.cloud_notm}} Public, you might want to add information about the region too. You can change the name of an organization after it is created. If an organization name is altered, notify all of the organization team members about the change.
+
 * Define the restrictions that apply to the organization. For example, define the role of each of the team members and the permissions they need to work in that organization.
+
 * Identify the manager of the organization. You might want to delegate the organization administration to more that one person.
+
 * Identify the area of the business that is allocated to this organization. The app usage that is generated in each of the spaces, within the organization, is accumulated and reported at the organization level.
-
-
 
 

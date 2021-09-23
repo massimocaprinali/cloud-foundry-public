@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -114,6 +114,7 @@ subcollection: cloud-foundry-public
 {: #what-is-cloud-foundry}
 
 [Cloud Foundry](https://www.cloudfoundry.org/){: external} is the premier industry standard Platform-as-a-Service (PaaS) that ensures the fastest, easiest, and most reliable deployment of cloud-native apps. Cloud Foundry ensures that the build and deploy aspects of coding remain carefully coordinated with any attached services; resulting in quick, consistent, and reliable iterating of apps.
+{: shortdesc}
 
 Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: external} to learn more about all the compute options available on {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
@@ -138,7 +139,5 @@ Check out the following [video](https://www.youtube.com/watch?v=lH6EY761wgc){: e
 **High availability** - Supports full high availability for high app availability.
 
 **Automatic deployment scaling** - The Auto-Scaling for {{site.data.keyword.cloud_notm}} service automatically increases or decreases the compute capacity of your app, to rapidly adjust to dynamic loading needs.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -10,11 +10,6 @@ subcollection: cloud-foundry-public
 
 
 ---
-
-The IBM Supported dotnet-core buildpack has been deprecated. The latest updates on the dotnet-core buildpack can be found here: https://github.com/cloudfoundry/dotnet-core-buildpack/releases{: external}.
-{: important}
-
-
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
@@ -111,6 +106,10 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+
+
+The IBM Supported dotnet-core buildpack has been deprecated. The latest updates on the dotnet-core buildpack can be found here: https://github.com/cloudfoundry/dotnet-core-buildpack/releases{: external}.
+{: important}
 
 # Latest updates to the ASP.NET Core buildpack
 {: #dotnet-latest_updates}
@@ -418,7 +417,8 @@ This release includes version 2.2.0 of the `dotnet-core` Cloud Foundry buildpack
 
 ## September 20, 2018: Updated ASP.NET Core buildpack v2.0-20180918-1356
 
-**Important:** Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html){: external}. This release includes version 2.1.3 of the `dotnet-core` Cloud Foundry buildpack.
+Beginning with this release, the ASP.NET Core buildpack is based on the [Cloud Foundry .NET Core buildpack](https://docs.cloudfoundry.org/buildpacks/dotnet-core/index.html){: external}. This release includes version 2.1.3 of the `dotnet-core` Cloud Foundry buildpack.
+{: important}
 
 * Add support for .NET Core SDK 1.1.9
 * Add support for .NET Core SDK 2.0.2
@@ -540,13 +540,11 @@ This version of the buildpack includes the following changes:
 
 * This version of the buildpack supports Beta 7 DNX changes, and it can run apps dependent on older beta releases with the following custom start command:
 
-```
+    ```text
     dnx src/dotnetstarter kestrel --server.urls http://${VCAP_APP_HOST}:${PORT}
-```
-{: pre}
+    ```
+    {: pre}
 
 * Usage of the Nowin web server was removed from this buildpack and the [Kestrel](https://github.com/aspnet/KestrelHttpServer){: external} web server is used instead.
-
-
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -108,6 +108,7 @@ subcollection: cloud-foundry-public
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+
 
 # Liberty features supported in {{site.data.keyword.cloud_notm}}
 {: #liberty_features}
@@ -364,7 +365,5 @@ Skip to the section of the feature list by using the following index, or you can
 * `wsAtomicTransaction-1.2`
 * `wsSecurity-1.1`
 * `wsSecuritySaml-1.1`
-
-
 
 

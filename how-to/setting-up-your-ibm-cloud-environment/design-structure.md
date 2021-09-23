@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -117,6 +117,7 @@ subcollection: cloud-foundry-public
 
 
 Instead of the traditional, strictly defined development, test, and production methodology, you can implement an environment where developers and testers can collaborate along with other team members. If you design the way you want to develop and deliver your apps, create spaces to fulfill that methodology. Instead of designing your environment from the organization level down, consider designing your environment from the space level up.
+{: shortdesc}
 
 Consider the scale and scope of the apps you plan to develop and deploy. A Cloud Foundry space can be used as a development environment for one or more apps that are tightly connected or defined. Apart from a development space, for example, you can create spaces for unit testing, performance testing, and integration testing. Spaces can also be defined for build, staging, and production. Each of the spaces that you create can be shared with different team members within the same organization.
 
@@ -133,7 +134,5 @@ The number of spaces can multiply rapidly because of iterative development. You 
 Have one person create and manage an organization, define the spaces, and grant team member access. A second person can be given the same access to maintain the environment when the organization manager is disabled.  
 
 Identify all of the people who need access to each space and organization. Determine their role. The job role of a team member determines their authority. For example, a senior developer needs the authority to view and update the entire development environment. However, a junior developer is limited as to what they can view and update.
-
-
 
 

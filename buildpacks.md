@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -109,11 +109,13 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # {{site.data.keyword.ibmcf_notm}} buildpacks
 {: #available_buildpacks}
 
 {{site.data.keyword.ibmcf_full}} buildpacks provide the runtime support for apps in the {{site.data.keyword.ibmcf_notm}} environment. When you deploy an app to {{site.data.keyword.cloud}} using {{site.data.keyword.ibmcf_notm}}, {{site.data.keyword.ibmcf_notm}} starts a buildpack that supports your app type. {{site.data.keyword.cloud_notm}} provides Cloud Foundry buildpack support for Java EE, Node.js, ASP.Net, Swift, and other app types.
 You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to deploy apps and bind them to services.
+{: shortdesc}
 
 *  Cloud Foundry
 
@@ -138,7 +140,5 @@ You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to dep
 *  Service
 
     A service is an {{site.data.keyword.cloud_notm}} provided facility which can be coupled with an app.
-
-
 
 

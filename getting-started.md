@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-22"
 
 keywords: cloud foundry
 
@@ -115,7 +115,6 @@ subcollection: cloud-foundry-public
 
 
 
-{: shortdesc}
 
 ## Before you begin
 
@@ -206,15 +205,16 @@ This environment variable is the serialization of a JSON object with one entry f
 
 3. After you install the `ibmcloud cf` command line interface, you must specify which {{site.data.keyword.cloud_notm}} region you want to work with by using the `ibmcloud cf api` command. The API endpoint for the US South region is `api.us-south.cf.cloud.ibm.com`. Additional API endpoints for other regions can be found [here](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). Enter the following command to connect to {{site.data.keyword.cloud_notm}}:
 
-    ```
+    ```text
     ibmcloud cf api api.us-south.cf.cloud.ibm.com
     ```
+    {: pre}
 
     To find other API endpoints, see [Regions and Endpoints](/docs/cloud-foundry-public?topic=cloud-foundry-public-endpoints). After you specify the {{site.data.keyword.cloud_notm}} region, the location information that you specified is saved.
 
 4. Next, log in to {{site.data.keyword.cloud_notm}} by using the `ibmcloud cf login` command.
 
-    ```
+    ```text
     ibmcloud cf login -u <your_user_ID> -p <password> -o <your_org_name> -s <your_space_name>
     ```
     {: pre}
@@ -223,7 +223,7 @@ This environment variable is the serialization of a JSON object with one entry f
 
 5. After you are logged in to {{site.data.keyword.cloud_notm}}, you are ready to deploy your app back to {{site.data.keyword.cloud_notm}}. From your app directory, enter the following command:
 
-    ```
+    ```text
     ibmcloud cf push <your_appname>
     ```
     {: pre}
@@ -232,7 +232,7 @@ This environment variable is the serialization of a JSON object with one entry f
 
 6. Now, you can access the app by entering the following app URL in a browser:
 
-    ```
+    ```text
     http://<your_app>.us-south.cf.appdomain.cloud
     ```
     {: codeblock}
@@ -250,14 +250,14 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
     Use the `ibmcloud cf create-service` command to create a new instance of a service. In this example, `<Lite>` is the name of the plan. For example:
 
-    ```
+    ```text
     ibmcloud cf create-service cloudantNoSQLDB <Lite> <your_name_for_your_cloudant_service>
     ```
     {: pre}
 
     You can also use the `ibmcloud cf services` command to see the list of service instances that you created.
 
-    ```
+    ```text
     ibmcloud cf services
     ```
     {: pre}
@@ -266,9 +266,9 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
 2. Bind the service instance to your app.
 
-    To use a service instance, you must bind it to your app. Use the `ibmcloud cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
+   To use a service instance, you must bind it to your app. Use the `ibmcloud cf bind-service` command to bind a service instance to an app by specifying the app name and the service instance that you created.
 
-    ```
+    ```text
     ibmcloud cf bind-service <your_app_name> <your_name_for_your_cloudant_service>
     ```
     {: pre}
@@ -284,23 +284,23 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
     `username`: `d72837bb-b341-4038-9c8e-7f7232916197-bluemix`
 
-    `password`: secret   
-
+    `password`: secret    
+   
     `url`: `https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com`  
 
     For example, your Node.js app might access this information as follows:
-
-    ```
+  
+    ```text
     if (process.env.VCAP_SERVICES) {
-            var env = JSON.parse(process.env.VCAP_SERVICES);
-            var cloudant = env['cloudantNoSQLDB'][0].credentials;
+          var env = JSON.parse(process.env.VCAP_SERVICES);
+          var cloudant = env['cloudantNoSQLDB'][0].credentials;
     } else {
-            var cloudant = {
-"username" : "user1",
-"password" : "secret",
-"url" : "https://user1:secret@localhost:25002"
-}
-            };
+          var cloudant = {
+                  "username" : "user1",
+                  "password" : "secret",
+                  "url" : "https://user1:secret@localhost:25002"
+                  }
+          };
     ```
     {: codeblock}
 
@@ -309,28 +309,28 @@ To use the {{site.data.keyword.cloudant}} service within your app, create an {{s
 
 4. Interact with the service instance.
 
-    You can interact with the service instance by using the credential information. The actions that you can take include read, write, and update. The following example demonstrates how to insert a JSON object into the {{site.data.keyword.cloudant}} service instance:
+   You can interact with the service instance by using the credential information. The actions that you can take include read, write, and update. The following example demonstrates how to insert a JSON object into the {{site.data.keyword.cloudant}} service instance:
 
-    ```
+    ```text
     // create a new message
     var create_message = function(req, res) {
-        require('cloudantdb').connect(cloudant.url, function(err, conn) {
+      require('cloudantdb').connect(cloudant.url, function(err, conn) {
         var collection = conn.collection('messages');
 
     // create message record
-    var parsedUrl = require('url').parse(req.url, true);
-    var queryObject = parsedUrl.query;
-    var name = (queryObject["name"] || 'Bluemix');
-    var message = { 'message': 'Hello, ' + name, 'ts': new Date()
-    };
-    collection.insert(message, {safe:true}, function(err){
-        if (err) { console.log(err.stack); }
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.write(JSON.stringify(message));
-        res.end('\n');
-        });
-        });
-    }
+     var parsedUrl = require('url').parse(req.url, true);
+     var queryObject = parsedUrl.query;
+     var name = (queryObject["name"] || 'Bluemix');
+     var message = { 'message': 'Hello, ' + name, 'ts': new Date()
+     };
+     collection.insert(message, {safe:true}, function(err){
+       if (err) { console.log(err.stack); }
+       res.writeHead(200, {'Content-Type': 'text/plain'});
+       res.write(JSON.stringify(message));
+       res.end('\n');
+         });
+       });
+     }
     ```
     {: codeblock}
 
@@ -362,7 +362,5 @@ You can also calculate your app cost manually by adding up the prices of your ru
 As you build more apps, the quota might approach your limits. However, some apps that you might no longer use still occupy the quota. It’s easy to delete apps to free up some spaces in {{site.data.keyword.cloud_notm}} at any time.
 
 In the {{site.data.keyword.cloud_notm}} console, go to the app Overview page, click the menu icon, and delete the app that you no longer use. You can also use the `ibmcloud cf delete` command to delete apps.
-
-
 
 

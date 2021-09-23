@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -116,9 +116,10 @@ subcollection: cloud-foundry-public
 
 
 Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-node){: external} and explore on your own.
-{: hide-in-docs}
+
 
 By following this tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
+{: shortdesc}
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
@@ -142,7 +143,8 @@ You'll need the following accounts and tools:
 {: #clone-node}
 
 First, clone the Node.js *hello world* sample app GitHub repo.
-```
+
+```text
 git clone https://github.com/IBM-Cloud/get-started-node
 ```
 {: pre}
@@ -153,27 +155,27 @@ git clone https://github.com/IBM-Cloud/get-started-node
 Use the NPM package manager to install dependencies and run your app.
 
 1. On the command line, change the directory to where the sample app is located.
-
-    ```
+  
+    ```text
     cd get-started-node
     ```
     {: pre}
 
-1. Install the dependencies listed in the [package.json](https://docs.npmjs.com/files/package.json){: external} file to run the app locally.  
-
-    ```
+2. Install the dependencies listed in the [package.json](https://docs.npmjs.com/files/package.json){: external} file to run the app locally.  
+  
+    ```text
     npm install
     ```
     {: pre}
 
-1. Run the app.
-
-    ```
+3. Run the app.
+ 
+    ```text
     npm start  
     ```
     {: pre}
 
-1. View your app at the following URL: `http://localhost:3000`
+4. View your app at the following URL: `http://localhost:3000`
 
 Use [`nodemon`](https://nodemon.io/){: external} for automatic restarting of app on file changes.
 {: tip}
@@ -185,7 +187,7 @@ To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `ma
 
 Open the `manifest.yml` file, and change the `name` from `GetStartedNode` to your app name, `app_name`.
 
-```
+```yaml
 apps:
 - name: GetStartedNode
   random-route: true
@@ -203,20 +205,20 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps to {{site.da
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account, and select an API endpoint.
 
-    ```
+    ```text
     ibmcloud login
     ```
     {: pre}
 
     If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
-
-    ```
+  
+    ```text
     ibmcloud login --sso
     ```
-
+   
     Target a Cloud Foundry org and space:
 
-    ```      
+    ```text	  
     ibmcloud target --cf
     ```
     {: pre}
@@ -224,16 +226,16 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to deploy apps to {{site.da
     If you don't have an org or a space set up, see [Adding orgs and spaces](/docs/account?topic=account-orgsspacesusers).
     {: tip}
 
-1. From within the `get-started-node` directory, push your app to {{site.data.keyword.cloud_notm}}.
+2. From within the `get-started-node` directory, push your app to {{site.data.keyword.cloud_notm}}.
 
-    ```
+    ```text
     ibmcloud cf push
     ```
     {: pre}
 
 Deploying your app can take a few minutes. When deployment completes, you'll see a message that your app is running. View your app at the URL listed in the output of the push command, or view both the app deployment status and the URL by running the following command:
 
-```
+```text
 ibmcloud cf apps
 ```
 {: pre}
@@ -250,13 +252,13 @@ Next, we'll add an {{site.data.keyword.cloudant_short_notm}} NoSQL database to t
 
 1. In your browser, log in to {{site.data.keyword.cloud_notm}} and go to the Dashboard. Select **Create resource**.
 
-1. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
+2. Search for **{{site.data.keyword.cloudant_short_notm}}**, and select the service.
 
-1. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
+3. For **Available authentication methods**, select **Use both legacy credentials and IAM**. You can leave the default settings for the other fields. Click **Create** to create the service.
 
-1. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
+4. In the navigation, go to **Connections**, then click **Create connection**. Select your app, and click **Connect**.
 
-1. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
+5. Using the default values, click **Connect & restage app** to connect the database to your app. Click **Restage** when prompted.
 
     {{site.data.keyword.cloud_notm}} will restart your app and provide the database credentials to your app using the `VCAP_SERVICES` environment variable. This environment variable is available to the app only when it is running on {{site.data.keyword.cloud_notm}}.
 
@@ -270,18 +272,18 @@ We're now going to update your local code to point to this database. We'll creat
 
 1. In the `get-started-node` directory, create a file called `vcap-local.json` with the following content:
 
-    ```
+    ```json
     {
-        "services": {
+      "services": {
         "cloudantNoSQLDB": [
-            {
+          {
             "credentials": {
-                "url":"CLOUDANT_DATABASE_URL"
+              "url":"CLOUDANT_DATABASE_URL"
             },
             "label": "cloudantNoSQLDB"
-            }
+          }
         ]
-        }
+      }
     }
     ```
     {: codeblock}
@@ -291,8 +293,8 @@ We're now going to update your local code to point to this database. We'll creat
 3. Copy and paste just the `url` from the credentials to the `url` field of the `vcap-local.json` file, replacing `CLOUDANT_DATABASE_URL`.
 
 4. Run your app locally.
-
-    ```
+  
+    ```text
     npm start  
     ```
     {: pre}
@@ -316,7 +318,5 @@ Check out the following resources:
 
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
-
-
 
 

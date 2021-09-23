@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-21"
 
 keywords: cloud foundry
 
@@ -157,17 +157,16 @@ This buildpack supports the following versions, those marked as deprecated will 
 ## Specifying the .NET SDK version
 
 Control the .NET SDK version with an optional `global.json` file in the app's root directory. For example:
-```
-    {
-        "sdk": {
+
+```json
+   {
+      "sdk": {
         "version": "5.0.201"
-        }
-    }
+      }
+   }
 ```
 {: codeblock}
 
 If not specified, the latest MSBuild tooling is used.  To use project.json tooling, you can specify one of the listed project.json versions, but keep in mind that these versions will be removed in the future.  If the specified version is not included in the buildpack, the default version is used, and a warning appears in staging logs.
-
-
 
 

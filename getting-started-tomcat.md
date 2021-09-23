@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -109,15 +109,17 @@ subcollection: cloud-foundry-public
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
+
 # Getting started with Tomcat
 {: #getting-started-tomcat}
 
 
 
 Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-tomcat){: external} and explore on your own.
-{: hide-in-docs}
+
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate a database service in your app.
+{: shortdesc}
 
 Throughout these docs, references to the Cloud Foundry CLI are now updated to the {{site.data.keyword.cloud_notm}} CLI! The {{site.data.keyword.cloud_notm}} CLI has the same familiar Cloud Foundry commands, but with better integration with {{site.data.keyword.cloud_notm}} accounts and other services. Learn more about getting started with the {{site.data.keyword.cloud_notm}} CLI in this tutorial.
 {: tip}
@@ -139,12 +141,12 @@ You'll need the following:
 
 Clone the repository and change to the directory to where the sample app is located.
 
-```
+```text
 git clone https://github.com/IBM-Cloud/get-started-tomcat
 ```
 {: pre}
 
-```
+```text
 cd get-started-tomcat
 ```
 {: pre}
@@ -157,8 +159,8 @@ Review the files in the `get-started-tomcat` directory to familiarize yourself w
 You must install the dependencies and build a `.war` file as defined in the `pom.xml` file to run the app.
 
 1. Install the dependencies.
-
-    ```
+  
+    ```text
     mvn clean install  
     ```
     {: pre}
@@ -166,8 +168,8 @@ You must install the dependencies and build a `.war` file as defined in the `pom
 2. Copy the `GetStartedTomcat.war` file from the `target` directory into your `tomcat-install-dir` `webapps` directory.
 
 3. Run the app.  
-
-    ```
+  
+    ```text
     <tomcat-install-dir>/bin/startup.bat|.sh
     ```
     {: pre}
@@ -184,7 +186,7 @@ To deploy to {{site.data.keyword.cloud_notm}}, it can be helpful to set up a `ma
 
 Open the `manifest.yml` file, and change the `name` from `GetStartedTomcat` to your app name, `app_name`.
 
-```
+```yaml
 apps:
 - name: GetStartedTomcat
   random-route: true
@@ -204,21 +206,21 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 1. Log in to your {{site.data.keyword.cloud}} account, and select an API endpoint.
 
-    ```
+    ```text
     ibmcloud login
     ```
     {: pre}
 
     If you have a federated user ID, instead use the following command to log in with your single sign-on ID. See [Logging in with a federated ID](/docs/account?topic=account-federated_id) for more information.
 
-    ```
+    ```text
     ibmcloud login --sso
     ```
     {: pre}
 
 2. Next, target a Cloud Foundry org and space:
-
-    ```      
+  
+    ```text	  
     ibmcloud target --cf
     ```
     {: pre}
@@ -228,7 +230,7 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 3. From within the `get-started-tomcat` directory, push your app to {{site.data.keyword.cloud_notm}}
 
-    ```
+    ```text
     ibmcloud cf push
     ```
     {: pre}
@@ -237,7 +239,7 @@ You can use the {{site.data.keyword.cloud}} CLI to deploy apps.
 
 When deployment completes you should see a message indicating that your app is running.  View your app at the URL listed in the output of the push command.  You can also issue the following command to view your apps status and see the URL.
 
-```
+```text
 ibmcloud cf apps
 ```
 {: pre}
@@ -272,8 +274,8 @@ We're now going to update your local code to point to this database. We'll store
 1. Find your app in the {{site.data.keyword.cloud_notm}} [resource list](https://cloud.ibm.com/resources){: external}. On the Service Details page for your app, click **Connections** in the sidebar. Click the {{site.data.keyword.cloudant_short_notm}} menu icon (**&hellip;**) and select **View credentials**.
 
 2. Copy and paste just the `url` from the credentials to the `url` field of the `cloudant.properties` file, and save the changes.
-
-    ```
+  
+    ```text
     cloudant_url=https://123456789 ... bluemix.cloudant.com
     ```
     {: codeblock}
@@ -292,7 +294,5 @@ Remember, if you don't need your app live on {{site.data.keyword.cloud_notm}}, s
 
 * [Samples](https://ibm-cloud.github.io){: external}
 * [Architecture Center](https://www.ibm.com/cloud/architecture/architectures){: external}
-
-
 
 
