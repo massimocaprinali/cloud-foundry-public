@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -121,6 +121,7 @@ They combine to enable modern, cloud-based web apps.
 
 ## Detection
 {: #dotnet-detection}
+
 The {{site.data.keyword.cloud}} ASP.NET Core buildpack is used if there are one or more folders containing both a `project.json` and at least one `.cs` file anywhere in the app,
  or if the app is pushed from the output directory of the `dotnet publish` command.
 
