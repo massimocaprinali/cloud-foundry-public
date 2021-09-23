@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -540,10 +540,10 @@ This version of the buildpack includes the following changes:
 
 * This version of the buildpack supports Beta 7 DNX changes, and it can run apps dependent on older beta releases with the following custom start command:
 
-```text
-dnx src/dotnetstarter kestrel --server.urls http://${VCAP_APP_HOST}:${PORT}
-```
-{: pre}
+    ```text
+    dnx src/dotnetstarter kestrel --server.urls http://${VCAP_APP_HOST}:${PORT}
+    ```
+    {: pre}
 
 * Usage of the Nowin web server was removed from this buildpack and the [Kestrel](https://github.com/aspnet/KestrelHttpServer){: external} web server is used instead.
 

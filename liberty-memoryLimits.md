@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -162,17 +162,17 @@ You can set the heap memory size by using environment variables or by changing t
 
 * Use the `JVM_ARGS` environment variable and the `-Xmx` argument. For example to set the maximum heap size to 512 M use the following command, then restage your app.
 
-```text
-ibmcloud cf set-env myapp JVM_ARGS -Xmx512m
-```
-{: codeblock}
+    ```text
+    ibmcloud cf set-env myapp JVM_ARGS -Xmx512m
+    ```
+    {: codeblock}
 
 * Specify the heap size ratio using the JBP_CONFIG_IBMJDK environment variable.  The heap_size_ratio is a floating point value which specifies how much of memory limit to allocate to the heap.  For example, to allocate half of the available memory to the heap (50% or 0.50), issue the following command and restage your app.
 
-```text
-ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "heap_size_ratio: 0.50"
-```
-{: codeblock}
+    ```text
+    ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "heap_size_ratio: 0.50"
+    ```
+    {: codeblock}
 
 * Specify the `-Xmx` argument in the `jvm.options` file if your app is a [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or a [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server). For more information about  using the `jvm.options` file with the Liberty runtime, see [Setting generic JVM](https://www.ibm.com/support/pages/node/476495){: external}.  
 

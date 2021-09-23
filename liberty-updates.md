@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -304,13 +304,13 @@ subcollection: cloud-foundry-public
 * The alternate Liberty runtime version `20.0.0.2` includes a fix for the [CVE-2019-12406 security vulnerability](https://www.ibm.com/support/pages/node/1288774){: external}.
 * The alternate Liberty runtime version `20.0.0.2` includes a fix for the [CVE-2019-4720 security vulnerability]( https://www.ibm.com/support/pages/node/1285372){: external}.
 
-To use the alternate Liberty runtime set the following environment variables:
+    To use the alternate Liberty runtime set the following environment variables:
 
-```text
-ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
-ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
-```
-{: codeblock}
+    ```text
+    ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
+    ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
+    ```
+    {: codeblock}
 
 * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6FP5.
 * The AdoptOpenJDK OpenJ9 alternate JRE was updated to version 11.0.6_10_openj9-0.18.1.
@@ -515,10 +515,10 @@ ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
 * The auto-configuration support was also extended to work with `ibm-websphere-extreme-scale` container.
 * The auto-configuration support for [Cloudant NoSQL Database](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) was updated to provide the option of using the Cloudant Java Library instead of `org.ektorp`. To enable the use of the Cloudant Java Library you must set the following environment variable:    
 
-```text
-ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
-```
-{: codeblock}
+    ```text
+    ibmcloud cf set-env <appName> LBP_SERVICE_CONFIG_CLOUDANTNOSQLDB 'type : cloudant'
+    ```
+    {: codeblock}
 
 * The buildpack also provides an updated version of the agent for the Auto-Scaling service and a number of app management enhancements.
 * This buildpack also changes the way auto-configuration works for the Monitoring and Analytics service. Apps using the Free plan will no longer have the log capability added to their apps; it is being replaced by `logmet`.  

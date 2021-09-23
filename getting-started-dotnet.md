@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -114,7 +114,7 @@ subcollection: cloud-foundry-public
 {: #getting_started-dotnet}
 
 Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/get-started-aspnet-core){: external} and explore on your own.
-{: hide-in-docs}
+
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally and on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud}} database service in your app. The ASP.NET core is complied into a .dll package. You can deploy the app with the code or with the precompiled file (.DLL) of your app.
 {: shortdesc}

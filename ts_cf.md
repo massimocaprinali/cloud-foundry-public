@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -440,7 +440,7 @@ The host name that you specify must be unique within the domain that you are usi
 
     ```text
     host: host_name
-	  ```
+	```
     {: codeblock}
 
 * If you deploy your app from the command prompt, use the `ibmcloud cf push` command with the `-n` option.
@@ -505,8 +505,8 @@ Use one of the following methods, depending on the cause of the problem:
     * Use the Cloud Foundry command line interface. For example:
         
         ```text
-	      ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
-	      ```
+	    ibmcloud cf push MyUniqueNodejs01 -p app_path -c "node app.js"
+	    ```
         {: pre}
 
     * Use the [package.json](https://www.npmjs.com/package/jsonfile){: external} file. For example:
@@ -518,7 +518,7 @@ Use one of the following methods, depending on the cause of the problem:
 	   		  "start": "node app.js"
  	      }
   	    }
-	      ```
+	    ```
         {: codeblock}
 
     * Use the `manifest.yml` file. For example:

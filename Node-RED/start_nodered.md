@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -136,7 +136,7 @@ Before you can start coding with Node-RED, you must first configure the editor.
 
 Before you begin, install the [Cloud Foundry command-line interface](https://github.com/cloudfoundry/cli/releases){: external}.
 
-1. {: hide-in-docs}[Download and extract your starter code](https://cloud.ibm.com/){: external} to set up your development environment.
+1. [Download and extract your starter code](https://cloud.ibm.com/){: external} to set up your development environment.
 
 2. Change to your new directory.
 

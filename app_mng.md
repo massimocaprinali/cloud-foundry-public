@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -233,7 +233,7 @@ For more information on configuring a JMX connector, see [Configuring secure JMX
 The `jmx` utility does not start `proxy`.
 {: important}
 
-#### `localjmx`
+#### localjmx
 {: #localjmx}
 
 The `localjmx` utility enables the [localConnector-1.0](http://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feature_localConnector-1.0.html){: external} Liberty feature. Combined with local port forwarding, `localjmx` acts an alternate way of allowing a remote JMX client to manage the app.
@@ -259,7 +259,7 @@ When enabled, the buildpack starts a proxy agent that is located between your ap
 
 Some App Management utilities require you to use the `proxy` utility with your app, and can start `proxy` automatically.
 
-#### `noproxy`
+#### noproxy
 {: #noproxy}
 
 The `noproxy` utility disables the `proxy` utility when it is automatically started by another utility.  With Diego, the proxy is not necessary because Diego provides the capability to `ssh` directly to your app and set up port forwarding.
@@ -276,7 +276,7 @@ When you have the Health Center agent enabled, you can analyze the performance o
 The `hc` utility starts `proxy`.
 {: important}
 
-**Using `hc` with `noproxy` **
+#### Using hc with noproxy
 
 The `hc` utility can be used in conjunction with `noproxy`. To use Health Center with `noproxy`, first establish port forwarding by using the `ibmcloud cf ssh` command. For example:
 

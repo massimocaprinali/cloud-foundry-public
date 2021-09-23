@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -153,6 +153,6 @@ Disabled attribute         | Element
 `logDirectory`             | `logging`
 `consoleLogLevel`          | `logging`
 `enableWelcomePage`        | `httpDispatcher`
-{: caption="Table 1. Attributes disabled by Liberty for Java" caption-side="top"}
+{: caption="Table 2. Attributes disabled by Liberty for Java" caption-side="top"}
 
 

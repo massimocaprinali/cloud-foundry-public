@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -115,7 +115,7 @@ subcollection: cloud-foundry-public
 
 
 Congratulations, you deployed a Hello World sample app on {{site.data.keyword.cloud}}!  To get started, follow this step-by-step guide. Or, [download the sample code](https://github.com/IBM-Cloud/go-cloudant){: external} and explore on your own.
-{: hide-in-docs}
+
 
 By following this getting started tutorial, you'll set up a development environment, deploy an app locally on {{site.data.keyword.cloud}}, and integrate an {{site.data.keyword.cloud_notm}} database service in your app.
 {: shortdesc}

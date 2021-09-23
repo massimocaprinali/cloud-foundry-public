@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -173,10 +173,10 @@ The Dynatrace agent must be hosted on a web server, and the Liberty buildpack mu
     
     * Ensure that you provide a `index.yml` file at the hosting location. The `index.yml` file must contain an entry consisting of the version ID of the agent `.jar` file follow by a colon and the complete URL of the location of that agent `.jar` file. For example:
 
-    ```text
-    6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
-    ```
-    {: codeblock}
+        ```text
+        6.3.0: https://my-dynatrace-agent.mybluemix.net/dynatrace-agent-6.3.0-unix.jar
+        ```
+        {: codeblock}
 
     * The `dynatrace-agent-6.3.0-unix.jar` file must be available at the location specified in the `index.yml` file. The location for both the `.jar` file and the `index.yml` can be the same directory.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: cloud foundry
 
@@ -160,10 +160,10 @@ To use the Liberty beta features in {{site.data.keyword.cloud_notm}}, you will n
     
     * Using the {{site.data.keyword.cloud_notm}} CLI tool:
     
-    ```text
-    ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
-    ```
-    {: .pre}
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ```
+        {: .pre}
 
     * Or, using the `manifest.yml` file:
     
