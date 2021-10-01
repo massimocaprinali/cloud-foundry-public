@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: cloud foundry, cloud liberty, liberty buildpack, liberty for java buildpack, cloud foundry liberty
 
@@ -114,6 +114,20 @@ subcollection: cloud-foundry-public
 {: #liberty-latest_updates}
 
 ## A list of the latest updates in the Liberty buildpack.
+
+### October 1, 2021: Updated Liberty buildpack v3.62-20210922-1852
+* The alternate Liberty runtime GA version is changed to the `21.0.0.10` release. The default runtime remains the same 21.0.0.9.
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+* The default and alternate runtime 21.0.0.9 and 21.0.0.10 addresses the following PSIRT security vulnerabilities: 
+    * [CVE-2021-36090, CVE-2021-35517](https://www.ibm.com/support/pages/node/6489683){: external}: Vulnerability in Apache Commons Compress library that is used by Websphere Application Server Liberty ().
+    * [CVE-2021-29842](https://www.ibm.com/support/pages/node/6488623){: external}: Vulnerability in WebSphere Application Server to information disclosure
+* The IBM JRE Version is updated to 8 SR6 FP36. 
 
 ### September 3, 2021: Updated Liberty buildpack v3.61-20210826-1015
 * The alternate and default Liberty runtime GA version is changed to the `21.0.0.9` release.
