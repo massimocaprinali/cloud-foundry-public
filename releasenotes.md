@@ -12,7 +12,7 @@ subcollection: cloud-foundry-public
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for {{site.data.keyword.ibmcf_full_notm}}
+# Release notes for {{site.data.keyword.ibmcf_full}}
 {: #cloud-foundry-public-release-notes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.ibmcf_full}}.
@@ -580,9 +580,7 @@ Updated Node.js buildpack v4.2
     Beginning with this buildpack, the Node.js v8.x runtimes are no longer included.   
     {: important}
 
-    This release also includes CVE-2019-15605, CVE-2019-15606, CVE-2019-15604:
-
-        * [February 2020 Security Releases](https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/){: external}
+    This release also includes CVE-2019-15605, CVE-2019-15606, CVE-2019-15604: [February 2020 Security Releases](https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/){: external}
 
 ## 7 February 2020
 {: #cloud-foundry-public-feb0720}
@@ -599,11 +597,11 @@ Updated Liberty buildpack v3.41-20200207-0830
 
     To use the alternate Liberty runtime set the following environment variables:
 
-        ```text
-        ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
-        ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
-        ```
-        {: codeblock}
+    ```text
+    ibmcloud cf set-env <appName> JBP_CONFIG_LIBERTY "version: +"
+    ibmcloud cf set-env <appName> IBM_LIBERTY_MONTHLY true
+    ```
+    {: codeblock}
 
     * The {{site.data.keyword.IBM_notm}} JRE version was updated to 8 SR6FP5.
 
