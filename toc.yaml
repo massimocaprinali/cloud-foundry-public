@@ -25,6 +25,9 @@ toc:
           topics:
           - goodapp.md
           - production_considerations.md
+
+      - topic: releasenotes.md
+        navtitle: Release notes
       
   - navgroup: 
       id: howto
@@ -171,7 +174,13 @@ toc:
 
         - topicgroup: 
             label: Buildpack release notes
-            topics: 
-            - liberty-updates.md
-            - nodejs-updates.md
-            - dotnet-updates.md
+            links: 
+            - link: 
+                label: Latest updates to the Liberty buildpack
+                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+            - link: 
+                label: Latest updates to the SDK for Node.js buildpack
+                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+            - link: 
+                label: Latest updates to the ASP.NET Core buildpack
+                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
