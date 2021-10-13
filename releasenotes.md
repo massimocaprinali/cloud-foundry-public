@@ -15,7 +15,7 @@ subcollection: cloud-foundry-public
 # Release notes for {{site.data.keyword.ibmcf_full_notm}}
 {: #cloud-foundry-public-release-notes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.ibmcf_full_notm}}.
+Use these release notes to learn about the latest updates to {{site.data.keyword.ibmcf_full}}.
 {: shortdesc}
 
 The IBM Supported dotnet-core buildpack has been deprecated. The latest updates on the dotnet-core buildpack can be found here: [https://github.com/cloudfoundry/dotnet-core-buildpack/releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases){: external}.
@@ -38,9 +38,9 @@ Updated Liberty buildpack v3.62-20210922-1852
 
     * The default and alternate runtime 21.0.0.9 and 21.0.0.10 addresses the following PSIRT security vulnerabilities: 
         
-        * [CVE-2021-36090, CVE-2021-35517](https://www.ibm.com/support/pages/node/6489683){: external}: Vulnerability in Apache Commons Compress library that is used by Websphere Application Server Liberty ().
+        * [CVE-2021-36090, CVE-2021-35517](https://www.ibm.com/support/pages/node/6489683){: external}: Vulnerability in Apache Commons Compress library that is used by Websphere Application Server Liberty.
         
-        * [CVE-2021-29842](https://www.ibm.com/support/pages/node/6488623){: external}: Vulnerability in WebSphere Application Server to information disclosure
+        * [CVE-2021-29842](https://www.ibm.com/support/pages/node/6488623){: external}: Vulnerability in WebSphere Application Server to information disclosure.
     
     * The IBM JRE Version is updated to 8 SR6 FP36. 
 
@@ -469,9 +469,7 @@ Updated the ASP.NET Core buildpack v2.7-20200615-1457
 Updated Node.js buildpack v4.3-20200606-1928
 :   The SDK for Node.js buildpack v4.3 provides Node.js community runtime versions v10.20.1, v10.21.0, v12.17.0, v12.18.0. The default is latest 10.x, so it is currently 10.21.0.  This buildpack is based on the community node.js buildpack [v1.7.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.7.20){: external}.  
 
-    This release also includes CVE-2020-8172, CVE-2020-11080, CVE-2020-8174 and CVE-2020-10531:
-
-        * [June 2020 Security Releases](https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/){: external}
+    This release also includes CVE-2020-8172, CVE-2020-11080, CVE-2020-8174 and CVE-2020-10531: [June 2020 Security Releases](https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/){: external}
 
 
 ## 5 June 2020
