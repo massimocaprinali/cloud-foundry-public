@@ -177,10 +177,10 @@ toc:
             links: 
             - link: 
                 label: Latest updates to the Liberty buildpack
-                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+                href: /cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
             - link: 
                 label: Latest updates to the SDK for Node.js buildpack
-                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+                href: /cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
             - link: 
                 label: Latest updates to the ASP.NET Core buildpack
-                href: /docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+                href: /cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
