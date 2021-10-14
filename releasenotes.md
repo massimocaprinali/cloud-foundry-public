@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-14"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -20,6 +20,10 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 The IBM Supported dotnet-core buildpack has been deprecated. The latest updates on the dotnet-core buildpack can be found here: [https://github.com/cloudfoundry/dotnet-core-buildpack/releases](https://github.com/cloudfoundry/dotnet-core-buildpack/releases){: external}.
 {: important}
+
+The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
+{: important}
+
 
 ## 1 October 2021
 {: #cloud-foundry-public-oct0121}
