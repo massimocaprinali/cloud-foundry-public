@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-21"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -23,6 +23,23 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
+
+## 29 October 2021
+{: #cloud-foundry-public-oct2921}
+{: release-note}
+
+Updated Liberty buildpack v3.63-20211020-1608
+:   The alternate Liberty runtime GA version is changed to the `21.0.0.11` release. The default runtime remains the same [21.0.0.9](https://openliberty.io/blog/2021/09/03/microprofile-21009.html){: external}
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+    
+    * The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.12_7_openj9-0.27.0`) and IBM JRE Version (`8 SR6 FP36`) remain unchanged. 
 
 
 ## 1 October 2021
