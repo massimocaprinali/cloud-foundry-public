@@ -15,7 +15,7 @@ subcollection: cloud-foundry-public
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding certificates to the Libery keystore
+# Adding certificates to the Liberty keystore
 
 When a stand-alone app is deployed, a default Liberty configuration is provided for the app. If you want to add your own certificates to the Liberty keystore, you need to configure an on premises Liberty server and use one of the following methods for pushing your app: [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server).
 
