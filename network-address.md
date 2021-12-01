@@ -1,34 +1,5 @@
----
-
-copyright:
-  years: 2015, 2021
-
-lastupdated: "2021-11-30"
-
-keywords: cloud foundry
-
-subcollection: cloud-foundry-public
-
-
-
----
-
-
-{{site.data.keyword.attribute-definition-list}}
-
-# What are the possible network addresses that Cloud Foundry apps can be running on?
-{: #network-address}
-
-When you deploy Cloud Foundry apps, there are a known list of possible network addresses that the app will be deployed on depending on the region.
-{: shortdesc}
-
-Network addresses are subject to change from time to time. 
-{: important}
-
-
 In the Dallas (us-south) region, the following network addresses are in use:
-
-```text
+```
 169.46.101.192/27
 169.46.101.64/27
 169.46.101.96/27
@@ -54,11 +25,9 @@ In the Dallas (us-south) region, the following network addresses are in use:
 169.62.205.128/25
 169.62.231.0/24
 ```
-{: screen}
 
 In the Washington DC (us-east) region, the following network addresses are in use:
-
-```text
+```
 169.60.80.160/27
 169.60.82.128/26
 169.60.84.128/25
@@ -69,11 +38,9 @@ In the Washington DC (us-east) region, the following network addresses are in us
 169.63.80.128/25
 169.63.83.0/24
 ```
-{: screen}
 
 In the London (eu-gb) region, the following network addresses are in use:
-
-```text
+```
 141.125.69.128/25
 141.125.69.64/27
 141.125.76.64/26
@@ -84,11 +51,9 @@ In the London (eu-gb) region, the following network addresses are in use:
 158.176.84.128/27
 158.176.87.0/25
 ```
-{: screen}
 
 In the Frankfurt (eu-de) region, the following network addresses are in use:
-
-```text
+```
 149.81.126.96/27
 149.81.69.192/26
 159.122.84.160/27
@@ -100,11 +65,9 @@ In the Frankfurt (eu-de) region, the following network addresses are in use:
 169.50.40.128/27
 169.50.44.128/26
 ```
-{: screen}
 
 In the Sydney (au-syd) region, the following network addresses are in use:
-
-```text
+```
 130.198.71.64/27
 130.198.80.64/26
 130.198.81.128/25
@@ -115,12 +78,9 @@ In the Sydney (au-syd) region, the following network addresses are in use:
 168.1.40.96/27
 168.1.44.160/27
 168.1.44.64/27
-168.1.44.96/27
 168.1.45.0/27
 168.1.45.64/27
 168.1.45.96/27
 168.1.8.32/27
 ```
-{: screen}
-
 
