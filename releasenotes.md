@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-12-01"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -25,7 +25,7 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 {: important}
 
 ## 01 December 2021
-{: #cloud-foundry-public-oct2921}
+{: #cloud-foundry-public-dec0121}
 {: release-note}
 
 Updated Liberty buildpack v3.64-20211118-1947
