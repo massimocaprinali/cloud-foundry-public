@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-01"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -23,6 +23,32 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
+
+## 18 January 2022
+{: #cloud-foundry-public-jan1822}
+{: release-note}
+
+Updated Liberty buildpack v3.65-20220106-0934
+:   The alternate Liberty runtime GA version is changed to the `22.0.0.1` release. The default runtime remains the same 21.0.0.12.
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+    
+    * The IBM JRE Version is updated to 8 SR7 FP0. The default security provider has been changed to IBMJCEPlus. The IBM JRE contains the Oracle Security fixes from Oct '21 CPU updates and IBM fixes including: 
+      * [CVE-2021-35556](https://www.ibm.com/support/pages/apar/IJ36022){: external}
+      * [CVE-2021-35559](https://www.ibm.com/support/pages/apar/IJ36021){: external}
+      * [CVE-2021-35560](https://www.ibm.com/support/pages/apar/IJ36016){: external}
+      * [CVE-2021-35565](https://www.ibm.com/support/pages/apar/IJ36023){: external}
+      * [CVE-2021-35586](https://www.ibm.com/support/pages/apar/IJ36018){: external}
+      * [CVE-2021-41035](https://www.ibm.com/support/pages/apar/IJ35976){: external}
+      * [CVE-2021-35564](https://www.ibm.com/support/pages/apar/IJ35992){: external}
+      * [CVE-2021-35578](https://www.ibm.com/support/pages/apar/IJ36019){: external}
+    * The AdoptOpenJDK Open J9 alternate JRE is updated to ibm-semeru-open-jre_x64_linux_11.0.13_8_openj9-0.29.0.
 
 ## 01 December 2021
 {: #cloud-foundry-public-dec0121}
@@ -100,7 +126,7 @@ Updated Liberty buildpack v3.61-20210826-1015
     
     * The IBM JRE Version is updated to 8 SR6 FP35 and includes the [Oracle's July Security fixes](https://www.oracle.com/security-alerts/cpujul2021.html){: external}.  
 
-    * The AdoptOpenJDK Open J9 alternate JRE is updated to 11.0.12_7_openj9-0.27.0.
+    * The AdoptOpenJDK Open J9 alternate JRE is updated to 1.0.13_8_openj9-0.29.0.
 
 ## 6 August 2021
 {: #cloud-foundry-public-aug0621}
@@ -183,7 +209,7 @@ Updated Liberty buildpack v3.57-20210512-1446
     
     * For more information see [Use the monthly runtime](/docs/cloud-foundry-public?topic=cloud-foundry-public-using_monthly_runtime)
 
-    * The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged.d
+    * The AdoptOpenJDK OpenJ9 alternate JRE (`11.0.11_9_openj9-0.26.0`) and IBM JRE Version (`8 SR6 FP26`) remains unchanged
 
 ## 9 April 2021
 {: #cloud-foundry-public-apr0921}
