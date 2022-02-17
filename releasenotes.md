@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-02-07"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -24,9 +24,35 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
+## 15 February 2022
+{: #cloud-foundry-public-feb1522}
+{: release-note}
+
+
+Updated Liberty buildpack v3.66-20220202-1042
+:   The alternate Liberty runtime GA version is changed to the `22.0.0.2` release. The default runtime remains the same [21.0.0.12](https://openliberty.io/blog/2021/11/26/jakarta-ee-9.1.html){: external}.
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+        
+    * The default and alternate runtime of `22.0.0.2` and `21.0.0.12` address the following PSIRT security vulnerabilities: 
+      * [CVE-2021-39031](https://www.ibm.com/support/pages/node/6550488){: external}
+      * [CVE-2022-22310](https://www.ibm.com/support/pages/node/6541530){: external}
+    * The default runtime `21.0.0.12` includes the following fixes: 
+      * [CVE-2022-22310](https://www.ibm.com/support/pages/node/6541522)
+      * [CVE-2021-39031](https://www.ibm.com/support/pages/node/6549542)
+    * The IBM JRE version remains unchanged (8 SR7 FP0)
+    * The AdoptOpenJDK Open J9 alternate JRE is updated to `ibm-semeru-open-jre_x64_linux_11.0.14_9_openj9-0.30.0`.
+
 ## 18 January 2022
 {: #cloud-foundry-public-jan1822}
 {: release-note}
+
 
 Updated Liberty buildpack v3.65-20220106-0934
 :   The alternate Liberty runtime GA version is changed to the `22.0.0.1` release. The default runtime remains the same 21.0.0.12.
