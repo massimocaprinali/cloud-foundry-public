@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-03-04"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -23,6 +23,48 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
+
+## 15 March 2022
+{: #cloud-foundry-public-mar1522}
+{: release-note}
+
+
+Updated Liberty buildpack v3.67-20220303-1119   
+
+:   The alternate and default Liberty runtime GA version is changed to the `22.0.0.3` release. 
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+
+        
+    * The IBM Semeru Open J9 alternate JRE is updated to `ibm-semeru-open-jre_x64_linux_11.0.14.1_1_openj9-0.30.1`.
+    
+        * To specify the alternate JRE set the following variable:
+
+          ```text
+          ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
+          ```
+        {: codeblock}
+
+    * The IBM JRE version is changed to `8 SR7 FP5` and contains security fixes for the following PSIRTs including Oracle security fixes from the January 2022 CPU updates: 
+      * [CVE-2021-35550](https://www.ibm.com/support/pages/node/6559262){: external}
+      * [January 2022 Oracle security fixes](https://www.ibm.com/support/pages/node/6558558){: external} which includes fixes to the following CVEs: 
+        * [CVE-2022-21365](https://www.ibm.com/support/pages/node/6559266){: external}
+        * [CVE-2022-21360](https://www.ibm.com/support/pages/apar/IJ37842){: external}
+        * [CVE-2022-21349](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21349){: external}
+        * [CVE-2022-21341](https://www.ibm.com/support/pages/apar/IJ37844){: external}
+        * [CVE-2022-21340](https://www.ibm.com/support/pages/apar/IJ37847){: external}
+        * [CVE-2022-21305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21305){: external}
+        * [CVE-2022-21294](https://www.ibm.com/support/pages/apar/IJ37849){: external}
+        * [CVE-2022-21293](https://www.ibm.com/support/pages/apar/IJ37851){: external}
+        * [CVE-2022-21291](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21291){: external}
+        * [CVE-2022-21248](https://www.ibm.com/support/pages/apar/IJ37852){: external}
+
 
 ## 15 February 2022
 {: #cloud-foundry-public-feb1522}
