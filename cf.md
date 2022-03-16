@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-11-05"
+  years: 2015, 2022
+lastupdated: "2022-03-09"
 
 keywords: cloud foundry
 
@@ -64,7 +64,7 @@ Clients, which can be mobile apps, apps that run externally, apps that are built
 
 The following figure shows the high-level Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}. 
 
-![{{site.data.keyword.cloud_notm}} architecture](images/arch.png "A mobile or web app client accesses an app by using a REST HTTP API.  The REST API communicates with the Diego cell that is running the app.  The app can use {site.data.keyword.cloud_notm}} services.  The app developer can use either a browser or command-line to deploy an app.  When deploying an app using a browser, the app developer uses the {site.data.keyword.cloud_notm}} console that uses a router to communicate with the VM running the Diego cell.  An app developer can also use a CLI that makes REST HTTP calls to the router to deploy apps to the Diego cell.  All these services run on on the provisioned infrastructure."){: caption="Figure 4. Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
+![{{site.data.keyword.cloud_notm}} architecture](images/arch.png "A mobile or web app client accesses an app by using a REST HTTP API.  The REST API communicates with the Diego cell that is running the app.  The app can use {{site.data.keyword.cloud_notm}} services.  The app developer can use either a browser or command-line to deploy an app.  When deploying an app using a browser, the app developer uses the {{site.data.keyword.cloud_notm}} console that uses a router to communicate with the VM running the Diego cell.  An app developer can also use a CLI that makes REST HTTP calls to the router to deploy apps to the Diego cell.  All these services run on on the provisioned infrastructure."){: caption="Figure 4. Cloud Foundry architecture on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
 
 You can deploy your apps to different {{site.data.keyword.cloud_notm}} regions, for latency or security considerations. You can choose to deploy either to one region or across multiple regions.
 
