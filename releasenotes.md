@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-04-12"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -24,14 +24,42 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
+## 12 April 2022
+{: #cloud-foundry-public-apr1222}
+{: release-note}
+
+
+Updated Liberty buildpack v3.68-20220329-1120
+
+:   The alternate Liberty runtime GA version is changed to the `22.0.0.4` release. The default runtime remains the same [22.0.0.3](https://openliberty.io/blog/2022/03/15/sql-retries-22003.html){: external}.
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+
+    * The IBM Semeru Open J9 alternate JRE remains the same `ibm-semeru-open-jre_x64_linux_11.0.14.1_1_openj9-0.30.1`.
+    
+        * To specify the alternate JRE set the following variable:
+
+          ```text
+          ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
+          ```
+        {: codeblock}
+        
+    * The IBM JRE version remains unchanged `8 SR7 FP5`.
+
 ## 15 March 2022
 {: #cloud-foundry-public-mar1522}
 {: release-note}
 
 
-Updated Liberty buildpack v3.67-20220303-1119   
+Updated Liberty buildpack v3.67-20220303-1119
 
-:   The alternate and default Liberty runtime GA version is changed to the `22.0.0.3` release. 
+:   The alternate and default Liberty runtime GA version is changed to the `22.0.0.3` release.
 
     * To specify the monthly runtime set the following two variables: 
     
