@@ -15,12 +15,12 @@ toc:
       id: learn
       topics:
       - deprecation.md
-          - deprecation_options_compare.md
-          - deprecation_cd.md
-          - deprecation_iks.md
-          - deprecation_openshift.md
-          - deprecation_deploy_analysis.md
-          - deprecation_migration_tooling.md
+      - deprecation_options_compare.md
+      - deprecation_cd.md
+      - deprecation_iks.md
+      - deprecation_openshift.md
+      - deprecation_deploy_analysis.md
+      - deprecation_migration_tooling.md
       - getting-started.md
       - about-cf.md
       - cf.md
