@@ -15,8 +15,8 @@ toc:
       id: learn
       topics:
       - deprecation.md
-      - deprecation_options_compare.md
-      - deprecation_cd.md
+      - deprecation_option_compare.md
+      - deprecation_ce.md
       - deprecation_iks.md
       - deprecation_openshift.md
       - deprecation_deploy_analysis.md
