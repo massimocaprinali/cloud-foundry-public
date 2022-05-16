@@ -15,18 +15,7 @@ toc:
       id: learn
       topics:
       - getting-started.md
-
-      - topicgroup: 
-          label: Deprecation
-          topics:
-          - deprecation.md
-          - deprecation_option_compare.md
-          - deprecation_ce.md
-          - deprecation_iks.md
-          - deprecation_openshift.md
-          - deprecation_deploy_analysis.md
-          - deprecation_migration_tooling.md
-      
+    
       - about-cf.md
       - cf.md
       - regions.md
