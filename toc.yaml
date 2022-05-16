@@ -14,9 +14,8 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      
-      - deprecation.md
       - getting-started.md
+    
       - about-cf.md
       - cf.md
       - regions.md
