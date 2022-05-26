@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-01-04"
+  years: 2015, 2022
+lastupdated: "2022-05-26"
 
 keywords: cloud foundry, ssl, certificates, access, restrict access, csr, upload, import, csr, certificate signing request
 
@@ -37,6 +37,7 @@ Be sure to submit a single request to delete or create crypto, and then expect a
 {: note}
 
 ### Required CSR contents
+{: #csr_contents}
 
 For the CSR to be valid, the following information must be entered when you create the CSR:
 
@@ -87,5 +88,6 @@ To upload a certificate for your Cloud Foundry app, complete the following steps
   
     You can set up mutual authentication by uploading a client certificate truststore that includes a public key in its metadata.
     {: tip}
+
 
 
