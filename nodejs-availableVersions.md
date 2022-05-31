@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -17,6 +17,9 @@ subcollection: cloud-foundry-public
 
 # Available versions
 {: #available_versions}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 {{site.data.keyword.cloud}} provides all [the currently available Node.js runtimes](http://nodejs.org/dist/){: external}. Of the available runtimes, {{site.data.keyword.IBM_notm}} provides specific versions that contain enhancements and bug fixes. See [Latest updates to the Node.js buildpack](/docs/cloud-foundry-public?topic=cloud-foundry-public-nodejs-latest_updates) for more information about the supported versions.
 {: shortdesc}

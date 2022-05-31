@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -16,6 +16,10 @@ subcollection: cloud-foundry-public
 {{site.data.keyword.attribute-definition-list}}
 
 # Adding certificates to the Liberty keystore
+{: #cert_liberty_keystore}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 When a stand-alone app is deployed, a default Liberty configuration is provided for the app. If you want to add your own certificates to the Liberty keystore, you need to configure an on premises Liberty server and use one of the following methods for pushing your app: [server directory](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#server_directory) or [packaged server](/docs/cloud-foundry-public?topic=cloud-foundry-public-options_for_pushing#packaged_server).
 

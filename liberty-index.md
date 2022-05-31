@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -17,6 +17,9 @@ subcollection: cloud-foundry-public
 
 # Liberty for Java
 {: #liberty_runtime}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 Liberty for Java apps on {{site.data.keyword.cloud}} are powered by the liberty-for-java buildpack. The liberty-for-java buildpack provides a complete runtime environment for running Jakarta EE, Eclipse MicroProfile, Java EE, and OSGi apps on top of WebSphere Liberty. It supports popular frameworks like Spring and includes the {{site.data.keyword.IBM_notm}} JRE. Liberty enables rapid app development that is well suited to the cloud.
 {: shortdesc}

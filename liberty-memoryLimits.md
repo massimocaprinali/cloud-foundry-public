@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -17,6 +17,9 @@ subcollection: cloud-foundry-public
 
 # Memory limits and the Liberty buildpack
 {: #memory_limits}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 A memory limit must be specified when you deploy an app with the Liberty buildpack.
 
@@ -52,7 +55,8 @@ If the Memory Limit is exceeded while the app is in service, the process stops a
 You can customize the maximum amount of heap memory your app is allocated in various ways including by using the `JVM_ARGS` environment variable, changing the `jvm.options` file, or setting the `JBP_CONFIG_IBMJDK` environment variable which controls the `heap_size_ratio`. If you do not specify any settings, the buildpack uses the default settings.
 
 ### Heap memory defaults
-{: .#heap_memory_defaults}
+{: #heap_memory_defaults}
+
 To prevent errors that result from exceeding memory limits, the Liberty for Java buildpack sets a default heap size ratio depending on the memory limit that you specify when you deploy your app.
 
 * Apps with memory limits of less than 512M have a heap size ratio of 50%

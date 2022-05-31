@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -17,6 +17,9 @@ subcollection: cloud-foundry-public
 
 # Use your own JRE
 {: #using_own_jre}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 You can run your Liberty app on {{site.data.keyword.cloud}} with your own JRE. The liberty-for-java buildpack will provide support for the [runtimes supported by WebSphere Liberty](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_restrict.html#rwlp_restrict__rest13){: external}, but cannot guarantee full functionality of unsupported versions. You must complete the following to make your JRE available for your app.
 * Host the JRE in a location that the buildpack can download it from.
