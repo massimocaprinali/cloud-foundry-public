@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-01-04"
+  years: 2015, 2022
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry, ssl, certificates, access, restrict access, csr, upload, import, csr, certificate signing request
 
@@ -14,6 +14,9 @@ subcollection: cloud-foundry-public
 
 # Creating certificate signing requests
 {: #ssl_csr}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 You can secure your applications by uploading SSL certificates and restricting access to the apps.
 {: shortdesc}
@@ -37,6 +40,7 @@ Be sure to submit a single request to delete or create crypto, and then expect a
 {: note}
 
 ### Required CSR contents
+{: #csr_contents}
 
 For the CSR to be valid, the following information must be entered when you create the CSR:
 
@@ -87,5 +91,6 @@ To upload a certificate for your Cloud Foundry app, complete the following steps
   
     You can set up mutual authentication by uploading a client certificate truststore that includes a public key in its metadata.
     {: tip}
+
 
 

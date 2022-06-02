@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -17,6 +17,9 @@ subcollection: cloud-foundry-public
 
 # {{site.data.keyword.ibmcf_notm}} buildpacks
 {: #available_buildpacks}
+
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
 
 {{site.data.keyword.ibmcf_full}} buildpacks provide the runtime support for apps in the {{site.data.keyword.ibmcf_notm}} environment. When you deploy an app to {{site.data.keyword.cloud}} using {{site.data.keyword.ibmcf_notm}}, {{site.data.keyword.ibmcf_notm}} starts a buildpack that supports your app type. {{site.data.keyword.cloud_notm}} provides Cloud Foundry buildpack support for Java EE, Node.js, ASP.Net, Swift, and other app types.
 You can use the buildpacks included with {{site.data.keyword.cloud_notm}} to deploy apps and bind them to services.

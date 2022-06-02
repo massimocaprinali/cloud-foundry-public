@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-31"
 
 keywords: cloud foundry
 
@@ -18,11 +18,14 @@ subcollection: cloud-foundry-public
 # Liberty features supported in {{site.data.keyword.cloud_notm}}
 {: #liberty_features}
 
+{{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
+{: deprecated}
+
 The Liberty for Java runtime includes a subset of Liberty features. To use a feature that is not included in the runtime, see [Install Liberty features](/docs/cloud-foundry-public?topic=cloud-foundry-public-install-features). For a complete list of the features available in Liberty, along with Java EE versions and other information, see
 [Liberty features](https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_feat.html){: external}.
 
 ## Cloud-specific features
-{:#cloud-features}
+{: #cloud-features}
 
 The following features are included and are specific to {{site.data.keyword.cloud_notm}}:
 * `appstate-1.0`
