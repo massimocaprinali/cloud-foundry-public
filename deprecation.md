@@ -105,7 +105,7 @@ All of the {{site.data.keyword.cloud}} compute service options share the latest 
 * Automatically securing apps with TLS
 * Access to Kubernetes infrastructure and APIs for Kubernetes users
 * Choice of public/internet-facing workloads or private ones
-* The ability to build container images using Dockerfiles or use [Paketo buildpacks](paketo.io){: external}
+* The ability to build container images using Dockerfiles or use [Paketo buildpacks](https://paketo.io/){: external}
 * The ability to deploy container images from public or private image registries
 
 No matter which {{site.data.keyword.cloud}} compute you choose, you will have the latest cloud technology capabilities.

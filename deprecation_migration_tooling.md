@@ -244,7 +244,7 @@ You can connect to the various subcomponents to test that they are working prope
 2. Verify the gateway is properly pulling the data.  The results of these commands should return the same information as step 1.
 
    ```shell
-   curl http://$appname> -gateway.mybluemix.net/customers
+   curl http://$appname>-gateway.mybluemix.net/customers
    curl http://$appname-gateway.mybluemix.net/orders
    curl http://$appname-gateway.mybluemix.net/products
    ```
