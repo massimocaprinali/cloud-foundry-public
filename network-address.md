@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-05-31"
+  years: 2015, 2021
+lastupdated: "2022-06-01"
+
 
 keywords: cloud foundry
 
@@ -112,7 +113,6 @@ In the Sydney (au-syd) region, the following network addresses are in use:
 130.198.81.128/25
 135.90.65.64/26
 135.90.70.0/27
-168.1.31.96/27
 168.1.40.64/27
 168.1.40.96/27
 168.1.44.160/27
