@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-03"
 
 keywords: cloud foundry, deprecation, deprecated
 
@@ -80,7 +80,7 @@ The following is a suggested checklist to plan your migration:
 2. Evaluate the {{site.data.keyword.cloud}} compute migration options.
 3. Pick an {{site.data.keyword.cloud}} service migration compute target that best meets your requirements and goals.
 4. Deploy your applications to the target {{site.data.keyword.cloud}} service and compare the operation of your applications.
-5. When redy, move application traffic as appropriate. It is suggested that you use a load balancer to slowly adjust workload during the migration. This way you can control your customer engagement with the migrated applications and do complete testing.
+5. When ready, move application traffic as appropriate. It is suggested that you use a load balancer to slowly adjust workload during the migration. This way you can control your customer engagement with the migrated applications and do complete testing.
 6. Stop your {{site.data.keyword.ibmcf_notm}} application instances, and when ready, delete the applications prior to the End-of-Support date.
 
 Note: Reminders will be sent to you as long as you have running {{site.data.keyword.ibmcf_notm}} applications. Those reminders will end when all of your applications have been stopped and your usage of {{site.data.keyword.ibmcf_notm}} is at zero.
