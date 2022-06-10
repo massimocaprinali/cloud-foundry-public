@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-10"
 
 keywords: cloud foundry, deprecation, deprecated
 
@@ -51,7 +51,7 @@ The following is a comparison of the IBM Cloud compute service options to help y
 | Auto-scaling of your application based on load               | Auto-scaling based on number of HTTP requests is built in.   | In {{site.data.keyword.containerlong_notm}}, applications are synonymous to pods. With Kubernetes, you can automatically [scale up or down your pods based on CPU or memory.](/docs/containers?topic=containers-update_app#app_scaling) | In {{site.data.keyword.openshiftlong_notm}}, applications are synonymous to pods. With Kubernetes, you can automatically scale up or down your pods based on CPU or memory. [Open Shift has a "Serverless add-on which allows load-based auto-scaling.](/docs/openshift?topic=openshift-update_app) |
 | "Scale-to-zero" of applications when idle                    | Yes, Scale-to-zero is built in.                              | No, minimum of pod replicas must be <= 1.                    | No, minimum of pod replicas must be <= 1.     Open Shift has a "serverless add-on" which allows scale to zero |
 | Deployment of specific workload types                        | Almost anything that can be containerized, web apps, event-driven serverless functions, micro-services, batch jobs | [Types of typical workloads being moved to {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-strategy)  \n [Use cases](/docs/containers?topic=containers-cs_uc_intro)  \n Can integrate {{site.data.keyword.codeenginefull_notm}} with {{site.data.keyword.containerlong_notm}}. | [Types of typical workloads being moved to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy)  \n [Use cases](/docs/openshift?topic=openshift-cs_uc_intro) |
-| "Push your code" from local disk developer experience        | Yes                                                          | Yes Sri please check and validate                             | Yes Sri please check and validate                             |
+| "Push your code" from local disk developer experience        | Yes                                                          | Yes                             | Yes                             |
 | Complete cluster management experience through the {{site.data.keyword.containerlong_notm}} automation tools (API, CLI, console) | No - {{site.data.keyword.codeenginefull_notm}} is a multi-tenant service based on Kubernetes, and therefore only namespace-scoped operations are allowed (not entire cluster management) | Yes                                                          | Yes                                                          |
 | Worldwide availability in single and multi-zones             | Multi-zone Regions                                           | Yes                                                          | Yes                                                          |
 | Access to all IBM Cloud services                             | Yes                                                          | Yes                                                          | Yes                                                          |
