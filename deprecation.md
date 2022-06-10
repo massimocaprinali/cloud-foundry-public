@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-10"
 
 keywords: cloud foundry, deprecation, deprecated
 
@@ -169,6 +169,10 @@ These are for-pay migration assistance options by IBM teams and third-party part
 HCL Technologies
 
 * The Kubernetes Migration Platform or KMP from HCL Technologies’ Cloud Native Labs is a SaaS-based application that can migrate hundreds of applications from Cloud Foundry or Kubernetes to any Kubernetes distribution with only three clicks, fully automated. KMP can migrate your Cloud Foundry applications to native containers on Red Hat OpenShift on IBM Cloud, seamlessly and efficiently. It provides effortless migration without prior application knowledge, no production outages, avoids vendor lock-in, is repeatable, and includes a complete data migration, often in minutes, using HCL's proprietary automated tooling. See [HCL - Kubernetes Migration Platform (KMP)](https://cloud.ibm.com/media/docs/downloads/cloud-foundry-public/KMP%20-%20Kubernetes%20Migration%20Platform%20by%20HCL.pdf){: external} for more information and contacts to get started.
+
+Tata Consultancy Services
+
+* TCS is a multinational information technology services and consulting company with significant experience in application and container technology.  Areas of experience include Cloud Foundry, Kubernetes, Cloud Native platform including  OpenShift, PaaS on IBM Cloud, Container-as-a-Service, and PaaS solutions on hyperscalers and private cloud. TCS migration of Cloud Foundry applications to Cloud Native platforms starts with an automated application assessment.  The assessment aims to reduce technical debt and modernize the application and security stack using the TCS Modernization framework and various assets and accelerators. See [TCS Migration Details](https://cloud.ibm.com/media/docs/downloads/cloud-foundry-public/TCS-RHOCP-Services-Capabilities%20-%20New%20Template%20-%202022%20-%20V1.1.pdf){: external} for more information and contacts to get started.
 
 ## **Customer support**
 {: #dep_custsup}
