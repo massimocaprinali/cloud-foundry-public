@@ -1,3 +1,30 @@
+---
+
+copyright:
+  years: 2015, 2022
+lastupdated: "2022-06-17"
+
+
+keywords: cloud foundry
+
+subcollection: cloud-foundry-public
+
+---
+
+
+{{site.data.keyword.attribute-definition-list}}
+
+# What are the possible network addresses that Cloud Foundry apps can be running on?
+{: #network-address}
+
+When you deploy Cloud Foundry apps, there are a known list of possible network addresses that the app will be deployed on depending on the region.
+{: shortdesc}
+
+Network addresses are subject to change from time to time. 
+{: important}
+
+<!--- Everything below this line is refreshed periodically --->
+
 In the Dallas (us-south) region, the following network addresses are in use:
 ```
 169.46.101.192/27
