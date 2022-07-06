@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-06"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -27,10 +27,41 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
-## 7 June 2022
-{: #cloud-foundry-public-june0622}
+## 5 July 2022
+{: #cloud-foundry-public-july0522}
 {: release-note}
 
+Updated Liberty buildpack v3.71-20220621-1017
+
+:    The alternate Liberty runtime GA version is changed to the `22.0.0.7` release. The default runtime remains the same [22.0.0.6](https://openliberty.io/blog/2022/06/07/microprofile-graphql-2-22006.html){: external}.
+
+    * To specify the monthly runtime set the following two variables: 
+    
+        ```text
+        ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
+        ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
+        ```
+        {: codeblock} 
+    
+    * The IBM Semeru Open J9 alternate JRE remains the same `ibm-semeru-open-jre_x64_linux_11.0.15_10_openj9-0.32.0`.
+    
+        * To specify the alternate JRE set the following variable:
+
+          ```text
+          ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
+          ```
+          {: codeblock}
+    
+    * The IBM JRE version is changed to `8 SR7 FP10` and contains security fixes for the following PSIRTs: 
+       * [April 2022 Oracle security fixes](https://www.ibm.com/support/pages/node/6591179){: external} which includes fixes to the following CVEs: 
+        * [CVE-2022-21496](https://www.ibm.com/support/pages/apar/IJ39998){: external}
+        * [CVE-2022-21434](https://www.ibm.com/support/pages/apar/IJ39999){: external}
+        * [CVE-2022-21443](https://www.ibm.com/support/pages/apar/IJ40004){: external}
+        
+## 7 June 2022
+{: #cloud-foundry-public-june0622}
+{: release-note}        
+        
 Updated Liberty buildpack v3.70-20220525-0737
 
 :   The alternate and default Liberty runtime GA version is changed to the `22.0.0.6` release. 
