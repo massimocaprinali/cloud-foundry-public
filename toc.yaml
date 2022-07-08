@@ -120,6 +120,7 @@ toc:
       - topicgroup: 
           label: Managing your apps
           topics:
+          - custom_domain_usage.md
           - custom_domains.md
           - secapps.md
           - updating_domains.md
