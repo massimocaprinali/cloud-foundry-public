@@ -27,13 +27,7 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
-## 25 August 2022
-{: #cloud-foundry-public-aug25222}
-{: release-note}
 
-Change required custom domains
-
-:    SSL certificates for custom domains must now be uploaded using {{site.data.keyword.secrets-manager_full}}. Custom domains where the SSL certificates have not been uploaded using the new process will stop working on 27 September 2022. For more information see [Custom Domain update required for Cloud Foundry Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-custom_domain_usage) for more information.
 
 ## 2 August 2022
 {: #cloud-foundry-public-aug0222}
