@@ -35,7 +35,6 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 {: release-note}
 
 Change required custom domains
-
 :    SSL certificates for custom domains must now be uploaded using {{site.data.keyword.secrets-manager_full}}. Custom domains where the SSL certificates have not been uploaded using the new process will stop working on dates depending on the region. For more information see [Custom Domain update required for Cloud Foundry Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-custom_domain_usage).
 
 
@@ -44,7 +43,6 @@ Change required custom domains
 {: release-note}
 
 Updated Liberty buildpack v3.72-20220720-1509
-
 :    The alternate Liberty runtime GA version is changed to the `22.0.0.8` release. The default runtime remains the same [22.0.0.6](https://openliberty.io/blog/2022/06/07/microprofile-graphql-2-22006.html){: external}.
 
     * The monthly Liberty runtime `22.0.0.8` contains security fixes for the following PSIRTs:
