@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-08-29"
 
 keywords: cloud foundry, ssl, certificates, access, restrict access, csr, upload, import, csr, certificate signing request
 
@@ -18,7 +18,7 @@ subcollection: cloud-foundry-public
 {{site.data.keyword.ibmcf_full}} is deprecated. As of 30 November 2022 new {{site.data.keyword.ibmcf_full}} applications cannot be created and only existing users will be able to deploy applications. End-of-support happens on 1 June 2023. Any instances that still exist on 1 June 2023 will be deleted. For more information, see [the deprecation details](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
 {: deprecated}
 
-You can secure your applications by uploading SSL certificates and restricting access to the apps.
+You can secure your applications by uploading SSL certificates and restricting access to the applications. 
 {: shortdesc}
 
 ## Creating a certificate signing request
@@ -52,7 +52,7 @@ For the CSR to be valid, the following information must be entered when you crea
 * **Common name**: The fully qualified domain name (FQDN) for which you’re requesting the SSL certificate. Wildcards are not supported in the common name.
 
 You can use Subject Alternative Names (SAN), but the provided host names must not be issued in other deployed certificates to prevent CN collisions.
-{: note}
+{: note} 
 
 A certificate is issued by a certificate authority and is digitally signed by that authority. After you create the CSR, you can generate your SSL certificate on a public certificate authority.
 
@@ -60,6 +60,15 @@ A certificate is issued by a certificate authority and is digitally signed by th
 {: #ssl_certificate}
 
 You can apply a security protocol to provide communication privacy for your app to prevent eavesdropping, tampering, and message forgery. If you have a Lite account, you must upgrade your account to upload a certificate.
+
+In order to use TLS certificates in IBM Cloud Foundry custom domains you need to perform few steps:
+1. Obtain, if not already having it,  a valid certificate from a Certificate Authority (via CSR creation) [Ref](/docs/cloud-foundry-public?topic=cloud-foundry-public-ssl_csr#create_csr)
+2. Upload certificates into a {{site.data.keyword.secrets-manager_full_notm}} instance [Ref](/docs/cloud-foundry-public?topic=cloud-foundry-public-ssl_csr#ssl_import)
+3. Authorise IBM Cloud Foundry service to  access uploaded certificates [Ref](/docs/cloud-foundry-public?topic=cloud-foundry-public-ssl_csr#ssl_cert_auth)
+4. Let custom domain uses the uploaded certificate by mapping its CRN.[Ref](/docs/cloud-foundry-public?topic=cloud-foundry-public-ssl_csr#ssl_cert_custom_domain)
+
+SSL certificate mapping is a region specific operation. If you are using the same custom domain and SSL cert across multiple regions, you need to map certificate for each one.
+{: note}
 
 When an expired or expiring certificate must be renewed, and after the new certificate is ready, delete the existing certificate and then add the new one.
 {: note}
