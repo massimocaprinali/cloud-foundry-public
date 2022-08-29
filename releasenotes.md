@@ -30,6 +30,14 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 
 
 
+## 29 August 2022
+{: #cloud-foundry-public-aug29222}
+{: release-note}
+
+Change required custom domains
+
+:    SSL certificates for custom domains must now be uploaded using {{site.data.keyword.secrets-manager_full}}. Custom domains where the SSL certificates have not been uploaded using the new process will stop working on dates depending on the region. For more information see [Custom Domain update required for Cloud Foundry Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-custom_domain_usage).
+
 
 ## 2 August 2022
 {: #cloud-foundry-public-aug0222}
