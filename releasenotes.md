@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-29"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -27,12 +27,22 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
+
+
+
+## 29 August 2022
+{: #cloud-foundry-public-aug29222}
+{: release-note}
+
+Change required custom domains
+:    SSL certificates for custom domains must now be uploaded using {{site.data.keyword.secrets-manager_full}}. Custom domains where the SSL certificates have not been uploaded using the new process will stop working on dates depending on the region. For more information see [Custom Domain update required for Cloud Foundry Applications](/docs/cloud-foundry-public?topic=cloud-foundry-public-custom_domain_usage).
+
+
 ## 2 August 2022
 {: #cloud-foundry-public-aug0222}
 {: release-note}
 
 Updated Liberty buildpack v3.72-20220720-1509
-
 :    The alternate Liberty runtime GA version is changed to the `22.0.0.8` release. The default runtime remains the same [22.0.0.6](https://openliberty.io/blog/2022/06/07/microprofile-graphql-2-22006.html){: external}.
 
     * The monthly Liberty runtime `22.0.0.8` contains security fixes for the following PSIRTs:

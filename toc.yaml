@@ -120,6 +120,7 @@ toc:
       - topicgroup: 
           label: Managing your apps
           topics:
+          - custom_domain_usage.md
           - custom_domains.md
           - secapps.md
           - updating_domains.md
@@ -196,4 +197,6 @@ toc:
             - link: 
                 label: Latest updates to the ASP.NET Core buildpack
                 href: https://{DomainName}/docs/cloud-foundry-public?topic=cloud-foundry-public-cloud-foundry-public-release-notes
+
+
 
