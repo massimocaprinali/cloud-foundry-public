@@ -33,10 +33,10 @@ The SDK for Node.js has been deprecated. The latest updates on the Node.js build
 
 Updated Liberty buildpack v3.73-20220816-0814
 :   The alternate and default Liberty runtime version is changed to the `22.0.0.9` release. 
-    * The default and monthly Liberty runtime `22.0.0.9` contain the security fix for the following PSIRT:
+    * The default and monthly Liberty runtime `22.0.0.9` contains the security fix for the following PSIRT:
         * [CVE-2019-11777](https://www.ibm.com/support/pages/node/6602039){: external} 
         
-    * The IBM Semeru Open J9 alternate JRE is change to `ibm-semeru-open-jre_x64_linux_11.0.16_8_openj9-0.33.0`.
+    * The IBM Semeru Open J9 alternate JRE is changed to `ibm-semeru-open-jre_x64_linux_11.0.16_8_openj9-0.33.0`.
     
         * To specify the alternate JRE set the following variable:
 
