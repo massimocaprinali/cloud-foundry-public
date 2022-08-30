@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-08-30"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -27,8 +27,25 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
+## 30 August 2022
+{: #cloud-foundry-public-aug3022}
+{: release-note}
 
+Updated Liberty buildpack v3.73-20220816-0814
+:   The alternate and default Liberty runtime version is changed to the `22.0.0.9` release. 
+    * The default and monthly Liberty runtime `22.0.0.9` contain the security fix for the following PSIRT:
+        * [CVE-2019-11777](https://www.ibm.com/support/pages/node/6602039){: external} 
+        
+    * The IBM Semeru Open J9 alternate JRE is change to `ibm-semeru-open-jre_x64_linux_11.0.16_8_openj9-0.33.0`.
+    
+        * To specify the alternate JRE set the following variable:
 
+          ```text
+          ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
+          ```
+          {: codeblock}
+    
+    * The IBM JRE version remains unchanged `8 SR7 FP11`.        
 
 ## 29 August 2022
 {: #cloud-foundry-public-aug29222}
