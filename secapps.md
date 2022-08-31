@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-08-31"
 
 keywords: cloud foundry, ssl, certificates, access, restrict access, csr, upload, import, csr, certificate signing request
 
@@ -101,5 +101,142 @@ To upload a certificate for your Cloud Foundry app, complete the following steps
     You can set up mutual authentication by uploading a client certificate truststore that includes a public key in its metadata.
     {: tip}
 
+## Importing SSL certificates into {{site.data.keyword.secrets-manager_full_notm}}
+{: #ssl_certificate_secrets_manager}
+
+You can apply a security protocol to provide communication privacy for your app to prevent eavesdropping, tampering, and message forgery. If you have a Lite account, you must upgrade your account to upload a certificate.
+
+When an expired or expiring certificate must be renewed, and after the new certificate is ready, delete the existing certificate and then add the new one.
+{: note}
+
+### Import your existing credentials into {{site.data.keyword.secrets-manager_full_notm}}
+{: #ssl_import}
+
+{{site.data.keyword.ibmcf_notm}} uses customer owned {{site.data.keyword.secrets-manager_full_notm}} to manage [SSL certificates.](/docs/secrets-manager?topic=secrets-manager-certificates) permitting customers to have better control of their secrets.  If you are using custom domains,{{site.data.keyword.secrets-manager_full_notm}}  will be used as storage for your SSL certificates and you will have control of certificates access via IAM service authorizations.
+We suggest you, to store your custom domains TLS certificates in a dedicated secrets group because will give increased flexibility when configuring [service to service authorization.](/docs/account?topic=account-serviceauth)
+
+Before configuring {{site.data.keyword.ibmcf_notm}} to use {{site.data.keyword.secrets-manager_full_notm}}, you need to [import your existing certificates into {{site.data.keyword.secrets-manager_full_notm}}.](/docs/secrets-manager?topic=secrets-manager-certificates#import-certificates)
+
+### Authorizing {{site.data.keyword.ibmcf_notm}} to operate on imported certificates
+{: #ssl_cert_auth}
+
+Before you can map your SSL certificate to a custom domain, you must authorize {{site.data.keyword.ibmcf_notm}} to use certificates [in {{site.data.keyword.secrets-manager_full_notm}}.](/docs/secrets-manager?topic=secrets-manager-certificates#import-certificates)
+
+1. [Log in the IBM Cloud.](https://cloud.ibm.com/){: external}
+
+2. Click **Manage** > **Access(IAM)** > **Authorizations**.
+
+3. Click **Create**.
+
+4. For *Source account* select *This account*.
+
+5. For *Source service* select *Cloud Foundry for Custom Domain* and leave *How do you want to scope the access?* as *All resources*.
+
+6. For *Target service* select *Secrets Manager*.
+
+7. Select *Resource based on selected attributes*.
+
+8. Select *Resource Type* and set string equals to `secret-group`.
+
+9. Select *Resource* and set string equals to the the group ID found in the {{site.data.keyword.secrets-manager_full_notm}} instance, **Secret Groups** section.
+
+10. For secret access, select `SecretsReader`.
+
+11. Click **Authorize**.
+
+
+
+### Mapping the SSL certificate to a custom domain
+{: #ssl_cert_custom_domain}
+
+After authorizing {{site.data.keyword.ibmcf_notm}} to operate on imported certificates you can map your SSL certificate to a custom domain.
+
+1. [Log in the IBM Cloud.](https://cloud.ibm.com/){: external}
+
+2. Click **Manage** > **Account** > **Cloud Foundry Orgs**.
+
+3. Open your Org and switch to the **Domains** tab.
+
+4. Next to the name of your custom domain, click *Map to a certificate*.
+
+5. Copy the [CRN from {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-certificates) for your SSL certificate into the text field.
+
+You can also map your SSL certificate using the CLI::
+
+```text
+ibmcloud account domain-cert-map YOUR_CUSTOM_DOMAIN SSL_CERT_CRN -o YOUR_ORG_GUID
+```
+{: pre}
+
+
+### Unmap an SSL certificate from a Custom domain
+{: #ssl_cert_unamp}
+
+If your want to have a Cloud Foundry custom domain to not use anymore a mapped SSL certificate, you can unmap it:
+
+1. Click the *More actions* icon and click **Unmap SSL certificate**.
+
+2. Click **Confirm**.
+
+You can also determine the SSL certificates in use  by running the [following command:](/docs/data-virtualization?topic=cli-ibmcloud_commands_account#ibmcloud_account_domain_cert)
+
+```text
+ibmcloud account domain-cert YOUR_CUSTOM_DOMAIN
+```
+{: pre}
+
+In addition to IBM Cloud console you may also uses latest version  IBM command line to perform unmap of SSL certificate
+
+```text
+ibmcloud account domain-cert-unmap YOUR_CUSTOM_DOMAIN
+```
+
+## Other Actions 
+
+### Removing existing SSL certificate from Datapower 
+{: #ssl_cert_datapower_rm}
+
+If your SSL certificate has already been uploaded to Cloud Foundry custom domain and you want to remove it w/o performing migration to Secret manager,
+use IBM command line to perform removal of SSL certificate via command line using the following command (this will permit to remove certificate from Datapower): 
+
+```text
+ibmcloud account domain-cert-remove YOUR_CUSTOM_DOMAIN
+```
+ 
+You can  determine the SSL certificates uploaded by running the [following command:](/docs/data-virtualization?topic=cli-ibmcloud_commands_account#ibmcloud_account_domain_cert)
+
+```text
+ibmcloud account domain-cert YOUR_CUSTOM_DOMAIN
+```
+{: pre}
+
+
+### Upload  SSL certificate into Datapower 
+{: #ssl_cert_datapower_domain-cert-add}
+
+If you have a urgent need to refresh your SSL certificate  but you are not ready to migrate to Secret Manager, you can uploaded new cert for custom domain with the same procedure you were using in the past.
+
+Use IBM command line to perform removal of older SSL certificate (this will remove certificate from Datapower) :
+
+```text
+ibmcloud account domain-cert-remove YOUR_CUSTOM_DOMAIN
+```
+
+and then import the new version of certificate  via command (this will import new version of  certificate into Datapower): 
+
+
+```text
+ibmcloud account domain-cert-add  YOUR_CUSTOM_DOMAIN 
+```
+
+You can  determine the SSL certificates uploaded by running the [following command:](/docs/data-virtualization?topic=cli-ibmcloud_commands_account#ibmcloud_account_domain_cert)
+
+```text
+ibmcloud account domain-cert YOUR_CUSTOM_DOMAIN
+```
+{: pre}
+
+This is an emergency procedure, you will still be required to migrate your certificate to Secret Manager in the required timeline.
+{: note}
 
 
