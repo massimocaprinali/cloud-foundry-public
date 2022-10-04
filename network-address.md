@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 
 keywords: cloud foundry
@@ -82,6 +82,7 @@ In the Frankfurt (eu-de) region, the following network addresses are in use:
 ```
 149.81.126.96/27
 149.81.69.192/26
+159.122.74.216/29
 159.122.84.160/27
 161.156.69.0/27
 161.156.72.64/26
