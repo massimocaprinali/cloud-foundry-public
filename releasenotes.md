@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-25"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -185,7 +185,7 @@ Updated Liberty buildpack v3.70-20220525-0737
     * The IBM JRE version remains unchanged `8 SR7 FP6`.
 
 
-## 2 June 2022
+## 31 May 2022
 {: #cloud-foundry-public-jun0222}
 {: release-note}
 
