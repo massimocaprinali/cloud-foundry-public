@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-31"
 
 keywords: cloud foundry, deprecation, deprecated
 
@@ -39,7 +39,7 @@ The timeline for this deprecation is as follows:
 | Stage | Date | Description |
 | ---------------- | ----------------- | ------------------------------------------------------------ |
 | Announcement     | 31 May 2022      | Announcement of the {{site.data.keyword.ibmcf_notm}} deprecation. All current {{site.data.keyword.ibmcf_notm}} users as of early June 2022, will receive an email with information about the deprecation. Notifications will be put into the {{site.data.keyword.cloud}} console and related screens. |
-| End-of-Marketing | 30 November 2022 | All {{site.data.keyword.cloud}} users, other than those who have an {{site.data.keyword.ibmcf_notm}} application deployed, will be blocked from new application deployments. As of 30 November 2022, new Cloud Foundry Organizations (Orgs) cannot be created by any user. Existing users with Cloud Foundry applications that were deployed prior to this date should open a [support ticket](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to have new CF Orgs created. |
+| End-of-Marketing | 30 November 2022 | All {{site.data.keyword.cloud}} users, other than those who have an {{site.data.keyword.ibmcf_notm}} application deployed, will be blocked from new application deployments. As of 30 November 2022, new Cloud Foundry Organizations (Orgs) cannot be created by any user. |
 | Reminders        | Ongoing           | Periodic reminders will be sent to all users with running {{site.data.keyword.ibmcf_notm}} applications that the end-of-support date is coming, with increasing frequency as the date approaches. |
 | End-of-Support   | 1 June 2023      | All instances of running {{site.data.keyword.ibmcf_notm}} applications will be permanently disabled and deprovisioned. |
 {: caption="Table 1. Deprecation timeline" caption-side="bottom"}
@@ -51,7 +51,7 @@ Some details of this announcement:
 
 * A "deprecation" is a process, and we've announced the beginning of that process. It begins with the "Announcement" (this page), continues with "End-of-Marketing", and ends with "End-of-Support". Nothing happens until those announced dates above.
 
-* At the "End-of-Marketing", users that don't have {{site.data.keyword.ibmcf_notm}} running workloads will be blocked from deploying new applications. All users that have Cloud Foundry application instances deployed can still keep deploying and re-deploying applications normally and as needed. Also at this time, new Cloud Foundry Organizations (Orgs) cannot be created by any user - existing users with already deployed Cloud Foundry applications should open a help desk ticket to have any new needed CF Orgs created.
+* At the "End-of-Marketing", users that don't have {{site.data.keyword.ibmcf_notm}} running workloads will be blocked from deploying new applications. All users that have Cloud Foundry application instances deployed can still keep deploying and re-deploying applications normally and as needed. Also at this time, new Cloud Foundry Organizations (Orgs) cannot be created by any user.
 
 * At the "End-of-Support", all {{site.data.keyword.ibmcf_notm}} applications will, in a short period of time, be stopped and the deployed runtime applictions deleted.
 
