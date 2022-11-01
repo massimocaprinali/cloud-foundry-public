@@ -27,13 +27,11 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
-
 ## 26 October 2022
 {: #cloud-foundry-public-oct2622}
 {: release-note}
 
 IBM Cloud Foundry [end-of-marketing is 30 November 2022](https://ibm.biz/ibmcf-announce). On 30 November 2022 all new IBM Cloud users are blocked from deploying Cloud Foundry applications. Existing users that already have Cloud Foundry applications deployed can continue to deploy new applications and use their applications until the [end-of-support date.](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation#dep_timeline)
-
 
 ## 25 October 2022
 {: #cloud-foundry-public-oct2522}
@@ -45,13 +43,13 @@ Updated Liberty buildpack v3.75-20221012-1015
         * [CVE-2022-24839](https://www.ibm.com/support/pages/node/6824871){: external} 
 
     * To specify the monthly runtime set the following two variables and restage your application: 
- 
+
       ```text
       ibmcloud cf set-env <yourappname> JBP_CONFIG_LIBERTY "version: +"
       ibmcloud cf set-env <yourappname> IBM_LIBERTY_MONTHLY true
       ```
       {: codeblock}
-    
+
     * The IBM Semeru Open J9 alternate JRE remains unchanged `ibm-semeru-open-jre_x64_linux_11.0.16.1_1_openj9-0.33.1`
         * To specify the alternate JRE set the following variable:
 
@@ -59,7 +57,7 @@ Updated Liberty buildpack v3.75-20221012-1015
             ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
             ```
             {: codeblock}
-    
+   
     * The IBM JRE version is changed to `8 SR7 FP16`.
     
 ## 27 September 2022
