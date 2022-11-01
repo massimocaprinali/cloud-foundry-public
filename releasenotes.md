@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-11-01"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -27,6 +27,12 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
 
+
+## 26 October 2022
+{: #cloud-foundry-public-oct2622}
+{: release-note}
+
+IBM Cloud Foundry [end-of-marketing is 30 November 2022](https://ibm.biz/ibmcf-announce). On 30 November 2022 all new IBM Cloud users are blocked from deploying Cloud Foundry applications. Existing users that already have Cloud Foundry applications deployed can continue to deploy new applications and use their applications until the [end-of-support date.](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation#dep_timeline)
 
 
 ## 25 October 2022
