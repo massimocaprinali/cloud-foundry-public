@@ -2722,3 +2722,5 @@ Updated Liberty Buildpack v1.1-20140725-1341
 Updated Node.js buildpack v1.1-20140717-1447
 :   The Node.js buildpack now comes with {{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.5. This update means you'll get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.29. See more about the [{{site.data.keyword.IBM_notm}} Node.js SDKs](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
 
+
+
