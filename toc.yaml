@@ -167,7 +167,8 @@ toc:
       - link: 
           label: Cloud Foundry Docs
           href: https://docs.cloudfoundry.org/
-      topics: 
+      topics:
+      - http_headers.md
       - app_mng.md
       - service_dependencies.md      
       - cfp_responsibilities.md

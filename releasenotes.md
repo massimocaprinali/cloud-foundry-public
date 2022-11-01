@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-11-01"
 
 keywords: cloud foundry release notes, cloud foundry update, cloud foundry buildpack updates
 
@@ -26,6 +26,12 @@ The IBM Supported dotnet-core buildpack has been deprecated. The latest updates 
 
 The SDK for Node.js has been deprecated. The latest updates on the Node.js buildpack can be found here: [https://github.com/cloudfoundry/nodejs-buildpack/releases](https://github.com/cloudfoundry/nodejs-buildpack/releases){: external}. For more details please read the [IBM announcement blog.](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-foundry-nodejs-buildpack-change){: external}.
 {: important}
+
+## 26 October 2022
+{: #cloud-foundry-public-oct2622}
+{: release-note}
+
+IBM Cloud Foundry [end-of-marketing is 30 November 2022](https://ibm.biz/ibmcf-announce). On 30 November 2022 all new IBM Cloud users are blocked from deploying Cloud Foundry applications. Existing users that already have Cloud Foundry applications deployed can continue to deploy new applications and use their applications until the [end-of-support date.](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation#dep_timeline)
 
 ## 25 October 2022
 {: #cloud-foundry-public-oct2522}
@@ -51,9 +57,9 @@ Updated Liberty buildpack v3.75-20221012-1015
             ibmcloud cf set-env myapp JBP_CONFIG_IBMJDK "version: 11.+"
             ```
             {: codeblock}
-
+   
     * The IBM JRE version is changed to `8 SR7 FP16`.
-
+    
 ## 27 September 2022
 {: #cloud-foundry-public-sep2722}
 {: release-note}
@@ -206,7 +212,7 @@ Updated Liberty buildpack v3.70-20220525-0737
     * The IBM JRE version remains unchanged `8 SR7 FP6`.
 
 
-## 2 June 2022
+## 31 May 2022
 {: #cloud-foundry-public-jun0222}
 {: release-note}
 
@@ -2713,4 +2719,6 @@ Updated Liberty Buildpack v1.1-20140725-1341
 
 Updated Node.js buildpack v1.1-20140717-1447
 :   The Node.js buildpack now comes with {{site.data.keyword.IBM_notm}} SDK for Node.js v1.1.0.5. This update means you'll get a fully supported {{site.data.keyword.IBM_notm}} Node.js runtime when you specify the latest stable Node.js runtime for your app, v0.10.29. See more about the [{{site.data.keyword.IBM_notm}} Node.js SDKs](https://developer.ibm.com/languages/node-js/articles/download-nodejs-for-ibm-platforms/){: external}.
+
+
 
