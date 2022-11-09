@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-09"
 
 
 keywords: cloud foundry
@@ -63,6 +63,9 @@ In the Washington DC (us-east) region, the following network addresses are in us
 169.63.78.192/26
 169.63.80.128/25
 169.63.83.0/24
+52.116.125.68/32
+169.59.191.31/32
+150.239.226.24/32
 ```
 
 In the London (eu-gb) region, the following network addresses are in use:
