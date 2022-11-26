@@ -124,7 +124,7 @@ Run the following commands to create this folder structure. Replace `<name_of_ta
 
    ```shell
    mkdir move2kube-tutorial
-   cd mkdir move2kube-tutorial
+   cd move2kube-tutorial
    git clone https://github.com/konveyor/move2kube-demos.git
    mkdir move2kube-demos-<name_of_target>
    cd move2kube-demos-<name_of_target>
